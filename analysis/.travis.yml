@@ -1,0 +1,10 @@
+language: python
+python:
+    - "3.6"
+install:
+    - pip install python-coveralls pytest-cov
+    - pip install .
+script: 
+    - py.test tests --cov cdna_ligation
+after_success:
+    - coveralls
