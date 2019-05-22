@@ -7,17 +7,18 @@ with open('README.rst') as file:
     readme = file.read()
 
 setup(
-    name='cdna_ligation',
+    name='bind_dna',
     version='0.0.0',
     author='Kale Kundert',
     long_description=readme,
     packages=[
-        'cdna_ligation',
+        'bind_dna',
     ],
     install_requires=[
     ],
     entry_points={
         'console_scripts': [
+            'dbp_relax_b = bind_dna.scripts.dbp_relax_b:main',
         ],
     },
     include_package_data=True,

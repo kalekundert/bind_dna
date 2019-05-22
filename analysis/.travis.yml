@@ -5,6 +5,6 @@ install:
     - pip install python-coveralls pytest-cov
     - pip install .
 script: 
-    - py.test tests --cov cdna_ligation
+    - py.test tests --cov bind_dna
 after_success:
     - coveralls
