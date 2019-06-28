@@ -5,7 +5,12 @@ Setup in vitro transcription/translation reactions using the NEB PURExpress
 system (E6800).
 
 Usage:
-    purespress.py <num_rxns>
+    purespress.py <num_rxns> [-v <uL>]
+
+Options:
+    -v --rxn-volume <uL>  [default: 10]
+        The volume of each individual reaction (in μL).  NEB recommends 25 μL, 
+        but I typically use 10 μL and get enough yield for routine experiments.
 """
 
 import docopt
@@ -25,7 +30,8 @@ ZnOAc                 1 mM    0.5 μL         yes
 DNA                  75 nM    0.8 μL
 ''')
 
-purexpress.num_reactions = int(args['<num_rxns>'])
+purexpress.num_reactions = eval(args['<num_rxns>'])
+purexpress.volume = eval(args['--rxn-volume'])
 purexpress.show_master_mix = True
 
 protocol += f"""\
