@@ -1,0 +1,23 @@
+cmd: ./protocols/purexpress.py 4
+repo: git@github.com:kalekundert/bind_dna.git
+commit: 88c1264bcfafd03248667d1b5568371efc5d2fd7
+date: June 22, 2019
+
+1. Setup 4 IVTT reactions:
+
+   Reagent             Conc  Each Rxn  Master Mix
+   ──────────────────────────────────────────────
+   water                      1.50 μL     6.60 μL
+   A                          4.00 μL    17.60 μL
+   B                          3.00 μL    13.20 μL
+   RNase Inhibitor  40 U/μL   0.20 μL     0.88 μL
+   ZnOAc               1 mM   0.50 μL     2.20 μL
+   DNA                75 nM   0.80 μL            
+   ──────────────────────────────────────────────
+                             10.00 μL     9.20 μL/rxn
+
+   - Keep on ice.
+   - Be sure to add A before B.
+   - The control template (125 ng/μL) is 75 nM.
+
+2. Incubate at 37°C for 2h.

@@ -1,0 +1,35 @@
+cmd: ./pcr.py 3 58 -M -v 50
+repo: git@github.com:kalekundert/wetlab_protocols.git
+commit: 1168ec89e0b733825bfaa723b11ff4b1afac7416
+date: June 20, 2019
+
+1. Prepare each 10x primer mix:
+
+   Reagent           Conc  Each Rxn
+   ────────────────────────────────
+   water                   36.00 μL
+   forward primer  100 μM   2.00 μL
+   reverse primer  100 μM   2.00 μL
+   ────────────────────────────────
+                           40.00 μL
+
+2. Setup 3 PCR reactions and 1 negative control:
+
+   Reagent             Conc  Each Rxn  Master Mix
+   ──────────────────────────────────────────────
+   water                     19.00 μL    76.00 μL
+   primer mix           10x   5.00 μL            
+   template DNA   100 pg/μL   1.00 μL            
+   Q5 master mix         2x  25.00 µL   100.00 µL
+   ──────────────────────────────────────────────
+                             50.00 μL    44.00 μL/rxn
+
+3. Run the following thermocycler protocol:
+
+   - 98°C for 30s
+   - Repeat 35x:
+     - 98°C for 10s
+     - 58°C for 20s
+     - 72°C for 2 min
+   - 72°C for 2 min
+   - 4°C hold
