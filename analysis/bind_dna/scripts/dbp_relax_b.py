@@ -40,6 +40,10 @@ Options:
         default, nothing will be overwritten and the program will exit with a 
         message explaining the error.
 
+    --debug
+        Dramatically reduce the quality of the simulation in order to complete 
+        quickly.  In particular, the use of extra rotamers is disabled.
+
 Before using Rosetta to perform protein design, the input structure must be 
 relaxed in the Rosetta score function.  The goal of the relaxation step is to 
 produce a model that scores as low as possible while remaining as similar as 
@@ -101,6 +105,7 @@ def main():
                 args['<xtal>'],
                 output_dir=args['--output'],
                 overwrite=args['--force'],
+                debug=args['--debug'],
         )
 
         init_rosetta()
@@ -236,12 +241,14 @@ def init_rosetta():
             '-relax:coord_cst_stdev 0.5',  # default: 0.5
             '-relax:constrain_relax_to_start_coords on',
             '-relax:ramp_constraints off',
+            #'-out:levels core.pack.rotamer_set.RotamerSet_:400',
+            '-out:levels core.pack.rotamer_set.RotamerSet_.extra_rotamers:500',
     ]
     pyrosetta.init(' '.join(flags), set_logging_handler='logging')
 
-def relax_pose(pose):
+def relax_pose(pose, debug=False):
     sfxn = load_score_function()
-    tf = load_task_factory()
+    tf = load_task_factory(debug)
     mm = load_move_map()
     relax = load_fast_relax(sfxn, tf, mm)
 
@@ -251,31 +258,77 @@ def relax_pose(pose):
 def load_score_function():
     return core.scoring.ScoreFunctionFactory.create_score_function('ref2015')
 
-def load_extra_rotamers():
-    ex = core.pack.task.operation.ExtraRotamersGeneric()
-
-    # Use extra rotamers for all χ angles: Arg and Lys are important for DNA 
-    # interfaces, so we want to sample those sidechains finely.
-    #ex.ex1(True)
-    #ex.ex2(True)
-    #ex.ex3(True)
-    #ex.ex4(True)
-
-    # DNA rotamers
-    ex.exdna_sample_level(core.pack.task.NO_EXTRA_CHI_SAMPLES) # 1 rot/nt
-
-    return ex
-    
-def load_task_factory():
+def load_task_factory(debug=False):
     tf = core.pack.task.TaskFactory()
+
     # FastRelax automatically adds the `IncludeCurrent` task operation, so 
     # adding it here is redundant, but hopefully helpful in terms of clarity.
     tf.push_back(core.pack.task.operation.IncludeCurrent())
     tf.push_back(core.pack.task.operation.RestrictToRepacking())
-    tf.push_back(load_extra_rotamers())
+
+    load_extra_rotamers(tf, debug)
 
     return tf
 
+def load_extra_rotamers(tf, debug=False):
+    from pyrosetta.rosetta.core.pack.task.operation import (
+            OperateOnResidueSubset,
+    )
+    from pyrosetta.rosetta.core.select.residue_selector import (
+            ResiduePropertySelector,
+            AndResidueSelector as And,
+            NotResidueSelector as Not,
+    )
+
+    protein_sele = ResiduePropertySelector(core.chemical.PROTEIN)
+    dna_sele = ResiduePropertySelector(core.chemical.DNA)
+    interface_sele = load_interface_sele(protein_sele, dna_sele)
+    noninterface_sele = Not(interface_sele)
+
+    task_op_args = [
+            (protein_sele, interface_sele,    load_protein_interface_rlt),
+            (protein_sele, noninterface_sele, load_protein_noninterface_rlt),
+            (dna_sele,     interface_sele,    load_dna_interface_rlt),
+            (dna_sele,     noninterface_sele, load_dna_noninterface_rlt),
+    ]
+
+    for chain_sele, interface_sele, rlt in task_op_args:
+        sele = And(chain_sele, interface_sele)
+        tf.push_back(OperateOnResidueSubset(rlt(debug), sele))
+
+def load_interface_sele(protein_sele, dna_sele):
+    return core.select.residue_selector.\
+            InterGroupInterfaceByVectorSelector(protein_sele, dna_sele)
+
+def load_protein_interface_rlt(debug=False):
+    ex = core.pack.task.operation.ExtraRotamersGenericRLT()
+
+    # Use extra rotamers for all χ angles near the interface: Arg and Lys are 
+    # important for DNA interfaces, so we want to sample those sidechains 
+    # finely.
+    ex.ex1(not debug)
+    ex.ex2(not debug)
+    ex.ex3(not debug)
+    ex.ex4(not debug)
+    ex.extrachi_cutoff(1)
+
+    return ex
+
+def load_protein_noninterface_rlt(debug=False):
+    ex = core.pack.task.operation.ExtraRotamersGenericRLT()
+    ex.ex1(not debug)
+    ex.ex2(not debug)
+    ex.extrachi_cutoff(1)
+    return ex
+
+def load_dna_interface_rlt(debug=False):
+    ex = core.pack.task.operation.ExtraRotamersGenericRLT()
+    ex.exdna_sample_level(core.pack.task.NO_EXTRA_CHI_SAMPLES) # 1 rot/nt
+    return ex
+
+def load_dna_noninterface_rlt(debug=False):
+    return load_dna_interface_rlt(debug)
+    
 def load_move_map():
     mm = core.kinematics.MoveMap()
     mm.set_bb(True)
@@ -328,9 +381,10 @@ def rmsds_from_b_factors(bs):
     
 class Workspace:
 
-    def __init__(self, xtal_path, output_dir, overwrite=False):
+    def __init__(self, xtal_path, output_dir, overwrite=False, debug=False):
         xtal_path = Path(xtal_path)
         self.root = Path(output_dir.replace('?', xtal_path.stem)).resolve()
+        self.debug = debug
 
         if self.root.exists():
             if overwrite:
