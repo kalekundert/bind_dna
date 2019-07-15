@@ -1,0 +1,83 @@
+LOCUS       X12587                   250 bp    DNA     linear   BCT 26-JUL-2016
+DEFINITION  E. coli R1 plasmid CIS region (between repA and oriR).
+ACCESSION   X12587
+VERSION     X12587.1
+KEYWORDS    origin of replication; plasmid; regulatory region; repA gene.
+SOURCE      Escherichia coli
+  ORGANISM  Escherichia coli
+            Bacteria; Proteobacteria; Gammaproteobacteria; Enterobacterales;
+            Enterobacteriaceae; Escherichia.
+REFERENCE   1  (bases 1 to 250)
+  AUTHORS   Masai,H. and Arai,K.
+  TITLE     RepA protein- and oriR-dependent initiation of R1 plasmid
+            replication: identification of a rho-dependent transcription
+            terminator required for cis-action of repA protein
+  JOURNAL   Nucleic Acids Res. 16 (14A), 6493-6514 (1988)
+   PUBMED   3041379
+FEATURES             Location/Qualifiers
+     source          1..250
+                     /organism="Escherichia coli"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:562"
+                     /plasmid="R1"
+     precursor_RNA   <1..223
+                     /note="minor repA transcript"
+     precursor_RNA   <1..184
+                     /note="minor repA transcript"
+     precursor_RNA   <1..118
+                     /note="minor repA transcript"
+     precursor_RNA   <1..99
+                     /note="major repA transcript"
+     CDS             <1..51
+                     /codon_start=1
+                     /transl_table=11
+                     /product="repA protein (16 AA)"
+                     /protein_id="CAA31100.1"
+                     /db_xref="GOA:P03066"
+                     /db_xref="InterPro:IPR003446"
+                     /db_xref="InterPro:IPR017837"
+                     /db_xref="UniProtKB/Swiss-Prot:P03066"
+                     /translation="ILSRNRNYSRLATASP"
+     regulatory      82..100
+                     /regulatory_class="terminator"
+                     /note="pot. stem loop structure; major transcription
+                     terminator"
+     repeat_region   82..89
+                     /note="inverted repeat A"
+     repeat_region   93..100
+                     /note="inverted repeat A'"
+     regulatory      102..120
+                     /regulatory_class="terminator"
+                     /note="pot. stem loop structure; minor transcription
+                     terminator"
+     repeat_region   102..110
+                     /note="inverted repeat B"
+     repeat_region   112..120
+                     /note="inverted repeat B'"
+     regulatory      167..183
+                     /regulatory_class="terminator"
+                     /note="pot. stem loop structure; minor transcription
+                     terminator"
+     repeat_region   167..174
+                     /note="inverted repeat C"
+     repeat_region   176..183
+                     /note="inverted repeat C'"
+     regulatory      197..223
+                     /regulatory_class="terminator"
+                     /note="pot. stem loop structure; minor transcription
+                     terminatior"
+     repeat_region   197..208
+                     /note="inverted repeat D"
+     repeat_region   213..223
+                     /note="inverted repeat D'"
+     rep_origin      224..>250
+                     /note="minimum oriR region"
+     misc_feature    227..235
+                     /note="dnaA bindindg site"
+ORIGIN      
+        1 attctgtcac gtaaccgcaa ttacagccgg ctggccacag cttctccctg aaagtgatct
+       61 cctcagaata atccggcctg cgccggaggc atccgcacgc ctgaagcccg ccggtgcaca
+      121 aaaaaacagc gtcgcatgca aaaaacaatc tcatcatcca ccttctggag catccgattc
+      181 cccctgtttt taatacaaaa tacgcctcag cgacggggaa ttttgcttat ccacatttaa
+      241 ctgcaaggga
+//

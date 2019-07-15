@@ -1,0 +1,28 @@
+cmd: ./golden_gate.py 1 3 -m bb -e Esp3I,SapI
+repo: git@github.com:kalekundert/wetlab_protocols.git
+commit: f28d5f62950ca9dde735104667331f30ab41c154
+date: April 22, 2019
+
+1. Setup the Golden Gate reaction(s):
+
+   Reagent               Conc  Each Rxn  Master Mix
+   ────────────────────────────────────────────────
+   Water                        5.50 μL    18.15 μL
+   Backbone                     1.00 μL     3.30 μL
+   Insert                       0.50 μL            
+   T4 ligase buffer       10x   1.00 μL     3.30 μL
+   T4 DNA ligase     400 U/μL   0.50 μL     1.65 μL
+   DpnI               20 U/μL   0.50 μL     1.65 μL
+   Esp3I              10 U/μL   0.50 μL     1.65 μL
+   SapI               10 U/μL   0.50 μL     1.65 μL
+   ────────────────────────────────────────────────
+                               10.00 μL     9.50 μL/rxn
+
+2. Run the following thermocycler protocol:
+
+   - Repeat 30 times:
+       - 42°C for 5 min
+       - 16°C for 5 min
+   - 55°C for 10 min
+
+3. Transform all 10 μL of the Golden Gate reaction.

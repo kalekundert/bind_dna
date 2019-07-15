@@ -1,0 +1,127 @@
+LOCUS       V00351                  3017 bp    DNA     linear   BCT 26-JUL-2016
+DEFINITION  Plasmid RSC13, derived from plasmid R1. Contains a copy of the
+            transposon TN3 and 4 or 5 reading frames of unknown function.
+ACCESSION   V00351
+VERSION     V00351.1
+KEYWORDS    insertion sequence; transposon; unidentified reading frame.
+SOURCE      Escherichia coli
+  ORGANISM  Escherichia coli
+            Bacteria; Proteobacteria; Gammaproteobacteria; Enterobacterales;
+            Enterobacteriaceae; Escherichia.
+REFERENCE   1  (bases 1 to 3017)
+  AUTHORS   Ryder,T.B., Davidson,D.B., Rosen,J.I., Ohtsubo,E. and Ohtsubo,H.
+  TITLE     Analysis of plasmid genome evolution based on nucleotide-sequence
+            comparison of two related plasmids of Escherichia coli
+  JOURNAL   Gene 17 (3), 299-310 (1982)
+   PUBMED   6286411
+REFERENCE   2  (bases 1 to 3017)
+  AUTHORS   Blomberg,P., Nordstrom,K. and Wagner,E.G.
+  TITLE     Replication control of plasmid R1: RepA synthesis is regulated by
+            CopA RNA through inhibition of leader peptide translation
+  JOURNAL   EMBO J. 11 (7), 2675-2683 (1992)
+   PUBMED   1378398
+FEATURES             Location/Qualifiers
+     source          1..3017
+                     /organism="Escherichia coli"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:562"
+                     /plasmid="RSC13"
+     CDS             442..702
+                     /note="unnamed protein product; reading frame REPA2"
+                     /codon_start=1
+                     /transl_table=11
+                     /protein_id="CAA23640.1"
+                     /db_xref="InterPro:IPR019661"
+                     /db_xref="UniProtKB/TrEMBL:Q79AW5"
+                     /translation="MSQTENAVTSSLSQKRFVRRGKPMTDSEKQMAAVARKRLTHKEI
+                     KVFVKNPLKDLMVEYCEREGITQAQFVEKIIKDELQRLDILK"
+     misc_feature    742
+                     /note="start of RNA II"
+     CDS             796..981
+                     /note="unnamed protein product; reading frame REPA3"
+                     /codon_start=1
+                     /transl_table=11
+                     /protein_id="CAA23641.1"
+                     /db_xref="UniProtKB/TrEMBL:Q47617"
+                     /translation="MWIYRSQKSKNPDNLLQLWRIRKDYRGPLKPYSQQFSYAGSIVI
+                     CPEKFKTSFCARSFCAL"
+     misc_feature    complement(909)
+                     /note="start of RNA I"
+     CDS             994..1851
+                     /note="unnamed protein product; reading frame REPA1"
+                     /codon_start=1
+                     /transl_table=11
+                     /protein_id="CAA23642.1"
+                     /db_xref="GOA:Q47618"
+                     /db_xref="InterPro:IPR003446"
+                     /db_xref="InterPro:IPR017837"
+                     /db_xref="UniProtKB/TrEMBL:Q47618"
+                     /translation="MTDLHQTYYRQVKNPNPVFTPREGAGTLKFCEKLMEKAVGFTSR
+                     FDFAIHVAHARSRGLRRRMPPVLRRRAIDALLQGLCFHYDPLANRVQCSITTLAIECG
+                     LATESGAGKLSITRATRALTFLSELGLITYQTEYDPLIGCYIPTDITFTLALFAALDV
+                     SEDAVAAARRSRVEWENKQRKKQGLDTLGMDELIAKAWRFVRERFRSYQTELQSRGIK
+                     RARARRDANRERQDIVTLVKRQLTREISEGRFTANGEAVKREVERRVKERMILSRNRN
+                     YSRLATASP"
+     CDS             2214..2600
+                     /note="unnamed protein product; reading frame REPA4"
+                     /codon_start=1
+                     /transl_table=11
+                     /protein_id="CAA23643.1"
+                     /db_xref="InterPro:IPR016422"
+                     /db_xref="UniProtKB/TrEMBL:Q47619"
+                     /translation="MHLPPQAAGPDRSHFSYNTQKQPPEKPRSSAEPKPQSPSLITEK
+                     RPRPGPKGRNRVAFNYECCNYIFIAVSLLAGSSQYTLVSGPHGPLTRRHAPTSGKPSS
+                     GPLRPRTEALSWLKAGMVWQGWGWVR"
+ORIGIN      
+        1 aacgtgagtt ttcgttccac tgagcgtcag accccattta cgacctgaac gcagacgccg
+       61 ggatattctt ctggaagagg ttctgaggca ggctggtatt ccgttgctca gaagtcacga
+      121 tgccagaaaa ctgctgcaga tgaccggaga atggctgaat acaacagggg ctgctcagca
+      181 gtcaccggaa catcgtagct gacgccttcg cgttgctcgg ttgtccaacc ccggaaacgg
+      241 gaaaaagcaa gttttccccg ctcccggcgt ttccataact gaaaaccata ctatttcaca
+      301 gtttaaatca cattaaacga cagtaatccc cgttgatttg tgcgccaaca cagatcttcg
+      361 tcacaattct caagtcgctg atttcaaaaa actgtagtat cctctgcgaa acgatccctg
+      421 tttgagtatt gaggaggcga gatgtcgcag acagaaaatg cagtgacttc ctcattgagt
+      481 caaaagcggt ttgtgcgcag aggtaagcct atgactgact ctgagaaaca aatggccgct
+      541 gttgcaagaa aacgtcttac acacaaagag ataaaagttt ttgtcaaaaa tcctctgaaa
+      601 gatctcatgg ttgagtactg cgagagagag gggataacac aggctcagtt cgttgagaaa
+      661 atcatcaaag atgaactgca gagactggat atactaaagt aaagacttta ctttgtggcg
+      721 tagcatgcta gattactgat cgtttaagga attttgtggc tggccacgcc gtaaggtggc
+      781 aaggaactgg ttctgatgtg gatttacagg agccagaaaa gcaaaaaccc cgataatctt
+      841 cttcaacttt ggcgaatacg aaaagattac cggggcccac ttaaaccgta tagccaacaa
+      901 ttcagctatg cggggagtat agttatatgc ccggaaaagt tcaagacttc tttctgtgct
+      961 cgctccttct gcgcattgta agtgcaggat ggtgtgactg atcttcacca aacgtattac
+     1021 cgccaggtaa agaacccgaa tccggtgttc actccccgtg aaggtgccgg aacgctgaag
+     1081 ttctgcgaaa aactgatgga aaaggcggtg ggcttcacct cccgttttga tttcgccatt
+     1141 catgtggcgc atgcccgttc ccgtggtctg cgtcggcgca tgccaccggt gctgcgtcga
+     1201 cgggctattg atgcgctgct gcaggggctg tgtttccact atgacccgct ggccaaccgc
+     1261 gtccagtgtt ccatcaccac actggccatt gagtgcggac tggcgacaga gtccggtgca
+     1321 ggaaaactct ccatcacccg tgccacccgg gccctgacgt tcctgtcaga gctgggactg
+     1381 attacctacc agacggaata tgacccgctt atcgggtgct acattccgac cgacatcacg
+     1441 ttcacactgg ctctgtttgc tgcccttgat gtgtctgagg atgcagtggc agctgcgcgc
+     1501 cgcagtcgtg ttgaatggga aaacaaacag cgcaaaaagc aggggctgga taccctgggt
+     1561 atggatgagc tgatagcgaa agcctggcgt tttgtgcgtg agcgtttccg cagttaccag
+     1621 acagagcttc agtcccgtgg aataaaacgt gcccgtgcgc gtcgtgatgc gaacagagaa
+     1681 cgtcaggata tcgtcaccct agtgaaacgg cagctgacgc gtgaaatctc ggaaggacgc
+     1741 ttcactgcta atggtgaggc ggtaaaacgc gaagtggagc gtcgtgtgaa ggagcgcatg
+     1801 attctgtcac gtaaccgcaa ttacagccgg ctggccacag cttctccctg aaagtgatct
+     1861 cctcagaata atccggcctg cgccggaggc atccgcacgc ctgaagcccg ccggtgcaca
+     1921 aaaaaacagc gtcgcatgca aaaaacaatc tcatcatcca ccttctggag catccgattc
+     1981 cccctgtttt taatacaaaa tacgcctcag cgacggggaa ttttgcttat ccacatttaa
+     2041 ctgcaaggga cttccccata aggttacaac cgttcatgtc ataaagcgcc agccgccagt
+     2101 cttacagggt gcaatgtatc ttttaaacac ctgtttatat ctcctttaaa ctacttaatt
+     2161 acattcattt aaaaagaaaa cctattcact gcctgtcctg tggacagaca gatatgcacc
+     2221 tcccaccgca agcggcgggc cccgaccgga gccactttag ttacaacaca caaaaacaac
+     2281 ctccagaaaa accccggtcc agcgcagaac cgaaaccaca aagcccctcc ctcataactg
+     2341 aaaagcggcc ccgccccggc ccaaagggcc ggaacagagt cgcttttaat tatgaatgtt
+     2401 gtaactacat cttcatcgct gtcagtcttc tcgctggaag ttctcagtac acgctcgtaa
+     2461 gcggccctca cggcccgcta acgcggagac acgccccgac ttcgggtaaa ccctcgtcgg
+     2521 gaccactccg accgcgcaca gaagctctct catggctgaa agcgggtatg gtctggcagg
+     2581 gctggggatg ggtaaggtga aatctatcaa tcagtaccgg cttacgccgg gcttcggcgg
+     2641 ttttactcct gtatcatatg aaacaacaga gtgccgcctt ccatgccgct gatgcggcat
+     2701 atcctggtaa cgatatctga attgttatac atgtgtatat acgtggtaat gacaaaaata
+     2761 ggacaagtta aaaatttaca ggcgatgcaa tgattcaaac acgtaatcaa tatctgcagt
+     2821 ttatgctggt tatgctggct gcatggggca ttagttcggg agccagattt gtcatggagc
+     2881 aggccgttct gctttatgga tcaggaaaaa actatttgtt cttcagtcat ggtactgttc
+     2941 tgatgtacct gctgtgtgtt ttcctggtat acggggtctg acgctcagtg gaacgaaaac
+     3001 tcacgttaag ggatttt
+//

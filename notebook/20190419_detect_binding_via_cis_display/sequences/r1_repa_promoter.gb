@@ -1,0 +1,41 @@
+LOCUS       X59505                   266 bp    DNA     linear   BCT 15-AUG-1995
+DEFINITION  E.coli DNA for a region extending from repA promoter to the RepA
+            reading frame of plasmid R1.
+ACCESSION   X59505
+VERSION     X59505.1
+KEYWORDS    intergenic region.
+SOURCE      Escherichia coli
+  ORGANISM  Escherichia coli
+            Bacteria; Proteobacteria; Gammaproteobacteria; Enterobacterales;
+            Enterobacteriaceae; Escherichia.
+REFERENCE   1  (bases 1 to 266)
+  AUTHORS   Berzal-Herranz,A., Wagner,E.G. and Diaz-Orejas,R.
+  TITLE     Control of replication of plasmid R1: the intergenic region between
+            copA and repA modulates the level of expression of repA
+  JOURNAL   Mol. Microbiol. 5 (1), 97-108 (1991)
+   PUBMED   1707477
+REFERENCE   2  (bases 1 to 266)
+  AUTHORS   Wagner,E.G., Blomberg,P. and Nordstrom,K.
+  TITLE     Replication control in plasmid R1: duplex formation between the
+            antisense RNA, CopA, and its target, CopT, is not required for
+            inhibition of RepA synthesis
+  JOURNAL   EMBO J. 11 (3), 1195-1203 (1992)
+   PUBMED   1372249
+REFERENCE   3  (bases 1 to 266)
+  AUTHORS   Blomberg,P., Nordstrom,K. and Wagner,E.G.
+  TITLE     Replication control of plasmid R1: RepA synthesis is regulated by
+            CopA RNA through inhibition of leader peptide translation
+  JOURNAL   EMBO J. 11 (7), 2675-2683 (1992)
+   PUBMED   1378398
+FEATURES             Location/Qualifiers
+     source          1..266
+                     /organism="Escherichia coli"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:562"
+ORIGIN      
+        1 gatcgtttaa ggaattttgt ggctggccac gccgtaaggt ggcaaggaac tggttctgat
+       61 gtggatttac aggagccaga aaagcaaaaa ccccgataat cttcttcaac tttggcgagt
+      121 acgaaaagat taccggggcc cacttaaacc gtatagccaa caattcagct atgcggggag
+      181 tatagttata tgcccggaaa agttcaagac ttctttctgt gctcgctcct tctgcgcatt
+      241 gtaagtgcag gatggtgtga ctgatc
+//
