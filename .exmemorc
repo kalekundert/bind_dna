@@ -1,0 +1,10 @@
+[[data]]
+type = 'rsync'
+src = 'o2:dbp/data/o2'
+
+[[data]]
+type = 'usb'
+src = '~/usb/qpcr/'
+dest = 'qpcr'
+mountpoint = '~/usb'
+precmd = 'python ~/usb/qpcr/compact_biorad_data.py -q'
