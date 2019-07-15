@@ -114,6 +114,9 @@ From talking with David Johnson:
            plasmids...  But wait, I'd need some kind of sequencing step to know 
            which protein went with which barcode...
 
+         - I might also be able to do an oligo pool with a bunch of subpools 
+           (e.g. amplify with orthogonal PCR primers).
+
       - Clone protein library with a pulldown tag.
          
          - [Zykovich2009]_ used MBP/amylose.
@@ -354,9 +357,9 @@ What I distilled from the above feedback:
       - Backbone H-bonds for structured loops
       - Glycines to relieve strain in β-barrels
 
-   - Of course, this doesn't have to be true.  Any design will need to gets 
-     lots of things right.  What I'm assuming is that most of the time, one of 
-     those things will be more important than any of the others, and contribute 
+   - Of course, this doesn't have to be true.  Any design will need to get lots 
+     of things right.  What I'm assuming is that most of the time, one of those 
+     things will be more important than any of the others, and contribute 
      disproportionately to the success of the design.
 
       - I also think it's useful to think of problems in terms of: "What's the 
@@ -435,6 +438,44 @@ What I distilled from the above feedback:
      it will be easier with more designs.  Each design might fail for its own 
      reasons, but with 10K designs, we should be able to see some patterns and 
      identify the most common failure modes.
+
+
+2019/06/26:
+
+Talk with Alex Garruss:
+
+- The lab has had trouble getting these display techniques to work.
+
+   - I should talk to Nancy; she apparently spent 2 years trying to get mRNA or 
+     cDNA display to work.  Kettner should have her email address.
+
+   - If I decide that I really want to get cDNA display to work, I should think 
+     about trying to visit the lab that published those papers.  George can 
+     afford it, and it'd be the fastest way to learn the technique.
+
+- An alternative to B1H would be the following droplet-based assay:
+
+   - Assay:
+
+      - Construct DNA sequences with the following elements (in order):
+
+         - DNA binding site
+         - Promoter
+         - Protein of interest (i.e. library member)
+
+      - Express the designs in droplets using cell-free extract.
+
+      - Hook up the protein of interest so that if it binds before the promoter, 
+        it recruits the polymerase and results in the amplification of its own 
+        sequence.
+
+      - Sequence to see which designs are most represented.
+
+   - The advantage of B1H is that it's an established assay.  This assay would 
+     need to be developed.  
+
+   - This assay would presumably be more quantitative than B1H, but not more 
+     quantitative than the other in vitro assays I'm considering.
 
 
 

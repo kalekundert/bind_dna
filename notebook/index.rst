@@ -1,5 +1,5 @@
-cDNA ligation
-=============
+Design DNA-binding proteins
+===========================
 
 .. toctree::
    :maxdepth: 1
