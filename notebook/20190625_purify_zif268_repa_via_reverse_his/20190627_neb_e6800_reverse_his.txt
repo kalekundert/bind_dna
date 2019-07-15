@@ -1,0 +1,47 @@
+cmd: ./protocols/neb_e6800_reverse_his.txt
+repo: git@github.com:kalekundert/bind_dna.git
+commit: 44fd1a437df7748c7915cb1166ecc11fe45353f6
+date: June 27, 2019
+
+Protocol
+========
+1. Dilute sample to 100 μL in 10 mM MgOAc or other 
+   diluent [1].
+
+2. Apply the diluted reaction mixture to a Amicon 
+   Ultracel 0.5 ml-100K spin concentrator (0.5 ml 
+   maximum load volume) and centrifuge for 30–60 min 
+   at 15,000 x g at 4°C [2].
+
+3. Transfer the flow-thru to a new tube.  Add 0.25 
+   volumes Ni-NTA Agarose and mix thoroughly for 
+   30-45 min at 4°C to allow His-tagged components to 
+   bind the resin.
+
+4. Apply the reaction mixture slurry to an empty 
+   Bio-Rad micro-spin column and centrifuge for 2 min 
+   at 1500 xg at 4°C.
+
+5. Collect eluate containing purified protein and 
+   proceed with experimental analysis.
+
+Notes
+=====
+[1] We recommend a minimum volume of 100 μl after 
+    dilution to minimize losses during purification. 
+    If the target will be too dilute after addition 
+    of the diluent, we suggest a larger reaction 
+    volume be used.  Use of concentrated NaCl to 
+    dilute the reaction may help dissociate complexes 
+    between the target protein and translation 
+    factors. The NaCl will remain, however, after the 
+    final elution and downstream applications may 
+    require microdialysis. We suggest limiting the 
+    final concentration of NaCl to ≤ 400 mM after 
+    dilution. Additionally, magnesium acetate should 
+    be included to keep [Mg2+] close to 10 mM.
+
+[2] If necessary, higher centrifuged forces can be 
+    used to push the mixture through the membrane up 
+    to the recommended limit of concentration used.
+
