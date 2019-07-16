@@ -8,7 +8,7 @@ Usage:
     dbp_relax_b init [<workspace>] <xtal> [-fd]
     dbp_relax_b optimize <workspace> [-fP]
     dbp_relax_b relax <workspace> [<id>] [-f]
-    dbp_relax_b finish <workspace>
+    dbp_relax_b finish <workspace> [-f]
 
 Example:
     The first step is to create a new workspace (i.e. a directory which will 
@@ -181,9 +181,9 @@ def main():
             run_relax_step(work, id=args['<id>'], overwrite=args['--force'])
 
         if args['finish']:
-            pick_best_relaxed_model(work)
+            pick_best_relaxed_model(work, overwrite=args['--force'])
 
-    except WorkspaceExists as err:
+    except RefusingtoOverwrite as err:
         logger.error(err)
     except KeyboardInterrupt:
         print()
@@ -212,7 +212,7 @@ def init_workspace(xtal_path, name='relax_?', overwrite=False, debug=False):
         if overwrite:
             shutil.rmtree(root)
         else:
-            raise WorkspaceExists(root)
+            raise RefusingtoOverwrite(root)
 
     root.mkdir()
 
@@ -334,9 +334,35 @@ def run_relax_step(work, id=None, overwrite=False):
             score_diff_reu=score_diff,
     )
 
-def pick_best_relaxed_model(work):
-    path = work.steps['relax'].best_model['path']
-    work.record_relaxed_pose(path)
+def pick_best_relaxed_model(work, overwrite=False):
+    step = work.steps['relax']
+
+    def score_from_pdb(pdb_path):
+        with open(pdb_path) as f:
+            lines = f.readlines()
+
+        for line in lines:
+            if line.startswith('pose'):
+                return float(line.split()[-1])
+
+    scores = {
+            Path(x): score_from_pdb(x)
+            for x in step.pdb_paths
+    }
+    if not scores:
+        logger.error("no *.pdb files in '{step.root}'")
+        return
+
+    models = sorted(scores.keys(), key=lambda x: scores[x])
+    best_model = models[0]
+
+    logger.info(f"{len(models)} relaxed models.")
+    logger.info(f"Sorted scores:")
+    for model in models:
+        logger.info(f"{model.name:>10s}: {scores[model]:.3f}")
+
+    logger.info(f"Symlinking 'relaxed.pdb' to '{best_model.relative_to(work.root)}'.")
+    work.record_relaxed_pose(best_model, overwrite)
 
 
 def optimize_restraints(initial_pose, *,
@@ -645,7 +671,13 @@ class Workspace:
     def unrelaxed_pose(self):
         return pose_from_pdb(str(self.unrelaxed_path))
 
-    def record_relaxed_pose(self, path):
+    def record_relaxed_pose(self, path, overwrite=False):
+        if self.relaxed_path.exists():
+            if overwrite:
+                self.relaxed_path.unlink()
+            else:
+                raise RefusingtoOverwrite(self.relaxed_path)
+
         self.relaxed_path.symlink_to(
                 Path(path).relative_to(self.root))
 
@@ -656,7 +688,7 @@ class Workspace:
     @property
     def optimal_cst_stdev(self):
         if not self.cst_stdev_path.exists():
-            raise NotOptimized(self.root)
+            raise NotOptimized(self.cst_stdev_path)
 
         with self.cst_stdev_path.open() as f:
             return float(f.read())
@@ -699,7 +731,7 @@ class OptimizeStep(Step):
             if overwrite:
                 shutil.rmtree(self.root)
             else:
-                raise WorkspaceExists(self.root)
+                raise RefusingtoOverwrite(self.root)
 
         self.root.mkdir()
 
@@ -736,7 +768,6 @@ class RelaxStep(Step):
     def __init__(self, work):
         super().__init__(work, 'relax')
 
-        # Record the score of each relaxed model.
         self.scores_path = self.root / 'scores.json'
 
         if not self.scores_path.exists():
@@ -762,36 +793,37 @@ class RelaxStep(Step):
 
     def record(self, id, pose, **kwargs):
         id = str(id)
-        path = self.root / f'{id}.pdb'
-
-        # Let the user know what's going on.
-        if id in self.scores:
-            logger.warning(f"overwriting relaxed pose with id {id}: {self.scores[id]}")
-        logger.info(f"writing relaxed pose to '{path}'")
+        pdb_path = self.root / f'{id}.pdb'
+        json_path = self.root / f'{id}.json'
 
         # Write the PDB.
+        if pdb_path.exists():
+            logger.warning(f"overwriting '{pdb_path}'")
+        logger.info(f"writing relaxed pose to '{pdb_path}'")
+
         pose.dump_pdb(str(path))
 
-        # Add to the JSON log.
-        self.scores[id] = {
-                'path': str(path),
-                **kwargs,
-        }
+        # Write any keyword arguments to a JSON file.
+        if json_path.exists():
+            logger.warning(f"overwriting '{json_path}'")
+        logger.info(f"writing extra information to '{json_path}'")
 
-        with self.scores_path.open('w') as f:
-            json.dump(self.scores, f)
+        with json_path.open('w') as f:
+            x = {'path': pdb_path, 'id': id, **kwargs}
+            json.dump(x, f)
 
     @property
-    def best_model(self):
-        frames = sorted(self.scores.values(), key=lambda x: abs(x['score_reu']))
-        return frames[0]
+    def pdb_paths(self):
+        yield from self.root.glob('*.pdb')
 
-class WorkspaceExists(Exception):
+
+
+class RefusingtoOverwrite(Exception):
 
     def __init__(self, path):
         super().__init__(f"'{path}' already exists.  Use `-f` to overwrite it.")
 
 class NotOptimized(Exception):
 
-    def __init__(self):
-        super().__init__("cannot run `relax` before `optimize`.")
+    def __init__(self, path):
+        super().__init__(f"no optimization results found: '{path}'")
