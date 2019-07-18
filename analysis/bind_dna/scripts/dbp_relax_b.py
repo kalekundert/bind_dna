@@ -493,7 +493,7 @@ def init_rosetta(test_cycles=False, constant_seed=False):
             '-relax:coord_cst_stdev 0.5',  # default: 0.5
             '-relax:constrain_relax_to_start_coords on',
             '-relax:ramp_constraints off',
-           f'-run:test_cycles {"on" if test_cycles else "off"}',
+            '-run:test_cycles', 'on' if test_cycles else 'off',
             '-dna:specificity:exclude_dna_dna off',
             '-out:levels core.pack.rotamer_set.RotamerSet_.extra_rotamers:500',
     ]
@@ -801,7 +801,7 @@ class RelaxStep(Step):
             logger.warning(f"overwriting '{pdb_path}'")
         logger.info(f"writing relaxed pose to '{pdb_path}'")
 
-        pose.dump_pdb(str(path))
+        pose.dump_pdb(str(pdb_path))
 
         # Write any keyword arguments to a JSON file.
         if json_path.exists():
