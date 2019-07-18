@@ -588,7 +588,8 @@ def load_protein_noninterface_rlt():
 
 def load_dna_interface_rlt():
     ex = core.pack.task.operation.ExtraRotamersGenericRLT()
-    ex.exdna_sample_level(core.pack.task.NO_EXTRA_CHI_SAMPLES) # 1 rot/nt
+    #ex.exdna_sample_level(core.pack.task.NO_EXTRA_CHI_SAMPLES) # 1 rot/nt
+    ex.exdna_sample_level(core.pack.task.EX_SIX_QUARTER_STEP_STDDEVS) # DB
     return ex
 
 def load_dna_noninterface_rlt():
