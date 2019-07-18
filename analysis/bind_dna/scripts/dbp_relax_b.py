@@ -809,7 +809,7 @@ class RelaxStep(Step):
         logger.info(f"writing extra information to '{json_path}'")
 
         with json_path.open('w') as f:
-            x = {'path': pdb_path, 'id': id, **kwargs}
+            x = {'path': str(pdb_path), 'id': id, **kwargs}
             json.dump(x, f)
 
     @property
