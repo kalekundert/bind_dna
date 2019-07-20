@@ -9,6 +9,7 @@ Usage:
     dbp_relax_b optimize <workspace> [-fP]
     dbp_relax_b relax <workspace> [<id>] [-f]
     dbp_relax_b finish <workspace> [-f]
+    dbp_relax_b show_traj <workspace>
 
 Example:
     The first step is to create a new workspace (i.e. a directory which will 
@@ -71,6 +72,10 @@ Subcommands:
     finish
         Identify the relaxed model with the best score.  A symlink to this 
         model named `relaxed.pdb` will be created in the workspace directory.
+
+    show_traj
+        List the scores for all the restraint weights that were tried, in both
+        the optimize and preoptimize steps. 
 
 Options:
     -P --skip-preoptimize
@@ -149,7 +154,7 @@ import sys, os, logging, shutil, stat, json, toml, functools
 from pathlib import Path
 from appdirs import AppDirs
 
-logger = logging.getLogger('dnp_relax_b')
+logger = logging.getLogger('dbp_relax_b')
 
 def main():
     try:
@@ -182,6 +187,9 @@ def main():
 
         if args['finish']:
             pick_best_relaxed_model(work, overwrite=args['--force'])
+
+        if args['show_traj']:
+            show_trajectories(work)
 
     except RefusingtoOverwrite as err:
         logger.error(err)
@@ -256,6 +264,31 @@ optimize.restraint-range = [0.5, 5.0]
 # the optimal value found during preoptimization plus/minus the specified 
 # value.  This overrides `optimize.restraint-range`.
 optimize.preoptimize-delta = 0.5
+""")
+
+    # Copy the sbatch scripts into the workspace:
+
+    with (root/'optimize.sbatch').open('w') as f:
+        f.write("""\
+#!/bin/bash
+
+#SBATCH --time 5-0
+#SBATCH --mem 4G
+#SBATCH --partition medium
+
+dbp_relax_b optimize .
+""")
+
+    with (root/'relax.sbatch').open('w') as f:
+        f.write("""\
+#!/bin/bash
+
+#SBATCH --time 1-0
+#SBATCH --mem 4G
+#SBATCH --partition medium
+#SBATCH --array 1-50
+
+dbp_relax_b relax .
 """)
 
     # Get the paths to everything in the workspace:
@@ -363,6 +396,24 @@ def pick_best_relaxed_model(work, overwrite=False):
 
     logger.info(f"Symlinking 'relaxed.pdb' to '{best_model.relative_to(work.root)}'.")
     work.record_relaxed_pose(best_model, overwrite)
+
+def show_trajectories(work):
+    from pprint import pprint
+    steps = 'preoptimize', 'optimize'
+
+    for name in steps:
+        step = work.steps[name]
+        if step.is_complete:
+            print(name.title())
+            pprint(step.trajectory)
+            print()
+
+    try:
+        cst_stdev = work.optimal_cst_stdev
+        print("Optimal restraint weight:")
+        print(cst_stdev)
+    except NotOptimized:
+        print("Optimization still in progress.")
 
 
 def optimize_restraints(initial_pose, *,
@@ -568,9 +619,9 @@ def load_interface_sele(protein_sele, dna_sele):
 def load_protein_interface_rlt():
     ex = core.pack.task.operation.ExtraRotamersGenericRLT()
 
-    # Use extra rotamers for all χ angles near the interface: Arg and Lys are 
-    # important for DNA interfaces, so we want to sample those sidechains 
-    # finely.
+    # Use extra rotamers for all residues and all χ angles near the interface.
+    # Arg and Lys are important for DNA interfaces, so we want to sample those
+    # sidechains finely.
     ex.ex1(True)
     ex.ex2(True)
     ex.ex3(True)
@@ -583,12 +634,10 @@ def load_protein_noninterface_rlt():
     ex = core.pack.task.operation.ExtraRotamersGenericRLT()
     ex.ex1(True)
     ex.ex2(True)
-    ex.extrachi_cutoff(1)
     return ex
 
 def load_dna_interface_rlt():
     ex = core.pack.task.operation.ExtraRotamersGenericRLT()
-    #ex.exdna_sample_level(core.pack.task.NO_EXTRA_CHI_SAMPLES) # 1 rot/nt
     ex.exdna_sample_level(core.pack.task.EX_SIX_QUARTER_STEP_STDDEVS) # DB
     return ex
 
@@ -696,7 +745,7 @@ class Workspace:
 
     @property
     def is_preoptimized(self):
-        return self.steps['preoptimize'].trajectory_path.exists()
+        return self.steps['preoptimize'].is_complete
 
 
 class Step:
@@ -764,6 +813,11 @@ class OptimizeStep(Step):
         frames = sorted(self.trajectory.values(), key=lambda x: abs(x['objective']))
         return frames[0]
 
+    @property
+    def is_complete(self):
+        return self.trajectory_path.exists()
+
+
 class RelaxStep(Step):
 
     def __init__(self, work):
@@ -816,7 +870,6 @@ class RelaxStep(Step):
     @property
     def pdb_paths(self):
         yield from self.root.glob('*.pdb')
-
 
 
 class RefusingtoOverwrite(Exception):
