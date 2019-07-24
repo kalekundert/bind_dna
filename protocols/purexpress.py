@@ -5,7 +5,7 @@ Setup in vitro transcription/translation reactions using the NEB PURExpress
 system (E6800).
 
 Usage:
-    purexpress.py <num_rxns> [-v <uL>] [-t]
+    purexpress.py <num_rxns> [-v <uL>] [-t] [-z]
 
 Options:
     -v --rxn-volume <uL>  [default: 10]
@@ -14,6 +14,10 @@ Options:
 
     -t --add-target
         Add target DNA to the PURExpress reaction.
+
+    -z --add-zinc
+        Add ZnOAc to the PURExpress reaction.  This is necessary when 
+        expressing Zn-finger proteins.
 """
 
 import docopt
@@ -25,19 +29,27 @@ protocol = dirty_water.Protocol()
 purexpress = dirty_water.Reaction('''\
 Reagent               Conc  Each Rxn  Master Mix
 ===============  =========  ========  ==========
-water                         1.5 μL         yes
+water                         2.0 μL         yes
 A                             4.0 μL         yes
 B                             3.0 μL         yes
 RNase Inhibitor    40 U/μL    0.2 μL         yes
-ZnOAc                 1 mM    0.5 μL         yes
-template DNA         75 nM    0.8 μL
 ''')
+
+if args['--add-zinc']:
+    purexpress['ZnOAc'].std_stock_conc = 1, 'mM'
+    purexpress['ZnOAc'].std_volume = 0.5, 'μL'
+    purexpress['ZnOAc'].master_mix = True
+    purexpress['water'].std_volume = purexpress['water'].std_volume - 0.5, 'μL'
 
 if args['--add-target']:
     purexpress['target DNA'].std_stock_conc = 750, 'nM'
     purexpress['target DNA'].std_volume = 0.8, 'μL'
     purexpress['target DNA'].master_mix = True
-    purexpress['water'].std_volume = 0.7, 'μL'
+    purexpress['water'].std_volume = purexpress['water'].std_volume - 0.8, 'μL'
+
+purexpress['template DNA'].std_stock_conc = 75, 'nM'
+purexpress['template DNA'].std_volume = 0.8, 'μL'
+purexpress['template DNA'].master_mix = False
 
 purexpress.num_reactions = eval(args['<num_rxns>'])
 purexpress.volume = eval(args['--rxn-volume'])
