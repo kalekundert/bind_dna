@@ -51,6 +51,7 @@ else:
 # Molecular weights include primer overhangs (unlike the first time I did this 
 # calculation).
 mw_da = {
+        'Zif':       217898,
         '11':        981161,
         '11 - ORI':  760127,
         '23':       1341517.95,
@@ -63,7 +64,11 @@ mw_da = {
         '26 - ORI': 1332262.68 - 222428.32,
 }
 
-df['mw_da'] = df['amplicon'].apply(lambda x: mw_da[x])
+try:
+    df['mw_da'] = df['amplicon'].apply(lambda x: mw_da[x])
+except KeyError as err:
+    print(f"Unknown amplicon: {err}")
+    raise SystemExit
 
 df['stock_nM'] = 1e6 * df['stock_ng_uL'] / df['mw_da']
 df['stock_uL'] = final_uL * final_nM / df['stock_nM']
