@@ -5,7 +5,7 @@ Setup in vitro transcription/translation reactions using the NEB PURExpress
 system (E6800).
 
 Usage:
-    purexpress.py <num_rxns> [-v <uL>] [-t] [-z]
+    purexpress.py <num_rxns> [-v <uL>] [-t] [-z] [-p]
 
 Options:
     -v --rxn-volume <uL>  [default: 10]
@@ -18,6 +18,10 @@ Options:
     -z --add-zinc
         Add ZnOAc to the PURExpress reaction.  This is necessary when 
         expressing Zn-finger proteins.
+
+    -p --purify
+        Purify the expressed protein using the reverse-His protocol recommended 
+        by NEB.
 """
 
 import docopt
@@ -66,5 +70,49 @@ Setup {plural(purexpress.num_reactions):? IVTT reaction/s}:
 
 protocol += """\
 Incubate at 37°C for 2h."""
+
+if args['--purify']:
+
+    protocol += """\
+Dilute reaction to 100 μL with PBS [1]."""
+
+    protocol.notes += """\
+We recommend a minimum volume of 100 μl after 
+dilution to minimize losses during purification. 
+If the target will be too dilute after addition of 
+the diluent, we suggest a larger reaction volume 
+be used.
+
+Use of concentrated NaCl to dilute the reaction 
+may help dissociate complexes between the target 
+protein and translation factors.  The NaCl will 
+remain, however, after the final elution and 
+downstream applications may require microdialysis.  
+We suggest limiting the final concentration of 
+NaCl to ≤ 0.4 M after dilution.  Additionally, 
+magnesium acetate should be included to keep 
+[Mg2+] close to 10 mM."""
+
+    protocol += """\
+Apply the diluted reaction mixture to a Amicon 
+Ultracel 0.5 ml-100K spin concentrator."""
+
+    protocol += """\
+Spin 30 min, 15000g, 4°C."""
+
+    protocol += """\
+Add 0.25 volumes of Ni-NTA Agarose to the 
+flow-through."""
+
+    protocol += """\
+Mix continuously for 30-45 min at 4°C to allow 
+His-tagged components to bind the resin."""
+
+    protocol += """\
+Apply the reaction mixture slurry to an empty 
+Bio-Rad micro-spin column."""
+
+    protocol += """\
+Spin 2 min, 1500g, 4°C."""
 
 print(protocol)
