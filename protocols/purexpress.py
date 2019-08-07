@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
 """\
-Setup in vitro transcription/translation reactions using the NEB PURExpress 
-system (E6800).
+Setup in vitro transcription/translation (IVTT) reactions using the NEB 
+PURExpress system (E6800).
 
 Usage:
     purexpress.py <num_rxns> [-v <uL>] [-t] [-z] [-p]
@@ -22,6 +22,9 @@ Options:
     -p --purify
         Purify the expressed protein using the reverse-His protocol recommended 
         by NEB.
+
+    -n --native-page
+        Run the IVTT reaction on a native PAGE gel.
 """
 
 import docopt
@@ -72,7 +75,6 @@ protocol += """\
 Incubate at 37°C for 2h."""
 
 if args['--purify']:
-
     protocol += """\
 Dilute reaction to 100 μL with PBS [1]."""
 
@@ -114,5 +116,37 @@ Bio-Rad micro-spin column."""
 
     protocol += """\
 Spin 2 min, 1500g, 4°C."""
+
+if args['--sds-page']:
+    protocol += """\
+Setup an SDS-PAGE gel:
+
+- IVTT reactions:
+  - 10.00 μL IVTT reaction
+  -  3.85 μL 4x loading buffer
+  -  1.54 μL 10x reducing agent
+
+- Use a 4-12% gel (Invitrogen NW04120).
+- Load 15.39 μL in each lane.
+- Run at 165V for 42 min."""
+
+if args['--native-page']:
+    protocol += """\
+Setup a native PAGE gel:
+
+- DNA ladder:
+  - 2.5 μL water
+  - 5.0 μL 50 ng/μL ladder, i.e. 1kb+ (NEB N3232)
+  - 2.5 μL 4x sample buffer (Invitrogen BN2003)
+
+- IVTT reactions:
+  - 6.25 μL water
+  - 1.25 μL IVTT reaction
+  - 2.50 μL 4x sample buffer (Invitrogen BN2003)
+
+- Use a 3-12% gel (Invitrogen BN1003).
+- Load 5 μL in each lane.
+- Run at 150V for 155 min."""
+
 
 print(protocol)
