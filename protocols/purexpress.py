@@ -5,7 +5,7 @@ Setup in vitro transcription/translation (IVTT) reactions using the NEB
 PURExpress system (E6800).
 
 Usage:
-    purexpress.py <num_rxns> [-v <uL>] [-t] [-z] [-p]
+    purexpress.py <num_rxns> [-v <uL>] [-t] [-z] [-p] [-n] [-s]
 
 Options:
     -v --rxn-volume <uL>  [default: 10]
@@ -25,6 +25,9 @@ Options:
 
     -n --native-page
         Run the IVTT reaction on a native PAGE gel.
+
+    -s --sds-page
+        Run the IVTT reaction on an SDS-PAGE gel.
 """
 
 import docopt
