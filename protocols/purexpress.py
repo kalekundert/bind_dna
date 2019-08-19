@@ -79,7 +79,8 @@ Incubate at 37°C for 2h."""
 
 if args['--purify']:
     protocol += """\
-Dilute reaction to 100 μL with PBS [1]."""
+Dilute reaction to 100 μL with PBS [1].
+- Save a 10 μL aliquot"""
 
     protocol.notes += """\
 We recommend a minimum volume of 100 μl after 
@@ -103,7 +104,10 @@ Apply the diluted reaction mixture to a Amicon
 Ultracel 0.5 ml-100K spin concentrator."""
 
     protocol += """\
-Spin 30 min, 15000g, 4°C."""
+Spin 30 min, 15000g, 4°C.
+- Save a 10 μL aliquot of the flow-through.
+- Dilute the retentate to 100 μL, then save a
+  10 μL aliquot."""
 
     protocol += """\
 Add 0.25 volumes of Ni-NTA Agarose to the 
@@ -118,7 +122,8 @@ Apply the reaction mixture slurry to an empty
 Bio-Rad micro-spin column."""
 
     protocol += """\
-Spin 2 min, 1500g, 4°C."""
+Spin 2 min, 1500g, 4°C.
+- Save a 10 μL aliquot of the eluate."""
 
 if args['--sds-page']:
     protocol += """\
