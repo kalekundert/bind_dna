@@ -54,6 +54,8 @@ mw_da = {
         'Zif':       217898,
         '11':        981161,
         '11 - ORI':  760127,
+
+        # Are these all wrong?  ssDNA instead of dsDNA?
         '23':       1341517.95,
         '23 - ORI': 1341517.95 - 222428.32,
         '24':       1306315.78,
@@ -64,6 +66,11 @@ mw_da = {
         '26 - ORI': 1332262.68 - 222428.32,
         '27':       1275392.36,
         '27 + Cy5': 1275392.36 + 739,
+
+        '38':       2417871.33,
+        '39':       2371520.50,
+        '40':       2412306.80,
+
         'pKBK034':       1331538.73,
 
         'pKBK027': 2.38e6,
@@ -73,7 +80,7 @@ mw_da = {
 }
 
 try:
-    df['mw_da'] = df['amplicon'].apply(lambda x: mw_da[x])
+    df['mw_da'] = df['amplicon'].apply(lambda x: mw_da[str(x)])
 except KeyError as err:
     print(f"Unknown amplicon: {err}")
     raise SystemExit
