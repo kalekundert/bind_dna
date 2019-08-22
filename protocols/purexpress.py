@@ -79,7 +79,8 @@ Incubate at 37°C for 2h."""
 
 if args['--purify']:
     protocol += """\
-Dilute reaction to 100 μL with PBS [1].
+Dilute reaction to 100 μL with PBS + 10 mM 
+MgOAc[1].
 - Save a 10 μL aliquot"""
 
     protocol.notes += """\
@@ -129,10 +130,11 @@ if args['--sds-page']:
     protocol += """\
 Setup an SDS-PAGE gel:
 
-- IVTT reactions:
+- Prepare samples:
   - 10.00 μL IVTT reaction
   -  3.85 μL 4x loading buffer
   -  1.54 μL 10x reducing agent
+  - Incubate at 70°C for 10 min.
 
 - Use a 4-12% gel (Invitrogen NW04120).
 - Load 15.39 μL in each lane.
@@ -154,7 +156,7 @@ Setup a native PAGE gel:
 
 - Use a 3-12% gel (Invitrogen BN1003).
 - Load 5 μL in each lane.
-- Run at 150V for 155 min."""
+- Run at 150V for 115 min."""
 
 
 print(protocol)
