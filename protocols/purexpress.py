@@ -63,7 +63,6 @@ purexpress['template DNA'].master_mix = False
 
 purexpress.num_reactions = eval(args['<num_rxns>'])
 purexpress.volume = eval(args['--rxn-volume'])
-purexpress.show_master_mix = True
 
 protocol += f"""\
 Setup {plural(purexpress.num_reactions):? IVTT reaction/s}:
