@@ -72,7 +72,9 @@ protocol = dirty_water.Protocol()
 protocol += """\
 Digest the template plasmid(s) with XmnI:
 
-{digest}"""
+{digest}
+
+- Incubate 37°C for 1h, then at 65°C for 20 min."""
 
 # This is copied-and-pasted from another protocol, with only the bulleting 
 # changed.  How can I avoid this duplication?  Part of the problem is that the 
@@ -82,10 +84,10 @@ protocol += """\
 Do a phenol-chloroform extraction to remove any  
 RNase leftover from the plasmid prep.
 
-- Dilute the reaction to 100 µL with water.
+- Dilute the reaction to 500 µL with water.
    
-- Add 100 μL phenol:chloroform:isoamyl alcohol, pH 
-  8.0 (the correct pH for purifying DNA).
+- Add 500 μL phenol:chloroform:isoamyl alcohol, pH 
+  8.0 (i.e. the correct pH for purifying DNA).
 
 - Vortex vigorously to mix the phases.
 
@@ -108,10 +110,13 @@ RNase leftover from the plasmid prep.
 protocol += f"""\
 Precipitate and resuspend the DNA.
 
-- Add 0.1 volumes 3M NaOAc, pH 5.2 and optionally 
-  1 µL glycogen to the purified reaction.
+- Add to the purified DNA:
 
-- Incubate at -20°C for at least 30 min.
+  - 2 volumes 100% EtOH
+  - 0.1 volumes 3M NaOAc, pH 5.2
+  - 1 µL glycogen (optional)
+
+- Incubate at -80°C for 20-60 min.
 
 - Spin max speed, 15 min, 4°C.
 
@@ -123,7 +128,7 @@ Precipitate and resuspend the DNA.
 - Remove supernatant and air dry the pellet for 15 
   min at room temperature.
 
-- Resuspend the pellet {dna_ng/500} µL nuclease-free
+- Resuspend the pellet in {dna_ng/500} µL nuclease-free
   water (for a concentration of 500 ng/µL)."""
 
 # References:
