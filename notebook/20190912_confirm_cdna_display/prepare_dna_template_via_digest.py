@@ -48,8 +48,8 @@ digest = dirty_water.Reaction()
 digest.num_reactions = len(templates)
 
 if dna_uL < max_dna_uL:
-    digest['Water'].std_volume = max_dna_uL - dna_uL, 'µL'
-    digest['Water'].master_mix = True
+    digest['water'].std_volume = max_dna_uL - dna_uL, 'µL'
+    digest['water'].master_mix = True
 
 template_names = ','.join(templates)
 digest[template_names].std_volume = dna_uL, 'µL'
