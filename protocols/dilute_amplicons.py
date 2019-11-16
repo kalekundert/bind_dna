@@ -25,6 +25,11 @@ Options:
 import docopt
 import pandas as pd
 import toml
+import re
+import autosnapgene as snap
+from Bio.Seq import Seq
+from Bio.Alphabet import generic_dna
+from Bio.SeqUtils import molecular_weight
 from pathlib import Path
 
 args = docopt.docopt(__doc__)
@@ -77,6 +82,14 @@ mw_da = {
         '41 + Cy5':             1280950.03 + 739,
         '41 - repA + Cy5':       517178.59 + 739,
         '42 + Cy5':             1277239.69 + 739,
+        '55':                   1275392.36,
+        '55 + Cy5':             1275392.36 + 739,
+        '56':                   1275392.36,
+        '56 + Cy5':             1275392.36 + 739,
+        '57':                   1275392.36,
+        '57 + Cy5':             1275392.36 + 739,
+        '58':                   1275392.36,
+        '58 + Cy5':             1275392.36 + 739,
 
         'pKBK034': 1.33e6,
         'pKBK035': 1.78e6,
@@ -87,8 +100,35 @@ mw_da = {
         'pKBK040': 2.41e6,
 }
 
+PROJECT_DIR = Path(__file__).parents[1]
+PLASMID_DIR = PROJECT_DIR / 'sequences' / 'plasmids'
+
+DnaSeq = lambda x: Seq(x.upper(), generic_dna)
+
+def get_mw(tag):
+    name, *flags = re.findall('\d+|[+-~] \w+', tag.split('#')[0])
+
+    mw = 0
+    fwd = DnaSeq('AACGCGTAATACGACTCAC')  # 11
+    rev = DnaSeq('CTCTGACTTGAGCGTCG')    # 3
+
+    if '- ORI' in flags:
+        rev = DnaSeq('tcagggagaagctgtg')
+    if '- repA' in flags:
+        rev = DnaSeq('tttatacagttcatccatgcca')
+    if '+ Cy5' in flags:
+        mw += 739
+
+    dna = snap.parse(PLASMID_DIR / f'{int(name):03d}.dna')
+    seq = DnaSeq(dna.sequence)
+
+    primers = fwd, rev.reverse_complement()
+    i, j = sorted((seq.find(x) for x in primers))
+
+    return mw + molecular_weight(seq[i:j], double_stranded=True)
+
 try:
-    df['mw_da'] = df['amplicon'].apply(lambda x: mw_da[str(x)])
+    df['mw_da'] = df['amplicon'].apply(get_mw)
 except KeyError as err:
     print(f"Unknown amplicon: {err}")
     raise SystemExit
