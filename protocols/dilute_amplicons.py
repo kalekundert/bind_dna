@@ -106,9 +106,17 @@ PLASMID_DIR = PROJECT_DIR / 'sequences' / 'plasmids'
 DnaSeq = lambda x: Seq(x.upper(), generic_dna)
 
 def get_mw(tag):
-    name, *flags = re.findall('\d+|[+-~] \w+', tag.split('#')[0])
+    tag = str(tag)
 
-    mw = 0
+    # Use "pKBKxxx" to denote the whole plasmid.
+    if m := re.match('pKBK(\d+)', tag):
+        dna = snap.parse(PLASMID_DIR / f'{m.group(1):>03}.dna')
+        seq = DnaSeq(dna.sequence)
+        return molecular_weight(seq, double_stranded=True)
+
+    name, *flags = re.findall('\d+|[+-~] \w+', str(tag).split('#')[0])
+
+    flag_mw = 0
     fwd = DnaSeq('AACGCGTAATACGACTCAC')  # 11
     rev = DnaSeq('CTCTGACTTGAGCGTCG')    # 3
 
@@ -117,7 +125,7 @@ def get_mw(tag):
     if '- repA' in flags:
         rev = DnaSeq('tttatacagttcatccatgcca')
     if '+ Cy5' in flags:
-        mw += 739
+        flag_mw += 739
 
     dna = snap.parse(PLASMID_DIR / f'{int(name):03d}.dna')
     seq = DnaSeq(dna.sequence)
