@@ -1,0 +1,58 @@
+file: protocols/purexpress.py 10 -psz
+repo: git@github.com:kalekundert/bind_dna.git
+commit: 8c2895034d33aead47f66930c8966ce66b164165
+date: August 22, 2019
+1. Setup 10 IVTT reactions:
+
+   Reagent             Conc  Each Rxn  Master Mix
+   ──────────────────────────────────────────────
+   water                      1.50 μL    16.50 μL
+   A                          4.00 μL    44.00 μL
+   B                          3.00 μL    33.00 μL
+   RNase Inhibitor  40 U/μL   0.20 μL     2.20 μL
+   ZnOAc               1 mM   0.50 μL     5.50 μL
+   template DNA       75 nM   0.80 μL            
+   ──────────────────────────────────────────────
+                             10.00 μL     9.20 μL/rxn
+
+   - Keep on ice.
+   - Be sure to add A before B.
+   - The control template (125 ng/μL) is 75 nM.
+
+2. Incubate at 37°C for 2h.
+
+3. Dilute reaction to 100 μL with PBS + 10 mM 
+   MgOAc[1].
+   - Save a 10 μL aliquot
+
+4. Apply the diluted reaction mixture to a Amicon 
+   Ultracel 0.5 ml-100K spin concentrator.
+
+5. Spin 30 min, 15000g, 4°C.
+   - Save a 10 μL aliquot of the flow-through.
+   - Dilute the retentate to 100 μL, then save a
+     10 μL aliquot.
+
+6. Add 0.25 volumes of Ni-NTA Agarose to the 
+   flow-through.
+
+7. Mix continuously for 30-45 min at 4°C to allow 
+   His-tagged components to bind the resin.
+
+8. Apply the reaction mixture slurry to an empty 
+   Bio-Rad micro-spin column.
+
+9. Spin 2 min, 1500g, 4°C.
+   - Save a 10 μL aliquot of the eluate.
+
+10. Setup an SDS-PAGE gel:
+
+    - Prepare samples:
+      - 10.00 μL IVTT reaction
+      -  3.85 μL 4x loading buffer
+      -  1.54 μL 10x reducing agent
+      - Incubate at 70°C for 10 min.
+
+    - Use a 4-12% gel (Invitrogen NW04120).
+    - Load 15.39 μL in each lane.
+    - Run at 165V for 42 min.

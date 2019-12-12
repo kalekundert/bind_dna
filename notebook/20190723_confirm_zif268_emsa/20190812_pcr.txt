@@ -1,0 +1,24 @@
+file: pcr.py 34-colony 2 3 9 63 30 -P -m primers
+repo: git@github.com:kalekundert/wetlab_protocols.git
+commit: e1ada9f4a71bc13d170222e1fca4e19ba7b0e4ee
+date: August 12, 2019
+1. Setup 9 PCR reactions and 1 negative control:
+
+   Reagent             Conc  Each Rxn  Master Mix
+   ──────────────────────────────────────────────
+   water                      3.80 μL    38.00 μL
+   primer mix           10x   1.00 μL    10.00 μL
+   34-colony      100 pg/μL   0.20 μL            
+   Q5 master mix         2x   5.00 µL    50.00 µL
+   ──────────────────────────────────────────────
+                             10.00 μL     9.80 μL/rxn
+
+2. Run the following thermocycler protocol:
+
+   - 98°C for 30s
+   - Repeat 35x:
+     - 98°C for 10s
+     - 63°C for 20s
+     - 72°C for 30s
+   - 72°C for 2 min
+   - 4°C hold

@@ -681,6 +681,8 @@ Ligation
      bunch of reactions in a consistent amount of time.
 
 
+.. _Glen Research: https://www.glenresearch.com/
+
 Methods
 =======
 
@@ -698,7 +700,7 @@ Control targets
 The cognate sequence for Zif268 is ``GCGTGGGCG``
 
 As a negative control, I decided to use ``GCGAAAGCG``.  This is the negative 
-control used by Bulyk2001_.
+control used by [Bulyk2001]_.
 
 Make a palindromic PCR primer
 -----------------------------
@@ -737,12 +739,3 @@ MidlandCRC.  See attached quote:
 :download:`quotes/midland_20190416_63451.pdf`
 
 
-References
-==========
-.. [Naimudden2016] :doi:`10.1021/acscombsci.5b00139`
-.. [Kurz2001] Kurz M, Gu K, Al-Gawari A, Lohse PA. cDNA–Protein Fusions: Covalent Protein–Gene Conjugates for the In Vitro Selection of Peptides and Proteins. Chem Bio Chem 2:9:666-672 (2001).
-.. [Yonezawa2003] :doi:`10.1093/nar/gng119`
-.. [Bauer2017] :doi:`10.1371/journal.pone.0190062`
-.. [Imburgio2000] :doi:`10.1021/bi000365w`
-.. _Glen Research: https://www.glenresearch.com/
-.. [Bulyk2001] :doi:`10.1073/pnas.111163698`

@@ -1,0 +1,891 @@
+2019-07-13 11:41:49,201	pyrosetta.rosetta	INFO	Found rosetta database at: /home/kale/research/projects/201904_bind_dna/rosetta/source/lib/pyrosetta/python37/release/setup/pyrosetta/database; using it....
+2019-07-13 11:41:49,202	pyrosetta.rosetta	INFO	PyRosetta-4 2019 [Rosetta devel 2019.17.post.dev+147.devdna.3b7c7e9e64ebfb4652c7c7b3968b163a6207982a 2019-06-20T15:16:46] retrieved from: git@guybrush.ucsf.edu:kortemme-lab/rosetta.git
+(C) Copyright Rosetta Commons Member Institutions. Created in JHU by Sergey Lyskov and PyRosetta Team.
+2019-07-13 11:41:49,219	rosetta	INFO	[0mcore.init: [0mChecking for fconfig files in pwd and ./rosetta/flags
+2019-07-13 11:41:49,219	rosetta	INFO	[0mcore.init: [0mRosetta version: 2019.17.post.dev+147.devdna.3b7c7e9e64e 3b7c7e9e64ebfb4652c7c7b3968b163a6207982a git@guybrush.ucsf.edu:kortemme-lab/rosetta.git 2019-06-20T15:16:46
+2019-07-13 11:41:49,219	rosetta	INFO	[0mcore.init: [0mcommand: PyRosetta -constant_seed -dna:specificity:exclude_dna_dna off -relax:dna_move on -relax:coord_cst_stdev 0.5 -relax:constrain_relax_to_start_coords on -relax:ramp_constraints off -out:levels core.pack.rotamer_set.RotamerSet_.extra_rotamers:500 -database /home/kale/research/projects/201904_bind_dna/rosetta/source/lib/pyrosetta/python37/release/setup/pyrosetta/database
+2019-07-13 11:41:49,219	rosetta	INFO	[0mcore.init: [0m[31m[4mConstant seed mode[0m, seed=1111111 seed_offset=0 real_seed=1111111
+2019-07-13 11:41:49,219	rosetta	INFO	[0mcore.init.random: [0mRandomGenerator:init: Normal mode, seed=1111111 RG_type=mt19937
+2019-07-13 11:41:50,055	rosetta	INFO	[0mcore.chemical.GlobalResidueTypeSet: [0mFinished initializing fa_standard residue type set.  Created 979 residue types
+2019-07-13 11:41:50,056	rosetta	INFO	[0mcore.chemical.GlobalResidueTypeSet: [0mTotal time to initialize 0.775658 seconds.
+2019-07-13 11:41:50,061	rosetta	INFO	[0mcore.import_pose.import_pose: [0mFile '/home/kale/research/projects/201904_bind_dna/notebook/20190501_run_ashworth2006_on_zif268/relax_1aay/initial.pdb' automatically determined to be of type PDB
+2019-07-13 11:41:50,517	rosetta	INFO	[0mcore.conformation.Conformation: [0m[1m[ WARNING ][0m missing heavyatom:  OXT on residue ARG:CtermProteinFull 107
+2019-07-13 11:41:50,524	rosetta	INFO	[0mcore.scoring.etable: [0mStarting energy table calculation
+2019-07-13 11:41:50,528	rosetta	INFO	[0mcore.scoring.etable: [0msmooth_etable: changing atr/rep split to bottom of energy well
+2019-07-13 11:41:50,528	rosetta	INFO	[0mcore.scoring.etable: [0msmooth_etable: spline smoothing lj etables (maxdis = 6)
+2019-07-13 11:41:50,528	rosetta	INFO	[0mcore.scoring.etable: [0msmooth_etable: spline smoothing solvation etables (max_dis = 6)
+2019-07-13 11:41:51,291	rosetta	INFO	[0mcore.scoring.etable: [0mFinished calculating energy tables.
+2019-07-13 11:41:51,292	rosetta	INFO	[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/hbonds/ref2015_params/HBPoly1D.csv
+2019-07-13 11:41:51,293	rosetta	INFO	[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/hbonds/ref2015_params/HBFadeIntervals.csv
+2019-07-13 11:41:51,293	rosetta	INFO	[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/hbonds/ref2015_params/HBEval.csv
+2019-07-13 11:41:51,295	rosetta	INFO	[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/hbonds/ref2015_params/DonStrength.csv
+2019-07-13 11:41:51,295	rosetta	INFO	[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/hbonds/ref2015_params/AccStrength.csv
+2019-07-13 11:41:51,296	rosetta	INFO	[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/rama/fd/all.ramaProb
+2019-07-13 11:41:51,684	rosetta	INFO	[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/rama/fd/prepro.ramaProb
+2019-07-13 11:41:52,076	rosetta	INFO	[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/omega/omega_ppdep.all.txt
+2019-07-13 11:41:52,078	rosetta	INFO	[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/omega/omega_ppdep.gly.txt
+2019-07-13 11:41:52,080	rosetta	INFO	[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/omega/omega_ppdep.pro.txt
+2019-07-13 11:41:52,082	rosetta	INFO	[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/omega/omega_ppdep.valile.txt
+2019-07-13 11:41:52,116	rosetta	INFO	[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/P_AA_pp/P_AA
+2019-07-13 11:41:52,116	rosetta	INFO	[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/P_AA_pp/P_AA_n
+2019-07-13 11:41:52,117	rosetta	INFO	[0mcore.scoring.P_AA: [0mshapovalov_lib::shap_p_aa_pp_smooth_level of 1( aka low_smooth ) got activated.
+2019-07-13 11:41:52,117	rosetta	INFO	[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/P_AA_pp/shapovalov/10deg/kappa131/a20.prop
+2019-07-13 11:41:52,356	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mLooking for no_cst_ramping.txt
+2019-07-13 11:41:52,357	rosetta	INFO	[0mprotocols.relax.RelaxScriptManager: [0m================== Reading script file: /home/kale/research/projects/201904_bind_dna/rosetta/source/lib/pyrosetta/python37/release/setup/pyrosetta/database/sampling/relax_scripts/no_cst_ramping.txt ==================
+2019-07-13 11:41:52,357	rosetta	INFO	[0mprotocols.relax.RelaxScriptManager: [0mrepeat %%nrepeats%%
+2019-07-13 11:41:52,358	rosetta	INFO	[0mprotocols.relax.RelaxScriptManager: [0mramp_repack_min 0.02  0.01     1.0
+2019-07-13 11:41:52,358	rosetta	INFO	[0mprotocols.relax.RelaxScriptManager: [0mramp_repack_min 0.250 0.01     1.0
+2019-07-13 11:41:52,358	rosetta	INFO	[0mprotocols.relax.RelaxScriptManager: [0mramp_repack_min 0.550 0.01     1.0
+2019-07-13 11:41:52,358	rosetta	INFO	[0mprotocols.relax.RelaxScriptManager: [0mramp_repack_min 1     0.00001  1.0
+2019-07-13 11:41:52,358	rosetta	INFO	[0mprotocols.relax.RelaxScriptManager: [0maccept_to_best
+2019-07-13 11:41:52,359	rosetta	INFO	[0mprotocols.relax.RelaxScriptManager: [0mendrepeat
+2019-07-13 11:41:52,531	rosetta	INFO	[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/elec_cp_reps.dat
+2019-07-13 11:41:52,546	rosetta	INFO	[0mcore.scoring.elec.util: [0mRead 40 countpair representative atoms
+2019-07-13 11:41:52,563	rosetta	INFO	[0mcore.pack.dunbrack.RotamerLibrary: [0mshapovalov_lib_fixes_enable option is true.
+2019-07-13 11:41:52,595	rosetta	INFO	[0mcore.pack.dunbrack.RotamerLibrary: [0mshapovalov_lib::shap_dun10_smooth_level of 1( aka lowest_smooth ) got activated.
+2019-07-13 11:41:52,596	rosetta	INFO	[0mcore.pack.dunbrack.RotamerLibrary: [0mBinary rotamer library selected: /home/kale/research/projects/201904_bind_dna/rosetta/source/lib/pyrosetta/python37/release/setup/pyrosetta/database/rotamer/shapovalov/StpDwn_0-0-0/Dunbrack10.lib.bin
+2019-07-13 11:41:52,632	rosetta	INFO	[0mcore.pack.dunbrack.RotamerLibrary: [0mUsing Dunbrack library binary file '/home/kale/research/projects/201904_bind_dna/rosetta/source/lib/pyrosetta/python37/release/setup/pyrosetta/database/rotamer/shapovalov/StpDwn_0-0-0/Dunbrack10.lib.bin'.
+2019-07-13 11:41:54,068	rosetta	INFO	[0mcore.pack.dunbrack.RotamerLibrary: [0mDunbrack 2010 library took 0.302391 seconds to load from binary
+2019-07-13 11:41:54,161	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: repeat  284.236  0  0  0.55
+2019-07-13 11:41:58,905	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 33626 rotamers at 111 positions.
+2019-07-13 11:41:59,023	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 11:46:58,043	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 11:47:08,636	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -388.895  0.143293  0.143293  0.011
+2019-07-13 11:47:12,817	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 27240 rotamers at 111 positions.
+2019-07-13 11:47:12,817	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 11:50:11,456	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 11:50:17,191	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -300.631  0.112645  0.112645  0.1375
+2019-07-13 11:50:21,398	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 26030 rotamers at 111 positions.
+2019-07-13 11:50:21,398	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 11:52:57,402	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 11:53:02,959	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -254.95  0.11435  0.11435  0.3025
+2019-07-13 11:53:07,042	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 24800 rotamers at 111 positions.
+2019-07-13 11:53:07,042	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 11:55:23,688	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 11:55:32,847	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -208.493  0.125374  0.125374  0.55
+2019-07-13 11:55:32,853	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 0  -208.493  -208.493  0.125374  0.125374
+2019-07-13 11:55:32,856	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -208.493  0.125374  0.125374  0.55
+2019-07-13 11:55:32,858	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -208.493  0.125374  0.125374  0.55
+2019-07-13 11:55:37,384	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 33398 rotamers at 111 positions.
+2019-07-13 11:55:37,384	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 12:00:26,002	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 12:00:34,490	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -392.981  0.152321  0.152321  0.011
+2019-07-13 12:00:38,529	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 26610 rotamers at 111 positions.
+2019-07-13 12:00:38,529	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 12:03:35,532	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 12:03:41,904	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -310.398  0.111024  0.111024  0.1375
+2019-07-13 12:03:47,552	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 25726 rotamers at 111 positions.
+2019-07-13 12:03:47,552	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 12:06:21,497	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 12:06:26,643	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -259.837  0.117516  0.117516  0.3025
+2019-07-13 12:06:30,730	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 24592 rotamers at 111 positions.
+2019-07-13 12:06:30,730	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 12:08:46,455	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 12:08:55,095	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -213.722  0.122236  0.122236  0.55
+2019-07-13 12:08:55,100	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 1  -213.722  -213.722  0.122236  0.122236
+2019-07-13 12:08:55,103	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -213.722  0.122236  0.122236  0.55
+2019-07-13 12:08:55,105	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -213.722  0.122236  0.122236  0.55
+2019-07-13 12:08:59,394	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 31874 rotamers at 111 positions.
+2019-07-13 12:08:59,394	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 12:13:34,587	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 12:13:43,696	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -390.227  0.147409  0.147409  0.011
+2019-07-13 12:13:47,965	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 26629 rotamers at 111 positions.
+2019-07-13 12:13:47,966	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 12:17:00,672	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 12:17:07,428	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -309.215  0.112465  0.112465  0.1375
+2019-07-13 12:17:11,901	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 25707 rotamers at 111 positions.
+2019-07-13 12:17:11,901	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 12:20:01,005	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 12:20:07,188	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -260.728  0.113331  0.113331  0.3025
+2019-07-13 12:20:13,047	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 24492 rotamers at 111 positions.
+2019-07-13 12:20:13,047	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 12:22:42,841	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 12:22:51,982	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -213.71  0.123982  0.123982  0.55
+2019-07-13 12:22:51,985	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 2  -213.71  -213.722  0.122236  0.122236
+2019-07-13 12:22:51,988	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -213.71  0.123982  0.123982  0.55
+2019-07-13 12:22:51,990	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -213.71  0.123982  0.123982  0.55
+2019-07-13 12:22:56,872	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 33594 rotamers at 111 positions.
+2019-07-13 12:22:56,872	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 12:28:18,774	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 12:28:28,428	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -389.743  0.148067  0.148067  0.011
+2019-07-13 12:28:33,189	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 26788 rotamers at 111 positions.
+2019-07-13 12:28:33,189	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 12:32:00,296	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 12:32:08,415	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -311.114  0.107536  0.107536  0.1375
+2019-07-13 12:32:12,890	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 25140 rotamers at 111 positions.
+2019-07-13 12:32:12,890	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 12:35:07,719	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 12:35:13,653	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -260.4  0.113531  0.113531  0.3025
+2019-07-13 12:35:18,029	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 24036 rotamers at 111 positions.
+2019-07-13 12:35:18,029	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 12:37:52,435	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 12:38:02,630	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -213.154  0.123922  0.123922  0.55
+2019-07-13 12:38:02,633	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 3  -213.154  -213.722  0.122236  0.122236
+2019-07-13 12:38:02,636	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -213.154  0.123922  0.123922  0.55
+2019-07-13 12:38:02,639	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -213.154  0.123922  0.123922  0.55
+2019-07-13 12:38:07,455	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 31815 rotamers at 111 positions.
+2019-07-13 12:38:07,456	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 12:43:17,424	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 12:43:27,279	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -389.454  0.147071  0.147071  0.011
+2019-07-13 12:43:31,899	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 26682 rotamers at 111 positions.
+2019-07-13 12:43:31,899	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 12:46:50,844	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 12:46:58,916	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -311.269  0.108708  0.108708  0.1375
+2019-07-13 12:47:03,364	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 25213 rotamers at 111 positions.
+2019-07-13 12:47:03,364	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 12:49:48,732	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 12:49:54,837	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -262.724  0.113027  0.113027  0.3025
+2019-07-13 12:50:00,722	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 24620 rotamers at 111 positions.
+2019-07-13 12:50:00,722	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 12:52:26,193	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 12:52:34,701	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -213.15  0.123503  0.123503  0.55
+2019-07-13 12:52:34,704	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 4  -213.15  -213.722  0.122236  0.122236
+2019-07-13 12:52:34,707	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -213.15  0.123503  0.123503  0.55
+2019-07-13 12:52:34,710	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -213.15  0.123503  0.123503  0.55
+2019-07-13 12:52:34,716	rosetta	INFO	[0mprotocols::checkpoint: [0mDeleting checkpoints of FastRelax
+2019-07-13 12:52:34,983	dnp_relax_b	INFO	Iteration:                        1
+2019-07-13 12:52:34,984	dnp_relax_b	INFO	Tried:                            0.5
+2019-07-13 12:52:34,984	dnp_relax_b	INFO	Mean squared distance (actual):   0.022347246837417595
+2019-07-13 12:52:34,984	dnp_relax_b	INFO	Mean squared distance (B-factor): 0.34629176610931517
+2019-07-13 12:52:34,985	dnp_relax_b	INFO	Objective:                        -0.21881719596355131
+2019-07-13 12:52:34,985	dnp_relax_b	INFO	Score (REU):                      -213.72197597113382
+2019-07-13 12:52:34,985	dnp_relax_b	INFO	Score improvement (REU):          -497.95772718190534
+2019-07-13 12:52:34,990	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mLooking for no_cst_ramping.txt
+2019-07-13 12:52:35,038	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: repeat  284.236  0  0  0.55
+2019-07-13 12:52:39,851	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 33626 rotamers at 111 positions.
+2019-07-13 12:52:39,851	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 12:57:54,969	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 12:58:02,952	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -440.557  0.764376  0.764376  0.011
+2019-07-13 12:58:07,191	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 25208 rotamers at 111 positions.
+2019-07-13 12:58:07,191	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 13:01:20,450	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 13:01:26,693	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -336.464  0.61373  0.61373  0.1375
+2019-07-13 13:01:30,998	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 24373 rotamers at 111 positions.
+2019-07-13 13:01:30,998	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 13:04:13,119	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 13:04:17,886	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -290.971  0.555172  0.555172  0.3025
+2019-07-13 13:04:22,125	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 23373 rotamers at 111 positions.
+2019-07-13 13:04:22,125	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 13:06:45,215	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 13:06:57,490	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -273.529  0.607205  0.607205  0.55
+2019-07-13 13:06:57,496	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 0  -273.529  -273.529  0.607205  0.607205
+2019-07-13 13:06:57,499	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -273.529  0.607205  0.607205  0.55
+2019-07-13 13:06:57,501	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -273.529  0.607205  0.607205  0.55
+2019-07-13 13:07:01,152	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 26903 rotamers at 111 positions.
+2019-07-13 13:07:01,152	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 13:10:33,720	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 13:10:40,114	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -455.872  0.862916  0.862916  0.011
+2019-07-13 13:10:44,377	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 24707 rotamers at 111 positions.
+2019-07-13 13:10:44,377	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 13:14:01,863	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 13:14:07,423	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -349.318  0.751668  0.751668  0.1375
+2019-07-13 13:14:11,633	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 23459 rotamers at 111 positions.
+2019-07-13 13:14:11,634	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 13:16:53,764	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 13:16:59,050	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -309.369  0.722671  0.722671  0.3025
+2019-07-13 13:17:03,133	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 22596 rotamers at 111 positions.
+2019-07-13 13:17:03,133	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 13:19:26,373	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 13:19:38,585	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -278.711  0.707043  0.707043  0.55
+2019-07-13 13:19:38,591	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 1  -278.711  -278.711  0.707043  0.707043
+2019-07-13 13:19:38,595	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -278.711  0.707043  0.707043  0.55
+2019-07-13 13:19:38,598	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -278.711  0.707043  0.707043  0.55
+2019-07-13 13:19:42,652	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 28778 rotamers at 111 positions.
+2019-07-13 13:19:42,653	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 13:23:43,858	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 13:23:51,044	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -465.195  1.01246  1.01246  0.011
+2019-07-13 13:23:55,303	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 24529 rotamers at 111 positions.
+2019-07-13 13:23:55,303	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 13:27:04,940	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 13:27:11,016	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -358.569  0.89385  0.89385  0.1375
+2019-07-13 13:27:15,125	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 23166 rotamers at 111 positions.
+2019-07-13 13:27:15,126	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 13:29:51,971	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 13:29:56,621	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -312.796  0.858834  0.858834  0.3025
+2019-07-13 13:30:00,348	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 21611 rotamers at 111 positions.
+2019-07-13 13:30:00,348	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 13:32:08,191	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 13:32:17,816	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -277.864  0.776106  0.776106  0.55
+2019-07-13 13:32:17,819	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 2  -277.864  -278.711  0.707043  0.707043
+2019-07-13 13:32:17,821	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -277.864  0.776106  0.776106  0.55
+2019-07-13 13:32:17,824	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -277.864  0.776106  0.776106  0.55
+2019-07-13 13:32:21,868	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 28606 rotamers at 111 positions.
+2019-07-13 13:32:21,868	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 13:36:21,802	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 13:36:29,005	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -469.744  1.01318  1.01318  0.011
+2019-07-13 13:36:33,195	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 23360 rotamers at 111 positions.
+2019-07-13 13:36:33,195	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 13:39:33,387	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 13:39:39,187	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -358.902  0.831857  0.831857  0.1375
+2019-07-13 13:39:43,061	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 21706 rotamers at 111 positions.
+2019-07-13 13:39:43,061	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 13:42:10,930	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 13:42:15,015	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -312.551  0.809103  0.809103  0.3025
+2019-07-13 13:42:19,057	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 22240 rotamers at 111 positions.
+2019-07-13 13:42:19,057	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 13:44:35,142	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 13:44:44,751	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -277.591  0.745427  0.745427  0.55
+2019-07-13 13:44:44,754	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 3  -277.591  -278.711  0.707043  0.707043
+2019-07-13 13:44:44,756	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -277.591  0.745427  0.745427  0.55
+2019-07-13 13:44:44,759	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -277.591  0.745427  0.745427  0.55
+2019-07-13 13:44:48,442	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 27031 rotamers at 111 positions.
+2019-07-13 13:44:48,443	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 13:48:23,809	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 13:48:30,501	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -469.061  1.03308  1.03308  0.011
+2019-07-13 13:48:34,896	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 25138 rotamers at 111 positions.
+2019-07-13 13:48:34,896	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 13:51:46,618	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 13:51:52,694	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -360.613  0.893761  0.893761  0.1375
+2019-07-13 13:51:56,811	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 23243 rotamers at 111 positions.
+2019-07-13 13:51:56,811	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 13:54:32,218	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 13:54:36,651	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -313.85  0.857228  0.857228  0.3025
+2019-07-13 13:54:40,357	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 21685 rotamers at 111 positions.
+2019-07-13 13:54:40,357	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 13:56:47,681	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 13:56:57,215	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -280.704  0.799528  0.799528  0.55
+2019-07-13 13:56:57,221	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 4  -280.704  -280.704  0.799528  0.799528
+2019-07-13 13:56:57,224	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -280.704  0.799528  0.799528  0.55
+2019-07-13 13:56:57,227	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -280.704  0.799528  0.799528  0.55
+2019-07-13 13:56:57,231	rosetta	INFO	[0mprotocols::checkpoint: [0mDeleting checkpoints of FastRelax
+2019-07-13 13:56:57,357	dnp_relax_b	INFO	Iteration:                        2
+2019-07-13 13:56:57,357	dnp_relax_b	INFO	Tried:                            5.0
+2019-07-13 13:56:57,358	dnp_relax_b	INFO	Mean squared distance (actual):   0.8199630659096694
+2019-07-13 13:56:57,358	dnp_relax_b	INFO	Mean squared distance (B-factor): 0.34629176610931517
+2019-07-13 13:56:57,358	dnp_relax_b	INFO	Objective:                        1.329808018577023
+2019-07-13 13:56:57,358	dnp_relax_b	INFO	Score (REU):                      -280.70424685850713
+2019-07-13 13:56:57,358	dnp_relax_b	INFO	Score improvement (REU):          -564.9399980692787
+2019-07-13 13:56:57,364	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mLooking for no_cst_ramping.txt
+2019-07-13 13:56:57,412	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: repeat  284.236  0  0  0.55
+2019-07-13 13:57:02,213	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 33626 rotamers at 111 positions.
+2019-07-13 13:57:02,213	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 14:02:18,053	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 14:02:26,701	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -413.654  0.280313  0.280313  0.011
+2019-07-13 14:02:31,276	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 27569 rotamers at 111 positions.
+2019-07-13 14:02:31,277	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 14:05:54,165	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 14:06:01,459	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -325.883  0.196541  0.196541  0.1375
+2019-07-13 14:06:05,633	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 25685 rotamers at 111 positions.
+2019-07-13 14:06:05,633	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 14:08:53,196	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 14:08:58,235	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -277.149  0.2062  0.2062  0.3025
+2019-07-13 14:09:02,360	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 24642 rotamers at 111 positions.
+2019-07-13 14:09:02,360	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 14:11:29,891	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 14:11:39,762	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -241.553  0.247702  0.247702  0.55
+2019-07-13 14:11:39,768	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 0  -241.553  -241.553  0.247702  0.247702
+2019-07-13 14:11:39,771	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -241.553  0.247702  0.247702  0.55
+2019-07-13 14:11:39,774	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -241.553  0.247702  0.247702  0.55
+2019-07-13 14:11:44,181	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 31695 rotamers at 111 positions.
+2019-07-13 14:11:44,182	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 14:16:26,120	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 14:16:34,267	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -422.197  0.314695  0.314695  0.011
+2019-07-13 14:16:38,523	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 26627 rotamers at 111 positions.
+2019-07-13 14:16:38,523	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 14:19:54,068	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 14:20:00,686	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -331.089  0.220662  0.220662  0.1375
+2019-07-13 14:20:04,835	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 25395 rotamers at 111 positions.
+2019-07-13 14:20:04,835	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 14:22:47,773	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 14:22:52,983	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -282.077  0.226096  0.226096  0.3025
+2019-07-13 14:22:57,069	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 24528 rotamers at 111 positions.
+2019-07-13 14:22:57,069	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 14:25:24,827	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 14:25:33,768	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -241.016  0.248353  0.248353  0.55
+2019-07-13 14:25:33,771	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 1  -241.016  -241.553  0.247702  0.247702
+2019-07-13 14:25:33,773	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -241.016  0.248353  0.248353  0.55
+2019-07-13 14:25:33,776	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -241.016  0.248353  0.248353  0.55
+2019-07-13 14:25:38,188	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 31661 rotamers at 111 positions.
+2019-07-13 14:25:38,188	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 14:30:18,599	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 14:30:26,184	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -421.349  0.311548  0.311548  0.011
+2019-07-13 14:30:30,436	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 26668 rotamers at 111 positions.
+2019-07-13 14:30:30,436	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 14:33:45,591	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 14:33:52,175	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -329.771  0.221564  0.221564  0.1375
+2019-07-13 14:33:56,322	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 25318 rotamers at 111 positions.
+2019-07-13 14:33:56,323	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 14:36:40,753	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 14:36:46,190	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -282.678  0.221981  0.221981  0.3025
+2019-07-13 14:36:52,658	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 24204 rotamers at 111 positions.
+2019-07-13 14:36:52,658	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 14:39:33,786	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 14:39:43,536	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -242.883  0.252554  0.252554  0.55
+2019-07-13 14:39:43,543	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 2  -242.883  -242.883  0.252554  0.252554
+2019-07-13 14:39:43,546	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -242.883  0.252554  0.252554  0.55
+2019-07-13 14:39:43,549	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -242.883  0.252554  0.252554  0.55
+2019-07-13 14:39:48,794	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 33477 rotamers at 111 positions.
+2019-07-13 14:39:48,795	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 14:45:32,810	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 14:45:42,029	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -421.302  0.30691  0.30691  0.011
+2019-07-13 14:45:46,796	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 26633 rotamers at 111 positions.
+2019-07-13 14:45:46,796	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 14:49:06,391	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 14:49:13,066	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -330.702  0.219912  0.219912  0.1375
+2019-07-13 14:49:17,244	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 25327 rotamers at 111 positions.
+2019-07-13 14:49:17,245	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 14:52:04,630	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 14:52:09,793	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -283.799  0.22934  0.22934  0.3025
+2019-07-13 14:52:13,882	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 24392 rotamers at 111 positions.
+2019-07-13 14:52:13,882	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 14:54:51,892	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 14:55:00,649	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -242.385  0.250813  0.250813  0.55
+2019-07-13 14:55:00,652	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 3  -242.385  -242.883  0.252554  0.252554
+2019-07-13 14:55:00,654	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -242.385  0.250813  0.250813  0.55
+2019-07-13 14:55:00,657	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -242.385  0.250813  0.250813  0.55
+2019-07-13 14:55:05,071	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 31713 rotamers at 111 positions.
+2019-07-13 14:55:05,071	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 14:59:51,860	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 15:00:00,355	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -420.928  0.309738  0.309738  0.011
+2019-07-13 15:00:04,751	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 26679 rotamers at 111 positions.
+2019-07-13 15:00:04,751	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 15:03:26,552	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 15:03:32,833	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -328.613  0.219808  0.219808  0.1375
+2019-07-13 15:03:38,379	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 25451 rotamers at 111 positions.
+2019-07-13 15:03:38,379	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 15:06:27,423	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 15:06:33,066	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -282.425  0.224145  0.224145  0.3025
+2019-07-13 15:06:37,479	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 24755 rotamers at 111 positions.
+2019-07-13 15:06:37,479	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 15:09:08,443	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 15:09:17,203	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -240.51  0.251139  0.251139  0.55
+2019-07-13 15:09:17,206	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 4  -240.51  -242.883  0.252554  0.252554
+2019-07-13 15:09:17,209	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -240.51  0.251139  0.251139  0.55
+2019-07-13 15:09:17,212	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -240.51  0.251139  0.251139  0.55
+2019-07-13 15:09:17,219	rosetta	INFO	[0mprotocols::checkpoint: [0mDeleting checkpoints of FastRelax
+2019-07-13 15:09:17,347	dnp_relax_b	INFO	Iteration:                        3
+2019-07-13 15:09:17,347	dnp_relax_b	INFO	Tried:                            1.1358396935491601
+2019-07-13 15:09:17,347	dnp_relax_b	INFO	Mean squared distance (actual):   0.09284149337882953
+2019-07-13 15:09:17,348	dnp_relax_b	INFO	Mean squared distance (B-factor): 0.34629176610931517
+2019-07-13 15:09:17,348	dnp_relax_b	INFO	Objective:                        -0.14633737550529627
+2019-07-13 15:09:17,348	dnp_relax_b	INFO	Score (REU):                      -242.88279624905823
+2019-07-13 15:09:17,348	dnp_relax_b	INFO	Score improvement (REU):          -527.1185474598298
+2019-07-13 15:09:17,354	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mLooking for no_cst_ramping.txt
+2019-07-13 15:09:17,403	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: repeat  284.236  0  0  0.55
+2019-07-13 15:09:22,255	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 33626 rotamers at 111 positions.
+2019-07-13 15:09:22,256	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 15:14:49,355	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 15:14:58,627	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -435.297  0.513688  0.513688  0.011
+2019-07-13 15:15:03,190	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 26814 rotamers at 111 positions.
+2019-07-13 15:15:03,190	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 15:18:21,049	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 15:18:27,529	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -322.56  0.405304  0.405304  0.1375
+2019-07-13 15:18:31,627	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 22971 rotamers at 111 positions.
+2019-07-13 15:18:31,627	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 15:21:02,936	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 15:21:07,578	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -274.177  0.386649  0.386649  0.3025
+2019-07-13 15:21:11,650	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 22787 rotamers at 111 positions.
+2019-07-13 15:21:11,650	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 15:23:33,965	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 15:23:44,321	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -250.606  0.437141  0.437141  0.55
+2019-07-13 15:23:44,326	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 0  -250.606  -250.606  0.437141  0.437141
+2019-07-13 15:23:44,329	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -250.606  0.437141  0.437141  0.55
+2019-07-13 15:23:44,332	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -250.606  0.437141  0.437141  0.55
+2019-07-13 15:23:48,532	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 28972 rotamers at 111 positions.
+2019-07-13 15:23:48,532	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 15:27:50,391	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 15:27:57,602	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -442.95  0.57564  0.57564  0.011
+2019-07-13 15:28:02,253	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 27636 rotamers at 111 positions.
+2019-07-13 15:28:02,253	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 15:31:28,524	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 15:31:34,776	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -331.161  0.443542  0.443542  0.1375
+2019-07-13 15:31:40,214	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 26147 rotamers at 111 positions.
+2019-07-13 15:31:40,214	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 15:34:32,269	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 15:34:37,276	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -287.971  0.430453  0.430453  0.3025
+2019-07-13 15:34:41,739	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 25122 rotamers at 111 positions.
+2019-07-13 15:34:41,739	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 15:37:15,230	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 15:37:25,334	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -259.715  0.445884  0.445884  0.55
+2019-07-13 15:37:25,340	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 1  -259.715  -259.715  0.445884  0.445884
+2019-07-13 15:37:25,343	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -259.715  0.445884  0.445884  0.55
+2019-07-13 15:37:25,346	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -259.715  0.445884  0.445884  0.55
+2019-07-13 15:37:29,973	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 31405 rotamers at 111 positions.
+2019-07-13 15:37:29,973	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 15:42:45,768	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 15:42:53,334	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -445.977  0.599693  0.599693  0.011
+2019-07-13 15:42:57,664	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 26937 rotamers at 111 positions.
+2019-07-13 15:42:57,665	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 15:46:14,974	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 15:46:21,296	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -341.891  0.450147  0.450147  0.1375
+2019-07-13 15:46:26,659	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 26427 rotamers at 111 positions.
+2019-07-13 15:46:26,659	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 15:49:16,355	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 15:49:21,731	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -298.193  0.418526  0.418526  0.3025
+2019-07-13 15:49:25,888	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 23170 rotamers at 111 positions.
+2019-07-13 15:49:25,889	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 15:51:53,037	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 15:52:01,263	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -259.701  0.44411  0.44411  0.55
+2019-07-13 15:52:01,266	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 2  -259.701  -259.715  0.445884  0.445884
+2019-07-13 15:52:01,268	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -259.701  0.44411  0.44411  0.55
+2019-07-13 15:52:01,271	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -259.701  0.44411  0.44411  0.55
+2019-07-13 15:52:05,809	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 31368 rotamers at 111 positions.
+2019-07-13 15:52:05,809	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 15:57:24,512	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 15:57:31,792	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -437.289  0.571358  0.571358  0.011
+2019-07-13 15:57:36,225	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 27345 rotamers at 111 positions.
+2019-07-13 15:57:36,225	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 16:00:59,666	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 16:01:06,450	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -345.11  0.453577  0.453577  0.1375
+2019-07-13 16:01:10,738	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 24183 rotamers at 111 positions.
+2019-07-13 16:01:10,738	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 16:03:56,159	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 16:04:00,986	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -300.333  0.431764  0.431764  0.3025
+2019-07-13 16:04:05,116	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 23186 rotamers at 111 positions.
+2019-07-13 16:04:05,116	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 16:06:33,532	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 16:06:41,499	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -259.971  0.445426  0.445426  0.55
+2019-07-13 16:06:41,506	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 3  -259.971  -259.971  0.445426  0.445426
+2019-07-13 16:06:41,509	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -259.971  0.445426  0.445426  0.55
+2019-07-13 16:06:41,513	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -259.971  0.445426  0.445426  0.55
+2019-07-13 16:06:45,785	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 29115 rotamers at 111 positions.
+2019-07-13 16:06:45,785	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 16:11:14,961	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 16:11:22,413	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -445.268  0.593193  0.593193  0.011
+2019-07-13 16:11:27,264	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 26975 rotamers at 111 positions.
+2019-07-13 16:11:27,264	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 16:14:50,622	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 16:14:57,107	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -342.317  0.44843  0.44843  0.1375
+2019-07-13 16:15:01,638	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 26369 rotamers at 111 positions.
+2019-07-13 16:15:01,639	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 16:17:52,924	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 16:17:58,265	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -299.041  0.421483  0.421483  0.3025
+2019-07-13 16:18:02,731	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 25443 rotamers at 111 positions.
+2019-07-13 16:18:02,732	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 16:20:41,235	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 16:20:50,390	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -259.956  0.44549  0.44549  0.55
+2019-07-13 16:20:50,393	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 4  -259.956  -259.971  0.445426  0.445426
+2019-07-13 16:20:50,396	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -259.956  0.44549  0.44549  0.55
+2019-07-13 16:20:50,399	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -259.956  0.44549  0.44549  0.55
+2019-07-13 16:20:50,407	rosetta	INFO	[0mprotocols::checkpoint: [0mDeleting checkpoints of FastRelax
+2019-07-13 16:20:50,544	dnp_relax_b	INFO	Iteration:                        4
+2019-07-13 16:20:50,544	dnp_relax_b	INFO	Tried:                            2.292339596709741
+2019-07-13 16:20:50,545	dnp_relax_b	INFO	Mean squared distance (actual):   0.29566879250589756
+2019-07-13 16:20:50,545	dnp_relax_b	INFO	Mean squared distance (B-factor): 0.34629176610931517
+2019-07-13 16:20:50,545	dnp_relax_b	INFO	Objective:                        0.19373134379127516
+2019-07-13 16:20:50,545	dnp_relax_b	INFO	Score (REU):                      -259.97065729310793
+2019-07-13 16:20:50,545	dnp_relax_b	INFO	Score improvement (REU):          -544.2064085038794
+2019-07-13 16:20:50,551	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mLooking for no_cst_ramping.txt
+2019-07-13 16:20:50,601	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: repeat  284.236  0  0  0.55
+2019-07-13 16:20:55,542	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 33626 rotamers at 111 positions.
+2019-07-13 16:20:55,542	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 16:26:10,348	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 16:26:19,090	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -423.88  0.3884  0.3884  0.011
+2019-07-13 16:26:23,588	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 27138 rotamers at 111 positions.
+2019-07-13 16:26:23,589	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 16:29:44,569	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 16:29:51,164	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -314.481  0.283636  0.283636  0.1375
+2019-07-13 16:29:55,854	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 26155 rotamers at 111 positions.
+2019-07-13 16:29:55,854	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 16:32:47,771	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 16:32:54,176	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -282.116  0.278795  0.278795  0.3025
+2019-07-13 16:32:58,595	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 25151 rotamers at 111 positions.
+2019-07-13 16:32:58,595	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 16:35:29,215	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 16:35:40,177	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -251.423  0.31853  0.31853  0.55
+2019-07-13 16:35:40,183	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 0  -251.423  -251.423  0.31853  0.31853
+2019-07-13 16:35:40,186	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -251.423  0.31853  0.31853  0.55
+2019-07-13 16:35:40,189	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -251.423  0.31853  0.31853  0.55
+2019-07-13 16:35:44,940	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 31239 rotamers at 111 positions.
+2019-07-13 16:35:44,940	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 16:41:03,751	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 16:41:11,592	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -435.167  0.424448  0.424448  0.011
+2019-07-13 16:41:16,327	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 27570 rotamers at 111 positions.
+2019-07-13 16:41:16,327	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 16:44:51,964	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 16:44:59,091	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -335.926  0.296061  0.296061  0.1375
+2019-07-13 16:45:03,752	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 26381 rotamers at 111 positions.
+2019-07-13 16:45:03,752	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 16:48:04,286	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 16:48:10,105	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -291.066  0.298517  0.298517  0.3025
+2019-07-13 16:48:14,715	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 25472 rotamers at 111 positions.
+2019-07-13 16:48:14,715	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 16:50:54,791	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 16:51:04,278	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -249.602  0.322551  0.322551  0.55
+2019-07-13 16:51:04,280	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 1  -249.602  -251.423  0.31853  0.31853
+2019-07-13 16:51:04,283	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -249.602  0.322551  0.322551  0.55
+2019-07-13 16:51:04,286	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -249.602  0.322551  0.322551  0.55
+2019-07-13 16:51:09,437	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 33699 rotamers at 111 positions.
+2019-07-13 16:51:09,437	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 16:56:30,601	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 16:56:38,688	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -433.78  0.430435  0.430435  0.011
+2019-07-13 16:56:43,315	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 27539 rotamers at 111 positions.
+2019-07-13 16:56:43,315	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 17:00:11,446	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 17:00:18,119	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -338.396  0.306781  0.306781  0.1375
+2019-07-13 17:00:22,663	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 26465 rotamers at 111 positions.
+2019-07-13 17:00:22,663	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 17:03:16,183	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 17:03:21,128	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -291.542  0.310477  0.310477  0.3025
+2019-07-13 17:03:25,585	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 25613 rotamers at 111 positions.
+2019-07-13 17:03:25,585	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 17:06:02,910	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 17:06:11,555	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -251.515  0.327959  0.327959  0.55
+2019-07-13 17:06:11,561	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 2  -251.515  -251.515  0.327959  0.327959
+2019-07-13 17:06:11,564	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -251.515  0.327959  0.327959  0.55
+2019-07-13 17:06:11,566	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -251.515  0.327959  0.327959  0.55
+2019-07-13 17:06:16,387	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 33764 rotamers at 111 positions.
+2019-07-13 17:06:16,387	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 17:11:31,996	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 17:11:39,741	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -433.711  0.423239  0.423239  0.011
+2019-07-13 17:11:44,341	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 27653 rotamers at 111 positions.
+2019-07-13 17:11:44,341	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 17:15:11,375	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 17:15:17,949	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -338.678  0.307339  0.307339  0.1375
+2019-07-13 17:15:22,484	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 26530 rotamers at 111 positions.
+2019-07-13 17:15:22,484	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 17:18:16,077	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 17:18:21,194	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -293.317  0.300471  0.300471  0.3025
+2019-07-13 17:18:25,650	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 25503 rotamers at 111 positions.
+2019-07-13 17:18:25,650	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 17:21:01,827	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 17:21:10,231	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -251.936  0.327991  0.327991  0.55
+2019-07-13 17:21:10,238	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 3  -251.936  -251.936  0.327991  0.327991
+2019-07-13 17:21:10,241	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -251.936  0.327991  0.327991  0.55
+2019-07-13 17:21:10,244	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -251.936  0.327991  0.327991  0.55
+2019-07-13 17:21:15,051	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 33630 rotamers at 111 positions.
+2019-07-13 17:21:15,051	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 17:26:29,722	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 17:26:37,009	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -423.869  0.420379  0.420379  0.011
+2019-07-13 17:26:41,582	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 27454 rotamers at 111 positions.
+2019-07-13 17:26:41,582	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 17:30:00,824	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 17:30:07,187	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -337.298  0.317717  0.317717  0.1375
+2019-07-13 17:30:11,697	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 26510 rotamers at 111 positions.
+2019-07-13 17:30:11,698	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 17:33:04,002	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 17:33:09,064	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -293.869  0.308785  0.308785  0.3025
+2019-07-13 17:33:13,895	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 25492 rotamers at 111 positions.
+2019-07-13 17:33:13,896	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 17:35:48,949	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 17:35:57,545	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -251.842  0.324435  0.324435  0.55
+2019-07-13 17:35:57,548	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 4  -251.842  -251.936  0.327991  0.327991
+2019-07-13 17:35:57,550	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -251.842  0.324435  0.324435  0.55
+2019-07-13 17:35:57,553	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -251.842  0.324435  0.324435  0.55
+2019-07-13 17:35:57,560	rosetta	INFO	[0mprotocols::checkpoint: [0mDeleting checkpoints of FastRelax
+2019-07-13 17:35:57,687	dnp_relax_b	INFO	Iteration:                        5
+2019-07-13 17:35:57,687	dnp_relax_b	INFO	Tried:                            1.6335013454373963
+2019-07-13 17:35:57,687	dnp_relax_b	INFO	Mean squared distance (actual):   0.14082980135096682
+2019-07-13 17:35:57,688	dnp_relax_b	INFO	Mean squared distance (B-factor): 0.34629176610931517
+2019-07-13 17:35:57,688	dnp_relax_b	INFO	Objective:                        -0.06747895430385098
+2019-07-13 17:35:57,688	dnp_relax_b	INFO	Score (REU):                      -251.93577632613173
+2019-07-13 17:35:57,688	dnp_relax_b	INFO	Score improvement (REU):          -536.1715275369032
+2019-07-13 17:35:57,694	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mLooking for no_cst_ramping.txt
+2019-07-13 17:35:57,742	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: repeat  284.236  0  0  0.55
+2019-07-13 17:36:02,547	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 33626 rotamers at 111 positions.
+2019-07-13 17:36:02,547	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 17:41:28,926	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 17:41:37,268	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -422.745  0.449519  0.449519  0.011
+2019-07-13 17:41:41,871	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 27601 rotamers at 111 positions.
+2019-07-13 17:41:41,871	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 17:45:23,546	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 17:45:30,631	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -326.808  0.308826  0.308826  0.1375
+2019-07-13 17:45:35,262	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 26284 rotamers at 111 positions.
+2019-07-13 17:45:35,263	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 17:48:35,495	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 17:48:40,942	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -280.28  0.304857  0.304857  0.3025
+2019-07-13 17:48:45,472	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 25191 rotamers at 111 positions.
+2019-07-13 17:48:45,472	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 17:51:26,071	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 17:51:37,471	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -255.096  0.359133  0.359133  0.55
+2019-07-13 17:51:37,478	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 0  -255.096  -255.096  0.359133  0.359133
+2019-07-13 17:51:37,482	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -255.096  0.359133  0.359133  0.55
+2019-07-13 17:51:37,485	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -255.096  0.359133  0.359133  0.55
+2019-07-13 17:51:42,275	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 31105 rotamers at 111 positions.
+2019-07-13 17:51:42,275	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 17:56:55,648	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 17:57:03,503	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -438.747  0.4837  0.4837  0.011
+2019-07-13 17:57:08,127	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 27486 rotamers at 111 positions.
+2019-07-13 17:57:08,175	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 18:00:39,052	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 18:00:45,405	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -338.272  0.356873  0.356873  0.1375
+2019-07-13 18:00:49,610	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 23800 rotamers at 111 positions.
+2019-07-13 18:00:49,610	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 18:03:33,030	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 18:03:37,951	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -295.19  0.348104  0.348104  0.3025
+2019-07-13 18:03:42,101	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 22452 rotamers at 111 positions.
+2019-07-13 18:03:42,101	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 18:06:05,331	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 18:06:13,778	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -259.613  0.3702  0.3702  0.55
+2019-07-13 18:06:13,784	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 1  -259.613  -259.613  0.3702  0.3702
+2019-07-13 18:06:13,788	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -259.613  0.3702  0.3702  0.55
+2019-07-13 18:06:13,792	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -259.613  0.3702  0.3702  0.55
+2019-07-13 18:06:18,312	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 31029 rotamers at 111 positions.
+2019-07-13 18:06:18,312	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 18:11:30,177	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 18:11:37,834	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -442.652  0.490597  0.490597  0.011
+2019-07-13 18:11:42,475	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 27469 rotamers at 111 positions.
+2019-07-13 18:11:42,475	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 18:15:17,630	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 18:15:25,282	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -337.931  0.36271  0.36271  0.1375
+2019-07-13 18:15:30,658	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 26305 rotamers at 111 positions.
+2019-07-13 18:15:30,658	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 18:18:52,129	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 18:18:58,325	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -296.372  0.346116  0.346116  0.3025
+2019-07-13 18:19:03,283	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 22663 rotamers at 111 positions.
+2019-07-13 18:19:03,283	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 18:21:35,776	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 18:21:44,461	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -259.659  0.372252  0.372252  0.55
+2019-07-13 18:21:44,467	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 2  -259.659  -259.659  0.372252  0.372252
+2019-07-13 18:21:44,470	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -259.659  0.372252  0.372252  0.55
+2019-07-13 18:21:44,473	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -259.659  0.372252  0.372252  0.55
+2019-07-13 18:21:48,929	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 31043 rotamers at 111 positions.
+2019-07-13 18:21:48,929	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 18:26:49,480	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 18:26:57,339	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -443.127  0.498948  0.498948  0.011
+2019-07-13 18:27:01,949	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 27411 rotamers at 111 positions.
+2019-07-13 18:27:01,949	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 18:30:31,218	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 18:30:38,037	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -346.455  0.369544  0.369544  0.1375
+2019-07-13 18:30:43,147	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 25988 rotamers at 111 positions.
+2019-07-13 18:30:43,147	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 18:33:33,426	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 18:33:38,429	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -300.609  0.364915  0.364915  0.3025
+2019-07-13 18:33:42,473	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 22393 rotamers at 111 positions.
+2019-07-13 18:33:42,473	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 18:36:02,456	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 18:36:10,490	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -262.961  0.383147  0.383147  0.55
+2019-07-13 18:36:10,496	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 3  -262.961  -262.961  0.383147  0.383147
+2019-07-13 18:36:10,499	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -262.961  0.383147  0.383147  0.55
+2019-07-13 18:36:10,502	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -262.961  0.383147  0.383147  0.55
+2019-07-13 18:36:14,961	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 31179 rotamers at 111 positions.
+2019-07-13 18:36:14,962	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 18:41:15,896	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 18:41:23,365	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -442.946  0.490186  0.490186  0.011
+2019-07-13 18:41:27,669	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 26791 rotamers at 111 positions.
+2019-07-13 18:41:27,681	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 18:44:45,591	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 18:44:51,766	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -342.718  0.376079  0.376079  0.1375
+2019-07-13 18:44:55,920	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 23630 rotamers at 111 positions.
+2019-07-13 18:44:55,920	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 18:47:35,877	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 18:47:40,605	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -299.25  0.364397  0.364397  0.3025
+2019-07-13 18:47:44,668	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 22538 rotamers at 111 positions.
+2019-07-13 18:47:44,668	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 18:50:06,088	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 18:50:14,932	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -262.851  0.387005  0.387005  0.55
+2019-07-13 18:50:14,934	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 4  -262.851  -262.961  0.383147  0.383147
+2019-07-13 18:50:14,937	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -262.851  0.387005  0.387005  0.55
+2019-07-13 18:50:14,940	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -262.851  0.387005  0.387005  0.55
+2019-07-13 18:50:14,948	rosetta	INFO	[0mprotocols::checkpoint: [0mDeleting checkpoints of FastRelax
+2019-07-13 18:50:15,076	dnp_relax_b	INFO	Iteration:                        6
+2019-07-13 18:50:15,076	dnp_relax_b	INFO	Tried:                            1.9493390966514677
+2019-07-13 18:50:15,077	dnp_relax_b	INFO	Mean squared distance (actual):   0.1936251520899881
+2019-07-13 18:50:15,077	dnp_relax_b	INFO	Mean squared distance (B-factor): 0.34629176610931517
+2019-07-13 18:50:15,077	dnp_relax_b	INFO	Objective:                        0.05085113829566701
+2019-07-13 18:50:15,077	dnp_relax_b	INFO	Score (REU):                      -262.96111843139255
+2019-07-13 18:50:15,077	dnp_relax_b	INFO	Score improvement (REU):          -547.1968696421641
+2019-07-13 18:50:15,082	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mLooking for no_cst_ramping.txt
+2019-07-13 18:50:15,131	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: repeat  284.236  0  0  0.55
+2019-07-13 18:50:19,952	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 33626 rotamers at 111 positions.
+2019-07-13 18:50:19,952	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 18:55:34,260	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 18:55:42,762	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -425.695  0.432206  0.432206  0.011
+2019-07-13 18:55:47,274	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 27186 rotamers at 111 positions.
+2019-07-13 18:55:47,274	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 18:59:03,349	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 18:59:09,994	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -328.88  0.305828  0.305828  0.1375
+2019-07-13 18:59:14,423	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 26171 rotamers at 111 positions.
+2019-07-13 18:59:14,423	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 19:02:06,264	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 19:02:11,196	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -279.77  0.303887  0.303887  0.3025
+2019-07-13 19:02:15,213	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 22549 rotamers at 111 positions.
+2019-07-13 19:02:15,213	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 19:04:35,805	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 19:04:45,555	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -252.617  0.358619  0.358619  0.55
+2019-07-13 19:04:45,560	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 0  -252.617  -252.617  0.358619  0.358619
+2019-07-13 19:04:45,563	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -252.617  0.358619  0.358619  0.55
+2019-07-13 19:04:45,566	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -252.617  0.358619  0.358619  0.55
+2019-07-13 19:04:50,045	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 31307 rotamers at 111 positions.
+2019-07-13 19:04:50,045	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 19:09:54,977	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 19:10:02,868	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -439.534  0.47499  0.47499  0.011
+2019-07-13 19:10:07,530	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 27656 rotamers at 111 positions.
+2019-07-13 19:10:07,531	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 19:13:33,111	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 19:13:39,639	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -338.338  0.350046  0.350046  0.1375
+2019-07-13 19:13:44,175	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 26612 rotamers at 111 positions.
+2019-07-13 19:13:44,176	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 19:16:43,475	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 19:16:48,498	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -290.128  0.341  0.341  0.3025
+2019-07-13 19:16:52,631	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 23211 rotamers at 111 positions.
+2019-07-13 19:16:52,631	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 19:19:22,209	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 19:19:31,955	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -252.526  0.365389  0.365389  0.55
+2019-07-13 19:19:31,958	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 1  -252.526  -252.617  0.358619  0.358619
+2019-07-13 19:19:31,960	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -252.526  0.365389  0.365389  0.55
+2019-07-13 19:19:31,963	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -252.526  0.365389  0.365389  0.55
+2019-07-13 19:19:36,667	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 29222 rotamers at 111 positions.
+2019-07-13 19:19:36,667	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 19:23:50,024	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 19:23:58,756	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -435.353  0.467889  0.467889  0.011
+2019-07-13 19:24:04,080	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 27617 rotamers at 111 positions.
+2019-07-13 19:24:04,081	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 19:28:00,640	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 19:28:08,094	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -337.966  0.347147  0.347147  0.1375
+2019-07-13 19:28:13,284	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 26645 rotamers at 111 positions.
+2019-07-13 19:28:13,285	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 19:31:34,252	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 19:31:40,180	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -291.887  0.343584  0.343584  0.3025
+2019-07-13 19:31:45,328	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 25632 rotamers at 111 positions.
+2019-07-13 19:31:45,328	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 19:34:41,865	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 19:34:51,089	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -252.742  0.365817  0.365817  0.55
+2019-07-13 19:34:51,095	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 2  -252.742  -252.742  0.365817  0.365817
+2019-07-13 19:34:51,098	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -252.742  0.365817  0.365817  0.55
+2019-07-13 19:34:51,102	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -252.742  0.365817  0.365817  0.55
+2019-07-13 19:34:55,866	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 29254 rotamers at 111 positions.
+2019-07-13 19:34:55,867	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 19:39:35,626	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 19:39:43,426	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -434.225  0.469025  0.469025  0.011
+2019-07-13 19:39:48,851	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 27564 rotamers at 111 positions.
+2019-07-13 19:39:48,852	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 19:43:42,728	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 19:43:50,127	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -337.769  0.351482  0.351482  0.1375
+2019-07-13 19:43:55,189	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 26670 rotamers at 111 positions.
+2019-07-13 19:43:55,189	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 19:47:05,966	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 19:47:11,299	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -291.911  0.347145  0.347145  0.3025
+2019-07-13 19:47:15,822	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 25670 rotamers at 111 positions.
+2019-07-13 19:47:15,822	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 19:49:57,561	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 19:50:06,869	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -252.762  0.363652  0.363652  0.55
+2019-07-13 19:50:06,877	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 3  -252.762  -252.762  0.363652  0.363652
+2019-07-13 19:50:06,880	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -252.762  0.363652  0.363652  0.55
+2019-07-13 19:50:06,883	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -252.762  0.363652  0.363652  0.55
+2019-07-13 19:50:10,972	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 29252 rotamers at 111 positions.
+2019-07-13 19:50:10,973	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 19:54:18,384	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 19:54:25,920	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -438.497  0.488094  0.488094  0.011
+2019-07-13 19:54:30,592	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 27704 rotamers at 111 positions.
+2019-07-13 19:54:30,592	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 19:57:56,760	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 19:58:03,249	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -337.857  0.365281  0.365281  0.1375
+2019-07-13 19:58:07,815	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 26762 rotamers at 111 positions.
+2019-07-13 19:58:07,815	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 20:01:08,372	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 20:01:13,555	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -291.046  0.363089  0.363089  0.3025
+2019-07-13 20:01:18,080	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 25502 rotamers at 111 positions.
+2019-07-13 20:01:18,080	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 20:03:55,058	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 20:04:04,183	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -253.479  0.369935  0.369935  0.55
+2019-07-13 20:04:04,190	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 4  -253.479  -253.479  0.369935  0.369935
+2019-07-13 20:04:04,193	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -253.479  0.369935  0.369935  0.55
+2019-07-13 20:04:04,195	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -253.479  0.369935  0.369935  0.55
+2019-07-13 20:04:04,200	rosetta	INFO	[0mprotocols::checkpoint: [0mDeleting checkpoints of FastRelax
+2019-07-13 20:04:04,328	dnp_relax_b	INFO	Iteration:                        7
+2019-07-13 20:04:04,328	dnp_relax_b	INFO	Tried:                            1.8136110767272726
+2019-07-13 20:04:04,328	dnp_relax_b	INFO	Mean squared distance (actual):   0.19730507610922463
+2019-07-13 20:04:04,329	dnp_relax_b	INFO	Mean squared distance (B-factor): 0.34629176610931517
+2019-07-13 20:04:04,329	dnp_relax_b	INFO	Objective:                        0.003846529998647477
+2019-07-13 20:04:04,329	dnp_relax_b	INFO	Score (REU):                      -253.47915961312276
+2019-07-13 20:04:04,329	dnp_relax_b	INFO	Score improvement (REU):          -537.7149108238943
+2019-07-13 20:04:04,336	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mLooking for no_cst_ramping.txt
+2019-07-13 20:04:04,383	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: repeat  284.236  0  0  0.55
+2019-07-13 20:04:09,184	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 33626 rotamers at 111 positions.
+2019-07-13 20:04:09,184	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 20:09:22,401	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 20:09:30,962	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -426.325  0.406965  0.406965  0.011
+2019-07-13 20:09:35,474	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 27205 rotamers at 111 positions.
+2019-07-13 20:09:35,474	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 20:12:55,592	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 20:13:01,845	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -331.454  0.276551  0.276551  0.1375
+2019-07-13 20:13:06,287	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 26321 rotamers at 111 positions.
+2019-07-13 20:13:06,566	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 20:16:00,061	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 20:16:05,588	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -286.452  0.274668  0.274668  0.3025
+2019-07-13 20:16:09,630	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 23052 rotamers at 111 positions.
+2019-07-13 20:16:09,630	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 20:18:34,212	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 20:18:43,545	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -256.445  0.328616  0.328616  0.55
+2019-07-13 20:18:43,550	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 0  -256.445  -256.445  0.328616  0.328616
+2019-07-13 20:18:43,553	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -256.445  0.328616  0.328616  0.55
+2019-07-13 20:18:43,556	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -256.445  0.328616  0.328616  0.55
+2019-07-13 20:18:47,966	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 31138 rotamers at 111 positions.
+2019-07-13 20:18:47,966	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 20:23:41,897	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 20:23:49,328	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -432.427  0.423607  0.423607  0.011
+2019-07-13 20:23:53,911	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 27169 rotamers at 111 positions.
+2019-07-13 20:23:53,912	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 20:27:14,840	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 20:27:20,973	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -336.985  0.295317  0.295317  0.1375
+2019-07-13 20:27:25,475	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 26364 rotamers at 111 positions.
+2019-07-13 20:27:25,475	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 20:30:17,006	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 20:30:22,005	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -296.357  0.310511  0.310511  0.3025
+2019-07-13 20:30:26,560	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 25537 rotamers at 111 positions.
+2019-07-13 20:30:26,560	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 20:33:03,845	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 20:33:12,926	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -257.994  0.33297  0.33297  0.55
+2019-07-13 20:33:12,932	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 1  -257.994  -257.994  0.33297  0.33297
+2019-07-13 20:33:12,935	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -257.994  0.33297  0.33297  0.55
+2019-07-13 20:33:12,938	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -257.994  0.33297  0.33297  0.55
+2019-07-13 20:33:17,381	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 31229 rotamers at 111 positions.
+2019-07-13 20:33:17,381	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 20:38:09,930	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 20:38:17,344	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -434.573  0.421226  0.421226  0.011
+2019-07-13 20:38:21,938	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 27265 rotamers at 111 positions.
+2019-07-13 20:38:21,938	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 20:41:46,647	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 20:41:53,142	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -341.883  0.309116  0.309116  0.1375
+2019-07-13 20:41:57,656	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 26257 rotamers at 111 positions.
+2019-07-13 20:41:57,656	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 20:44:47,487	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 20:44:52,471	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -295.77  0.304525  0.304525  0.3025
+2019-07-13 20:44:56,929	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 25422 rotamers at 111 positions.
+2019-07-13 20:44:56,929	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 20:47:31,568	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 20:47:40,785	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -256.558  0.337624  0.337624  0.55
+2019-07-13 20:47:40,788	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 2  -256.558  -257.994  0.33297  0.33297
+2019-07-13 20:47:40,790	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -256.558  0.337624  0.337624  0.55
+2019-07-13 20:47:40,793	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -256.558  0.337624  0.337624  0.55
+2019-07-13 20:47:45,249	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 31306 rotamers at 111 positions.
+2019-07-13 20:47:45,249	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 20:52:40,969	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 20:52:48,224	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -434.365  0.425227  0.425227  0.011
+2019-07-13 20:52:53,030	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 27202 rotamers at 111 positions.
+2019-07-13 20:52:53,030	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 20:56:16,754	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 20:56:22,456	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -331.396  0.343917  0.343917  0.1375
+2019-07-13 20:56:26,992	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 26176 rotamers at 111 positions.
+2019-07-13 20:56:26,992	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 20:59:21,199	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 20:59:26,945	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -293.542  0.329172  0.329172  0.3025
+2019-07-13 20:59:31,406	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 24977 rotamers at 111 positions.
+2019-07-13 20:59:31,406	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 21:02:02,136	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 21:02:11,141	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -261.428  0.33521  0.33521  0.55
+2019-07-13 21:02:11,147	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 3  -261.428  -261.428  0.33521  0.33521
+2019-07-13 21:02:11,150	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -261.428  0.33521  0.33521  0.55
+2019-07-13 21:02:11,153	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -261.428  0.33521  0.33521  0.55
+2019-07-13 21:02:15,629	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 31136 rotamers at 111 positions.
+2019-07-13 21:02:15,630	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 21:07:11,930	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 21:07:19,743	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -434.588  0.433052  0.433052  0.011
+2019-07-13 21:07:24,363	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 27534 rotamers at 111 positions.
+2019-07-13 21:07:24,364	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 21:10:51,653	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 21:10:57,823	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -337.687  0.323691  0.323691  0.1375
+2019-07-13 21:11:02,313	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 26097 rotamers at 111 positions.
+2019-07-13 21:11:02,313	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 21:13:50,960	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 21:13:56,254	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -297.925  0.319653  0.319653  0.3025
+2019-07-13 21:14:00,585	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 22848 rotamers at 111 positions.
+2019-07-13 21:14:00,585	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-13 21:16:29,253	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mHigh IG memory usage (>25 MB). If this becomes an issue, consider using a different interaction graph type.
+2019-07-13 21:16:37,613	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -260.631  0.332663  0.332663  0.55
+2019-07-13 21:16:37,617	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 4  -260.631  -261.428  0.33521  0.33521
+2019-07-13 21:16:37,620	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: accept_to_best  -260.631  0.332663  0.332663  0.55
+2019-07-13 21:16:37,623	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: endrepeat  -260.631  0.332663  0.332663  0.55
+2019-07-13 21:16:37,631	rosetta	INFO	[0mprotocols::checkpoint: [0mDeleting checkpoints of FastRelax
+2019-07-13 21:16:37,770	dnp_relax_b	INFO	Iteration:                        8
+2019-07-13 21:16:37,771	dnp_relax_b	INFO	Tried:                            1.7886110767272718
+2019-07-13 21:16:37,771	dnp_relax_b	INFO	Mean squared distance (actual):   0.1575144989924614
+2019-07-13 21:16:37,771	dnp_relax_b	INFO	Mean squared distance (B-factor): 0.34629176610931517
+2019-07-13 21:16:37,772	dnp_relax_b	INFO	Objective:                        -0.04564180604813721
+2019-07-13 21:16:37,772	dnp_relax_b	INFO	Score (REU):                      -261.4276048229908
+2019-07-13 21:16:37,772	dnp_relax_b	INFO	Score improvement (REU):          -545.6633560337623
+2019-07-13 21:16:37,775	dnp_relax_b	INFO	Converged:      True
+2019-07-13 21:16:37,776	dnp_relax_b	INFO	Root:           1.8136110767272726
+2019-07-13 21:16:37,776	dnp_relax_b	INFO	Iterations:     7
+2019-07-13 21:16:37,776	dnp_relax_b	INFO	Function calls: 8

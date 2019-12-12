@@ -2,12 +2,12 @@
 Purify Zif268-repA via ribosome pull-down
 *****************************************
 
-See :expt:`20190626_purify_zif268_repa_via_ribsome_pull_down` for why we'd like 
-to remove the ribosomes from the IVTT reaction.  Another way to achieve this is 
-to use the RiboMinus kit.  The kit contains LNAs with SD sequences, which the 
-ribosomes will bind.  These LNAs are attached to magnetic beads, which can be 
-pulled down.  Although these kits are relatively expensive, it'd be good to at 
-least know if they work.
+See :expt:`20190626_purify_zif268_repa_via_ribosome_pull_down` for why we'd 
+like to remove the ribosomes from the IVTT reaction.  Another way to achieve 
+this is to use the RiboMinus kit.  The kit contains LNAs with SD sequences, 
+which the ribosomes will bind.  These LNAs are attached to magnetic beads, 
+which can be pulled down.  Although these kits are relatively expensive, it'd 
+be good to at least know if they work.
 
 One nice thing about using magnetic beads to bind the ribosomes is that I could 
 add magnetic Ni-NTA beads at the same time, to remove the high-MW PURExpress 
@@ -257,7 +257,7 @@ Beads:
 
    - Run E-gel
       
-      - Very smeary. I think the salt of tween is messing with the gel.
+      - Very smeary. I think the salt or tween is messing with the gel.
 
       - I tried running a 10x dilution, but the bands were very faint.
 
@@ -279,13 +279,10 @@ Beads:
 - Would be nice to visualize the bead retentate, but I'm not sure how to do 
   this reliably.
 
-- All in all, I'm going to conclude that purifying the reaction by pulling down 
-  the ribosomes is a dead end.  The established pulldown methods are too harsh, 
-  this gentle method doesn't give any indication of working, and both 
-  approaches struggle with the sheer quantity of ribosomes in the PURExpress 
-  reactions.
+Results
+=======
+I've concluded that purifying the reaction by pulling down the ribosomes is a 
+dead end.  The established pulldown methods are too harsh, this gentle method 
+doesn't give any indication of working, and both approaches struggle with the 
+sheer quantity of ribosomes in the PURExpress reactions.
 
-References
-==========
-.. [Farrell2010] :doi:`10.1016/B978-0-12-374727-3.00007-3`
-.. [Damian2009] :doi:`10.1016/j.bbrc.2009.05.044`

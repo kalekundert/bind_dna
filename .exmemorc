@@ -8,3 +8,15 @@ src = '~/usb/qpcr/'
 dest = 'qpcr'
 mountpoint = '~/usb'
 precmd = 'python ~/usb/qpcr/compact_biorad_data.py -q'
+
+[[data]]
+type = 'usb'
+src = '~/usb/NanodropOne_AZY1913782/'
+dest = 'nanodrop'
+mountpoint = '~/usb'
+precmd = 'zsh ~/usb/NanodropOne_AZY1913782/csv_to_tsv.sh'
+
+[[data]]
+type = 'gdrive'
+src = '/Church/gels'
+dest = 'gels'

@@ -107,9 +107,3 @@ T
 
 g10L
 
-References
-==========
-.. [Shine1974] :doi:`10.1073/pnas.71.4.1342`
-.. [Olins1989] Olins and Ragwala. A novel sequence element derived from 
-   bacteriophage T7 mRNA acts as an enhancer of translation of the lacZ gene in 
-   Escherichia coli.  J. Biol. Chem. 264:29:16973-76 (1989).

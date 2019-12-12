@@ -1,0 +1,10 @@
+file: protocols/dilute_amplicons.py 20190726_dark_mscarlet.tsv
+repo: git@github.com:kalekundert/bind_dna.git
+commit: 97f881a8d2a409ae4d76679c24f9160d60c69ebd
+date: July 26, 2019
+target volume: 20.00 uL
+target conc:   75.00 nM
+
+   amplicon  stock_ng_uL     mw_da  stock_nM  stock_uL  water_uL
+0        26       318.44  1.33e+06    239.02      6.28     13.72
+1  26 - ORI       301.61  1.11e+06    271.76      5.52     14.48

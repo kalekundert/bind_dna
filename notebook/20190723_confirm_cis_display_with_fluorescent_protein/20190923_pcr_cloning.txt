@@ -1,0 +1,21 @@
+file: pcr_cloning.py x x x 3 x x -L
+repo: git@github.com:kalekundert/wetlab_protocols.git
+commit: 53b527bce3439dcd11019b4c6ebd11bc30e55953
+date: September 23, 2019
+1. Setup 3 ligation reactions:
+
+   Reagent                Conc  Each Rxn  Master Mix
+   ─────────────────────────────────────────────────
+   water                         6.75 μL    23.29 μL
+   T4 ligase buffer        10x   1.00 μL     3.45 μL
+   T4 PNK              10 U/μL   0.25 μL     0.86 μL
+   T4 DNA ligase      400 U/μL   0.25 μL     0.86 μL
+   DpnI                20 U/μL   0.25 μL     0.86 μL
+   PCR product       ≈50 ng/μL   1.50 μL            
+   ─────────────────────────────────────────────────
+                                10.00 μL     8.50 μL/rxn
+
+   - Incubate at room temperature for 1h.
+
+2. Transform 1 μL ligated DNA into 10 μL MACH1 
+   chemically-competent cells.

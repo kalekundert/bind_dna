@@ -69,7 +69,26 @@ Protocol
       > remove 1q3u and not chain C+D
       > save 003_domains.pdb
 
-   - Note that I removed any water molecules.  Practically, this is because the 
+   - I had the thought that maybe I should've removed any residues that 
+     obviously differ between the two crystal structures (e.g. the linker loop) 
+     before doing the superposition, so that the algorithm wouldn't try to 
+     superimpose them.  However, the ``super`` algorithm does this 
+     automatically, so there's no problem with superimposing the domains like I 
+     did.
+
+   - The ``align`` algorithm in pymol creates a sequence alignment and performs 
+     a superposition based on that alignment.  The docs claim that it works 
+     best with sequence identity >30%.  In contrast, the ``super`` algorithm in 
+     pymol is purely geometry based (it doesn't consider sequence at all) and 
+     is better for structure with low sequence similarity but high structural 
+     similarity.  To decide which algorithm to use, I performed a sequence 
+     alignment of Cre and XerA using the `EMBL Needleman-Wunsh web server`__.  
+     That gave a sequence identity of 17.6%, suggesting that the ``super`` 
+     algorithm is more appropriate.
+     
+     __ https://www.ebi.ac.uk/Tools/psa/emboss_needle/
+
+   - I removed all the water molecules.  Practically, this is because the 
      waters didn't superimpose with the rest of the protein, and it seemed like 
      it'd be a pain to get them to.  I looked at some of the waters with low 
      B-factors, but they didn't seem particularly important.  And of course, 
@@ -77,8 +96,8 @@ Protocol
      caveat of the model, though.  Any waters in the interface will not be 
      predicted.  That could also lead to incorrect rotamer predictions.
    
-   - I removed the Mg and I atoms associated with the DNA, because they didn't 
-     seem to be forming specific interactions.
+   - I also removed the Mg and I atoms associated with the DNA, because they 
+     didn't seem to be forming specific interactions.
 
    - Note that ``003_domains.pdb`` only appears to have one monomer when opened 
      in pymol.  This is because the two monomers have exactly the same atom, 
@@ -113,11 +132,14 @@ Protocol
       loxP rc:   ATAACTTCGTATAgcatacatTATACGAAGTTAT
       Chain D: GGATAACTTCGTATAGCATACATTATACGAAGTTATC
 
-   - Make sure I didn't make any mistakes:
+   - Make sure I didn't make any mistakes::
 
       $ ./check_resn_per_resi.py 005_fix_difA.pdb
 
 5. Manually prepare an input model for relaxation:
+
+   - If I'd been thinking ahead, I could've done all this is the first few 
+     steps.  But that's fine.
 
    - Delete the linker between the N- and C-terminal domains (residues 87--108) 
      from the model.  I'm going to run ``dbp_relax_b``, which is going to 
@@ -129,29 +151,40 @@ Protocol
      is part of the dimer interface, and it's clearly in the wrong 
      conformation.  I'll probably want to do a 
 
-
    - Put the two domains in separate chains.  I don't expect the chains to move 
      much, but I want them to move freely and without regard for any weird 
      fake-bonds from the deleted residues connecting the domains.
      
+6. Relax the model::
 
-5. Connect the N- and C- terminal domains via loop modeling.
+      $ dbp_relax_b init 007_relax_XerA 006_unrelaxed.pdb
 
-   - I'm getting curious about this linker: it doesn't really seem long enough 
-     to connect the two domains.  I mean, it fits, but it seems really 
-     stretched out.  
+   Edit ``007_relax_XerA/conf.toml``.  Change ``preoptimize.percent-within`` 
+   and ``optimize.percent-within`` to 75, to account for the fact that this 
+   model will have more atoms out-of-place than a model built directly from a 
+   crystal structure.
+
+7. Connect the N- and C- terminal domains via loop modeling.
+
+   .. update:: 2019/07/31
+
+      I didn't actually do this step.
+
+   - I've gotten curious about this linker because it doesn't really seem long 
+     enough to connect the two domains.  I mean, it fits, but it seems really 
+     stretched out.  This linker also seems to replace a whole helix in Cre.
      
    - fKIC would probably be the best way to make a prediction about what that 
      loop would look like:
      
-      - I don't know if there should be secondary structure in the linker, but 
-        if there should be, fKIC would be more likely than anything else to 
-        find it.
+      - I don't know whether or not there should be secondary structure in the 
+        linker, but if there should, fKIC would be more likely than anything 
+        else to find it.
         
       - This is also a long loop (~20 res), and fKIC performs much better than 
         CCD or NGK on long loops.
 
-   - Download a fasta file for XerA from `Uniprot`__. :download:`5hxy.fasta`
+   - Download a fasta file for XerA from `Uniprot`__. :download:`xera.fasta`
 
      __ https://www.uniprot.org/uniprot/Q9HIM5
 
@@ -163,11 +196,61 @@ Protocol
      one generated from ``5hxy.pdb``, because the PDB file is missing some 
      residues on the N-terminus.  These residue should be considered when 
      making fragments, and leaving them out causes indexing problems.
+
+Results
+=======
+- I allowed very little backbone movement.  Basically I assumed that the 
+  :pdb:`5HXY` crystal structure and the alignment onto :pdb:`1Q3U` were more 
+  accurate than anything Rosetta would come up with, so I didn't allow Rosetta 
+  to deviate much from that template.  Of course, this means that the model is 
+  incapable of predicting any major conformational changes.
+
+- This model does not include explicit water molecules.  This is definitely a 
+  weakness, because water-mediated DNA interactions will not be accurately 
+  predicted.
+
+- I didn't model water-mediated H-bonds at all.  These H-bonds are quite common 
+  in DNA interfaces, so some of the direct DNA contacts in the model may be 
+  water-mediated in real life.
+
+- I gave the backbone very little freedom to move.  Basically I took the 
+  backbone structure from 5HXY and superimposed the N- and C-terminal domains 
+  onto 1Q3U.  I didn't trust Rosetta to be more accurate than that, so I didn't 
+  let it move the backbone much more than ~0.5A.  It's possible that the real 
+  XerA is differs from Cre in ways this model wasn't allowed to consider.
+
+- The model doesn't include the linker between the N- and C-terminal domains, 
+  or one of the helices involved in the dimer-dimer interface.  The 
+  conformations that these regions adopted in the 5HXY structure were clearly 
+  incompatible with the DNA-bound model, so I left them out.  It would be 
+  possible to model these regions, too, but I didn't think the results would be 
+  interesting enough to merit the effort.
+
+- Adenine 118 is flipped out of the double-helix in the model.  This is 
+  obviously wrong.  The cause is probably related to the fact that the DNA 
+  backbone in really curved in that region, and maybe loxP and difA curve 
+  slightly differently.  In any case, I don't think this specific error affects 
+  the any of the protein-DNA interfaces, so I'm not too worried about it.
+
+- I checked in pymol to see (qualitatively) how well the electrostatic surface 
+  of the model corresponded to the DNA interface.  The correspondence was good, 
+  but not as good as 1q3u:
+
+   - E28 and E210 both seem to be making relatively unfavorable contacts with 
+     the DNA.
+
+   - I suspect that the linkers between the N- and C-terminal domains help bind 
+     the backbone, but the model doesn't include those linkers.
+
+- Final disclaimer: This is a pretty big model, and I don't really know how 
+  well Rosetta was able to handle it.  I tested the algorithm on a smaller 
+  protein (a Zn-finger) and it qualitatively seemed to give reasonable results.  
+  But it's possible that the algorithm wasn't able to converge as well on such 
+  a big system.  To really know how well the algorithm could be expected to 
+  work, I'd have to benchmark a bunch of structures of similar size for 
+  Cre/XerA, which would be way too much work for something like this.  So just 
+  take everything with a grain of salt.
       
-2. Loop model to connect domains
-
-
-
 References
 ==========
 Protein-protein docking tutorial:

@@ -1,0 +1,10 @@
+file: protocols/dilute_amplicons.py 20190914_dilute_27_t7_44.tsv
+repo: git@github.com:kalekundert/bind_dna.git
+commit: 57b9d95e6c68065031d5c7497f71515488beaded
+date: September 14, 2019
+target volume: 20.00 uL
+target conc:   75.00 nM
+
+   amplicon  stock_ng_uL     mw_da  stock_nM  stock_uL  water_uL
+0  27 + Cy5       241.69  1.28e+06    189.39      7.92     12.08
+1  27 + Cy5       298.58  1.28e+06    233.97      6.41     13.59

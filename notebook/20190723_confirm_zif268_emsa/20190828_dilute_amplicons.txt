@@ -1,0 +1,9 @@
+file: protocols/dilute_amplicons.py dilute_18.toml -v 100
+repo: git@github.com:kalekundert/bind_dna.git
+commit: ae1249f5b60abac8146d221e16200f205512ba32
+date: August 28, 2019
+target volume: 100.00 uL
+target conc:   75.00 nM
+
+   amplicon  stock_ng_uL     mw_da  stock_nM  stock_uL  water_uL
+0  18 + Cy5         65.8  42797.08   1537.49      4.88     95.12

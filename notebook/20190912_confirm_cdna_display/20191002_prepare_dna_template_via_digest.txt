@@ -1,0 +1,56 @@
+file: notebook/20190912_confirm_cdna_display/prepare_dna_template_via_digest.py 49 50 51
+repo: git@github.com:kalekundert/bind_dna.git
+commit: c15e696843e008be85f9181815522db59722be07
+date: October 2, 2019
+1. Digest the template plasmid(s) with XmnI:
+
+   Reagent                Conc  Each Rxn  Master Mix
+   ─────────────────────────────────────────────────
+   49,50,51          100 ng/µL  44.50 µL            
+   CutSmart buffer         10x   5.00 µL    16.50 µL
+   XmnI (NEB R0194)    20 U/µL   0.50 µL     1.65 µL
+   ─────────────────────────────────────────────────
+                                50.00 µL     5.50 µL/rxn
+
+2. Do a phenol-chloroform extraction to remove any  
+   RNase leftover from the plasmid prep.
+
+   - Dilute the reaction to 100 µL with water.
+   
+   - Add 100 μL phenol:chloroform:isoamyl alcohol, pH 
+     8.0 (the correct pH for purifying DNA).
+
+   - Vortex vigorously to mix the phases.
+
+   - Spin in a microfuge at top speed for 1-2 min to 
+     separate the phases.
+
+   - Transfer the aqueous (upper) phase to a new 
+     tube, being careful not to transfer any of the 
+     protein at the phase interface.
+
+   - Repeat the phenol:chloroform:isoamyl alcohol 
+     extraction.
+
+   - Extract the sample with an equal volume of 
+     chloroform:isoamyl alcohol to remove phenol.
+
+3. Precipitate and resuspend the DNA.
+
+   - Add 0.1 volumes 3M NaOAc, pH 5.2 and optionally 
+     1 µL glycogen to the purified reaction.
+
+   - Incubate at -20°C for at least 30 min.
+
+   - Spin max speed, 15 min, 4°C.
+
+   - Remove supernatant and rinse pellet with 500 µL 
+     70% ethanol.
+  
+   - Spin max speed, 15 min, 4°C.
+
+   - Remove supernatant and air dry the pellet for 15 
+     min at room temperature.
+
+   - Resuspend the pellet 8.9 µL nuclease-free
+     water (for a concentration of 500 ng/µL).

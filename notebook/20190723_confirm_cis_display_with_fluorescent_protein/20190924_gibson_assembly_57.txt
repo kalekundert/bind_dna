@@ -1,0 +1,18 @@
+file: gibson_assembly.py 57_bb,71.8,3678:shuffled_cis_insert,10,252
+repo: git@github.com:kalekundert/wetlab_protocols.git
+commit: e835dc11088423e5b21a5187b0b260b115ba73eb
+date: September 24, 2019
+1. Prepare the Gibson assembly reaction:
+
+   Reagent                            Conc  Each Rxn
+   ─────────────────────────────────────────────────
+   57_bb                          72 ng/µL   2.52 μL
+   shuffled_cis_insert            10 ng/µL   2.48 μL
+   Gibson master mix (NEB E2611)             5.00 μL
+   ─────────────────────────────────────────────────
+                                            10.00 μL
+
+2. Incubate at 50°C for 15 min.
+
+3. Dilute reaction 4x in water before transfroming 
+   into chemically competent cells (e.g. MACH1).

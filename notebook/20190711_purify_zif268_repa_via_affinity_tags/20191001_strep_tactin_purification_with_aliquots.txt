@@ -1,0 +1,28 @@
+file: notebook/20190711_purify_zif268_repa_via_affinity_tags/strep_tactin_purification_with_aliquots.txt
+repo: git@github.com:kalekundert/bind_dna.git
+commit: 8817fc606153f78ffd46f8accdbe92aa44b72a76
+date: October 1, 2019
+For each 10 µL IVTT reaction:
+
+1. Wash 2 μL magnetic Strep-tactin beads (40 μL 5% 
+   bead solution).  Keep washed beads on ice.
+
+2. Dilute the reaction to 50 μL with wash buffer.
+
+3. Save 10 μL "crude" aliquot.
+
+4. Add remaining 40 μL to washed beads.  Vortex to 
+   resuspend.
+
+5. Incubate on ice for 30 min.  Vortex every 5 min.
+
+6. Wash three times with wash buffer:
+
+   - First wash: 50 μL buffer
+   - Save 10 μL "wash" aliquot.
+   - Second wash: 200 μL buffer
+   - Third wash: 200 μL buffer
+
+7. Elute with 50 μL elution buffer.
+
+vim: tw=53

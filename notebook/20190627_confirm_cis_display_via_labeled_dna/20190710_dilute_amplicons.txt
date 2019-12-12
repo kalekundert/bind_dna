@@ -1,0 +1,11 @@
+file: notebook/20190603_express_zif286_in_vitro/dilute_amplicons.py ng_uL_fam.toml
+repo: git@github.com:kalekundert/bind_dna.git
+commit: a6f0e2ff1fbd204d04329d8f64c583d9c307e744
+date: July 10, 2019
+11
+  water: 16.13 μL
+  DNA:   3.87 μL (380.7 ng/μL, 388.0 nM)
+
+11 - ORI
+  water: 17.41 μL
+  DNA:   2.59 μL (439.7 ng/μL, 578.5 nM)

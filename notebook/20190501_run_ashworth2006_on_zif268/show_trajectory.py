@@ -17,7 +17,9 @@ opt_path = Path(work) / 'optimization.json'
 with opt_path.open() as f:
 	opt = json.load(f)
 
-pprint(opt)
+for k in range(1, len(opt)+1):
+    x = opt[str(k)]
+    print(f"{k}\t{x['cst_stdev']}\t{x['objective']}\t{x['score_reu']}")
 
 
 

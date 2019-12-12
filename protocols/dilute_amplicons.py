@@ -4,7 +4,7 @@
 Calculate how to dilute genes amplified by PCR.
 
 Usage:
-    dilute_amplicons.py <ng_uL> [options]
+    dilute_amplicons.py <ng_uL> [-c] [-v | -V]
 
 Arguments:
     <ng_uL>
@@ -20,6 +20,9 @@ Options:
 
     -v --volume <uL>  [default: 20]
         The volume of diluted amplicon to make.
+
+    -V --stock-volume <uL>
+        The volume of concentrated DNA that you want to use for the dilution.  
 """
 
 import docopt

@@ -477,11 +477,116 @@ Talk with Alex Garruss:
    - This assay would presumably be more quantitative than B1H, but not more 
      quantitative than the other in vitro assays I'm considering.
 
+2019/08/02:
 
+Talk with Kamesh:
 
+- B1H is a good option:
 
-References
-==========
-.. [Gu2014] :doi:`10.1038/nature13761`
-.. [Zykovich2009] :doi:`10.1093/nar/gkp802`
-.. [Meng2007] :doi:`10.1093/nar/gkm385`
+   - I'm keeping B1H as a backup option, but Kamesh emphasized that it's not an 
+     unattractive choice.  
+     
+   - One limit is transformation efficiency, but 1e7-1e8 could be enough 
+     diversity to learn what I want to learn.
+     
+   - The assay is easy to get working.  I can order plasmids from Addgene, and 
+     there are people in the lab (including Kamesh) who can help me gets 
+     started.
+
+- Consider benchmarking on existing datasets.
+
+   - A lot of Zn-finger datasets are available.  It might be possible to create 
+     a good benchmark.
+
+   - That said, I really believe that the ability to test 1e4 designs will just 
+     render benchmarks obsolete.
+
+- Talk to people:
+
+   - Martha Bulyk
+
+      - Ex Church lab
+      - Might have some ideas for applications besides recombinases
+      - Might have some students that would be interested in helping.
+
+   - Gary Storno
+      
+      - Friendly
+      - Has done B1H
+
+   - Scott Wolfe
+
+   - Hamed Shateri
+
+      - See Nature 2015/16 paper.
+
+   - Tim Hughes
+
+2019/11/18:
+
+Jorge Marchand:
+
+- To purify repA-DNA complex, try labeling the DNA with biotin.  The DNA is 
+  likely to be available even if protein tags aren't, especially if the biotin 
+  is on the 5' end (although this would require me to move Cy5 to the 3' end).
+
+Even if protein tags are inaccessible, the Try labeling 
+
+Ben Weinberg:
+
+- B1H: Instead of transcribing GFP and doing FACS, transcribe a barcode and 
+  read it using RNA-seq.
+
+- And it's probably a good idea to just do B1H to get some data to work with.
+
+2019/11/26:
+
+Martha Bulyk:
+
+2019/11/27:
+
+- One potential application of protein/DNA interface design is to study 
+  transcription factors.  Most transcription factors target many sequences, and 
+  it would be nice to be able to deconvolute the roles of those sequences.  One 
+  way to do that is to engineer TF variants that target a subset of the 
+  wildtype TF's sites.  Similarly, this could be used to make synthetic TFs 
+  with better defined specificities.
+
+George Church:
+
+- Nobody has really tried to fairly compare the off-target activity of CRISPR, 
+  ZFNs, TALENs, and recombinases.  This would be valuable, especially for a 
+  project trying to present itself as an alternative to CRISPR.  It isn't a 
+  trivial comparison, either, because activity depends on the site being 
+  targeted, the concentration of the protein, and the duration of editing.  The 
+  location can't even be completely standardized, because all of these systems 
+  recognize and act at sequences with slightly different offsets.
+
+  But you could imagine measuring off-target activity for a number of 
+  concentrations, times, and locations for each system, and comparing the 
+  minimums.
+
+- For my F32 proposal, I'll have to say why CRISPR won't just solve everything 
+  (this echoes a comment made by Tanja).  Unfortunately, that means taking 
+  potshots at CRISPR, and it's likely that some of the reviewers will have a 
+  vested interest in CRISPR (since most people do, nowadays).  Prime editing is 
+  probably my biggest competitor.  It's downsides are its efficiency, it 
+  inability to make large insertions (it can insert loxP, but that requires two 
+  steps to make a significant insertion), and its size (although the size could 
+  be mitigated with better delivery options).  It's good to focus on the 
+  efficiency of Cre, because that really stands out and doesn't rag on CRISPR 
+  directly.
+
+- George likes the chip-based approach to testing design algorithms.  I 
+  mentioned that I was surprised by how slow this was catching on in the 
+  protein design community, and he said he wasn't surprised because the 
+  scientific community as a whole has been slow to adopt multiplexed DNA 
+  synthesis since it was published in 2004.  Certainly the Church lab (and its 
+  alumni) have been making good use of it, though.
+
+- I might want to add Keith Joeng as co-collaborator, since he developed 
+  GUIDE-seq.  But I'm now downplaying the role of GUIDE-seq relative to the 
+  aims I sent George, and it's too late to do this kind of thing for the first 
+  submission.  So if/when I have to resubmit, I'll ask Martha and Keith to 
+  co-mentor.
+  

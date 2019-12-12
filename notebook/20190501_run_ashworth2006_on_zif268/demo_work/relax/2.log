@@ -1,0 +1,66 @@
+2019-07-15 20:44:20,674	pyrosetta.rosetta	INFO	Found rosetta database at: /home/kale/research/projects/201904_bind_dna/rosetta/source/lib/pyrosetta/python37/release/setup/pyrosetta/database; using it....
+2019-07-15 20:44:20,674	pyrosetta.rosetta	INFO	PyRosetta-4 2019 [Rosetta devel 2019.17.post.dev+147.devdna.3b7c7e9e64ebfb4652c7c7b3968b163a6207982a 2019-06-20T15:16:46] retrieved from: git@guybrush.ucsf.edu:kortemme-lab/rosetta.git
+(C) Copyright Rosetta Commons Member Institutions. Created in JHU by Sergey Lyskov and PyRosetta Team.
+2019-07-15 20:44:20,687	rosetta	INFO	[0mcore.init: [0mChecking for fconfig files in pwd and ./rosetta/flags
+2019-07-15 20:44:20,687	rosetta	INFO	[0mcore.init: [0mRosetta version: 2019.17.post.dev+147.devdna.3b7c7e9e64e 3b7c7e9e64ebfb4652c7c7b3968b163a6207982a git@guybrush.ucsf.edu:kortemme-lab/rosetta.git 2019-06-20T15:16:46
+2019-07-15 20:44:20,687	rosetta	INFO	[0mcore.init: [0mcommand: PyRosetta -relax:dna_move on -relax:coord_cst_stdev 0.5 -relax:constrain_relax_to_start_coords on -relax:ramp_constraints off -run:test_cycles on -dna:specificity:exclude_dna_dna off -out:levels core.pack.rotamer_set.RotamerSet_.extra_rotamers:500 -database /home/kale/research/projects/201904_bind_dna/rosetta/source/lib/pyrosetta/python37/release/setup/pyrosetta/database
+2019-07-15 20:44:20,687	rosetta	INFO	[0mcore.init: [0m'RNG device' seed mode, using '/dev/urandom', seed=-1865188692 seed_offset=0 real_seed=-1865188692
+2019-07-15 20:44:20,687	rosetta	INFO	[0mcore.init.random: [0mRandomGenerator:init: Normal mode, seed=-1865188692 RG_type=mt19937
+2019-07-15 20:44:21,481	rosetta	INFO	[0mcore.chemical.GlobalResidueTypeSet: [0mFinished initializing fa_standard residue type set.  Created 979 residue types
+2019-07-15 20:44:21,481	rosetta	INFO	[0mcore.chemical.GlobalResidueTypeSet: [0mTotal time to initialize 0.791633 seconds.
+2019-07-15 20:44:21,486	rosetta	INFO	[0mcore.import_pose.import_pose: [0mFile '/home/kale/research/projects/201904_bind_dna/notebook/20190501_run_ashworth2006_on_zif268/demo_work/unrelaxed.pdb' automatically determined to be of type PDB
+2019-07-15 20:44:21,952	rosetta	INFO	[0mcore.conformation.Conformation: [0m[1m[ WARNING ][0m missing heavyatom:  OXT on residue ARG:CtermProteinFull 107
+2019-07-15 20:44:21,960	rosetta	INFO	[0mcore.scoring.etable: [0mStarting energy table calculation
+2019-07-15 20:44:21,964	rosetta	INFO	[0mcore.scoring.etable: [0msmooth_etable: changing atr/rep split to bottom of energy well
+2019-07-15 20:44:21,964	rosetta	INFO	[0mcore.scoring.etable: [0msmooth_etable: spline smoothing lj etables (maxdis = 6)
+2019-07-15 20:44:21,964	rosetta	INFO	[0mcore.scoring.etable: [0msmooth_etable: spline smoothing solvation etables (max_dis = 6)
+2019-07-15 20:44:22,734	rosetta	INFO	[0mcore.scoring.etable: [0mFinished calculating energy tables.
+2019-07-15 20:44:22,734	rosetta	INFO	[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/hbonds/ref2015_params/HBPoly1D.csv
+2019-07-15 20:44:22,735	rosetta	INFO	[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/hbonds/ref2015_params/HBFadeIntervals.csv
+2019-07-15 20:44:22,736	rosetta	INFO	[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/hbonds/ref2015_params/HBEval.csv
+2019-07-15 20:44:22,738	rosetta	INFO	[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/hbonds/ref2015_params/DonStrength.csv
+2019-07-15 20:44:22,738	rosetta	INFO	[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/hbonds/ref2015_params/AccStrength.csv
+2019-07-15 20:44:22,739	rosetta	INFO	[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/rama/fd/all.ramaProb
+2019-07-15 20:44:23,134	rosetta	INFO	[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/rama/fd/prepro.ramaProb
+2019-07-15 20:44:23,537	rosetta	INFO	[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/omega/omega_ppdep.all.txt
+2019-07-15 20:44:23,539	rosetta	INFO	[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/omega/omega_ppdep.gly.txt
+2019-07-15 20:44:23,541	rosetta	INFO	[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/omega/omega_ppdep.pro.txt
+2019-07-15 20:44:23,542	rosetta	INFO	[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/omega/omega_ppdep.valile.txt
+2019-07-15 20:44:23,578	rosetta	INFO	[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/P_AA_pp/P_AA
+2019-07-15 20:44:23,578	rosetta	INFO	[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/P_AA_pp/P_AA_n
+2019-07-15 20:44:23,579	rosetta	INFO	[0mcore.scoring.P_AA: [0mshapovalov_lib::shap_p_aa_pp_smooth_level of 1( aka low_smooth ) got activated.
+2019-07-15 20:44:23,579	rosetta	INFO	[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/P_AA_pp/shapovalov/10deg/kappa131/a20.prop
+2019-07-15 20:44:23,710	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mLooking for no_cst_ramping.txt
+2019-07-15 20:44:23,710	rosetta	INFO	[0mprotocols.relax.RelaxScriptManager: [0m================== Reading script file: /home/kale/research/projects/201904_bind_dna/rosetta/source/lib/pyrosetta/python37/release/setup/pyrosetta/database/sampling/relax_scripts/no_cst_ramping.txt ==================
+2019-07-15 20:44:23,710	rosetta	INFO	[0mprotocols.relax.RelaxScriptManager: [0mrepeat %%nrepeats%%
+2019-07-15 20:44:23,710	rosetta	INFO	[0mprotocols.relax.RelaxScriptManager: [0mramp_repack_min 0.02  0.01     1.0
+2019-07-15 20:44:23,710	rosetta	INFO	[0mprotocols.relax.RelaxScriptManager: [0mramp_repack_min 0.250 0.01     1.0
+2019-07-15 20:44:23,710	rosetta	INFO	[0mprotocols.relax.RelaxScriptManager: [0mramp_repack_min 0.550 0.01     1.0
+2019-07-15 20:44:23,710	rosetta	INFO	[0mprotocols.relax.RelaxScriptManager: [0mramp_repack_min 1     0.00001  1.0
+2019-07-15 20:44:23,710	rosetta	INFO	[0mprotocols.relax.RelaxScriptManager: [0maccept_to_best
+2019-07-15 20:44:23,710	rosetta	INFO	[0mprotocols.relax.RelaxScriptManager: [0mendrepeat
+2019-07-15 20:44:23,736	rosetta	INFO	[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/elec_cp_reps.dat
+2019-07-15 20:44:23,736	rosetta	INFO	[0mcore.scoring.elec.util: [0mRead 40 countpair representative atoms
+2019-07-15 20:44:23,748	rosetta	INFO	[0mcore.pack.dunbrack.RotamerLibrary: [0mshapovalov_lib_fixes_enable option is true.
+2019-07-15 20:44:23,748	rosetta	INFO	[0mcore.pack.dunbrack.RotamerLibrary: [0mshapovalov_lib::shap_dun10_smooth_level of 1( aka lowest_smooth ) got activated.
+2019-07-15 20:44:23,748	rosetta	INFO	[0mcore.pack.dunbrack.RotamerLibrary: [0mBinary rotamer library selected: /home/kale/research/projects/201904_bind_dna/rosetta/source/lib/pyrosetta/python37/release/setup/pyrosetta/database/rotamer/shapovalov/StpDwn_0-0-0/Dunbrack10.lib.bin
+2019-07-15 20:44:23,749	rosetta	INFO	[0mcore.pack.dunbrack.RotamerLibrary: [0mUsing Dunbrack library binary file '/home/kale/research/projects/201904_bind_dna/rosetta/source/lib/pyrosetta/python37/release/setup/pyrosetta/database/rotamer/shapovalov/StpDwn_0-0-0/Dunbrack10.lib.bin'.
+2019-07-15 20:44:23,899	rosetta	INFO	[0mcore.pack.dunbrack.RotamerLibrary: [0mDunbrack 2010 library took 0.14968 seconds to load from binary
+2019-07-15 20:44:23,907	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: repeat  284.236  0  0  0.55
+2019-07-15 20:44:24,230	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 1741 rotamers at 111 positions.
+2019-07-15 20:44:24,230	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-15 20:44:28,493	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -418.078  0.440082  0.440082  0.011
+2019-07-15 20:44:28,742	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 1451 rotamers at 111 positions.
+2019-07-15 20:44:28,742	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-15 20:44:32,168	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -320.835  0.299036  0.299036  0.1375
+2019-07-15 20:44:32,416	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 1384 rotamers at 111 positions.
+2019-07-15 20:44:32,417	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-15 20:44:34,371	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -274.031  0.297739  0.297739  0.3025
+2019-07-15 20:44:34,615	rosetta	INFO	[0mcore.pack.pack_rotamers: [0mbuilt 1363 rotamers at 111 positions.
+2019-07-15 20:44:34,615	rosetta	INFO	[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+2019-07-15 20:44:41,679	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -246.791  0.348084  0.348084  0.55
+2019-07-15 20:44:41,684	rosetta	INFO	[0mprotocols.relax.FastRelax: [0mMRP: 0  -246.791  -246.791  0.348084  0.348084
+2019-07-15 20:44:41,687	rosetta	INFO	[0mprotocols::checkpoint: [0mDeleting checkpoints of FastRelax
+2019-07-15 20:44:41,697	rosetta	INFO	[0mcore.import_pose.import_pose: [0mFile '/home/kale/research/projects/201904_bind_dna/notebook/20190501_run_ashworth2006_on_zif268/demo_work/unrelaxed.pdb' automatically determined to be of type PDB
+2019-07-15 20:44:42,099	rosetta	INFO	[0mcore.conformation.Conformation: [0m[1m[ WARNING ][0m missing heavyatom:  OXT on residue ARG:CtermProteinFull 107
+2019-07-15 20:44:42,139	dnp_relax_b	INFO	writing relaxed pose to '/home/kale/research/projects/201904_bind_dna/notebook/20190501_run_ashworth2006_on_zif268/demo_work/relax/2.pdb'

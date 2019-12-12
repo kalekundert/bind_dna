@@ -1,0 +1,21 @@
+file: golden_gate.py D,50,2200:F,53,900:I,22,100 -e BsaI-HFv2
+repo: git@github.com:kalekundert/wetlab_protocols.git
+commit: d7c5c95134f12db627fc19ffe7bb54ca7b00aeac
+date: October 18, 2019
+1. Setup the Golden Gate reaction(s):
+
+   Reagent               Conc  Each Rxn
+   ────────────────────────────────────
+   D                 50 ng/µL   4.04 µL
+   F                 53 ng/µL   3.12 µL
+   I                 22 ng/µL   0.84 µL
+   T4 ligase buffer       10x   1.00 μL
+   T4 DNA ligase     400 U/μL   0.50 μL
+   BsaI-HFv2                    0.50 μL
+   ────────────────────────────────────
+                               10.00 µL
+
+2. Run the following thermocycler protocol:
+
+   - 37°C for 60 min
+   - 60°C for 5 min

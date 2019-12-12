@@ -159,7 +159,7 @@ Methods
 
 - I forgot to save an aliquot of the crude reaction, but comparing to the crude 
   reaction from another gel (`20190626_purify_controls.svg`), I don't see any 
-  differences.  I don't even see the RNases, althoguh at ~10 and 13 kDa, they 
+  differences.  I don't even see the RNases, although at ~10 and 13 kDa, they 
   might have run off the bottom.
 
 - The DHFR control is not retained by the filter.  Some more comes off on the 
@@ -181,13 +181,12 @@ Methods
   miniprepped template DNA (since RNase is added during a miniprep), but 
   shouldn't be as necessary with PCR-amplified template.
 
-- If I do this experiment again:
+Results
+=======
+I do not think RNase digestion is a promising way to get rid of the ribosomes, 
+but if I were to look into this again:
   
-   - Leave out the RNase inhibitor.
-   - I should use more RNase and for a longer time.  At least 1h, maybe 2h.
-   - I don't think I need any more than 2 spins.
-
-References
-==========
-.. [Shimizu2001] :doi:`10.1038/90802`
+- Leave out the RNase inhibitor.
+- Use more RNase and for a longer time.  At least 1h, maybe overnight.
+- I don't think I need any more than 2 spins.
 

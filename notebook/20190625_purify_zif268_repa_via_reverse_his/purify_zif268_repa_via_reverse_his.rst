@@ -31,7 +31,7 @@ __ https://www.neb.com/protocols/0001/01/01/purification-of-synthesized-protein-
     <http://www.emdmillipore.com/US/en/20140318_170505>`_.  Likely the 100K 
     spin column will retain all of the Zif268-repA gene.
 
-  - The Invitrogen RiboMinus TRanscriptome Isolation Kit (K155004) might be a 
+  - The Invitrogen RiboMinus Transcriptome Isolation Kit (K155004) might be a 
     way to get rid of the ribosomes.  I briefly looked at the protocol, and the 
     steps seem gentle enough.  I'd dilute the sample a lot, but fortunately I 
     can concentrate them with the spin columns.
@@ -168,3 +168,10 @@ So where did the Zif268-repA go?
 - Maybe it's getting stuck to the filter.  I can't explain why my protein would 
   be getting stuck so much more than any of the other proteins seem to be, but 
   this is a possibility.
+
+Results
+=======
+The reverse-His purification protocol will not be useful for my repA fusions, 
+because the fusions don't pass through the 100K spin filter.  Also, 11-ORI does 
+not behave how I expect it to (in that it may be binding DNA), which makes it a 
+poor control.

@@ -1,0 +1,25 @@
+file: golden_gate.py pKBK022,489,3133:GFP,49.6,789 -d5
+repo: git@github.com:kalekundert/wetlab_protocols.git
+commit: 6d441fdd203b905224cb6305be9fe650b88c56b3
+date: July 30, 2019
+1. Setup the Golden Gate reaction(s):
+
+   Reagent                  Conc  Each Rxn
+   ───────────────────────────────────────
+   Water                           3.00 µL
+   pKBK022             489 ng/µL   0.84 µL
+   GFP                  50 ng/µL   4.16 µL
+   T4 ligase buffer          10x   1.00 μL
+   T4 DNA ligase        400 U/μL   0.50 μL
+   Golden Gate enzyme              0.50 μL
+   ───────────────────────────────────────
+                                  10.00 µL
+
+2. Run the following thermocycler protocol:
+
+   - 37°C for 5 min
+
+   Or, to maximize the number of transformants:
+
+   - 37°C for 60 min
+   - 60°C for 5 min

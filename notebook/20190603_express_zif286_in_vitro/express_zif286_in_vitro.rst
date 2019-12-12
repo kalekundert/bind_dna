@@ -346,13 +346,18 @@ Gradient PCR for full length amplicon.
   yields.  There's no reason to not get it right.
 
 - The question of which RBS to use is actually something I might want to 
-  explore further, see :expt:`optimize_rbs`.  For now, I'm using the primers 
-  recommended by NEB to add the promoter and RBS by PCR, to confirm that I can 
-  get expression in this manner.
+  explore further, see :expt:`20190614_optimize_rbs`.  For now, I'm using the 
+  primers recommended by NEB to add the promoter and RBS by PCR, to confirm 
+  that I can get expression in this manner.
 
 2019/06/20
 ==========
 .. protocol:: 20190620_pcr.txt
+   
+   - Primers:
+
+      - Forward: T7_ZIF_FOR
+      - Reverse: ORI_TM62_REV
 
    - I used the annealing temperatures from the previous optimization runs 
      (even though these primers are slightly different):
@@ -461,12 +466,7 @@ Yield:
 
 Results
 =======
-I was able to get good Zif268-repA expression by using the right RBS.
-
-References
-==========
-.. [Wang2012] :doi:`10.1007/978-1-61779-379-0_6`
-.. [Seelig2011] :doi:`10.1038/nprot.2011.312`
-.. [Kurz2001] :doi:`10.1002/1439-7633(20010903)2:9<666::AID-CBIC666>3.0.CO;2-#`
-.. [Man2001] :doi:`10.1093/nar/29.12.2471`
+I was able to get good Zif268-repA expression by amplifying the gene off its 
+plasmid with a forward primer (T7_ZIF_FOR) that adds the T7 promoter and the 
+correct RBS and a reverse primer (ORI_TM62_REV) that adds the T7 terminator.
 

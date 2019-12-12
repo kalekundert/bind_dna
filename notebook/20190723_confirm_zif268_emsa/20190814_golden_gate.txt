@@ -1,0 +1,21 @@
+file: golden_gate.py 33,160,1913:zif,44.3,295:gfp,65.6,732
+repo: git@github.com:kalekundert/wetlab_protocols.git
+commit: 168c4abd03db9634a090d31ee97c231688ddff11
+date: August 14, 2019
+1. Setup the Golden Gate reaction(s):
+
+   Reagent                  Conc  Each Rxn
+   ───────────────────────────────────────
+   33                  160 ng/µL   2.01 µL
+   zif                  44 ng/µL   2.24 µL
+   gfp                  66 ng/µL   3.75 µL
+   T4 ligase buffer          10x   1.00 μL
+   T4 DNA ligase        400 U/μL   0.50 μL
+   Golden Gate enzyme              0.50 μL
+   ───────────────────────────────────────
+                                  10.00 µL
+
+2. Run the following thermocycler protocol:
+
+   - 37°C for 60 min
+   - 60°C for 5 min

@@ -29,9 +29,9 @@ what it does:
   
 - Directly setting the ``exclude_DNA_DNA`` energy method option in PyRosetta 
   does not seem to have any effect on scoring, regardless of whether I recreate 
-  the score function or clear the energies cache.  However, both putting the 
-  ``INCLUDE_DNA_DNA`` flag in the weights file and adding 
-  ``-dna:specificity:exclude_dna_dna off`` to the command line do affect 
+  the score function or clear the energies cache.  However, either putting the 
+  ``INCLUDE_DNA_DNA`` flag in the weights file or adding 
+  ``-dna:specificity:exclude_dna_dna off`` to the command line does affect 
   scoring.  I'm not sure why, but it seems like the initial setting is what 
   matters.
 
@@ -87,7 +87,8 @@ what it does:
   
   Actually, attempting to use either one of the ``DNA_DNA`` flags without the 
   other triggers an assertion error.  So these are clearly meant to be the same 
-  thing, and just are not very DRY for whatever reason.
+  thing, and are just not very DRY for whatever reason.
+
 
 Packing
 =======
@@ -133,7 +134,12 @@ Minimization
 
 Relax
 =====
-I'm trying to find a good way to relax DNA structures.
+
+1BNA
+----
+I'm trying to find a good way to relax DNA structures.  I started with 1BNA, 
+because it's small, it's just DNA, and it's shouldn't be far from a good 
+conformation.
 
 - The PDB_redo version of 1BNA scores significantly better than the version in 
   the PDB, despite moving only very slightly.  So clearly, it should be 
@@ -141,7 +147,7 @@ I'm trying to find a good way to relax DNA structures.
 
 - I can't get the same behavior out of minimization.  If I don't let the 
   backbone minimize, the score can hardly improve at all.  If I let the 
-  backbone minimize, it moves way too much lot.  Cartesian minimization keeps 
+  backbone minimize, it moves way too much.  Cartesian minimization keeps 
   things more in place, but it's slow and it still moves things enough to 
   really change the structure.
 
@@ -150,7 +156,7 @@ I'm trying to find a good way to relax DNA structures.
   code is so fucking bad...
 
    - Ok, in python, you need to explicitly set ``relax.constrain_coords()`` in 
-     addition to the setting to constrain to either starting of native coords.  
+     addition to the setting to constrain to either starting or native coords.  
      So fucking bad...
 
 - The ``relax.ramp_down_constraints()`` method doesn't really seem to do 
@@ -186,59 +192,125 @@ I'm trying to find a good way to relax DNA structures.
     structure) is not really doing anything: the crystal structure rotamer is 
     the best.  I'm sure this is because all the other rotamers clash horribly.
 
+- It seems that the strength of the coordinate restraints is really the most 
+  important parameter. 
+
+  =========  ======  =======  =====  ===========  =========  ==================
+  Structure  Relax?  Rot/nt?  Cart?  Restraints?      Score  Notes
+  =========  ======  =======  =====  ===========  =========  ==================
+  1BNA                                            -12.94055
+  1BNA         X                                  -32.16100
+  1BNA redo                                       -27.46022
+  1BNA redo    X                                  -41.68700
+  ---------  ------  -------  -----  -----------  ---------  ------------------
+  1BNA         X           1                      -32.16100
+  1BNA         X          10                      -32.16100
+  1BNA         X          25                      -32.16100
+  1BNA         X          50                      -31.88394 
+  ---------  ------  -------  -----  -----------  ---------  ------------------
+  1BNA         X           1    X                 -31.72935
+  1BNA         X          10    X                 -31.72965
+  1BNA         X          25    X                 -33.05246
+  1BNA         X          50    X                 -31.72839
+  ---------  ------  -------  -----  -----------  ---------  ------------------
+  1BNA         X           1                 0.5  -32.16100
+  1BNA         X           1    X            0.5  -38.60980
+  1BNA         X           1                 1.0  -46.05915
+  1BNA         X           1    X            1.0  -52.62182  Not bad
+  1BNA         X           1                 5.0  -68.79233  Backbone clearly translated.
+  1BNA         X           1    X            5.0  -84.23563  Backbone clearly translated.
+  =========  ======  =======  =====  ===========  =========  ==================
+
 - The looser the coordinate constraints are: the more the backbone moves, and 
   the better the score gets.  I'm not really interested in sampling DNA 
   backbone flexibility during relaxation, though.  So I think what I need to 
   find is how tight to make the restraints such that I get backbone movement 
   that's on par with the average crystal structure error.
 
-  Right now I'm doing this by comparing relaxed structures to 1BNA and 1BNA 
-  redo.  Specifically I look at the backbone sugar, and judge if the relaxed 
-  atoms are in line with those from the two crystal structures.  This could be 
-  more rigorous: I could scan different constraint sigmas to find the one that 
-  gives me the same backbone RMSD as the average coordinate error (I think 
-  ~0.3Å).
+  - Right now I'm doing this by comparing relaxed structures to 1BNA and 1BNA 
+    redo.  Specifically I look at the backbone sugar, and judge if the relaxed 
+    atoms are in line with those from the two crystal structures.  This could 
+    be more rigorous: I could scan different constraint sigmas to find the one 
+    that gives me the same backbone RMSD as the average coordinate error (I 
+    think ~0.3Å).
 
-  One question is whether it would be better to use torsion or cartesian 
-  minimization.  Cartesian minimization is better at not blowing up the 
-  structure in general, as so give smaller backbone perturbations when given 
-  more freedom to move.  This does not appear to be the case, however.  At 
-  σ=5.0, both torsion and cartesian minimization give similar amounts of 
-  movement, and produce structures that are much more similar to each other 
-  than to the crystal structures.  
+  - One question is whether it would be better to use torsion or cartesian 
+    minimization.  Cartesian minimization is better at not blowing up the 
+    structure in general, as so give smaller backbone perturbations when given 
+    more freedom to move.  This does not appear to be the case, however.  At 
+    σ=5.0, both torsion and cartesian minimization give similar amounts of 
+    movement, and produce structures that are much more similar to each other 
+    than to the crystal structures.  
 
-  It seems that the strength of the coordinate restraints is really the most 
-  important parameter. 
+  - I decided to implement a scheme where the standard deviation of the 
+    restraints is loosened until the amount of movement in the backbone is more 
+    than what would be consistent with the B-factors in the original structure.  
+    Run the following command::
+      
+      dbp_relax_b 1bna.pdb
 
-=========  ======  =======  =====  ===========  =========  ====================
-Structure  Relax?  Rot/nt?  Cart?  Restraints?      Score  Notes
-=========  ======  =======  =====  ===========  =========  ====================
-1BNA                                            -12.94055
-1BNA         X                                  -32.16100
-1BNA redo                                       -27.46022
-1BNA redo    X                                  -41.68700
----------  ------  -------  -----  -----------  ---------  --------------------
-1BNA         X           1                      -32.16100
-1BNA         X          10                      -32.16100
-1BNA         X          25                      -32.16100
-1BNA         X          50                      -31.88394 
----------  ------  -------  -----  -----------  ---------  --------------------
-1BNA         X           1    X                 -31.72935
-1BNA         X          10    X                 -31.72965
-1BNA         X          25    X                 -33.05246
-1BNA         X          50    X                 -31.72839
----------  ------  -------  -----  -----------  ---------  --------------------
-1BNA         X           1                 0.5  -32.16100
-1BNA         X           1    X            0.5  -38.60980
-1BNA         X           1                 1.0  -46.05915
-1BNA         X           1    X            1.0  -52.62182  Not bad
-1BNA         X           1                 5.0  -68.79233  Backbone clearly translated.
-1BNA         X           1    X            5.0  -84.23563  Backbone clearly translated.
-=========  ======  =======  =====  ===========  =========  ====================
+1AAY --- 2019/05/22
+-------------------
+I relaxed Zif268 (1AAY) as follows::
 
+   sbatch relax_1aay.sbatch
 
-References
-==========
-.. [Ashworth2006] :doi:`10.1038/nature04818`
-.. [Thyme2014] :doi:`10.1007/978-1-62703-968-0_17`
+This took about 3h to complete, and produced a structure with a score of 
+-253.304 REU (-537.540 REU better than the input structure).  The structure has 
+106 residues (84 protein and 22 DNA), which puts it roughly in line with the 
+-3 REU/residue rule of thumb.  The backbone motion is subtle:
+
+:download:`20190522_relax_1aay/before_vs_after.pse`
+
+One noteworthy error in this structure is R174.  In the crystal structure, R174 
+is making a canonical bidentate interaction with Gua4 and is being held in 
+position by D176.  In the relaxed structure, R174 adopts a different rotamer 
+that lies in the same plane, but is shifted such that it only forms a single 
+H-bond with Gua4 and doesn't interact at all with D176.
+
+I think more sidechain sampling would've been needed to get this interaction 
+right.  I don't think backbone sampling is the culprit, because the Cα for R174 
+only moved 0.2Å.  The Cα-Cβ vector is angled slightly differently, which is 
+probably what precludes the input rotamer, but there should still be *a* 
+rotamer that fits.  
+
+I wonder if this R174 didn't meet the "extra-chi" cutoff.  It's completely 
+buried, but maybe DNA doesn't count in the calculations.  Also, the default is 
+18 neighbors in the 10Å neighbor graph, but I don't know what exactly the 
+criteria are for connecting nodes in that graph.  I should go back and make 
+sure I'm getting extra rotamers for my interface positions.
+
+1AAY --- 2019/07/15
+-------------------
+I added extra χ1 and χ2 rotamers to all residues (which I should've been doing 
+from the beginning), and extra χ3 and χ4 rotamers to residues in the DNA 
+interface.  I still got the wrong rotamer for R174, but a closer look at the 
+results showed that Rosetta did do better than before:
+
+.. datatable:: interface_rotamers.xlsx
+
+Note that with the extra rotamers, Rosetta gets the right rotamer more often 
+than not, although not (in this case) in the final simulation.  I think this is 
+a stochastic effect (e.g. not solely based on the restraint weight) because 
+there are several instances where the rotamer changes with very small changes 
+in restraint weight.  This might be an indication that I should run the final 
+relax ~10-100 times to get it to converge better.  When I did this in the past 
+with KSI, it didn't really seem to make a difference, but KSI didn't have so 
+many long sidechains.
+
+It's also worth noting that the results with and without extra rotamers are 
+pretty consistent with each other.  This means that I could do a (relatively) 
+quick pre-optimization without extra rotamers to narrow in on the optimum.  
+Then I could do the real optimization on a narrower range around that optimum.  
+This would result in fewer function calls, but would require more manual 
+intervention.  In this case, if I chose a range of ~1.0 for the final 
+optimization, I really only would've saved 2/9 function evaluations.
+
+.. update:: 2019/07/16
+
+   I did 50 relaxation runs.  The scores ranged from -266.772 to -255.074.  The 
+   second best score was -264.530, so I don't think 50 was enough in this case 
+   to really converge.  Despite that, the best model seemed to get every 
+   interface rotamer correct.  I think I'll just move forward with it.
+
 

@@ -3,3 +3,5 @@
 /rosetta
 /rosetta.git
 /sequences
+/structures
+*.pse

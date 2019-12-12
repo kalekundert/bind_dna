@@ -1,0 +1,37 @@
+file: protocols/purexpress.py 8 -n -D 25
+repo: git@github.com:kalekundert/bind_dna.git
+commit: dd9f049af32d73867ac5eb0e9b19dc01cd058c0b
+date: November 16, 2019
+1. Setup 8 IVTT reactions:
+
+   Reagent             Conc  Each Rxn  Master Mix
+   ──────────────────────────────────────────────
+   water                      0.40 μL     3.52 μL
+   A                          4.00 μL    35.20 μL
+   B                          3.00 μL    26.40 μL
+   RNase Inhibitor  40 U/μL   0.20 μL     1.76 μL
+   template DNA       25 nM   2.40 μL            
+   ──────────────────────────────────────────────
+                             10.00 μL     7.60 μL/rxn
+
+   - Keep on ice.
+   - Be sure to add A before B.
+   - The control template (125 ng/μL) is 75 nM.
+
+2. Incubate at 37°C for 2h.
+
+3. Setup a native PAGE gel:
+
+   - DNA ladder:
+     - 2.5 μL water
+     - 5.0 μL 50 ng/μL ladder, i.e. 1kb+ (NEB N3232)
+     - 2.5 μL 4x sample buffer (Invitrogen BN2003)
+
+   - IVTT reactions:
+     - 6.25 μL water
+     - 1.25 μL IVTT reaction
+     - 2.50 μL 4x sample buffer (Invitrogen BN2003)
+
+   - Use a 3-12% gel (Invitrogen BN1003).
+   - Load 5 μL in each lane.
+   - Run at 150V for 115 min.

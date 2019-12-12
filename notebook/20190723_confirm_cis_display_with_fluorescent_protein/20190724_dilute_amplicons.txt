@@ -1,0 +1,16 @@
+file: protocols/dilute_amplicons.py 20190724_yfp_candidates.tsv
+repo: git@github.com:kalekundert/bind_dna.git
+commit: 97f881a8d2a409ae4d76679c24f9160d60c69ebd
+date: July 24, 2019
+target volume: 20.00 uL
+target conc:   75.00 nM
+
+   amplicon  stock_ng_uL     mw_da  stock_nM  stock_uL  water_uL
+0        23       307.78  1.34e+06    229.43      6.54     13.46
+1        24       328.18  1.31e+06    251.22      5.97     14.03
+2        25       279.13  1.34e+06    208.36      7.20     12.80
+3        26       286.67  1.33e+06    215.17      6.97     13.03
+4  23 - ORI       298.00  1.12e+06    266.29      5.63     14.37
+5  24 - ORI       316.96  1.08e+06    292.43      5.13     14.87
+6  25 - ORI       301.20  1.12e+06    269.59      5.56     14.44
+7  26 - ORI       308.76  1.11e+06    278.21      5.39     14.61

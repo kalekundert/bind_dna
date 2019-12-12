@@ -1,0 +1,9 @@
+file: protocols/dilute_amplicons.py zif_ng_uL.toml -v50
+repo: git@github.com:kalekundert/bind_dna.git
+commit: e3983bdfe9d838b93736980050c72b3769cc5f93
+date: August 5, 2019
+target volume: 50.00 uL
+target conc:   75.00 nM
+
+  amplicon  stock_ng_uL   mw_da  stock_nM  stock_uL  water_uL
+0      Zif        394.8  217898   1811.86      2.07     47.93

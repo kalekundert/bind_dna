@@ -1,0 +1,37 @@
+# See <github.com/toml-lang/toml> for a description of the TOML syntax.
+        
+# Dramatically reduce the quality of the simulation in order to complete 
+# quickly.  In particular, the only one FastRelax iteration is executed and a 
+# reduced set of rotamers is used for repacking.
+debug = false
+
+# The percent of atoms that should have remain within the average mean squared 
+# displacement defined by their B-factors.  This option provides a knob 
+# (hopefully one that is meaningful and intuitive) to control how much the 
+# model moves during relaxation.  Higher values will produce less movement, as 
+# fewer atoms are allowed to move significantly, while lower value will produce 
+# more movement.  
+preoptimize.percent-within = 90
+optimize.percent-within = 90
+
+# How closely the objective (see `percent-within`) needs to be satisfied before 
+# the optimization converges.  The defaults specify that 85-95% of the atoms in 
+# the model must be consistent with their B-factors.
+preoptimize.convergence-tolerance = 10
+optimize.convergence-tolerance = 5
+
+# The tightest and loosest restraints that will be considered, respectively.  
+# The values refer to the width of a harmonic well that will be applied to each 
+# backbone atom, and should be separated by a comma.  You can help the 
+# optimization converge faster by specifying a narrower range, but if the 
+# actual tightness needed to achieve the given percentage of consistent atoms 
+# is outside this range, the simulation will fail and you will need to manually 
+# specify a larger range.  Note that `optimize.restraint-range` will be 
+# overridden by `optimize.preoptimize-delta` if preoptimization was run.
+preoptimize.restraint-range = [0.5, 5.0]
+optimize.restraint-range = [0.5, 5.0]
+
+# After the preoptimize step, set the restraint range for the optimize step to 
+# the optimal value found during preoptimization plus/minus the specified 
+# value.  This overrides `optimize.restraint-range`.
+optimize.preoptimize-delta = 0.5

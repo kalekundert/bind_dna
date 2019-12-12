@@ -1,0 +1,52 @@
+file: pcr_cloning.py 27 89 90 1 60 120
+repo: git@github.com:kalekundert/wetlab_protocols.git
+commit: 53b527bce3439dcd11019b4c6ebd11bc30e55953
+date: November 5, 2019
+1. Prepare each 10x primer mix:
+
+   Reagent    Conc  Each Rxn
+   ─────────────────────────
+   water            18.00 μL
+   89       100 μM   1.00 μL
+   90       100 μM   1.00 μL
+   ─────────────────────────
+                    20.00 μL
+
+2. Setup 1 PCR reaction and 1 negative control:
+
+   Reagent             Conc  Each Rxn  Master Mix
+   ──────────────────────────────────────────────
+   water                      3.80 μL     7.60 μL
+   primer mix           10x   1.00 μL            
+   27             100 pg/µL   0.20 µL     0.40 µL
+   Q5 master mix         2x   5.00 µL    10.00 µL
+   ──────────────────────────────────────────────
+                             10.00 μL     9.00 μL/rxn
+
+3. Run the following thermocycler protocol:
+
+   - 98°C for 30s
+   - Repeat 35x:
+     - 98°C for 10s
+     - 60°C for 20s
+     - 72°C for 2 min
+   - 72°C for 2 min
+   - 4°C hold
+
+4. Setup 1 ligation reaction:
+
+   Reagent                Conc  Each Rxn
+   ─────────────────────────────────────
+   water                         6.75 μL
+   T4 ligase buffer        10x   1.00 μL
+   T4 PNK              10 U/μL   0.25 μL
+   T4 DNA ligase      400 U/μL   0.25 μL
+   DpnI                20 U/μL   0.25 μL
+   PCR product       ≈50 ng/μL   1.50 μL
+   ─────────────────────────────────────
+                                10.00 μL
+
+   - Incubate at room temperature for 1h.
+
+5. Transform 1 μL ligated DNA into 10 μL MACH1 
+   chemically-competent cells.

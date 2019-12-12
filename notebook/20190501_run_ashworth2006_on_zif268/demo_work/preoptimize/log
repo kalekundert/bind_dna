@@ -1,0 +1,349 @@
+Found rosetta database at: /home/kale/research/projects/201904_bind_dna/rosetta/source/lib/pyrosetta/python37/release/setup/pyrosetta/database; using it....
+PyRosetta-4 2019 [Rosetta devel 2019.17.post.dev+147.devdna.3b7c7e9e64ebfb4652c7c7b3968b163a6207982a 2019-06-20T15:16:46] retrieved from: git@guybrush.ucsf.edu:kortemme-lab/rosetta.git
+(C) Copyright Rosetta Commons Member Institutions. Created in JHU by Sergey Lyskov and PyRosetta Team.
+[0mcore.init: [0mChecking for fconfig files in pwd and ./rosetta/flags
+[0mcore.init: [0mRosetta version: 2019.17.post.dev+147.devdna.3b7c7e9e64e 3b7c7e9e64ebfb4652c7c7b3968b163a6207982a git@guybrush.ucsf.edu:kortemme-lab/rosetta.git 2019-06-20T15:16:46
+[0mcore.init: [0mcommand: PyRosetta -relax:dna_move on -relax:coord_cst_stdev 0.5 -relax:constrain_relax_to_start_coords on -relax:ramp_constraints off -run:test_cycles on -dna:specificity:exclude_dna_dna off -out:levels core.pack.rotamer_set.RotamerSet_.extra_rotamers:500 -database /home/kale/research/projects/201904_bind_dna/rosetta/source/lib/pyrosetta/python37/release/setup/pyrosetta/database
+[0mcore.init: [0m'RNG device' seed mode, using '/dev/urandom', seed=-1311975123 seed_offset=0 real_seed=-1311975123
+[0mcore.init.random: [0mRandomGenerator:init: Normal mode, seed=-1311975123 RG_type=mt19937
+[0mcore.chemical.GlobalResidueTypeSet: [0mFinished initializing fa_standard residue type set.  Created 979 residue types
+[0mcore.chemical.GlobalResidueTypeSet: [0mTotal time to initialize 0.775655 seconds.
+[0mcore.import_pose.import_pose: [0mFile '/home/kale/research/projects/201904_bind_dna/notebook/20190501_run_ashworth2006_on_zif268/demo_work/unrelaxed.pdb' automatically determined to be of type PDB
+[0mcore.conformation.Conformation: [0m[1m[ WARNING ][0m missing heavyatom:  OXT on residue ARG:CtermProteinFull 107
+Target percent within:            90%
+Convergence tolerance:            10%
+Min restraint weight:             0.5
+Max restraint weight:             5.0
+[0mcore.scoring.etable: [0mStarting energy table calculation
+[0mcore.scoring.etable: [0msmooth_etable: changing atr/rep split to bottom of energy well
+[0mcore.scoring.etable: [0msmooth_etable: spline smoothing lj etables (maxdis = 6)
+[0mcore.scoring.etable: [0msmooth_etable: spline smoothing solvation etables (max_dis = 6)
+[0mcore.scoring.etable: [0mFinished calculating energy tables.
+[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/hbonds/ref2015_params/HBPoly1D.csv
+[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/hbonds/ref2015_params/HBFadeIntervals.csv
+[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/hbonds/ref2015_params/HBEval.csv
+[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/hbonds/ref2015_params/DonStrength.csv
+[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/hbonds/ref2015_params/AccStrength.csv
+[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/rama/fd/all.ramaProb
+[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/rama/fd/prepro.ramaProb
+[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/omega/omega_ppdep.all.txt
+[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/omega/omega_ppdep.gly.txt
+[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/omega/omega_ppdep.pro.txt
+[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/omega/omega_ppdep.valile.txt
+[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/P_AA_pp/P_AA
+[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/P_AA_pp/P_AA_n
+[0mcore.scoring.P_AA: [0mshapovalov_lib::shap_p_aa_pp_smooth_level of 1( aka low_smooth ) got activated.
+[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/P_AA_pp/shapovalov/10deg/kappa131/a20.prop
+[0mprotocols.relax.FastRelax: [0mLooking for no_cst_ramping.txt
+[0mprotocols.relax.RelaxScriptManager: [0m================== Reading script file: /home/kale/research/projects/201904_bind_dna/rosetta/source/lib/pyrosetta/python37/release/setup/pyrosetta/database/sampling/relax_scripts/no_cst_ramping.txt ==================
+[0mprotocols.relax.RelaxScriptManager: [0mrepeat %%nrepeats%%
+[0mprotocols.relax.RelaxScriptManager: [0mramp_repack_min 0.02  0.01     1.0
+[0mprotocols.relax.RelaxScriptManager: [0mramp_repack_min 0.250 0.01     1.0
+[0mprotocols.relax.RelaxScriptManager: [0mramp_repack_min 0.550 0.01     1.0
+[0mprotocols.relax.RelaxScriptManager: [0mramp_repack_min 1     0.00001  1.0
+[0mprotocols.relax.RelaxScriptManager: [0maccept_to_best
+[0mprotocols.relax.RelaxScriptManager: [0mendrepeat
+[0mbasic.io.database: [0mDatabase file opened: scoring/score_functions/elec_cp_reps.dat
+[0mcore.scoring.elec.util: [0mRead 40 countpair representative atoms
+[0mcore.pack.dunbrack.RotamerLibrary: [0mshapovalov_lib_fixes_enable option is true.
+[0mcore.pack.dunbrack.RotamerLibrary: [0mshapovalov_lib::shap_dun10_smooth_level of 1( aka lowest_smooth ) got activated.
+[0mcore.pack.dunbrack.RotamerLibrary: [0mBinary rotamer library selected: /home/kale/research/projects/201904_bind_dna/rosetta/source/lib/pyrosetta/python37/release/setup/pyrosetta/database/rotamer/shapovalov/StpDwn_0-0-0/Dunbrack10.lib.bin
+[0mcore.pack.dunbrack.RotamerLibrary: [0mUsing Dunbrack library binary file '/home/kale/research/projects/201904_bind_dna/rosetta/source/lib/pyrosetta/python37/release/setup/pyrosetta/database/rotamer/shapovalov/StpDwn_0-0-0/Dunbrack10.lib.bin'.
+[0mcore.pack.dunbrack.RotamerLibrary: [0mDunbrack 2010 library took 0.13985 seconds to load from binary
+[0mprotocols.relax.FastRelax: [0mCMD: repeat  284.236  0  0  0.55
+[0mcore.pack.pack_rotamers: [0mbuilt 1741 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -382.037  0.144324  0.144324  0.011
+[0mcore.pack.pack_rotamers: [0mbuilt 1493 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -304.79  0.108438  0.108438  0.1375
+[0mcore.pack.pack_rotamers: [0mbuilt 1424 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -253.322  0.115007  0.115007  0.3025
+[0mcore.pack.pack_rotamers: [0mbuilt 1395 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -208.292  0.123468  0.123468  0.55
+[0mprotocols.relax.FastRelax: [0mMRP: 0  -208.292  -208.292  0.123468  0.123468
+[0mprotocols::checkpoint: [0mDeleting checkpoints of FastRelax
+Iteration:                        1
+Restraint weight:                 0.5
+Mean squared distance (actual):   0.022019560725986362
+Mean squared distance (B-factor): 0.34629176610931517
+Objective:                        -0.21170286172333663
+Score (REU):                      -208.29232404542432
+Score improvement (REU):          -492.52807525619585
+[0mprotocols.relax.FastRelax: [0mLooking for no_cst_ramping.txt
+[0mprotocols.relax.FastRelax: [0mCMD: repeat  284.236  0  0  0.55
+[0mcore.pack.pack_rotamers: [0mbuilt 1741 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -437.523  0.848782  0.848782  0.011
+[0mcore.pack.pack_rotamers: [0mbuilt 1469 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -323.186  0.653556  0.653556  0.1375
+[0mcore.pack.pack_rotamers: [0mbuilt 1416 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -280.259  0.579464  0.579464  0.3025
+[0mcore.pack.pack_rotamers: [0mbuilt 1371 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -270.847  0.619043  0.619043  0.55
+[0mprotocols.relax.FastRelax: [0mMRP: 0  -270.847  -270.847  0.619043  0.619043
+[0mprotocols::checkpoint: [0mDeleting checkpoints of FastRelax
+Iteration:                        2
+Restraint weight:                 5.0
+Mean squared distance (actual):   0.5188135543592585
+Mean squared distance (B-factor): 0.34629176610931517
+Objective:                        0.665343130136085
+Score (REU):                      -270.8474643600995
+Score improvement (REU):          -555.0832155708711
+[0mprotocols.relax.FastRelax: [0mLooking for no_cst_ramping.txt
+[0mprotocols.relax.FastRelax: [0mCMD: repeat  284.236  0  0  0.55
+[0mcore.pack.pack_rotamers: [0mbuilt 1741 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -415.678  0.397228  0.397228  0.011
+[0mcore.pack.pack_rotamers: [0mbuilt 1464 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -316.625  0.27383  0.27383  0.1375
+[0mcore.pack.pack_rotamers: [0mbuilt 1392 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -271.054  0.267969  0.267969  0.3025
+[0mcore.pack.pack_rotamers: [0mbuilt 1363 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -243.381  0.314492  0.314492  0.55
+[0mprotocols.relax.FastRelax: [0mMRP: 0  -243.381  -243.381  0.314492  0.314492
+[0mprotocols::checkpoint: [0mDeleting checkpoints of FastRelax
+Iteration:                        3
+Restraint weight:                 1.586217697358468
+Mean squared distance (actual):   0.14296508653263923
+Mean squared distance (B-factor): 0.34629176610931517
+Objective:                        -0.03914728236443256
+Score (REU):                      -243.3807828957769
+Score improvement (REU):          -527.6165341065484
+[0mprotocols.relax.FastRelax: [0mLooking for no_cst_ramping.txt
+[0mprotocols.relax.FastRelax: [0mCMD: repeat  284.236  0  0  0.55
+[0mcore.pack.pack_rotamers: [0mbuilt 1741 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -418.231  0.425671  0.425671  0.011
+[0mcore.pack.pack_rotamers: [0mbuilt 1445 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -320.096  0.285464  0.285464  0.1375
+[0mcore.pack.pack_rotamers: [0mbuilt 1433 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -276.536  0.277622  0.277622  0.3025
+[0mcore.pack.pack_rotamers: [0mbuilt 1378 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -250.867  0.335338  0.335338  0.55
+[0mprotocols.relax.FastRelax: [0mMRP: 0  -250.867  -250.867  0.335338  0.335338
+[0mprotocols::checkpoint: [0mDeleting checkpoints of FastRelax
+Iteration:                        4
+Restraint weight:                 1.818951827364742
+Mean squared distance (actual):   0.15792718762451555
+Mean squared distance (B-factor): 0.34629176610931517
+Objective:                        -0.047035350877601474
+Score (REU):                      -250.86678566477642
+Score improvement (REU):          -535.1025368755479
+[0mprotocols.relax.FastRelax: [0mLooking for no_cst_ramping.txt
+[0mprotocols.relax.FastRelax: [0mCMD: repeat  284.236  0  0  0.55
+[0mcore.pack.pack_rotamers: [0mbuilt 1741 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -438.286  0.734502  0.734502  0.011
+[0mcore.pack.pack_rotamers: [0mbuilt 1409 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -328.164  0.576944  0.576944  0.1375
+[0mcore.pack.pack_rotamers: [0mbuilt 1397 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -281.821  0.522166  0.522166  0.3025
+[0mcore.pack.pack_rotamers: [0mbuilt 1338 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -260.677  0.555042  0.555042  0.55
+[0mprotocols.relax.FastRelax: [0mMRP: 0  -260.677  -260.677  0.555042  0.555042
+[0mprotocols::checkpoint: [0mDeleting checkpoints of FastRelax
+Iteration:                        5
+Restraint weight:                 3.409475913682371
+Mean squared distance (actual):   0.3669600963566438
+Mean squared distance (B-factor): 0.34629176610931517
+Objective:                        0.4162942135872638
+Score (REU):                      -260.6765426640467
+Score improvement (REU):          -544.9122938748183
+[0mprotocols.relax.FastRelax: [0mLooking for no_cst_ramping.txt
+[0mprotocols.relax.FastRelax: [0mCMD: repeat  284.236  0  0  0.55
+[0mcore.pack.pack_rotamers: [0mbuilt 1741 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -421.958  0.484521  0.484521  0.011
+[0mcore.pack.pack_rotamers: [0mbuilt 1449 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -308.654  0.337153  0.337153  0.1375
+[0mcore.pack.pack_rotamers: [0mbuilt 1387 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -278.895  0.326327  0.326327  0.3025
+[0mcore.pack.pack_rotamers: [0mbuilt 1364 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -249.409  0.363274  0.363274  0.55
+[0mprotocols.relax.FastRelax: [0mMRP: 0  -249.409  -249.409  0.363274  0.363274
+[0mprotocols::checkpoint: [0mDeleting checkpoints of FastRelax
+Iteration:                        6
+Restraint weight:                 1.980415425237308
+Mean squared distance (actual):   0.18605206095106183
+Mean squared distance (B-factor): 0.34629176610931517
+Objective:                        0.01060624302183967
+Score (REU):                      -249.40916457436504
+Score improvement (REU):          -533.6449157851366
+[0mprotocols.relax.FastRelax: [0mLooking for no_cst_ramping.txt
+[0mprotocols.relax.FastRelax: [0mCMD: repeat  284.236  0  0  0.55
+[0mcore.pack.pack_rotamers: [0mbuilt 1741 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -420.636  0.460386  0.460386  0.011
+[0mcore.pack.pack_rotamers: [0mbuilt 1443 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -323.526  0.318752  0.318752  0.1375
+[0mcore.pack.pack_rotamers: [0mbuilt 1427 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -277.228  0.307566  0.307566  0.3025
+[0mcore.pack.pack_rotamers: [0mbuilt 1406 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -254.275  0.354073  0.354073  0.55
+[0mprotocols.relax.FastRelax: [0mMRP: 0  -254.275  -254.275  0.354073  0.354073
+[0mprotocols::checkpoint: [0mDeleting checkpoints of FastRelax
+Iteration:                        7
+Restraint weight:                 1.9304154252373071
+Mean squared distance (actual):   0.17384825585055544
+Mean squared distance (B-factor): 0.34629176610931517
+Objective:                        -0.008901423812358512
+Score (REU):                      -254.27539293699425
+Score improvement (REU):          -538.5111441477658
+Converged:                        True
+Best restraint weight:            1.9304154252373071
+Iterations:                       6
+Function calls:                   7
+Found rosetta database at: /home/kale/research/projects/201904_bind_dna/rosetta/source/lib/pyrosetta/python37/release/setup/pyrosetta/database; using it....
+PyRosetta-4 2019 [Rosetta devel 2019.17.post.dev+147.devdna.3b7c7e9e64ebfb4652c7c7b3968b163a6207982a 2019-06-20T15:16:46] retrieved from: git@guybrush.ucsf.edu:kortemme-lab/rosetta.git
+(C) Copyright Rosetta Commons Member Institutions. Created in JHU by Sergey Lyskov and PyRosetta Team.
+[0mcore.init: [0mChecking for fconfig files in pwd and ./rosetta/flags
+[0mcore.init: [0mRosetta version: 2019.17.post.dev+147.devdna.3b7c7e9e64e 3b7c7e9e64ebfb4652c7c7b3968b163a6207982a git@guybrush.ucsf.edu:kortemme-lab/rosetta.git 2019-06-20T15:16:46
+[0mcore.init: [0mcommand: PyRosetta -relax:dna_move on -relax:coord_cst_stdev 0.5 -relax:constrain_relax_to_start_coords on -relax:ramp_constraints off -run:test_cycles on -dna:specificity:exclude_dna_dna off -out:levels core.pack.rotamer_set.RotamerSet_.extra_rotamers:500 -database /home/kale/research/projects/201904_bind_dna/rosetta/source/lib/pyrosetta/python37/release/setup/pyrosetta/database
+[0mcore.init: [0m'RNG device' seed mode, using '/dev/urandom', seed=-1784015090 seed_offset=0 real_seed=-1784015090
+[0mcore.init.random: [0mRandomGenerator:init: Normal mode, seed=-1784015090 RG_type=mt19937
+[0mcore.import_pose.import_pose: [0mFile '/home/kale/research/projects/201904_bind_dna/notebook/20190501_run_ashworth2006_on_zif268/demo_work/unrelaxed.pdb' automatically determined to be of type PDB
+[0mcore.conformation.Conformation: [0m[1m[ WARNING ][0m missing heavyatom:  OXT on residue ARG:CtermProteinFull 107
+Target percent within:            90%
+Convergence tolerance:            5%
+Min restraint weight:             1.4304154252373071
+Max restraint weight:             2.430415425237307
+[0mprotocols.relax.FastRelax: [0mLooking for no_cst_ramping.txt
+[0mprotocols.relax.FastRelax: [0mCMD: repeat  284.236  0  0  0.55
+[0mcore.pack.pack_rotamers: [0mbuilt 1741 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -415.075  0.372952  0.372952  0.011
+[0mcore.pack.pack_rotamers: [0mbuilt 1442 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -312.621  0.255797  0.255797  0.1375
+[0mcore.pack.pack_rotamers: [0mbuilt 1391 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -272.019  0.27025  0.27025  0.3025
+[0mcore.pack.pack_rotamers: [0mbuilt 1338 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -244.59  0.307528  0.307528  0.55
+[0mprotocols.relax.FastRelax: [0mMRP: 0  -244.59  -244.59  0.307528  0.307528
+[0mprotocols::checkpoint: [0mDeleting checkpoints of FastRelax
+Iteration:                        1
+Restraint weight:                 1.4304154252373071
+Mean squared distance (actual):   0.10959657498892936
+Mean squared distance (B-factor): 0.34629176610931517
+Objective:                        -0.10240029719689978
+Score (REU):                      -244.58980068924092
+Score improvement (REU):          -528.8255519000124
+[0mprotocols.relax.FastRelax: [0mLooking for no_cst_ramping.txt
+[0mprotocols.relax.FastRelax: [0mCMD: repeat  284.236  0  0  0.55
+[0mcore.pack.pack_rotamers: [0mbuilt 1741 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -420.569  0.579773  0.579773  0.011
+[0mcore.pack.pack_rotamers: [0mbuilt 1460 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -313.056  0.398191  0.398191  0.1375
+[0mcore.pack.pack_rotamers: [0mbuilt 1444 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -271.205  0.36587  0.36587  0.3025
+[0mcore.pack.pack_rotamers: [0mbuilt 1421 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -260.023  0.417337  0.417337  0.55
+[0mprotocols.relax.FastRelax: [0mMRP: 0  -260.023  -260.023  0.417337  0.417337
+[0mprotocols::checkpoint: [0mDeleting checkpoints of FastRelax
+Iteration:                        2
+Restraint weight:                 2.430415425237307
+Mean squared distance (actual):   0.25488745346771396
+Mean squared distance (B-factor): 0.34629176610931517
+Objective:                        0.1641526238407
+Score (REU):                      -260.0227203955321
+Score improvement (REU):          -544.2584716063036
+[0mprotocols.relax.FastRelax: [0mLooking for no_cst_ramping.txt
+[0mprotocols.relax.FastRelax: [0mCMD: repeat  284.236  0  0  0.55
+[0mcore.pack.pack_rotamers: [0mbuilt 1741 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -418.831  0.459813  0.459813  0.011
+[0mcore.pack.pack_rotamers: [0mbuilt 1461 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -318.466  0.308816  0.308816  0.1375
+[0mcore.pack.pack_rotamers: [0mbuilt 1426 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -273.569  0.3009  0.3009  0.3025
+[0mcore.pack.pack_rotamers: [0mbuilt 1422 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -249.948  0.348564  0.348564  0.55
+[0mprotocols.relax.FastRelax: [0mMRP: 0  -249.948  -249.948  0.348564  0.348564
+[0mprotocols::checkpoint: [0mDeleting checkpoints of FastRelax
+Iteration:                        3
+Restraint weight:                 1.8145804038025026
+Mean squared distance (actual):   0.16428947750689096
+Mean squared distance (B-factor): 0.34629176610931517
+Objective:                        -0.017108996604282344
+Score (REU):                      -249.947583277109
+Score improvement (REU):          -534.1833344878805
+[0mprotocols.relax.FastRelax: [0mLooking for no_cst_ramping.txt
+[0mprotocols.relax.FastRelax: [0mCMD: repeat  284.236  0  0  0.55
+[0mcore.pack.pack_rotamers: [0mbuilt 1741 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -417.142  0.467745  0.467745  0.011
+[0mcore.pack.pack_rotamers: [0mbuilt 1471 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -319.755  0.337471  0.337471  0.1375
+[0mcore.pack.pack_rotamers: [0mbuilt 1383 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -272.748  0.328908  0.328908  0.3025
+[0mcore.pack.pack_rotamers: [0mbuilt 1363 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -244.535  0.370562  0.370562  0.55
+[0mprotocols.relax.FastRelax: [0mMRP: 0  -244.535  -244.535  0.370562  0.370562
+[0mprotocols::checkpoint: [0mDeleting checkpoints of FastRelax
+Iteration:                        4
+Restraint weight:                 1.8843682097658152
+Mean squared distance (actual):   0.18208330092428252
+Mean squared distance (B-factor): 0.34629176610931517
+Objective:                        0.013366014067402135
+Score (REU):                      -244.5352982462327
+Score improvement (REU):          -528.7710494570042
+[0mprotocols.relax.FastRelax: [0mLooking for no_cst_ramping.txt
+[0mprotocols.relax.FastRelax: [0mCMD: repeat  284.236  0  0  0.55
+[0mcore.pack.pack_rotamers: [0mbuilt 1741 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -414.283  0.464295  0.464295  0.011
+[0mcore.pack.pack_rotamers: [0mbuilt 1455 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -318.708  0.312686  0.312686  0.1375
+[0mcore.pack.pack_rotamers: [0mbuilt 1449 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -277.947  0.296681  0.296681  0.3025
+[0mcore.pack.pack_rotamers: [0mbuilt 1399 rotamers at 111 positions.
+[0mcore.pack.interaction_graph.interaction_graph_factory: [0mInstantiating DensePDInteractionGraph
+[0mprotocols.relax.FastRelax: [0mCMD: ramp_repack_min  -251.875  0.342286  0.342286  0.55
+[0mprotocols.relax.FastRelax: [0mMRP: 0  -251.875  -251.875  0.342286  0.342286
+[0mprotocols::checkpoint: [0mDeleting checkpoints of FastRelax
+Iteration:                        5
+Restraint weight:                 1.8537600237248681
+Mean squared distance (actual):   0.17524334823568025
+Mean squared distance (B-factor): 0.34629176610931517
+Objective:                        0.02108748587087743
+Score (REU):                      -251.87510461839483
+Score improvement (REU):          -536.1108558291663
+Converged:                        True
+Best restraint weight:            1.8145804038025026
+Iterations:                       4
+Function calls:                   5

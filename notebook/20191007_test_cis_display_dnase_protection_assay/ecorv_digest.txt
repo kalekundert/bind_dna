@@ -1,0 +1,8 @@
+1. Digest the template plasmid(s) with EcoRV:
+
+   Reagent                   Conc  Each Rxn
+   ────────────────────────────────────────
+   Plasmid DNA          100 ng/µL  10.00 µL
+   CutSmart buffer            10x   5.00 µL
+   EcoRV-HF (NEB R3195)   20 U/µL   1.00 µL
+   ────────────────────────────────────────
