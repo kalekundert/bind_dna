@@ -5,12 +5,17 @@ Setup in vitro transcription/translation (IVTT) reactions using the NEB
 PURExpress system (E6800).
 
 Usage:
-    purexpress.py <num_rxns> [-v <uL>] [-t] [-z] [-p] [-n] [-s]
+    purexpress.py <num_rxns> [-v <uL>] [-D <nM>] [-t] [-z] [-p] [-n] [-s]
 
 Options:
     -v --rxn-volume <uL>  [default: 10]
         The volume of each individual reaction (in μL).  NEB recommends 25 μL, 
         but I typically use 10 μL and get enough yield for routine experiments.
+
+    -D --dna-stock-conc <nM>  [default: 75]
+        The concentration of the DNA being added to the reaction.  If this 
+        differs from the default, the volume of DNA to add will be adjusted 
+        accordingly.
 
     -t --add-target
         Add target DNA to the PURExpress reaction.
@@ -60,6 +65,7 @@ if args['--add-target']:
 purexpress['template DNA'].std_stock_conc = 75, 'nM'
 purexpress['template DNA'].std_volume = 0.8, 'μL'
 purexpress['template DNA'].master_mix = False
+purexpress['template DNA'].stock_conc = args['--dna-stock-conc']
 
 purexpress.num_reactions = eval(args['<num_rxns>'])
 purexpress.volume = eval(args['--rxn-volume'])
