@@ -10,13 +10,24 @@ N/C-terminal barcodes, etc. that I have cloned.
 Considerations
 ==============
 
+Nuclease
+--------
+NEB recommends BAL-31 for progressively shortening dsDNA.  
+
+Most exonucleases act on only one strand (e.g. 5'→3' or vice versa), which 
+means I would need to use two to digest both strands.  I also need to be 
+careful to avoid exonucleases that remove oligos, because they may be able to 
+skip over a small DNA binding protein.
+
 Capped Ends
 -----------
-This assay will depend on me being able to block nuclease 
-activity---specifically Bal-31 activity---on both ends of a DNA molecule.  This 
-ability may not be necessary for the ultimate protection assay, but it may also 
-be helpful.  At the very least it would help make good controls.  There are a 
-few ways to potentially block BAL-31:
+2019/12/11:
+
+It would be convenient if I could block nuclease activity---specifically Bal-31 
+activity---on both ends of a DNA molecule.  This ability may not be necessary 
+for the ultimate protection assay, but it may also be helpful.  At the very 
+least it would help make good controls.  There are a few ways to potentially 
+block BAL-31:
 
 - Mechanism of BAL-31:
 
@@ -63,7 +74,71 @@ few ways to potentially block BAL-31:
 
    - Psoralen-induced crosslinks are known to inhibit BAL-31 [Putney1981]_.
 
-   - 
+   - Could order PCR primers that contain crosslinking groups.  Would need to 
+     find a UV lamp though, and wouldn't be sure of yield.
+
+Salt concentration
+------------------
+2019/12/12:
+
+I just noticed that 1x BAL-31 reaction buffer 600 mM salt.  That's a lot, and 
+it made me think about the effect of salt on DNA binding and whether I'll be 
+able to control the salt concentration (which is the point of doing an in vitro 
+assay).
+
+According to [Ando2010]_ (via bionumbers), the salt concentration in cells is 
+150 mM.  But this is vague with regard to the type of cell and salt, and is not 
+a primary reference.  [Dick1978]_ somehow measured ion concentrations in toad 
+oocytes, and reported concentrations of 10 mM Na, 266 mM K, and 91 mM Cl in the 
+nucleus (the cytoplasm had only 70 mM K but similar Na and Cl).  From this, I 
+think it's reasonable to assume a salt concentration in the vicinity of 150 mM.  
+For comparison, most of the Zn-finger binding buffers I've found have either 
+NaCl or KCl in the range of 50--150 mM.
+
+The NEB 1x BAL-31 buffer is almost identical to that used by [Gray1975]_, the 
+first paper characterizing BAL-31.  [Gray1975]_ does not explain the reason for 
+using 600 mM NaCl, although they do show that the enzyme can tolerate up to 
+3.4M NaCl, 4.05M CsCl, or 5% SDS.  [Gray1978]_ reduces [NaCl] to 200 mM for 
+better compatibility with subsequent restriction digests, and that seems to 
+work fine.  All in all, it's not clear why 600 mM NaCl is used in the BAL-31 
+buffer, but it seems like BAL-31 is not salt sensitive and can probably be used 
+at physiological salinity.
+
+.. datatable:: neb_bal31_buffer.csv
+
+   NEB BAL-31 reaction buffer.
+
+Binding buffer
+--------------
+2019/12/12:
+
+In my real assay, I will want full control of the buffer for the binding 
+reactions.  Ideally that will mean purifying the protein/DNA fusions after 
+expression, but since I've had a lot of trouble with that, diluting the 
+expression reaction 10x into the binding reaction [Lam2011]_ will probably be 
+good enough.
+
+Below is a list of the components I believe should go in the binding buffer:
+
+.. datatable:: binding_buffer.csv
+
+   Zn-finger binding buffer.
+
+Other Zn-finger binding studies have used Tris buffers, but phosphate buffers 
+are recommended for use with Ni-NTA (which may or may not be relevant): 
+:download:`ni_nta_reagent_compatibility.pdf`
+
+Note that this buffer has several differences from the NEB BAL-31 buffer.  I 
+don't think any of the differences will significantly affect BAL-31 function, 
+though:
+
+- 4x less NaCl: As discussed above, BAL-31 does not seem to require high salt.
+- No EDTA: EDTA would chelate the Zn needed by the Zn-fingers.  Usually EDTA is 
+  not needed for things to work, it's just added to inhibit unwanted nuclease 
+  activity.
+- 6x stronger buffer, and slightly different pH.  The buffer strength matters 
+  if multiple buffers are being mixed, but I don't think it typically has any 
+  effect on protein function.  I could be wrong about that, though.
 
 
 Results
@@ -82,9 +157,11 @@ TelN & BAL-31 --- 2019/11/15
 
 EcoRV & BAL-31 --- 2019/12/11
 -----------------------------
-.. protocol::
+.. protocol:: 20191211_dilute_amplicons.txt
 
-   - Digest plasmid with EcoRV: See binder, 11/1/19
+   - Digest plasmid with EcoRV: See binder, 12/11/19
+
+   ***
 
 
 To-do

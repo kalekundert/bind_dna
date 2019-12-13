@@ -1,21 +1,26 @@
 References
 ==========
+.. [Ando2010] :doi:`10.1073/pnas.1011354107`
 .. [Ashworth2006] :doi:`10.1038/nature04818`
 .. [Barendt2013] :doi:`10.1021/co300135r`
 .. [Bauer2017] :doi:`10.1371/journal.pone.0190062`
 .. [Bulyk2001] :doi:`10.1073/pnas.111163698`
 .. [Choo1994] :doi:`10.1073/pnas.91.23.11163`
 .. [Crinelli2002] :doi:`10.1093/nar/30.11.2435`
+.. [Dick1978] :doi:`10.1113/jphysiol.1978.sp012526`
 .. [Damian2009] :doi:`10.1016/j.bbrc.2009.05.044`
 .. [DiSalvo2019] :doi:`10.1186/s12859-019-2704-x`
 .. [ElrodErickson1998] :doi:`10.1016/S0969-2126(98)00047-1`
 .. [Farrell2010] :doi:`10.1016/B978-0-12-374727-3.00007-3`
 .. [Greisman1997] :doi:`10.1126/science.275.5300.657`
 .. [Gholamalipour2018] :doi:`10.1093/nar/gky796`
+.. [Gray1975] :doi:`10.1093/nar/2.9.1459`
+.. [Gray1978] :doi:`10.1093/nar/5.5.1445`
 .. [Gu2014] :doi:`10.1038/nature13761`
 .. [Hawkins2018] :doi:`10.1073/pnas.1802640115`
 .. [Imburgio2000] :doi:`10.1021/bi000365w`
 .. [Kimple2013] :doi:`10.1002/0471140864.ps0909s73`
+.. [Lam2011] :doi:`10.1093/nar/gkq1303`
 .. [Kurz2001] Kurz M, Gu K, Al-Gawari A, Lohse PA. cDNA–Protein Fusions: Covalent Protein–Gene Conjugates for the In Vitro Selection of Peptides and Proteins. Chem Bio Chem 2:9:666-672 (2001).
 .. [Man2001] :doi:`10.1093/nar/29.12.2471`
 .. [Masai1988] :doi:`10.1093/nar/16.14.6493`
@@ -35,6 +40,7 @@ References
 .. [Shine1974] :doi:`10.1073/pnas.71.4.1342`
 .. [Thyme2014] :doi:`10.1007/978-1-62703-968-0_17`
 .. [Vorackova2011] :doi:`10.1016/j.pep.2011.04.022`
+.. [Wei1983] Wei CF, Alianell GA, Bencen GH, Gray Jr HB. Isolation and comparison of two molecular species of the BAL 31 nuclease from Alteromonas espejiana with distinct kinetic properties. J Biol Chem.  1983;258:13506--13512.
 .. [Wang2012] :doi:`10.1007/978-1-61779-379-0_6`
 .. [Yonezawa2003] :doi:`10.1093/nar/gng119`
 .. [Zhou1990] :doi:`10.1016/0167-4781(90)90087-I`

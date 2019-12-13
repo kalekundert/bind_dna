@@ -1,0 +1,32 @@
+file: pcr.py digest 87 88 18 65 15 -p ssoadv -v20 -m primers
+repo: git@github.com:kalekundert/wetlab_protocols.git
+commit: 1d256ea06490aaf35cff7e4bf51dc1ba54eaa535
+date: December 12, 2019
+1. Prepare each 10x primer mix:
+
+   Reagent    Conc  Each Rxn
+   ─────────────────────────
+   water            18.00 μL
+   87       100 μM   1.00 μL
+   88       100 μM   1.00 μL
+   ─────────────────────────
+                    20.00 μL
+
+2. Setup 18 PCR reactions and 1 negative control:
+
+   Reagent               Conc  Each Rxn  Master Mix
+   ────────────────────────────────────────────────
+   water                        6.00 μL   114.00 μL
+   primer mix             10x   2.00 μL    38.00 μL
+   digest           100 pg/µL   2.00 µL            
+   SsoAdvanced mix         2x  10.00 µL   190.00 µL
+   ────────────────────────────────────────────────
+                               20.00 μL    18.00 μL/rxn
+
+3. Run the following thermocycler protocol:
+
+   - 95°C for 30s
+   - Repeat 40x:
+     - 95°C for 10s
+     - 65°C for 15s
+   - 65-95°C in 5s steps of 0.5°C

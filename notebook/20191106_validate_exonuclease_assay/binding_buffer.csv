@@ -1,0 +1,11 @@
+Reagent,"Concentration (1x)",Purpose
+NaCl,"137 mM","Control ionic strength, from PBS"
+KCl,"2.7 mM",""""
+Na₂HPO₄,"100 mM","Buffer pH=7.4, from PBS"
+KH₂PO₄,"18 mM",""""
+MgCl₂,"12 mM","Required for BAL-31 activity"
+CaCl₂,"12 mM",""""
+ZnOAc,"50 µM","Required for Zn-finger binding"
+BSA,"200 µg/mL","Inhibit non-specific binding"
+ssDNA,"100 µg/mL",""""
+Tween-20,0.1%,""""
