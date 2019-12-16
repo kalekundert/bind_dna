@@ -110,7 +110,7 @@ of tags I can use.  I consulted the list of affinity tags compiled by
   don't see why they would need to be at either terminus to coordinate Ni).  Of 
   course, all of the proteins in the PURExpress reaction are also His-tagged, 
   but I could always use a 100 kDa spin-filter get rid of most of them 
-  (although not any the might run near my protein in a gel).
+  (although not any that might run near my protein in a gel).
 
 - Strep-tag: I don't really have any reason to believe that this would work 
   internally, except that the Twin Strep-tag has one Strep-tag that's basically 
@@ -409,7 +409,7 @@ transcribed RNA has some ambiguities:
      incubate for 10 min.
 
    
-Methods
+Results
 =======
 
 XmnI digestion --- 2019/10/04
@@ -498,3 +498,78 @@ having with XmnI digestion.
   the difference after digesting it.  pUC-seq-ori (3) would work well for this: 
   it would give a ~500 bp product, which should go down to ~400 bp after 
   cleavage with XmnI.
+
+Ligate linker-N --- 2019/12/9
+-----------------------------
+.. protocol::
+
+   See binder: 2019/12/9 and 2019/12/13
+
+.. figure:: 20191213_ligate_linker_n.svg
+
+- The transcribed RNA is not very homogeneous.  I can think of a few likely 
+  reasons for this:
+
+   - Too much RNase (leftover from miniprep) in template DNA.  I could test for 
+     this by doing a side-by-side comparison between the template I used this 
+     time and template that I purified by phenol-chloroform extraction.
+
+   - Expired HiScribe kit.  I remember getting smeary RNA with older IVT kits 
+     in grad school, so it wouldn't surprise me if that was happening here.  If 
+     none of my other ideas explain the heterogeneity, I should just try 
+     ordering a new kit.
+
+   - I contaminated something.  I could test for this by repeating the 
+     transcription and just being more careful.  I thought I was pretty careful 
+     this time, though...
+
+- The ligation was 66% efficient, less than the 90--95% efficiency reported by 
+  [Naimudden2016]_.  But I have a number of things I can try (discussed in the 
+  Ligation_ section above) to improve this.
+
+  Note that this efficiency is probably a slight overestimate.  I calculated 
+  efficiency using the same equation as [Naimudden2016]_, but this equation 
+  doesn't account for the fact that the conjugate has 28 bp of double-stranded 
+  DNA/RNA hybrid.  `According to Biotium 
+  <https://biotium.com/faqs/gelred-gelgreen-ssdna-rna/>`, "titration assays 
+  using a fluorescence microplate reader showed that the fluorescence signal of 
+  GelRed® bound to ssDNA and RNA is about half that of GelRed® bound to dsDNA."  
+  Assuming that double-stranded DNA/RNA is as bright as dsDNA, this would give 
+  a corrected efficiency of 64%.
+
+  There are also reasons why this efficiency could be just plain inaccurate.  
+  One is that the smeary RNA made subtracting the background rather subjective.  
+  Hopefully I can improve this by getting cleaner RNA.  Another is that there 
+  could be some FITC signal in the red channel.  To check for this, I need to 
+  measure both the red and green channels before adding GelRed, which I didn't 
+  do this time.  Note that the efficiency looks much lower in the 300 nm GelRed 
+  image.  This image shouldn't have any signal from FITC (another thing I 
+  should test), but it does have a smear that could be making the lower band 
+  seem brighter.
+
+- Next time I do this experiment, I should setup control reactions without 
+  linker and mRNA.  This way, all three lanes would have the same amount of 
+  material, which would make the gel easier to interpret.
+
+- Linker-N runs about with the dye front.  So don't run the dye front off the 
+  gel next time.  That said, I'm mostly interested in the difference between 
+  the two mRNA bands, and running the gel longer might help resolve them 
+  better.
+
+- Note sure what that high-MW linker-N band is.  (It's more easily seen in the 
+  "intensity level 3" image that I didn't include here.)  But it might be a 
+  consequence of the lane being severely overloaded.
+
+- I think the green scratch is caused by the EZdoc UV tray.  The laser scanner 
+  images without the scratch (not shown here) were taken before I'd added 
+  GelRed or imaged with the EZdoc, and the image with the scratch was taken 
+  after.  I thought the scratch could also be due to something on the bottom of 
+  the tip-box scratching the gel during shaking, but the scratch (vertically 
+  all the way from top to bottom, rather than circular) is not really 
+  consistent with that.  
+
+Ligate Linker-N
+---------------
+- Image the gel using the 488 nm and 520 nm lasers (Sapphire) and the 300 nm 
+  illuminator (EZdoc) before adding any GelRed.  This will allow me to be more 
+  confident about overlapping signal between fluorescent channels.
