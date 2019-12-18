@@ -1,48 +1,75 @@
-*******************************
-Detect binding via cDNA display
-*******************************
-
+**********************
+Plan DNA binding assay
+**********************
 My first experiment will be to establish whether or not ligation can be used to 
 detect binding between a protein and its DNA target.  This experiment will also 
 serve as a test of the cDNA-display technology, which may be difficult to get 
 working in its own right.  cDNA display is mRNA display (i.e. mRNA with a 
 puromycin linker) with a reverse translation step.
 
-- Advantages:
-
-   - Most minimal linker between protein and gene.
-
-   - Covalent linkage.
-
-- Disadvantages:
-
-   - Puromycin linker is either expensive to purchase or difficult to 
-     synthesize.
-
-   - Puromycin can induce premature chain termination:
-      
-      - This can happen either if:
-
-         - The puromycin linked to the mRNA being transcribed gets in the 
-           ribosome too early.
-
-         - A puromycin from another mRNA gets in the ribosome.
-
-      - Can purify for full length product, but this reduces yield.
-
-      - Longer proteins are more likely to be prematurely terminated.  This 
-        places a practical limit of 300 aa on the size of proteins that can be 
-        expressed.
-
-- References:
-
-   - [Naimudden2016]_: Forked linker; latest in series of optimizations.
-
-   - [Kurz2001]_: Linker attached to mRNA via psoralen crosslinking.
-
-
 Considerations
 ==============
+
+Display method
+--------------
+- cDNA display:
+
+   - Advantages:
+
+      - Most minimal linker between protein and gene.
+
+      - Covalent linkage.
+
+   - Disadvantages:
+
+      - Puromycin linker is either expensive to purchase or difficult to 
+        synthesize.
+
+      - Puromycin can induce premature chain termination:
+         
+         - This can happen either if:
+
+            - The puromycin linked to the mRNA being transcribed gets in the 
+              ribosome too early.
+
+            - A puromycin from another mRNA gets in the ribosome.
+
+         - Can purify for full length product, but this reduces yield.
+
+         - Longer proteins are more likely to be prematurely terminated.  This 
+           places a practical limit of 300 aa on the size of proteins that can be 
+           expressed.
+
+   - References:
+
+      - [Naimudden2016]_: Y-ligation of forked linker.
+      - [Kurz2001]_: Psoralen crosslinking.
+
+- CIS display:
+   
+   - Advantages:
+
+      - No special reagents required.
+
+   - Disadvantages:
+
+      - DNA-binding domain is fairly large:
+
+         - RepA: 33 kDa
+
+         - P2A: 86 kDa
+
+      - RepA binding to DNA is noncovalent.
+
+      - Seems like a bad idea to use known DNA binding domains in an assay meant 
+        to measure DNA-binding.  Especially because I'm interested in designed 
+        proteins that may not bind DNA that well.  Could RepA/P2A drown out my 
+        signal?
+
+   - References:
+
+      - [Odegrip2004]_: repA
+      - [Reiersen2005]_: P2A
 
 Reagents
 --------
@@ -680,27 +707,11 @@ Ligation
      But if I'm going to be doing qPCR, I'd rather not depend on starting a 
      bunch of reactions in a consistent amount of time.
 
-
 .. _Glen Research: https://www.glenresearch.com/
+
 
 Methods
 =======
-
-Reverse transcribe Zif268
--------------------------
-I found the wildtype Zif268 sequence on pB1H1-Zif268 from Addgene.  However, 
-that sequence contains restriction sites that I might want to use, so I reverse 
-translated the protein sequence myself using E. coli codons and avoiding those 
-restrictions sites::
-
-   $ sequences/reverse_translate_zif268.sh sequences/zif268/zif268.fa
-
-Control targets
----------------
-The cognate sequence for Zif268 is ``GCGTGGGCG``
-
-As a negative control, I decided to use ``GCGAAAGCG``.  This is the negative 
-control used by [Bulyk2001]_.
 
 Make a palindromic PCR primer
 -----------------------------
@@ -717,25 +728,5 @@ This produces a list of primers.  I chose to use::
 
 In retrospect, I decided that a palindromic primer would cause too many 
 problems with PCR, and decided against using it.
-
-Primer design
--------------
-I'm going to clone into a pUC19 vector.  My plan is to do Golden Gate cloning 
-with BsmBI and SapI.  This will remove most of the golden gate sites in the 
-backbone, which may be useful in the future (one BsaI site will remain).  It 
-will also remove 868 bp of nonessential sequence (about 30% of the plasmid), 
-which should give me yields that much higher.
-
-For the perspective of my inserts, the sticky ends will be:
-
-- 5': ``5'-CGCG-3'`` (BsmBI)
-- 3': ``3'-CGA-5'`` (SapI)
-
-Order the Naimudden linker
---------------------------
-I was able to order the DNA linker described in [Naimudden2016]_ from 
-MidlandCRC.  See attached quote:
-
-:download:`quotes/midland_20190416_63451.pdf`
 
 

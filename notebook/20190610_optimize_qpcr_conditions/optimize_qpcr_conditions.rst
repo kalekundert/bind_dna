@@ -2,6 +2,11 @@
 Optimize qPCR conditions
 ************************
 
+.. update:: 2019/12/18
+
+   I redesigned my plasmids to explicitly include [Subramanian2018]_ PCR 
+   primers, so the results of this experiment are no longer relevant.
+
 For my initial control experiments, I'm using qPCR to quantify relative DNA 
 concentrations.  Before I can do this, I need to know conditions where the DNA 
 in question amplifies well.  The conditions I want to optimize are:

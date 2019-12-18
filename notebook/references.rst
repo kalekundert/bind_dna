@@ -28,16 +28,19 @@ References
 .. [Naimudden2011] :doi:`10.1186/1756-6606-4-2`
 .. [Naimudden2016] :doi:`10.1021/acscombsci.5b00139`
 .. [Nakata2012] :doi:`10.1002/anie.201108199`
+.. [Newton2008] :doi:`10.2146/ajhp070138`
 .. [Odegrip2004] :doi:`10.1073/pnas.0400219101`
 .. [Olins1989] Olins and Ragwala. A novel sequence element derived from bacteriophage T7 mRNA acts as an enhancer of translation of the lacZ gene in Escherichia coli.  J. Biol. Chem. 264:29:16973-76 (1989).
 .. [Praszkier1999] Praszkier J and Pittard AJ.  Role of CIS in replication of an IncB plasmid.  J Bacteriol. 1999 May;181(9):2765-72.
 .. [Praszkier2000] :doi:`10.1128/JB.182.14.3972-3980.2000`
 .. [Putney1981] :doi:`10.1073/pnas.78.12.7350`
 .. [Rebar1994] :doi:`10.1126/science.8303274`.  Too old to access...
+.. [Reiersen2005] :doi:`10.1093/nar/gni010`
 .. [Seelig2011] :doi:`10.1038/nprot.2011.312`
 .. [Sera2002] :doi:`10.1021/bi020095c`
 .. [Shimizu2001] :doi:`10.1038/90802`
 .. [Shine1974] :doi:`10.1073/pnas.71.4.1342`
+.. [Subramanian2018] :doi:`10.1093/synbio/ysx008`
 .. [Thyme2014] :doi:`10.1007/978-1-62703-968-0_17`
 .. [Vorackova2011] :doi:`10.1016/j.pep.2011.04.022`
 .. [Wei1983] Wei CF, Alianell GA, Bencen GH, Gray Jr HB. Isolation and comparison of two molecular species of the BAL 31 nuclease from Alteromonas espejiana with distinct kinetic properties. J Biol Chem.  1983;258:13506--13512.

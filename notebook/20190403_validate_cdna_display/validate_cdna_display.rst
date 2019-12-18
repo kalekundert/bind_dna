@@ -1,15 +1,49 @@
-********************
-Confirm cDNA display
-********************
-
-I want to see whether or not I can successfully create a linkage between attach 
-a translated protein to the cDNA encoding it.  This is the first step in doing 
-cDNA-display-based DNA-binding assays.  My goal is to run a gel where both the 
-protein and the cDNA can be seen in different channels, and to show that the 
-two bands are superimposed.  As a negative control, I can express the protein 
-without the linker.  I'll mostly be following the cDNA-display protocol from 
+*********************
+Validate cDNA display
+*********************
+I want to see whether or not I can successfully attach a translated protein to 
+the cDNA encoding it.  This is the first step in doing cDNA-display-based 
+DNA-binding assays.  My goal is to run a gel where both the protein and the 
+cDNA can be seen in different channels, and to show that the two bands are 
+superimposed.  As a negative control, I can express the protein without the 
+linker.  I'll mostly be following the cDNA-display protocol from 
 [Naimudden2016]_, with some PURExpress-specific details taken from 
 [Barendt2013]_.
+
+- Advantages of cDNA display:
+
+   - Most minimal linker between protein and gene.
+
+   - Covalent linkage.
+
+- Disadvantages:
+
+   - Puromycin linker is either expensive to purchase or difficult to 
+     synthesize.
+
+   - Puromycin can induce premature chain termination:
+      
+      - This can happen either if:
+
+         - The puromycin linked to the mRNA being transcribed gets in the 
+           ribosome too early.
+
+         - A puromycin from another mRNA gets in the ribosome.
+
+      - Can purify for full length product, but this reduces yield.
+
+      - Longer proteins are more likely to be prematurely terminated.  This 
+        places a practical limit of 300 aa on the size of proteins that can be 
+        expressed.
+
+.. toctree::
+   :glob:
+   :hidden:
+
+   /20190430_create_minimal_cloning_vector/*
+   /20191004_linearize_cdna_display_gene/*
+   /20191216_optimize_mrna_transcription/*
+   /20191209_optimize_linker_n_ligation/*
 
 Considerations
 ==============
@@ -43,7 +77,7 @@ the most promising:
      and will allow me to create nice multichannel images using the gel 
      imager.
      
-   - A :download:`brochure for the Sapphire imager <sapphire_brochure.pdf>` 
+   - A brochure for the :download:`Sapphire imager <sapphire_brochure.pdf>` 
      claims that SYPRO-Ruby can be visualized using the Cy5 laser.  I'm a 
      little skeptical because SYPRO-Ruby doesn't appear to be excited by 658 nm 
      light, but I trust the brochure enough to give it a try.
@@ -161,7 +195,7 @@ I'm curious if these C-terminal elements can't be improved.
      I'd probably have to do mass spec.
 
    - A stop codon would also enable the use of 3' barcodes.  See 
-     :expt:`20190403_detect_binding_via_cdna_display`.
+     :expt:`20190403_validate_cdna_display`.
 
    - The poly-A arm supporting the puromycin in Linker-N is optimized for use 
      without a stop codon.  Granted, it's also optimized for use with 
@@ -203,29 +237,7 @@ reported good ligation yields, and they didn't mention this issue at all.  So
 I'm not going to worry about this for now, but I wanted to at least put my 
 thoughts down.
 
-Linearization
--------------
-[Naimudden2016]_ linearized their DNA template by using PCR to add the 
-promoter, the GS-linkers, the His-tag, and the Y-tag to the coding region.  I 
-think that makes sense for directed evolution, where you'll only get out the 
-coding sequence after each round.
-
-In my case, I designed my plasmids to include all of the aforementioned 
-elements.  I think this approach makes sense for me, but there are some 
-trade-offs.  The advantage is that I can verify the sequence of all of those 
-elements in advance, and I don't need to do PCR with ridiculously long primers.  
-The reverse primer [Naimudden2016]_ used must have been >100 nt long, and the 
-forward primer wouldn't have been short either.  The disadvantage is that I 
-can't exactly control the 3' sequence.  I tried using PCR to amplify the 
-cassette out of the plasmid, but the reaction didn't work well because the 
-Y-Tag is almost 80% GC.  The GS-linkers are also quite GC-rich, but I could try 
-making a ~60 nt primer that binds in the His-tag.  Alternatively, I put an XmnI 
-site just after the Y-Tag.  This robustly linearizes the plasmid, but leaves an 
-extra nucleotide.  I don't think there are any enzymes that can make a blunt 
-cut at the right position, although it might be possible to use a Type-IIS 
-enzyme to make an sticky-end cut and to subsequently either cleave off or fill 
-in the overhang.  I don't think the extra nucleotide is going to cause any 
-problems, but it's something to think about if I need to troubleshoot.
+.. _validate_cdna_display_ligation:
 
 Ligation
 --------
@@ -412,164 +424,10 @@ transcribed RNA has some ambiguities:
 Results
 =======
 
-XmnI digestion --- 2019/10/04
------------------------------
-.. protocol:: 20191004_prepare_dna_template_via_digest.txt
+Order linker-N
+--------------
+I was able to order the DNA linker described in [Naimudden2016]_ from 
+MidlandCRC.  See attached quote:
 
-- The phenol/chloroform/isoamyl alcohol I ordered (Acros 327111000) is supposed 
-  to be yellow.  I was worried when I noticed the color, because phenol can 
-  turn yellow when it's oxidized, and oxidized phenol should not be used for 
-  extractions because it can break the DNA backbone.  However, according to the 
-  `product information page`__, the color is expected.  It is due to the 
-  presence of 0.08-0.12% hydroxyquinoline, a "stabilizer" that helps prevent 
-  the oxidation of phenol (described for a different product :download:`here 
-  <product_info_phenol_equilibrated_stabilized.pdf>`).  
+:download:`quotes/midland_20190416_63451.pdf`
 
-  __ https://www.fishersci.com/shop/products/phenol-chloroform-isoamyl-alcohol-25-24-1-stabilized-molecular-biology-dnas-acros-organics-3/ac327111000
-  
-.. figure:: 20191004_xmni_digest_49_51.svg
-
-- I confirmed that all of these plasmids have only a single XmnI site, so I'm 
-  really unsure why there are 3-4 bands for each construct, all of which seem 
-  to be too big (although my EB ladder might be part of the problem).  Maybe I 
-  should send the plasmid for NGS...
-
-XmnI digestion --- 2019/10/11
------------------------------
-.. figure:: 20191011_xmni_digest_2_49.svg
-
-- My plasmids really don't seem to be the size I think they are.  This has been 
-  something I've observed consistently since starting here, but this result 
-  brings it to the forefront of my attention again.
-
-  There are only two explanations: My ladder is wrong, or my plasmids are 
-  wrong.  Maybe the pUC19 I got with my MACH1 cells has a different sequence 
-  than the plasmid I downloaded from SnapGene (or wherever I got that plasmid 
-  map from).  If the sequence is wrong, it hasn't caused any problems so far, 
-  but it'd be good to get that figured out.
-
-  .. update:: 2019/10/24
-
-     I sequenced the full p002 plasmid, and confirmed that it has the expected 
-     sequence (i.e it is in fact 2686 bp).  
-
-- This gels helps identify some of the bands from the 10/04 gel.  The bands at 
-  3.0 kb seem to be the cleaved product, while the bands at ~2.5 kb seem to be 
-  the uncleaved, supercoiled product (supercoiled because it runs faster than 
-  the linear band).  I don't know what the bands at 5.5 and 3.5 kb are, 
-  although one may be nicked plasmid.
-
-  In any case, the 10/04 gel seems to indicate incomplete cleavage.  I thought 
-  I'd calculated the appropriate amount of enzyme to add, but it seems that I 
-  need more.  I should increase the enzyme to something like 2 µL, and pull 
-  aliquots at timepoints until the plasmid is fully digested.
-
-Y-Tag PCR --- 2019/10/11
-------------------------
-I thought it would be worth trying to linearize the cDNA display gene by PCR, 
-because cleaning up plasmid DNA is difficult and I think I'd be able to test 
-things faster using PCR.  It might also let me side-step whatever problem I'm 
-having with XmnI digestion.
-
-.. protocol:: 20191011_pcr.txt
-
-   I used a gradient over 12 well (i.e. a horizontal gradient) and only used 
-   the middle 8.  This gave me a more linear range of annealing temperatures 
-   (see figure).
-
-.. figure:: 20191011_amplify_ytag_primer.svg
-
-- I only saw amplification with the longer primer, and only at quite low 
-  annealing temperatures.  I wonder if the Ta predictions are less accurate for 
-  such short primers.
-
-- For the lanes with amplification, I see two bands.  One is the expected MW 
-  (~410 bp), and the other is ~500 bp.  I don't know what the bigger band is, 
-  but I'm not willing to use PCR unless it gives me clean product.
-
-- I do wonder if it's possible that my PCR mix is going bad from being kept in 
-  a not-very-cool refrigerator...
-
-   - No, I've done plenty of successful PCRs since this.
-
-- I might try designing a primer that anneals behind the Y-Tag.  I would still 
-  have to use XmnI, but I wouldn't have to do phenol-chloroform extractions or 
-  ethanol precipitations.  I would want the primer long enough that I can see 
-  the difference after digesting it.  pUC-seq-ori (3) would work well for this: 
-  it would give a ~500 bp product, which should go down to ~400 bp after 
-  cleavage with XmnI.
-
-Ligate linker-N --- 2019/12/9
------------------------------
-.. protocol::
-
-   See binder: 2019/12/9 and 2019/12/13
-
-.. figure:: 20191213_ligate_linker_n.svg
-
-- The transcribed RNA is not very homogeneous.  I can think of a few likely 
-  reasons for this:
-
-   - Too much RNase (leftover from miniprep) in template DNA.  I could test for 
-     this by doing a side-by-side comparison between the template I used this 
-     time and template that I purified by phenol-chloroform extraction.
-
-   - Expired HiScribe kit.  I remember getting smeary RNA with older IVT kits 
-     in grad school, so it wouldn't surprise me if that was happening here.  If 
-     none of my other ideas explain the heterogeneity, I should just try 
-     ordering a new kit.
-
-   - I contaminated something.  I could test for this by repeating the 
-     transcription and just being more careful.  I thought I was pretty careful 
-     this time, though...
-
-- The ligation was 66% efficient, less than the 90--95% efficiency reported by 
-  [Naimudden2016]_.  But I have a number of things I can try (discussed in the 
-  Ligation_ section above) to improve this.
-
-  Note that this efficiency is probably a slight overestimate.  I calculated 
-  efficiency using the same equation as [Naimudden2016]_, but this equation 
-  doesn't account for the fact that the conjugate has 28 bp of double-stranded 
-  DNA/RNA hybrid.  `According to Biotium 
-  <https://biotium.com/faqs/gelred-gelgreen-ssdna-rna/>`, "titration assays 
-  using a fluorescence microplate reader showed that the fluorescence signal of 
-  GelRed® bound to ssDNA and RNA is about half that of GelRed® bound to dsDNA."  
-  Assuming that double-stranded DNA/RNA is as bright as dsDNA, this would give 
-  a corrected efficiency of 64%.
-
-  There are also reasons why this efficiency could be just plain inaccurate.  
-  One is that the smeary RNA made subtracting the background rather subjective.  
-  Hopefully I can improve this by getting cleaner RNA.  Another is that there 
-  could be some FITC signal in the red channel.  To check for this, I need to 
-  measure both the red and green channels before adding GelRed, which I didn't 
-  do this time.  Note that the efficiency looks much lower in the 300 nm GelRed 
-  image.  This image shouldn't have any signal from FITC (another thing I 
-  should test), but it does have a smear that could be making the lower band 
-  seem brighter.
-
-- Next time I do this experiment, I should setup control reactions without 
-  linker and mRNA.  This way, all three lanes would have the same amount of 
-  material, which would make the gel easier to interpret.
-
-- Linker-N runs about with the dye front.  So don't run the dye front off the 
-  gel next time.  That said, I'm mostly interested in the difference between 
-  the two mRNA bands, and running the gel longer might help resolve them 
-  better.
-
-- Note sure what that high-MW linker-N band is.  (It's more easily seen in the 
-  "intensity level 3" image that I didn't include here.)  But it might be a 
-  consequence of the lane being severely overloaded.
-
-- I think the green scratch is caused by the EZdoc UV tray.  The laser scanner 
-  images without the scratch (not shown here) were taken before I'd added 
-  GelRed or imaged with the EZdoc, and the image with the scratch was taken 
-  after.  I thought the scratch could also be due to something on the bottom of 
-  the tip-box scratching the gel during shaking, but the scratch (vertically 
-  all the way from top to bottom, rather than circular) is not really 
-  consistent with that.  
-
-Ligate Linker-N
----------------
-- Image the gel using the 488 nm and 520 nm lasers (Sapphire) and the 300 nm 
-  illuminator (EZdoc) before adding any GelRed.  This will allow me to be more 
-  confident about overlapping signal between fluorescent channels.

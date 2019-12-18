@@ -2,6 +2,11 @@
 DNase: Pick qPCR primers
 ************************
 
+.. update:: 2019/12/18
+
+   I redesigned my plasmids to explicitly include [Subramanian2018]_ PCR 
+   primers, so the results of this experiment are no longer relevant.
+
 I am planning to use qPCR to measure whether or not Zif268-binding can protect 
 a DNA barcode from DNase treatment.  Ultimately I will want to make this 
 measurement using NGS, but qPCR makes more sense for the initial, 

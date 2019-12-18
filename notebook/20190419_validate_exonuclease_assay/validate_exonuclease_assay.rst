@@ -1,33 +1,83 @@
 **************************
 Validate exonuclease assay
 **************************
+Kettner had the idea that I might be able to detect binding by encoding the 
+protein and the target sequence on the same DNA molecule.  Protein binding to 
+its target sequence would protect the DNA from exonuclease treatment (possibly 
+in proportion to the strength of binding).  With the right design of barcodes 
+and PCR primers, I could then amplify only the sequences that survive 
+exonuclease treatment and identify those protein/target pairs via sequencing.
 
-I want to show that the nuclease assay works in principle---i.e. that Zif268 
-binding can protect the barcode from digestion---and establish some reasonable 
-parameters before trying all the combinations of Zif268 mutants, target sites, 
-N/C-terminal barcodes, etc. that I have cloned.
+Advantages:
+
+- The reaction would be unimolecular.  This would allow me to really dilute the 
+  reaction and not have to worry about interactions between different library 
+  members.
+  
+- I could tune the sensitivity of the assay by adding free target DNA.
+
+- This assay should be compatible with any DNA display technology.
+
+   - CIS display has an advantage in that I won't have to worry about 
+     exonuclease activity from the other direction.
+     
+   - But I can accommodate cDNA display as well by using the right nuclease 
+     with the right phosphorylation (e.g. T7 exonuclease).
+
+Disadvantages:
+
+- Indirect measurement of binding.  
+  
+   - Factors like the orientation of the DNA binding protein or the length of 
+     the tether could be important (although this could be true in my ligation 
+     assay, as well).
+
+   - Weak binders may be hard to detect, if they are just too transient to 
+     resist the DNase.
+
+- Can't control the effective concentration of protein.  And the effective 
+  concentration is unnaturally high because the protein is being confined in 
+  such close proximity.
+
+   - Well, I could increase the length of the tether...
+
+I want to show that this assay works in principle---i.e. that Zif268 binding 
+can protect the barcode from digestion---and establish some reasonable 
+parameters before testing this assay with my trying all the combinations of 
+Zif268 mutants, target sites, N/C-terminal barcodes, etc. that I have cloned.
+
+.. toctree::
+   :glob:
+   :hidden:
+
+   /20190604_pick_qpcr_primers/*
+   /20190610_optimize_qpcr_conditions/*
+   /20191115_block_bal31_via_teln/*
 
 Considerations
 ==============
 
 Nuclease
 --------
+2019/11/06:
+
 NEB recommends BAL-31 for progressively shortening dsDNA.  
 
-Most exonucleases act on only one strand (e.g. 5'→3' or vice versa), which 
-means I would need to use two to digest both strands.  I also need to be 
-careful to avoid exonucleases that remove oligos, because they may be able to 
-skip over a small DNA binding protein.
+Most other exonucleases act on only one strand (e.g. 5'→3' or vice versa), 
+which means I would need to use two exonucleases to digest both strands.  I 
+also need to be careful to avoid exonucleases that remove oligos, because they 
+may be able to skip over a small DNA binding protein.
 
 Capped Ends
 -----------
 2019/12/11:
 
-It would be convenient if I could block nuclease activity---specifically Bal-31 
-activity---on both ends of a DNA molecule.  This ability may not be necessary 
-for the ultimate protection assay, but it may also be helpful.  At the very 
-least it would help make good controls.  There are a few ways to potentially 
-block BAL-31:
+It would be convenient if I could block nuclease activity on either end of a 
+linear DNA molecule.  This ability may not be necessary for the ultimate 
+protection assay, but I can imagine scenarios where it would be useful.  At the 
+very least, it would help make good controls.  As noted above, certain 
+exonucleases can be blocked by the presence of absence of terminal 
+phosphorylation.  However, I'm specifically interested in blocking BAL-31:
 
 - Mechanism of BAL-31:
 
@@ -112,7 +162,7 @@ Binding buffer
 --------------
 2019/12/12:
 
-In my real assay, I will want full control of the buffer for the binding 
+In my ultimate assay, I will want full control of the buffer for the binding 
 reactions.  Ideally that will mean purifying the protein/DNA fusions after 
 expression, but since I've had a lot of trouble with that, diluting the 
 expression reaction 10x into the binding reaction [Lam2011]_ will probably be 
@@ -127,6 +177,12 @@ Below is a list of the components I believe should go in the binding buffer:
 Other Zn-finger binding studies have used Tris buffers, but phosphate buffers 
 are recommended for use with Ni-NTA (which may or may not be relevant): 
 :download:`ni_nta_reagent_compatibility.pdf`
+
+.. update:: 2019/12/17
+
+   Ca precipitates in phosphate buffer with pH>7.2 [Newton2008]_.  In the 
+   future, I'll use Tris.  This is what NEB uses to control the pH in their 
+   BAL-31 buffer.
 
 Note that this buffer has several differences from the NEB BAL-31 buffer.  I 
 don't think any of the differences will significantly affect BAL-31 function, 
@@ -144,29 +200,31 @@ though:
 Results
 =======
 
-TelN & BAL-31 --- 2019/11/15
-----------------------------
-.. protocol:: 20191115_phenol_chloroform_extraction.txt 20191115_pcr.txt 
+Prepare EcoRV digested DNA --- 2019/12/11
+-----------------------------------------
+I want to be able to measure the activity of BAL-31 on one end of a linear DNA 
+molecule.  As described above, I thought about ways to block BAL-31 activity on 
+the other end, e.g. :expt:`20191115_block_bal31_via_teln`.  This has not been 
+successful, though.  
 
-   See binder for TelN digestion (2019/11/12), BAL-31 digestion, E-gel 
-   parameters, and discussion of how to clean up the reaction.
+In lieu of being able to block BAL-31, I'm constructing a DNA molecule with my 
+sequence of interest very close to one end and a large amount of "dummy DNA" on 
+the other end.  This ensures that BAL-31 activity on the end of interest is 
+complete before activity from the other end becomes relevant.  For reference, 
+the NEB `product page for BAL-31 
+<https://www.neb.com/products/m0213-nuclease-bal-31#Product%20Information_Properties%20&%20Usage>` 
+states that "one unit is defined as the amount of enzyme required to remove 200 
+base pairs from each end of linearized double-stranded ΦX174 DNA (40 µg/ml) in 
+a total reaction volume of 50 μl in 10 minutes at 30°C in 1X Nuclease BAL-31 
+Reaction Buffer."  So it's reasonable to think that ~1kb of "dummy DNA" would 
+be sufficient to eliminate BAL-31 activity from the unintended direction for 
+most reasonable reaction conditions.
 
-.. figure:: 20191115_bal31_blunt_vs_capped.svg
-
-   Note that I enhanced the contrast of the lanes with DNA.
-
-EcoRV & BAL-31 --- 2019/12/11
------------------------------
 .. protocol:: 20191211_dilute_amplicons.txt
 
    - Digest plasmid with EcoRV: See binder, 12/11/19
 
    ***
 
-
-To-do
-=====
-- Repeat TelN digestion to confirm that it doesn't offer protection.
-
-- Prepare EcoRV digested p59, to optimize time of nuclease treatment (75 nM 
-  DNA).
+Titrate BAL-31 --- 2019/12/17
+-----------------------------
