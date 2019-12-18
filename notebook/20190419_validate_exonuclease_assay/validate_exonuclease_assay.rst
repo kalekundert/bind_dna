@@ -211,8 +211,8 @@ In lieu of being able to block BAL-31, I'm constructing a DNA molecule with my
 sequence of interest very close to one end and a large amount of "dummy DNA" on 
 the other end.  This ensures that BAL-31 activity on the end of interest is 
 complete before activity from the other end becomes relevant.  For reference, 
-the NEB `product page for BAL-31 
-<https://www.neb.com/products/m0213-nuclease-bal-31#Product%20Information_Properties%20&%20Usage>` 
+the NEB product page for `BAL-31 
+<https://www.neb.com/products/m0213-nuclease-bal-31#Product%20Information_Properties%20&%20Usage>`_ 
 states that "one unit is defined as the amount of enzyme required to remove 200 
 base pairs from each end of linearized double-stranded ΦX174 DNA (40 µg/ml) in 
 a total reaction volume of 50 μl in 10 minutes at 30°C in 1X Nuclease BAL-31 
