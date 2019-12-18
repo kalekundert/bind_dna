@@ -10,32 +10,6 @@ linker.  I'll mostly be following the cDNA-display protocol from
 [Naimudden2016]_, with some PURExpress-specific details taken from 
 [Barendt2013]_.
 
-- Advantages of cDNA display:
-
-   - Most minimal linker between protein and gene.
-
-   - Covalent linkage.
-
-- Disadvantages:
-
-   - Puromycin linker is either expensive to purchase or difficult to 
-     synthesize.
-
-   - Puromycin can induce premature chain termination:
-      
-      - This can happen either if:
-
-         - The puromycin linked to the mRNA being transcribed gets in the 
-           ribosome too early.
-
-         - A puromycin from another mRNA gets in the ribosome.
-
-      - Can purify for full length product, but this reduces yield.
-
-      - Longer proteins are more likely to be prematurely terminated.  This 
-        places a practical limit of 300 aa on the size of proteins that can be 
-        expressed.
-
 .. toctree::
    :glob:
    :hidden:
