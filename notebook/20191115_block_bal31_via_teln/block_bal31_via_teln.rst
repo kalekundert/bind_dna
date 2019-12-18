@@ -13,6 +13,11 @@ Results
 
 TelN & BAL-31 --- 2019/11/15
 ----------------------------
+I made two linear DNA constructs that differed only in whether or not the ends 
+were capped by TelN.  I made the capped construct by digesting a plasmid with 
+p84 with TelN.  I made the uncapped construct by amplifying p59 with 
+91_TELN_TM62 and 92_TELN_TM63 (I actually used this construct to clone p84).
+
 .. protocol:: 20191115_phenol_chloroform_extraction.txt 20191115_pcr.txt 
 
    See binder for TelN digestion (2019/11/12), BAL-31 digestion, E-gel 
