@@ -6,7 +6,7 @@ the cDNA encoding it.  This is the first step in doing cDNA-display-based
 DNA-binding assays.  My goal is to run a gel where both the protein and the 
 cDNA can be seen in different channels, and to show that the two bands are 
 superimposed.  As a negative control, I can express the protein without the 
-linker.  I'll mostly be following the cDNA-display protocol from 
+linker.  I'm mostly intending to follow the cDNA-display protocol from 
 [Naimudden2016]_, with some PURExpress-specific details taken from 
 [Barendt2013]_.
 
@@ -17,7 +17,10 @@ linker.  I'll mostly be following the cDNA-display protocol from
    /20190430_create_minimal_cloning_vector/*
    /20191004_linearize_cdna_display_gene/*
    /20191216_optimize_mrna_transcription/*
-   /20191209_optimize_linker_n_ligation/*
+   /20191209_ligate_linker_n_via_naimudden2016/*
+   /20191219_anneal_linker_n_with_salt/*
+   /20191220_ligate_linker_n_via_kitamura2002/*
+   /20191220_express_zif_via_naimudden2016/*
 
 Considerations
 ==============
@@ -91,13 +94,17 @@ the most promising:
    - This would be expensive.
 
    - But it would make it possible to visualize the mRNA/linker conjugation 
-     using SYBR gold.
+     using SYBR green II.
 
-   - But then I couldn't use SYPRO-Ruby, which could be really nice.
+   - But then I couldn't use SYPRO-Ruby, which could be really nice.  I could 
+     try LUCY-506, though.
 
    - If I were to do this, though, I should also think about ordering the 5' 
      end phosphorlyated.  That would let me skip the phosphorylation step, and 
      would only improve efficiency.
+
+   - I could do a test run by ordering an unbranched Y-tag oligo from IDT and 
+     seeing if it ligates well.
 
 Purification tags
 -----------------
@@ -212,187 +219,6 @@ I'm not going to worry about this for now, but I wanted to at least put my
 thoughts down.
 
 .. _validate_cdna_display_ligation:
-
-Ligation
---------
-The protocol given by [Naimudden2016]_ for ligating the linker to the 
-transcribed RNA has some ambiguities:
-
-- The buffer for resuspending the linker is not specified.  EB is probably 
-  reasonable, though.
-
-   - The "Certificate of Analysis" from Midlands CRC (which is saved in the 
-     binder) specifies that the oligos should be resuspended in a "sterile 
-     buffer with pH ranging from 5--9" and stored at -20°C.  So EB will be 
-     fine.
-
-- The buffer for the annealing and ligation reactions is not specified.
-
-   - T4 PNK (NEB M0201) requires 1x T4 *DNA ligase* buffer:
-     
-      - 50 mM Tris-HCl
-      - 10 mM MgCl₂
-      - 10 mM DTT
-      - 1 mM ATP
-      - pH 7.5 @ 25°C
-        
-   - T4 PNK (NEB M0201) can also be used with T4 PNK buffer, provided that ATP 
-     is also added:
-     
-      - 70 mM Tris-HCl
-      - 10 mM MgCl₂
-      - 5 mM DTT
-      - pH 7.6 @ 25°C
-
-   - T4 RNA ligase (Takara 2050A) conveniently requires almost the same buffer 
-     as T4 PNK:
-     
-      - 50 mM Tris-HCl
-      - 10 mM MgCl₂
-      - 10 mM DTT
-      - 1 mM ATP
-      - 0.01% BSA (recommended)
-      - pH 7.5 @ 25°C
-
-   - Considerations in choosing which buffer to use:
-
-      - Salt is needed for annealing, but is inhibitory for phosphorylation.
-
-         - The annealing protocols I found (discussed below) all call for 
-           50--150 mM salt, typically NaCl.  This makes sense to me, because 
-           the salt presumably helps the two polar molecules come together.
-
-         - 150 mM NaCl inhibits 50% of T4 PNK activity:
-           https://www.neb.com/faqs/2011/11/22/what-factors-can-cause-incomplete-phosphorylation-when-using-t4-polynucleotide-kinase
-
-         - T4 RNA ligase is inhibited by metal chelators, so I should not use any 
-           buffers with EDTA.  But NaCl is not mentioned as an inhibitor.
-
-      - ATP
-
-         - At first, I was worried that if I added ATP before the annealing 
-           step, it would break down during the extended high-temperature 
-           incubation.  But it occurs to me that the NTPs in PCR are stable 
-           after similar incubations at similar temperatures, so probably I 
-           don't need to worry about this.
-
-   - Strategies:
-
-      - Phosphorylate the DNA linker in advance, then add as much salt as I 
-        want to the annealing reaction.
-
-      - Drop dialysis after annealing to remove salt.
-
-      - Do the annealing reaction in a small volume (e.g. 5 µL), then dilute 
-        for the ligation reaction (e.g. to 50 µL) to reduce the salt to a 
-        non-inhibitory level.
-
-   .. update:: 2019/12/11
-
-      [Naimudden2011]_ clarifies that "mRNA was annealed to the biotinylated 
-      puromycin-linker DNA (1:1 ratio) via the Y-tag sequence in 1× ligase 
-      buffer (Takara, Kyoto, Japan)..."  So they added ATP before the annealing 
-      gradient, and didn't add any salt for the annealing.  It seemed to work 
-      fine for them though, so maybe I can just do this moving forward.
-
-- The volume of the annealing and ligation reactions is subtly implied, I 
-  think.  It is specified that 50 pmol of mRNA and linker-N are added to the 
-  reaction.  It is later specified that the mRNA/linker conjugates are added to 
-  the IVTT reaction at a concentration of 100 nM.  50 pmol at 100 nM would 
-  correspond to a volume of 500 µL.  That's probably not right, though.  
-  Perhaps 100 nM is a final concentration, or not all of the conjugate is added 
-  to the IVT reaction.
-
-  [Naimudden2011]_ has a little more detail.  First, the mRNA/linker conjugate 
-  is purified using an RNeasy kit after ligation.  Then 3-5 pmol of the 
-  conjugate are translated in a 25 µL retic lysate reaction.  The manual for 
-  that kit calls for up to 5.75 µL of RNA per 25 µL reaction, so after 
-  purification the concentration is about 1 pmol/µL (1 µM).
-
-  Because of the RNeasy step, this doesn't say anything about the volume of the 
-  ligation reaction.  Annealing supposed works best with high concentrations of 
-  oligos.  Ligation might be better at lower concentrations, to avoid ligations 
-  between mRNA molecules.  If that's a problem, though, I could avoid it 
-  entirely by phosphorylating the DNA linker and dephosphorylating the mRNA.  
-  Or in the future, ordering a phosphorylated linker.  For now, I'll just do 
-  something reasonable like 10 µL.
-
-- "mRNAs were annealed to linker-N by heating at 94°C and gradient-cooling to 
-  4°C."
-
-   - The duration of the gradient cooling is not specified.
-
-   - `This protocol 
-     <https://www.sigmaaldrich.com/technical-documents/protocols/biology/annealing-oligos.html>` 
-     from Sigma specifies:
-      
-      - Thermocycler protocol:
-
-         - 95°C for 2 min
-         - 95°C→25°C over 45 min.
-         - Hold at 4°C
-
-      - Buffer:
-
-        - 10 mM Tris
-        - 50 mM NaCl
-        - 1 mM EDTA
-
-      - Oligo concentration: 50 µM as an example, didn't seem like strict 
-        requirement.
-
-   - `This protocol 
-     <https://www.idtdna.com/pages/education/decoded/article/annealing-oligonucleotides>` 
-     from IDT specifies:
-
-      - 94°C for 2 min, the "gradually" cool.  Specific cooling time not given, 
-        but mentions that you can just take the reaction out of a heat block 
-        and leave on the bench.
-
-      - Buffer: "This provides a buffering environment and the salt is 
-        necessary for oligonucleotide hybridization."  Available for purchase 
-        from IDT.
-
-         - 100 mM KOAc
-         - 30 mM HEPES
-         - pH 7.5
-
-      - Oligo concentration: 10--100 µM
-
-   - `This protocol 
-     <https://tools.thermofisher.com/content/sfs/brochures/TR0045-Anneal-oligos.pdf>` 
-     from Thermo specifies:
-
-      - Thermocycler protocol:
-
-         - 95°C for 5 min
-         - 95°C→25°C over 70 min (1°C/min)
-         - Hold at 4°C
-
-      - Alternative thermocycler protocol; pause at annealing temperatuer (Ta): 
-
-         - 95°C for 5 min
-         - 95°C→Ta at 1°C/min
-         - Ta for 30 min
-         - Ta→25°C at 1°C/min
-         - Hold at 4°C
-
-      - Buffer: "Tris or phosphate buffer containing salt; for example, 10 mM 
-        Tris, 1 mM EDTA, 50 mM NaCl (pH 8.0) or 100 mM sodium phosphate, 150 mM 
-        NaCl, 1 mM EDTA (pH 7.5)"
-
-      - Oligo concentration: 1 pmol/µL (1 µM)
-
-   - It seems like it doesn't matter too much.  I'd rather use a thermocycler, 
-     because that seems much more reproducible.  The 45 minute protocol is 
-     probably fine.
-
-- "Ligation was performed by the addition of 3 U T4 Kinase and 20 U of T4 RNA 
-  ligase at 25°C for 10, 20, and 40 min."
-
-   - The Results section clarifies that they tried 10, 20, and 40 min, and 
-     found that the reaction was complete after 10 min.  So I should just 
-     incubate for 10 min.
 
    
 Results

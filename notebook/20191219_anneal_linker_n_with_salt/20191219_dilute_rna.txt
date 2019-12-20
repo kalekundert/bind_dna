@@ -1,0 +1,9 @@
+file: protocols/dilute_rna.py 20191219_dilute_49.tsv -c5 -v18
+repo: git@github.com:kalekundert/bind_dna.git
+commit: 1950471d5e552609309444d7dd403c21e08553d6
+date: December 19, 2019
+target volume: 18.00 µL
+target conc:   5.00 µM (pmol/µL)
+
+   amplicon  stock_ng_uL  mw_kda  stock_uM  stock_uL  water_uL
+0        49       925.45  125.35      7.38     12.19      5.81
