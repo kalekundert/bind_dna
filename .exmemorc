@@ -15,6 +15,7 @@ src = '~/usb/NanodropOne_AZY1913782/'
 dest = 'nanodrop'
 mountpoint = '~/usb'
 precmd = 'zsh ~/usb/NanodropOne_AZY1913782/csv_to_tsv.sh'
+postcmd = 'chmod a-x nanodrop/*.tsv'
 
 [[data]]
 type = 'gdrive'
