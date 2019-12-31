@@ -55,6 +55,8 @@ in vitro transcription.
 
 .. figure:: 20191217_compare_template_dna.svg
 
+   In vitro transcribed RNA, with the DNA template purified as indicated.
+
 - All four transcription reactions worked well.  The products also the right 
   size, which I couldn't confirm previously because I didn't have a ladder.
 

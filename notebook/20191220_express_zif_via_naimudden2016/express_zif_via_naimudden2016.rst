@@ -1,6 +1,6 @@
-********************************
-Express Zif via [Naimudden2016]_
-********************************
+***********************************
+Express Zif268 via [Naimudden2016]_
+***********************************
 I'm modeling my effort to implement cDNA display on two papers: 
 [Naimudden2016]_ and [Barendt2013]_.  [Naimudden2016]_ does cDNA display using 
 linker-N (as I want to do), but expresses the proteins in rabbit reitc lysate 
@@ -104,3 +104,10 @@ First try --- 2019/12/20
 ------------------------
 Total failure.  A lot of things could've gone wrong; this was a cowboy 
 experiment.  I'll have to step through things more carefully.
+
+.. update:: 2019/12/31
+
+   I noticed that my linker-N doesn't have the reverse transcription primer 
+   arm.  This shouldn't have affected this experiment (the puromycin is still 
+   there), but I won't be able to progress beyond this step until I get the 
+   right linker.

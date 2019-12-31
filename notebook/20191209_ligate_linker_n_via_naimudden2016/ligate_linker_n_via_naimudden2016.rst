@@ -20,7 +20,10 @@ want to achieve similar efficiencies.
    green and not had this problem.
 
    It is worth noting that the left gel in Figure 1d, which shows only FITC, 
-   still makes it seem like a majority of the FITC was ligated to the mRNA.
+   still makes it seem like a majority of the FITC was ligated to the mRNA.  
+   But they may have done an rNA spin-column clean up before running that gel, 
+   which would've made the linker-N band artificially dim.  (This step is not 
+   mentioned in [Naimudden2016]_, but is mentioned in [Naimudden2011]_).
 
 Considerations
 ==============
@@ -225,7 +228,7 @@ Results
   efficiency using the same equation as [Naimudden2016]_, but this equation 
   doesn't account for the fact that the conjugate has 28 bp of double-stranded 
   DNA/RNA hybrid.  `According to Biotium 
-  <https://biotium.com/faqs/gelred-gelgreen-ssdna-rna/>`, "titration assays 
+  <https://biotium.com/faqs/gelred-gelgreen-ssdna-rna/>`_, "titration assays 
   using a fluorescence microplate reader showed that the fluorescence signal of 
   GelRed® bound to ssDNA and RNA is about half that of GelRed® bound to dsDNA."  
   Assuming that double-stranded DNA/RNA is as bright as dsDNA, this would give 
