@@ -231,3 +231,10 @@ MidlandCRC.  See attached quote:
 
 :download:`quotes/midland_20190416_63451.pdf`
 
+.. update:: 2019/12/20
+
+   I didn't order the complete linker-N.  I ordered just the branch with the 
+   puromycin; they didn't synthesize the branch with the RT primer.  
+
+   Well, know that I have to order more oligo anyways, I might as well find out 
+   if things work better with Cy5 and 5' phosphorylation.

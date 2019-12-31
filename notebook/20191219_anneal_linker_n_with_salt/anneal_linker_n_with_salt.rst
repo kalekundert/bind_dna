@@ -24,7 +24,7 @@ enough RNA to do 4 reactions with 50 pmol.  And anyways, since [Naimudden2016]_
 didn't specify a reaction volume, I can just scale up whatever volume works for 
 me when I go back to doing 50 pmol reactions.
 
-.. figure:: xxx
+.. figure:: 20191219_optimize_linker_n_ligation.svg
 
 - I really don't know why the linker-N control seems to have both mRNA and 
   ligated mRNA.  It's concerning; I'm pretty certain I didn't mix up samples (I 
@@ -39,7 +39,7 @@ me when I go back to doing 50 pmol reactions.
   the pixels in each lane, I see that A == D >= B2 > B1 > C1 == C2.  This makes 
   sense: B1 should have 0.65x (check that number) the amount of RNA in B2, due 
   to the pipetting error I made, and this is about what I see.  C1 and C2 
-  should have 0.25x the amount of DNA in the other lanes, because they were 40 
+  should have 0.25x the amount of RNA in the other lanes, because they were 40 
   µL reactions rather than 10 µL, and this is again what I see.  Note that I 
   can't compare to the mRNA control lane, because it's saturated.
 
@@ -84,6 +84,7 @@ experiment, but I want to run the following controls to better understand why:
 
 - No dialysis: Is it necessary to get rid of salt?
 
-- No ligase: 
+- No ligase: Is the gel really denaturing, and does ligation cause the 
+  smearing?
 
 - 

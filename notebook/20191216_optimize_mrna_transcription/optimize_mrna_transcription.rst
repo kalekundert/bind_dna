@@ -2,9 +2,9 @@
 Optimize mRNA transcription
 ***************************
 
-The mRNA in the 2019/12/9 "ligate linker-N" experiment of 
-:expt:`20191209_optimize_linker_n_ligation` looked noticeably degraded.  There 
-are a few reasons why this may have happened:
+The mRNA in the 2019/12/9 experiment of 
+:expt:`20191209_ligate_linker_n_via_naimudden2016` looked noticeably degraded.  
+There are a few reasons why this may have happened:
 
 - Too much RNase (leftover from miniprep) in template DNA.  I could test for 
   this by doing a side-by-side comparison between the template I used this time 
