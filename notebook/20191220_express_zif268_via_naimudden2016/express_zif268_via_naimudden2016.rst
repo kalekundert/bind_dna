@@ -3,9 +3,9 @@ Express Zif268 via [Naimudden2016]_
 ***********************************
 I'm modeling my effort to implement cDNA display on two papers: 
 [Naimudden2016]_ and [Barendt2013]_.  [Naimudden2016]_ does cDNA display using 
-linker-N (as I want to do), but expresses the proteins in rabbit reitc lysate 
-and wheat germ extract.  [Barendt2013]_ does mRNA display, but uses PURExpress 
-(as I want to do). 
+linker-N (as I want to do), but expresses the proteins in rabbit reticulocyte 
+lysate and wheat germ extract.  [Barendt2013]_ does mRNA display, but uses 
+PURExpress (as I want to do). 
 
 Can a hybrid of these methods give efficient expression mRNA-displayed Zif268?
 
@@ -104,6 +104,24 @@ First try --- 2019/12/20
 ------------------------
 Total failure.  A lot of things could've gone wrong; this was a cowboy 
 experiment.  I'll have to step through things more carefully.
+
+.. figure:: 20191220_cdna_display.svg
+
+- I didn't have urea to use for the ligation cleanup.
+
+- I lost the −mRNA, −linker-N reaction due to SDS precipitation.
+
+- I had to run the remaining reactions through a spin column an extra time to 
+  remove KCl from the buffer.  I might have lost things.
+
+- I don't know what the FITC signal at the bottom of the ladder is.
+
+- The signal in the two PURExpress lanes is probably in the green channel only 
+  due to crosstalk, and the FITC channel being brighter overall.  The signal is 
+  also present in the red channel, although it's hard to see with the green 
+  channel superimposed.  Still, it's bizarre that the proteins in the ladder 
+  are clearly brighter in the red channel, while the PURExpress proteins are 
+  not.
 
 .. update:: 2019/12/31
 

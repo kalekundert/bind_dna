@@ -20,7 +20,7 @@ linker.  I'm mostly intending to follow the cDNA-display protocol from
    /20191209_ligate_linker_n_via_naimudden2016/*
    /20191219_anneal_linker_n_with_salt/*
    /20191220_ligate_linker_n_via_kitamura2002/*
-   /20191220_express_zif_via_naimudden2016/*
+   /20191220_express_zif268_via_naimudden2016/*
 
 Considerations
 ==============
