@@ -663,16 +663,32 @@ to get cleaner PCR products, to make the results a little less ambiguous.
   ribosome is not the cause of the shift.  Therefore it must be the polymerase, 
   as no shift is seen for the shuffled T7 control.
 
-- RNAP appears to get stalled in the oriR sequence.  This is inconsistent with 
-  reports that the CIS element acts to pause the RNAP [Odegrip2004]_ 
-  [Praszkier1999]_ [Praszkier2000]_.
+- It's interesting that shuffling oriR seems to release the DNA even when it 
+  isn't translated (p58 vs. p56).  I wonder if this indicates that the shuffled 
+  sequence doesn't hold onto the polymerase while the unshuffled sequence does.  
+  For example, maybe oriR naturally stalls RNAP, but when oriR is shuffled, 
+  RNAP makes it all the way to the end and is released either by the T7 
+  terminator or the end of the DNA.
 
-  More specifically, [Masai1988]_ details how the CIS sequence contains a 
-  Rho-dependent terminator.  The specific requirements of these terminators is 
-  unclear, but they are generally understood to comprise an 80-100 bp C-rich 
-  region (the "rho utilization site", RUT) followed by a transcriptional pause 
-  site.  Rho factor (which is a helicase) binds in the C-rich region of the 
-  transcribed ssRNA and eventually displaces RNAP.
+  There's not really any evidence that repA is binding to oriR, because 
+  shuffling oriR doesn't change the distribution of mWasabi.
+
+- Shuffling the CIS element causes about half of the DNA to be freed when repA 
+  is not expressed, but 
+
+- In this experiment, the shuffled CIS constructs free different amount of 
+  template depending on whether repA is expressed.  This difference could be 
+  interesting, but since the same constructs don't exhibit this behavior in the 
+  2019/10/03 experiment, I don't want to read anything into it.
+
+- The CIS element has been repeatedly characterized as acting to pause RNAP 
+  [Odegrip2004]_ [Praszkier1999]_ [Praszkier2000]_.  More specifically, 
+  [Masai1988]_ details how the CIS sequence contains a Rho-dependent 
+  terminator.  The specific requirements of these terminators is unclear, but 
+  they are generally understood to comprise an 80-100 bp C-rich region (the 
+  "rho utilization site", RUT) followed by a transcriptional pause site.  Rho 
+  factor (which is a helicase) binds in the C-rich region of the transcribed 
+  ssRNA and eventually displaces RNAP.
 
   I used [DiSalvo2019]_ to search for putative rho-dependent terminators in the 
   CIS region.  Despite the simplistic nature of this algorithm, I found a 
@@ -681,8 +697,8 @@ to get cleaner PCR products, to make the results a little less ambiguous.
   which may explain why shuffling CIS does not have a strong effect.
 
   Without Rho in the reaction, it makes some sense that maybe RNAP gets stuck 
-  on the pause site and fails to release.  The ribosome definitely has a stop 
-  codon, so it would be more surprising if it failed to release.  
+  on the pause site and fails to release.  This doesn't explain why shuffling 
+  oriR seems to release RNAP, though.
 
   It may be prudent to try adding Rho to my IVTT reactions, to see if this 
   helps release my protein from the trancsription/translation machinery.  One 
@@ -691,9 +707,6 @@ to get cleaner PCR products, to make the results a little less ambiguous.
   doesn't need any cofactors other than ATP, so this should be enough to get 
   Rho activity.
 
-  All this said, it's still not clear to me why shuffling oriR should release 
-  RNAP.
-  
   Interestingly, according to Wikipedia__, Rho is blocked by the ribosome but 
   is capable of dislodging polymerase.  In the case of repA, this may be a way 
   to make sure that repA has been completely translated (and therefore given a 
@@ -701,6 +714,19 @@ to get cleaner PCR products, to make the results a little less ambiguous.
 
   __ https://en.wikipedia.org/wiki/Rho_factor
 
+.. update:: 2020/01/09
+
+   I just realized that the STOP codon I put between mWasabi and repA (plasmids 
+   44, 58, 59) happens to create the RBS recommended by NEB (i.e. a good one).  
+   The nearest ORF starts 114 bp later, which far exceeds the ideal spacing of 
+   5-9 nt, but it is in frame with repA and includes all but the first 34 amino 
+   acids.  So it's possible (although still unlikely) that repA is being 
+   expressed in my STOP codon controls.
+
+   If I wanted to lock this down better, I'd have to shuffle/change the 
+   sequence of the not-expressed GS-linker.  The SD sequence translates to 
+   \*GG, so I'd need a different sequence to really avoid anything that looks 
+   like an SD.
 
 Heparin incubation --- 2019/09/27
 ---------------------------------

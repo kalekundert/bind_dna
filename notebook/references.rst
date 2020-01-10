@@ -7,11 +7,13 @@ References
 .. [Bulyk2001] :doi:`10.1073/pnas.111163698`
 .. [Choo1994] :doi:`10.1073/pnas.91.23.11163`
 .. [Crinelli2002] :doi:`10.1093/nar/30.11.2435`
-.. [Dick1978] :doi:`10.1113/jphysiol.1978.sp012526`
 .. [Damian2009] :doi:`10.1016/j.bbrc.2009.05.044`
+.. [Dick1978] :doi:`10.1113/jphysiol.1978.sp012526`
+.. [Durfee2008] :doi:`10.1128/JB.01695-07`
 .. [DiSalvo2019] :doi:`10.1186/s12859-019-2704-x`
 .. [ElrodErickson1998] :doi:`10.1016/S0969-2126(98)00047-1`
 .. [Farrell2010] :doi:`10.1016/B978-0-12-374727-3.00007-3`
+.. [Gesteland1966] :doi:`10.1016/s0022-2836(66)80263-2`
 .. [Gholamalipour2018] :doi:`10.1093/nar/gky796`
 .. [Gorisch1988] :doi:`10.1016/0003-2697(88)90205-9`
 .. [Greisman1997] :doi:`10.1126/science.275.5300.657`
@@ -23,10 +25,13 @@ References
 .. [Kimple2013] :doi:`10.1002/0471140864.ps0909s73`
 .. [Kitamura2002] :doi:`10.1093/protein/15.10.843`
 .. [Lam2011] :doi:`10.1093/nar/gkq1303`
+.. [Lesley1995] :doi:`10.1385/0-89603-288-4:265`
 .. [Kurz2001] Kurz M, Gu K, Al-Gawari A, Lohse PA. cDNA–Protein Fusions: Covalent Protein–Gene Conjugates for the In Vitro Selection of Peptides and Proteins. Chem Bio Chem 2:9:666-672 (2001).
 .. [Man2001] :doi:`10.1093/nar/29.12.2471`
 .. [Masai1988] :doi:`10.1093/nar/16.14.6493`
+.. [Meng2005] :doi:`10.1038/nbt1120`
 .. [Meng2007] :doi:`10.1093/nar/gkm385`
+.. [Metzger1989] Metzger et al.  Characterization of the relA1 mutation and a comparison of relA1 with new relA null alleles in Escherichia coli. J. Biol.  Chem. 264:35:21146-52 (1989)
 .. [Naimudden2011] :doi:`10.1186/1756-6606-4-2`
 .. [Naimudden2016] :doi:`10.1021/acscombsci.5b00139`
 .. [Nakata2012] :doi:`10.1002/anie.201108199`
