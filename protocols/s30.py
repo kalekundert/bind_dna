@@ -7,8 +7,10 @@ Usage:
     s30 <num_rxns>
 
 Arguments:
-    <num_reactions>
-        The number of reactions to perform.
+    <num_rxns>
+        The number of reactions to perform.  This can also be a comma-separated 
+        list of template names, in which case the gievn names will be included 
+        in the reagent table.
 """
 
 import docopt
@@ -17,7 +19,14 @@ from stepwise import Protocol, MasterMix
 from inform import plural
 
 args = docopt.docopt(__doc__)
-n = float(args['<num_rxns>'])
+try:
+    n = float(args['<num_rxns>'])
+    templates_str = 'DNA'
+except ValueError:
+    templates = args['<num_rxns>'].split(',')
+    templates_str = ','.join(templates)
+    n = len(templates)
+
 n_aliquots = int(ceil(n/2))
 
 s30 = MasterMix.from_text("""\
@@ -29,6 +38,8 @@ B         2.5x    4 µL  yes
 C        3.33x    3 µL  yes
 DNA      75 nM  0.8 µL
 """)
+s30.num_reactions = n
+s30['DNA'].name = templates_str
 
 protocol = Protocol()
 
