@@ -22,6 +22,7 @@ References
 .. [Gu2014] :doi:`10.1038/nature13761`
 .. [Hawkins2018] :doi:`10.1073/pnas.1802640115`
 .. [Imburgio2000] :doi:`10.1021/bi000365w`
+.. [Joung2000] :doi:`10.1073/pnas.110149297`
 .. [Kimple2013] :doi:`10.1002/0471140864.ps0909s73`
 .. [Kitamura2002] :doi:`10.1093/protein/15.10.843`
 .. [Lam2011] :doi:`10.1093/nar/gkq1303`

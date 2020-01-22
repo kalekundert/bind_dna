@@ -47,13 +47,53 @@ Disadvantages:
 In this experiment, I will measure the binding of my Zif268 controls using the 
 B1H protocol as described by [Meng2005]_.
 
+Considerations
+==============
+
+"Bait" vs. "Prey"
+-----------------
+The "bait" vs. "prey" nomenclature for B1H is really confusing to me.  The 
+protein is the bait, and the DNA is the prey.  This is the opposite of how I 
+think about it naturally, because I think of the protein as "going after" the 
+DNA.  This is also opposite of the Y2H nomenclature, where the bait is the 
+protein bound to DNA and the prey is the protein the recruits the polymerase.  
+
+I think the reasoning behind this nomenclature is that you know what the 
+protein is (so it's the bait) and you're trying to figure out what sequences it 
+binds (so they're the prey attracted by the bait).  So the bait is the known, 
+and the prey is the unknown.
+
 Reagents
-========
+--------
 - E. coli hisB⁻ pyrF⁻ (addgene #12614)
+
+   - Tet resistance
+
+- Reporter plasmid (pH3U3)
+
+   - pH3U3-mcs (addgene #12609)
+   - pH3U3-zif268 (addgene #12610)
+
+   - I might as well order the Zif268 one.  Both plasmids basically have the 
+     same restriction sites, and the Zif268 one is a control I'll use.
+
+   - Kanamycin resistance
+
+- Bait plasmid (pB1H1)
+
+   - pB1H1 --- rpoA fused to "dorsal RHR" (drosophilia) --- (addgene #12611)
+   - pB1H1_zif268 --- rpoA fused to Zif268 --- (addgene #12612)
+   - pB1H2 --- I think this is for heterodimers --- (addgene #12613)
+
+   - I definitely want the Zif268 plasmid.  It has a different reverse 
+     translation than the one I've been using, but I should be able to use it 
+     right out of the box.
+
+   - Chloramphenicol resistance
 
 - NM and YM medium (His and 5-FOA selective, respectively):
 
-   .. data-table:: media_reagents.xlsx
+   .. datatable:: media_reagents.xlsx
 
    .. note::
 
@@ -103,26 +143,21 @@ Reagents
       (Sunrise Science, not Teknova) has 11 amino acids rather than 17, one of 
       which is methionine.
 
-- Reporter plasmid (pH3U3)
-
-   - pH3U3-mcs (addgene #12609)
-   - pH3U3-zif268 (addgene #12610)
-
-   - I might as well order the Zif268 one.  Both plasmids basically have the 
-     same restriction sites, and the Zif268 one is a control I'll use.
-
-- Bait plasmid (pB1H1)
-
-   - pB1H1 --- rpoA fused to "dorsal RHR" (drosophilia) --- (addgene #12611)
-   - pB1H1_zif268 --- rpoA fused to Zif268 --- (addgene #12612)
-   - pB1H2 --- I think this is for heterodimers --- (addgene #12613)
-
-   - I definitely want the Zif268 plasmid.  It has a different reverse 
-     translation than the one I've been using, but I should be able to use it 
-     right out of the box.
-
 - Electrocompetent cell prep (not needed initially)
 
+Verify E. coli hisB⁻ pyrF⁻
+==========================
+
+
+Next Steps
+==========
+- Find:
+
+   - Kan
+   - Chlor
+   - Unselective plates
+
+- Prepare competent cells, maybe with bait already in there.
 
 .. .. toctree::
       :glob:

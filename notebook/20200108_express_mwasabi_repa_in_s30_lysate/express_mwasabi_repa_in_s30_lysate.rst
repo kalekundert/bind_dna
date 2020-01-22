@@ -73,7 +73,23 @@ following genotype [Lesley1995]_:
 Overall it seems like I really want SL119 and not A19.  I'll ask Dan if he has 
 that strain, otherwise I'll just order the extract from Promega.
 
+.. update:: 2020/01/21
 
+   I ordered from Promega.
+
+DNA purification
+----------------
+Promega makes the following recommendation for PCR-amplified templates:
+
+   Avoid contaminating the S30 reaction with the wrong PCR product or primer 
+   dimers. If agarose gel analysis indicates that your PCR produced a unique 
+   band, primer dimers can be removed by ethanol precipitation with sodium 
+   acetate.  Otherwise, PCR-amplified DNA should be gel-purified before using 
+   it in the E. coli S30 Extract System for Linear Templates.
+
+My amplicons looks pretty clean (with o3 and o68).  I think a bead purification 
+of silica column would also serve to get rid of excess primer, so I'm going to 
+try those before doing an ethanol precipitation.
 
 
 
