@@ -4,14 +4,20 @@
 Calculate how to dilute genes amplified by PCR.
 
 Usage:
-    dilute_amplicons.py <ng_uL> [-c] [-v | -V]
+    dilute_amplicons.py <tsv> [options]
+    dilute_amplicons.py <tag> <ng_uL> [options]
 
 Arguments:
+    <tsv>
+        A TSV file exported by the nanodrop listing the concentration of each 
+        species (in ng/μL).  The "Sample Name" column must contains "tags" 
+        referring to either plasmids (p01), fragments (f01), or oligos (o01).
+
+    <tag>
+        An individual tag, as described above.
+
     <ng_uL>
-        A file listing the concentration of each species (in ng/μL).  This can 
-        either be a hand-written TOML file, or a TSV file exported by the 
-        nanodrop.  In the former case, the "Sample Name" column must correspond 
-        to the construct names known by this script (e.g. 11, 11 - ORI, etc.).
+        An individual ng/µL measurement.
 
 Options:
     -c --conc <nM>  [default: 75]
@@ -27,129 +33,44 @@ Options:
 
 import docopt
 import pandas as pd
-import toml
-import re
-import autosnapgene as snap
-from Bio.Seq import Seq
-from Bio.Alphabet import generic_dna
-from Bio.SeqUtils import molecular_weight
-from pathlib import Path
+import bind_dna as dbp
+import stepwise
+
+eval_or_none = lambda x: x if x is None else eval(x)
 
 args = docopt.docopt(__doc__)
-ng_uL_path = Path(args['<ng_uL>'])
-final_uL = eval(args['--volume'])
 final_nM = eval(args['--conc'])
+final_uL = eval(args['--volume'])
+stock_uL = eval_or_none(args['--stock-volume'])
 
-if ng_uL_path.suffix == '.toml':
-    df = pd.DataFrame(
-            toml.load(args['<ng_uL>']).items(),
-            columns=['amplicon', 'stock_ng_uL'],
-    )
-
-elif ng_uL_path.suffix == '.tsv':
-    nanodrop = pd.read_csv(ng_uL_path, sep='\t')
+if tsv := args['<tsv>']:
+    nanodrop = pd.read_csv(tsv, sep='\t')
     df = pd.DataFrame()
     df['amplicon'] = nanodrop['Sample Name']
     df['stock_ng_uL'] = nanodrop['Nucleic Acid(ng/uL)']
     
 else:
-    print(f"Expected '*.toml' or '*.tsv', not: '{ng_uL_path}'")
-    raise SystemExit
+    df = pd.DataFrame([{
+        'amplicon':     args['<tag>'],
+        'stock_ng_uL':  float(args['<ng_uL>']),
+    }])
 
-# Molecular weights include primer overhangs (unlike the first time I did this 
-# calculation).
-mw_da = {
-        'Zif':                  217898,
-        '11':                   981161,
-        '11 - ORI':             760127,
-
-        '18':                   42058.08,
-        '18 + Cy5':             42058.08 + 739,
-        '45':                   42054.16,
-        '45 + Cy5':             42054.16 + 739,
-
-        '23':                   1341517.95,
-        '23 - ORI':             1341517.95 - 222428.32,
-        '24':                   1306315.78,
-        '24 - ORI':             1306315.78 - 222428.32,
-        '25':                   1339657.88,
-        '25 - ORI':             1339657.88 - 222428.32,
-        '26':                   1332262.68,
-        '26 - ORI':             1332262.68 - 222428.32,
-        '27':                   1275392.36,
-        '27 + Cy5':             1275392.36 + 739,
-        '38 + Cy5':             1314324.47 + 739,
-        '38 - repA + Cy5':       550553.03 + 739,
-        '39 + Cy5':             1267973.64 + 739,
-        '40 + Cy5':             1308759.94 + 739,
-        '41 + Cy5':             1280950.03 + 739,
-        '41 - repA + Cy5':       517178.59 + 739,
-        '42 + Cy5':             1277239.69 + 739,
-        '55':                   1275392.36,
-        '55 + Cy5':             1275392.36 + 739,
-        '56':                   1275392.36,
-        '56 + Cy5':             1275392.36 + 739,
-        '57':                   1275392.36,
-        '57 + Cy5':             1275392.36 + 739,
-        '58':                   1275392.36,
-        '58 + Cy5':             1275392.36 + 739,
-
-        'pKBK034': 1.33e6,
-        'pKBK035': 1.78e6,
-        'pKBK043': 1.60e6,
-        'pKBK027': 2.38e6,
-        'pKBK038': 2.42e6,
-        'pKBK039': 2.37e6,
-        'pKBK040': 2.41e6,
-}
-
-PROJECT_DIR = Path(__file__).parents[1]
-PLASMID_DIR = PROJECT_DIR / 'sequences' / 'plasmids'
-
-DnaSeq = lambda x: Seq(x.upper(), generic_dna)
-
-def get_mw(tag):
-    tag = str(tag)
-
-    # Use "pKBKxxx" to denote the whole plasmid.
-    if m := re.match('pKBK(\d+)', tag):
-        dna = snap.parse(PLASMID_DIR / f'{m.group(1):>03}.dna')
-        seq = DnaSeq(dna.sequence)
-        return molecular_weight(seq, double_stranded=True)
-
-    name, *flags = re.findall('\d+|[+-~] \w+', str(tag).split('#')[0])
-
-    flag_mw = 0
-    fwd = DnaSeq('AACGCGTAATACGACTCAC')  # 11
-    rev = DnaSeq('CTCTGACTTGAGCGTCG')    # 3
-
-    if '- ORI' in flags:
-        rev = DnaSeq('tcagggagaagctgtg')
-    if '- repA' in flags:
-        rev = DnaSeq('tttatacagttcatccatgcca')
-    if '+ Cy5' in flags:
-        flag_mw += 739
-
-    dna = snap.parse(PLASMID_DIR / f'{int(name):03d}.dna')
-    seq = DnaSeq(dna.sequence)
-
-    primers = fwd, rev.reverse_complement()
-    i, j = sorted((seq.find(x) for x in primers))
-
-    return mw + molecular_weight(seq[i:j], double_stranded=True)
-
-try:
-    df['mw_da'] = df['amplicon'].apply(get_mw)
-except KeyError as err:
-    print(f"Unknown amplicon: {err}")
-    raise SystemExit
-
+df['mw_da'] = df['amplicon'].apply(dbp.get_mw)
 df['stock_nM'] = 1e6 * df['stock_ng_uL'] / df['mw_da']
-df['stock_uL'] = final_uL * final_nM / df['stock_nM']
-df['water_uL'] = final_uL - df['stock_uL']
+
+if stock_uL is not None:
+    df['stock_uL'] = stock_uL
+    df['water_uL'] = stock_uL * (df['stock_nM'] / final_nM - 1)
+else:
+    df['stock_uL'] = final_uL * final_nM / df['stock_nM']
+    df['water_uL'] = final_uL - df['stock_uL']
 
 pd.set_option('display.precision', 2)
-print(f"target volume: {final_uL:.2f} uL")
-print(f"target conc:   {final_nM:.2f} nM")
-print()
-print(df)
+
+protocol = stepwise.Protocol()
+protocol += f"""\
+Dilute the purified DNA to {final_nM:.2f} nM:
+
+{df}
+"""
+print(protocol)
