@@ -51,8 +51,6 @@ protocol += f"""\
 Setup the S30 extract reaction:
 
 {s30}
-
-- Vortex gently and spin to collect.
 """
 
 protocol += f"""\
@@ -72,8 +70,8 @@ C: S30 extract, linear
 protocol.footnotes[2] = """\
 Enhanced expression at lower temperatures for 
 longer times appears to be gene/protein-specific 
-and may be tested if the standard reaction at 37°C 
-for 1 hour does not produce the desired results.
+and may be tested if the standard reaction at
+37°C for 1 h doesn't produce the desired results.
 """
 
 print(protocol)
