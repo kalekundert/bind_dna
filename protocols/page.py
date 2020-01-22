@@ -119,7 +119,7 @@ protocol += step
 protocol += f"""\
 Run the gel:
 
-- {args['--percent'] or params['percent']} {params['title']}
+- Use a {args['--percent'] or params['percent']} {params['title']} PAGE gel.
 - Load {params['load']} of each sample.
 - Run at {params['run']}.
 """

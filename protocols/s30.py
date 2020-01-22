@@ -33,7 +33,7 @@ DNA      75 nM  0.8 µL
 protocol = Protocol()
 
 protocol += f"""\
-Thaw {plural(n_aliquots):# S30 extract aliquot/s} (A, B, C [1]).
+Thaw {plural(n_aliquots):# S30 extract aliquot/s} [1].
 """
 
 protocol += f"""\
