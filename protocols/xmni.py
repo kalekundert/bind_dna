@@ -7,7 +7,7 @@ Usage:
     xmni [<N>] [options]
 
 Options:
-    -d --dna-ug AMOUNT
+    -u --dna-ug AMOUNT
         The amount of DNA to digest, in µg.
 
     -D --dna-stock CONC
@@ -42,19 +42,22 @@ if x := args['--dna-ug']:
 protocol = Protocol()
 
 protocol += f"""\
-Setup {plural(xmni.num_reactions):? XmnI digestion/s} as follows:
+Setup {plural(xmni.num_reactions):? XmnI digestion/s}:
 
-{xmni}"""
+{xmni}
+"""
 
 protocol += """\
-Incubate at 37°C for 5–15 min."""
+Incubate at 37°C for 5–15 min.
+"""
 
 protocol.footnotes[1] = """\
-NEB recommends 5–10 units of enzyme per µg DNA, 
-and 10–20 units for genomic DNA in a 1 hour 
-digest. Enzyme volume should not exceed 10% of the 
-total reaction volume to prevent star activity due 
-to excess glycerol."""
+NEB recommends 5–10 units of enzyme per µg DNA 
+(10–20 units for genomic DNA) in a 1 hour digest. 
+Enzyme volume should not exceed 10% of the total 
+reaction volume to prevent star activity due to 
+excess glycerol.
+"""
 
 if __name__ == '__main__':
 
