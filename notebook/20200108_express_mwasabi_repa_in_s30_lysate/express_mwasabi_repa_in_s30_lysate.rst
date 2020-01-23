@@ -92,5 +92,19 @@ of silica column would also serve to get rid of excess primer, so I'm going to
 try those before doing an ethanol precipitation.
 
 
+Methods
+=======
+
+Amplify f3-f10 --- 2020/01/21
+-----------------------------
+.. protocol:: 20200121_pcr.txt 20200121_dna_bead.txt 20200121_dilute_amp.txt
+
+   See binder for corrections, e.g. use o3 instead of o13.
+
+- It was important to do 50 µL PCR, I wouldn't have gotten enough yield with 10 
+  µL.
+
+Express f3 and f8 --- 2020/01/22
+--------------------------------
 
 

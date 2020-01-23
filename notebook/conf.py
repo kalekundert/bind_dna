@@ -18,6 +18,7 @@ needs_sphinx = '1.5'
 extensions = [ #
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
+    'sphinx.ext.todo',
     'sphinxcontrib.programoutput',
     'exmemo.sphinx.notebook',
     'exmemo.sphinx.biology',
@@ -73,7 +74,7 @@ rst_epilog = ".. |br| raw:: html\n\n   <br />"
 pygments_style = 'sphinx'
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
-todo_include_todos = False
+todo_include_todos = True
 
 ## Options for HTML output
 

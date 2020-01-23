@@ -1,0 +1,56 @@
+January 22, 2020
+
+$ stepwise mag_strep.txt
+$ stepwise page sds 10
+
+1. For each reaction to be purified using MagStrep 
+   "type3" XT beads:
+
+   - Wash 2 μL beads (40 μL 5% bead solution). Keep 
+     washed beads on ice.
+
+   - Dilute the reaction to 60 μL with wash buffer [1].
+
+   - Save 10 μL "crude" aliquot.
+
+   - Add remaining 50 μL to washed beads.  Vortex 
+     to resuspend.
+
+   - Incubate on ice for 30 min.  Vortex every 5 min.
+
+   - Apply magnet.  Save 10 µL "flow thru" aliquot, 
+     then discard the supernatant.
+
+   - Wash three times with wash buffer:
+
+       - Add 200 µL wash buffer
+       - Vortex briefly
+       - Apply magnet.
+       - Save 10 µL "wash #" aliquot.
+       - Discard supernatant.
+
+   - Elute with 50 μL elution buffer, save 10 µL 
+     "eluate" aliquot.
+
+2. Prepare samples for SDS PAGE:
+
+   Reagent         Stock    Volume       15x
+   ─────────────────────────────────────────
+   loading buffer     4x   3.85 µL  57.75 µL
+   reducing agent    10x   1.54 µL  23.10 µL
+   protein                10.00 µL          
+   ─────────────────────────────────────────
+                          15.39 µL   5.39 µL/rxn
+
+   - Incubate at 70°C for 10 min.
+
+3. Run the gel:
+
+   - Use a 4−12% SDS PAGE gel.
+   - Load 15.39 µL of each sample.
+   - Run at 165V for 42 min.
+
+Note:
+[1] The buffers sold by IBA contain EDTA, which I 
+    don't want.  So I'm using buffers that I made 
+    without EDTA.

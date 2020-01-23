@@ -1,0 +1,34 @@
+- For each reaction to be purified using MagStrep 
+  "type3" XT beads:
+
+  - Wash 2 μL beads (40 μL 5% bead solution). Keep 
+    washed beads on ice.
+
+  - Dilute the reaction to 60 μL with wash buffer [1].
+
+  - Save 10 μL "crude" aliquot.
+
+  - Add remaining 50 μL to washed beads.  Vortex 
+    to resuspend.
+
+  - Incubate on ice for 30 min.  Vortex every 5 min.
+
+  - Apply magnet.  Save 10 µL "flow thru" aliquot, 
+    then discard the supernatant.
+
+  - Wash three times with wash buffer:
+
+      - Add 200 µL wash buffer
+      - Vortex briefly
+      - Apply magnet.
+      - Save 10 µL "wash #" aliquot.
+      - Discard supernatant.
+
+  - Elute with 50 μL elution buffer, save 10 µL 
+    "eluate" aliquot.
+
+Note:
+
+[1] The buffers sold by IBA contain EDTA, which I 
+    don't want.  So I'm using buffers that I made 
+    without EDTA.

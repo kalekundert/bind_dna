@@ -1,0 +1,52 @@
+January 22, 2020
+
+$ stepwise s30 f3,f8
+$ stepwise page native 2
+
+1. Thaw 1 S30 extract aliquot [1].
+
+2. Setup the S30 extract reaction:
+
+   Reagent  Stock    Volume     2.2x
+   ─────────────────────────────────
+   water            1.20 µL  2.64 µL
+   A          10x   1.00 µL  2.20 µL
+   B         2.5x   4.00 µL  8.80 µL
+   C        3.33x   3.00 µL  6.60 µL
+   f3,f8    75 nM   0.80 µL         
+   ─────────────────────────────────
+                   10.00 µL  9.20 µL/rxn
+
+   - Vortex gently and spin to collect.
+
+3. Incubate at 37°C for 1h [2].
+
+4. Stop reaction by incubating at 4°C.
+
+5. Prepare samples for native PAGE:
+
+   Reagent        Stock   Volume       3x
+   ──────────────────────────────────────
+   water                 2.50 µL  7.50 µL
+   sample buffer     4x  2.50 µL  7.50 µL
+   DNA/protein           1.25 µL         
+   ──────────────────────────────────────
+                         6.25 µL  5.00 µL/rxn
+
+   - For a DNA ladder, use 5 µL 50 ng/µL.
+
+6. Run the gel:
+
+   - Use a 3−12% native PAGE gel.
+   - Load 5 µL of each sample.
+   - Run at 150V for 115 min.
+
+Notes:
+[1] A: Complete amino acids
+    B: S30 premix without amino acids
+    C: S30 extract, linear
+
+[2] Enhanced expression at lower temperatures for 
+    longer times appears to be gene/protein-specific 
+    and may be tested if the standard reaction at 37°C 
+    for 1 hour does not produce the desired results.

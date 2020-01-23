@@ -425,6 +425,18 @@ Although this wasn't a great experiment, there's no evidence that the
 purification worked.
 
 
+S30 extract --- 2020/01/21
+--------------------------
+As described in :expt:`20190723_confirm_cis_display_with_fluorescent_protein`, 
+I think that rho factor may help disassemble the transcription/translation 
+machinery.  Since my current hypothesis is that the affinity tag is being 
+sequestered by said machinery, expressing the protein in S30 extract (which has 
+rho factor) might allow the purification to succeed.
+
+.. todo::
+
+   Purify with S30 extract.
+
 Results
 =======
 It does not seem possible to purify repA fusions using purification tags.  I 
