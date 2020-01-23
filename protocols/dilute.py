@@ -4,8 +4,8 @@
 Calculate how to dilute genes amplified by PCR.
 
 Usage:
-    dilute_amplicons.py <tsv> [options]
-    dilute_amplicons.py <tag> <ng_uL> [options]
+    dilute <tsv> [options]
+    dilute <tag> <ng_uL> [options]
 
 Arguments:
     <tsv>
