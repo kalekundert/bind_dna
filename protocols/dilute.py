@@ -22,7 +22,9 @@ Arguments:
 Options:
     -c --conc <nM>  [default: 75]
         The concentration achieve after dilution.  The default is 75 nM, which 
-        corresponds to 125 ng/μL of the DHFR control template.
+        corresponds to 125 ng/μL of the DHFR control template.  
+
+        Note: 1 pmol/µL is 1000 nM.
 
     -v --volume <uL>  [default: 20]
         The volume of diluted amplicon to make.
