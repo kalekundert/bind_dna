@@ -17,6 +17,8 @@ linker.  I'm mostly intending to follow the cDNA-display protocol from
    /20190430_create_minimal_cloning_vector/*
    /20191004_linearize_cdna_display_gene/*
    /20191216_optimize_mrna_transcription/*
+   /20200127_eliminate_mrna_degradation/*
+   /20200128_denature_unannealed_linker_n/*
    /20191209_ligate_linker_n_via_naimudden2016/*
    /20191219_anneal_linker_n_with_salt/*
    /20191220_ligate_linker_n_via_kitamura2002/*
@@ -97,7 +99,13 @@ the most promising:
      using SYBR green II.
 
    - But then I couldn't use SYPRO-Ruby, which could be really nice.  I could 
-     try LUCY-506, though.
+     use SYPRO Orange, though, it shouldn't overlap with Cy5 at all.
+
+     .. note:: 
+     
+         Previously I was planning to use LUCY-506, which is more of a green 
+         stain.  But it is discontinued, and doesn't seem to be available 
+         anywhere.
 
    - If I were to do this, though, I should also think about ordering the 5' 
      end phosphorlyated.  That would let me skip the phosphorylation step, and 

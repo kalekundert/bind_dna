@@ -1,0 +1,75 @@
+January 27, 2020
+
+$ stepwise 20200127_reagent_dropout.py
+$ stepwise page urea 10
+
+1. Setup the annealing reactions:
+
+   Reagent       Stock   Volume     ≈7.7x
+   ──────────────────────────────────────
+   water                2.60 µL  20.02 µL
+   PBS             10x  0.40 µL   3.08 µL
+   o93      10 pmol/µL  0.50 µL   3.85 µL
+   f11      10 pmol/µL  0.50 µL   3.85 µL
+   ──────────────────────────────────────
+                        4.00 µL   4.00 µL/rxn
+
+   Also setup individual reactions lacking:
+   - PBS
+   - o93
+   - f11
+
+2. Run the following thermocyler protocol:
+
+   - 95°C for 3 min
+   - 95°C to 25°C in 700 2s steps of 0.1°C.
+
+   Save a "−anneal" control.
+
+3. Dialyze the reaction:
+
+   - Resevoir of RNase-free water.
+   - 0.025 µm drop dialysis membrane.
+   - Incubate 1h at 25°C.
+
+   Save a "−dialysis" control.
+
+4. Setup the ligation reactions:
+
+   Reagent                     Stock    Volume      4.4x
+   ─────────────────────────────────────────────────────
+   water                               2.75 µL  12.10 µL
+   T4 DNA ligase buffer          10x   1.00 µL   4.40 µL
+   BSA                          0.1%   1.00 µL   4.40 µL
+   T4 RNA ligase             40 U/µL   1.25 µL   5.50 µL
+   Annealed oligos       2.5 pmol/µL   4.00 µL  17.60 µL
+   ─────────────────────────────────────────────────────
+                                      10.00 µL  10.00 µL/rxn
+
+   Also setup individual reactions lacking:
+   - T4 ligase buffer
+   - BSA
+   - T4 RNA ligase
+
+   Save a "−ligation" control.
+
+5. Prepare samples for TBE/urea PAGE:
+
+   Reagent            Stock    Volume       15x
+   ────────────────────────────────────────────
+   water                      4.00 µL  60.00 µL
+   sample buffer         2x   5.00 µL  75.00 µL
+   RNA/DNA        200 ng/µL   1.00 µL          
+   ────────────────────────────────────────────
+                             10.00 µL   9.00 µL/rxn
+
+   - Dilute IVT samples 10x (2000 ng/µL is a typical yield).
+   - Incubate at 70°C for 3 min.
+
+6. Run the gel:
+
+   - Use a 6% TBE/urea PAGE gel.
+   - Load 10 µL of each sample.
+   - Run at 180V for 40 min.
+
+7. Stain in 1x PAGE GelRed for 30 min.
