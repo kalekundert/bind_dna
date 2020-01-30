@@ -7,7 +7,7 @@ Design DNA-binding proteins
 
    ideas_and_feedback.rst
    unexpected_observations.rst
-   todo.rst
+   planned_experiments.rst
 
    /20190402_pick_initial_model_system/*
    /20190403_plan_dna_binding_assay/*

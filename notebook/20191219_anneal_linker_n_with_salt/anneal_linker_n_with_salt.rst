@@ -1,23 +1,34 @@
 *************************
 Anneal linker-N with salt
 *************************
-Trying 4 different strategies for linking to see which gives the best 
-efficiency:
+As discussed in :expt:`20190403_validate_cdna_display`, salt is widely used in 
+oligo annealing reactions to help shield the charge of the phosphate backbone.  
+However, [Naimudden2016]_ doesn't clearly specify the buffer used to anneal the 
+oligos.  Therefore, this is a parameter that I need to optimize myself.
 
-- A: Pre-phosphorylate the linker, add 50-150 mM NaCl to the annealing 
-  reaction, don't bother removing it before the ligation reaction.
+Results
+=======
 
-- B: Anneal in the smallest possible volume of PBS, drop dialysis to remove 
-  salt, ligate in T4 DNA ligase buffer.
+Removing salt --- 2019/12/19
+----------------------------
+A significant issue with the annealing reaction is that salt is inhibitory to 
+the phosphorylation step, and may also be inhibitory to the ligation step.  See 
+more discussion in :expt:`20191220_express_zif268_via_naimudden2016`.  To find 
+the best way to address this issue, I'm trying 4 different strategies for 
+removing/diluting the salt:
 
-- C: Anneal in the smallest possible volume of PBS, dilute 10x for ligation 
+- A: Pre-phosphorylate the linker; add 50-150 mM NaCl to the annealing 
+  reaction; don't bother removing it before the ligation reaction.
+
+- B: Anneal in the smallest possible volume of PBS; drop dialysis to remove 
+  salt; ligate in T4 DNA ligase buffer.
+
+- C: Anneal in the smallest possible volume of PBS; dilute 10x for ligation 
   reaction.
 
 - D: Anneal and ligate in T4 ligase buffer (i.e. without salt).  I think this 
   is what [Naimudden2016]_ did.
 
-Results
-=======
 Note that I'm using 5 pmol of mRNA and linker-N in each reaction instead of the 
 50 pmol called for by [Naimudden2016]_.  I'm scaling down because I don't have 
 enough RNA to do 4 reactions with 50 pmol.  And anyways, since [Naimudden2016]_ 
@@ -30,6 +41,12 @@ me when I go back to doing 50 pmol reactions.
   ligated mRNA.  It's concerning; I'm pretty certain I didn't mix up samples (I 
   prepared the controls just at the end, and while the other reactions were in 
   the thermocycler) and I really don't want my linker-N to be contaminated.
+
+  .. update:: 2020/01/29
+
+      I haven't seen this mixture in subsequent experiments, so just messed up 
+      some pipetting; I didn't contaminate the stock.  I should think about 
+      making aliquots, though.
 
 - All of the lanes should have the same amount of linker-N, except the lanes 
   that were diluted (C1 and C2 intentionally, B1 by mistake).  But the A and D 
@@ -75,16 +92,84 @@ me when I go back to doing 50 pmol reactions.
   linker off the bottom, but would give better separation between the mRNA 
   bands.
 
-Optimize dialysis --- Planning
-------------------------------
-Does dialysis really help?  It seemed to be the best method in the 12/19 
-experiment, but I want to run the following controls to better understand why: 
+NaCl, PBS,  [Co(NH₃)₆]Cl₃ --- 2020/01/29
+----------------------------------------
+[Kitamura2002]_ uses [Co(NH₃)₆]Cl₃ in the ligation buffer.  According to 
+`Wikipedia 
+<https://en.wikipedia.org/wiki/Hexamminecobalt(III)_chloride#Uses>`_, 
+"[Co(NH₃)₆]³⁺ is an unusual example of a water-soluble trivalent metal complex 
+and is of utility for charge-shielding applications such as the stabilization 
+of highly negatively charged complexes, such as interactions with and between 
+nucleic acids."  So there is reason to think that Co³⁺ may be more effective 
+for annealing than Na⁺.
 
-- No salt: Is dialysis helpful on its own?
+- For this experiment, I'll use the "95°C→25°C over 1h" thermocycler protocol.  
+  I haven't optimized the temperature gradient yet, but this one seems to be 
+  very in line with other protocols and I don't expect that it will cause 
+  problems.
 
-- No dialysis: Is it necessary to get rid of salt?
+- I decided to use linker-N rather than the pseudo-linker (o93) because it 
+  seems from :expt:`20200128_validate_pseudo_linker` that linker-N may not 
+  anneal as tightly to the mRNA as the pseudo-linker does.  If there's a 
+  significant difference between the oligos, I care more about the behavior of 
+  linker-N, and I'd rather see the effect of salts on the weaker binding oligo.
 
-- No ligase: Is the gel really denaturing, and does ligation cause the 
-  smearing?
+.. protocol::
 
-- 
+   See binder, 2020/01/29
+
+.. figure:: 20200129_anneal_na_pbs_co.svg
+
+.. datatable:: 20200129_anneal_na_pbs_co.xlsx
+
+- I expected a more significant fraction of the linker to be annealed.
+
+   - I wonder somewhat if I'm adding too much linker to the reaction.  I'd 
+     really have to be off by a factor of 100 or something for that to fully 
+     explain the relative faintness of the upper bands.  And the error would 
+     probably have to be in the mRNA, since both linker-N and o93 seem 
+     similarly concentrated (and I probably didn't make the same 100x dilution 
+     error twice).
+
+- I think the high MW bands (~800) are mRNA dimers.
+
+   - Maybe I can ask Vienna what it thinks the dimer would be.
+
+   - I don't want mRNA to be ligated together, but so far I haven't seen that 
+     in any of my attempted ligation reactions.
+
+   - In the gel densiometry results above, I combined green pixels from both 
+     bands, since any green outside the lowest bands must represent linker-N 
+     annealed to mRNA.
+
+- PBS seems to work well.
+
+   - I wonder if this is due to the presence of Mg²⁺ ions.
+
+   - It's interesting that PBS looks quite different than 137 mM NaCl.  I'll 
+     have to check if my PBS recipe has divalent cations.
+
+- 500 mM NaCl, despite not have the most annealed pixels, is the only condition 
+  that has a discernible mRNA band corresponding to its linker-N band (not 
+  counting the ≈800nt bands).  It might be worth doing the whole ligation 
+  reaction with 500 mM NaCl, to see how well it works.
+
+- It's interesting that the reaction without salt *and* without annealing seems 
+  to do pretty well.  Especially since the reaction without salt *but* with 
+  annealing performs much worse.  Is there something unexpected going on?  Or 
+  is this assay maybe just noisy?
+
+   - Also note that both the "f11 only" and "no salt, no temperature" controls 
+     have faint 800 nt bands in the GelRed channel.  This really makes it seem 
+     like theres something about no salt and no temperature that allows for 
+     annealing (since it's more than just one reaction).
+
+   - Maybe I should try with salt and without temperature.
+
+- Cobalt seems to destroy the mRNA.  This is the second time I've seen this, so 
+  I'm definitely starting to think that Co catalyzes the cleavage of the RNA 
+  backbone or something.
+
+Discussion
+==========
+- I'm tentatively planning to use PBS for future experiments.
