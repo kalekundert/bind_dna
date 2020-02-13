@@ -1,0 +1,11 @@
+- Prepare samples for urea PAGE:
+
+  - 10 µL 2x formamide loading buffer
+  - 10 µL crude ligation reaction
+
+- Load and run the gel:
+
+  - Use a 6% TBE/urea PAGE gel.
+  - Load 10 µL/lane.
+  - Run at 180V for 40 min.
+  - Stain in 1x PAGE GelRed for >5 min.
