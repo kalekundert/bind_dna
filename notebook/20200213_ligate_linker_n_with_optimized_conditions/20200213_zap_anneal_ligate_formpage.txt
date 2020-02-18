@@ -1,0 +1,55 @@
+February 13, 2020
+
+$ stepwise zap
+$ stepwise anneal 2 f11 o100 -m mrna,link
+$ stepwise ligate 2 -m pnk,rna
+$ stepwise formpage
+
+1. Wipe down your bench and anything you'll touch 
+   (pipets, racks, pens, etc.) with RNaseZap.
+
+2. Setup 2 annealing reactions:
+
+   Reagent  Stock   Volume     2.2x
+   ────────────────────────────────
+   water           2.60 µL  5.72 µL
+   PBS        10x  0.40 µL  0.88 µL
+   f11      10 µM  0.50 µL  1.10 µL
+   o100     10 µM  0.50 µL  1.10 µL
+   ────────────────────────────────
+                   4.00 µL  4.00 µL/rxn
+
+3. Perform the annealing reactions:
+
+   - Incubate at 95°C for 2 min.
+   - Cool at room temperature.
+
+4. Setup 2 ligation reactions:
+
+   Reagent                 Stock    Volume      2.2x
+   ─────────────────────────────────────────────────
+   water                          27.17 µL  59.77 µL
+   T4 DNA ligase buffer      10x   4.00 µL   8.80 µL
+   BSA                      0.1%   4.00 µL   8.80 µL
+   T4 PNK                10 U/µL   0.33 µL   0.73 µL
+   T4 RNA ligase         40 U/µL   0.50 µL          
+   annealed mRNA/linker  1.25 µM   4.00 µL   8.80 µL
+   ─────────────────────────────────────────────────
+                                  40.00 µL  39.50 µL/rxn
+
+5. Incubate the ligation reactions as follows:
+
+   - 25°C for 10 min.
+   - 65°C for 10 min.
+
+6. Prepare samples for urea PAGE:
+
+   - 10 µL 2x formamide loading buffer
+   - 10 µL crude ligation reaction
+
+7. Load and run the gel:
+
+   - Use a 6% TBE/urea PAGE gel.
+   - Load 10 µL/lane.
+   - Run at 180V for 40 min.
+   - Stain in 1x PAGE GelRed for >5 min.
