@@ -32,12 +32,12 @@ from inform import plural
 args = docopt.docopt(__doc__)
 
 anneal = stepwise.MasterMix.from_text("""\
-Reagent  Stock  Volume  MM?
-=======  =====  ======  ===
-water           2.6 µL  yes
-PBS      10x    0.4 µL  yes
-mRNA     10 µM  0.5 µL
-linker   10 µM  0.5 µL
+Reagent  Stock     Volume  MM?
+=======  =====  =========  ===
+water           to 4.0 µL  yes
+PBS      10x       0.4 µL  yes
+mRNA     10 µM     0.5 µL
+linker   10 µM     0.5 µL
 """)
 
 anneal.num_reactions = n = eval(args['<n>'])

@@ -1,0 +1,19 @@
+- Remove unligated linker by ultrafiltration:
+
+  - Add 400 µL 7M urea to each reaction.
+
+  - Load onto a 100 kDa MWCO spin-filter (e.g. 
+    Amicon UFC510024)
+
+  - Spin 14000g, 15 min.
+
+  - Wash with 200 µL 7M urea.
+
+  - Wash with 500 µL nuclease-free water.
+
+  - Wash with water again.
+
+  - Wash with water again.
+
+  - Invert the filter into a clean tube and spin 
+    1000g, 2min to collect ligated product.

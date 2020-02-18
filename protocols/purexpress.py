@@ -5,14 +5,14 @@ Setup in vitro transcription/translation (IVTT) reactions using the NEB
 PURExpress system (E6800).
 
 Usage:
-    purexpress.py <num_rxns> [-v <uL>] [-D <nM>] [-t] [-z] [-p] [-n] [-s]
+    purexpress.py <num_rxns> [-v <uL>] [-D <nM>] [-t] [-z] [-p] [-n] [-s] [-w <time>]
 
 Options:
-    -v --rxn-volume <uL>  [default: 10]
+    -v --rxn-volume <uL>                        [default: 10]
         The volume of each individual reaction (in μL).  NEB recommends 25 μL, 
         but I typically use 10 μL and get enough yield for routine experiments.
 
-    -D --dna-stock-conc <nM>  [default: 75]
+    -D --dna-stock-conc <nM>                    [default: 75]
         The concentration of the DNA being added to the reaction.  If this 
         differs from the default, the volume of DNA to add will be adjusted 
         accordingly.
@@ -33,6 +33,10 @@ Options:
 
     -s --sds-page
         Run the IVTT reaction on an SDS-PAGE gel.
+
+    -w --wait <time>                            [default: 2h]
+        The amount of time to run the transcription/translation reaction for.  
+        No unit is assumed, so be sure to specify one.
 """
 
 import docopt
@@ -79,8 +83,8 @@ Setup {plural(purexpress.num_reactions):? IVTT reaction/s}:
 - Be sure to add A before B.
 - The control template (125 ng/μL) is 75 nM."""
 
-protocol += """\
-Incubate at 37°C for 2h."""
+protocol += f"""\
+Incubate at 37°C for {args['--wait']}."""
 
 if args['--purify']:
     protocol += """\
