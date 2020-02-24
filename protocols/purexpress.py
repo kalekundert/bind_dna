@@ -5,19 +5,22 @@ Setup in vitro transcription/translation (IVTT) reactions using the NEB
 PURExpress system (E6800).
 
 Usage:
-    purexpress.py <num_rxns> [-v <uL>] [-D <nM>] [-t] [-z] [-p] [-n] [-s] [-w <time>]
+    purexpress.py <num_rxns> [-v <uL>] [-D <nM>] [options]
 
 Options:
     -v --rxn-volume <uL>                        [default: 10]
-        The volume of each individual reaction (in μL).  NEB recommends 25 μL, 
-        but I typically use 10 μL and get enough yield for routine experiments.
+        The volume of each individual reaction (in µL).  NEB recommends 25 µL, 
+        but I typically use 10 µL and get enough yield for routine experiments.
 
     -D --dna-stock-conc <nM>                    [default: 75]
         The concentration of the DNA being added to the reaction.  If this 
         differs from the default, the volume of DNA to add will be adjusted 
         accordingly.
 
-    -t --add-target
+    -r --mrna
+        Use mRNA as the template instead of DNA.
+
+    -g --add-target
         Add target DNA to the PURExpress reaction.
 
     -z --add-zinc
@@ -34,66 +37,67 @@ Options:
     -s --sds-page
         Run the IVTT reaction on an SDS-PAGE gel.
 
-    -w --wait <time>                            [default: 2h]
+    -t --time <time>                            [default: 2h]
         The amount of time to run the transcription/translation reaction for.  
         No unit is assumed, so be sure to specify one.
 """
 
 import docopt
-import dirty_water
-from nonstdlib import plural
+import stepwise
+from inform import plural
 
 args = docopt.docopt(__doc__)
-protocol = dirty_water.Protocol()
-purexpress = dirty_water.Reaction('''\
-Reagent               Conc  Each Rxn  Master Mix
-===============  =========  ========  ==========
-water                         2.0 μL         yes
-A                             4.0 μL         yes
-B                             3.0 μL         yes
-RNase Inhibitor    40 U/μL    0.2 μL         yes
+protocol = stepwise.Protocol()
+purexpress = stepwise.MasterMix.from_text('''\
+Reagent              Stock      Volume  MM?
+===============  =========  ==========  ===
+water                       to 10.0 µL  yes
+A                               4.0 µL  yes
+B                               3.0 µL  yes
+RNase Inhibitor    40 U/µL      0.2 µL  yes
+ZnOAc                 1 mM      0.5 µL  yes
+target DNA          750 nM      0.8 µL  yes
+template DNA         75 nM      0.8 µL
+template mRNA        10 µM      1.6 µL
 ''')
 
-if args['--add-zinc']:
-    purexpress['ZnOAc'].std_stock_conc = 1, 'mM'
-    purexpress['ZnOAc'].std_volume = 0.5, 'μL'
-    purexpress['ZnOAc'].master_mix = True
-    purexpress['water'].std_volume = purexpress['water'].std_volume - 0.5, 'μL'
+purexpress['water']
 
-if args['--add-target']:
-    purexpress['target DNA'].std_stock_conc = 750, 'nM'
-    purexpress['target DNA'].std_volume = 0.8, 'μL'
-    purexpress['target DNA'].master_mix = True
-    purexpress['water'].std_volume = purexpress['water'].std_volume - 0.8, 'μL'
+if not args['--add-zinc']:
+    del purexpress['ZnOAc']
 
-purexpress['template DNA'].std_stock_conc = 75, 'nM'
-purexpress['template DNA'].std_volume = 0.8, 'μL'
-purexpress['template DNA'].master_mix = False
-purexpress['template DNA'].stock_conc = args['--dna-stock-conc']
+if not args['--add-target']:
+    del purexpress['target DNA']
+
+if args['--mrna']:
+    del purexpress['template DNA']
+else:
+    del purexpress['template mRNA']
 
 purexpress.num_reactions = eval(args['<num_rxns>'])
-purexpress.volume = eval(args['--rxn-volume'])
+purexpress.hold_ratios.volume = eval(args['--rxn-volume']), 'µL'
 
 protocol += f"""\
-Setup {plural(purexpress.num_reactions):? IVTT reaction/s}:
+Setup {plural(purexpress.num_reactions):# IVTT reaction/s}:
 
 {purexpress}
 
 - Keep on ice.
 - Be sure to add A before B.
-- The control template (125 ng/μL) is 75 nM."""
+{'- The control template (125 ng/µL) is 75 nM.' if not args['--mrna'] else ''}
+"""
 
 protocol += f"""\
-Incubate at 37°C for {args['--wait']}."""
+Incubate at 37°C for {args['--time']}."""
 
 if args['--purify']:
     protocol += """\
-Dilute reaction to 100 μL with PBS + 10 mM 
+Dilute reaction to 100 µL with PBS + 10 mM 
 MgOAc[1].
-- Save a 10 μL aliquot"""
+- Save a 10 µL aliquot"""
 
-    protocol.notes += """\
-We recommend a minimum volume of 100 μl after 
+    protocol.footnotes[1] = """\
+We recommend a minimum volume of 100 µl after 
 dilution to minimize losses during purification. 
 If the target will be too dilute after addition of 
 the diluent, we suggest a larger reaction volume 
@@ -115,9 +119,9 @@ Ultracel 0.5 ml-100K spin concentrator."""
 
     protocol += """\
 Spin 30 min, 15000g, 4°C.
-- Save a 10 μL aliquot of the flow-through.
-- Dilute the retentate to 100 μL, then save a
-  10 μL aliquot."""
+- Save a 10 µL aliquot of the flow-through.
+- Dilute the retentate to 100 µL, then save a
+  10 µL aliquot."""
 
     protocol += """\
 Add 0.25 volumes of Ni-NTA Agarose to the 
@@ -133,39 +137,6 @@ Bio-Rad micro-spin column."""
 
     protocol += """\
 Spin 2 min, 1500g, 4°C.
-- Save a 10 μL aliquot of the eluate."""
-
-if args['--sds-page']:
-    protocol += """\
-Setup an SDS-PAGE gel:
-
-- Prepare samples:
-  - 10.00 μL IVTT reaction
-  -  3.85 μL 4x loading buffer
-  -  1.54 μL 10x reducing agent
-  - Incubate at 70°C for 10 min.
-
-- Use a 4-12% gel (Invitrogen NW04120).
-- Load 15.39 μL in each lane.
-- Run at 165V for 42 min."""
-
-if args['--native-page']:
-    protocol += """\
-Setup a native PAGE gel:
-
-- DNA ladder:
-  - 2.5 μL water
-  - 5.0 μL 50 ng/μL ladder, i.e. 1kb+ (NEB N3232)
-  - 2.5 μL 4x sample buffer (Invitrogen BN2003)
-
-- IVTT reactions:
-  - 6.25 μL water
-  - 1.25 μL IVTT reaction
-  - 2.50 μL 4x sample buffer (Invitrogen BN2003)
-
-- Use a 3-12% gel (Invitrogen BN1003).
-- Load 5 μL in each lane.
-- Run at 150V for 115 min."""
-
+- Save a 10 µL aliquot of the eluate."""
 
 print(protocol)
