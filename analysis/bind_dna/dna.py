@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 
 import re
+import autoprop
 import pandas as pd
 import autosnapgene as snap
 from Bio.Seq import Seq
 from Bio.Alphabet import generic_dna
-from Bio.SeqUtils import molecular_weight
+from Bio.SeqUtils import molecular_weight, MeltingTemp
 from Bio.Restriction import AllEnzymes
 from pathlib import Path
 from exmemo import Workspace
@@ -20,6 +21,7 @@ work.fragment_db  = work.sequence_dir / 'fragments.xlsx'
 work.oligo_db     = work.sequence_dir / 'oligos.xlsx'
 
 DnaSeq = lambda x: Seq(x.upper(), generic_dna)
+param_pattern = r'(?P<key>\w+)=((?P<value>[^"]\S*)|(?P<value_quoted>".*?"))(\s|$)'
 
 def get_seq(tag):
     return dispatch_to_tag(
@@ -44,79 +46,39 @@ def get_plasmid_seq(tag):
     dna = snap.parse(get_plasmid_path(tag))
     return DnaSeq(dna.sequence)
 
-def get_fragment_seq(tag):
+def get_fragment_protocol(tag):
     id = int(str(tag).strip('f'))
     fragment_db = read_fragment_db()
-    construction = fragment_db.at[id,'Construction']
-    method = construction.split(':')[0]
-    seq_from_construction = {
-            'PCR': get_fragment_seq_pcr,
-            'RE':  get_fragment_seq_digest,
-            'IVT': get_fragment_seq_ivt,
-    }
-    seq_getter = seq_from_construction[method]
-    return seq_getter(construction)
+    protocol_str = fragment_db.at[id,'Construction']
+    return parse_protocol(protocol_str)
 
-def get_fragment_seq_pcr(construction):
-    template_tag, = parse_param(r'template=([fp]?\d+)', construction)
-    primer_tags = parse_param(r'primers=(\d+),(\d+)', construction)
+def get_fragment_seq(tag):
+    protocol = get_fragment_protocol(tag)
+    return protocol.product_seq
 
-    seq = get_seq(template_tag)
-    primers = p = [get_oligo_seq(x) for x in primer_tags]
-    primer_pairs = [
-            (p[0], p[1].reverse_complement()),
-            (p[1], p[0].reverse_complement()),
-    ]
-
-    for fwd, rev in primer_pairs:
-        # Assume perfect complementarity in the last 15 bases.  This is a bit 
-        # of a hack...
-        primer_ends = fwd[-15:], rev[:15]
-        i, j = sorted(seq.find(x) for x in primer_ends)
-        if i > 0 and j > 0:
-            break
-    else:
-        raise ValueError(f"{primer_ids[0]!r} and {primer_ids[1]!r} not found in {template_id!r}")
-
-
-    return fwd[:-15] + seq[i:j] + rev
-
-def get_fragment_seq_digest(construction):
-    template_tag, = parse_param(r'template=(p?\d+)', construction)
-    enzyme_name, = parse_param(r'enzyme=(\w+)', construction)
-
-    seq = get_plasmid_seq(template_tag)
-    enzyme = AllEnzymes.get(enzyme_name)
-    sites = enzyme.search(seq)
-    site = -1 + one(
-            sites,
-            ValueError(f"{enzyme_name!r} does not cut {template_tag!r}."),
-            ValueError(f"{enzyme_name!r} cuts {template_tag!r} {len(sites)} times."),
-    )
-    return seq[site:] + seq[:site]
-
-def get_fragment_seq_ivt(construction):
-    template_tag, = parse_param(r'template=([fp]?\d+)', construction)
-
-    t7_promoter = 'TAATACGACTCACTATA'
-    seq = str(get_seq(template_tag))
-    i = seq.find(t7_promoter) + len(t7_promoter)
-    return DnaSeq(seq[i:]).transcribe()
-
-def get_oligo_seq(tag):
+def get_oligo_cols(tag):
     id = int(str(tag).strip('o'))
     oligo_db = read_oligo_db()
+    return oligo_db.loc[id]
 
-    # Ignore nonstandard nucleotides; they'd be too hard to deal with...
+def get_oligo_seq(tag):
+    raw_seq = get_oligo_cols(tag)['Sequence']
+    return seq_from_str(raw_seq)
 
-    # This regular expression works because `re.sub()` only substitutes the 
-    # left-most occurrence of any overlapping patterns.  The non-greedy * is 
-    # necessary to avoid eliding everything between the first and last 
-    # nonstandard nucleotide.
-    raw_seq = oligo_db.at[id,'Sequence']
-    seq = re.sub(r'/.*?/', '', raw_seq)
+def get_oligo_tm(tag):
+    """
+    Return the melting temperature of the given oligo.
+    """
+    oligo_cols = get_oligo_cols(tag)
+    name = oligo_cols['Name']
+    seq = oligo_cols['Sequence']
 
-    return DnaSeq(seq)
+    if m := re.search(r'_TM(\d+)', name):
+        return float(m.group(1))
+
+    else:
+        seq = seq_from_str(seq)
+        return MeltingTemp.Tm_Wallace(seq)
 
 def is_circular(tag):
     return dispatch_to_tag(
@@ -135,11 +97,8 @@ def is_double_stranded(tag):
     )
 
 def is_fragment_double_stranded(tag):
-    id = int(str(tag).strip('f'))
-    fragment_db = read_fragment_db()
-    construction = fragment_db.at[id,'Construction']
-    method = construction.split(':')[0]
-    return method != 'IVT'
+    protocol = get_fragment_protocol(tag)
+    return protocol.method != 'IVT'
 
 
 def dispatch_to_tag(tag, **kwargs):
@@ -150,11 +109,64 @@ def dispatch_to_tag(tag, **kwargs):
     else:
         raise ValueError(f"unknown tag '{tag}'")
 
-def parse_param(pattern, construction):
-    if m := re.search(pattern, construction):
-        return m.groups()
-    else:
-        raise ValueError(f"expected {pattern!r}, found {construction!r}")
+def parse_protocol(protocol_str):
+    method, params_str = protocol_str.split(':', 1)
+    params = parse_params(params_str)
+    protocol_cls = {
+            'PCR': PcrProtocol,
+            'IVT': IvtProtocol,
+            'RE':  DigestProtocol,
+    }
+    return protocol_cls.get(method, Protocol)(method, params)
+
+def parse_params(params_str):
+    params = {}
+
+    for m in re.finditer(param_pattern, params_str, re.VERBOSE):
+        key = m.group('key')
+        value = m.group('value') or m.group('value_quoted')[1:-1]
+
+        if key in params:
+            raise KeyError("dupplicate key {key!r} in {params_str!r}")
+
+        params[key] = value
+
+    return params
+
+def parse_seconds(time_str):
+    time_units = {
+            's':        1,
+            'sec':      1,
+            'second':   1,
+            'seconds':  1,
+            'm':        60,
+            'min':      60,
+            'minute':   60,
+            'minutes':  60,
+            'h':        60*60,
+            'hr':       60*60,
+            'hour':     60*60,
+            'hours':    60*60,
+    }
+    time_pattern_1 = fr'(?P<time>\d+)\s*(?P<unit>{"|".join(time_units)})'
+    time_pattern_2 = fr'(?P<min>\d+)m(?P<sec>\d+)'
+
+    if m := re.fullmatch(time_pattern_1, time_str):
+        return int(m.group('time')) * time_units[m.group('unit')]
+    if m := re.fullmatch(time_pattern_2, time_str):
+        return 60 * int(m.group('min')) + int(m.group('sec'))
+
+    raise ValueError(f"can't interpret {time_str!r} as a time")
+
+def parse_celsius(temp_str):
+    temp_pattern = fr'(?P<temp>\d+)\s*°?C'
+
+    if m := re.fullmatch(temp_pattern, temp_str):
+        return int(m.group('temp'))
+
+    raise ValueError(f"can't interpret {time_str!r} as a temperature")
+
+
 @lru_cache(maxsize=None)
 def read_fragment_db():
     df = pd.read_excel(work.fragment_db)
@@ -168,5 +180,133 @@ def read_oligo_db():
     df = pd.read_excel(work.oligo_db)
     df = df.set_index(df.index + 2)
     return df
+
+def seq_from_str(raw_seq):
+    # Ignore nonstandard nucleotides; they'd be too hard to deal with...
+
+    # This regular expression works because `re.sub()` only substitutes the 
+    # left-most occurrence of any overlapping patterns.  The non-greedy * is 
+    # necessary to avoid eliding everything between the first and last 
+    # nonstandard nucleotide.
+    seq = re.sub(r'/.*?/', '', raw_seq)
+
+    return DnaSeq(seq)
+
+@autoprop
+class Protocol:
+    no_default = object()
+
+    def __init__(self, method, params):
+        self.method = method
+        self.params = params
+
+    def parse_param(self, key, pattern, default=no_default):
+        if key not in self.params:
+            if default is not Protocol.no_default:
+                return default
+            else:
+                raise KeyError(f"{self.method} protocol missing required {key!r} parameter")
+
+        if m := re.search(pattern, p := self.params[key]):
+            return m.groups()
+        else:
+            raise ValueError(f"expected {pattern!r}, found {p!r}")
+
+    def get_product_seq(self):
+        raise NotImplementedError(f"{self.method}: support for product sequence not yet implemented.")
+
+@autoprop
+class PcrProtocol(Protocol):
+
+    def get_template_tag(self):
+        return one(self.parse_param('template', r'([fp]?\d+)'))
+
+    def get_template_seq(self):
+        return get_seq(self.template_tag)
+
+    def get_primer_tags(self):
+        return self.parse_param('primers', r'([o]?\d+),([o]?\d+)')
+
+    def get_primer_seqs(self):
+        return [get_oligo_seq(x) for x in self.primer_tags]
+
+    def get_product_seq(self):
+        seq = self.template_seq
+        primers = p = self.primer_seqs
+        primer_pairs = [
+                (p[0], p[1].reverse_complement()),
+                (p[1], p[0].reverse_complement()),
+        ]
+
+        for fwd, rev in primer_pairs:
+            # Assume perfect complementarity in the last 15 bases.  This is a 
+            # bit of a hack...
+            primer_ends = fwd[-15:], rev[:15]
+            i, j = sorted(seq.find(x) for x in primer_ends)
+            if i > 0 and j > 0:
+                break
+        else:
+            raise ValueError(f"{self.primer_tags[0]!r} and {self.primer_tags[1]!r} not found in {self.template_tag!r}")
+
+        return fwd[:-15] + seq[i:j] + rev
+
+    def get_product_len(self):
+        return len(self.product_seq)
+
+    def get_annealing_temp_celsius(self):
+        if 'Ta' in self.params:
+            return parse_celsius(self.params['Ta'])
+        else:
+            tms = [get_oligo_tm(x) for x in self.primer_tags]
+            return min(tms) + 1
+
+    def get_extension_time_seconds(self):
+        if 'tx' in self.params:
+            return parse_seconds(self.params['tx'])
+
+        time_sec = 30 * self.product_len / 1000
+        if time_sec <= 10: return 10
+        if time_sec <= 15: return 15
+        return (1 + time_sec // 30) * 30
+
+
+@autoprop
+class DigestProtocol(Protocol):
+
+    def get_template_tag(self):
+        return one(self.parse_param('template', r'(p?\d+)'))
+
+    def get_template_seq(self):
+        return get_plasmid_seq(self.template_tag)
+
+    def get_enzyme_name(self):
+        return one(self.parse_param('enzyme', r'(\w+)'))
+
+    def get_product_seq(self):
+        seq = self.template_seq
+        enzyme = AllEnzymes.get(self.enzyme_name)
+        sites = enzyme.search(seq)
+        site = -1 + one(
+                sites,
+                ValueError(f"{self.enzyme_name!r} does not cut {self.template_tag!r}."),
+                ValueError(f"{self.enzyme_name!r} cuts {self.template_tag!r} {len(sites)} times."),
+        )
+        return seq[site:] + seq[:site]
+
+
+@autoprop
+class IvtProtocol(Protocol):
+
+    def get_template_tag(self):
+        return one(self.parse_param('template', r'([fp]?\d+)'))
+
+    def get_template_seq(self):
+        return get_seq(self.template_tag)
+
+    def get_product_seq(self):
+        t7_promoter = 'TAATACGACTCACTATA'
+        seq = str(self.template_seq)
+        i = seq.find(t7_promoter) + len(t7_promoter)
+        return DnaSeq(seq[i:]).transcribe()
 
 
