@@ -20,23 +20,24 @@ from nonstdlib import plural
 
 args = docopt(__doc__)
 xmni = MasterMix.from_text("""\
-Reagent              Stock  Volume  MM?
-===============  =========  ======  ===
-water                        39 µL  yes
-DNA              200 ng/µL    5 µL
-CutSmart buffer        10x    5 µL  yes
-XmnI [1]           20 U/µL    1 µL  yes
+Reagent              Stock    Volume  MM?
+===============  =========  ========  ===
+water                       to 50 µL  yes
+DNA              200 ng/µL      5 µL
+CutSmart buffer        10x      5 µL  yes
+XmnI               20 U/µL      1 µL  yes
 """)
 
 xmni.num_reactions = eval(args['<N>'] or '1')
+xmni['XmnI'].name = 'XmnI [1]'
 if x := args['--dna-stock']:
     xmni['DNA'].stock_conc = eval(x)
 if x := args['--dna-ug']:
     xmni['DNA'].volume *= eval(x)
-    xmni['XmnI [1]'].volume *= eval(x)
+    xmni['XmnI'].volume *= eval(x)
     xmni.volume = max(
             xmni.volume,
-            10 * xmni['XmnI [1]'].volume,
+            10 * xmni['XmnI'].volume,
     )
 
 protocol = Protocol()
