@@ -94,14 +94,14 @@ for key, group in groupby(protocols, key=lambda x: x.method):
                 '-v', str(scale_uL),
             ]
 
-    elif p.method == 'IVT':
+    elif key == 'IVT':
         # TODO: Modernize this protocol to take more arguments.
         stepwise_cmd += [
                 'ivt',
                 str(len(group)),
         ]
 
-    elif p.method == 'RE' and p.enzyme_name == 'XmnI':
+    elif key == 'RE' and join(x.enzyme_name for x in group) == 'XmnI':
         # TODO: Write a general restriction digest protocol.
         stepwise_cmd += [
                 'xmni',
@@ -109,7 +109,7 @@ for key, group in groupby(protocols, key=lambda x: x.method):
         ]
 
     else:
-        inform.warning("{p.method!r} protocols are not yet supported.")
+        inform.warning("{key!r} protocols are not yet supported.")
         continue
 
     stepwise_cmds.append(stepwise_cmd)
