@@ -44,14 +44,36 @@ def join(items):
     else:
         return ','.join(items)
 
+def str_strip_insig(x):
+    return str(x).rstrip('0').rstrip('.')
+
+def pcr_scale(group):
+    return one(
+            {x.scale for x in group},
+            too_long=ValueError(f"PCR reactions have different scales: {','.join(repr(x.product_tag) for x in group)}"),
+    )
+
+def pcr_master_mix(group):
+    master_mix = {'dna', 'primers'}
+    num_templates = len({x.template_tag for x in group})
+    num_primers = len({x.primer_tags for x in group})
+
+    if num_templates > 1:
+        master_mix.discard('dna')
+    if num_primers > 1:
+        master_mix.discard('primers')
+
+    return master_mix
+
 args = docopt.docopt(__doc__)
-protocols = [
-        dbp.get_fragment_protocol(x)
-        for x in args['<fragment_tag>']
-]
+
+protocols = []
+for tag in args['<fragment_tag>']:
+    protocol = dbp.get_fragment_protocol(tag)
+    protocol.product_tag = tag
+    protocols.append(protocol)
 
 stepwise_cmds = []
-
 for key, group in groupby(protocols, key=lambda x: x.method):
     group = list(group)
     stepwise_cmd = ['stepwise']
@@ -63,10 +85,14 @@ for key, group in groupby(protocols, key=lambda x: x.method):
                 join(x.primer_tags[0] for x in group),
                 join(x.primer_tags[1] for x in group),
                 str(len(group)),
-                join(str(x.annealing_temp_celsius) for x in group),
+                join(str_strip_insig(x.annealing_temp_celsius) for x in group),
                 join(format_tx(x) for x in group),
+                '-m', ','.join(pcr_master_mix(group)),
         ]
-
+        if scale_uL := pcr_scale(group):
+            stepwise_cmd += [
+                '-v', str(scale_uL),
+            ]
 
     elif p.method == 'IVT':
         # TODO: Modernize this protocol to take more arguments.
