@@ -15,7 +15,7 @@ sequence.
    :hidden:
 
    /20190430_create_minimal_cloning_vector/*
-   /20190603_express_zif286_in_vitro/*
+   /20190603_express_zif268_in_vitro/*
    /20190614_optimize_rbs/*
    /20190625_purify_zif268_repa_via_reverse_his/*
    /20190626_purify_zif268_repa_via_ribosome_pull_down/*

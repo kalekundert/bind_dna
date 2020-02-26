@@ -5,8 +5,10 @@ References
 .. [Barendt2013] :doi:`10.1021/co300135r`
 .. [Bauer2017] :doi:`10.1371/journal.pone.0190062`
 .. [Bulyk2001] :doi:`10.1073/pnas.111163698`
+.. [Butt2013] :doi:`10.1074/mcp.M112.021881`
 .. [Choo1994] :doi:`10.1073/pnas.91.23.11163`
 .. [Crinelli2002] :doi:`10.1093/nar/30.11.2435`
+.. [Cote2008] :doi:`10.1016/j.virusres.2008.01.001`
 .. [Damian2009] :doi:`10.1016/j.bbrc.2009.05.044`
 .. [Dick1978] :doi:`10.1113/jphysiol.1978.sp012526`
 .. [Durfee2008] :doi:`10.1128/JB.01695-07`
@@ -26,6 +28,7 @@ References
 .. [Kimple2013] :doi:`10.1002/0471140864.ps0909s73`
 .. [Kitamura2002] :doi:`10.1093/protein/15.10.843`
 .. [Lam2011] :doi:`10.1093/nar/gkq1303`
+.. [Lee2008] :doi:`10.1529/biophysj.108.133025`
 .. [Lesley1995] :doi:`10.1385/0-89603-288-4:265`
 .. [Kurz2001] Kurz M, Gu K, Al-Gawari A, Lohse PA. cDNA–Protein Fusions: Covalent Protein–Gene Conjugates for the In Vitro Selection of Peptides and Proteins. Chem Bio Chem 2:9:666-672 (2001).
 .. [Man2001] :doi:`10.1093/nar/29.12.2471`
@@ -47,6 +50,7 @@ References
 .. [Reiersen2005] :doi:`10.1093/nar/gni010`
 .. [Seelig2011] :doi:`10.1038/nprot.2011.312`
 .. [Sera2002] :doi:`10.1021/bi020095c`
+.. [Schagger2006] :doi:`10.1038/nprot.2006.4`
 .. [Shimizu2001] :doi:`10.1038/90802`
 .. [Shine1974] :doi:`10.1073/pnas.71.4.1342`
 .. [Subramanian2018] :doi:`10.1093/synbio/ysx008`

@@ -1,0 +1,8 @@
+February 25, 2020
+
+$ stepwise dilute f11 5636.2
+
+1. Dilute the purified RNA to 10000.00 nM:
+
+     amplicon      mw_da  stock_ng_uL  stock_nM  final_nM  stock_uL  water_uL
+   0      f11  125345.06       5636.2  44965.47   10000.0      4.45     15.55

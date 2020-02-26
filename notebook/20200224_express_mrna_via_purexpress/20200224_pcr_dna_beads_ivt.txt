@@ -1,0 +1,102 @@
+February 24, 2020
+
+$ stepwise pcr p43 o67 o40,o3 2 63 30s -v50
+$ stepwise dna_beads
+$ stepwise ivt 1 -d50
+
+ 1. Prepare each 10x primer mix:
+
+    Reagent    Conc  Each Rxn
+    ─────────────────────────
+    water            18.00 μL
+    o67      100 μM   1.00 μL
+    o40,o3   100 μM   1.00 μL
+    ─────────────────────────
+                     20.00 μL
+
+ 2. Setup 2 PCR reactions and 1 negative control:
+
+    Reagent             Conc  Each Rxn  Master Mix
+    ──────────────────────────────────────────────
+    water                     19.00 μL    57.00 μL
+    primer mix           10x   5.00 μL            
+    p43            100 pg/µL   1.00 µL     3.00 µL
+    Q5 master mix         2x  25.00 µL    75.00 µL
+    ──────────────────────────────────────────────
+                              50.00 μL    45.00 μL/rxn
+
+ 3. Run the following thermocycler protocol:
+
+    - 98°C for 30s
+    - Repeat 35x:
+      - 98°C for 10s
+      - 63°C for 20s
+      - 72°C for 30s
+    - 72°C for 2 min
+    - 4°C hold
+
+ 4. Purify DNA using magnetic beads [1].
+
+    - Gently resuspend the bead solution [2].
+    - Add 1 volume of bead solution to each sample.
+    - Incubate 5 min at RT.
+    - Apply magnet for >2 min and discard supernatant.
+    - Wash twice:
+      - Add 200 µL 70% EtOH.
+      - Incubate 30 sec at RT.
+      - Apply to magnet and discard ethanol.
+    - Air-dry for 4-5 minutes [3].
+    - Add any volume of eluant.
+    - Apply magnet for >2 min.
+    - Transfer ≈95% of the eluant to a clean tube.
+
+ 5. Wipe down your bench and anything you'll touch 
+    (pipets, racks, pens, etc.) with RNaseZap.
+
+ 6. Setup 1 in vitro transcription reaction by 
+    mixing the following reagents at room temperature 
+    in the order given [4].
+
+    Reagent              Conc  Each Rxn
+    ───────────────────────────────────
+    reaction buffer       10x   2.00 μL
+    RNase inhibitor   40 U/μL   0.50 μL
+    rNTP mix           100 mM   8.00 μL
+    HiScribe T7           10x   2.00 μL
+    DNA template     50 ng/μL   7.50 μL
+    ───────────────────────────────────
+                               20.00 μL
+
+ 7. Incubate at 37°C (thermocycler) for 2 hours.
+
+ 8. Remove unincorporated ribonucleotides using Zymo 
+    RNA Clean & Concentrator 25 spin columns.
+
+ 9. Nanodrop to determine the RNA concentration.
+
+10. Dilute (if desired) enough RNA to make several 
+    10 μM aliquots and to run a gel.  Keep any left- 
+    over RNA undiluted.  Flash-freeze in liquid N₂ and 
+    store at -80°C.
+
+11. Run the RNA on a denaturing gel to make sure it's 
+    homogeneous and of the right size.
+
+Notes:
+[1] See "Magnetic Bead DNA Purification" in my Google 
+    Drive for more details.
+
+[2] Don't vortex; this damages the beads (somehow).
+
+[3] Be careful not to over-dry the beads.  Over-dried
+    beads will appear cracked and will be difficult 
+    to resuspend.  If this happens, heat and agitate 
+    for 10-15 minutes during elution to help 
+    resuspend the beads and release the DNA.  An 
+    alternative strategy is to add the eluant after a 
+    very short drying step, then leaving the tubes 
+    open for 10-15 minutes to allow the ethanol to 
+    evaporate.
+
+[4] Cannot reach the recommended 1000.0 ng of DNA,
+    using 375.0 ng instead.

@@ -1,0 +1,47 @@
+February 25, 2020
+
+$ stepwise split 'Use the following controls:~no template~75 nM DNA template (p43)~10 µM RNA template (f15)~1 µM RNA template (f15)'
+$ stepwise purex -r 4
+$ stepwise page sds 4
+
+1. Use the following controls:
+   - no template
+   - 75 nM DNA template (p43)
+   - 10 µM RNA template (f15)
+   - 1 µM RNA template (f15)
+
+2. Setup 4 IVTT reactions:
+
+   Reagent            Stock    Volume      4.4x
+   ────────────────────────────────────────────
+   water                      1.20 µL   5.28 µL
+   A                          4.00 µL  17.60 µL
+   B                          3.00 µL  13.20 µL
+   RNase Inhibitor  40 U/µL   0.20 µL   0.88 µL
+   template mRNA      10 µM   1.60 µL          
+   ────────────────────────────────────────────
+                             10.00 µL   8.40 µL/rxn
+
+   - Keep on ice.
+   - Be sure to add A before B.
+
+3. Incubate at 37°C for 2h.
+
+4. Prepare samples for SDS PAGE:
+
+   Reagent                 Stock    Volume        6x
+   ─────────────────────────────────────────────────
+   water                           4.00 µL  24.00 µL
+   Bolt LDS sample buffer     4x   2.50 µL  15.00 µL
+   Bolt redcing agent        10x   1.00 µL   6.00 µL
+   protein                         2.50 µL          
+   ─────────────────────────────────────────────────
+                                  10.00 µL   7.50 µL/rxn
+
+   - Incubate at 70°C for 10 min.
+
+5. Run the gel:
+
+   - Use a 4−12% SDS PAGE gel.
+   - Load 10 µL of each sample.
+   - Run at 165V for 42 min.

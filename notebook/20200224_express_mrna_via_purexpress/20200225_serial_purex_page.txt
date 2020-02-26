@@ -1,0 +1,55 @@
+February 25, 2020
+
+$ stepwise serial 2.0 10 0.1 5
+$ stepwise purex -r 8 -v 5
+$ stepwise page sds 8
+
+1. Perform a serial dilution [1]:
+
+   - Put 2.92 μL material in the first tube.
+   - Add 2.00 μL water in the remaining tubes.
+   - Transfer 0.92 μL between each tube.
+
+2. Setup 8 IVTT reactions:
+
+   Reagent            Stock   Volume      8.8x
+   ───────────────────────────────────────────
+   water                     0.60 µL   5.28 µL
+   A                         2.00 µL  17.60 µL
+   B                         1.50 µL  13.20 µL
+   RNase Inhibitor  40 U/µL  0.10 µL   0.88 µL
+   template mRNA      10 µM  0.80 µL          
+   ───────────────────────────────────────────
+                             5.00 µL   4.20 µL/rxn
+
+   - Keep on ice.
+   - Be sure to add A before B.
+
+3. Incubate at 37°C for 2h.
+
+4. Prepare samples for SDS PAGE:
+
+   Reagent                 Stock    Volume       12x
+   ─────────────────────────────────────────────────
+   water                           4.00 µL  48.00 µL
+   Bolt LDS sample buffer     4x   2.50 µL  30.00 µL
+   Bolt redcing agent        10x   1.00 µL  12.00 µL
+   protein                         2.50 µL          
+   ─────────────────────────────────────────────────
+                                  10.00 µL   7.50 µL/rxn
+
+   - Incubate at 70°C for 10 min.
+
+5. Run the gel:
+
+   - Use a 4−12% SDS PAGE gel.
+   - Load 10 µL of each sample.
+   - Run at 165V for 42 min.
+
+Note:
+[1] The final concentrations will be:
+    1  1.00e+01
+    2  3.16e+00
+    3  1.00e+00
+    4  3.16e-01
+    5  1.00e-01

@@ -1,0 +1,96 @@
+February 18, 2020
+
+$ stepwise anneal 3 f11 o93 -m mrna,link
+$ stepwise ligate 3 -P -m lig,rna
+$ stepwise wash_barendt
+$ stepwise purex 3 -w '30 min'
+$ stepwise page sds 5
+
+1. Setup 3 annealing reactions:
+
+   Reagent  Stock   Volume    ≈3.3x
+   ────────────────────────────────
+   water           2.60 µL  8.58 µL
+   PBS        10x  0.40 µL  1.32 µL
+   f11      10 µM  0.50 µL  1.65 µL
+   o93      10 µM  0.50 µL  1.65 µL
+   ────────────────────────────────
+                   4.00 µL  4.00 µL/rxn
+
+2. Perform the annealing reactions:
+
+   - Incubate at 95°C for 2 min.
+   - Cool at room temperature.
+
+3. Setup 3 ligation reactions:
+
+   Reagent                 Stock    Volume     ≈3.3x
+   ─────────────────────────────────────────────────
+   water                          27.50 µL  90.75 µL
+   BSA                      0.1%   4.00 µL  13.20 µL
+   T4 DNA ligase buffer      10x   4.00 µL  13.20 µL
+   T4 RNA ligase         40 U/µL   0.50 µL   1.65 µL
+   annealed mRNA/linker  1.25 µM   4.00 µL  13.20 µL
+   ─────────────────────────────────────────────────
+                                  40.00 µL  40.00 µL/rxn
+
+4. Incubate the ligation reactions as follows:
+
+   - 25°C for 10 min.
+   - 65°C for 10 min.
+
+5. Remove unligated linker by ultrafiltration:
+
+   - Add 400 µL 7M urea to each reaction.
+
+   - Load onto a 100 kDa MWCO spin-filter (e.g. 
+     Amicon UFC510024)
+
+   - Spin 14000g, 15 min.
+
+   - Wash with 200 µL 7M urea.
+
+   - Wash with 500 µL nuclease-free water.
+
+   - Wash with water again.
+
+   - Wash with water again.
+
+   - Invert the filter into a clean tube and spin 
+     1000g, 2min to collect ligated product.
+
+6. Setup 3 IVTT reactions:
+
+   Reagent             Conc  Each Rxn  Master Mix
+   ──────────────────────────────────────────────
+   water                      2.00 μL     6.60 μL
+   A                          4.00 μL    13.20 μL
+   B                          3.00 μL     9.90 μL
+   RNase Inhibitor  40 U/μL   0.20 μL     0.66 μL
+   template DNA       75 nM   0.80 μL            
+   ──────────────────────────────────────────────
+                             10.00 μL     9.20 μL/rxn
+
+   - Keep on ice.
+   - Be sure to add A before B.
+   - The control template (125 ng/μL) is 75 nM.
+
+7. Incubate at 37°C for 30 min.
+
+8. Prepare samples for SDS PAGE:
+
+   Reagent         Stock    Volume      7.5x
+   ─────────────────────────────────────────
+   loading buffer     4x   3.85 µL  28.88 µL
+   reducing agent    10x   1.54 µL  11.55 µL
+   protein                 4.61 µL          
+   ─────────────────────────────────────────
+                          10.00 µL   5.39 µL/rxn
+
+   - Incubate at 70°C for 10 min.
+
+9. Run the gel:
+
+   - Use a 4−12% SDS PAGE gel.
+   - Load 10 µL of each sample.
+   - Run at 165V for 42 min.

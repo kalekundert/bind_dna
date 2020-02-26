@@ -14,6 +14,7 @@ linker.  I'm mostly intending to follow the cDNA-display protocol from
    :glob:
    :hidden:
 
+   /20190403_order_linker_n/*
    /20190430_create_minimal_cloning_vector/*
    /20191004_linearize_cdna_display_gene/*
    /20191216_optimize_mrna_transcription/*
@@ -26,6 +27,7 @@ linker.  I'm mostly intending to follow the cDNA-display protocol from
    /20191220_ligate_linker_n_via_kitamura2002/*
    /20200129_ligate_with_5_phosphorylation/*
    /20200213_ligate_linker_n_with_optimized_conditions/*
+   /20200224_express_mrna_via_purexpress/*
    /20191220_express_zif268_via_naimudden2016/*
 
 Considerations
@@ -229,24 +231,3 @@ mostly G and therefore has poor self-complementarity.  Also, [Naimudden2016]_
 reported good ligation yields, and they didn't mention this issue at all.  So 
 I'm not going to worry about this for now, but I wanted to at least put my 
 thoughts down.
-
-.. _validate_cdna_display_ligation:
-
-   
-Results
-=======
-
-Order linker-N
---------------
-I was able to order the DNA linker described in [Naimudden2016]_ from 
-MidlandCRC.  See attached quote:
-
-:download:`quotes/midland_20190416_63451.pdf`
-
-.. update:: 2019/12/20
-
-   I didn't order the complete linker-N.  I ordered just the branch with the 
-   puromycin; they didn't synthesize the branch with the RT primer.  
-
-   Well, know that I have to order more oligo anyways, I might as well find out 
-   if things work better with Cy5 and 5' phosphorylation.

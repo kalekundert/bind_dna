@@ -1,0 +1,66 @@
+February 25, 2020
+
+$ stepwise make f12 f16
+$ stepwise dna_beads
+
+1. Prepare each 10x primer mix:
+
+   Reagent      Conc  Each Rxn
+   ───────────────────────────
+   water              18.00 μL
+   o86        100 μM   1.00 μL
+   o102,o101  100 μM   1.00 μL
+   ───────────────────────────
+                      20.00 μL
+
+2. Setup 2 PCR reactions and 1 negative control:
+
+   Reagent             Conc  Each Rxn  Master Mix
+   ──────────────────────────────────────────────
+   water                     19.00 μL    57.00 μL
+   primer mix           10x   5.00 μL            
+   p59            100 pg/µL   1.00 µL     3.00 µL
+   Q5 master mix         2x  25.00 µL    75.00 µL
+   ──────────────────────────────────────────────
+                             50.00 μL    45.00 μL/rxn
+
+3. Run the following thermocycler protocol:
+
+   - 98°C for 30s
+   - Repeat 35x:
+     - 98°C for 10s
+     - 62°C for 20s
+     - 72°C for 15s
+   - 72°C for 2 min
+   - 4°C hold
+
+4. Purify DNA using magnetic beads [1].
+
+   - Gently resuspend the bead solution [2].
+   - Add 1 volume of bead solution to each sample.
+   - Incubate 5 min at RT.
+   - Apply magnet for >2 min and discard supernatant.
+   - Wash twice:
+     - Add 200 µL 70% EtOH.
+     - Incubate 30 sec at RT.
+     - Apply to magnet and discard ethanol.
+   - Air-dry for 4-5 minutes [3].
+   - Add any volume of eluant.
+   - Apply magnet for >2 min.
+   - Transfer ≈95% of the eluant to a clean tube.
+
+Notes:
+[1] See "Magnetic Bead DNA Purification" in my Google 
+    Drive for more details.
+
+[2] Don't vortex; this damages the beads (somehow).
+
+[3] Be careful not to over-dry the beads.  Over-dried
+    beads will appear cracked and will be difficult 
+    to resuspend.  If this happens, heat and agitate 
+    for 10-15 minutes during elution to help 
+    resuspend the beads and release the DNA.  An 
+    alternative strategy is to add the eluant after a 
+    very short drying step, then leaving the tubes 
+    open for 10-15 minutes to allow the ethanol to 
+    evaporate.

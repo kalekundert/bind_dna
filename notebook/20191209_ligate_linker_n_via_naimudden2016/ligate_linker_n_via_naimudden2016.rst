@@ -25,6 +25,8 @@ want to achieve similar efficiencies.
    which would've made the linker-N band artificially dim.  (This step is not 
    mentioned in [Naimudden2016]_, but is mentioned in [Naimudden2011]_).
 
+.. _validate_cdna_display_ligation:
+
 Considerations
 ==============
 The protocol given by [Naimudden2016]_ for ligating the linker to the 
@@ -138,7 +140,7 @@ transcribed RNA has some ambiguities:
    - The duration of the gradient cooling is not specified.
 
    - `This protocol 
-     <https://www.sigmaaldrich.com/technical-documents/protocols/biology/annealing-oligos.html>`_ 
+     <https://www.sigmaaldrich.com/technical-documents/protocols/biology/annealing-oligos.html>`__ 
      from Sigma specifies:
       
       - Thermocycler protocol:
@@ -157,7 +159,7 @@ transcribed RNA has some ambiguities:
         requirement.
 
    - `This protocol 
-     <https://www.idtdna.com/pages/education/decoded/article/annealing-oligonucleotides>`_ 
+     <https://www.idtdna.com/pages/education/decoded/article/annealing-oligonucleotides>`__ 
      from IDT specifies:
 
       - 94°C for 2 min, the "gradually" cool.  Specific cooling time not given, 
@@ -175,7 +177,7 @@ transcribed RNA has some ambiguities:
       - Oligo concentration: 10--100 µM
 
    - `This protocol 
-     <https://tools.thermofisher.com/content/sfs/brochures/TR0045-Anneal-oligos.pdf>`_ 
+     <https://tools.thermofisher.com/content/sfs/brochures/TR0045-Anneal-oligos.pdf>`__ 
      from Thermo specifies:
 
       - Thermocycler protocol:

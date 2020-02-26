@@ -53,6 +53,7 @@ Zif268 mutants, target sites, N/C-terminal barcodes, etc. that I have cloned.
    /20190604_pick_qpcr_primers/*
    /20190610_optimize_qpcr_conditions/*
    /20191115_block_bal31_via_teln/*
+   /20200219_attach_dna_via_huh_tag/*
 
 Considerations
 ==============
