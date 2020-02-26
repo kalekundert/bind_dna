@@ -38,6 +38,28 @@ def get_mw(tag):
             circular=is_circular(tag),
     )
 
+def get_cols(tag):
+    return dispatch_to_tag(
+            tag,
+            p=get_plasmid_cols,
+            f=get_fragment_cols,
+            o=get_oligo_cols,
+    )
+
+def get_conc(tag):
+    try:
+        conc_str = get_cols(tag)['Conc']
+    except KeyError:
+        raise ValueError(f"no concentration specified for {tag!r}")
+
+    return parse_nanomolar(conc_str, get_mw(tag))
+
+
+def get_plasmid_cols(tag):
+    id = int(str(tag).strip('p'))
+    plasmid_db = read_plasmid_db()
+    return plasmid_db.loc[id]
+
 def get_plasmid_path(tag):
     id = int(str(tag).strip('p'))
     return work.plasmid_dir / f'{id:>03}.dna'
@@ -46,15 +68,18 @@ def get_plasmid_seq(tag):
     dna = snap.parse(get_plasmid_path(tag))
     return DnaSeq(dna.sequence)
 
-def get_fragment_protocol(tag):
+def get_fragment_cols(tag):
     id = int(str(tag).strip('f'))
     fragment_db = read_fragment_db()
-    protocol_str = fragment_db.at[id,'Construction']
-    return parse_protocol(protocol_str)
+    return fragment_db.loc[id]
 
 def get_fragment_seq(tag):
     protocol = get_fragment_protocol(tag)
     return protocol.product_seq
+
+def get_fragment_protocol(tag):
+    protocol_str = get_fragment_cols(tag)['Construction']
+    return parse_protocol(protocol_str)
 
 def get_oligo_cols(tag):
     id = int(str(tag).strip('o'))
@@ -164,8 +189,38 @@ def parse_celsius(temp_str):
     if m := re.fullmatch(temp_pattern, temp_str):
         return int(m.group('temp'))
 
-    raise ValueError(f"can't interpret {time_str!r} as a temperature")
+    raise ValueError(f"can't interpret {temp_str!r} as a temperature")
 
+def parse_microliters(vol_str):
+    vol_pattern = fr'(?P<vol>\d+)\s*[µu]L'
+
+    if m := re.fullmatch(vol_pattern, vol_str):
+        return int(m.group('vol'))
+
+    raise ValueError(f"can't interpret {vol_str!r} as a volume")
+
+def parse_nanomolar(conc_str, mw):
+    conc_pattern = r'(?P<conc>\d+)\s?(?P<unit>[nuµ]M|ng/[uµ]L)'
+    unit_conversion = {
+            'nM': 1,
+            'uM': 1e3,
+            'µM': 1e3,
+            'ng/uL': 1e6 / mw,
+            'ng/µL': 1e6 / mw,
+    }
+
+    if m := re.match(conc_pattern, conc_str):
+        return float(m.group('conc')) * unit_conversion[m.group('unit')]
+    else:
+        raise ValueError(f"can't interpret {conc_str!r} as a concentration")
+
+
+
+@lru_cache(maxsize=None)
+def read_plasmid_db():
+    df = pd.read_excel(work.plasmid_db)
+    df = df.set_index(df.index + 2)
+    return df
 
 @lru_cache(maxsize=None)
 def read_fragment_db():
@@ -268,6 +323,10 @@ class PcrProtocol(Protocol):
         if time_sec <= 10: return 10
         if time_sec <= 15: return 15
         return (1 + time_sec // 30) * 30
+
+    def get_scale(self):
+        if 'scale' in self.params:
+            return parse_microliters(self.params['scale'])
 
 
 @autoprop

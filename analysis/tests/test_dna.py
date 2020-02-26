@@ -67,6 +67,47 @@ def test_parse_seconds(time_str, expected):
 def test_parse_celsius(temp_str, expected):
     assert parse_celsius(temp_str) == expected
 
+@pytest.mark.parametrize(
+        'vol_str, expected', [
+            ('1uL', 1),
+            ('1 uL', 1),
+            ('1µL', 1),
+            ('1 µL', 1),
+])
+def test_parse_microliters(vol_str, expected):
+    assert parse_microliters(vol_str) == expected
+
+@pytest.mark.parametrize(
+        'conc_str, mw, expected', [
+            ('4nM',     1e6,      4),
+            ('4 nM',    1e6,      4),
+
+            ('4nM',     2e6,      4),
+            ('4 nM',    2e6,      4),
+
+            ('4uM',     1e6,   4000),
+            ('4 uM',    1e6,   4000),
+            ('4µM',     1e6,   4000),
+            ('4 µM',    1e6,   4000),
+
+            ('4uM',     2e6,   4000),
+            ('4 uM',    2e6,   4000),
+            ('4µM',     2e6,   4000),
+            ('4 µM',    2e6,   4000),
+
+            ('4ng/uL',  1e6,      4),
+            ('4 ng/uL', 1e6,      4),
+            ('4ng/µL',  1e6,      4),
+            ('4 ng/µL', 1e6,      4),
+
+            ('4ng/uL',  2e6,      2),
+            ('4 ng/uL', 2e6,      2),
+            ('4ng/µL',  2e6,      2),
+            ('4 ng/µL', 2e6,      2),
+])
+def test_parse_nanomolar(conc_str, mw, expected):
+    assert parse_nanomolar(conc_str, mw) == expected
+
 
 def test_pcr_protocol():
     p = parse_protocol('PCR: template=p43 primers=o67,o40 Ta=63°C')
