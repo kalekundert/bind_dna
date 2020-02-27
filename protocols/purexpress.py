@@ -78,7 +78,7 @@ purexpress.num_reactions = eval(args['<num_rxns>'])
 purexpress.hold_ratios.volume = eval(args['--rxn-volume']), 'µL'
 
 protocol += f"""\
-Setup {plural(purexpress.num_reactions):# IVTT reaction/s}:
+Setup {plural(purexpress.num_reactions):# PURExpress reaction/s}:
 
 {purexpress}
 
