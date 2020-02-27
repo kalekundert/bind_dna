@@ -48,10 +48,13 @@ def str_strip_insig(x):
     return str(x).rstrip('0').rstrip('.')
 
 def pcr_scale(group):
-    return one(
+    custom_scale = one(
             {x.scale for x in group},
             too_long=ValueError(f"PCR reactions have different scales: {','.join(repr(x.product_tag) for x in group)}"),
     )
+    # Default to 50 µL, because usually if we're trying to *make* something, we 
+    # need it at >10 µL scale.
+    return custom_scale or 50
 
 def pcr_master_mix(group):
     master_mix = {'dna', 'primers'}
@@ -88,11 +91,8 @@ for key, group in groupby(protocols, key=lambda x: x.method):
                 join(str_strip_insig(x.annealing_temp_celsius) for x in group),
                 join(format_tx(x) for x in group),
                 '-m', ','.join(pcr_master_mix(group)),
+                '-v', str(pcr_scale(group)),
         ]
-        if scale_uL := pcr_scale(group):
-            stepwise_cmd += [
-                '-v', str(scale_uL),
-            ]
 
     elif key == 'IVT':
         # TODO: Modernize this protocol to take more arguments.
