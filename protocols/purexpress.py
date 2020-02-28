@@ -8,6 +8,9 @@ Usage:
     purexpress.py <num_rxns> [-v <uL>] [-D <nM>] [options]
 
 Options:
+    -t --template <name>
+        The name of the template to transcribe/translate.
+
     -v --rxn-volume <uL>                        [default: 10]
         The volume of each individual reaction (in µL).  NEB recommends 25 µL, 
         but I typically use 10 µL and get enough yield for routine experiments.
@@ -37,7 +40,7 @@ Options:
     -s --sds-page
         Run the IVTT reaction on an SDS-PAGE gel.
 
-    -t --time <time>                            [default: 2h]
+    -w --time <time>                            [default: 2h]
         The amount of time to run the transcription/translation reaction for.  
         No unit is assumed, so be sure to specify one.
 """
@@ -61,7 +64,9 @@ template DNA         75 nM      0.8 µL
 template mRNA        10 µM      1.6 µL
 ''')
 
-purexpress['water']
+if name := args['--template']:
+    purexpress['template DNA'].name = name
+    purexpress['template mRNA'].name = name
 
 if not args['--add-zinc']:
     del purexpress['ZnOAc']
