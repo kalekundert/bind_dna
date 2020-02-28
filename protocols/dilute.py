@@ -29,10 +29,11 @@ Options:
         Note: 75 nM corresponds to 125 ng/μL of the DHFR control template.  
 
     -v --volume <uL>  [default: 20]
-        The volume of diluted amplicon to make.
+        The volume of diluted DNA/RNA to make.
 
     -V --stock-volume <uL>
-        The volume of concentrated DNA that you want to use for the dilution.  
+        The volume of concentrated DNA/RNA that you want to use for the 
+        dilution.
 """
 
 import docopt
@@ -61,19 +62,19 @@ def get_final_conc(tag):
 if tsv := args['<tsv>']:
     nanodrop = pd.read_csv(tsv, sep='\t')
     df = pd.DataFrame()
-    df['amplicon'] = nanodrop['Sample Name']
+    df['tag'] = nanodrop['Sample Name']
     df['stock_ng_uL'] = nanodrop['Nucleic Acid(ng/uL)']
     
 else:
     df = pd.DataFrame([{
-        'amplicon':     args['<tag>'],
+        'tag':     args['<tag>'],
         'stock_ng_uL':  float(args['<ng_uL>']),
     }])
 
-df['type'] = df['amplicon'].apply(get_type)
-df['mw_da'] = df['amplicon'].apply(dbp.get_mw)
+df['type'] = df['tag'].apply(get_type)
+df['mw_da'] = df['tag'].apply(dbp.get_mw)
 df['stock_nM'] = 1e6 * df['stock_ng_uL'] / df['mw_da']
-df['final_nM'] = df['amplicon'].apply(get_final_conc)
+df['final_nM'] = df['tag'].apply(get_final_conc)
 
 if stock_uL is not None:
     df['stock_uL'] = stock_uL
@@ -84,26 +85,23 @@ else:
 
 pd.set_option('display.precision', 2)
 
-types = '/'.join(df['type'])
+types = '/'.join(set(df['type']))
 if len(x := set(df['final_nM'].dropna())) == 1:
     final_nM = f' to {x.pop():.2f} nM'
 else:
     final_nm = ''
 
-df = df[[
-        'amplicon',
-        'mw_da',
-        'stock_ng_uL',
-        'stock_nM',
-        'final_nM',
-        'stock_uL',
-        'water_uL',
-]]
-
 protocol = stepwise.Protocol()
 protocol += f"""\
-Dilute the purified {types}{final_nM}:
+Dilute the purified {types}{final_nM} [1]:
 
-{df}
+{df[['tag','stock_uL','water_uL']]}
 """
+
+protocol.footnotes[1] = f"""\
+Concentrations:
+
+{df[['tag', 'mw_da','stock_ng_uL','stock_nM','final_nM']]}
+"""
+
 print(protocol)
