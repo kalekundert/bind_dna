@@ -106,6 +106,7 @@ for key, group in groupby(protocols, key=lambda x: x.method):
         stepwise_cmd += [
                 'xmni',
                 str(len(group)),
+                '-p', join(x.template_tag for x in group),
         ]
 
     else:

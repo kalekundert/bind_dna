@@ -7,6 +7,9 @@ Usage:
     xmni [<N>] [options]
 
 Options:
+    -p --plasmid NAME
+        The name of the plasmid being digested.
+
     -u --dna-ug AMOUNT
         The amount of DNA to digest, in µg.
 
@@ -30,11 +33,16 @@ XmnI               20 U/µL      1 µL  yes
 
 xmni.num_reactions = eval(args['<N>'] or '1')
 xmni['XmnI'].name = 'XmnI [1]'
+
+if x:= args['--plasmid']:
+    xmni['DNA'].name = x
+
 if x := args['--dna-stock']:
     xmni['DNA'].stock_conc = eval(x)
+
 if x := args['--dna-ug']:
-    xmni['DNA'].volume *= eval(x)
-    xmni['XmnI'].volume *= eval(x)
+    xmni['DNA'].volume *= eval(x) / 1
+    xmni['XmnI'].volume *= eval(x) / 1
     xmni.volume = max(
             xmni.volume,
             10 * xmni['XmnI'].volume,
