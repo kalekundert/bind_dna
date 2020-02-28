@@ -104,7 +104,53 @@ Amplify f3-f10 --- 2020/01/21
 - It was important to do 50 µL PCR, I wouldn't have gotten enough yield with 10 
   µL.
 
+Results
+=======
+
 Express f3 and f8 --- 2020/01/22
 --------------------------------
+.. protocol:: 20200122_s30_page.txt 20200122_mag_strep_page.txt
+
+.. figure:: 20200122_s30_extract_f3_f8.svg
+
+- I don't know why there are several green bands that are present in both 
+  reactions.  These may be vaguely fluorescent proteins that are just present 
+  in the S30 extract.  Next time I should include a no-template control to 
+  confirm that, though.
+
+- I don't know why I don't see any template in the +S30 lanes.  Perhaps this is 
+  an indication that my template is being degraded?  The −STOP lane has a 
+  yellow band stuck in the well; that could be mWasabi-repA bound to DNA, 
+  although if so it doesn't bode well for the idea that the S30 extract will 
+  help mWasabi-repA be well-behaved.
+
+- I can see mWasabi expression in the +STOP reaction near the bottom of the 
+  gel.  The only unique green band in the −STOP reaction is stuck in the well, 
+  as discussed above.  In both cases, the level of protein expression seems 
+  quite low.  
+
+.. figure:: 20200124_s30_extract_f3_f8_streptactin_coomassie.svg
+
+- I don't see evidence of either protein being expressed, let alone purified.  
+  The gel is low quality, but I think expression is the problem.
+
+- Don't know why the gel is so smudgy...  It looks overloaded, too.
+
+
+.. todo::
+
+   Repeat f3/f8 expression in S30 lysate, run an SDS gel, and directly image 
+   mWasabi to see if the expected protein is being expressed.  Include a 
+   no-template control, and maybe the provided luciferase control.
+
+   I should also think about way to get more template.  Promega calls for 4 µg 
+   per 50 µL reaction, which is a final concentration of 80 ng/µL.  I used 0.8 
+   µL of ≈200 ng/µL (75 nM) template in 10 µL reactions, which is a final 
+   concentration of 16 ng/µL, 20% of the recommended amount.
+
+   The best way to get more DNA would be to do a restriction digest of plasmid.  
+   Unfortunately I didn't put convenient restriction sites in these plasmids, 
+   so I'd probably have to buy some enzyme that cuts the backbone in order to 
+   do this.  It might just make sense to scale up the PCR.
 
 

@@ -53,3 +53,31 @@ in the original PURE system [Shimizu2001] is (50 μL for mass/quantity units):
 - 0.054 μg nucleoside-diphosphate kinase
 - 0.1 units pyrophosphatase (Sigma)
 - 0.5 μg T7 RNA polymerase
+
+Nucleic acid stains
+===================
+I decided to use GelGreen for all applications:
+
+GelGreen vs GelRed:
+
+- Both dyes are excited by UV and blue light, but GelRed is much more excited 
+  by UV and GelGreen is much more excited by blue light.  Since I will be using 
+  the laser scanner when I really care, and the laser scanner only has blue 
+  light, GelGreen makes more sense.
+
+- GelRed is more sensitive for ssDNA and RNA than GelGreen is, but I think the 
+  aforementioned advantages of GelGreen will make it the better stain in these 
+  cases too.
+
+GelGreen vs. SYBR
+
+- I can't find any comparisons, but I think SYBR Gold is probably the most 
+  sensitive dye in general, and the SYBR Green II is the most sensitive RNA 
+  dye.  All of the SYBR dyes are well-excited by blue light.
+
+- But the SYBR dyes seem much more difficult to work with: they need to be 
+  stored at −20°C (and even then expire after a year), and they are sensitive 
+  to the pH of the staining buffer (it needs to be pH 8).  They also aren't 
+  considered "safe".
+
+- GelGreen is also much cheaper.

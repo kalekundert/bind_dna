@@ -1,0 +1,115 @@
+February 26, 2020
+
+$ stepwise make f17 f22
+$ stepwise dna_bead
+$ stepwise nebex 3
+$ stepwise page sds 5
+
+1. Prepare each 10x primer mix:
+
+   Reagent    Conc  Each Rxn
+   ─────────────────────────
+   water            18.00 μL
+   o3       100 μM   1.00 μL
+   o68      100 μM   1.00 μL
+   ─────────────────────────
+                    20.00 μL
+
+2. Setup 2 PCR reactions and 1 negative control:
+
+   Reagent             Conc  Each Rxn  Master Mix
+   ──────────────────────────────────────────────
+   water                     19.00 μL    57.00 μL
+   primer mix           10x   5.00 μL    15.00 μL
+   p27,p44        100 pg/µL   1.00 µL            
+   Q5 master mix         2x  25.00 µL    75.00 µL
+   ──────────────────────────────────────────────
+                             50.00 μL    49.00 μL/rxn
+
+3. Run the following thermocycler protocol:
+
+   - 98°C for 30s
+   - Repeat 35x:
+     - 98°C for 10s
+     - 55°C for 20s
+     - 72°C for 1m30
+   - 72°C for 2 min
+   - 4°C hold
+
+4. Purify DNA using magnetic beads [1].
+
+   - Gently resuspend the bead solution [2].
+   - Add 1 volume of bead solution to each sample.
+   - Incubate 5 min at RT.
+   - Apply magnet for >2 min and discard supernatant.
+   - Wash twice:
+     - Add 200 µL 70% EtOH.
+     - Incubate 30 sec at RT.
+     - Apply to magnet and discard ethanol.
+   - Air-dry for 4-5 minutes [3].
+   - Add any volume of eluant.
+   - Apply magnet for >2 min.
+   - Transfer ≈95% of the eluant to a clean tube.
+
+5. Setup 3 NEBExpress reactions [4]:
+
+   Reagent                       Stock    Volume      3.3x
+   ───────────────────────────────────────────────────────
+   water                                 1.60 µL   5.28 µL
+   S30 extract                           2.40 µL   7.92 µL
+   protein synthesis buffer         2x   5.00 µL  16.50 µL
+   T7 RNA polymerase                     0.20 µL   0.66 µL
+   RNase inhibitor (murine)              0.20 µL   0.66 µL
+   linear DNA template       125 ng/µL   0.40 µL          
+   GamS nuclease inhibitor               0.20 µL   0.66 µL
+   ───────────────────────────────────────────────────────
+                                        10.00 µL   9.60 µL/rxn
+
+   - Thaw all components on ice
+   - Mix the S30 extract and protein synthesis buffer 
+     by gently vortexing.
+
+6. Incubate at 37°C for 2-4 hours [5].
+
+7. Prepare samples for SDS PAGE:
+
+   Reagent                 Stock    Volume      7.5x
+   ─────────────────────────────────────────────────
+   water                           4.00 µL  30.00 µL
+   Bolt LDS sample buffer     4x   2.50 µL  18.75 µL
+   Bolt redcing agent        10x   1.00 µL   7.50 µL
+   protein                         2.50 µL          
+   ─────────────────────────────────────────────────
+                                  10.00 µL   7.50 µL/rxn
+
+   - Incubate at 70°C for 10 min.
+
+8. Run the gel:
+
+   - Use a 4−12% SDS PAGE gel.
+   - Load 10 µL of each sample.
+   - Run at 165V for 42 min.
+
+Notes:
+[1] See "Magnetic Bead DNA Purification" in my Google 
+    Drive for more details.
+
+[2] Don't vortex; this damages the beads (somehow).
+
+[3] Be careful not to over-dry the beads.  Over-dried
+    beads will appear cracked and will be difficult 
+    to resuspend.  If this happens, heat and agitate 
+    for 10-15 minutes during elution to help 
+    resuspend the beads and release the DNA.  An 
+    alternative strategy is to add the eluant after a 
+    very short drying step, then leaving the tubes 
+    open for 10-15 minutes to allow the ethanol to 
+    evaporate.
+
+[4] During the experimental setup, it is recommended 
+    to add the linear DNA template in the last step to 
+    allow GamS to bind and inhibit RecBCD exonuclease 
+    before RecBCD has a chance to act on the DNA.
+
+[5] Additional incubation time (maximum 10 hours) at 
+    37°C may increase yield.

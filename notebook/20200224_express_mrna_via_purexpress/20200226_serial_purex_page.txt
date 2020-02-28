@@ -1,4 +1,4 @@
-February 25, 2020
+February 26, 2020
 
 $ stepwise serial 2.0 10 0.1 5
 $ stepwise purex -r 8 -v 5
@@ -7,10 +7,10 @@ $ stepwise page sds 8
 1. Perform a serial dilution [1]:
 
    - Put 2.92 μL material in the first tube.
-   - Add 2.00 μL water in the remaining tubes.
+   - Add 2.00 μL water in the 5 remaining tubes.
    - Transfer 0.92 μL between each tube.
 
-2. Setup 8 IVTT reactions:
+2. Setup 8 PURExpress reactions:
 
    Reagent            Stock   Volume      8.8x
    ───────────────────────────────────────────

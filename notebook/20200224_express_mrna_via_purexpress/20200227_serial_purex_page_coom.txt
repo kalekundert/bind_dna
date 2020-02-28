@@ -1,0 +1,82 @@
+February 27, 2020
+
+$ stepwise serial 1.6 10 0.1 7 -m '10 µM f11'
+$ stepwise purex -r 8 -v 5
+$ stepwise page sds 8
+$ stepwise coom
+
+1. Perform a serial dilution [1]:
+
+   - Put 2.99 μL 10 µM f11 in the first tube.
+   - Add 1.60 μL water in the 7 remaining tubes.
+   - Transfer 1.39 μL between each tube.
+
+2. Setup 8 PURExpress reactions:
+
+   Reagent            Stock   Volume      8.8x
+   ───────────────────────────────────────────
+   water                     0.60 µL   5.28 µL
+   A                         2.00 µL  17.60 µL
+   B                         1.50 µL  13.20 µL
+   RNase Inhibitor  40 U/µL  0.10 µL   0.88 µL
+   template mRNA      10 µM  0.80 µL          
+   ───────────────────────────────────────────
+                             5.00 µL   4.20 µL/rxn
+
+   - Keep on ice.
+   - Be sure to add A before B.
+
+3. Incubate at 37°C for 2h.
+
+4. Prepare samples for SDS PAGE:
+
+   Reagent                 Stock    Volume       12x
+   ─────────────────────────────────────────────────
+   water                           4.00 µL  48.00 µL
+   Bolt LDS sample buffer     4x   2.50 µL  30.00 µL
+   Bolt redcing agent        10x   1.00 µL  12.00 µL
+   protein                         2.50 µL          
+   ─────────────────────────────────────────────────
+                                  10.00 µL   7.50 µL/rxn
+
+   - Incubate at 70°C for 10 min.
+
+5. Run the gel:
+
+   - Use a 4−12% SDS PAGE gel.
+   - Load 10 µL of each sample.
+   - Run at 165V for 42 min.
+
+6. Stain with Coomassie:
+
+   - Submerge the gel in fresh stain.
+   - Microwave on high for 30 sec [2].
+   - Gently shake for 5–10 minutes.
+   - Rinse twice with water.
+
+   - Repeat until the background is sufficiently clear:
+     - Submerge the gel in fresh destain.
+     - Microwave on high for 30 sec.
+     - Place a wadded-up kimwipe in the destain.
+     - Gently shake for 10 min.
+
+7. Image with a laser scanner [3]:
+
+   - ex: 658 nm
+   - em: 710BP40
+
+Notes:
+[1] The final concentrations will be:
+    1  1.00e+01
+    2  4.64e+00
+    3  2.15e+00
+    4  1.00e+00
+    5  4.64e-01
+    6  2.15e-01
+    7  1.00e-01
+
+[2] Coomassie stain contains methanol, so avoid 
+    breathing fumes when using the microwave.
+
+[3] Note that Coomassie seems to quench fluorophores 
+    like FITC/GFP.  I don't know exactly why this is.
