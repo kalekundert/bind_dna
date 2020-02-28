@@ -15,9 +15,9 @@ Options:
         The volume of each individual reaction (in µL).  NEB recommends 25 µL, 
         but I typically use 10 µL and get enough yield for routine experiments.
 
-    -D --dna-stock-conc <nM>                    [default: 75]
-        The concentration of the DNA being added to the reaction.  If this 
-        differs from the default, the volume of DNA to add will be adjusted 
+    -c --template-stock-conc <nM>
+        The concentration of the DNA/RNA being added to the reaction.  If this 
+        differs from the default, the volume of the template will be adjusted 
         accordingly.
 
     -r --mrna
@@ -64,10 +64,6 @@ template DNA         75 nM      0.8 µL
 template mRNA        10 µM      1.6 µL
 ''')
 
-if name := args['--template']:
-    purexpress['template DNA'].name = name
-    purexpress['template mRNA'].name = name
-
 if not args['--add-zinc']:
     del purexpress['ZnOAc']
 
@@ -75,9 +71,18 @@ if not args['--add-target']:
     del purexpress['target DNA']
 
 if args['--mrna']:
+    template = 'template mRNA'
     del purexpress['template DNA']
 else:
+    template = 'template DNA'
     del purexpress['template mRNA']
+
+if name := args['--template']:
+    purexpress[template].name = name
+
+if conc := args['--template-stock-conc']:
+    q = eval(conc), purexpress[template].stock_conc.unit
+    purexpress[template].hold_conc.stock_conc = q
 
 purexpress.num_reactions = eval(args['<num_rxns>'])
 purexpress.hold_ratios.volume = eval(args['--rxn-volume']), 'µL'
