@@ -1,0 +1,28 @@
+- Purify protein using Ni-NTA magnetic agarose beads 
+  (Qiagen 36111):
+
+   - Dilute reaction to 250 μL in lysis buffer [1].
+   - Add 50 μL Ni-NTA magnetic bead solution [2].
+   - Mix continuously for 1h at room temperature.
+
+   - Separate beads (1 min) and discard supernatant.
+   - Wash twice with 500 µL wash buffer [1].
+   - Add 25 μL elution buffer [1].
+   - Incubate for 2 min.
+   - Separate beads (1 min) and collect eluate.
+
+Footnotes:
+
+[1] Buffers for purification in native conditions:
+
+    TBST:    50 mM NaH₂PO₄, 300 mM NaCl,
+             0.05% Tween 20, pH 8.0
+    Lysis:   TBST, 10 mM imidazole
+    Wash:    TBST, 20 mM imidazole
+    Elution: TBST, 250 mM imidazole
+
+[2] 50 µL of beads can bind 15 µg of DHFR.  I expect 
+    that PURExpress reactions produce ≈5 µg of 
+    protein (based on the example yield calculation 
+    NEB shows for DHFR).  20 µL of beads would be 
+    sufficient for that, but I use 50 µL to be safe.

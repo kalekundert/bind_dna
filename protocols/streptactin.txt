@@ -1,0 +1,25 @@
+- Purify protein using MagStrep "type3" XT beads:
+
+  - For each sample, transfer 20 µL well-suspended 
+    5% bead solution (1 µL beads) to a clean tube.
+  - Wash the beads 2x with 200 µL wash buffer [1].
+
+  - Add protein sample to washed beads.
+  - Incubate on ice for 30 min.  Flick to mix every 
+    few minutes.
+
+  - Separate beads and discard supernatant.
+  - Wash 3x with 100 µL wash buffer [1].
+  - Add 25 µL elution buffer [1].
+  - Incubate 10 min.
+  - Separate beads and collect eluate.
+
+Footnotes:
+
+[1] Wash buffer: 100 mM Tris, 150 mM NaCl, pH 8.0
+    Elution buffer: Wash, 50 mM biotin
+
+    Note that IBA calls for 1 mM EDTA in these 
+    buffers, but I left it out because I don't want 
+    it to interfere with my zinc fingers.
+
