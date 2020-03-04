@@ -44,15 +44,21 @@ def get_cols(tag):
             p=get_plasmid_cols,
             f=get_fragment_cols,
             o=get_oligo_cols,
-    )
+    ).dropna().to_dict()
 
-def get_conc(tag):
+def get_conc_str(tag):
     try:
-        conc_str = get_cols(tag)['Conc']
+        return get_cols(tag)['Conc']
     except KeyError:
         raise ValueError(f"no concentration specified for {tag!r}")
 
+def get_conc(tag):
+    conc_str = get_conc_str(tag)
     return parse_nanomolar(conc_str, get_mw(tag))
+
+def get_protocol(tag):
+    protocol_str = get_cols(tag)['Construction']
+    return parse_protocol(protocol_str)
 
 
 def get_plasmid_cols(tag):
@@ -74,12 +80,8 @@ def get_fragment_cols(tag):
     return fragment_db.loc[id]
 
 def get_fragment_seq(tag):
-    protocol = get_fragment_protocol(tag)
+    protocol = get_protocol(tag)
     return protocol.product_seq
-
-def get_fragment_protocol(tag):
-    protocol_str = get_fragment_cols(tag)['Construction']
-    return parse_protocol(protocol_str)
 
 def get_oligo_cols(tag):
     id = int(str(tag).strip('o'))
@@ -122,14 +124,14 @@ def is_double_stranded(tag):
     )
 
 def is_fragment_double_stranded(tag):
-    protocol = get_fragment_protocol(tag)
+    protocol = get_protocol(tag)
     return protocol.method != 'IVT'
 
 
 def dispatch_to_tag(tag, **kwargs):
-    if m := re.match(r'([pfo])(\d+)', tag):
-        type_code, id = m.group(1), int(m.group(2))
-        return kwargs[type_code](id)
+    if m := re.match(r'([pfo])\d+', tag):
+        type_code = m.group(1)
+        return kwargs[type_code](tag)
 
     else:
         raise ValueError(f"unknown tag '{tag}'")
@@ -141,6 +143,8 @@ def parse_protocol(protocol_str):
             'PCR': PcrProtocol,
             'IVT': IvtProtocol,
             'RE':  DigestProtocol,
+            'GG':  GoldenGateProtocol,
+            'IDT': IdtProtocol,
     }
     return protocol_cls.get(method, Protocol)(method, params)
 
@@ -215,7 +219,6 @@ def parse_nanomolar(conc_str, mw):
         raise ValueError(f"can't interpret {conc_str!r} as a concentration")
 
 
-
 @lru_cache(maxsize=None)
 def read_plasmid_db():
     df = pd.read_excel(work.plasmid_db)
@@ -262,7 +265,7 @@ class Protocol:
             else:
                 raise KeyError(f"{self.method} protocol missing required {key!r} parameter")
 
-        if m := re.search(pattern, p := self.params[key]):
+        if m := re.fullmatch(pattern, p := self.params[key]):
             return m.groups()
         else:
             raise ValueError(f"expected {pattern!r}, found {p!r}")
@@ -367,5 +370,29 @@ class IvtProtocol(Protocol):
         seq = str(self.template_seq)
         i = seq.find(t7_promoter) + len(t7_promoter)
         return DnaSeq(seq[i:]).transcribe()
+
+@autoprop
+class GoldenGateProtocol(Protocol):
+
+    def get_backbone_tag(self):
+        return one(self.parse_param('bb', r'([fp]\d+)'))
+
+    def get_insert_tags(self):
+        tag = r'[fp]\d+'
+        tags = one(self.parse_param('ins', fr'({tag}(?:,{tag})*)'))
+        return tags.split(',')
+
+    def get_enzyme_name(self):
+        if 'enzyme' in self.params:
+            return one(self.parse_param('enzyme', r'(\w+)'))
+        else:
+            return 'BsaI'
+
+
+@autoprop
+class IdtProtocol(Protocol):
+
+    def get_product_seq(self):
+        return self.params['seq']
 
 
