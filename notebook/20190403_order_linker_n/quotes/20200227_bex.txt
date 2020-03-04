@@ -1,0 +1,69 @@
+Dear Dr. Kale Kundert,
+
+
+Thank you very much for your inquiry.
+I'm sorry to be late to reply to you.
+
+We can synthesize your oligo with Cy5.
+Here is the price:
+
+
+Sequence(5'-3'):
+Main chain: 5′-(5'Phosphorylation)-CCCCCCCGCCGCCCCCCG-(5-Me-dC)-AAAAAAAAAAAAAAAAAA-(Spacer18)-(Spacer18)-(Spacer18)-(Cy5)-(Spacer18)-CC-(Puromycin)-3′
+Side chain: 5′-CCTTG-3′
+
+start scale : 0.2μmol
+* Synthesis starts from 0.2 umol column.
+** Not a yield
+*** Reference of yield：5 nmol(80 ug)
+**** Reaction efficiency of Cy5 is low.
+That's why yield of Cy5 is lower than that of Fluorescein-dT.
+
+Purification: HPLC
+
+
+Price: USD 2,900
+* The delivery fee and custom import tax is NOT included.
+
+Delivery date
+About 3 weeks after the material reagent
+We need to purchase the material reagent and
+delivery date will be extended to abount 1 week.
+
+
+The price for delivery with dry ice will be USD 900 addiotionally.
+
+Regarding the custom import tax,
+if you have tax exception number,  the fee will be free.
+
+
+Best regards,
+
+
+Yasuhiro
+
+
+～マイクロインジェクションからエレクトロポレーションへ～
+　　　ゲノム編集の新常識。Genome　Editor登場
+(http://www.bexnet.co.jp/product/device/crispr/genomeeditor.html)
+(English Web: http://www.bexnet.co.jp/english/product/device/crispr/genomeeditor.html)
+
+～ twitter 始めました！お得な情報などを発信しています。～
+　　是非ご覧ください。@bex_cuy21
+
+～バイオ総合受託サービス＆理化学機器メーカー～
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+ 株式会社 ベックス　　森泉　康裕
+ 東京都板橋区板橋2-61-14
+ Phone: 03-5375-1071
+ Mobile: 080-2359-5125
+
+ Yasuhiro Moriizumi
+ BEX  CO.,LTD.
+ 61-14．2-Chome Itabashi
+ Itabashi-ku, Tokyo 1730004 Japan
+ Phone: +81-3-5375-1071       FAX: +81-3-5375-5636
+ yizumi@bexnet.co.jp   http://www.bexnet.co.jp
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*

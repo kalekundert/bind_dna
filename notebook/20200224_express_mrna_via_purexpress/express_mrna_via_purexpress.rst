@@ -2,12 +2,12 @@
 Express mRNA via PURExpress
 ***************************
 
-In :expt:`express_zif268_via_naimudden2016` (2020/02/18), I saw poor expression 
-of protein from mRNA.  Here I want to determine how much mRNA is needed to get 
-appreciable expression with PURExpress.  I decided to start with mWasabi, 
-because it should be pretty easy to detect its expression.  I even think it 
-might remain fluorescent in after SDS-PAGE based on this `high school/undergrad 
-lab kit 
+In :expt:`20191220_express_zif268_via_naimudden2016` (2020/02/18), I saw poor 
+expression of protein from mRNA.  Here I want to determine how much mRNA is 
+needed to get appreciable expression with PURExpress.  I decided to start with 
+mWasabi, because it should be pretty easy to detect its expression.  I even 
+think it might remain fluorescent in after SDS-PAGE based on this `high 
+school/undergrad lab kit 
 <https://www.bio-rad.com/en-us/product/pglo-sds-page-extension?ID=a41608e9-b348-43e0-98bb-d0ae12664e06>`__, 
 which would be extra convenient.  Even if that doesn't work, though, it's still 
 a protein that I know to be well-expressed.  DHFR (the NEB control) is another 
@@ -123,7 +123,7 @@ Express Zif268 (gradient) --- 2020/02/27
   This idea only makes sense because the bands that seem most responsible for 
   obscuring Zif268 do not to bind Ni-NTA (presumably indicating that they're 
   ribosomal proteins), see :expt:`20190828_purify_zif268_via_imac` and 
-  :expt:`20190711_purify_zif268_repA_via_affinity_tags`.  One band near 11 kDa 
+  :expt:`20190711_purify_zif268_repa_via_affinity_tags`.  One band near 11 kDa 
   remains after Ni-NTA purification, but it is relatively faint and seems to 
   run slightly below Zif268 (this is easiest to see in 
   :expt:`20190828_purify_zif268_via_imac`).

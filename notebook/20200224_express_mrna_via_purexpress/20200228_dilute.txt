@@ -1,0 +1,18 @@
+February 28, 2020
+
+$ stepwise dilute 20200228_dilute_f2_f25_f26.tsv -c 32.5 -V 7.9
+
+1. Dilute the purified DNA to 32.50 nM [1]:
+
+      tag  stock_uL  water_uL
+   0   f2       7.9      7.04
+   1  f25       7.9      1.41
+   2  f26       7.9      0.98
+
+Note:
+[1] Concentrations:
+
+       tag     mw_da  stock_ng_uL  stock_nM  final_nM
+    0   f2  1.37e+06        84.17     61.45      32.5
+    1  f25  1.37e+06        52.63     38.31      32.5
+    2  f26  1.41e+06        51.65     36.52      32.5

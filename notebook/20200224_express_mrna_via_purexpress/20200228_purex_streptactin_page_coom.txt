@@ -1,6 +1,6 @@
 February 28, 2020
 
-$ stepwise purex 3 -v5 -t ntc,f25,f26
+$ stepwise purex 3 -v 5 -c 32.5 -t 'Ø,f25,f26'
 $ stepwise streptactin
 $ stepwise page sdsmax 15
 $ stepwise coom
@@ -9,13 +9,13 @@ $ stepwise coom
 
    Reagent            Stock   Volume     3.3x
    ──────────────────────────────────────────
-   water                     1.00 µL  3.30 µL
+   water                     0.48 µL  1.57 µL
    A                         2.00 µL  6.60 µL
    B                         1.50 µL  4.95 µL
    RNase Inhibitor  40 U/µL  0.10 µL  0.33 µL
-   ntc,f25,f26        75 nM  0.40 µL         
+   Ø,f25,f26        32.5 nM  0.92 µL         
    ──────────────────────────────────────────
-                             5.00 µL  4.60 µL/rxn
+                             5.00 µL  4.08 µL/rxn
 
    - Keep on ice.
    - Be sure to add A before B.

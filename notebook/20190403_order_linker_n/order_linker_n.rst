@@ -241,15 +241,21 @@ more quotes.
    Thank you,
    -Kale
 
-
 Quotes
 ------
 Midland: :download:`quotes/20200225_midland_63815.pdf`
 
 .. datatable:: quotes/quotes.xlsx
 
-- The given yield for Midland CRC is woth HPLC+PAGE purification, which is what 
-  their scientists recommend.  Without PAGE, yield would be 5-10x greater, and 
-  the price would be $125 less.
+- The yields are estimates, so should be taken with a grain of salt.  In truth, 
+  I think I'd probably get about the same yield from any of these companies, 
+  since it seems like they're all starting with about 250 nmol.  The 
+  purification strategies are a little different (e.g. BEX may offer the best 
+  yield because they propose to do the least purification), but I'm not really 
+  sure where on the more yield/more purity spectrum I fall.
+
+- I might not even use all of the oligo, so it's more important to pick the 
+  lowest price than the best value.  Especially considering that the value 
+  depends on the yield, which may not be estimated accurately.
 
 

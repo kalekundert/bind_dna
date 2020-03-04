@@ -26,4 +26,5 @@ sequence.
    /20190723_confirm_cis_display_with_fluorescent_protein/*
    /20190723_confirm_zif268_emsa/*
    /20200108_express_mwasabi_repa_in_s30_lysate/*
+   /20200226_express_mwasabi_repa_with_nebexpress/*
 
