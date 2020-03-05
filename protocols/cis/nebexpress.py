@@ -26,8 +26,8 @@ Reagent                       Stock    Volume  MM?
 water                                to 50 µL  yes
 S30 extract                             12 µL  yes
 synthesis buffer                 2x     25 µL  yes
-T7 RNA polymerase                        1 µL  yes
-RNase inhibitor (murine)                 1 µL  yes
+T7 RNA polymerase          450 U/µL      1 µL  yes
+RNase inhibitor (murine)    40 U/µL      1 µL  yes
 linear DNA template       125 ng/µL      2 µL
 GamS nuclease inhibitor                  1 µL  yes
 """)
