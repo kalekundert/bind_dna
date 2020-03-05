@@ -4,7 +4,12 @@
 Express proteins from linear DNA templates using NEBExpress.
 
 Usage:
-    nebexpress.py <num_reactions>
+    nebexpress.py <templates>
+
+Arguments:
+    <templates>
+        Comma-separated list of templates.  The number of reactions will be 
+        inferred from this list.
 """
 
 import docopt
@@ -12,6 +17,8 @@ import stepwise
 from inform import plural
 
 args = docopt.docopt(__doc__)
+templates = args['<templates>']
+num_templates = len(templates.split(','))
 
 rxn = stepwise.MasterMix.from_text("""\
 Reagent                       Stock    Volume  MM?
@@ -25,7 +32,8 @@ linear DNA template       125 ng/µL      2 µL
 GamS nuclease inhibitor                  1 µL  yes
 """)
 rxn.hold_ratios.volume = '10 µL'
-rxn.num_reactions = eval(args['<num_reactions>'])
+rxn.num_reactions = num_templates
+rxn['linear DNA template'].name = templates
 
 protocol = stepwise.Protocol()
 
