@@ -4,20 +4,25 @@
 Calculate how to dilute genes amplified by PCR.
 
 Usage:
-    dilute <tsv> [options]
-    dilute <tag> <ng_uL> [options]
+    dilute <tags_or_tsv> [<ng_uL>] [options]
 
 Arguments:
-    <tsv>
-        A TSV file exported by the nanodrop listing the concentration of each 
-        species (in ng/μL).  The "Sample Name" column must contains "tags" 
-        referring to either plasmids (p01), fragments (f01), or oligos (o01).
+    <tags_or_tsv>
+        A comma-separated list of tags referring to either plasmids (p01), 
+        fragments (f01), or oligos (o01).
 
-    <tag>
-        An individual tag, as described above.
+        ~or~
+
+        The path to a TSV file exported by the nanodrop listing the 
+        concentration of each species (in ng/μL).  The "Sample Name" column 
+        must contains "tags" matching the format described above.
 
     <ng_uL>
-        An individual ng/µL measurement.
+        A comma-separated list of ng/µL measurements.  Not used if a TSV path 
+        is specified (in that case concentrations are read from the TSV).  The 
+        default is read from the "Conc" column of the database containing the 
+        given species.  Note that this is also the default for the target 
+        concentration, so you must specify one or the other.
 
 Options:
     -c --conc <nM>
@@ -40,10 +45,12 @@ import docopt
 import pandas as pd
 import bind_dna as dbp
 import stepwise
+from pathlib import Path
 
 eval_or_none = lambda x: x if x is None else eval(x)
 
 args = docopt.docopt(__doc__)
+tags = args['<tags_or_tsv>']
 final_uL = eval(args['--volume'])
 stock_uL = eval_or_none(args['--stock-volume'])
 
@@ -53,28 +60,34 @@ def get_type(tag):
     except:
         return 'DNA'
 
-def get_final_conc(tag):
+def get_final_nM(tag):
     if args['--conc']:
         return eval(args['--conc']) 
     else:
-        return dbp.get_conc(tag)
+        return dbp.get_conc_nM(tag)
 
-if tsv := args['<tsv>']:
-    nanodrop = pd.read_csv(tsv, sep='\t')
+if Path(tags).exists():
+    nanodrop = pd.read_csv(tags, sep='\t')
     df = pd.DataFrame()
     df['tag'] = nanodrop['Sample Name']
     df['stock_ng_uL'] = nanodrop['Nucleic Acid(ng/uL)']
     
 else:
-    df = pd.DataFrame([{
-        'tag':     args['<tag>'],
-        'stock_ng_uL':  float(args['<ng_uL>']),
-    }])
+    cli_tags = tags.split(',')
+    cli_concs = \
+            [float(x) for x in args['<ng_uL>'].split(',')] \
+            if args['<ng_uL>'] else \
+            [dbp.get_conc_ng_uL(x) for x in cli_tags]
+
+    df = pd.DataFrame({
+        'tag': cli_tags,
+        'stock_ng_uL': cli_concs,
+    })
 
 df['type'] = df['tag'].apply(get_type)
 df['mw_da'] = df['tag'].apply(dbp.get_mw)
 df['stock_nM'] = 1e6 * df['stock_ng_uL'] / df['mw_da']
-df['final_nM'] = df['tag'].apply(get_final_conc)
+df['final_nM'] = df['tag'].apply(get_final_nM)
 
 if stock_uL is not None:
     df['stock_uL'] = stock_uL
@@ -89,7 +102,9 @@ types = '/'.join(set(df['type']))
 if len(x := set(df['final_nM'].dropna())) == 1:
     final_nM = f' to {x.pop():.2f} nM'
 else:
-    final_nm = ''
+    import sys
+    print(x, file=sys.stderr)
+    final_nM = ''
 
 protocol = stepwise.Protocol()
 protocol += f"""\
