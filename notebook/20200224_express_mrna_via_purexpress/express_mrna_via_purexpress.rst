@@ -145,3 +145,16 @@ Express Zif268 (gradient) --- 2020/02/27
     have puromycin, and the FITC-linker-N couldn't be used with mWasabi.
 
 - I could've run the gel for 52 min without running Zif268 off the bottom.
+
+Express Zif268 (StrepTag) --- 2020/02/28
+----------------------------------------
+.. protocol:: 20200228_purex_streptactin_page_coom.txt
+
+.. figure:: 20200304_express_zif268_mrna_streptag.svg
+
+- No protein was captured by the Streptactin purification.
+
+- I did forget to add Zn to the protein expression reaction.  I wonder if that 
+  could be the cause of the poor expression/purification.
+
+- Maybe I should include a positive control next time.

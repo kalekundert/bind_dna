@@ -433,10 +433,6 @@ machinery.  Since my current hypothesis is that the affinity tag is being
 sequestered by said machinery, expressing the protein in S30 extract (which has 
 rho factor) might allow the purification to succeed.
 
-.. todo::
-
-   Purify with S30 extract.
-
 Results
 =======
 It does not seem possible to purify repA fusions using purification tags.  I 

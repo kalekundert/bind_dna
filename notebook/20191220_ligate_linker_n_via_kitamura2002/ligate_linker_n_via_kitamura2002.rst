@@ -65,9 +65,12 @@ linker-N but lacking the puromycin arm.
 
 .. figure:: 20200124_ligate_o93_cobalt.svg
 
-- I don't know what happened to the 16h gel.
+- The 16h gel is super-smeary because I used SDS loading buffer instead of 
+  TBE/urea loading buffer.
 
-- No detectable 
+- Cobalt without PEG seems to destroy the mRNA.  I see the same effect in 
+  :expt:`20191219_anneal_linker_n_with_salt`.  Interestingly, 25% PEG may 
+  prevent this effect.  I don't know if that really makes sense.
 
 - It's odd that the red channel is so smeary.  That indicates that the linker 
   is getting ligated to something, but not the full length mRNA.  And there are 

@@ -1,0 +1,16 @@
+March 4, 2020
+
+$ stepwise dilute 20200304_dilute_f17_f22.tsv
+
+1. Dilute the purified DNA to 75.00 nM [1]:
+
+      tag  stock_uL  water_uL
+   0  f17      8.05     11.95
+   1  f22      8.34     11.66
+
+Note:
+[1] Concentrations:
+
+       tag     mw_da  stock_ng_uL  stock_nM  final_nM
+    0  f17  1.33e+06       248.51    186.37      75.0
+    1  f22  1.33e+06       239.90    179.90      75.0

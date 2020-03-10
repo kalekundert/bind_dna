@@ -1,0 +1,71 @@
+March 5, 2020
+
+$ stepwise nebex 'Ø,dhfr,f17,f22'
+$ stepwise page sds 6
+$ stepwise page native 6
+
+1. Setup 4 NEBExpress reactions [1]:
+
+   Reagent                       Stock    Volume      4.4x
+   ───────────────────────────────────────────────────────
+   water                                 1.60 µL   7.04 µL
+   S30 extract                           2.40 µL  10.56 µL
+   synthesis buffer                 2x   5.00 µL  22.00 µL
+   T7 RNA polymerase          450 U/µL   0.20 µL   0.88 µL
+   RNase inhibitor (murine)    40 U/µL   0.20 µL   0.88 µL
+   Ø,dhfr,f17,f22            125 ng/µL   0.40 µL          
+   GamS nuclease inhibitor               0.20 µL   0.88 µL
+   ───────────────────────────────────────────────────────
+                                        10.00 µL   9.60 µL/rxn
+
+   - Thaw all components on ice
+   - Mix the S30 extract and protein synthesis buffer 
+     by gently vortexing.
+
+2. Incubate at 37°C for 2-4 hours [2].
+
+3. Prepare samples for SDS PAGE:
+
+   Reagent                 Stock    Volume        9x
+   ─────────────────────────────────────────────────
+   water                           4.00 µL  36.00 µL
+   Bolt LDS sample buffer     4x   2.50 µL  22.50 µL
+   Bolt reducing agent       10x   1.00 µL   9.00 µL
+   protein                         2.50 µL          
+   ─────────────────────────────────────────────────
+                                  10.00 µL   7.50 µL/rxn
+
+   - Incubate at 70°C for 10 min.
+
+4. Run the gel:
+
+   - Use a 4−12% SDS PAGE gel.
+   - Load 10 µL of each sample.
+   - Run at 165V for 42 min.
+
+5. Prepare samples for native PAGE:
+
+   Reagent        Stock   Volume        9x
+   ───────────────────────────────────────
+   water                 2.25 µL  20.25 µL
+   sample buffer     4x  2.50 µL  22.50 µL
+   DNA/protein           1.25 µL          
+   ───────────────────────────────────────
+                         6.00 µL   4.75 µL/rxn
+
+   - For a DNA ladder, use 5 µL (50 ng/µL).
+
+6. Run the gel:
+
+   - Use a 3−12% native PAGE gel.
+   - Load 5 µL of each sample.
+   - Run at 150V for 115 min.
+
+Notes:
+[1] During the experimental setup, it is recommended 
+    to add the linear DNA template in the last step to 
+    allow GamS to bind and inhibit RecBCD exonuclease 
+    before RecBCD has a chance to act on the DNA.
+
+[2] Additional incubation time (maximum 10 hours) at 
+    37°C may increase yield.

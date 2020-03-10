@@ -18,6 +18,12 @@ not sure):
    excited by a 658 nm laser at all, but if Azure says it'll work, I'll trust 
    them.
 
+Gel Doc EZ optics
+=================
+UV tray: 280-400 nm, max 300 nm
+Blue tray: 430-460 nm, max 440 nm
+White tray: visible spectra
+
 PURE reaction components
 ========================
 I couldn’t find the composition of NEB’s PURExpress buffer, but the buffer used 

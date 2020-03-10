@@ -1,0 +1,73 @@
+March 9, 2020
+
+$ stepwise dilute p27,p44 -c 75
+$ stepwise nebex f17,f22,p27,p44 -t '30 min, 4 hours'
+$ stepwise split 'At each timepoint, quench 5 µL aliquot by preparing sample for SDS page.'
+$ stepwise page sds 8
+
+1. Dilute the purified DNA to 75.00 nM [1]:
+
+      tag  stock_uL  water_uL
+   0  p27     13.88      6.12
+   1  p44     25.67     -5.67
+
+2. Setup 4 NEBExpress reactions [2]:
+
+   Reagent                            Stock    Volume      4.4x
+   ────────────────────────────────────────────────────────────
+   water                                      1.60 µL   7.04 µL
+   S30 extract [3]                            2.40 µL  10.56 µL
+   synthesis buffer [3]                  2x   5.00 µL  22.00 µL
+   T7 RNA polymerase               450 U/µL   0.20 µL   0.88 µL
+   RNase inhibitor (murine)         40 U/µL   0.20 µL   0.88 µL
+   GamS nuclease inhibitor [3,4]  1.5 µg/µL   0.20 µL   0.88 µL
+   f17,f22,p27,p44 [4]                75 nM   0.40 µL          
+   ────────────────────────────────────────────────────────────
+                                             10.00 µL   9.60 µL/rxn
+
+   - Thaw all components on ice
+   - Mix the S30 extract and protein synthesis buffer 
+     by gently vortexing.
+
+3. Incubate at 37°C for 30 min, 4 hours [5].
+
+4. At each timepoint, quench 5 µL aliquot by preparing sample for SDS page.
+
+5. Prepare samples for SDS PAGE:
+
+   Reagent                 Stock    Volume       12x
+   ─────────────────────────────────────────────────
+   water                           4.00 µL  48.00 µL
+   Bolt LDS sample buffer     4x   2.50 µL  30.00 µL
+   Bolt reducing agent       10x   1.00 µL  12.00 µL
+   protein                         2.50 µL          
+   ─────────────────────────────────────────────────
+                                  10.00 µL   7.50 µL/rxn
+
+   - Incubate at 70°C for 10 min.
+
+6. Run the gel:
+
+   - Use a 4−12% SDS PAGE gel.
+   - Load 10 µL of each sample.
+   - Run at 165V for 42 min.
+
+Notes:
+[1] Concentrations:
+
+       tag     mw_da  stock_ng_uL  stock_nM  final_nM
+    0  p27  2.38e+06        257.0    108.03        75
+    1  p44  2.38e+06        139.0     58.43        75
+
+[2] During the experimental setup, it is recommended 
+    to add the linear DNA template in the last step to 
+    allow GamS to bind and inhibit RecBCD exonuclease 
+    before RecBCD has a chance to act on the DNA.
+
+[3] Aliquot to avoid multiple freeze/thaw cycles.
+
+[4] Optimal concentration must be determined 
+    empirically for each template.
+
+[5] Additional incubation time (maximum 10 hours) at 
+    37°C may increase yield.
