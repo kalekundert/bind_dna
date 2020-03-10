@@ -52,9 +52,13 @@ def get_conc_str(tag):
     except KeyError:
         raise ValueError(f"no concentration specified for {tag!r}")
 
-def get_conc(tag):
+def get_conc_nM(tag):
     conc_str = get_conc_str(tag)
     return parse_nanomolar(conc_str, get_mw(tag))
+
+def get_conc_ng_uL(tag):
+    conc_str = get_conc_str(tag)
+    return parse_ng_uL(conc_str, get_mw(tag))
 
 def get_protocol(tag):
     protocol_str = get_cols(tag)['Construction']
@@ -217,6 +221,19 @@ def parse_nanomolar(conc_str, mw):
         return float(m.group('conc')) * unit_conversion[m.group('unit')]
     else:
         raise ValueError(f"can't interpret {conc_str!r} as a concentration")
+
+def parse_ng_uL(conc_str, mw):
+    conc_pattern = r'(?P<conc>\d+)\s?(?P<unit>[nuµ]M|ng/[uµ]L)'
+    unit_conversion = {
+            'ng/uL': 1,
+            'ng/µL': 1,
+    }
+
+    if m := re.match(conc_pattern, conc_str):
+        return float(m.group('conc')) * unit_conversion[m.group('unit')]
+    else:
+        raise ValueError(f"can't interpret {conc_str!r} as a concentration")
+
 
 
 @lru_cache(maxsize=None)
