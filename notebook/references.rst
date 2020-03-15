@@ -6,6 +6,7 @@ References
 .. [Bauer2017] :doi:`10.1371/journal.pone.0190062`
 .. [Bulyk2001] :doi:`10.1073/pnas.111163698`
 .. [Butt2013] :doi:`10.1074/mcp.M112.021881`
+.. [Chen2013] :doi:`10.1038/nmeth.2515`
 .. [Choo1994] :doi:`10.1073/pnas.91.23.11163`
 .. [Crinelli2002] :doi:`10.1093/nar/30.11.2435`
 .. [Cote2008] :doi:`10.1016/j.virusres.2008.01.001`
@@ -24,6 +25,7 @@ References
 .. [Gu2014] :doi:`10.1038/nature13761`
 .. [Hawkins2018] :doi:`10.1073/pnas.1802640115`
 .. [Imburgio2000] :doi:`10.1021/bi000365w`
+.. [Iverson2016] :doi:`10.1021/acssynbio.5b00124`
 .. [Joung2000] :doi:`10.1073/pnas.110149297`
 .. [Kimple2013] :doi:`10.1002/0471140864.ps0909s73`
 .. [Kitamura2002] :doi:`10.1093/protein/15.10.843`
@@ -36,6 +38,7 @@ References
 .. [Meng2005] :doi:`10.1038/nbt1120`
 .. [Meng2007] :doi:`10.1093/nar/gkm385`
 .. [Metzger1989] Metzger et al.  Characterization of the relA1 mutation and a comparison of relA1 with new relA null alleles in Escherichia coli. J. Biol.  Chem. 264:35:21146-52 (1989)
+.. [Moore2016] :doi:`10.1021/acssynbio.6b00031`
 .. [Naimudden2011] :doi:`10.1186/1756-6606-4-2`
 .. [Naimudden2016] :doi:`10.1021/acscombsci.5b00139`
 .. [Nakata2012] :doi:`10.1002/anie.201108199`
@@ -56,8 +59,9 @@ References
 .. [Subramanian2018] :doi:`10.1093/synbio/ysx008`
 .. [Thyme2014] :doi:`10.1007/978-1-62703-968-0_17`
 .. [Vorackova2011] :doi:`10.1016/j.pep.2011.04.022`
-.. [Wei1983] Wei CF, Alianell GA, Bencen GH, Gray Jr HB. Isolation and comparison of two molecular species of the BAL 31 nuclease from Alteromonas espejiana with distinct kinetic properties. J Biol Chem.  1983;258:13506--13512.
 .. [Wang2012] :doi:`10.1007/978-1-61779-379-0_6`
+.. [Webber2011] :doi:`10.1371/journal.pone.0016765`
+.. [Wei1983] Wei CF, Alianell GA, Bencen GH, Gray Jr HB. Isolation and comparison of two molecular species of the BAL 31 nuclease from Alteromonas espejiana with distinct kinetic properties. J Biol Chem.  1983;258:13506--13512.
 .. [Yonezawa2003] :doi:`10.1093/nar/gng119`
 .. [Zhou1990] :doi:`10.1016/0167-4781(90)90087-I`
 .. [Zykovich2009] :doi:`10.1093/nar/gkp802`
