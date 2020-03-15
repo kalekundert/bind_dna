@@ -96,9 +96,9 @@ def make_ivt_command(group):
 
 def make_digest_command(group):
     return [
-            'xmni',
-            str(len(group)),
-            '-p', join(x.template_tag for x in group),
+            'digest',
+            join(x.template_tag for x in group),
+            one({x.enzyme_name for x in group}),
     ]
 
 def make_gg_command(group):
@@ -211,30 +211,32 @@ for tag in args['<tag>']:
     protocols.append(protocol)
 
 stepwise_cmds = []
+
+def add_command(cmd):
+    stepwise_cmd = ['stepwise', *cmd, *args['<options>']]
+    stepwise_cmds.append(stepwise_cmd)
+
 for key, group in groupby(protocols, key=lambda x: x.method):
     group = list(group)
-    stepwise_cmd = ['stepwise']
 
     if key == 'PCR':
-        stepwise_cmd += make_pcr_command(group)
+        add_command(make_pcr_command(group))
 
     elif key == 'IVT':
         # TODO: Modernize this protocol to take more arguments.
-        stepwise_cmd += make_ivt_command(group)
+        add_command(make_ivt_command(group))
 
-    elif key == 'RE' and join(x.enzyme_name for x in group) == 'XmnI':
-        # TODO: Write a general restriction digest protocol.
-        stepwise_cmd += make_digest_command(group)
+    elif key == 'RE':
+        for enz, subgroup in groupby(group, key=lambda x: x.enzyme_name):
+            subgroup = list(subgroup)
+            add_command(make_digest_command(subgroup))
 
     elif key == 'GG':
-        stepwise_cmd += make_gg_command(group)
+        add_command(make_gg_command(group))
 
     else:
         inform.warning("{key!r} protocols are not yet supported.")
         continue
-
-    stepwise_cmd += args['<options>']
-    stepwise_cmds.append(stepwise_cmd)
 
 if not stepwise_cmds:
     inform.terminate("no protocols found.")
