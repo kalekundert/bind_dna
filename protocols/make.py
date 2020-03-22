@@ -241,8 +241,6 @@ for key, group in groupby(protocols, key=lambda x: x.method):
 if not stepwise_cmds:
     inform.terminate("no protocols found.")
 
-# Hack to deal with stepwise #17:
-stepwise_cmds[-1].insert(1, '-x')
 stepwise_pipeline = ' | '.join(
         shlex.join(x)
         for x in stepwise_cmds
