@@ -359,7 +359,7 @@ class DigestProtocol(Protocol):
         return get_plasmid_seq(self.template_tag)
 
     def get_enzyme_name(self):
-        return one(self.parse_param('enzyme', r'(\w+)'))
+        return one(self.parse_param('enzyme', r'([\w\d-]+)'))
 
     def get_product_seq(self):
         seq = self.template_seq
