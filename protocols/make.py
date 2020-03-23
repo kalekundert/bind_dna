@@ -47,22 +47,19 @@ import docopt
 import bind_dna as dbp
 from itertools import groupby
 from more_itertools import one
+from inform import Inform, warn, fatal
 from subprocess import run
 from statistics import mean
 
 def make_pcr_command(group):
-    def get_tx(pcr):
-        tx = int(pcr.extension_time_seconds)
-        return f'{tx}s' if tx < 60 else f'{tx//60}m{tx%60}'
-
     def get_scale(group):
         custom_scale = one(
                 {x.scale for x in group},
                 too_long=ValueError(f"PCR reactions have different scales: {','.join(repr(x.product_tag) for x in group)}"),
         )
-        # Default to 50 µL, because usually if we're trying to *make* 
-        # something, we need it at >10 µL scale.
-        return custom_scale or 50
+        # Default to the smallest scale I usually do.  If more is needed, 
+        # that needs to be specified explicitly.
+        return custom_scale or 10
 
     def get_master_mix(group):
         master_mix = {'dna', 'primers'}
@@ -83,10 +80,14 @@ def make_pcr_command(group):
             join(x.primer_tags[1] for x in group),
             str(len(group)),
             join(str_strip_insig(x.annealing_temp_celsius) for x in group),
-            join(get_tx(x) for x in group),
+            str(max(int(x.extension_time_seconds) for x in group)),
             '-m', ','.join(get_master_mix(group)),
             '-v', str(get_scale(group)),
     ]
+
+def make_inverse_pcr_command(group):
+    cmd = make_pcr_command(group)
+    return ['invpcr'] + cmd[1:]
 
 def make_ivt_command(group):
     return [
@@ -190,6 +191,8 @@ def join(items):
 def str_strip_insig(x):
     return str(x).rstrip('0').rstrip('.')
 
+Inform(stream_policy='header')
+
 try: 
     i = sys.argv.index('--')
     args = docopt.docopt(__doc__, sys.argv[1:i])
@@ -198,7 +201,6 @@ except ValueError:
     i = -1
     args = docopt.docopt(__doc__)
     args['<options>'] = []
-
 
 # Instead of looping through protocol objects, I should be using "Construct" 
 # object that represent all the columns in the database.  That would let me do 
@@ -222,6 +224,9 @@ for key, group in groupby(protocols, key=lambda x: x.method):
     if key == 'PCR':
         add_command(make_pcr_command(group))
 
+    elif key == 'IPCR':
+        add_command(make_inverse_pcr_command(group))
+
     elif key == 'IVT':
         # TODO: Modernize this protocol to take more arguments.
         add_command(make_ivt_command(group))
@@ -235,11 +240,11 @@ for key, group in groupby(protocols, key=lambda x: x.method):
         add_command(make_gg_command(group))
 
     else:
-        inform.warning("{key!r} protocols are not yet supported.")
+        warn(f"{key!r} protocols are not yet supported.")
         continue
 
 if not stepwise_cmds:
-    inform.terminate("no protocols found.")
+    fatal("no protocols found.")
 
 stepwise_pipeline = ' | '.join(
         shlex.join(x)

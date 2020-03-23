@@ -145,6 +145,7 @@ def parse_protocol(protocol_str):
     params = parse_params(params_str)
     protocol_cls = {
             'PCR': PcrProtocol,
+            'IPCR': InversePcrProtocol,
             'IVT': IvtProtocol,
             'RE':  DigestProtocol,
             'GG':  GoldenGateProtocol,
@@ -233,7 +234,6 @@ def parse_ng_uL(conc_str, mw):
         return float(m.group('conc')) * unit_conversion[m.group('unit')]
     else:
         raise ValueError(f"can't interpret {conc_str!r} as a concentration")
-
 
 
 @lru_cache(maxsize=None)
@@ -348,6 +348,9 @@ class PcrProtocol(Protocol):
         if 'scale' in self.params:
             return parse_microliters(self.params['scale'])
 
+@autoprop
+class InversePcrProtocol(PcrProtocol):
+    pass
 
 @autoprop
 class DigestProtocol(Protocol):
