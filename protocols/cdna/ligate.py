@@ -4,20 +4,29 @@
 Ligate linker-N to the mRNA.
 
 Usage:
-    ligate <n> [-m <reagents>] [-P] [-Q]
+    ligate <n> [-v <µL>] [-x <percent>] [-m <reagents>] [-M] [-P] [-Q]
 
 Arguments:
     <n>
         The number of reactions to set up.
 
 Options:
-    -m --master-mix <reagents>  [default: pnk,lig]
+    -v --volume <µL>                [default: 40]
+        The volume of each ligation reaction in µL.
+
+    -x --extra <percent>            [default: 10]
+        How much extra master mix to prepare.
+
+    -m --master-mix <reagents>      [default: pnk,lig]
         Include the indicated reagents in the master mix.  The following 
         reagents are understood:
 
         pnk: T4 PNK
         lig: T4 RNA ligase
         rna: annealed mRNA/linker
+
+    -M --no-master-mix
+        Exclude all optional reagents from the master mix, i.e. `-m ''`.
 
     -P --no-pnk
         Leave T4 PNK out of the reaction, e.g. if using phosphorylated linker.
@@ -32,6 +41,7 @@ import stepwise, docopt
 from inform import plural
 
 args = docopt.docopt(__doc__)
+master_mix = '' if args['--no-master-mix'] else args['--master-mix']
 
 ligate = stepwise.MasterMix.from_text("""\
 Reagent                  Stock       Volume  MM?
@@ -45,9 +55,11 @@ annealed mRNA/linker   1.25 µM       4.0 µL
 """)
 
 ligate.num_reactions = n = eval(args['<n>'])
-ligate['T4 PNK'].master_mix = 'pnk' in args['--master-mix']
-ligate['T4 RNA ligase'].master_mix = 'lig' in args['--master-mix']
-ligate['annealed mRNA/linker'].master_mix = 'rna' in args['--master-mix']
+ligate.extra_percent = eval(args['--extra'])
+ligate.hold_ratios.volume = eval(args['--volume']), 'µL'
+ligate['T4 PNK'].master_mix = 'pnk' in master_mix
+ligate['T4 RNA ligase'].master_mix = 'lig' in master_mix
+ligate['annealed mRNA/linker'].master_mix = 'rna' in master_mix
 
 if args['--no-pnk']:
     del ligate['T4 PNK']

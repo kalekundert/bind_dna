@@ -22,7 +22,7 @@ Options:
 
     -m --master-mix <reagents>          [default: ]
         The reagents to include in the master mix.  The following reagents are 
-        understood: 'mrna' and 'link'.  To specify both reagents, separated the 
+        understood: 'mrna' and 'link'.  To specify both reagents, separate the 
         two names with a comma.
 """
 
