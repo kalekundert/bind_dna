@@ -29,6 +29,11 @@ want to achieve similar efficiencies.
 
 Considerations
 ==============
+
+.. update:: 2020/03/31
+
+   The ambiguities discussed below are completely resolved by [Kubo2020]_.
+   
 The protocol given by [Naimudden2016]_ for ligating the linker to the 
 transcribed RNA has some ambiguities:
 

@@ -17,6 +17,19 @@ One way to get rid of the ribosomes is to digest the rRNA so that the
 r-proteins dissociate and fit through the 100K filter.  All of the rproteins 
 individually are small enough to fit through the filter:
 
+.. note::
+   
+   Another way to accomplish a similar goal is to just dissociate the ribosome.  
+   See [Arai2020]_, who (I think) do this in the context of cDNA display by 
+   first incubating with 900 mM KCl and 75 mM MgCl₂, followed by incubating 
+   with 45 mM EDTA.  Writing this out now, I actually don't see the point of 
+   adding EDTA, if the amount of edta isn't even going to exceed the amount of 
+   salt added in the previous step.
+
+   On a related note, [Miall1969]_ has evidence that the ribosome begins to 
+   dissociates with EDTA concentrations over 2 mM.  They also mention that 
+   dialysis into buffer lacking magnesium can dissociate the ribosome.
+
 .. datatable:: rproteins.xlsx
 
    Sizes of all the E. coli ribosomal proteins listed on `Wikipedia 

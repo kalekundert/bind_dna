@@ -53,9 +53,9 @@ Results
     successfully binding DNA, I should see the mWasabi bands shifted by 
     different amounts in the two reactions.
 
-   - I could purify the protein.DNA complex, digest the protein, then run a 
-     gel.  The only way I should see DNA is if it is bound by the protein being 
-     purified.
+  - I could purify the protein/DNA complex, digest the protein, then run a gel.  
+    The only way I should see DNA is if it is bound by the protein being 
+    purified.
 
 - Unlike with PURExpress, it doesn't seem like any of the expressed 
   mWasabi-repA is getting stuck in the transcription/translation machinery.  Of 

@@ -15,6 +15,7 @@ linker.  I'm mostly intending to follow the cDNA-display protocol from
    :hidden:
 
    /20190403_order_linker_n/*
+   /20200331_make_linker_via_click_chemistry/*
    /20190430_create_minimal_cloning_vector/*
    /20191004_linearize_cdna_display_gene/*
    /20191216_optimize_mrna_transcription/*

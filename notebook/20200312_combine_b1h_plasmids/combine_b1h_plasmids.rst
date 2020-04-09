@@ -159,6 +159,7 @@ Unnecessary elements
 - I'm going to remove the f1 origin that's present in pH3U3.  As far as I can 
   tell, the f1 origin only makes it so that the plasmid can be propagated in 
   phage (i.e. a "shuttle vector"), and does not play any role in the B1H assay.
+
 Modular cloning
 ---------------
 Since I'm designing this plasmid more or less from scratch, I thought that it 
@@ -192,12 +193,29 @@ promoters/parts to try.  I also have concerns like getting good transformation
 efficiency or being able to read my barcodes that these modular systems may get 
 in the way of.
 
+
 Assembly
 ========
-6 parts:
+7 parts:
 
-- HIS/URA from pH3U3
-- rpoA-zif268 from pB1H1
-- AmpR from p004
-- pSC101 from pH3U3
-- Terminators from gBlock
+- f35: pSC101 from pH3U3
+- f36: terminator from gBlock
+- f37: rpoA-zif268 from pB1H1
+- f38: barcode, terminator from gBlock
+- f39: HIS/URA from pH3U3
+- f40: AmpR from p004
+- f41: λ t0 terminator from pH3U3
+
+7 Golden gate junctions:
+
+- CTCC: SR022
+- CTTA: SR045
+- ACTA: SR069
+- GGTA: SR086
+- AGAT: SR091
+- AATG: SR123
+- ATGG: SR151
+
+I used the Potapov2018/37C Golden Gate junctions, which was a bit of a mistake 
+because I'll actually be doing this assembly using the 5h cycled 16°C/37°C 
+protocol.  I'm sure it'll be fine, though.

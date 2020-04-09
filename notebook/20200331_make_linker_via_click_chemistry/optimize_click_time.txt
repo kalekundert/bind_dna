@@ -1,0 +1,30 @@
+- Run 4 click reactions:
+
+  Reagent   Stock  Volume
+  ───────────────────────
+  o126     400 µM    1 µL
+  o127     400 µM    1 µL
+  PBS          2x    2 µL
+
+  Incubate reactions at room temperature for the 
+  following times:
+
+  - 16 hr
+  - 4 hr
+  - 1 hr
+  - 15 min
+  
+  Stagger the reactions such that they all finish at 
+  the same time.
+
+- Run E-gel:
+
+   - Dilute 0.2 µL of each reaction to 40 µL.
+   - Load 20 µL into a 2% E-gel [1].
+   - Run for 10 min.
+
+Footnotes:
+
+[1] ≈100 ng/oligo in each lane.
+
+# vim: tw=53

@@ -92,8 +92,8 @@ me when I go back to doing 50 pmol reactions.
   linker off the bottom, but would give better separation between the mRNA 
   bands.
 
-NaCl, PBS,  [Co(NH₃)₆]Cl₃ --- 2020/01/29
-----------------------------------------
+NaCl, PBS, [Co(NH₃)₆]Cl₃ --- 2020/01/29
+---------------------------------------
 [Kitamura2002]_ uses [Co(NH₃)₆]Cl₃ in the ligation buffer.  According to 
 `Wikipedia 
 <https://en.wikipedia.org/wiki/Hexamminecobalt(III)_chloride#Uses>`_, 
@@ -131,7 +131,13 @@ for annealing than Na⁺.
      similarly concentrated (and I probably didn't make the same 100x dilution 
      error twice).
 
+   - The relatively poor annealing could also just be because o100 is missing 
+     its RT-arm.  The poor annealing could then possibly explain the poor 
+     ligation efficiency.  I definitely need to order the right oligo.
+
 - I think the high MW bands (~800) are mRNA dimers.
+
+   - High salt is consistent with more base pairing in nucleic acids.
 
    - Maybe I can ask Vienna what it thinks the dimer would be.
 
@@ -144,10 +150,8 @@ for annealing than Na⁺.
 
 - PBS seems to work well.
 
-   - I wonder if this is due to the presence of Mg²⁺ ions.
-
-   - It's interesting that PBS looks quite different than 137 mM NaCl.  I'll 
-     have to check if my PBS recipe has divalent cations.
+   - It's interesting that PBS looks quite different than 137 mM NaCl.  Perhaps 
+     the relatively low concentration of Mg²⁺ has an outsized effect.
 
 - 500 mM NaCl, despite not have the most annealed pixels, is the only condition 
   that has a discernible mRNA band corresponding to its linker-N band (not 

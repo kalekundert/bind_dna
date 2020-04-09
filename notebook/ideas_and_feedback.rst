@@ -590,3 +590,128 @@ George Church:
   submission.  So if/when I have to resubmit, I'll ask Martha and Keith to 
   co-mentor.
   
+2020/04/01:
+
+Scot Wolfe, in regard to library-vs-library B1H:
+
+- I might also try getting in touch with Marcus Noyes (NYU?).  The Wolfe lab 
+  doesn't do B1H anymore, but the Noyes lab does.  Marcus may have some more 
+  ideas about how to do library-vs-library B1H, and may also be willing to show 
+  me how to do the technique if I have problems.
+
+- HIS3/URA3 is on a low-copy plasmid to minimize the number of auto-activated 
+  target sequences.  The TF-rpoZ fusion is on a medium copy plasmid to get good 
+  enough expression.  Balancing these needs will be a key challenge with 
+  getting a one-plasmid system to work.
+
+- A potential downside to using Zif12 as an anchor is that it might cause the 
+  TF to bind tightly enough "hold back" the polymerase.  This is just a 
+  concern, though, not a proven issue.
+
+- Using non-survival reporters such as GFP or RNA-seq is totally reasonable, 
+  but hasn't been tried yet.  There's no reason it shouldn't work.
+
+   - KBK: I'm particularly interested in RNA-seq, because I think that might be 
+     more quantitative.
+
+- Omega-fusions (rpoZ) are better than alpha-fusions (rpoA) for almost every 
+  application.  The only exception is if my TF is a dimer.  Alpha-fusions work 
+  better in this case, presumably because RNAP has two alpha subunits and only 
+  one omega subunit.
+  
+- Do all the controls with Zif268 first.  Zif268 is a remarkably good 
+  DNA-binding domain, and should work even if the selection isn't done 
+  particularly well.  Also do all the controls with the two-plasmid system 
+  before trying to consolidate things into one plasmid.
+
+- A single round of auxotrophic selection is all that should be necessary.  One 
+  of the reasons they set up a two plasmid system in the first place was 
+  because they expected to have to do multiple rounds of selection.  That 
+  turned out to be unnecessary, though.
+
+2020/04/02:
+
+Marcus Noyes, via email:
+
+- You have to ask very specific questions when doing a library on library 
+  screen of DNA-binding because the combined library sizes get very big, very 
+  fast.
+
+   - This is good advice.  The trick is really that I need to measure 
+     specificity using as few sequences as possible.  Since I'll control the 
+     sequences I test, I'll have ample opportunity to be smart about this.
+
+2020/04/06:
+
+Marcus Noyes, via skype:
+
+- The more specific questions you ask, the better answers you'll get.
+
+   - I still need to ask the question I want answered, e.g. how to design DNA 
+     binding proteins, particularly for recombinases.  But I also need to make 
+     that question as specific as possible.
+
+   - An example: Position 51 in homeodomains is almost always an alanine.  
+     Screening all mutants of A51 + nearby residues against all 6 bp 
+     homeodomain targets would be a good specific question that you'd likely 
+     learn something from.
+
+   - A counter example: The Noyes lab has learned a lot by testing huge ZF 
+     libraries against all possible targets.  These screens are a lot of work, 
+     because the target libraries are screened individually.
+
+- Good review on DNA binding domains: Richard Mann, ~5 years ago.
+
+  This might refer to Rohs2010, which is an excellent review.
+
+- Noyes is skeptical about the idea of trying to incorporate as many 
+  DNA-binding domains as possible.  Each family can have very different and 
+  subtle relationships between sequence and function, and trying to consider 
+  multiple different families at once could easily just muddy the waters.
+
+  - Example: There's a ZF (I forget which one) where a mutation in the 3rd 
+    finger affects the specificity of the 7th finger, which is quite far away.  
+    IF this is due to something specific to the ZF scaffold, it would be very 
+    hard to get right with a general purpose algorithm.  On the flip side, 
+    maybe the explanation is something more fundamental, e.g. flexibility of 
+    the DNA or something, and an algorithm that gets it right in one case might 
+    work better in other cases, too.
+
+  - At least consider focusing on domains that interact with DNA in a similar 
+    manner to recombinases, e.g. alpha or beta (Noyes thought recombinases 
+    interacted with DNA via β-strands, and that meganucleases might be a good 
+    model system for that reason.  But I'm pretty sure Cre uses helices.)
+
+  - Of course, he agrees that it'd be nice to have an algorithm that could work 
+    robustly on all DNA binding proteins.
+  
+- RNA-seq might make the assay more quantitative, but it's not a sure thing.
+
+   - There are lots of source of variability in bacteria: crowding on the 
+     plate, differences in plasmid copy number, some other things I'm 
+     forgetting now.
+
+   - Some of these same source might affect RNA-seq.
+
+   - Growth is already weakly correlated with binding, since more reporter 
+     expression should lead to faster growth.  But the correlation isn't great.  
+     It's possible that RNA-seq would be more linear.
+
+- Check out Ichikawa2019, ACS Syn Biol for a plasmid that might be a good 
+  starting point.
+
+   - This paper was doing B2H, and as part of that put the omega subunit and 
+     the reporter genes on the same plasmid.  The other plasmid had the 
+     protien/protein partners being studied: Zif-peptide and PDZ domains.
+
+   - I could pretty easily replace the omega subunit with the omega-TF fusion.
+
+   - Expression wasn't a problem for them, but that might be because the ZF was 
+     being expressed really highly.
+
+- I like that Noyes took the time to understand what I was trying to do, and 
+  tailored his advice towards that.  It was easy to talk with him, I'll 
+  definitely get in touch if I have problems.
+
+- If I get both the in vitro and B1H assays working, the best way to use them 
+  together might be to use the in vitro assay to pre-screen for the B1H assay.
