@@ -24,6 +24,17 @@ Advantages:
    - But I can accommodate cDNA display as well by using the right nuclease 
      with the right phosphorylation (e.g. T7 exonuclease).
 
+- I can control the effective concentration of the protein at its target site 
+  by changing the length of the linker.
+  
+   - It's probably possible to calculate effective concentrations analytically 
+     using the worm-like chain or Gaussian random walk models, although I'd 
+     need to understand the models better than I do now (or get a 
+     collaborator).  Alternatively, I could also just simulate random walks.
+
+   - For cDNA display, this would be complicated by the fact that the linker 
+     would have both dsDNA, ssDNA, and maybe PEG components.
+
 Disadvantages:
 
 - Indirect measurement of binding.  
@@ -34,12 +45,6 @@ Disadvantages:
 
    - Weak binders may be hard to detect, if they are just too transient to 
      resist the DNase.
-
-- Can't control the effective concentration of protein.  And the effective 
-  concentration is unnaturally high because the protein is being confined in 
-  such close proximity.
-
-   - Well, I could increase the length of the tether...
 
 I want to show that this assay works in principle---i.e. that Zif268 binding 
 can protect the barcode from digestion---and establish some reasonable 
@@ -227,5 +232,3 @@ most reasonable reaction conditions.
 
    ***
 
-Titrate BAL-31 --- 2019/12/17
------------------------------

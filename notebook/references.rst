@@ -35,6 +35,7 @@ References
 .. [Lee2008] :doi:`10.1529/biophysj.108.133025`
 .. [Lesley1995] :doi:`10.1385/0-89603-288-4:265`
 .. [Liese2015] :doi:`10.3762/bjoc.11.90`
+.. [Lovendahl2017] :doi:`10.1021/jacs.7b02572`
 .. [Kienberger2000] :doi:`10.1002/1438-5171(200006)1:2<123::AID-SIMO123>3.0.CO;2-3`
 .. [Kurz2001] Kurz M, Gu K, Al-Gawari A, Lohse PA. cDNA–Protein Fusions: Covalent Protein–Gene Conjugates for the In Vitro Selection of Peptides and Proteins. Chem Bio Chem 2:9:666-672 (2001).
 .. [Man2001] :doi:`10.1093/nar/29.12.2471`
@@ -68,6 +69,7 @@ References
 .. [Shine1974] :doi:`10.1073/pnas.71.4.1342`
 .. [Subramanian2018] :doi:`10.1093/synbio/ysx008`
 .. [Thyme2014] :doi:`10.1007/978-1-62703-968-0_17`
+.. [VegaRocha2007] :doi:`10.1016/j.jmb.2007.01.002`
 .. [Vorackova2011] :doi:`10.1016/j.pep.2011.04.022`
 .. [Wang2012] :doi:`10.1007/978-1-61779-379-0_6`
 .. [Weber2011] :doi:`10.1371/journal.pone.0016765`

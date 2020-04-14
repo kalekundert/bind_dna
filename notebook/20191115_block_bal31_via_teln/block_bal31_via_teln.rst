@@ -6,7 +6,7 @@ It would be convenient to be able to block BAL-31 activity, for reasons
 discussed in :expt:`20190419_validate_exonuclease_assay`.  The TelN enzyme is a 
 promising way to do this because it makes cuts DNA in a way that leaves 
 covalently capped ends.  Since BAL-31 can only cut at DNA ends, and TelN leaves 
-no ends, it is reasonably to think that TelN might block BAL-31 activity.
+no ends, it is reasonable to think that TelN might block BAL-31 activity.
 
 Results
 =======
@@ -29,6 +29,9 @@ p84 with TelN.  I made the uncapped construct by amplifying p59 with
 
 Discussion
 ==========
-- There is no evidence that TalN blocks BAL-31 activity.  This is surprising to 
+- There is no evidence that TelN blocks BAL-31 activity.  This is surprising to 
   me, so I might want to repeat this experiment, but the results are pretty 
   convincing.
+
+- It might also be worth repeating this experiment will all of my other 
+  nucleases, to see if any of them are blocked by BAL-31.
