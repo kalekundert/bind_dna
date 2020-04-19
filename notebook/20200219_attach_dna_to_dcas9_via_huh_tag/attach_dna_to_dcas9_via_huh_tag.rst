@@ -1,6 +1,16 @@
-**********************
-Attach DNA via HUH-tag
-**********************
+*******************************
+Attach DNA to dCas9 via HUH-tag
+*******************************
+
+[Lovendahl2017]_ describes a system for labeling proteins with nucleic acids.  
+This system uses natural HUH-domains that react to form covalent bonds with the 
+backbone of specific ssDNA sequences.  Although this method couldn't be used to 
+make libraries, it can be used to validate the underlying exonuclease assay.
+
+The first step is to show that I can efficiently attach DNA to a protein.  
+Ultimately I want that protein to be Zif268, the model system I've been using, 
+but I'm going to start with Cas9 because Jorge Marchand and others in the lab 
+have already purified dCas9-PCV2 (PCV2 being a HUH domain).
 
 Considerations
 ==============
@@ -28,7 +38,7 @@ Jorge says that he just uses CutSmart buffer, which is:
 - 100 µg/mL BSA
 
 I also want a buffer compatible with the DNA-binding protein I'll be testing 
-(e.g. Cas9 or Zif268).  NEB recommends the following buffer for Cas9:
+(e.g. dCas9 or Zif268).  NEB recommends the following buffer for Cas9:
 
 - 20 mM HEPES, pH 6.5 at 25°C
 - 100 mM NaCl
@@ -46,6 +56,7 @@ PBS supplemented with MnCl₂ might also work well.
 
 I'm just going to use CutSmart for my initial experiments, because it 
 apparently works for Jorge.
+
 
 Methods
 =======

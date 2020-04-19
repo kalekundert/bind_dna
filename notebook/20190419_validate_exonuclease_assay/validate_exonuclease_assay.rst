@@ -58,7 +58,10 @@ Zif268 mutants, target sites, N/C-terminal barcodes, etc. that I have cloned.
    /20190604_pick_qpcr_primers/*
    /20190610_optimize_qpcr_conditions/*
    /20191115_block_bal31_via_teln/*
-   /20200219_attach_dna_via_huh_tag/*
+   /20200219_attach_dna_to_dcas9_via_huh_tag/*
+   /20200416_attach_dna_to_zif268_via_huh_tag/*
+   /20200416_measure_dcas9_binding_via_huh_tag/*
+
 
 Considerations
 ==============
