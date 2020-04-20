@@ -12,7 +12,14 @@ Arguments:
         inferred from this list.
 
 Options:
-    -d --template-stock <nM>             [default: 75]
+    -v --volume <µL>                    [default: 10]
+        The volume of the reaction in µL.
+
+    -n --num-reactions <n>
+        The number of reactions to set up.  By default, this is inferred from
+        the number of templates.
+
+    -d --template-stock <nM>            [default: 75]
         The stock concentration of the template DNA, in units of nM.
 
     -t --incubation-time <time>         [default: 2-4 hours]
@@ -41,11 +48,11 @@ RNase inhibitor (murine)         40 U/µL      1 µL  yes
 GamS nuclease inhibitor [2,3]  1.5 µg/µL      1 µL  yes
 linear DNA template                75 nM      2 µL
 """)
-rxn.hold_ratios.volume = '10 µL'
-rxn.num_reactions = num_templates
+rxn.hold_ratios.volume = args['--volume'], 'µL'
+rxn.num_reactions = int(args['--num-reactions'] or num_templates)
 rxn['linear DNA template'].name = f'{templates} [3]'
 rxn['linear DNA template'].hold_conc.stock_conc = (
-        float(args['--template-stock']), 'nM')
+        eval(args['--template-stock']), 'nM')
 
 protocol = stepwise.Protocol()
 
@@ -54,7 +61,7 @@ Setup {plural(rxn.num_reactions):# NEBExpress reaction/s} [1]:
 
 {rxn}
 
-- Thaw all components on ice
+- Thaw all components on ice.
 - Mix the S30 extract and protein synthesis buffer 
   by gently vortexing.
 """
