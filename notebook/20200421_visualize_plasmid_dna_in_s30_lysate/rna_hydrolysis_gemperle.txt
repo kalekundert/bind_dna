@@ -1,0 +1,18 @@
+- Setup alkaline hydrolysis reaction [1]:
+
+  - 60 µL IVTT reaction
+  - Add 12 µL 0.5M EDTA (pH 8.0) [2].
+  - Add 12 µL 1M NaOH [3].
+  - Incubate at 95°C for 10 min.
+  - Quench by adding 24 µL 0.5M HCl.
+
+Footnotes:
+[1] Protocol from Jakub Gemperle:
+    https://www.researchgate.net/post/Alkaline_degradation_of_RNA_which_buffer_and_temperature_should_I_use_to_completely_degrade_RNA_in_a_sample
+
+[2] EDTA (pH) has to be added first to chelate Mg2+, 
+    otherwise Mg2+ ions will precipitate in alkalic 
+    conditions and entrap DNA in precipitate.  
+
+[3] pH above 11 should denature but not hydrolyze 
+    DNA.  This reaction should have pH>13.

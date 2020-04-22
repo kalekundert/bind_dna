@@ -33,11 +33,11 @@ required in order to express genes from linear templates:
 In addition, the following genotypes are recommended to improve protein yield:
 
 - hsdS: Reduce restriction digestion.
-- ompT: Cleaves at bibasic residues [Lesley1995]_.
+- ompT: Cleaves at dibasic residues [Lesley1995]_.
 - lon: Heat shock protease [Lesley1995]_.
 
 The SL119 strain is recommended for linear templates.  The A19 strain is not 
-mentioned.  As discussed above, I think A19 is a relatively wildtype strain and 
+mentioned.  As discussed below, I think A19 is a relatively wildtype strain and 
 probably has all of the above exonucleases and proteases.
 
 A19 genotype

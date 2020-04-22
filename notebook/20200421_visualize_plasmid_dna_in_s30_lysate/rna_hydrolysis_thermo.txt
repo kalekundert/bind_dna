@@ -1,0 +1,16 @@
+- Mix RNA in 1x alkaline hydrolysis buffer [1]:
+
+   - x µL IVTT reaction
+   - 7.5 µL 2x alkaline hydrolysis buffer [2]
+   - water to 15 µL
+
+- Incubate at 95°C for 15 min.
+
+Footnotes:
+[1] https://www.thermofisher.com/us/en/home/references/protocols/nucleic-acid-purification-and-analysis/rna-protocol/rna-structure-function-protocols.html
+
+[2] 1x alkaline hydrolysis buffer:
+
+    - 50 mM sodium carbonate, pH 9.2
+    - 1 mM EDTA
+    

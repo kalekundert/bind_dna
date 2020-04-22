@@ -40,7 +40,7 @@ in the original PURE system [Shimizu2001] is (50 μL for mass/quantity units):
 - 2 mM each ATP and GTP
 - 1 mM each of CTP and UTP
 - 10 mM creatine phosphate
-- 2.8 A260 units tRNA mix (Roche, Mannheim, Germany)
+- 2.8 A260 units tRNA mix (KBK: 112 ng/µL, 5.6 µg) (Roche, Mannheim, Germany)
 - 0.5 μg 10-formyl-5,6,7,8-tetrahydrofolic acid
 - 0.1 mM each of amino acids
 - 12 pmol (32.4 μg) ribosome

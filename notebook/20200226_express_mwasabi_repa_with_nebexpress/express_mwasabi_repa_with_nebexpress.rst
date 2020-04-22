@@ -2,19 +2,25 @@
 Express mWasabi-repA with NEBexpress
 ************************************
 
-- T7 instead of tac.  
+I want to try doing CIS-display using NEBExpress instead of Promega extract.  
+Overall the extracts are pretty similar, but there are some differences that 
+could be meaningful:
 
-  But I could use tac.  The RNAP is added exogenously, and I've already ordered 
-  wildtype RNAP.  But I'll have to figure out how much to add.
+- NEBExpress uses a T7 promoter instead of a tac promoter.  
 
-- Should give higher expression with less template DNA.
+  In theory, I could still use the tac promoter if I wanted to.  The RNAP is 
+  added exogenously, and I've already ordered wildtype RNAP.  I'd have to 
+  figure out how much to add, though.
 
-- Is an extract; so should have rho factor.  But not clear how rho factor 
-  interacts with T7 RNAP.
+- According to the manufacturers' protocols, NEBExpress should give higher 
+  expression with less template DNA.  Of course, it's also possible that NEB is 
+  exaggerating its yield.
 
-- First test expression, then make all the templates and see how well 
-  Cis-display is working.
+- Rho factors should be present.  It's not clear how rho factor interacts with 
+  T7 RNAP, though.
 
+I will begin by testing expression, then I'll make all of my control templates 
+and see how well CIS-display works.
 
 Results
 =======
@@ -40,8 +46,24 @@ Results
   
 - It may also make sense to try using plasmid DNA, which should be more 
   resistant to degradation than linear DNA.  The issue would be finding a way 
-  to see the unlabeled DNA, but I have some options:
+  to see the unlabeled DNA.  The problems are:
+
+  - There may be a lot of other nucleic acids in the lysate, e.g. ribosomes, 
+    tRNAs, etc.
+
+  - mWasabi and a few of the lysate components are fluorescent at wavelengths 
+    similar to DNA stains such as GelRed/GelGreen.
   
+  I have some options, though:
+
+  - I could do a Southern blot.  In principle, this would allow me to label my 
+    plasmid specifically with Cy5.  I'm not sure how well it would work, 
+    though.
+
+  - I could treat with RNase.  This would hopefully remove enough of the 
+    contaminating nucleic acid (I don't think there will be any contaminating 
+    DNA) that I could find the plasmid by simple staining.
+
   - I might be able to use GelRed.  GelRed is better excited by the UV lamp on 
     the Gel Doc (300 nm) than GFP is.  GelRed also emits at higher wavelengths 
     than GFP does, although I don't know what filter (if any) the Gel Doc uses.  
