@@ -5,7 +5,11 @@ Setup in vitro transcription/translation (IVTT) reactions using the NEB
 PURExpress system (E6800).
 
 Usage:
-    purexpress.py <templates> [-v <uL>] [-D <nM>] [options]
+    purexpress.py <templates>... [-v <uL>] [-D <nM>] [options]
+
+Arguments:
+    <templates>
+        The names of the DNA/mRNA templates to express.
 
 Options:
     -v --rxn-volume <uL>                        [default: 10]
@@ -74,16 +78,13 @@ else:
     template = 'template DNA'
     del purexpress['template mRNA']
 
-template_names = args['<templates>']
-
-if name := args['--template']:
-    purexpress[template].name = template_names
+purexpress[template].name = ','.join(args['<templates>'])
 
 if conc := args['--template-stock-conc']:
     q = eval(conc), purexpress[template].stock_conc.unit
     purexpress[template].hold_conc.stock_conc = q
 
-purexpress.num_reactions = len(template_names.split(','))
+purexpress.num_reactions = len(args['<templates>'])
 purexpress.hold_ratios.volume = eval(args['--rxn-volume']), 'µL'
 
 protocol += f"""\
