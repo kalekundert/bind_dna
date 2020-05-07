@@ -2,14 +2,14 @@
 
 import sys
 import math
+import regex
 import autoprop
 import random
 import numpy as np
 import pandas as pd
 import pytest
 import functools
-from copy import deepcopy
-from more_itertools import one, collapse
+from more_itertools import one
 from klab.cloning import mutagenesis
 from pathlib import Path
 
@@ -287,12 +287,10 @@ def design_constructs():
 def select_constructs(*names):
     return [x for x in constructs if x.name in names]
 
-
 def design_buffer_seq(constructs, force=False):
     from Bio import SeqIO
     from Bio.Seq import Seq
     from Bio.SeqRecord import SeqRecord
-    from more_itertools import one
 
     # Make sure all the constructs are referencing the same buffer.
     buffer = one({x['buffer'] for x in constructs})
@@ -309,7 +307,6 @@ def design_buffer_seq(constructs, force=False):
     construct_lens = [len(x.seq) for x in constructs]
     target_len = round_100(max(construct_lens) + 100)
     buffer_len = round_100(target_len - min(construct_lens) + 100)
-    #buffer.seq = cloning_friendly_sequence(buffer_len, seed_3=rc(SR091))
     buffer.seq = optimize_buffer_seq(buffer_len)
 
     # Cache the result.
@@ -380,20 +377,23 @@ def design_segment_deletions(prototype, constructs):
             pd.formatter = partial(formatter, mismatch, construct)
             pd.construct = construct.get_annotated_seq(**kwargs)
 
-            # This is hacky, but we design the backbone differently depending 
-            # on if we're cloning a deletion or a linker.  For the former, we 
-            # want all the primers aligned on the segment boundaries to 
-            # minimize the number of primers we need.  We achieve this by 
-            # replacing the mismatched sequence with 'X'.  For the latter, we 
-            # want to be smarter in terms of making the smallest mutation 
-            # possible.
+            # This is hacky, but we treat the backbone differently depending on 
+            # if we're cloning a deletion or a linker.  For the former, we want 
+            # all the primers aligned on the segment boundaries to minimize the 
+            # number of primers we need.  We achieve this by replacing the 
+            # mismatched sequence with 'X'.  For the latter, we want to be 
+            # smarter in terms of making the smallest mutation possible.  We 
+            # achieve this by using the full backbone sequence, so the primer 
+            # designer can pick the shortest primers.
 
             if [x.name for x in mismatch] == ['linker']:
                 pd.backbone = prototype.get_seq(**kwargs)
 
-                # The linker is really GC-rich, so we need to raise the target 
-                # Tm a bit to get primers for the Odegrip2004 (Ala) linker.
-                pd.tm = 63
+                # Another hack: the linker is really GC-rich, so we need to 
+                # raise the target Tm a bit to get primers for the Odegrip2004 
+                # (Ala) linker.
+                if construct['linker'].name == 'odegrip2004_ala':
+                    pd.tm = 63
 
             else:
                 pd.backbone = \
@@ -401,159 +401,10 @@ def design_segment_deletions(prototype, constructs):
                         'X' + \
                         prototype.get_seq(match_3[0].key, match_3[-1].key)
 
+
             primers.update(pd.design_primers())
 
     return mutagenesis.consolidate_duplicate_primers(primers)
-
-def cloning_friendly_sequence(n, window_size=20, seed_3=''):
-    from Bio.SeqUtils import GC
-
-    # Start with a seed sequence.
-
-    seq = seed_3
-
-    # Randomly pick the next position based on the inverse frequency of the 
-    # nucleotides from the previous 20 positions.
-
-    def pick_gc(window):
-        min_gc, max_gc = 0.4, 0.6
-
-        m = 1 / (max_gc - min_gc)
-        b = -m * min_gc
-
-        gc = GC(window) / 100
-        prob_at = np.clip(m * gc + b, 0, 1)
-
-        xs = {'at': prob_at, 'cg': 1 - prob_at}
-        return weighted_choice(xs)
-
-    def pick_nuc(window, gc):
-        n = sum(window.count(x) for x in gc)
-        p = {x: window.count(x) / n for x in gc}
-        xs = {
-                x: (1 - p[x]) / (len(gc) - 1)
-                for x in gc
-        }
-        return weighted_choice(xs)
-
-    def weighted_choice(xs):
-        x = random.choices(list(xs.keys()), weights=list(xs.values()))
-        return one(x)
-
-    for i in range(n - window_size):
-        window = seq[:window_size]
-        gc = pick_gc(window)
-        seq = pick_nuc(window, gc) + seq
-
-    seq = remove_duplicate_sequences(seq)
-    seq = remove_golden_gate_sites(seq)
-
-    # Put the 3' seed back.
-    seq = seq[:-len(seed_3)] + seed_3
-
-    return seq
-
-def remove_golden_gate_sites(seq):
-    from Bio.Restriction import BsaI, BbsI, BsmBI, BtgZI, SapI
-
-    seq = seq.lower()
-    len0 = len(seq)
-
-    sites = []
-    for enz in [BsaI, BbsI, BsmBI, BtgZI, SapI]:
-        site = enz.site.lower()
-        sites += [site, rc(site)]
-
-    hits = True
-    while hits:
-        hits = [
-                (i, i + len(site))
-                for site in sites
-                if (i := seq.find(site)) > 0
-        ]
-        for i,j in hits:
-            shuffled_hit = ''.join(random.sample(seq[i:j], j-i))
-            seq = seq[:i] + shuffled_hit + seq[j:]
-
-    assert len(seq) == len0
-    return seq
-
-def remove_duplicate_sequences(seq):
-    from math import log, ceil
-    from itertools import count
-    from tqdm import tqdm
-
-    k_min = ceil(log(len(seq), 4))
-
-    for k in tqdm(count(k_min), initial=k_min):
-        try:
-            # Replacing one overused k-mer can create others, so try a couple 
-            # times before moving on to bigger k-mers.
-            for i in tqdm(range(k), initial=1):
-                alt_seq = remove_duplicate_kmers(seq, k)
-                if seq == alt_seq: return seq
-                else: seq = alt_seq
-
-        except NotEnoughKmers:
-            continue
-
-def remove_duplicate_kmers(seq, k):
-    from itertools import product
-    from Bio.SeqUtils import GC
-
-    df = count_kmers(seq, k)
-    df['gc'] = df['kmer'].transform(GC)
-
-    for k, g in df.groupby('gc'):
-        num_duplicates = sum(g['count'] > 1)
-        num_missing = sum(g['count'] == 0)
-        if num_duplicates > num_missing:
-            raise NotEnoughKmers
-
-    overused_kmers = list(df[df['count'] > 1].iterrows())
-
-    for _, row in overused_kmers:
-        overused_kmer = row.kmer
-        unused_kmers = df[(df.gc == row.gc) & (df['count'] == 0)]
-        unused_kmers = unused_kmers.sample(row['count'] - 1)
-
-        for unused_kmer in unused_kmers['kmer']:
-            df.loc[df.kmer == overused_kmer,'count'] -= 1
-            df.loc[df.kmer == unused_kmer,  'count'] += 1
-            seq = seq.replace(overused_kmer, unused_kmer, 1)
-
-    return seq
-
-def find_longest_duplicate_kmer(seq):
-    from itertools import count
-    from collections import Counter
-    from more_itertools import windowed
-
-    for k in count(1):
-        counter = Counter()
-
-        for kmer in windowed(seq, k):
-            kmer = ''.join(kmer)
-            counter[kmer] += 1
-
-        if max(counter.values()) == 1:
-            return k - 1
-
-def count_kmers(seq, k):
-    from itertools import product
-    from more_itertools import windowed
-
-    counter = {}
-
-    for kmer in product('atcg', repeat=k):
-        kmer = ''.join(kmer)
-        counter[kmer] = 0
-
-    for kmer in windowed(seq.lower(), k):
-        kmer = ''.join(kmer)
-        counter[kmer] += 1
-
-    return pd.DataFrame(counter.items(), columns=['kmer', 'count'])
 
 def pick_primer_with_best_tm(primers, target_tm):
     primer_tms = [
@@ -631,16 +482,41 @@ def fix_primer_names(primers, id):
     return renamed
 
 def report_buffer_gblock(buffer):
-    k = find_longest_duplicate_kmer(buffer.seq)
-    kmers = count_kmers(buffer.seq, k)
-    kmers['len'] = kmers.kmer.str.len()
-    print("Longest duplicate k-mers:")
-    print(kmers[kmers['count'] > 1])
-    print()
+    from stepwise import tabulate
+
+    dups = find_duplicate_kmers(buffer.seq)
     gblock = design_buffer_gblock(buffer)
+
+    print("Duplicate k-mers:")
+    print(dups)
+    print()
     print(f">Buffer gBlock (len={len(gblock)} bp)")
     print(gblock)
     print()
+
+def find_duplicate_kmers(seq):
+    from itertools import count
+    from collections import Counter
+
+    dup_counts = {}
+
+    for k in count(target_kmer(seq)):
+
+        counter = Counter()
+        for kmer in iter_kmers(seq, k):
+            counter[kmer] += 1
+
+        dup_counts[k] = len([x for x in counter.values() if x > 1])
+
+        if dup_counts[k] == 0:
+            break
+
+    df = pd.DataFrame(dup_counts.items(), columns=['kmer', 'num_duplicates'])
+    return df
+
+def target_kmer(seq):
+    from math import log, ceil
+    return ceil(log(len(seq), 4))
 
 @functools.lru_cache
 def golden_gate_sites():
@@ -669,17 +545,15 @@ def rc(seq):
     from Bio.Alphabet import generic_dna
     return str(Seq(seq).reverse_complement())
 
-class NotEnoughKmers(Exception):
-    pass
 
 def optimize_buffer_seq(n, scores=None):
     from tqdm import tqdm
 
-    seq = ''.join(random.choices('atcg', k=n))
+    seq = ''.join(random.choices('atcg', k=n - len(SR091)))
     seq = mutate_golden_gate_sites(seq)
 
-    # The `mutate_overused_kmers()` move is not included here because it seems 
-    # to make performance worse.  I think the problem is that are lots of 
+    # The `mutate_overused_kmers()` move is not included because it has a 
+    # negative effect on performance.  I think the problem is that are lots of 
     # overused k-mers, and mutating all of them is just too big of a change.
 
     move_weights, moves = zip(*[
@@ -689,9 +563,12 @@ def optimize_buffer_seq(n, scores=None):
             score_gc,
             score_repeats,
             score_golden_gate,
+            score_inertness,
     ]
 
     def calc_score(seq):
+        seq = SR022 + seq + rc(SR091)
+
         score = 0
         veto = False
 
@@ -704,18 +581,20 @@ def optimize_buffer_seq(n, scores=None):
 
     score, veto = calc_score(seq)
     best_seq, best_score = seq, score
+    
 
     len0 = len(seq)
-    N = len0 * 5
+    N = len0 * 10
     T = 1 / (3 * len0)
     i = 0
+    num_moves = 0
+    num_accepted = 0
 
     with tqdm(total=N) as progress:
         while i < N:
             # Change the sequence somehow.
             move = random.choices(moves, weights=move_weights, k=1)[0]
             proposed_seq = move(seq)
-            proposed_seq = proposed_seq[:-len(SR091)] + rc(SR091)
 
             # Decide whether or not to keep the change.
             proposed_score, proposed_veto = calc_score(proposed_seq)
@@ -723,12 +602,14 @@ def optimize_buffer_seq(n, scores=None):
                     if proposed_score > score else 1
             is_accepted = (p_accept >= random.random())
 
-            # debug(i, seq, proposed_seq, score, proposed_score, veto, proposed_veto, p_accept, is_accepted)
+            #debug(i, seq, proposed_seq, score, proposed_score, veto, proposed_veto, p_accept, is_accepted)
 
             if is_accepted:
                 seq = proposed_seq
                 score = proposed_score
                 veto = proposed_veto
+                num_accepted += 1
+            num_moves += 1
 
             if scores is not None:
                 scores.append(score)
@@ -746,14 +627,16 @@ def optimize_buffer_seq(n, scores=None):
             if score == 0:
                 break
 
+    print(f"Acceptance rate  (w/ veto): {num_accepted}/{num_moves}={100*num_accepted/num_moves:.2f}%")
+    print(f"Acceptance rate (w/o veto): {num_accepted}/{i}={100*num_accepted/i:.2f}%")
+
     # Make sure we didn't accidentally change the length of the sequence.
     assert len(seq) == len0
 
-    return best_seq.lower()
+    return (best_seq + rc(SR091)).lower()
 
 def mutate_region(seq):
-    from math import log, ceil
-    k_max = ceil(log(len(seq), 4))
+    k_max = target_kmer(seq)
     k = int(random.triangular(1, k_max, 1))
     i = random.randrange(len(seq) - k)
     return seq[:i] + ''.join(random.choices('atcg', k=k)) + seq[i+k:]
@@ -764,7 +647,7 @@ def mutate_golden_gate_sites(seq):
 def mutate_overused_kmers(seq):
     from collections import Counter
 
-    k = math.ceil(math.log(len(seq), 4))
+    k = target_kmer(seq)
     counter = Counter()
 
     for kmer in iter_kmers(seq, k):
@@ -800,10 +683,9 @@ def score_gc(seq, window_size=20):
     return n_bad / n_tot, False
 
 def score_repeats(seq):
-    from math import log, ceil
     from collections import Counter
 
-    k = ceil(log(len(seq), 4))
+    k = target_kmer(seq)
     counts = Counter()
 
     for kmer in iter_kmers(seq, k):
@@ -822,47 +704,71 @@ def score_golden_gate(seq):
 
     return n_bad, bool(n_bad)
 
+def score_inertness(seq):
+    features = [
+            # T7 promoter
+            'taatacgactcactata',
+
+            # RBS
+            'aggagg',
+            'aggagg.....atg',
+            'aggagg......atg',
+            'aggagg.......atg',
+            'aggagg........atg',
+
+            # Rho
+            'gccggaggcatccgcacgc',
+
+            # DnaA binding site
+            'ttatccaca',
+
+            # repA binding motif
+            'ca.ttaa.tg',   # [Giraldo1992]
+
+            # AT 9-mer (conserved motif)
+            'tttaaa',       # [Masai1987]
+
+            # Weak terminators
+            'tgaagcccgccggtgcacaaaaaaa',
+            'ggagcatccgattccccctgttttt',
+            'aaaatacgcctcagcgacggggaattt',
+
+            # CIS
+            'aagtgatctcctcagaataatccggcctgcgccggaggcatccgcacgcctgaagcccgccggtgcacaaaaaaacagcgtcgcatgcaaaaaacaatctcatcatccaccttctggagcatccgattccccctgtttttaatacaaaatacgcctcagcgacggggaattt',
+            
+            # oriR
+            'tgcttatccacatttaactgcaagggacttccccataaggttacaaccgttcatgtcataaagcgccagccgccagtcttacagggtgcaatgtatcttttaaacacctgtttatatctcctttaaactacttaattacattcatttaaaaagaaaacctattcactgcctgtcctgtggacagacag'
+    ]
+
+    n_bad = 0
+    for feature in iter_strandedness(features):
+        max_errors = len(feature) // 10
+        pattern = '(?:%s){s<=%.0f}' % (feature, max_errors)
+        if regex.search(pattern, seq):
+            n_bad += 1
+
+    return n_bad, bool(n_bad)
+
 def iter_kmers(seq, k):
     from more_itertools import windowed
     for kmer in windowed(seq, k):
         yield ''.join(kmer)
 
+def iter_strandedness(seqs):
+    for seq in seqs:
+        yield seq
+        yield rc(seq)
 
 
 if __name__ == '__main__':
-    # n = 400
-    # k = math.ceil(math.log(n, 4))
-    # scores = []
-    # seq = optimize_buffer_seq(n, scores)
-
-    # kmers = count_kmers(seq, k)
-    # kmers['len'] = kmers.kmer.str.len()
-    # print("Longest duplicate k-mers:")
-    # print(kmers[kmers['count'] > 1].sort_values('count'))
-    # print(kmers[kmers['count'] == 0])
-    # print()
-    # print(seq)
-
-    # import matplotlib.pyplot as plt
-    # plt.plot(range(len(scores)), scores)
-    # plt.show()
-
-    # raise SystemExit
-
     prototype, constructs = design_constructs()
-    #constructs = select_constructs('p121')
+    #constructs = select_constructs('p109')
     #debug(constructs)
 
     target_len, buffer = design_buffer_seq(constructs, '-f' in sys.argv)
     buffer_primers = design_buffer_deletions(constructs, target_len)
     segment_primers = design_segment_deletions(prototype, constructs)
     primers = fix_primer_names({**buffer_primers, **segment_primers}, next_id)
-
-    debug(
-            score_gc(buffer.seq),
-            score_repeats(buffer.seq),
-            score_golden_gate(buffer.seq),
-    )
 
     report_buffer_gblock(buffer)
     mutagenesis.report_primers_to_table(primers)
@@ -920,12 +826,88 @@ def test_iter_mismatches(kwargs, expected):
     ]
     assert actual == expected
 
-def test_remove_duplicate_kmers():
-    assert remove_duplicate_kmers('aa', 1) == 'ta'
+@pytest.mark.parametrize(
+    'seq,window,score', [
+        ('aaaa', 2, 3/3),
+        ('aaag', 2, 2/3),
+        ('aagg', 2, 2/3),
+        ('aaga', 2, 1/3),
+        ('gaga', 2, 0/3),
+])
+def test_score_gc(seq, window, score):
+    assert score_gc(seq, window) == (pytest.approx(score), False)
 
-    with pytest.raises(NotEnoughKmers):
-        remove_duplicate_kmers('aat', 1) == 'ta'
+@pytest.mark.parametrize(
+    'seq,score', [
+        ('a', 0),
 
-    assert remove_duplicate_kmers('aaat', 2) == 'ttat'
-    assert remove_duplicate_kmers('aaac', 2) == 'ttac'
+        ('aa', 1/2),
+        ('at', 0/2),
 
+        ('aaa', 2/3),
+        ('aat', 1/3),
+        ('att', 1/3),
+        ('atc', 0/3),
+
+        ('aaaa', 3/4),
+        ('aaat', 2/4),
+        ('aatt', 2/4),
+        ('atcc', 1/4),
+        ('atcg', 0/4),
+])
+def test_score_repeats(seq, score):
+    assert score_repeats(seq) == (pytest.approx(score), False)
+
+@pytest.mark.parametrize(
+    'seq,score', [
+        ('aaaaaa', 0),
+
+        # Make sure SR091 doesn't cause an infinite loop.
+        (SR091, 0),
+        (rc(SR091), 0),
+
+        # BsaI
+        ('ggtctc', 1),
+        ('gagacc', 1),
+
+        # BbsI
+        ('gaagac', 1),
+        ('gtcttc', 1),
+
+        # BsmBI
+        ('cgtctc', 1),
+        ('gagacg', 1),
+
+        # BtgZI
+        ('gcgatg', 1),
+        ('catcgc', 1),
+
+        # SapI
+        ('gctcttc', 1),
+        ('gaagagc', 1),
+])
+def test_score_golden_gate(seq, score):
+    assert score_golden_gate(seq) == (score, bool(score))
+
+@pytest.mark.parametrize(
+    'seq,score', [
+        ('', 0),
+
+        # Make sure SR091 doesn't cause an infinite loop.
+        (SR091, 0),
+        (rc(SR091), 0),
+
+        # 10% mismatches, rounded down
+        ('taatacgactcactata', 1),
+        ('Xaatacgactcactata', 1),
+        ('XXatacgactcactata', 0),
+
+        # Reverse complement recognized, too.
+        ('tatagtgagtcgtatta', 1),
+        ('Xatagtgagtcgtatta', 1),
+        ('XXtagtgagtcgtatta', 0),
+
+    ]
+)
+def test_score_inertness(seq, score):
+    assert score_inertness(seq) == (score, bool(score))
