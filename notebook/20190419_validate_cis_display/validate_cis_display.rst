@@ -15,16 +15,21 @@ sequence.
    :hidden:
 
    /20190430_create_minimal_cloning_vector/*
-   /20190603_express_zif268_in_vitro/*
    /20190614_optimize_rbs/*
+   /20200424_optimize_repa_linker/*
+   /20190603_express_zif268_in_vitro/*
+   /20200108_express_mwasabi_repa_in_s30_lysate/*
+   /20200226_express_mwasabi_repa_with_nebexpress/*
+   /20200427_check_for_repa_aggregation_via_centrifugation/*
+   /20200421_visualize_plasmid_dna_in_s30_lysate_via_rna_digestion/*
+   /20200427_visualize_plasmid_dna_in_s30_lysate_via_blotting/*
+   /20190927_release_repa_with_heparin/*
    /20190625_purify_zif268_repa_via_reverse_his/*
    /20190626_purify_zif268_repa_via_ribosome_pull_down/*
    /20190626_purify_zif268_repa_via_rrna_digestion/*
    /20190711_purify_zif268_repa_via_affinity_tags/*
    /20190828_purify_zif268_via_imac/*
+   /20190723_confirm_zif268_emsa/*
    /20190627_confirm_cis_display_via_labeled_dna/*
    /20190723_confirm_cis_display_with_fluorescent_protein/*
-   /20190723_confirm_zif268_emsa/*
-   /20200108_express_mwasabi_repa_in_s30_lysate/*
-   /20200226_express_mwasabi_repa_with_nebexpress/*
 

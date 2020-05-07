@@ -1,0 +1,7 @@
+- Spin the reactions: 21000g, 1h, 4°C
+
+- If a pellet forms:
+  - Transfer supernatant to clean tube.
+  - Resuspend the pellet in 5 µL 1x PBS.
+
+  Otherwise, end the experiment.

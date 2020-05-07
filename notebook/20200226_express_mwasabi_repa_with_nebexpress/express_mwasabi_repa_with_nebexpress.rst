@@ -2,9 +2,10 @@
 Express mWasabi-repA with NEBexpress
 ************************************
 
-I want to try doing CIS-display using NEBExpress instead of Promega extract.  
-Overall the extracts are pretty similar, but there are some differences that 
-could be meaningful:
+I got a free sample of NEBExpress, so I want to try using it for CIS-display.  
+NEBExpress seems to be pretty similar to the Promega extract 
+(:expt:`20200108_express_mwasabi_repa_in_s30_lysate`), but there are a few 
+differences that could be meaningful:
 
 - NEBExpress uses a T7 promoter instead of a tac promoter.  
 
@@ -16,11 +17,8 @@ could be meaningful:
   expression with less template DNA.  Of course, it's also possible that NEB is 
   exaggerating its yield.
 
-- Rho factors should be present.  It's not clear how rho factor interacts with 
-  T7 RNAP, though.
-
-I will begin by testing expression, then I'll make all of my control templates 
-and see how well CIS-display works.
+My first step will be to test expression.  After that, then I'll make all of my 
+control templates and see how well CIS-display works.
 
 Results
 =======
@@ -56,20 +54,13 @@ Results
   
   I have some options, though:
 
-  - I could do a Southern blot.  In principle, this would allow me to label my 
-    plasmid specifically with Cy5.  I'm not sure how well it would work, 
-    though.
-
-  - I could treat with RNase.  This would hopefully remove enough of the 
-    contaminating nucleic acid (I don't think there will be any contaminating 
-    DNA) that I could find the plasmid by simple staining.
-
-  - I might be able to use GelRed.  GelRed is better excited by the UV lamp on 
-    the Gel Doc (300 nm) than GFP is.  GelRed also emits at higher wavelengths 
-    than GFP does, although I don't know what filter (if any) the Gel Doc uses.  
-    Likely there would still be some cross-talk, but with controls I might be 
-    able to see what's going on.
-
+  - I could do a Southern blot.  See 
+    :expt:`20200427_visualize_plasmid_dna_in_s30_lysate_via_blotting`.
+    
+  - I could remove most of the nucleic acid background by selectively 
+    digesting/degrading RNA.  See 
+    :expt:`20200421_visualize_plasmid_dna_in_s30_lysate_via_rna_digestion`.
+    
   - I could express the same mWasabi-repA fusions from two plasmids of 
     significantly different size (e.g. 3 kb vs 6 kb).  If the fusion is 
     successfully binding DNA, I should see the mWasabi bands shifted by 

@@ -60,6 +60,21 @@ in the original PURE system [Shimizu2001] is (50 μL for mass/quantity units):
 - 0.1 units pyrophosphatase (Sigma)
 - 0.5 μg T7 RNA polymerase
 
+PURExpress FAQs
+===============
+11. "For the control template DHFR, we estimate the ribosome recycled 5 times 
+    successfully."
+
+14. A T7 terminator is recommended even for linear templates, because it helps 
+    improve mRNA stability.
+
+Isoelectric points
+==================
+.. datatable:: 20190723_confirm_zif268_emsa/zif_pi.xlsx
+
+   Predicted isoelectric points (pI) from 
+   `https://web.expasy.org/compute_pi/`__.
+
 Nucleic acid stains
 ===================
 I decided to use GelGreen for all applications:

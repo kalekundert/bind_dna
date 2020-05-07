@@ -1,6 +1,6 @@
-***********************************
-Visualize plasmid DNA in S30 lysate
-***********************************
+*****************************************************
+Visualize plasmid DNA in S30 lysate via RNA digestion
+*****************************************************
 In my initial experiments (:expt:`20200108_express_mwasabi_repa_in_s30_lysate`, 
 :expt:`20200226_express_mwasabi_repa_with_nebexpress`), I've seen that S-30 
 expression lysates seem to degrade linear DNA templates.  One way to address 
@@ -14,17 +14,18 @@ visualize plasmid DNA.  Here I will experiment with different ways to do this:
   sufficiently bright against the background of any other nucleic acids (e.g. 
   ribosomes, tRNAs, etc.) in the lysate.
 
-- Digest RNA, either enzymatically or chemically, to reduce background signal.
+- Digest RNA, either enzymatically or chemically, to reduce background signal.  
+  This is based on the fact that most (if not all) of the background signal 
+  should come from RNAs, e.g. ribosomes, tRNAs, etc.  I don't think the lysate 
+  should have any DNA besides what I add.  Chemical digestion will likely 
+  denature any protein or DNA in the reaction, and so would only be useful for 
+  seeing whether or not the DNA survived, not whether it was bound by repA.
 
 - Southern blotting to specifically visualize my plasmid.
 
-
-.. todo::
-   - Southern blot controls
-      - lysate only
-      - pure plasmid
-      - 0h reaction
-      - 2-4h reaction
+This experiment will focus on the first two approaches.  See 
+:expt:`20200427_visualize_plasmid_dna_in_s30_lysate_via_blotting` for the 
+third.
 
 Considerations
 ==============
@@ -74,13 +75,15 @@ EDTA concentration
 ------------------
 [Miall1969]_ suggests that a ≈4x excess of EDTA will most effectively denature 
 the ribosome.  The PURE buffer, again assuming that it is representative, has 9 
-mM MgOAc and 0.5 mM CaCl₂.  That corresponds to an idea EDTA concentration of 
+mM MgOAc and 0.5 mM CaCl₂.  That corresponds to an ideal EDTA concentration of 
 38 mM.  I might round that up to 40 or 50 mM.
 
 Temperature
 -----------
-[Miall1969]_ suggests that the ribosome is 50% unfolded at 65°C in 0 mM EDTA, 
-and at 50°C with 10 mM EDTA.  
+[Miall1969]_ suggests that the ribosome is 50% unfolded at:
+
+- 65°C in 0 mM EDTA
+- 50°C in 10 mM EDTA.  
 
 `Sigma 
 <https://www.sigmaaldrich.com/life-science/metabolomics/enzyme-explorer/learning-center/nucleases.html>`__ 
@@ -92,3 +95,14 @@ claims that:
 I think it'd be best to do the reaction at 60°C, with EDTA to help loosen up 
 the ribosome.
 
+GelRed vs. GelGreen
+-------------------
+Normally I use GelGreen for staining nucleic acids, but in this case GelRed 
+might be better.  I prefer GelGreen because it is more excited by the blue 
+light used by the laser scanner.  In this experiment, though, I will also be 
+expressing mWasabi, which is indistinguishable from GelGreen in terms of 
+fluorescence.  It may still be hard to distinguish mWasabi and GelRed, but 
+GelRed should be much better excited by the UV lamp on the GelDoc (300 nm).  
+GelRed also emits at higher wavelengths than mWasabi, although I don't know 
+what filter (if any) the Gel Doc uses.  Likely there will still be some 
+cross-talk, but with controls I might be able to see what's going on.

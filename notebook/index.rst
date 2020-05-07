@@ -2,7 +2,6 @@ Design DNA-binding proteins
 ===========================
 
 .. toctree::
-   :maxdepth: 1
    :glob:
 
    ideas_and_feedback.rst

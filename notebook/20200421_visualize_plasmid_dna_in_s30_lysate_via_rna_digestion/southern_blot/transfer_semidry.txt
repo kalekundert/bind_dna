@@ -1,0 +1,67 @@
+- Transfer DNA to a membrane [1]:
+
+  - Soak the PAGE gel in transfer buffer [2] for 10 
+    min with gentle shaking.
+
+  - Soak a HyBond N+ membrane in transfer buffer [2] 
+    for 5 min.
+
+  - Briefly soak a 10 mm tall stack of blotting 
+    filter paper in transfer buffer [2].
+
+  - Assemble the transfer sandwich:
+
+    - cathode (−) plate
+    - blotting paper (5 mm, soaked)
+    - gel (soaked) [3]
+    - membrane (soaked)
+    - blotting paper (5 mm, soaked)
+    - anode (+) plate
+
+    Gently roll each layer to remove bubbles.
+
+  - Transfer at 10V for 30-60 min.
+
+- Denature and fix DNA [4]:
+
+  - Place the membrane DNA-side-up on 3 sheets of 
+    Whatman 3MM paper soaked in 400 mM NaOH.
+
+  - Incubate at room temperature for 10 min.
+
+  - Rinse membrane in 2x SSC.
+
+  - Place membrane on a sheet of Whatman 3MM paper 
+    to dry.
+
+  - Expose membrane to short-wave (254 nm) UV light 
+    for 30-300 sec [6].
+
+Footnotes:
+[1] The lab might have a different protocol 
+    established for semi-dry blotting, but this is 
+    the one recommended by Thermo for Novex gels: 
+
+    https://www.thermofisher.com/us/en/home/references/protocols/proteins-expression-isolation-and-analysis/western-blot-protocol/western-blotting-using-the-novex-semi-dry-blotter.html#semi
+
+[2] For Bolt SDS-PAGE gels, use 1x Bolt transfer 
+    buffer.  Different kinds of gels will need 
+    different transfer buffers.
+
+    Don't soak gel for longer than necessary to 
+    minimize diffusion of the DNA.
+
+[3] Do not disturb the gel once it has been placed 
+    on the membrane; the DNA begins transferring 
+    immediately and moving the gel can cause smears.
+
+[4] Brown (1998). doi:10.1002/0471140864.psa04gs13
+
+[5] The duration of UV exposure should be optimized 
+    using dot-blotted dilutions of DNA [3].  An 
+    alternative to UV crosslinking is to transfer 
+    onto a positively charged nylon membrane using 
+    an alkaline (rather than saline) buffer [3].  
+
+# vim: tw=52
+

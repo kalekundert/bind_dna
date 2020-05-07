@@ -1,0 +1,90 @@
+- Controls:
+
+  - lysate only
+  - pure plasmid
+  - 0h reaction
+  - 2-4h reaction
+
+  This is kinda a mini-timecourse...
+  Maybe I can drop the 0h reaction...
+
+- Run 1% agarose gel.
+
+  - Image to make sure the separation is good.
+
+- Transfer DNA to membrane [1]:
+
+  - Soak gel in 1.5 M NaCl, 0.5 M NaOH for 15-30 min.  
+    Rock gently.
+
+  - Soak gel in 3 M NaCl, 0.5 M Tris HCl (pH=7) for 
+    15-30 min.  Rock gently.
+
+  - Prepare the blot sandwich:
+
+    - weight (e.g. glass plate)
+    - stack of paper towels
+    - HyBond N+ membrane (nylon)
+    - gel
+    - soaked filter paper that dips into reservoir
+    - support holding sandwich above reservoir
+    - reservoir of 20x SSC
+
+  - Allow DNA to transfer for 3-16 h [2].
+
+  - Check that no DNA remains in the gel.
+
+  - Soak membrane in 2x SSC for 10-20 min.
+
+  - Fix the DNA by one of the following methods:
+
+    - Bake at 80°C for 2h in a vacuum oven.
+
+    - UV cross-link, e.g. using Stratalink.
+
+- Block the membrane [3]:
+
+  - Preheat ULTRAhyb-Oligo to 68°C
+
+  - Add enough ULTRAhyb-Oligo to keep the membrane 
+    uniformly wet (≈1 mL per 10 cm² membrane).
+  - Incubate at 42°C for 30 min.
+
+  - Add probe to a concentration of 1 nM [4,5].
+  - Incubate at 42°C for 14-24 h.
+
+  - Discard probe buffer.
+  - Repeat twice:
+    - Add 50 mL wash buffer: 2x SSC, 0.5% SDS
+    - Incubate at 42°C for 30 min.
+
+- Image with laser scanner.
+
+Footnotes:
+[1] Southern (2006). doi:10.1038/nprot.2006.73
+
+[2] The minimum time required for complete transfer 
+    depends on the size of the fragments and the gel 
+    concentration. For example, a period of 3 h is 
+    enough to transfer completely all HaeIII 
+    fragments of E. coli DNA (mostly <1kb) from 2% 
+    agarose gels 3 mm thick. But even after 20 h, 
+    transfer of large EcoRI fragments of mouse DNA 
+    from 9-mm-thick gels is not complete.
+
+[3] ULTRAhyb-Oligo manual.
+
+    This product is meant for hybridizing DNA probes 
+    to RNA, not DNA.  But I think it's better than 
+    using either Denhardt's solution (no nucleic acid 
+    blocking agents, e.g. ssDNA) or ULTRAhyb (not 
+    recommended for oligonucleotide probes).
+
+[4] Miller et al (2018). doi:10.1261/rna.068213.118
+
+[5] Make sure that the undiluted probe never touches 
+    the membrane directly.  If necessary, pour the 
+    blocking solution into a clean tube, add the 
+    oligo, mix, then pour back over the membrane.
+
+# vim: tw=53 ts=2 sts=2 sw=2

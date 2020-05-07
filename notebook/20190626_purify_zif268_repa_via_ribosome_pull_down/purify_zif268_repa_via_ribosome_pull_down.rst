@@ -39,7 +39,13 @@ Ribosome concentration
 
   Assuming that the regular PURExpress kit uses the same concentration of 
   ribosomes that NEB recommends for the Δ Ribosome kit, my 10 μL PURExpress 
-  reactions have 24 pmol (65 μg) of ribosomes.
+  reactions have 24 pmol (65 μg, 2.4 µM) of ribosomes.
+
+  .. update:: 2020/04/27
+
+     FAQ #7 in NEB's :download:`PURExpress FAQ <purexpress_faq.pdf>` states 
+     that the concentration of ribosomes in a standard PURExpress reaction is 2 
+     µM ± 20%.  This is pretty close to what I calculated.
 
 - The RiboMinus kit calls for 2-10 μg of total RNA.  Since ~80% of total RNA is 
   rRNA, thats ~2-8 μg of rRNA.  I expect my reactions to have ~8x that much 

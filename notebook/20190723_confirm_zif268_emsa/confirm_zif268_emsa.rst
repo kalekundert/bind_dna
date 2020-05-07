@@ -6,7 +6,7 @@ Because I've not seen my Zif268 target being bound by Zif268, I want to confirm
 that I'm doing the gel-shift assay correctly by performing it with Zif268 (not 
 fused to repA) purified (via reverse His6) from a PURExpress reaction.
 
-Methods
+Results
 =======
 
 Clone 35 --- 2019/08/20
@@ -263,7 +263,7 @@ reaction.
      .. datatable:: zif_pi.xlsx
 
          Predicted isoelectric points (pI) from 
-         https://web.expasy.org/compute_pi/
+         `https://web.expasy.org/compute_pi/`__
      
      This means that both Zif268 and Zif268-mWasabi should migrate upwards off 
      the top of the gel, unless bound to DNA (or something else with negative 
@@ -355,6 +355,13 @@ bind it's target, but I want to repeat that experiment with better controls.
   target band also becomes noticeably more diffuse than the non-target band, 
   which may reflect that the fusion itself doesn't run as a tight band.
 
+  .. note::
+
+    This result is different than I've seen previously, possibly because I did 
+    not use Coomassie during electrophoresis this time.  See 
+    :expt:`20190627_confirm_cis_display_via_labeled_dna` (EMSA — 2019/07/22) 
+    for more discussion of this.
+
 - The protein and target DNA bands are not superimposed.  This indicates that 
   the target DNA is in equilibrium between being bound and unbound, at least 
   until the protein and DNA are separated electrophoretically.
@@ -372,8 +379,8 @@ bind it's target, but I want to repeat that experiment with better controls.
   move on to my binding assay pretty soon.
 
 
-Results
-=======
+Discussion
+==========
 - The EMSA experiment seems to be working correctly.
 
 - Zif268 and Zif268-repA are functional.

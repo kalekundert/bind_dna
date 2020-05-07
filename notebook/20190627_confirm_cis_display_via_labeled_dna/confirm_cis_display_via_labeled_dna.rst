@@ -103,7 +103,7 @@ Troubleshooting
      BisTris and Tricine.
 
 
-Methods
+Results
 =======
 
 Amplify target --- 2019/07/19
@@ -380,8 +380,9 @@ EMSA --- 2019/07/22
 - I should also try the 4-16% gel, just the controls, to figure out how long I 
   need to run this gel to see all the relevant DNA bands.
 
-Results
-=======
+
+Discussion
+==========
 I think I tried to test too many things at once with this experiment.  It 
 doesn't seem that the target DNA is reliably reporting where the Zif268-repA 
 fusion is, and I'm not confident in the 11 - ORI control.  I'm going to try to 

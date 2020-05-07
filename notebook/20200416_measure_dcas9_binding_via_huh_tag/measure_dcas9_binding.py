@@ -29,6 +29,8 @@ p += f"""\
 Attach HUH-tagged DNA to the dCas9 RNP.
 
 {huh}
+
+- Incubate at 37°C for 15 min.
 """
 
 bal31 = MasterMix("""\

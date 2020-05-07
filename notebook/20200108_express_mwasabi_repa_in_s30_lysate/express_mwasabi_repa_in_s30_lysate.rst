@@ -2,11 +2,44 @@
 Express mWasabi-repA in S-30 lysate
 ***********************************
 
-As described in :expt:`20190723_confirm_cis_display_with_fluorescent_protein`, 
-I think that rho factor and native RNAP may be necessary for CIS-display.  To 
-test this, and to try adhering more closely to the protocol described by 
-[Odegrip2004]_, I'm going to use E. coli S-30 lysate to express mWasabi-repA 
-fusions.
+The CIS element has been repeatedly characterized as acting to pause RNAP 
+[Odegrip2004]_ [Praszkier1999]_ [Praszkier2000]_.  More specifically, 
+[Masai1988]_ details how the CIS sequence contains a Rho-dependent terminator.  
+The specific requirements of these terminators is unclear, but they are 
+generally understood to comprise an 80-100 bp C-rich region (the "rho 
+utilization site", RUT) followed by a transcriptional pause site.  Rho factor 
+(which is a helicase) binds in the C-rich region of the transcribed ssRNA and 
+eventually displaces RNAP.
+
+I used [DiSalvo2019]_ to search for putative rho-dependent terminators in the 
+CIS region.  Despite the simplistic nature of this algorithm, I found a 
+reasonable hit that corresponds with the major transcriptional stop site 
+identified by [Masai1988]_.  About 2/3 of this RUT actually occurs in repA, 
+which may explain why shuffling CIS does not have a strong effect 
+(:expt:`20190723_confirm_cis_display_with_fluorescent_protein`).
+
+If RNAP is failing to release from the DNA in my IVTT reactions (as 
+hypothesized in :expt:`20190723_confirm_cis_display_with_fluorescent_protein`), 
+the lack of Rho factor may be the reason.  There are a couple ways to add Rho 
+factor to the reaction:
+
+- Add purified Rho factor to PURExpress reactions.  Unfortunately, I was not 
+  able to find any companies selling purified Rho, so I would need to purify it 
+  myself.  I'd also have to play around with how much to use, because too much 
+  could easily cause problems.
+
+- Add DNA encoding the Rho gene to PURExpress reactions.  This is basically the 
+  same idea as above, but without needing any purification.  It would decrease 
+  the amount of amino acids etc. that are available for making the repA-fusion, 
+  so it wouldn't be a great choice for library-scale reaction, but it could be 
+  fine for troubleshooting.
+
+- Express my fusion in cell lysate rather than PURExpress.  The idea is that 
+  lysate will contain roughly the right amount of Rho factor.  [Odegrip2004]_ 
+  used cell lysate for expression, so this also stays closer to the published 
+  protocol.
+
+This experiment will explore the cell-lysate option.
 
 Considerations
 ==============
@@ -60,9 +93,10 @@ SL119 genotype
 --------------
 SL119 is the strain used by Promega to create their "E. coli S30 Extract System 
 for Linear Templates" (Promega L1030) kit.  It is also the strain recommended 
-for linear templates by [Lesley1995]_.  It is derived from the B strain (e.g.  
-in the same family as BL21, not in the same family as A19) and has the 
-following genotype [Lesley1995]_:
+for linear templates by [Lesley1995]_ and used for CIS-display by 
+[Odegrip2004]_.  It is derived from the B strain (e.g.  in the same family as 
+BL21, not in the same family as A19) and has the following genotype 
+[Lesley1995]_:
 
 - hsdS: Restriction enzymes
 - gal: Lower background for galactokinase assays (I think).

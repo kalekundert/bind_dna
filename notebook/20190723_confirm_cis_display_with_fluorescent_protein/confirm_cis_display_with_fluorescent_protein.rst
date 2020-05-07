@@ -29,6 +29,12 @@ Controls
    - Use TAA stop codon: consensus stop codon in E. coli, works with either RF1 
      or RF2.
 
+Buffer components
+-----------------
+repA has non-specific DNA-binding activity in low salt conditions (e.g. below 
+500 mM) [Giraldo1992]_, [Masai1987]_.  It may be prudent to add competitor DNA 
+to any assay with repA expression.
+
 Fluorescent proteins
 --------------------
 - Maturation time
@@ -475,7 +481,7 @@ EMSA --- 2019/09/16
   constructs with shuffled CIS (and ORI) sequences.
 
 - Reading the methods section from [Odegrip2004]_ again, I also realize that 
-  there may be somethings I could do to help release the template DNA from the 
+  there may be some things I could do to help release the template DNA from the 
   polymerase:
 
    - Use the tac promoter (hybrid of trp and lac promoters) with the E. coli 
@@ -486,20 +492,8 @@ EMSA --- 2019/09/16
      too tightly.
 
    - Dilute the IVTT reaction in the same blocking buffer described by 
-     [Odegrip2004]_:
-      
-      - 2-4% (w/v) Marvel: Marvel is a British brand of nonfat dried milk that 
-        some people think works the best for blotting.  This brand is not 
-        available in HCOM, but I think any nonfat dried milk would be fine.  I 
-        could also use BSA, which would probably be even better.
-      - 0.1 mg/mL herring sperm DNA: I already have salmon sperm DNA, which is 
-        probably fine.  In fact, it seems like herring sperm DNA is considered 
-        an older reagent, and salmon sperm DNA is its more modern alternative.
-      - 2.5 mg/mL heparin: This could be the important one; heparin occupies 
-        the DNA binding site in RNAP, preventing RNAP from binding to promoters 
-        and initiating transcription [Wikipedia].  It's conceivable that 
-        heparin could also help release RNAP from the CIS-sequence.
-      - TBS or PBS
+     [Odegrip2004]_.  See :expt:`20190927_release_repa_with_heparin` for more 
+     discussion.
 
 - It's worth noting that in the mWasabi-repA lane, the upper band is green 
   while the lower band is yellow.  In contrast, both bands are about the same 
@@ -658,152 +652,110 @@ to get cleaner PCR products, to make the results a little less ambiguous.
 
 .. figure:: 20191116_shuffle_rbs.svg
 
-- RNAP (and not the ribosome) appears to be responsible for shifting the DNA.  
-  The shuffled RBS control shows a clear shift, which indicates that the 
-  ribosome is not the cause of the shift.  Therefore it must be the polymerase, 
-  as no shift is seen for the shuffled T7 control.
+There are two main observations:
 
-- It's interesting that shuffling oriR seems to release the DNA even when it 
-  isn't translated (p58 vs. p56).  I wonder if this indicates that the shuffled 
-  sequence doesn't hold onto the polymerase while the unshuffled sequence does.  
-  For example, maybe oriR naturally stalls RNAP, but when oriR is shuffled, 
-  RNAP makes it all the way to the end and is released either by the T7 
-  terminator or the end of the DNA.
+- The T7 promoter, but not the RBS, is required to retard the DNA.
 
-  There's not really any evidence that repA is binding to oriR, because 
-  shuffling oriR doesn't change the distribution of mWasabi.
+- Shuffling oriR causes the DNA to be released.
 
-- Shuffling the CIS element causes about half of the DNA to be freed when repA 
-  is not expressed, but 
+From these observations, I still can't say whether or not CIS-display is 
+working, but I can make some (non-mutually exclusive) hypotheses:
 
-- In this experiment, the shuffled CIS constructs free different amount of 
+1. RNAP is not releasing from the DNA.
+
+   This hypothesis is supported by the fact the DNA is shifted even when the 
+   RBS is shuffled.  The intended effect of shuffling the RBS is that the 
+   ribosome won't bind the transcript and no protein will be expressed.  In 
+   this case, the only molecule capable of binding and retarding the DNA is the 
+   RNAP.  This is also consistent with the fact that the upper bands in every 
+   lane are shifted by about the same amount.
+
+   This still requires explaining why RNAP would fail to release from the DNA.  
+   The best explanation I can think of is that Rho-factor may be needed, since 
+   repA is believed to have a rho-dependent terminator.  See 
+   :expt:`20200108_express_mwasabi_repa_in_s30_lysate` for more discussion and 
+   experimentation on this topic.  It's worth noting here that oriR should not 
+   play a role in rho-dependent termination (the putative terminator starts 
+   towards the end or repA and ends in the CIS region), so this doesn't really 
+   explain why shuffling oriR would help release the DNA.
+
+2. repA is being expressed from a cryptic RBS.
+
+   The STOP codon I put between mWasabi and repA (p44, p58, p59) accidentally 
+   created a very strong RBS (i.e. ideal in 8/9 positions, no internal 
+   mismatches).  The nearest AUG is 114 bp away, much too far to be relevant, 
+   but translation can start at 47 of the 64 possible codons [Hecht2017]_.  In 
+   particular, there is an in-frame GCG codon 6 bp downstream of the RBS (5 bp 
+   would be ideal spacing).  GCG is the 18th strongest start codon: relatively 
+   weak, but still 10x above background (1000x below AUG) [Hecht2017]_.  
+   Especially in an in vitro reaction where only one protein per transcript 
+   needs to be expressed, that could very well be more than enough.
+
+   This could explain why the DNA shifts in the "+ Stop after GFP" lanes.  
+   Basically, repA is still being expressed and binding the DNA, unless the 
+   oriR sequence is shuffled.  The "shuffled RBS" lane is a little harder to 
+   explain, because that construct doesn't have a stop codon after mWasabi to 
+   create a strong RBS.  It still has "AGGAGG", though, which is a good RBS 
+   (i.e. ideal in 6/9 positions, no internal mismatches, described by 
+   `Wikipedia`__ as the "consensus" RBS sequence).  And as mentioned above, it 
+   may not take much expression to make 1 protein per transcript in the context 
+   of an in vitro reaction.
+
+   One observation that doesn't really fit with this hypothesis is that the DNA 
+   is shifted by about the same amount for every construct.  For example, the 
+   protein bands in the rightmost two lanes are both shifted by the same 
+   amount, despite the fact that the shuffled oriR lane appears not to be 
+   binding much DNA.  The DNA is large and charged, so I'd expect the 
+   protein/DNA complex to migrate much differently than the protein alone.  
+   Likewise, whether or not repA is fused to mWasabi (+/− stop codon lanes) 
+   doesn't seem to affect how the protein migrates.
+   
+   __ https://en.wikipedia.org/wiki/Ribosome-binding_site
+
+   .. todo::
+
+     - SDS-PAGE of stop-codon constructs, to see if I can see repA being 
+       expressed.  A negative result wouldn't be very informative, though, 
+       because the expression level could be very low.
+   
+3. Proteins are precipitating.
+
+   This is a way to explain why the retarded band runs about the same, no 
+   matter what components are shuffled.  It is also supported by the idea that 
+   the gel always seems to have a "ripple" (not visible in images) where the 
+   retarded DNA/protein bands are.  It makes me think that the protein and the 
+   DNA are just getting caught in a big aggregate and are not necessarily 
+   forming any specific interactions at all.  This is also consistent with the 
+   fact that I can't seem to purify these proteins.
+
+   Note that this hypothesis can't explain why the DNA would shift in the lanes 
+   that aren't supposed to have repA.  For that, it still has to rely on one of 
+   the above hypotheses.
+
+   .. note::
+
+      Does repA have disulfides?  It has 5 cysteines.  I couldn't find a 
+      structure of repA in the PDB, so I tried making a homology model using 
+      SWISS-MODEL.  (I don't know how good SWISS-MODEL is considered, but it's 
+      the first thing I found and I don't want to put too much time into this.)  
+      I don't trust the model much, because all of the homologs it found had 
+      short alignments and low identities, although many were DNA replication 
+      proteins with similar topologies.  I looked at one specific model.  It 
+      only included residues 90-178, and 3/5 cysteines.  None appeared to be 
+      forming disulfides.
+
+      [Odegrip2004]_ didn't add any oxidizing/reducing agents to their 
+      expression reactions, as far as I can tell, so I don't think I need to 
+      worry about this too much.
+
+I'm not sure which of the above explanations is better.  The RNAP hypothesis 
+better explains the shuffled RBS lane, while the cryptic RBS hypothesis better 
+explains the shuffled oriR lanes.
+
+Other observations:
+
+- In this experiment, the shuffled CIS constructs release different amounts of 
   template depending on whether repA is expressed.  This difference could be 
   interesting, but since the same constructs don't exhibit this behavior in the 
   2019/10/03 experiment, I don't want to read anything into it.
-
-- The CIS element has been repeatedly characterized as acting to pause RNAP 
-  [Odegrip2004]_ [Praszkier1999]_ [Praszkier2000]_.  More specifically, 
-  [Masai1988]_ details how the CIS sequence contains a Rho-dependent 
-  terminator.  The specific requirements of these terminators is unclear, but 
-  they are generally understood to comprise an 80-100 bp C-rich region (the 
-  "rho utilization site", RUT) followed by a transcriptional pause site.  Rho 
-  factor (which is a helicase) binds in the C-rich region of the transcribed 
-  ssRNA and eventually displaces RNAP.
-
-  I used [DiSalvo2019]_ to search for putative rho-dependent terminators in the 
-  CIS region.  Despite the simplistic nature of this algorithm, I found a 
-  reasonable hit that corresponds with the major transcriptional stop site 
-  identified by [Masai1988]_.  About 2/3 of this RUT actually occurs in repA, 
-  which may explain why shuffling CIS does not have a strong effect.
-
-  Without Rho in the reaction, it makes some sense that maybe RNAP gets stuck 
-  on the pause site and fails to release.  This doesn't explain why shuffling 
-  oriR seems to release RNAP, though.
-
-  It may be prudent to try adding Rho to my IVTT reactions, to see if this 
-  helps release my protein from the trancsription/translation machinery.  One 
-  way to do this would be to use real cell lysate (rather than PURExpress).  
-  Another way would be to add a Rho gene to my PURExpress reactions.  Rho 
-  doesn't need any cofactors other than ATP, so this should be enough to get 
-  Rho activity.
-
-  Interestingly, according to Wikipedia__, Rho is blocked by the ribosome but 
-  is capable of dislodging polymerase.  In the case of repA, this may be a way 
-  to make sure that repA has been completely translated (and therefore given a 
-  chance to bind oriR) before the polymerase is dislodged.
-
-  __ https://en.wikipedia.org/wiki/Rho_factor
-
-.. update:: 2020/01/09
-
-   I just realized that the STOP codon I put between mWasabi and repA (plasmids 
-   44, 58, 59) happens to create the RBS recommended by NEB (i.e. a good one).  
-   The nearest ORF starts 114 bp later, which far exceeds the ideal spacing of 
-   5-9 nt, but it is in frame with repA and includes all but the first 34 amino 
-   acids.  So it's possible (although still unlikely) that repA is being 
-   expressed in my STOP codon controls.
-
-   If I wanted to lock this down better, I'd have to shuffle/change the 
-   sequence of the not-expressed GS-linker.  The SD sequence translates to 
-   \*GG, so I'd need a different sequence to really avoid anything that looks 
-   like an SD.
-
-Heparin incubation --- 2019/09/27
----------------------------------
-.. protocol:: 20190927_purexpress.txt
-
-   See binder for PBS-MST recipe, incubation time, native PAGE parameters.
-
-.. figure:: 20190927_incubate_pbs_milk_ssdna_heparin.svg
-
-   MHS: diluted in PBS-MSH (M: skim milk, S: salmon sperm DNA, H: heparin) (+) 
-   or just PBS (−).  PURExpress: PURExpress IVTT reaction (+) or just DNA 
-   diluted in water (−).
-
-- PBS-MHS did affect the DNA and mWasabi-repA bands, but not in the way I 
-  expected.
-
-  It's informative to look at the mWasabi-STOP-repA control.  In this control, 
-  the repA domain is not expressed, so the DNA should run to the same place it 
-  does in the absence of PURExpress.  However, the DNA is retarded in the 
-  PURExpress reaction, consistent with RNAP failing to release from the DNA.  
-  Incubating with PBS-MSH retards the DNA even more, so much that it doesn't 
-  enter the gel.  This is not consistent with the DNA being released from RNAP, 
-  because then it should run the same as it does on its own (I already know 
-  that no components of the PURExpress reaction intrinsically retard DNA).  
-  However, I also can't conclude that something in PBS-MSH is retarding the DNA 
-  (e.g. the milk), the PBS-MSH − PURExpress control doesn't retard the DNA at 
-  all.  The only explanation I can think of is that the DNA isn't released, and 
-  that PBS-MSH is retarding the RNAP/DNA complex somehow.
-
-- I tried cleaning the glass surface of the gel imager with a microfiber cloth, 
-  but it seems to have left little fibers everywhere.  I read that microfiber 
-  is supposed to be better than kimwipes, but maybe not.
-
-Heparin incubation --- 2019/09/30
----------------------------------
-I'm suspicious that the skim milk is interfering with the gel, so I want to 
-repeat the incubation experiment for each buffer component individually.
-
-.. protocol:: 20190927_purexpress.txt
-
-   See binder for PBS-MST recipe, incubation time, native PAGE parameters.
-
-.. figure:: 20190930_incubation_buffer_components.svg
-
-- The smearing in the previous experiment was due to the milk.  Interestingly, 
-  this time I see the smearing in both the +/− PURExpress reactions, whereas 
-  last time I only saw it in the + PURExpress reactions.  Maybe I did something 
-  wrong?
-
-- Heparin and ssDNA both seem to free some DNA from the IVTT machinery (or 
-  whatever is running at the top of the gel).  Note the faint bands in the + 
-  PURExpress reactions at about the same MW as in the − PURExpress reactions.  
-  Since both heparin and ssDNA compete for non-specific DNA binding sites, this 
-  freeing effect is consistent with the DNA being bound by T7 RNAP.  Note also 
-  that the effect is stronger with both heparin and ssDNA.
-
-  However, the DNA freed by heparin and ssDNA either isn't bound to repA, or 
-  doesn't remain bound to repA.  In the mWasabi-repA reactions, all the GFP 
-  signal remains is the bands at the top of the gel.  The DNA that is released 
-  runs at the same MW as free DNA in the absence of PURExpress, there is no 
-  indication it is either bound or retarded by repA.
-
-- Heparin also has an interesting effect on the high molecular weight bands.  
-  First, it moves them higher up.  This may be a consequence of the fact that 
-  heparin is a polymer and crowding agent.  Second, it causes a significant 
-  amount of the mWasabi-repA fusion to never leave the well and to not 
-  associate with any DNA.  This could suggest that heparin is also disrupting 
-  the repA-DNA interaction.
-
-- Note that 0.8 µL of 75 nM template DNA is 4.5 pmol.  In 
-  :expt:`20190626_purify_zif268_repa_via_ribosome_pull_down`, I estimate that 
-  each of my 10 µL PURExpress reactions has 24 pmol ribosomes, so there should 
-  be an excess of ribosomes.  I'm not sure if there's an excess of polymerase.
-
-- MgOAc has an effect that's similar to heparin and ssDNA, but weaker.  
-  According to NEB, MgOAc helps dissociate the ribosome.
-
-I was hoping that this experiment would give me a way to separate the 
-repA-complex from the IVTT complex, but unfortunately I still don't see a way 
-to distinguish these two possibilities.
+  

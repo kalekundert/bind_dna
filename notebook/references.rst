@@ -1,6 +1,7 @@
 References
 ==========
 .. [Ando2010] :doi:`10.1073/pnas.1011354107`
+.. [Arai2001] :doi:`10.1093/protein/14.8.529`
 .. [Arai2020] :doi:`10.1007/978-1-4939-9853-1_3`
 .. [Ashworth2006] :doi:`10.1038/nature04818`
 .. [Barendt2013] :doi:`10.1021/co300135r`
@@ -8,6 +9,7 @@ References
 .. [Bulyk2001] :doi:`10.1073/pnas.111163698`
 .. [Butt2013] :doi:`10.1074/mcp.M112.021881`
 .. [Chen2013] :doi:`10.1038/nmeth.2515`
+.. [Chen2013b] :doi:`10.1016/j.addr.2012.09.039`
 .. [Choo1994] :doi:`10.1073/pnas.91.23.11163`
 .. [Crinelli2002] :doi:`10.1093/nar/30.11.2435`
 .. [Cote2008] :doi:`10.1016/j.virusres.2008.01.001`
@@ -24,7 +26,9 @@ References
 .. [Gray1975] :doi:`10.1093/nar/2.9.1459`
 .. [Gray1978] :doi:`10.1093/nar/5.5.1445`
 .. [Gu2014] :doi:`10.1038/nature13761`
+.. [Guilinger2014] :doi:`10.1038/nbt.2909`
 .. [Hawkins2018] :doi:`10.1073/pnas.1802640115`
+.. [Hecht2017] :doi:`10.1093/nar/gkx070`
 .. [Imburgio2000] :doi:`10.1021/bi000365w`
 .. [Iverson2016] :doi:`10.1021/acssynbio.5b00124`
 .. [Joung2000] :doi:`10.1073/pnas.110149297`
@@ -60,6 +64,7 @@ References
 .. [Putney1981] :doi:`10.1073/pnas.78.12.7350`
 .. [Rebar1994] :doi:`10.1126/science.8303274`.  Too old to access...
 .. [Reiersen2005] :doi:`10.1093/nar/gni010`
+.. [Rivera2015] :doi:`10.1101/pdb.prot081331`
 .. [Roberts1997] :doi:`10.1073/pnas.94.23.12297`
 .. [Roth2018] :doi:`10.1021/acs.nanolett.8b02093`
 .. [Seelig2011] :doi:`10.1038/nprot.2011.312`
@@ -71,6 +76,7 @@ References
 .. [Thyme2014] :doi:`10.1007/978-1-62703-968-0_17`
 .. [VegaRocha2007] :doi:`10.1016/j.jmb.2007.01.002`
 .. [Vorackova2011] :doi:`10.1016/j.pep.2011.04.022`
+.. [Waldo1999] :doi:`10.1038/10904`
 .. [Wang2012] :doi:`10.1007/978-1-61779-379-0_6`
 .. [Weber2011] :doi:`10.1371/journal.pone.0016765`
 .. [Wei1983] Wei CF, Alianell GA, Bencen GH, Gray Jr HB. Isolation and 
