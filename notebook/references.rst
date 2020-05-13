@@ -27,9 +27,11 @@ References
 .. [Gray1978] :doi:`10.1093/nar/5.5.1445`
 .. [Gu2014] :doi:`10.1038/nature13761`
 .. [Guilinger2014] :doi:`10.1038/nbt.2909`
+.. [Harley1987] :doi:`10.1093/nar/15.5.2343`
 .. [Hawkins2018] :doi:`10.1073/pnas.1802640115`
 .. [Hecht2017] :doi:`10.1093/nar/gkx070`
 .. [Imburgio2000] :doi:`10.1021/bi000365w`
+.. [Inouye1985] :doi:`10.1093/nar/13.9.3101`
 .. [Iverson2016] :doi:`10.1021/acssynbio.5b00124`
 .. [Joung2000] :doi:`10.1073/pnas.110149297`
 .. [Kimple2013] :doi:`10.1002/0471140864.ps0909s73`
@@ -57,6 +59,7 @@ References
 .. [Nakata2012] :doi:`10.1002/anie.201108199`
 .. [Newton2008] :doi:`10.2146/ajhp070138`
 .. [Nishigaki1998] :doi:`10.1023/A:1009644028931`
+.. [Noyes2008] :doi:`10.1093/nar/gkn048`
 .. [Odegrip2004] :doi:`10.1073/pnas.0400219101`
 .. [Olins1989] Olins and Ragwala. A novel sequence element derived from bacteriophage T7 mRNA acts as an enhancer of translation of the lacZ gene in Escherichia coli.  J. Biol. Chem. 264:29:16973-76 (1989).
 .. [Praszkier1999] Praszkier J and Pittard AJ.  Role of CIS in replication of an IncB plasmid.  J Bacteriol. 1999 May;181(9):2765-72.

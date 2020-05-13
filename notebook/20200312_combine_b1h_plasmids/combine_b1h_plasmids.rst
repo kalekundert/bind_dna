@@ -40,8 +40,8 @@ of unannotated sequences, it could be as small as ≈6 kb:
 This would be bigger than most of my plasmids, but not really outside the realm 
 of the ordinary.
 
-Expression levels
------------------
+Copy numbers
+------------
 Switching from 2 plasmids to 1 will affect expression levels of the B1H genes, 
 because the two plasmids have different copy numbers:
 
@@ -53,6 +53,75 @@ going to keep the pSC101 origin and "weak" lac HIS/URA promoter.  This may mean
 that I'll need to increase the expression level of the rpoA-fusion.  Hopefully 
 that would just mean adding more IPTG, but I'll cross that bridge when I come 
 to it.
+
+Promoters
+---------
+In [Noyes2008]_, the rpoZ fusion was expressed with three different promoters 
+(in order of decreasing strength):
+
+.. datatable:: promoters.xlsx
+
+- The lpp promoter is considered to be a very strong promoter.  It drives 
+  transcription of the gene encoding the outer membrane lipoprotein, the most 
+  abundant protein in E. coli [Inouye1985]_.  Furthermore, this version of the 
+  lpp promoter has 3 additional mutations that increase expression 4x.  Both 
+  promoters are regulated by the lac repressor.
+
+- `lacUV5 <https://en.wikipedia.org/wiki/LacUV5>`__ is a well-known and widely 
+  used promoter.  It is a mutated version of the lac promoter that better 
+  matches the -10 consensus sequence, and as a result gives higher expression.
+
+- lacUV5 is a mutated lacUV5 promoter that gives weaker expression. 
+
+From [Noyes2008]_:
+
+  "Surprisingly, omega–Zif268 constructs expressed with either the dual 
+  promoter or the lacUV5 promoter proved toxic.  However, for other factors 
+  (Paired, Hunchback and Giant) higher expression levels obtained using the 
+  stronger promoters were required to fully activate the reporter system."
+
+It's convenient that the weakest promoter was the best for Zif268 fusions.  
+Since I'll be expressing Zif268-rpoZ from a lower copy plasmid, it may be 
+necessary to use a stronger promoter.
+
+Ribosome binding sites
+----------------------
+The lpp-lacUV5 construct has a different 5' UTR than the lacUV5/lacUV5m 
+constructs do.  This includes a different RBS.  I didn't see any discussion of 
+this difference in [Noyes2008]_.  I analyzed mRNAs from both constructs using 
+the Salis lab `RBS Calculator <https://salislab.net/software/>`__ to better 
+understand what might have changed:
+
+.. datatable:: rbs.xlsx
+
+  TSS: The predicted transcription start site.  The coordinates count from the 
+  beginning of the lac operator, which is about where transcription should 
+  start [Harley1987]_, and are 0-indexed.  An asterisk (*) indicates the 
+  intended start site.  Translation Rate: Predicted by RBS Calculator.  In each 
+  case, the mRNA sequence I provided was from the beginning of the lac operator 
+  to the end of the rpoZ-fusion coding sequence.  The values are unitless, e.g.  
+  they are relative to each other and not on any absolute scale.  ΔG: Total 
+  Gibbs free energy change. ΔG mRNA:rRNA: free energy of the mRNA:rRNA complex.  
+  ΔG: penalty for non-optimal spacing.  ΔG stack: penalty for stacked 
+  nucleotides in the spacer region.  ΔG standby: penalty for ribosome binding 
+  to standby site.  ΔG start: free enrgy of the mRNA:tRNA complex.  ΔG mRNA: 
+  free energy of mRNA folding.  All ΔG values are in units of kcal/mol.
+
+- Neither RBS is predicted to be particularly strong.  In both cases, this is 
+  due the mRNA folding term, which presumably indicates that the mRNA folds in 
+  such a way that sequesters the RBS or the start codon.  This might be a known 
+  feature of the lac operon, although a quick search didn't turn up anything 
+  about it.  Note that the lac operator, which is right at the start of the 
+  mRNA, is understood to be where the lac repressor binds the DNA (not mRNA).  
+
+- Both constructs have stronger predicted TSSs downstream (and out-of-frame) of 
+  the intended TSS.  These TSSs actually have weaker RBSs, but much smaller 
+  mRNA folding penalties.
+
+It seems like I have room to dramatically increase expression of the rpoZ 
+fusions by using a better RBS.  That's good, because moving the fusion to a 
+lower-copy plasmid will reduce expression, and this gives me another knob to 
+compensate for that.
 
 Gene insulation
 ---------------
