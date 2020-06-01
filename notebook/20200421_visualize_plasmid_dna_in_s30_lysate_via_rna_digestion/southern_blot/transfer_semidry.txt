@@ -61,7 +61,9 @@ Footnotes:
     using dot-blotted dilutions of DNA [3].  An 
     alternative to UV crosslinking is to transfer 
     onto a positively charged nylon membrane using 
-    an alkaline (rather than saline) buffer [3].  
+    an alkaline (rather than saline) buffer [3], but 
+    "Amersham™ Hybond™-N+ is not suitable for alkali 
+    blotting and fixation".
 
 # vim: tw=52
 
