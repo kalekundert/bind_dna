@@ -1,0 +1,79 @@
+August 8, 2020
+
+$ stepwise rnasezap
+$ stepwise cdna/anneal_mrna_linker 6 f11 o93,o100,o130,o129,o127,o128
+$ stepwise cdna/ligate_linker_n 12 -P -M -v10 -x20
+$ stepwise gels/gel anneal 20
+
+1. Wipe down your bench and anything you'll touch 
+   (pipets, racks, pens, etc.) with RNaseZap.
+
+2. Setup 6 annealing reactions:
+
+   Reagent                       Stock   Volume      6.6x
+   ──────────────────────────────────────────────────────
+   water                                2.60 µL  17.16 µL
+   PBS                             10x  0.40 µL   2.64 µL
+   f11                           10 µM  0.50 µL
+   o93,o100,o130,o129,o127,o128  10 µM  0.50 µL
+   ──────────────────────────────────────────────────────
+                                        4.00 µL   3.00 µL/rxn
+
+3. Perform the annealing reactions:
+
+   - Incubate at 95°C for 2 min.
+   - Cool at room temperature.
+
+4. Setup 12 ligation reactions:
+
+   Reagent                 Stock    Volume     14.4x
+   ─────────────────────────────────────────────────
+   water                           6.88 µL  99.00 µL
+   BSA                      0.1%   1.00 µL  14.40 µL
+   T4 DNA ligase buffer      10x   1.00 µL  14.40 µL
+   T4 RNA ligase         40 U/µL   0.12 µL
+   annealed mRNA/linker  1.25 µM   1.00 µL
+   ─────────────────────────────────────────────────
+                                  10.00 µL   8.88 µL/rxn
+
+5. Incubate the ligation reactions as follows:
+
+   - 25°C for 10 min.
+   - 65°C for 10 min.
+
+6. Prepare samples for TBE/urea PAGE:
+
+   Reagent                       Stock    Volume        30x
+   ────────────────────────────────────────────────────────
+   water                                 4.00 µL  120.00 µL
+   formamide loading buffer         2x   5.00 µL  150.00 µL
+   sample                    200 ng/µL   1.00 µL
+   ────────────────────────────────────────────────────────
+                                        10.00 µL    9.00 µL/rxn
+
+   - Incubate at 70°C for 3 min.
+
+7. Run a gel:
+
+   - Use a 6% TBE/urea PAGE gel.
+   - Load 10 µL of each sample.
+   - Run at 180V for 40 min.
+
+8. Stain gel with GelGreen:
+
+   - Submerge gel in ≈50 mL 3x GelGreen [1].
+   - Shake gently for 30 min.
+
+9. Image with a laser scanner:
+
+   lasers:   488 nm   658 nm
+   filters:  518BP22  710BP40
+
+Note:
+[1] Including 100 mM NaCl in the staining solution 
+    enhances sensitivity, but may promote dye 
+    precipitation if the gel stain is reused.
+
+    Staining solution can be reused at least 2-3x.
+    Store staining solution at room temperature
+    protected from light.

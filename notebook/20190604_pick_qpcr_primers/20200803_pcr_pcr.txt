@@ -1,0 +1,56 @@
+August 3, 2020
+
+$ stepwise pcr p59 o87 o88 8 -a 59-70 -x 10 -m dna,primers -p ssoadv
+$ stepwise pcr p59 o87 o88 8 -v 66 -a 'Ta above/below peak' -x 10 -m dna,primers -p ssoadv
+
+1. Setup 8 qPCR reactions [1]:
+
+   Reagent                Stock    Volume      8.8x
+   ────────────────────────────────────────────────
+   water                          8.80 µL  77.44 µL
+   p59                            1.00 µL   8.80 µL
+   o87                   100 µM   0.10 µL   0.88 µL
+   o88                   100 µM   0.10 µL   0.88 µL
+   SsoAdvanced supermix      2x  10.00 µL  88.00 µL
+   ────────────────────────────────────────────────
+                                 20.00 µL  20.00 µL/rxn
+
+   - Use any extra master mix as a negative control.
+
+2. Run the following thermocycler protocol:
+
+   - 95°C for 30s
+   - Repeat 40x:
+     - 95°C for 10s
+     - 59-70°C for 15s
+     - Measure fluorescence
+   - 65-95°C in 5s steps of 0.5°C
+     - Measure fluorescence
+
+3. Setup 8 qPCR reactions [1]:
+
+   Reagent                Stock    Volume       8.8x
+   ─────────────────────────────────────────────────
+   water                         29.04 µL  255.55 µL
+   p59                            3.30 µL   29.04 µL
+   o87                   100 µM   0.33 µL    2.90 µL
+   o88                   100 µM   0.33 µL    2.90 µL
+   SsoAdvanced supermix      2x  33.00 µL  290.40 µL
+   ─────────────────────────────────────────────────
+                                 66.00 µL   66.00 µL/rxn
+
+   - Use any extra master mix as a negative control.
+
+4. Run the following thermocycler protocol:
+
+   - 95°C for 30s
+   - Repeat 40x:
+     - 95°C for 10s
+     - Ta above/below peak for 15s
+     - Measure fluorescence
+   - 65-95°C in 5s steps of 0.5°C
+     - Measure fluorescence
+
+Note:
+[1] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol

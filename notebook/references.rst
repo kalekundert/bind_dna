@@ -81,6 +81,7 @@ References
 .. [Vorackova2011] :doi:`10.1016/j.pep.2011.04.022`
 .. [Waldo1999] :doi:`10.1038/10904`
 .. [Wang2012] :doi:`10.1007/978-1-61779-379-0_6`
+.. [Wang2014] :doi:`10.5620/eht.2014.29.e2014007`
 .. [Weber2011] :doi:`10.1371/journal.pone.0016765`
 .. [Wei1983] Wei CF, Alianell GA, Bencen GH, Gray Jr HB. Isolation and 
    comparison of two molecular species of the BAL 31 nuclease from 

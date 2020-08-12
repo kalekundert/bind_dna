@@ -1,0 +1,42 @@
+August 7, 2020
+
+$ stepwise gels/gel ureaform 4 -S -c 1000
+$ stepwise gels/gelgreen -I
+$ stepwise gels/laser_scanner blue red
+
+1. Prepare samples for TBE/urea PAGE:
+
+   Reagent                        Stock    Volume        6x
+   ────────────────────────────────────────────────────────
+   water                                  4.80 µL  28.80 µL
+   formamide loading buffer          2x   5.00 µL  30.00 µL
+   sample                    1000 ng/µL   0.20 µL
+   ────────────────────────────────────────────────────────
+                                         10.00 µL   9.80 µL/rxn
+
+   - Incubate at 70°C for 3 min.
+
+2. Run a gel:
+
+   - Use a 6% TBE/urea PAGE gel.
+   - Load 10 µL of each sample.
+   - Run at 180V for 40 min.
+
+3. Stain gel with GelGreen:
+
+   - Submerge gel in ≈50 mL 3x GelGreen [1].
+   - Shake gently for 30 min.
+
+4. Image with a laser scanner:
+
+   lasers:   488 nm   658 nm
+   filters:  518BP22  710BP40
+
+Note:
+[1] Including 100 mM NaCl in the staining solution 
+    enhances sensitivity, but may promote dye 
+    precipitation if the gel stain is reused.
+
+    Staining solution can be reused at least 2-3x.
+    Store staining solution at room temperature
+    protected from light.

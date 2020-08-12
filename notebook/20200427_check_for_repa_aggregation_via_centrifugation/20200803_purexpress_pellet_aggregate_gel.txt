@@ -1,0 +1,55 @@
+August 3, 2020
+
+$ stepwise purexpress p27,p43 -v5
+$ stepwise pellet_aggregate
+$ stepwise gels/gel sds 4 -v5 -s 'laser blue'
+
+1. Setup 2 PURExpress reactions:
+
+   Reagent            Stock   Volume     2.2x
+   ──────────────────────────────────────────
+   water                     1.00 µL  2.20 µL
+   A                         2.00 µL  4.40 µL
+   B                         1.50 µL  3.30 µL
+   RNase Inhibitor  40 U/µL  0.10 µL  0.22 µL
+   p27,p43            75 nM  0.40 µL
+   ──────────────────────────────────────────
+                             5.00 µL  4.60 µL/rxn
+
+   - Keep on ice.
+   - Be sure to add A before B.
+   - The control template (125 ng/µL) is 75 nM.
+
+2. Incubate at 37°C for 2h.
+
+3. Spin the reactions: 21000g, 1h, 4°C
+
+4. If a pellet forms:
+   - Transfer supernatant to clean tube.
+   - Resuspend the pellet in 5 µL 1x PBS.
+
+   Otherwise, end the experiment.
+
+5. Prepare samples for SDS PAGE:
+
+   Reagent                     Stock    Volume        6x
+   ─────────────────────────────────────────────────────
+   water                               1.50 µL   9.00 µL
+   Bolt LDS sample buffer         4x   2.50 µL  15.00 µL
+   Bolt reducing agent           10x   1.00 µL   6.00 µL
+   sample                  100 ng/µL   5.00 µL
+   ─────────────────────────────────────────────────────
+                                      10.00 µL   5.00 µL/rxn
+
+   - Incubate at 70°C for 10 min.
+
+6. Run a gel:
+
+   - Use a 4−12% SDS PAGE gel.
+   - Load 10 µL of each sample.
+   - Run at 165V for 42 min.
+
+7. Image with a laser scanner:
+
+   laser:   488 nm
+   filter:  518BP22

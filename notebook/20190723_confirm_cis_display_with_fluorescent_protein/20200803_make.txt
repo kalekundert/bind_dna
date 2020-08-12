@@ -1,0 +1,69 @@
+August 3, 2020
+
+$ stepwise make f47 f48 p153
+
+1. Prepare 10x primer mix [1]:
+
+   Reagent     Stock    Volume
+   ───────────────────────────
+   water               9.00 µL
+   o136,o138  100 µM   0.50 µL
+   o137,o139  100 µM   0.50 µL
+   ───────────────────────────
+                      10.00 µL
+
+2. Setup 2 PCR reactions [2]:
+
+   Reagent           Stock    Volume        3x
+   ───────────────────────────────────────────
+   water                     3.00 µL   9.00 µL
+   p27            20 pg/µL   1.00 µL   3.00 µL
+   primer mix          10x   1.00 µL
+   Q5 master mix        2x   5.00 µL  15.00 µL
+   ───────────────────────────────────────────
+                            10.00 µL   9.00 µL/rxn
+
+   - Use any extra master mix as a negative control.
+
+3. Run the following thermocycler protocol:
+
+   - 98°C for 30s
+   - Repeat 35x:
+     - 98°C for 10s
+     - 64,61°C for 20s
+     - 72°C for 1m30
+   - 72°C for 2 min
+
+4. Label the products: f47,f48
+
+5. Setup the Golden Gate reaction [3]:
+
+   Reagent              Stock   Volume
+   ───────────────────────────────────
+   water                       2.14 µL
+   f47               50 ng/µL  0.36 µL
+   f48               50 ng/µL  0.81 µL
+   f49               50 ng/µL  0.94 µL
+   T4 ligase buffer       10x  0.50 µL
+   T4 DNA ligase     400 U/µL  0.12 µL
+   BsaI-HFv2          20 U/µL  0.12 µL
+   ───────────────────────────────────
+                               5.00 µL
+
+6. Run the following thermocycler protocol:
+
+   - 37°C for 60 min
+   - 60°C for 5 min
+
+7. Transform 2 µL.
+
+8. Label the product: p153
+
+Notes:
+[1] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol
+
+[2] For diluting template DNA to 20 pg/µL:
+    Dilute 1 µL twice into 7*sqrt([DNA]) µL
+
+[3] https://preview.tinyurl.com/yaa5mqz5

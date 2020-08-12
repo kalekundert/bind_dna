@@ -9,12 +9,13 @@ non-target bait plasmids.
 
 .. todo::
 
-   - Make NM plates ([3-AT]: 0, 1, 2, 4 mM)
-   - Make chemically competent cells
-   - Transform, grow on LB + Kan + Amp
-   - Pick colony, grow to ~OD 1
-   - Wash
-   - Plate dilutions
+  - Make NM plates ([3-AT]: 0, 1, 2, 4 mM)
+  - Make chemically competent cells
+  - Transform p166+p167 (+ control), p166+p168 (− control)
+    - Recover: LB + Kan + Amp
+  - Pick colony, grow to ~OD 1
+  - Wash
+  - Plate dilutions
 
 
-   
+

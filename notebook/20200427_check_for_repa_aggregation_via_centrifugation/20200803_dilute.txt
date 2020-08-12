@@ -1,0 +1,16 @@
+August 3, 2020
+
+$ stepwise dilute p27,p43 257,150 -c 75 -v10
+
+1. Dilute the purified DNA to 75.00 nM [1]:
+
+      tag  stock_uL  water_uL
+   0  p27      6.94      3.06
+   1  p43      8.01      1.99
+
+Note:
+[1] Concentrations:
+
+       tag     mw_da  stock_ng_uL  stock_nM  final_nM
+    0  p27  2.38e+06        257.0    108.03        75
+    1  p43  1.60e+06        150.0     93.63        75

@@ -758,4 +758,50 @@ Other observations:
   template depending on whether repA is expressed.  This difference could be 
   interesting, but since the same constructs don't exhibit this behavior in the 
   2019/10/03 experiment, I don't want to read anything into it.
-  
+
+Cloning --- 2020/06/07
+----------------------
+To address concerns about functional sequences in the shuffled genes, I 
+designed a new set of plasmids that delete (rather than shuffle) regions of 
+interest.  The length of each deletion construct is kept constant by adding a 
+corresponding amount of a buffer sequence (a random sequence designed as best 
+as possible to be inert) the 5' end of the construct::
+
+  $ ./design deletion_plasmids.py
+
+2020/08/03:
+
+.. protocol:: 20200803_make.txt
+
+2020/08/11:
+
+I got lots of colonies for my p153 assembly, but the sequencing didn't work 
+well.  In particular, 3/4 picks had only very short reads, and none of the 
+picks could be sequenced at all using the o165 primer.  Before I try the 
+assembly again, I want to try quickly checking many a bunch of colonies via 
+PCR.  
+
+The assembly has three fragments:
+
+- AmpR+ORI
+- mWasabi-repA
+- buffer
+
+I don't need to check for the AmpR+ORI fragment, because I know the cells can 
+grow on selective media.  I can test for the other two fragments with a fairly 
+short amplicon.  Specifically, I'll use o173 and o165 to amplify 970 bp 
+spanning the junction between the two fragments of interest.  
+
+.. note::
+   
+   I chose o165 because I'd like to use it as a sequencing primer.  I chose 
+   o173 because it was pointing the the right direction and doesn't have any 
+   mismatches (a lot of the primers I have on hand are designed for 
+   mutagenesis).
+
+.. figure:: 20200811_p153_colony_pcr.tif
+
+Every colony I picked seemed to have a complete assembly.  This makes me think 
+that there's a problem with sequencing.  Maybe 0165 just isn't a good primer 
+(e.g. Tm too high), or maybe Genewiz fucked up.  I think I'll try miniprepping 
+and sequencing a few of the picks from the colony PCR.

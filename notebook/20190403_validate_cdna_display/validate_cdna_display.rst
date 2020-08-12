@@ -28,6 +28,7 @@ linker.  I'm mostly intending to follow the cDNA-display protocol from
    /20191220_ligate_linker_n_via_kitamura2002/*
    /20200129_ligate_with_5_phosphorylation/*
    /20200213_ligate_linker_n_with_optimized_conditions/*
+   /20200807_ligate_clicked_linkers/*
    /20200224_express_mrna_via_purexpress/*
    /20191220_express_zif268_via_naimudden2016/*
 

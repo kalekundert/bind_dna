@@ -261,3 +261,118 @@ nucleotide in the mRNA.  This means that I have to do one of two things:
 My plan is to move the branch point and extend the primer.  I'm already 
 changing a bunch of things about the linker, so there's not much point in going 
 out of my way to keep this detail identical.
+
+
+Results
+=======
+
+Optimize reaction time --- 2020/08/03
+--------------------------------------
+.. protocol:: 20200803_optimize_click_time.txt
+
+.. figure:: 20200804_click_linker_488_658.svg
+
+I wrote a custom script to quantify how far each reaction progressed, because 
+the bands overlapped enough that I didn't think it would be accurate to do it 
+by hand.  The script just attempts to fit a Gaussian to each peak, then 
+compares the area under the two curves::
+
+  $ ./fit_bands.py
+
+.. figure:: 20200804_click_linker_658_plots.svg
+
+  blue: pixel intensity curves from ImageJ.  orange, green: Gaussian curves fit 
+  to individual bands.  red: Sum of orange and green curves.  The red line 
+  should match the blue line as well as possible.
+
+- The coupling reactions seem to work pretty well, going to about 90% 
+  completion overnight.  The reaction seems to be complete after just 4h, so 
+  that's the time I'll use going forward.  For comparison, Fitzy incubates her 
+  Cu-free click reactions for 2h, so I'm in the same ballpark.
+
+- In the future, it might be better to use PAGE instead of 2% agarose gels to 
+  better resolve the coupled and uncoupled species.  That said, I think I was 
+  able to resolve the peaks pretty well with my script.
+
+- I think that the SYBR Gold signal is being quenched by Cy5 in the "coupled" 
+  bands.  Cy3 and Cy5 are a common FRET pair, and SYBR Gold has a similar 
+  emission spectrum to Cy3.  (I don't think GelGreen would have this problem, 
+  which is another argument for running PAGE gels.)  It'd be nice if I could 
+  use the blue laser with the Cy5 filter to actually see the FRET.  I think 
+  there might be a way to do this with the Typhoon...
+
+  In short, I'm not going to read too much into the green bands disappearing 
+  (other than that the pattern of intensities is consistent with the reaction 
+  going to completion).
+
+  .. update:: 2020/08/07
+
+    Maybe I shouldn've used the green laser (520 nm) to image SYBR Gold.
+
+Synthesize o128 --- 2020/08/07
+------------------------------
+I used the same protocol as above to synthesize o128, which includes Spacer18 
+phosphoramidites in the puromycin arm in the same manner as Linker-N (o130).  I 
+don't think that the Spacer18 phosphoramidites will be helpful (see 
+considerations above), but it's still worth trying.
+
+.. protocol:: 20200807_gel_gelgreen_laser_scanner.txt
+
+  - Mix the following reagents
+
+    - 1 µL 400 µM o125
+    - 1 µL 400 µM o127
+    - 2 µL 2x PBS
+
+  - Incubate at room temperature, in the dark, overnight
+
+.. figure:: 20200807_check_o128.svg
+
+.. datatable:: 20200807_check_o128.xlsx
+
+- I incubated the reaction overnight purely because that worked best with my 
+  schedule.  As shown above, I think a 4h incubation is enough.
+
+- The o129 reaction seemed to proceed just as well as the o128 reaction.
+
+- Staining the DNA with GelGreen allows me to see the product band in both 
+  channels.  I think I just have to avoid using Cy5 and SYBR Gold together.
+
+- The GelGreen signal in this gel was pretty faint (the above figure is 
+  white-balanced, which hides this to an extent).  Some possible explanations:
+  
+  - I was reusing a solution of 3x GelGreen from before the COVID shutdown (so 
+    ~5 months old).
+
+  - These oligos are ssDNA, which is not bound as well by GelGreen.
+
+  I think the old dye is the most likely culprit.
+
+- The differences between the Cy5 and GelGreen channels are interesting:
+
+  - In the Cy5 channel, both reactions appear to go to 90% completion, in 
+    agreement with what I observed previously.
+
+  - In the GelGreen channel, the o128 reaction appears to go to 90% completion 
+    (in agreement with the Cy5 channel), while the o129 reaction only goes to 
+    50%.
+
+  I don't know why the o129 reaction doesn't appear to go to completion in the 
+  GelGreen channel.  Perhaps the reason is just that the GelGreen signal is too 
+  faint, although normally even faint signals are pretty reliable.
+
+  I'm not too worried about the discrepency, though, because I think the Cy5 
+  channel is more reliable.  It's brighter, and I know that each puromycin arm 
+  oligo has exactly one Cy5 fluorophore.
+  
+- The puromycin arm seems to have a small amount of slow-running (e.g. high-MW 
+  or less-charged) contaminant.  This is visible in each lane with a puromycin 
+  arm.  The contaminant seems to have the 5' DBCO, though, because it is 
+  shifted in the presence of the anneal/RT arm.
+
+- I'm pretty sure that the formamide ruined the ladder.  Not a big problem, 
+  though; I still know what all the bands are.  If I really care, I could use 
+  an ssRNA or ssDNA ladder in the future.
+
+- It's weird that the ladder is visible at all in the Cy5 channel.  Presumably 
+  that's due to some sort of crosstalk.

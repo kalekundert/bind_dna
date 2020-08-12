@@ -715,3 +715,25 @@ Marcus Noyes, via skype:
 
 - If I get both the in vitro and B1H assays working, the best way to use them 
   together might be to use the in vitro assay to pre-screen for the B1H assay.
+
+2020/07/28:
+
+From this line in the abstract of [Rohs2010]_:
+
+   Specificity that distinguishes between families frequently involves base 
+   readout in the major groove while shape readout is often exploited for 
+   higher resolution specificity, to distinguish between members within the 
+   same DNA-binding protein family.
+
+ 
+It makes sense to me that members of the same  fold family would make a 
+consistent set of contacts in the major/minor groove.  It also makes sense that 
+the larger context of the DNA binding domain (which could differ between family 
+members) could affect shape readout.
+
+What are the implications for recombinases?  It's unlikely that we'll be able 
+to significantly change shape readout, because DNA bending is an intrinsic part 
+of the mechanism.  Likewise, my DNA-binding domain assay will probably only 
+probe base readout.  I can't think of a good way to vary shape readout in 
+design, off the top of my head.  Base readout is more approachable, and perhaps 
+more relevant to the general problem of interface design.

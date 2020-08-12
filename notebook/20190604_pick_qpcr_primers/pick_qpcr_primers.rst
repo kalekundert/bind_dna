@@ -77,3 +77,23 @@ actual qPCR machine.
    Intensity of the amplified product band for each primer pair, as measured by 
    ImageJ in units of pixels.
 
+2020/08/03:
+
+.. protocol:: 20200803_pcr_pcr.txt
+
+    - Repeats steps 1-2 for 52–62°C.
+
+.. figure:: 20200803_optimize_ta.svg
+
+- I think something is going wrong here, but I don't know what.  It seems like 
+  every experiment produces the same basic trend—with the best :math:`C_q` 
+  values at the lowest temperatures—regardless of which temperatures were 
+  actually used.  It seems unlikely that the ideal annealing temperature is 
+  below 52°C.  Some ideas:
+  
+  - I'm somehow not updating the gradient right.  I don't think this is it, 
+    though, because I can open each data file on the qPCR machine and see the 
+    right temperatures.
+
+  - There's some bias going on, e.g. the seal isn't tight, something about the 
+    order I'm pipetting in (I've been going from bottom to top), something.
