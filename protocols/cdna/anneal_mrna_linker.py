@@ -4,7 +4,7 @@
 Anneal linker-N and mRNA prior to ligation.
 
 Usage:
-    anneal <n> [<mrna>] [<linker>] [-v <µL>] [-m <reagents>]
+    anneal <n> [<mrna>] [<linker>] [-v <µL>] [-m <reagents>] [-L <conc>]
 
 Arguments:
     <n>
@@ -24,6 +24,12 @@ Options:
         The reagents to include in the master mix.  The following reagents are 
         understood: 'mrna' and 'link'.  To specify both reagents, separate the 
         two names with a comma.
+
+    -L --linker-stock <conc>
+        The stock concentration of the linker.  Note that this setting does not 
+        change the volume of the reaction, so it does change the amount of 
+        linker in the reaction.  Not unit is assumed; the unit should be 
+        specified.
 """
 
 import stepwise, docopt
@@ -48,6 +54,8 @@ anneal['linker'].master_mix = 'link' in args['--master-mix']
 if args['<mrna>']: anneal['mRNA'].name = args['<mrna>']
 if args['<linker>']: anneal['linker'].name = args['<linker>']
 
+if args['--linker-stock']:
+    anneal['linker'].stock_conc = args['--linker-stock']
 
 protocol = stepwise.Protocol()
 
