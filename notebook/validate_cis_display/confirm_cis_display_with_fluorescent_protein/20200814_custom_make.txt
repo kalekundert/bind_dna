@@ -1,0 +1,32 @@
+August 14, 2020
+
+$ stepwise custom 'Purify f47,f48 using silica spin-columns'
+$ stepwise make p153
+
+1. Purify f47,f48 using silica spin-columns
+
+2. Setup the Golden Gate reaction [1]:
+
+   Reagent              Stock   Volume
+   ───────────────────────────────────
+   water                       2.14 µL
+   f47               50 ng/µL  0.36 µL
+   f48               50 ng/µL  0.81 µL
+   f49               50 ng/µL  0.94 µL
+   T4 ligase buffer       10x  0.50 µL
+   T4 DNA ligase     400 U/µL  0.12 µL
+   BsaI-HFv2          20 U/µL  0.12 µL
+   ───────────────────────────────────
+                               5.00 µL
+
+3. Run the following thermocycler protocol:
+
+   - 37°C for 60 min
+   - 60°C for 5 min
+
+4. Transform 2 µL.
+
+5. Label the product: p153
+
+Note:
+[1] https://preview.tinyurl.com/yaa5mqz5

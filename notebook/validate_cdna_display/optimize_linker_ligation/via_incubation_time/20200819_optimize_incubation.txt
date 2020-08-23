@@ -1,0 +1,81 @@
+August 19, 2020
+
+$ stepwise optimize_incubation
+
+ 1. Wipe down your bench and anything you'll touch 
+    (pipets, racks, pens, etc.) with RNaseZap.
+
+ 2. Setup 1 annealing reaction:
+
+    Reagent  Stock   Volume
+    ───────────────────────
+    water           2.60 µL
+    PBS        10x  0.40 µL
+    f11      10 µM  0.50 µL
+    o129     10 µM  0.50 µL
+    ───────────────────────
+                    4.00 µL
+
+ 3. Perform the annealing reaction:
+
+    - Incubate at 95°C for 2 min.
+    - Cool at room temperature.
+
+ 4. Setup 7 ligation reactions:
+
+    Reagent                 Stock   Volume      7.7x
+    ────────────────────────────────────────────────
+    water                          3.03 µL  23.29 µL
+    T4 DNA ligase buffer      10x  0.44 µL   3.39 µL
+    BSA                      0.1%  0.44 µL   3.39 µL
+    T4 RNA ligase         40 U/µL  0.06 µL   0.42 µL
+    annealed mRNA/linker  1.25 µM  0.44 µL   3.39 µL
+    ────────────────────────────────────────────────
+                                   4.40 µL   4.40 µL/rxn
+
+ 5. Incubate the ligation reactions as follows:
+
+    - 16°C, 25°C for 0 min, 10 min, 2h, 16h.
+
+ 6. When each timepoint is reached, quench the
+    corresponding reactions as follows:
+
+    - Add 0.2 µL 500 mM EDTA
+    - Freeze at -20°C
+
+ 7. Prepare samples for TBE/urea PAGE:
+
+    Reagent                    Stock    Volume     10.5x
+    ────────────────────────────────────────────────────
+    formamide loading buffer      2x   5.00 µL  52.50 µL
+    o194                      100 µM   0.56 µL   5.88 µL
+    sample                    125 nM   4.44 µL
+    ────────────────────────────────────────────────────
+                                      10.00 µL   5.56 µL/rxn
+
+    - Incubate at 70°C for 3 min.
+
+ 8. Run a gel:
+
+    - Use a 6% TBE/urea PAGE gel.
+    - Load 10 µL of each sample.
+    - Run at 180V for 40 min.
+
+ 9. Stain gel with GelGreen:
+
+    - Submerge gel in ≈50 mL 3x GelGreen [1].
+    - Shake gently for 30 min.
+
+10. Image with a laser scanner:
+
+    lasers:   488 nm   658 nm
+    filters:  518BP22  710BP40
+
+Note:
+[1] Including 100 mM NaCl in the staining solution 
+    enhances sensitivity, but may promote dye 
+    precipitation if the gel stain is reused.
+
+    Staining solution can be reused at least 2-3x.
+    Store staining solution at room temperature
+    protected from light.

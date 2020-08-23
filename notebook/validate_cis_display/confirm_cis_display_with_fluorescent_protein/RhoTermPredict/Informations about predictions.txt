@@ -1,0 +1,294 @@
+Sequences of predicted Rho-dependent terminators
+
+
+PREDICTED REGION NUMBER 1 (STRAND POSITIVE) 
+
+Genomic sequence of putative RUT site (Coordinates:  311-389, c/g = 1.4615384615384615 ):      ATATTCTGACCACCGCGTTTAGCTATGGCAACCGTGCGTTTACCAAATATCCGGATGATATTCCGAACTATTTTAAAC
+
+The 150 nt long genomic region immediately downstream is AGAGCTTTCCGGAAGGCTATAGCTGGGAACGTACCATGACCTTTGAAGATAAAGGCATTGTGAAAGTGAAAAGCGATATTAGCATGGAAGAAGATAGCTTTATTTATGAAATTCATCTGAAAGGCGAGAACTTTCCGCCGAACGGCCCGG
+
+Palindromic sequences found at coordinates 101-104 e 108-111(Sequence:   ATTT) (SCORE: 8)
+Palindromic sequences found at coordinates 105-108 e 112-115(Sequence:   ATGA) (SCORE: 8)
+Palindromic sequences found at coordinates 119-122 e 130-133(Sequence:   AAAG) (SCORE: 7)
+Palindromic sequences found at coordinates 39-43 e 50-54(Sequence:   CCTTT) (SCORE: 8)
+Palindromic sequences found at coordinates 118-122 e 130-134(Sequence:   GAAAG) (SCORE: 8)
+
+
+PREDICTED REGION NUMBER 2 (STRAND POSITIVE) 
+
+Genomic sequence of putative RUT site (Coordinates:  969-1047, c/g = 1.4 ):      CTTCACCTCCCGTTTTGATTTCGCCATTCATGTGGCGCATGCCCGTTCCCGTGGTCTGCGTCGGCGCATGCCACCGGT
+
+The 150 nt long genomic region immediately downstream is GCTGCGTCGACGGGCTATTGATGCGCTGCTGCAGGGGCTGTGTTTCCACTATGACCCGCTGGCCAACCGCGTCCAGTGTTCCATCACCACACTGGCCATTGAGTGCGGACTGGCGACAGAGTCCGGTGCAGGAAAACTCTCCATCACCCG
+
+
+PAUSE-CONSENSUS present at the coordinates 11-23
+
+PAUSE-CONSENSUS present at the coordinates 70-82
+
+
+PREDICTED REGION NUMBER 3 (STRAND POSITIVE) 
+
+Genomic sequence of putative RUT site (Coordinates:  1239-1317, c/g = 1.5625 ):      TACCTACCAGACGGAATATGACCCGCTTATCGGGTGCTACATTCCGACCGACATCACGTTCACACTGGCTCTGTTTGC
+
+The 150 nt long genomic region immediately downstream is TGCCCTTGATGTGTCTGAGGATGCAGTGGCAGCTGCGCGCCGCAGTCGTGTTGAATGGGAAAACAAACAGCGCAAAAAGCAGGGGCTGGATACACTGGGTATGGATGAGCTGATAGCGAAAGCTTGGCGTTTTGTGCGTGAGCGTTTCCG
+
+Palindromic sequences found at coordinates 22-25 e 32-35(Sequence:   GCAG) (PAUSE-CONSENSUS PRESENT) (SCORE: 13)
+Palindromic sequences found at coordinates 32-35 e 41-44(Sequence:   CTGC) (PAUSE-CONSENSUS PRESENT) (SCORE: 14)
+Palindromic sequences found at coordinates 33-36 e 40-43(Sequence:   TGCG) (SCORE: 11)
+Palindromic sequences found at coordinates 89-92 e 98-101(Sequence:   ATAC) (SCORE: 9)
+Palindromic sequences found at coordinates 32-36 e 40-44(Sequence:   CTGCG) (PAUSE-CONSENSUS PRESENT) (SCORE: 15)
+
+PAUSE-CONSENSUS present at the coordinates 27-39
+
+
+PREDICTED REGION NUMBER 4 (STRAND POSITIVE) 
+
+Genomic sequence of putative RUT site (Coordinates:  1653-1731, c/g = 1.7857142857142858 ):      CATGATTCTGTCACGTAACCGCAATTACAGCCGGCTGGCCACAGCTTCTCCCTGAAAGTGATCTCCTCAGAATAATCC
+
+The 150 nt long genomic region immediately downstream is GGCCTGCGCCGGAGGCATCCGCACGCCTGAAGCCCGCCGGTGCACAAAAAAACAGCGTCGCATGCAAAAAACAATCTCATCATCCACCTTCTGGAGCATCCGATTCCCCCTGTTTTTAATACAAAATACGCCTCAGCGACGGGGAATTTT
+
+Palindromic sequences found at coordinates 1-4 e 12-15(Sequence:   GCCT) (SCORE: 10)
+Palindromic sequences found at coordinates 9-12 e 17-20(Sequence:   CGGA) (PAUSE-CONSENSUS PRESENT) (SCORE: 14)
+Palindromic sequences found at coordinates 82-85 e 91-94(Sequence:   TCCA) (SCORE: 9)
+Palindromic sequences found at coordinates 112-115 e 122-125(Sequence:   TTTT) (SCORE: 8)
+Palindromic sequences found at coordinates 113-116 e 122-125(Sequence:   TTTT) (SCORE: 9)
+
+PAUSE-CONSENSUS present at the coordinates 13-25
+
+
+PREDICTED REGION NUMBER 5 (STRAND POSITIVE) 
+
+Genomic sequence of putative RUT site (Coordinates:  1884-1962, c/g = 1.8461538461538463 ):      TATCCACATTTAACTGCAAGGGACTTCCCCATAAGGTTACAACCGTTCATGTCATAAAGCGCCAGCCGCCAGTCTTAC
+
+The 150 nt long genomic region immediately downstream is AGGGTGCAATGTATCTTTTAAACACCTGTTTATATCTCCTTTAAACTACTTAATTACATTCATTTAAAAAGAAAACCTATTCACTGCCTGTCCTGTGGACAGACAGGCTAGCAAAAGGCCAGCAAAAGGCCAGGAACCGTAAAAAGGCCG
+
+Palindromic sequences found at coordinates 14-17 e 25-28(Sequence:   CTTT) (SCORE: 8)
+Palindromic sequences found at coordinates 15-18 e 26-29(Sequence:   TTTT) (SCORE: 8)
+Palindromic sequences found at coordinates 19-22 e 27-30(Sequence:   AAAC) (SCORE: 9)
+Palindromic sequences found at coordinates 40-43 e 49-52(Sequence:   TTAA) (SCORE: 9)
+Palindromic sequences found at coordinates 87-90 e 98-101(Sequence:   CTGT) (SCORE: 8)
+Palindromic sequences found at coordinates 88-91 e 97-100(Sequence:   TGTC) (SCORE: 9)
+Palindromic sequences found at coordinates 89-92 e 96-99(Sequence:   GTCC) (SCORE: 11)
+Palindromic sequences found at coordinates 92-95 e 102-105(Sequence:   CTGT) (SCORE: 8)
+Palindromic sequences found at coordinates 116-119 e 127-130(Sequence:   GGCC) (SCORE: 10)
+Palindromic sequences found at coordinates 18-22 e 27-31(Sequence:   TAAAC) (SCORE: 10)
+Palindromic sequences found at coordinates 88-92 e 96-100(Sequence:   TGTCC) (SCORE: 11)
+Palindromic sequences found at coordinates 91-95 e 102-106(Sequence:   CCTGT) (SCORE: 10)
+Palindromic sequences found at coordinates 87-92 e 96-101(Sequence:   CTGTCC) (SCORE: 11)
+
+PAUSE-CONSENSUS present at the coordinates 127-139
+
+
+PREDICTED REGION NUMBER 6 (STRAND POSITIVE) 
+
+Genomic sequence of putative RUT site (Coordinates:  2120-2198, c/g = 1.4444444444444444 ):      GCGTTTTTCCATAGGCTCCGCCCCCCTGACGAGCATCACAAAAATCGACGCTCAAGTCAGAGGTGGCGAAACCCGACA
+
+The 150 nt long genomic region immediately downstream is GGACTATAAAGATACCAGGCGTTTCCCCCTGGAAGCTCCCTCGTGCGCTCTCCTGTTCCGACCCTGCCGCTTACCGGATACCTGTCCGCCTTTCTCCCTTCGGGAAGCGTGGCGCTTTCTCATAGCTCACGCTGTAGGTATCTCAGTTCG
+
+Palindromic sequences found at coordinates 22-25 e 30-33(Sequence:   TTCC) (SCORE: 8)
+Palindromic sequences found at coordinates 74-77 e 84-87(Sequence:   CGGA) (SCORE: 9)
+Palindromic sequences found at coordinates 94-97 e 101-104(Sequence:   TCCC) (SCORE: 10)
+Palindromic sequences found at coordinates 104-107 e 113-116(Sequence:   AAGC) (PAUSE-CONSENSUS PRESENT) (SCORE: 11)
+Palindromic sequences found at coordinates 105-108 e 112-115(Sequence:   AGCG) (PAUSE-CONSENSUS PRESENT) (SCORE: 13)
+Palindromic sequences found at coordinates 104-108 e 112-116(Sequence:   AAGCG) (PAUSE-CONSENSUS PRESENT) (SCORE: 13)
+
+PAUSE-CONSENSUS present at the coordinates 102-114
+
+
+PREDICTED REGION NUMBER 7 (STRAND POSITIVE) 
+
+Genomic sequence of putative RUT site (Coordinates:  2386-2464, c/g = 2.0 ):      ACCCCCCGTTCAGCCCGACCGCTGCGCCTTATCCGGTAACTATCGTCTTGAGTCCAACCCGGTAAGACACGACTTATC
+
+The 150 nt long genomic region immediately downstream is GCCACTGGCAGCAGCCACTGGTAACAGGATTAGCAGAGCGAGGTATGTAGGCGGTGCTACAGAGTTCTTGAAGTGGTGGCCTAACTACGGCTACACTAGAAGAACAGTATTTGGTATCTGCGCTCTGCTGAAGCCAGTTACCTTCGGAAA
+
+Palindromic sequences found at coordinates 5-8 e 13-16(Sequence:   TGGC) (SCORE: 11)
+Palindromic sequences found at coordinates 45-49 e 56-60(Sequence:   TGTAG) (PAUSE-CONSENSUS PRESENT) (SCORE: 12)
+
+PAUSE-CONSENSUS present at the coordinates 41-53
+
+PAUSE-CONSENSUS present at the coordinates 24-36
+
+
+PREDICTED REGION NUMBER 8 (STRAND POSITIVE) 
+
+Genomic sequence of putative RUT site (Coordinates:  2904-2982, c/g = 1.6428571428571428 ):      AGGCACCTATCTCAGCGATCTGTCTATTTCGTTCATCCATAGTTGCCTGACTCCCCGTCGTGTAGATAACTACGATAC
+
+The 150 nt long genomic region immediately downstream is GGGAGGGCTTACCATCTGGCCCCAGTGCTGCAATGATACCGCGAGAGCCACGCTCACCGGCTCCAGATTTATCAGCAATAAACCAGCCAGCCGGAAGGGCCGAGCGCAGAAGTGGTCCTGCAACTTTATCCGCCTCCATCCAGTCTATTA
+
+Palindromic sequences found at coordinates 44-47 e 51-54(Sequence:   GAGC) (SCORE: 11)
+Palindromic sequences found at coordinates 67-70 e 78-81(Sequence:   TTTA) (SCORE: 8)
+Palindromic sequences found at coordinates 68-71 e 77-80(Sequence:   TTAT) (SCORE: 9)
+Palindromic sequences found at coordinates 67-71 e 77-81(Sequence:   TTTAT) (SCORE: 10)
+
+
+PREDICTED REGION NUMBER 9 (STRAND POSITIVE) 
+
+Genomic sequence of putative RUT site (Coordinates:  3347-3425, c/g = 1.3333333333333333 ):      GCCGCAGTGTTATCACTCATGGTTATGGCAGCACTGCATAATTCTCTTACTGTCATGCCATCCGTAAGATGCTTTTCT
+
+The 150 nt long genomic region immediately downstream is GTGACTGGTGAGTACTCAACCAAGTCATTCTGAGAATAGTGTATGCGGCGACCGAGTTGCTCTTGCCCGGCGTCAATACGGGATAATACCGCGCCACATAGCAGAACTTTAAAAGTGCTCATCATTGGAAAACGCTCTTCGGGGCGAAAA
+
+Palindromic sequences found at coordinates 26-29 e 33-36(Sequence:   ATTC) (SCORE: 8)
+Palindromic sequences found at coordinates 105-108 e 112-115(Sequence:   ACTT) (SCORE: 8)
+Palindromic sequences found at coordinates 137-140 e 144-147(Sequence:   TTCG) (SCORE: 8)
+
+PAUSE-CONSENSUS present at the coordinates 68-80
+
+
+PREDICTED REGION NUMBER 10 (STRAND POSITIVE) 
+
+Genomic sequence of putative RUT site (Coordinates:  3584-3662, c/g = 2.272727272727273 ):      ATCTTACCGCTGTTGAGATCCAGTTCGATGTAACCCACTCGTGCACCCAACTGATCTTCAGCATCTTTTACTTTCACC
+
+The 150 nt long genomic region immediately downstream is AGCGTTTCTGGGTGAGCAAAAACAGGAAGGCAAAATGCCGCAAAAAAGGGAATAAGGGCGACACGGAAATGTTGAATACTCATACTCTTCCTTTTTCAATATTATTGAAGCATTTATCAGGGTTATTGTCTCATGAGCGGATACATATTT
+
+Palindromic sequences found at coordinates 28-31 e 35-38(Sequence:   GGCA) (PAUSE-CONSENSUS PRESENT) (SCORE: 15)
+Palindromic sequences found at coordinates 94-97 e 105-108(Sequence:   TTCA) (SCORE: 9)
+Palindromic sequences found at coordinates 95-98 e 104-107(Sequence:   TCAA) (SCORE: 10)
+Palindromic sequences found at coordinates 96-99 e 103-106(Sequence:   CAAT) (SCORE: 10)
+Palindromic sequences found at coordinates 94-98 e 104-108(Sequence:   TTCAA) (SCORE: 11)
+Palindromic sequences found at coordinates 95-99 e 103-107(Sequence:   TCAAT) (SCORE: 11)
+Palindromic sequences found at coordinates 94-99 e 103-108(Sequence:   TTCAAT) (SCORE: 11)
+
+PAUSE-CONSENSUS present at the coordinates 28-40
+
+PAUSE-CONSENSUS present at the coordinates 8-20
+
+
+PREDICTED REGION NUMBER 11 (STRAND NEGATIVE)
+
+Genomic sequence of putative RUT site (Coordinates:  177-255, c/g = 2.1666666666666665 ):      TAAACTGAAAATGGAAGGCAACGTGAACGGCCATGCGTTTGTGATTGAAGGCGAAGGCGAAGGCAAACCGTATGATGG
+
+The 150 nt long genomic region immediately downstream is CGTCTAAGAAACGCGTAATACGACTCACTATAGGGCTTAAGTATAAGGAGGAAAAAATATGGCTAGCTGGAGCCACCCGCAGTTCGAAAAAGGCGCCGTGAGCAAAGGCGAAGAAACCACCATGGGCGTGATTAAACCGGATATGAAAAT
+
+Palindromic sequences found at coordinates 35-38 e 43-46(Sequence:   CTTA) (SCORE: 10)
+Palindromic sequences found at coordinates 60-63 e 70-73(Sequence:   GGCT) (SCORE: 11)
+Palindromic sequences found at coordinates 59-63 e 70-74(Sequence:   TGGCT) (SCORE: 11)
+
+PAUSE-CONSENSUS present at the coordinates 126-138
+
+
+PREDICTED REGION NUMBER 12 (STRAND NEGATIVE)
+
+Genomic sequence of putative RUT site (Coordinates:  545-623, c/g = 2.076923076923077 ):      AGAAAGAAACCACCGGCTGGGATGCGAGCACCGAACGTATGTATGTGCGTGATGGCGTGCTGAAAGGTGATGTGAAAA
+
+The 150 nt long genomic region immediately downstream is TTCCGGAAGGCTATAGCTGGGAACGTACCATGACCTTTGAAGATAAAGGCATTGTGAAAGTGAAAAGCGATATTAGCATGGAAGAAGATAGCTTTATTTATGAAATTCATCTGAAAGGCGAGAACTTTCCGCCGAACGGCCCGGTGATGC
+
+Palindromic sequences found at coordinates 95-98 e 102-105(Sequence:   ATTT) (SCORE: 10)
+Palindromic sequences found at coordinates 99-102 e 106-109(Sequence:   ATGA) (SCORE: 10)
+Palindromic sequences found at coordinates 113-116 e 124-127(Sequence:   AAAG) (PAUSE-CONSENSUS PRESENT) (SCORE: 12)
+Palindromic sequences found at coordinates 33-37 e 44-48(Sequence:   CCTTT) (SCORE: 10)
+Palindromic sequences found at coordinates 112-116 e 124-128(Sequence:   GAAAG) (PAUSE-CONSENSUS PRESENT) (SCORE: 13)
+
+PAUSE-CONSENSUS present at the coordinates 23-35
+
+PAUSE-CONSENSUS present at the coordinates 83-95
+
+
+PREDICTED REGION NUMBER 13 (STRAND NEGATIVE)
+
+Genomic sequence of putative RUT site (Coordinates:  773-851, c/g = 2.0714285714285716 ):      TGTATGAAATTGCGGTGGCGCGTAACAGCACCGATGGCATGGATGAACTGTATAAAGGGGGAGGAGGATCAGCGGCCC
+
+The 150 nt long genomic region immediately downstream is TGAAACTGCTGCTGGAAGGCGGCGGCCATCATCGTGTGGATTTTAAAACCATTTATCGTGCGAAAAAAGCGGTGAAACTGCCGGATTATCATTTTGTGGATCATCGTATTGAAATTCTGAACCATGATAAAGATTATAACAAAGTGACCG
+
+Palindromic sequences found at coordinates 43-46 e 51-54(Sequence:   TAAA) (SCORE: 10)
+Palindromic sequences found at coordinates 126-129 e 133-136(Sequence:   ATAA) (SCORE: 10)
+
+
+PREDICTED REGION NUMBER 14 (STRAND NEGATIVE)
+
+Genomic sequence of putative RUT site (Coordinates:  1013-1091, c/g = 1.3636363636363635 ):      GTTCCCGTGGTCTGCGTCGGCGCATGCCACCGGTGCTGCGTCGACGGGCTATTGATGCGCTGCTGCAGGGGCTGTGTT
+
+The 150 nt long genomic region immediately downstream is ACCAAACGTATTACCGGCAGGTAAAGAACCCGAATCCGGTGTTCACTCCCCGTGAAGGTGCCGGAACGCTGAAGTTCTGCGAAAAACTGATGGAAAAGGCGGTGGGCTTCACCTCCCGTTTTGATTTCGCCATTCATGTGGCGCATGCCC
+
+Palindromic sequences found at coordinates 10-13 e 20-23(Sequence:   TTAC) (SCORE: 7)
+Palindromic sequences found at coordinates 11-14 e 19-22(Sequence:   TACC) (SCORE: 8)
+Palindromic sequences found at coordinates 41-44 e 52-55(Sequence:   TTCA) (SCORE: 7)
+Palindromic sequences found at coordinates 42-45 e 51-54(Sequence:   TCAC) (SCORE: 8)
+Palindromic sequences found at coordinates 63-66 e 73-76(Sequence:   GAAC) (SCORE: 7)
+Palindromic sequences found at coordinates 100-103 e 109-112(Sequence:   GGTG) (SCORE: 10)
+Palindromic sequences found at coordinates 128-131 e 138-141(Sequence:   GCCA) (SCORE: 9)
+Palindromic sequences found at coordinates 134-137 e 143-146(Sequence:   CATG) (SCORE: 8)
+Palindromic sequences found at coordinates 10-14 e 19-23(Sequence:   TTACC) (SCORE: 9)
+Palindromic sequences found at coordinates 41-45 e 51-55(Sequence:   TTCAC) (SCORE: 9)
+Palindromic sequences found at coordinates 127-131 e 138-142(Sequence:   CGCCA) (SCORE: 10)
+
+PAUSE-CONSENSUS present at the coordinates 50-62
+
+
+PREDICTED REGION NUMBER 15 (STRAND NEGATIVE)
+
+Genomic sequence of putative RUT site (Coordinates:  1324-1402, c/g = 1.9333333333333333 ):      GATGTGTCTGAGGATGCAGTGGCAGCTGCGCGCCGCAGTCGTGTTGAATGGGAAAACAAACAGCGCAAAAAGCAGGGG
+
+The 150 nt long genomic region immediately downstream is GCAGGAAAACTCTCCATCACCCGTGCCACCCGGGCCCTGACGTTCCTGTCAGAGCTGGGACTGATTACCTACCAGACGGAATATGACCCGCTTATCGGGTGCTACATTCCGACCGACATCACGTTCACACTGGCTCTGTTTGCTGCCCTT
+
+Palindromic sequences found at coordinates 19-22 e 30-33(Sequence:   CCCG) (SCORE: 10)
+Palindromic sequences found at coordinates 37-40 e 47-50(Sequence:   TGAC) (SCORE: 8)
+Palindromic sequences found at coordinates 85-88 e 96-99(Sequence:   ACCC) (SCORE: 10)
+Palindromic sequences found at coordinates 86-89 e 95-98(Sequence:   CCCG) (SCORE: 11)
+Palindromic sequences found at coordinates 36-40 e 47-51(Sequence:   CTGAC) (SCORE: 10)
+Palindromic sequences found at coordinates 85-89 e 95-99(Sequence:   ACCCG) (SCORE: 12)
+
+PAUSE-CONSENSUS present at the coordinates 76-88
+
+
+PREDICTED REGION NUMBER 16 (STRAND NEGATIVE)
+
+Genomic sequence of putative RUT site (Coordinates:  1575-1653, c/g = 2.142857142857143 ):      GCGTGAAATCTCGGAAGGACGCTTCACTGCTAATGGTGAGGCGGTAAAACGCGAAGTGGAGCGTCGTGTGAAGGAGCG
+
+The 150 nt long genomic region immediately downstream is GCTGATAGCGAAAGCTTGGCGTTTTGTGCGTGAGCGTTTCCGCAGTTACCAGACAGAGCTTCAGTCCCGTGGAATAAAACGTGCCCGTGCGCGTCGTGATGCGAACAGAGAACGTCAGGACATCGTCACCCTAGTGAAACGGCAGCTGAC
+
+Palindromic sequences found at coordinates 125-128 e 133-136(Sequence:   TCAC) (SCORE: 10)
+
+
+PREDICTED REGION NUMBER 17 (STRAND NEGATIVE)
+
+Genomic sequence of putative RUT site (Coordinates:  2299-2377, c/g = 1.368421052631579 ):      GGGAAGCGTGGCGCTTTCTCATAGCTCACGCTGTAGGTATCTCAGTTCGGTGTAGGTCGTTCGCTCCAAGCTGGGCTG
+
+The 150 nt long genomic region immediately downstream is CGAGCATCACAAAAATCGACGCTCAAGTCAGAGGTGGCGAAACCCGACAGGACTATAAAGATACCAGGCGTTTCCCCCTGGAAGCTCCCTCGTGCGCTCTCCTGTTCCGACCCTGCCGCTTACCGGATACCTGTCCGCCTTTCTCCCTTC
+
+Palindromic sequences found at coordinates 71-74 e 79-82(Sequence:   TTCC) (SCORE: 8)
+Palindromic sequences found at coordinates 123-126 e 133-136(Sequence:   CGGA) (SCORE: 9)
+
+PAUSE-CONSENSUS present at the coordinates 64-76
+
+PAUSE-CONSENSUS present at the coordinates 14-26
+
+PAUSE-CONSENSUS present at the coordinates 33-45
+
+
+PREDICTED REGION NUMBER 18 (STRAND NEGATIVE)
+
+Genomic sequence of putative RUT site (Coordinates:  2560-2638, c/g = 1.4 ):      TAGAAGAACAGTATTTGGTATCTGCGCTCTGCTGAAGCCAGTTACCTTCGGAAAAAGAGTTGGTAGCTCTTGATCCGG
+
+The 150 nt long genomic region immediately downstream is CGCCTTATCCGGTAACTATCGTCTTGAGTCCAACCCGGTAAGACACGACTTATCGCCACTGGCAGCAGCCACTGGTAACAGGATTAGCAGAGCGAGGTATGTAGGCGGTGCTACAGAGTTCTTGAAGTGGTGGCCTAACTACGGCTACAC
+
+Palindromic sequences found at coordinates 38-41 e 48-51(Sequence:   TAAG) (PAUSE-CONSENSUS PRESENT) (SCORE: 10)
+Palindromic sequences found at coordinates 59-62 e 67-70(Sequence:   TGGC) (SCORE: 10)
+Palindromic sequences found at coordinates 99-103 e 110-114(Sequence:   TGTAG) (SCORE: 8)
+
+PAUSE-CONSENSUS present at the coordinates 19-31
+
+PAUSE-CONSENSUS present at the coordinates 14-26
+
+
+PREDICTED REGION NUMBER 19 (STRAND NEGATIVE)
+
+Genomic sequence of putative RUT site (Coordinates:  3297-3375, c/g = 1.2352941176470589 ):      AAAAAGCGGTTAGCTCCTTCGGTCCTCCGATCGTTGTCAGAAGTAAGTTGGCCGCAGTGTTATCACTCATGGTTATGG
+
+The 150 nt long genomic region immediately downstream is CTAGAGTAAGTAGTTCGCCAGTTAATAGTTTGCGCAACGTTGTTGCCATTGCTACAGGCATCGTGGTGTCACGCTCGTCGTTTGGTATGGCTTCATTCAGCTCCGGTTCCCAACGATCAAGGCGAGTTACATGATCCCCCATGTTGTGCA
+
+Palindromic sequences found at coordinates 33-36 e 42-45(Sequence:   GCAA) (SCORE: 7)
+Palindromic sequences found at coordinates 34-37 e 41-44(Sequence:   CAAC) (SCORE: 7)
+Palindromic sequences found at coordinates 61-64 e 69-72(Sequence:   CGTG) (SCORE: 9)
+Palindromic sequences found at coordinates 129-132 e 139-142(Sequence:   CATG) (SCORE: 6)
+Palindromic sequences found at coordinates 33-37 e 41-45(Sequence:   GCAAC) (SCORE: 9)
+Palindromic sequences found at coordinates 128-132 e 139-143(Sequence:   ACATG) (SCORE: 7)
+
+
+
+
+
+Total number of predicted Rho-dependent terminators: 19
+
+
+Mean C/G content of predicted terminators: 1.7109383743101356
+Standard deviation: 0.3317141415029309

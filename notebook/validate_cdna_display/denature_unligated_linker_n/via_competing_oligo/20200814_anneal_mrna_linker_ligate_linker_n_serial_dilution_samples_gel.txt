@@ -1,0 +1,98 @@
+August 14, 2020
+
+$ stepwise cdna/anneal_mrna_linker 1 f11 o129 -v 4.84
+$ stepwise cdna/ligate_linker_n 2 -v 22 -m rna -P
+$ stepwise serial_dilution 9 '100µM' 3 -f 10 -m o194
+$ stepwise samples
+$ stepwise gels/gel anneal/competing_oligo 12
+
+ 1. Setup 1 annealing reaction:
+
+    Reagent  Stock   Volume
+    ───────────────────────
+    water           3.15 µL
+    PBS        10x  0.48 µL
+    f11      10 µM  0.60 µL
+    o129     10 µM  0.60 µL
+    ───────────────────────
+                    4.84 µL
+
+ 2. Perform the annealing reaction:
+
+    - Incubate at 95°C for 2 min.
+    - Cool at room temperature.
+
+ 3. Setup 2 ligation reactions:
+
+    Reagent                 Stock    Volume      2.2x
+    ─────────────────────────────────────────────────
+    water                          15.13 µL  33.28 µL
+    BSA                      0.1%   2.20 µL   4.84 µL
+    T4 DNA ligase buffer      10x   2.20 µL   4.84 µL
+    T4 RNA ligase         40 U/µL   0.28 µL
+    annealed mRNA/linker  1.25 µM   2.20 µL   4.84 µL
+    ─────────────────────────────────────────────────
+                                   22.00 µL  21.73 µL/rxn
+
+ 4. Incubate the ligation reactions as follows:
+
+    - 25°C for 10 min.
+    - 65°C for 10 min.
+
+ 5. Perform a serial dilution [1]:
+
+    - Put 10.00 μL 100.00 µM o194 in the first tube.
+    - Add 9.00 μL water in the 2 remaining tubes.
+    - Transfer 1.00 μL between each tube to make
+      3 10-fold dilutions.
+
+ 6. Prepare the following samples:
+
+              mRNA (f11)  +  −  −  +  +  +  +   +   +    +    +
+    poly-A linker (o129)  −  +  −  +  +  +  +   +   +    +    +
+       competitor (o194)  0  0  1  0  0  1  1  10  10  100  100
+           T4 RNA ligase  −  −  −  −  +  −  +   −   +    −    +
+
+    Competitor values are molar ratios relative to the linker.
+
+ 7. Prepare samples for TBE/urea PAGE:
+
+    Reagent                    Stock    Volume       18x
+    ────────────────────────────────────────────────────
+    formamide loading buffer      2x   5.00 µL  90.00 µL
+    o194                      100 µM   0.62 µL
+    sample                    125 nM   4.38 µL
+    ────────────────────────────────────────────────────
+                                      10.00 µL   5.00 µL/rxn
+
+    - Incubate at 70°C for 3 min.
+
+ 8. Run a gel:
+
+    - Use a 6% TBE/urea PAGE gel.
+    - Load 10 µL of each sample.
+    - Run at 180V for 40 min.
+
+ 9. Stain gel with GelGreen:
+
+    - Submerge gel in ≈50 mL 3x GelGreen [2].
+    - Shake gently for 30 min.
+
+10. Image with a laser scanner:
+
+    lasers:   488 nm   658 nm
+    filters:  518BP22  710BP40
+
+Notes:
+[1] The final concentrations will be:
+    1  100.00 µM
+    2   10.00 µM
+    3    1.00 µM
+
+[2] Including 100 mM NaCl in the staining solution 
+    enhances sensitivity, but may promote dye 
+    precipitation if the gel stain is reused.
+
+    Staining solution can be reused at least 2-3x.
+    Store staining solution at room temperature
+    protected from light.

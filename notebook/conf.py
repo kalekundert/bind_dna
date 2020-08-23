@@ -39,7 +39,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'cDNA ligation'
+project = 'DNA-binding proteins'
 copyright = '2019, Kale Kundert'
 author = 'Kale Kundert'
 

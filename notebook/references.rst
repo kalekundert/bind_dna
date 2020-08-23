@@ -21,6 +21,7 @@ References
 .. [Farrell2010] :doi:`10.1016/B978-0-12-374727-3.00007-3`
 .. [Gesteland1966] :doi:`10.1016/s0022-2836(66)80263-2`
 .. [Gholamalipour2018] :doi:`10.1093/nar/gky796`
+.. [Giraldo1992] :doi:`10.1016/0022-2836(92)90864-G`
 .. [Gorisch1988] :doi:`10.1016/0003-2697(88)90205-9`
 .. [Greisman1997] :doi:`10.1126/science.275.5300.657`
 .. [Gray1975] :doi:`10.1093/nar/2.9.1459`
@@ -46,6 +47,7 @@ References
 .. [Kurz2001] Kurz M, Gu K, Al-Gawari A, Lohse PA. cDNA–Protein Fusions: Covalent Protein–Gene Conjugates for the In Vitro Selection of Peptides and Proteins. Chem Bio Chem 2:9:666-672 (2001).
 .. [Man2001] :doi:`10.1093/nar/29.12.2471`
 .. [Masai1988] :doi:`10.1093/nar/16.14.6493`
+.. [Masai1987] :doi:`10.1073/pnas.84.14.4781`
 .. [Meng2005] :doi:`10.1038/nbt1120`
 .. [Meng2007] :doi:`10.1093/nar/gkm385`
 .. [Metzger1989] Metzger et al.  Characterization of the relA1 mutation and a comparison of relA1 with new relA null alleles in Escherichia coli. J. Biol.  Chem. 264:35:21146-52 (1989)
@@ -69,6 +71,7 @@ References
 .. [Reiersen2005] :doi:`10.1093/nar/gni010`
 .. [Rivera2015] :doi:`10.1101/pdb.prot081331`
 .. [Roberts1997] :doi:`10.1073/pnas.94.23.12297`
+.. [Rohs2010] :doi:`10.1146/annurev-biochem-060408-091030`
 .. [Roth2018] :doi:`10.1021/acs.nanolett.8b02093`
 .. [Seelig2011] :doi:`10.1038/nprot.2011.312`
 .. [Sera2002] :doi:`10.1021/bi020095c`

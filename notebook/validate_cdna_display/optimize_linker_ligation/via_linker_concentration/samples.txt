@@ -1,0 +1,4 @@
+- Prepare the following reactions:
+
+            mRNA (f11)  +  +  +  +
+  poly-A linker (o129)  1  2  4  8

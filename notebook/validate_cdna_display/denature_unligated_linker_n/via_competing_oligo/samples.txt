@@ -1,0 +1,10 @@
+- Prepare the following samples:
+
+            mRNA (f11)  +  −  −  +  +  +  +   +   +    +    +
+  poly-A linker (o129)  −  +  −  +  +  +  +   +   +    +    +
+     competitor (o194)  0  0  1  0  0  1  1  10  10  100  100
+         T4 RNA ligase  −  −  −  −  +  −  +   −   +    −    +
+
+  Competitor values are molar ratios relative to the linker.
+
+
