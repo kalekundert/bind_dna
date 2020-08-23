@@ -1,6 +1,6 @@
-[[data]]
-type = 'rsync'
-src = 'o2:dbp/data/o2'
+#[[data]]
+#type = 'rsync'
+#src = 'o2:dbp/data/o2'
 
 [[data]]
 type = 'usb'
