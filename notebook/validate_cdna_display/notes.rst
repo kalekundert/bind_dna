@@ -18,16 +18,13 @@ linker.  I'm mostly intending to follow the cDNA-display protocol from
    linearize_cdna_display_gene/notes
    optimize_mrna_transcription/notes
    eliminate_mrna_degradation/notes
-   denature_unligated_linker_n/notes
    validate_pseudo_linker/notes
-   anneal_linker_n_with_salt/notes
-   anneal_linker_n_with_temperature/notes
-   ligate_linker_n_via_naimudden2016/notes
-   ligate_linker_n_via_kitamura2002/notes
-   ligate_with_5_phosphorylation/notes
-   ligate_linker_n_with_optimized_conditions/notes
+   denature_unligated_linker_n/notes
+   anneal_linker_to_mrna/notes
+   ligate_linker_to_mrna/notes
    express_mrna_via_purexpress/notes
-   express_zif268_via_naimudden2016/notes
+   attach_mrna_to_mwasabi/notes
+   attach_mrna_to_zif268/notes
 
 Considerations
 ==============

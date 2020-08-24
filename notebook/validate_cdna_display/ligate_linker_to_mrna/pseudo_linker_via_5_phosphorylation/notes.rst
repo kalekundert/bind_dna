@@ -1,6 +1,6 @@
-******************************
-Ligate with 5' phosphorylation
-******************************
+*****************************
+Ligate via 5' phosphorylation
+*****************************
 
 The 5' end of linker-N must be phosphorylated in order for it to be ligated to 
 the mRNA.  [Naimudden2016]_ used T4 kinase to phosphorylate linker-N during the 
@@ -15,7 +15,7 @@ linker-N is already.  I will test this hypothesis by doing ligation
 reactions with posphorylated (o93) and non-phosphorylated linkers (o99), 
 side-by-side.
 
-Methods
+Results
 =======
 .. protocol::
 
@@ -46,7 +46,3 @@ Methods
   that something about linker-N is more resistant to ligation.  I'll have to 
   repeat this reaction with linker-N to find out.
 
-.. todo::
-   
-   Order linker-N with 5' phosphate and Cy5.  Both modifications seem to be 
-   pretty clear benefits.

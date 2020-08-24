@@ -1,6 +1,6 @@
-***********************************
-Ligate linker-N via [Kitamura2002]_
-***********************************
+****************************
+Linker-N via [Kitamura2002]_
+****************************
 [Kitamura2002]_ has a better description of the Y-ligation method than any 
 other paper I've found (including [Nishigaki1998]_, which introduces the idea).  
 This version of the protocol is for ligating two DNA oligos (although T4 RNA 
@@ -43,7 +43,6 @@ ligase is still used), but I think some of the ideas are worth trying:
   in 10 μL) were combined and hybridized through their stem regions."
 
   This is pretty close to what I'm doing (5 pmol in 10 µL).
-
 
 Results
 =======
@@ -97,3 +96,8 @@ linker-N but lacking the puromycin arm.
 
       - −enzyme control to make sure denaturing is working (i.e. unligated RNA 
         and DNA being separated.)
+
+Discussion
+==========
+- The cobalt salt used by [Kitamura2002]_ seems to only be appropriate for 
+  ligating DNA oligos.

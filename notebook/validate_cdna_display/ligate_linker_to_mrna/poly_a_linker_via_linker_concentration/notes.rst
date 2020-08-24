@@ -1,6 +1,6 @@
-*****************************
-Optimize linker concentration
-*****************************
+**************************************
+Poly-A linker via linker concentration
+**************************************
 Background: :expt:`-1`
 
 Although the annealing and ligation reactions seem to work with the poly-A 

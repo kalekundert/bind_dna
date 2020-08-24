@@ -1,8 +1,22 @@
-************************************
-Ligate linker-N via [Naimudden2016]_
-************************************
-[Naimudden2016]_ reports a 90--95% efficiency ligating linker-N to mRNA.  I 
-want to achieve similar efficiencies.
+*********************
+Ligate linker to mRNA
+*********************
+
+.. toctree::
+   :hidden:
+
+   linker_n_via_naimudden2016/notes
+   linker_n_via_kitamura2002/notes
+   linker_n_via_optimized_conditions/notes
+   pseudo_linker_via_5_phosphorylation/notes
+   poly_a_linker_via_optimized_conditions/notes
+   poly_a_linker_via_crowding_agents/notes
+   poly_a_linker_via_incubation_time/notes
+   poly_a_linker_via_linker_concentration/notes
+
+
+[Naimudden2016]_ reports a 90--95% efficiency ligating linker-N to mRNA.  My 
+goal is to achieve similar efficiencies.
 
 .. note::
 
@@ -22,14 +36,16 @@ want to achieve similar efficiencies.
    It is worth noting that the left gel in Figure 1d, which shows only FITC, 
    still makes it seem like a majority of the FITC was ligated to the mRNA.  
    But they may have done an rNA spin-column clean up before running that gel, 
-   which would've made the linker-N band artificially dim.  (This step is not 
-   mentioned in [Naimudden2016]_, but is mentioned in [Naimudden2011]_).
+   which would've made the linker-N band artificially dim.  This step is not 
+   mentioned in [Naimudden2016]_, but is mentioned in [Naimudden2011]_.
 
 .. _validate_cdna_display_ligation:
 
 Considerations
 ==============
 
+Ambiguities in [Naimudden2016]_
+-------------------------------
 .. update:: 2020/03/31
 
    The ambiguities discussed below are completely resolved by [Kubo2020]_.
@@ -216,59 +232,165 @@ transcribed RNA has some ambiguities:
      found that the reaction was complete after 10 min.  So I should just 
      incubate for 10 min.
 
-Results
-=======
-.. protocol:: 20191209_transcribe_rna.txt
+Other protocols
+---------------
+After comparing a number of published T4 RNA ligase protocols (see below), I 
+think there are several things to think about trying:
 
-   See binder: 2019/12/9 and 2019/12/13
+- The 10 min incubation recommended by [Naimudden2016]_ is an outlier, although 
+  I understand the desire to be gentle with RNA.  Still, I should try longer 
+  incubation times.
 
-.. figure:: 20191213_ligate_linker_n.svg
+  This is from the NEB FAQ for `T4 RNA ligase I 
+  <https://international.neb.com/faqs/2018/01/30/what-is-the-optimal-reaction-temperature-and-time-for-t4-rna-ligase-i>`__:
 
-- The transcribed RNA is not very homogeneous.  See :expt:`9` for more 
-  discussion.
+    In general, increased reaction time and lowered reaction temperature yield 
+    more complete ligation reactions. A typical ligation reaction should be 
+    carried out at 25°C for up to 2 hours. For longer oligos, 2 hours of 
+    incubation at 25°C followed by overnight incubation at 16°C may improve 
+    yield.
 
-- The ligation was 66% efficient, less than the 90--95% efficiency reported by 
-  [Naimudden2016]_.  But I have a number of things I can try (discussed in the 
-  :ref:`validate_cdna_display_ligation` section) to improve this.
+- The protocols really differ in the amount of enzyme used:
 
-  Note that this efficiency is probably a slight overestimate.  I calculated 
-  efficiency using the same equation as [Naimudden2016]_, but this equation 
-  doesn't account for the fact that the conjugate has 28 bp of double-stranded 
-  DNA/RNA hybrid.  `According to Biotium 
-  <https://biotium.com/faqs/gelred-gelgreen-ssdna-rna/>`_, "titration assays 
-  using a fluorescence microplate reader showed that the fluorescence signal of 
-  GelRed® bound to ssDNA and RNA is about half that of GelRed® bound to dsDNA."  
-  Assuming that double-stranded DNA/RNA is as bright as dsDNA, this would give 
-  a corrected efficiency of 64%.
+  - KBK: 4 U/pmol
+  - [Naimudden2016]_: 0.4 U/pmol
+  - [Kubo2020]_: Units not specified
+  - Takara: 2.5–5.0 U/pmol
+  - NEB: 0.5 U/pmol
+  - [Kitamura2002]_: 5 U/pmol
 
-  There are also reasons why this efficiency could be just plain inaccurate.  
-  One is that the smeary RNA made subtracting the background rather subjective.  
-  Hopefully I can improve this by getting cleaner RNA.  Another is that there 
-  could be some FITC signal in the red channel.  To check for this, I need to 
-  measure both the red and green channels before adding GelRed, which I didn't 
-  do this time.  Note that the efficiency looks much lower in the 300 nm GelRed 
-  image.  This image shouldn't have any signal from FITC (another thing I 
-  should test), but it does have a smear that could be making the lower band 
-  seem brighter.
+  That said, I'm already on the high end, so I don't think that adding more 
+  ligase is likely to help much.
 
-- Next time I do this experiment, I should setup control reactions without 
-  linker and mRNA.  This way, all three lanes would have the same amount of 
-  material, which would make the gel easier to interpret.
+- All of the non-cDNA-display protocols have 25% PEG, which is known to 
+  dramatically improve ligase activity [Bauer2017]_.
 
-- Linker-N runs about with the dye front.  So don't run the dye front off the 
-  gel next time.  That said, I'm mostly interested in the difference between 
-  the two mRNA bands, and running the gel longer might help resolve them 
-  better.
+- NEB recommends using a 2–10x excess of linker.  That's in line with what I 
+  was thinking about trying, anyways.
 
-- Note sure what that high-MW linker-N band is.  (It's more easily seen in the 
-  "intensity level 3" image that I didn't include here.)  But it's also visible 
-  in [Naimudden2016]_.
+- Most of the protocols call for adding ATP separately from the buffer.  It's 
+  possible that this is important to keep the ATP active, but I do a good job 
+  taking care of my T4 DNA ligase buffer, so I don't think I need to worry 
+  about this.
 
-- I think the green scratch is caused by the EZdoc UV tray.  The laser scanner 
-  images without the scratch (not shown here) were taken before I'd added 
-  GelRed or imaged with the EZdoc, and the image with the scratch was taken 
-  after.  I thought the scratch could also be due to something on the bottom of 
-  the tip-box scratching the gel during shaking, but the scratch (vertically 
-  all the way from top to bottom, rather than circular) is not really 
-  consistent with that.  
+:expt:`17`
+~~~~~~~~~~
+- Setup the ligation reaction:
 
+  - 5 pmol mRNA
+  - 5 pmol linker
+  - 0.1x PBS (left over from annealing reaction)
+  - 1x T4 DNA ligase buffer
+    - 50 mM Tris-HCl, pH 7.5
+    - 10 mM MgCl₂
+    - 10 mM DTT
+    - 1 mM ATP
+  - 0.01% BSA
+  - 20 U T4 RNA ligase
+  - water to 40 µL
+
+- Incubate at 25°C for 10 min, then 65°C for 10 min
+
+I'm not sure where exactly this protocol came from.  Some thoughts:
+
+- 10x diluted PBS: my own optimizations of the annealing reaction.
+
+- 20 U T4 RNA ligase: Probably [Naimudden2016]_, even though I'm using 10x less 
+  mRNA/linker (I probably assumed that more enzyme wouldn't hurt, and this is 
+  already about as little as I can pipet).
+
+- BSA: Probably because Takara included BSA with the enzyme, although I'm using 
+  a different concentration that their online protocol suggests.
+
+- 10 min incubation time at 25°C: [Naimudden2016]_.  I don't know where the 
+  65°C incubation/heat denaturation came from, though.
+
+[Naimudden2016]_
+~~~~~~~~~~~~~~~~
+- Setup the ligation reaction:
+
+  - 50 pmol mRNA
+  - 50 pmol linker-N
+  - 3 U T4 PNK (NEB)
+  - 20 U T4 RNA ligase (Takara)
+  - Unspecified total volume, but assuming 50 µL based on [Kubo2020]_.
+  - Unspecified buffer (possibly no buffer)
+
+- Incubate at 25°C for 10, 20, or 40 min.
+
+[Kubo2020]_
+~~~~~~~~~~~
+- Setup ligation reaction:
+
+  - 40 pmol mRNA
+  - 40 pmol linker
+  - 1x T4 DNA ligase buffer
+  - 2 µL T4 PNK (unspecified concentration)
+  - 2 µL T4 RNA ligase (unspecified concentration)
+  - water to 40 µL
+
+- Incubate at 25°C for 15 min (or at 16°C for 2h)
+
+Takara --- T4 RNA Ligase (2050A)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+`Original protocol 
+<https://www.takarabio.com/assets/documents/User%20Manual/2050A_DS.v1901Da.pdf>`__.
+
+- Setup the ligation reaction:
+
+  - 1-2 µg ssRNA (8-16 pmol f11)
+  - 1x T4 RNA Ligase buffer (same as NEB T4 DNA ligase buffer)
+    - 50 mM Tris-HCl, pH 7.5
+    - 10 mM MgCl₂
+    - 10 mM DTT
+    - 1 mM ATP
+  - 0.006% BSA
+  - 25% PEG 6000
+  - 40-50 U T4 RNA ligase
+  - water to 50 µL
+
+- Incubate at 5-16°C for 16-18h.
+
+- Stop the reaction by adding 2 µL 500 mM EDTA.
+
+NEB --- T4 RNA Ligase I (M0204)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+`Original protocol 
+<https://www.neb.com/protocols/2018/10/17/protocol=ligation=of=an=oligo=to=the=3=end=of=rna=using=t4=rna=ligase=1m0204>`__.  
+I'm using T4 RNA ligase from Takara, but this protocol may still be relevant.
+
+- Setup the ligation reaction:
+
+  - 20 pmol RNA
+  - 40-200 pmol DNA or RNA oligo
+  - 1x T4 RNA Ligase Reaction Buffer (T4 DNA ligase buffer w/o ATP)
+    - 50 mM Tris-HCl, pH 7.5
+    - 10 mM MgCl₂
+    - 1 mM DTT
+  - 1 mM ATP (this makes the buffer equivalent to T4 DNA ligase buffer)
+  - 10% DMSO (optional)
+  - 15-25% PEG 8000
+  - 20 U Murine RNase inhibitor (M0314, optional)
+  - 10 U T4 RNA Ligase 1
+  - water to 20 µL
+
+- Incubate at 25°C for 2 hours or at 16°C for 16 hours
+
+- Stop the reaction with a spin-column cleanup.
+
+[Kitamura2002]_
+~~~~~~~~~~~~~~~
+- Setup the ligation reaction:
+
+  - 10 pmol 5' end
+  - 10 pmol 3' end
+  - 50 mM Tris, pH 8.0
+  - 10 mM MgCl₂
+  - 0.1 mM ATP
+  - 0.001% BSA (10 mg/L)
+  - 1 mM hexamminecobalt (III) chloride
+  - 25% PEG 6000
+  - 50 U T4 RNA ligase
+  - water to 10 µL
+
+- Incubate at 25°C for 16h.

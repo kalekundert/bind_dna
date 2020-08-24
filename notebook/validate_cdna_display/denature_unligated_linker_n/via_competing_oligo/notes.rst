@@ -43,6 +43,9 @@ Results
 
 2020/08/14:
 
+.. protocol:: 
+   20200814_anneal_mrna_linker_ligate_linker_n_serial_dilution_samples_gel.txt
+
 .. figure:: 20200814_titrate_o194_saturated.svg
 
 .. datatable:: 20200814_titrate_o194.xlsx

@@ -1,7 +1,6 @@
-*******************
-Via crowding agents
-*******************
-Background: :expt:`-1`
+*********************************
+Poly-A linker via crowding agents
+*********************************
 
 .. figure:: 20200817_optimize_peg.svg
 

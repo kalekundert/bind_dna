@@ -1,6 +1,6 @@
-*************************
-Anneal linker-N with salt
-*************************
+********
+Via Salt
+********
 As discussed in :expt:`53`, salt is widely used in oligo annealing reactions to 
 help shield the charge of the phosphate backbone.  However, [Naimudden2016]_ 
 doesn't clearly specify the buffer used to anneal the oligos.  Therefore, this 

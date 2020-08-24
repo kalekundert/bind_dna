@@ -1,6 +1,6 @@
-***********************************
-Express Zif268 via [Naimudden2016]_
-***********************************
+*********************
+Attach mRNA to Zif268
+*********************
 I'm modeling my effort to implement cDNA display on two papers: 
 [Naimudden2016]_ and [Barendt2013]_.  [Naimudden2016]_ does cDNA display using 
 linker-N (as I want to do), but expresses the proteins in rabbit reticulocyte 
