@@ -4,7 +4,7 @@
 Anneal linker-N and mRNA prior to ligation.
 
 Usage:
-    anneal <n> [<mrna>] [<linker>] [-v <µL>] [-m <reagents>] [-L <conc>]
+    anneal <n> [<mrna>] [<linker>] [-v <µL>] [-m <reagents>] [-x <fold>] [-R <µM>]
 
 Arguments:
     <n>
@@ -21,15 +21,18 @@ Options:
         The volume of each annealing reaction in µL.
 
     -m --master-mix <reagents>          [default: ]
-        The reagents to include in the master mix.  The following reagents are 
-        understood: 'mrna' and 'link'.  To specify both reagents, separate the 
-        two names with a comma.
+        A comma-separated list of reagents to include in the master mix.  This 
+        flag is only relevant in <n> is more than 1.  The following reagents 
+        are understood: mrna, link
 
-    -L --linker-stock <conc>
-        The stock concentration of the linker.  Note that this setting does not 
-        change the volume of the reaction, so it does change the amount of 
-        linker in the reaction.  Not unit is assumed; the unit should be 
-        specified.
+    -x --excess-linker <fold>           [default: 1]
+        The amount of linker to add to the reaction, relative to the amount of 
+        mRNA in the reaction.
+
+    -R --mrna-stock <µM>                [default: 10]
+        The stock concentration of the mRNA, in µM.  The volume of mRNA will be 
+        updated accordingly to keep the amount of material in the reaction 
+        constant.
 """
 
 import stepwise, docopt
@@ -54,8 +57,8 @@ anneal['linker'].master_mix = 'link' in args['--master-mix']
 if args['<mrna>']: anneal['mRNA'].name = args['<mrna>']
 if args['<linker>']: anneal['linker'].name = args['<linker>']
 
-if args['--linker-stock']:
-    anneal['linker'].stock_conc = args['--linker-stock']
+anneal['mRNA'].hold_conc.stock_conc = int(args['--mrna-stock']), 'µM'
+anneal['linker'].volume *= float(args['--excess-linker'])
 
 protocol = stepwise.Protocol()
 
