@@ -16,8 +16,15 @@ Options:
         The volume of each individual reaction (in µL).  NEB recommends 25 µL, 
         but I typically use 10 µL and get enough yield for routine experiments.
 
-    -c --template-stock-conc <nM>
-        The concentration of the DNA/RNA being added to the reaction.  If this 
+    -t --template-conc <nM>
+        The desired final concentration of template in the reaction.  The 
+        default differs depending on whether the template is DNA or mRNA.  If 
+        this differs from the default, the volume of the template will be 
+        adjusted accordingly.
+
+    -T --template-stock <nM>
+        The concentration of the DNA/RNA being added to the reaction.  The 
+        default depends on whether the template is DNA or mRNA.  If this 
         differs from the default, the volume of the template will be adjusted 
         accordingly.
 
@@ -62,7 +69,7 @@ RNase Inhibitor    40 U/µL      0.2 µL  yes
 ZnOAc                 1 mM      0.5 µL  yes
 target DNA          750 nM      0.8 µL  yes
 template DNA         75 nM      0.8 µL
-template mRNA        10 µM      1.6 µL
+template mRNA      1000 nM      1.6 µL
 ''')
 
 if not args['--add-zinc']:
@@ -73,16 +80,23 @@ if not args['--add-target']:
 
 if args['--mrna']:
     template = 'template mRNA'
+    default_template_conc_nM = 160
+    default_template_stock_nM = 1000
     del purexpress['template DNA']
 else:
     template = 'template DNA'
+    default_template_conc_nM = 6
+    default_template_stock_nM = 75
     del purexpress['template mRNA']
 
-purexpress[template].name = ','.join(args['<templates>'])
+def float_or_default(x, default):
+    return float(x) if x else default
 
-if conc := args['--template-stock-conc']:
-    q = eval(conc), purexpress[template].stock_conc.unit
-    purexpress[template].hold_conc.stock_conc = q
+purexpress[template].name = ','.join(args['<templates>'])
+purexpress[template].hold_stock_conc.conc = float_or_default(
+        args['--template-conc'], default_template_conc_nM), 'nM'
+purexpress[template].hold_conc.stock_conc = float_or_default(
+        args['--template-stock'], default_template_stock_nM), 'nM'
 
 purexpress.num_reactions = len(args['<templates>'])
 purexpress.hold_ratios.volume = eval(args['--rxn-volume']), 'µL'
