@@ -101,6 +101,8 @@ purexpress[template].hold_conc.stock_conc = float_or_default(
 purexpress.num_reactions = len(args['<templates>'])
 purexpress.hold_ratios.volume = eval(args['--rxn-volume']), 'µL'
 
+purexpress.fix_volumes(template)
+
 protocol += f"""\
 Setup {plural(purexpress.num_reactions):# PURExpress reaction/s}:
 
