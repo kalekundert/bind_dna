@@ -28,8 +28,16 @@ Options:
         differs from the default, the volume of the template will be adjusted 
         accordingly.
 
+    -w --time <time>                            [default: 2h]
+        The amount of time to run the transcription/translation reaction for.  
+        No unit is assumed, so be sure to specify one.
+
     -r --mrna
         Use mRNA as the template instead of DNA.
+
+    -p --purify
+        Purify the expressed protein using the reverse-His protocol recommended 
+        by NEB.
 
     -g --add-target
         Add target DNA to the PURExpress reaction.
@@ -38,19 +46,6 @@ Options:
         Add ZnOAc to the PURExpress reaction.  This is necessary when 
         expressing Zn-finger proteins.
 
-    -p --purify
-        Purify the expressed protein using the reverse-His protocol recommended 
-        by NEB.
-
-    -n --native-page
-        Run the IVTT reaction on a native PAGE gel.
-
-    -s --sds-page
-        Run the IVTT reaction on an SDS-PAGE gel.
-
-    -w --time <time>                            [default: 2h]
-        The amount of time to run the transcription/translation reaction for.  
-        No unit is assumed, so be sure to specify one.
 """
 
 import docopt
