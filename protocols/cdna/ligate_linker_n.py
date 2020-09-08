@@ -72,7 +72,7 @@ master_mix = '' if args['--no-master-mix'] else args['--master-mix']
 ligate = stepwise.MasterMix.from_text("""\
 Reagent                  Stock       Volume  MM?
 =====================  =======  ===========  ===
-water                           to 40.00 µL  yes
+nuclease-free water             to 40.00 µL  yes
 T4 DNA ligase buffer       10x       4.0 µL  yes
 BSA                       0.1%       4.0 µL  yes
 PEG 6000                   50%      20.0 µL  yes
