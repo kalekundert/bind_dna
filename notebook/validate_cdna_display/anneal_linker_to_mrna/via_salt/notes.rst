@@ -1,5 +1,5 @@
 ********
-Via Salt
+Via salt
 ********
 As discussed in :expt:`53`, salt is widely used in oligo annealing reactions to 
 help shield the charge of the phosphate backbone.  However, [Naimudden2016]_ 

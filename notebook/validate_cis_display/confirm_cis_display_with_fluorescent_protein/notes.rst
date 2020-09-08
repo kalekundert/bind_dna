@@ -833,3 +833,26 @@ much better results:
       - o154 (1861)
       - o176 (4104)
       - o39  (3398) [aka repA-seq-rev-132]
+
+2020/08/24:
+
+.. protocol:: 20200824_make.txt
+
+:download:`20200824_make.pdf`
+
+I got colonies for most of the reactions.  For the reactions with <3 colonies, 
+I checked the PCR product by E-gel:
+
+.. figure:: 20200826_cloning.svg
+
+- p151 and p162 were the reactions that had colonies, just not very many.  The 
+  others had no colonies.  This is nicely consistent with the gel.
+
+- p156 (not shown here, but only 3 colonies) p159, p162, and p165 are all 
+  mutating the linker region.  This means they all have the same primers with 
+  different overhangs.  That's probably why they also all seem to have the same 
+  ≈700 bp off-target band.  I bet that if I optimize Ta for one (say, p159), 
+  it'll work for all of them.
+
+- Not sure what's wrong with 152, the primers seem like they should be fine.  
+  I'll just try a temperature gradient.

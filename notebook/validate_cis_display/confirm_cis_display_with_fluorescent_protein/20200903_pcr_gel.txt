@@ -1,0 +1,58 @@
+September 3, 2020
+
+$ stepwise pcr p153,p162,p162 o63,o179,o183 o167,o180,o184 -a 55-70 -x 210 -n 3 -M -v 65
+$ stepwise gels/gel agarose1 36
+
+1. Prepare 10x primer mix [1]:
+
+   Reagent          Stock    Volume
+   ────────────────────────────────
+   water                    9.00 µL
+   o63,o179,o183   100 µM   0.50 µL
+   o167,o180,o184  100 µM   0.50 µL
+   ────────────────────────────────
+                           10.00 µL
+
+2. Setup 3 PCR reactions [2]:
+
+   Reagent            Stock    Volume       3.3x
+   ─────────────────────────────────────────────
+   water                     19.50 µL   64.35 µL
+   p153,p162,p162  20 pg/µL   6.50 µL
+   primer mix           10x   6.50 µL
+   Q5 master mix         2x  32.50 µL  107.25 µL
+   ─────────────────────────────────────────────
+                             65.00 µL   52.00 µL/rxn
+
+   - Use any extra master mix as a negative control.
+
+3. Run the following thermocycler protocol:
+
+   - 98°C for 30s
+   - Repeat 35x:
+     - 98°C for 10s
+     - 55-70°C for 20s
+     - 72°C for 3m30
+   - 72°C for 2 min
+
+4. Prepare samples for electrophoresis:
+
+   Reagent         Stock   Volume       54x
+   ────────────────────────────────────────
+   loading buffer     6x  1.00 µL  54.00 µL
+   sample                 5.00 µL
+   ────────────────────────────────────────
+                          6.00 µL   1.00 µL/rxn
+
+5. Run a gel:
+
+   - Use a 1% agarose gel.
+   - Load 5 µL of each sample.
+   - Run at 100V for 60 min.
+
+Notes:
+[1] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol
+
+[2] For diluting template DNA to 20 pg/µL:
+    Dilute 1 µL twice into 7*sqrt([DNA]) µL

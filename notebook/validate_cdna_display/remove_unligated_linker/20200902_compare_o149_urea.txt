@@ -1,0 +1,116 @@
+September 2, 2020
+
+$ stepwise compare_o149_urea
+
+ 1. Wipe down your bench and anything you'll touch 
+    (pipets, racks, pens, etc.) with RNaseZap.
+
+ 2. Setup 1 annealing reaction:
+
+    Reagent  Stock    Volume
+    ────────────────────────
+    water           10.50 µL
+    PBS        10x   2.00 µL
+    f85       5 µM   5.00 µL
+    o129     10 µM   2.50 µL
+    ────────────────────────
+                    20.00 µL
+
+ 3. Perform the annealing reaction:
+
+    - Incubate at 95°C for 2 min.
+    - Cool at room temperature.
+
+ 4. Reserve 0.44 µL of the annealed product for the
+    '−ligate' lane of the gel, and dilute it to 4.44
+    µL with nuclease-free water.
+
+ 5. Setup 1 ligation reaction:
+
+    Reagent                 Stock     Volume
+    ────────────────────────────────────────
+    water                          123.75 µL
+    T4 DNA ligase buffer      10x   18.00 µL
+    BSA                      0.1%   18.00 µL
+    T4 RNA ligase         40 U/µL    2.25 µL
+    annealed mRNA/linker  1.25 µM   18.00 µL
+    ────────────────────────────────────────
+                                   180.00 µL
+
+ 6. Incubate the ligation reaction as follows:
+
+    - 25°C for 10 min.
+    - 65°C for 10 min.
+
+ 7. Reserve 4.44 µL of the ligated product for the
+    '−filter' lane of the gel.
+
+ 8. Split the ligation reaction into 4 40 µL samples, 
+    to be prepared as follows:
+
+    urea:  −  +  −  +
+    o194:  −  −  +  +
+
+ 9. Remove unligated linker using a MWCO spin filter:
+
+    - For samples with o194:
+      - Add 5 µL 100 µM o194.
+      - Incubate at 95°C for 2 min [1]
+
+    - Bring reactions to 500 µL with 8M urea or water.
+    - Load onto a 100 kDa MWCO spin-filter [2].
+    - Spin 14000g, 15 min, 4°C.
+    - Wash with 500 µL 8M urea or water.
+    - Wash with 500 µL water.
+
+    - For samples with urea:
+      - Wash with water again.
+      - Wash with water again.
+
+    - Invert the filter into a clean tube and spin 
+      1000g, 2 min to collect ligated product in a 
+      volume of ≈15 µL.
+
+10. Prepare samples for TBE/urea PAGE:
+
+    Reagent                           Stock    Volume        9x
+    ───────────────────────────────────────────────────────────
+    formamide loading buffer             2x   5.00 µL  45.00 µL
+    o194                             100 µM   0.56 µL   5.04 µL
+    −ligate,−filter,−/−,+/−,−/+,+/+  125 nM   4.44 µL
+    ───────────────────────────────────────────────────────────
+                                             10.00 µL   5.56 µL/rxn
+
+    - Incubate at 70°C for 3 min.
+
+11. Run a gel:
+
+    - Use a 6% TBE/urea PAGE gel.
+    - Load 10 µL of each sample.
+    - Run at 180V for 40 min.
+
+12. Stain gel with GelGreen:
+
+    - Submerge gel in ≈50 mL 3x GelGreen [3].
+    - Shake gently for 30 min.
+
+13. Image with a laser scanner:
+
+    lasers:   488 nm   658 nm
+    filters:  518BP22  710BP40
+
+Notes:
+[1] When preparing samples for PAGE, this incubation 
+    step is 70°C for 3 min.  I chose to use a higher 
+    temperature here because there is no formamide in 
+    the buffer to help lower melting temperatures.
+
+[2] Amicon UFC510024
+
+[3] Including 100 mM NaCl in the staining solution 
+    enhances sensitivity, but may promote dye 
+    precipitation if the gel stain is reused.
+
+    Staining solution can be reused at least 2-3x.
+    Store staining solution at room temperature
+    protected from light.

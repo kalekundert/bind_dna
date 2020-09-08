@@ -23,6 +23,9 @@ Advantages of having the competing oligo bind linker-N:
 
 - DNA/DNA duplexes may be stronger than DNA/RNA duplexes.  (This sounds 
   reasonable, but I have no idea if it's actually true or not.)
+
+- The oligo wouldn't remain bound to the mRNA, where it could potentially 
+  affect translation.
   
 Advantages of having the competing oligo bind the mRNA:
 

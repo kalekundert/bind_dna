@@ -22,6 +22,7 @@ linker.  I'm mostly intending to follow the cDNA-display protocol from
    denature_unligated_linker_n/notes
    anneal_linker_to_mrna/notes
    ligate_linker_to_mrna/notes
+   remove_unligated_linker/notes
    express_mrna_via_purexpress/notes
    attach_mrna_to_mwasabi/notes
    attach_mrna_to_zif268/notes

@@ -96,6 +96,11 @@ different length linker would be optimal for me.
 - That said, I think that it might be better to not use Spacer-18 at all in the 
   puromycin arm:
 
+  .. update:: 2020/09/03
+
+    [Liu2000] has data showing that the PEG spacer actually improves mRNA 
+    display.  So the arguments below are probably wrong.
+
    - PEG has a much shorter persistence length than ssDNA:
 
      ===========================  =======  ===========================

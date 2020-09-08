@@ -14,3 +14,9 @@ Likewise, unannealed linker/mRNA should be separated by native PAGE.  While
 this makes sense, it's just something I thought up of: not an established 
 assay.  I don't really have great controls, either, so I should take the 
 results with a grain of salt.
+
+.. note::
+
+  Now that I have a good ligation assay (:expt:`50`), I think I should repeat 
+  these experiments using that assay.  I think the results will be more 
+  persuasive than they are now.

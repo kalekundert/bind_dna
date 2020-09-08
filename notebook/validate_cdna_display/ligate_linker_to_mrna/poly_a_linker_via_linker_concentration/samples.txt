@@ -1,4 +1,4 @@
-- Prepare the following reactions:
+- The following steps describe these samples:
 
-            mRNA (f11)  +  +  +  +
-  poly-A linker (o129)  1  2  4  8
+                mRNA (f11)  +  +  +  +
+  poly-A linker (o129, µM)  1  2  4  8

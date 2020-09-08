@@ -68,3 +68,71 @@ the future, I might also think about ordering a fluorescent protein standard,
 e.g. Invitrogen LC5928.  This is basically a normal ladder with AlexaFluor 
 coupled to all the proteins.  It's kinda expensive ($400/125 µL), so I'll have 
 to think if I'll get enough use out of it to be worth it.
+
+Results
+=======
+
+2020/08/25:
+
+.. protocol:: 20200825_display_mrna.txt
+.. figure:: 20200825_attach_mrna_to_mwasabi.svg
+
+- The protein expression reaction appears to be degrading the mRNA.  The 
+  "annealed but unligated" and "ligated and filtered" lanes both appear to 
+  contain full-length mRNA, while the corresponding lanes after protein 
+  expression both do not.
+
+  This may be a sign that I incubated the expression reaction for too long.  
+  [Barendt2013]_ incubates the PURExpress reaction for 30 min at 37°C, then 10m 
+  at room temperature.  I'd be a little surprised if this made a big 
+  difference, but it's probably worth doing a time course.
+
+- There is no indication that any of the puromycin reacts with any of the 
+  protein.  Even if the mRNA ends up being degraded (as discussed above), the 
+  Cy5 would stay coupled to the peptide and be visibly retarded if the 
+  puromycin reaction occurred.
+
+  I'm pretty sure that IDT shipped me the right oligo.  I checked the IDT mass 
+  spectrometry quality control data, and it seems correct:
+
+  - Expected MW: 11236.1 Da
+  - ESI peak:    11235.7 Da
+
+  Some things I could try:
+
+  - Incubate with high concentrations of Mg²⁺ and K⁺.  See :expt:`62`.
+
+  - Use the Spacer-18 linker.  See :expt:`61`.
+
+  - Run a control with the mRNA (f85) and only the puromycin arm of the linker 
+    (o125, o126).  The puromycin arm---basically free puromycin---really should 
+    react with the protein.  I'd expect to see something of a smear in the Cy5 
+    channel, as the puromycin truncates the mWasabi gene at different points.  
+    The higher-MW parts of the smear might also be fluorescent in the GFP 
+    channel, if they contain the matured fluorophore.
+
+  - Use a gene from [Barendt2013]_.  This is assuming that there's something 
+    problematic about GFP, which just seems unlikely.  Also [Barendt2013]_ used 
+    ankyrin repeats, which I understand can be hard to work with.
+
+    .. note::
+
+       Most (all?) mRNA display protocols recommend using radioactive 
+       methionine for protein expression.  This would certainly make the 
+       protein easy to visualize, but it would also make everything harder to 
+       work with.  I think my approach of using fluorescent tags is better.  
+       For now I'm using mWasabi so I can see the protein, but once I have a 
+       protocol worked out, I can use non-fluorescent proteins and just monitor 
+       the display reactions via the Cy5 in the linker.
+
+- I don't know why the "annealed but unligated" lane appears to have a 
+  significant amount ligated product.  I ran exactly this lane in :expt:`50` 
+  and saw no mRNA/linker band at all.  Maybe it's possible that the difference 
+  has to do with this being an SDS gel, rather than a urea gel, but that 
+  doesn't seem particularly likely. 
+
+- The filtration step doesn't seem particularly effective at removing unligated 
+  linker, and also seems to lose a significant amount of material.  Adding 
+  competing oligo (o194) might help with the first problem.  The second problem 
+  may be a fluke, because I got good yield in :expt:`19`.
+

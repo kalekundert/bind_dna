@@ -1,6 +1,6 @@
-********************************
-Anneal linker-N with temperature
-********************************
+***************
+Via temperature
+***************
 
 I was able to find a number of different temperature protocols for annealing 
 oligos, see :expt:`15`.  They're similar for the most part---start hot, 
