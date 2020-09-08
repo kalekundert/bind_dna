@@ -4,7 +4,8 @@
 Anneal linker-N and mRNA prior to ligation.
 
 Usage:
-    anneal <n> [<mrna>] [<linker>] [-v <µL>] [-m <reagents>] [-x <fold>] [-R <µM>]
+    anneal <n> [<mrna>] [<linker>] [-v <µL>] [-m <reagents>] [-x <fold>] 
+        [-R <µM>] [-L <conc>]
 
 Arguments:
     <n>
@@ -33,6 +34,11 @@ Options:
         The stock concentration of the mRNA, in µM.  The volume of mRNA will be 
         updated accordingly to keep the amount of material in the reaction 
         constant.
+
+    -L --linker-stock <conc>
+        The stock concentration of the linker, in user-specified units.  The 
+        volume of linker will not be updated, so this will change the relative 
+        proportion of linker to mRNA.
 """
 
 import stepwise, docopt
@@ -54,11 +60,13 @@ anneal.hold_ratios.volume = eval(args['--volume']), 'µL'
 anneal['mRNA'].master_mix = 'mrna' in args['--master-mix']
 anneal['linker'].master_mix = 'link' in args['--master-mix']
 
-if args['<mrna>']: anneal['mRNA'].name = args['<mrna>']
-if args['<linker>']: anneal['linker'].name = args['<linker>']
+if x := args['<mrna>']: anneal['mRNA'].name = x
+if x := args['<linker>']: anneal['linker'].name = x
 
 anneal['mRNA'].hold_conc.stock_conc = int(args['--mrna-stock']), 'µM'
 anneal['linker'].volume *= float(args['--excess-linker'])
+
+if x := args['--linker-stock']: anneal['linker'].stock_conc = x
 
 protocol = stepwise.Protocol()
 
