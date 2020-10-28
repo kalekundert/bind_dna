@@ -33,6 +33,9 @@ Options:
         rna: annealed mRNA/linker
         peg: PEG-6000
 
+    -M --no-master-mix
+        Exclude all optional reagents from the master mix, i.e. `-m ''`.
+
     -k --pnk
         Add T4 PNK to the reaction, e.g. if using non-phosphorylated primers.
 
@@ -40,13 +43,9 @@ Options:
         Include PEG-6000 in the reaction.  Many T4 RNA ligase protocols 
         recommend this, but in my hands it does not improve yield.
 
-    -M --no-master-mix
-        Exclude all optional reagents from the master mix, i.e. `-m ''`.
-
     -Q --no-quench
         Leave out the 65°C incubation to quench the reaction.  This is useful 
         if the reaction will be quenched by a downstream step anyways.
-        
 """
 
 import stepwise, docopt
