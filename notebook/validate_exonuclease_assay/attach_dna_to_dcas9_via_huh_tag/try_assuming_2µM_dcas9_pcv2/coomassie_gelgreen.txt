@@ -1,0 +1,17 @@
+- Stain the gel with Coomassie and GelGreen:
+
+  - Repeat 3 times:
+    - Add 100 mL water.
+    - Microwave until almost boiling (1 min).
+    - Shake gently for 1 min.
+
+  - Cover the gel with SimplyBlue SafeStain (30 mL).
+  - Microwave until almost boiling (45 sec).
+  - Shake gently for 5 min.
+
+  - Discard stain and add 100 mL water.
+  - Shake gently for 10 min.
+
+  - Discard water and cover the gel with 3x 
+    GelGreen, 100 mM NaCl (30 mL).
+  - Shake gently for 30 min.

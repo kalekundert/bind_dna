@@ -1,0 +1,63 @@
+October 27, 2020
+
+$ stepwise make f101 f102 p176
+
+1. Prepare 10x primer mix [1]:
+
+   Reagent     Stock    Volume
+   ───────────────────────────
+   water               9.00 µL
+   o206,o208  100 µM   0.50 µL
+   o207,o209  100 µM   0.50 µL
+   ───────────────────────────
+                      10.00 µL
+
+2. Setup 2 PCR reactions [2]:
+
+   Reagent           Stock    Volume        3x
+   ───────────────────────────────────────────
+   water                     3.00 µL   9.00 µL
+   p137,p59       20 pg/µL   1.00 µL
+   primer mix          10x   1.00 µL
+   Q5 master mix        2x   5.00 µL  15.00 µL
+   ───────────────────────────────────────────
+                            10.00 µL   8.00 µL/rxn
+
+   - Use any extra master mix as a negative control.
+
+3. Run the following thermocycler protocol:
+
+   - 98°C for 30s
+   - Repeat 35x:
+     - 98°C for 10s
+     - 63,65°C for 20s
+     - 72°C for 2m30
+   - 72°C for 2 min
+
+4. Label the products: f101,f102
+
+5. Setup the Gibson assembly reaction [3]:
+
+   Reagent                           Stock   Volume
+   ────────────────────────────────────────────────
+   water                                    1.61 µL
+   f101                           50 ng/µL  0.83 µL
+   f102                           50 ng/µL  0.06 µL
+   Gibson master mix (NEB E2611)        2x  2.50 µL
+   ────────────────────────────────────────────────
+                                            5.00 µL
+
+6. Incubate at 50°C for 15 min.
+
+7. Transform 2 µL.
+
+8. Label the product: p176
+
+Notes:
+[1] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol
+
+[2] For diluting template DNA to 20 pg/µL:
+    Dilute 1 µL twice into 7*sqrt([DNA]) µL
+
+[3] https://preview.tinyurl.com/ychbvkra

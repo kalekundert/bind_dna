@@ -1,0 +1,50 @@
+September 14, 2020
+
+$ stepwise make f42 p173 p174
+
+1. Setup 1 XmnI digestion [1]:
+
+   Reagent              Stock    Volume
+   ────────────────────────────────────
+   water                        4.48 µL
+   p98              249 ng/µL   4.02 µL
+   CutSmart Buffer        10x   1.00 µL
+   XmnI               20 U/µL   0.50 µL
+   ────────────────────────────────────
+                               10.00 µL
+
+2. Incubate at the following temperatures [2]:
+
+   - 37°C for 5–15 min
+   - 65°C for 20 min
+
+3. Label the product: f42
+
+4. Setup the Gibson assembly reactions [3]:
+
+   Reagent                            Stock   Volume     2.2x
+   ──────────────────────────────────────────────────────────
+   water                                     1.87 µL  4.12 µL
+   f42                            100 ng/µL  0.26 µL  0.57 µL
+   f90,f91                         10 ng/µL  0.37 µL
+   Gibson master mix (NEB E2611)         2x  2.50 µL  5.50 µL
+   ──────────────────────────────────────────────────────────
+                                             5.00 µL  4.63 µL/rxn
+
+5. Incubate at 50°C for 15 min.
+
+6. Transform 2 µL.
+
+7. Label the products: p173,p174
+
+Notes:
+[1] NEB recommends 5–10 units of enzyme per µg DNA 
+    (10–20 units for genomic DNA).  Enzyme volume 
+    should not exceed 10% of the total reaction 
+    volume to prevent star activity due to excess 
+    glycerol.
+
+[2] The heat inactivation step is not necessary if 
+    the DNA will be purified before use.
+
+[3] https://preview.tinyurl.com/ychbvkra

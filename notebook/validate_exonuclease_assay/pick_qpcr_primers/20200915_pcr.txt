@@ -1,0 +1,42 @@
+September 15, 2020
+
+$ stepwise pcr p59 o87 o88 -n 10 -a 59-70 -x 10 -m dna,primers -v 5
+
+1. Prepare 10x primer mix [1]:
+
+   Reagent   Stock    Volume
+   ─────────────────────────
+   water             9.00 µL
+   o87      100 µM   0.50 µL
+   o88      100 µM   0.50 µL
+   ─────────────────────────
+                    10.00 µL
+
+2. Setup 10 PCR reactions [2]:
+
+   Reagent           Stock   Volume       12x
+   ──────────────────────────────────────────
+   water                    1.50 µL  18.00 µL
+   p59            20 pg/µL  0.50 µL   6.00 µL
+   primer mix          10x  0.50 µL   6.00 µL
+   Q5 master mix        2x  2.50 µL  30.00 µL
+   ──────────────────────────────────────────
+                            5.00 µL   5.00 µL/rxn
+
+   - Use any extra master mix as a negative control.
+
+3. Run the following thermocycler protocol:
+
+   - 98°C for 30s
+   - Repeat 35x:
+     - 98°C for 10s
+     - 59-70°C for 20s
+     - 72°C for 10s
+   - 72°C for 2 min
+
+Notes:
+[1] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol
+
+[2] For diluting template DNA to 20 pg/µL:
+    Dilute 1 µL twice into 7*sqrt([DNA]) µL

@@ -109,6 +109,21 @@ actual qPCR machine.
   smaller range of Cq values.  I really think that, somehow, the same gradient 
   is running each time.
   
-went from 0 (lowest Cq) was relative the Y-axis plotted Cq relative to the 
-minimal Cq for each experiment, and the X-axis plotted temperature on a scale 
-of 0 (lowest) to 1 (highest) for each eax
+2020/09/15:
+
+I decided to try optimizing Ta using regular PCR, since qPCR was giving 
+inconsistent results.  One of the reasons I wanted to do this is that I've used 
+the Eppendorf thermocycler for gradients before, and I trust it.
+
+.. protocol:: 20200915_pcr.txt
+
+.. figure:: 20200915_optimize_ta_o87_o88.svg
+
+.. datatable:: 20200915_optimize_ta_o87_o88.xlsx
+
+.. datatable:: 20200915_optimize_ta_o87_o88_52_62.xlsx
+
+Note that the 59-70°C gradient was done with Q5, while the 52-62°C gradient was 
+done with SsoAdv.  The latter gradient doesn't have a clear trend.  I'm 
+inclined to just 60°C---it may not be the optimal Tm, but it is at least 
+amplified well.  And I've blown way too much time on this experiment already.

@@ -1,0 +1,5 @@
+- In the following steps, setup these samples:
+
+  Mg²⁺ (mM):     0    65     0    65
+    K⁺ (mM):     0   750     0   750
+     linker:  o128  o128  o129  o129

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+klab_mutagenesis \
+  BROCCOLI \
+  cctgacgtctaagaaacgcgtaatacgactcactatagggcttaagtataaggaggaaaaaatatggtgagcaaaggcga \
+  cctgacgtctaagaaacgcgtaatacgactcactatagggAGACGGTCGGGTCCAGATATTCGTATCTGTCGAGTAGAGTGTGGGCTcttaagtataaggaggaaaaaatatggtgagcaaaggcga

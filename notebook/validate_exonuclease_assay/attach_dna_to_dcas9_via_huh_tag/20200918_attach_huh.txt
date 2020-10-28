@@ -1,0 +1,125 @@
+September 18, 2020
+
+$ stepwise attach_huh
+
+1. Wipe down your bench and anything you'll touch 
+   (pipets, racks, pens, etc.) with RNaseZap.
+
+2. In the following steps, setup these reactions:
+
+   dCas9:          +  +  +  +
+   DNA (f12,f16):  −  +  +  +
+   HUH-target:     −  −  +  +
+   EDTA:           −  −  −  +
+
+3. Attach HUH-tagged DNA to the Cas9 RNP:
+
+   Reagent                   Stock    Volume       11x
+   ───────────────────────────────────────────────────
+   nuclease-free water               2.85 µL  31.40 µL
+   CutSmart                    10x   1.00 µL  11.00 µL
+   dCas9-PCV2 [1]            22 µM   0.05 µL   0.50 µL
+   sgRNA (f13)               10 µM   0.10 µL   1.10 µL
+   EDTA [2]                 500 mM   1.00 µL
+   HUH-DNA (Ø,f16,f12) [3]  200 nM   5.00 µL
+   ───────────────────────────────────────────────────
+                                    10.00 µL   4.00 µL/rxn
+
+   - Add each reagent in order.
+   - Mix after adding the EDTA (and before adding the 
+     HUH-DNA) [2].
+   - Incubate at 37°C for 15 min.
+
+4. Prepare samples for SDS PAGE:
+
+   Reagent                 Stock    Volume        6x
+   ─────────────────────────────────────────────────
+   Bolt LDS sample buffer     4x   3.85 µL  23.10 µL
+   Bolt reducing agent       10x   1.54 µL   9.24 µL
+   sample                         10.00 µL
+   ─────────────────────────────────────────────────
+                                  15.39 µL   5.39 µL/rxn
+
+   - Incubate at 70°C for 10 min.
+
+5. Run a gel:
+
+   - Use a 4−12% SDS PAGE gel.
+   - Load 15.39 µL of each sample.
+   - Run at 165V for 42 min.
+
+6. Stain gel with GelGreen:
+
+   - Submerge gel in ≈50 mL 3x GelGreen [4].
+   - Shake gently for 30 min.
+
+7. Image with a laser scanner:
+
+   laser:   488 nm
+   filter:  518BP22
+
+8. Stain gel with SimplyBlue SafeStain:
+
+   - Rinse gel 3x for 5 min with 100 mL water [5].
+   - Add enough stain to cover the gel (≈20 mL).
+   - Incubate at 25°C for 1h with gentle shaking [6].
+   - Wash the gel with 100 mL water for 1–3h [7].
+   - To obtain the clearest background, wash again 
+     with 100 mL water for 1h [8].
+
+9. Image with a laser scanner:
+
+   laser:   658 nm
+   filter:  710BP40
+
+Notes:
+[1] Invitrogen recommends loading no more than 250 
+    ng/band on Bolt SDS PAGE gels, and the detection 
+    limit for Coomassie (as an IR dye [Butt2013]) is 
+    at least 10 ng/band.  That corresponds to a range 
+    of ≈1.4-0.1 pmol Cas9-PCV2/band (MW: 176.8 kDa).  
+    I probably want to be on the high end of that.
+
+[2] The EDTA reaction is a negative control 
+    established in [VegaRocha2007].  They used 2.5 mM 
+    divalent metal and 30 mM EDTA to prevent coupling.  
+    This reaction has 10 mM Mg²⁺ and 50 mM EDTA.  Not 
+    the same proportion, but still an excess.
+
+[3] f16 and f12 are 414 bp.  At that length, 50 ng/µL 
+    (a typical PCR yield) corresponds to ≈150 nM.  
+    [Lovendahl2017] used a 10:1 DNA:protein ratio to
+    maximize the amount of coupled protein.  I'm going 
+    to use a 1:1 ratio instead, both because I don't 
+    want a lot of unbound DNA in my qPCR reactions and 
+    because a 10:1 ratio would use a lot of material.
+
+[4] Including 100 mM NaCl in the staining solution 
+    enhances sensitivity, but may promote dye 
+    precipitation if the gel stain is reused.
+
+    Staining solution can be reused at least 2-3x.
+    Store staining solution at room temperature
+    protected from light.
+
+[5] Rinsing removes SDS and buffer salts, which 
+    interfere with binding of the dye to the protein.
+
+[6] The gel can be stained for up to 3 hours, but 
+    after 3 hours, sensitivity decreases.  If you need 
+    to leave the gel overnight in the stain, add 2 mL 
+    of 20% NaCl (w/v) in water for every 20 mL of 
+    stain. This procedure will not affect sensitivity.
+
+[7] The gel can be left in the water for several days 
+    without loss of sensitivity. There is a small 
+    amount of dye in the water that is in equilibrium 
+    with the dye bound to the protein, so proteins 
+    remain blue.
+
+[8] Sensitivity decreases if the gel is stored in 
+    water for more than 1 day. The decrease in the 
+    amount of free dye in the water favors 
+    dissociation of the dye from the protein.  If you 
+    need to store the gel in water for a few days, add 
+    20 mL of 20% NaCl.

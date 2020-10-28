@@ -4,6 +4,7 @@ References
 .. [Ando2010] :doi:`10.1073/pnas.1011354107`
 .. [Arai2001] :doi:`10.1093/protein/14.8.529`
 .. [Arai2020] :doi:`10.1007/978-1-4939-9853-1_3`
+.. [Avis2012] :doi:`10.1007/978-1-62703-113-4_7`
 .. [Ashworth2006] :doi:`10.1038/nature04818`
 .. [Barendt2013] :doi:`10.1021/co300135r`
 .. [Bauer2017] :doi:`10.1371/journal.pone.0190062`
@@ -17,10 +18,12 @@ References
 .. [Cotten2011] :doi:`10.1038/nprot.2011.354`
 .. [Damian2009] :doi:`10.1016/j.bbrc.2009.05.044`
 .. [Dick1978] :doi:`10.1113/jphysiol.1978.sp012526`
+.. [Doerr2019] :doi:`10.1088/1478-3975/aaf33d`
 .. [Durfee2008] :doi:`10.1128/JB.01695-07`
 .. [DiSalvo2019] :doi:`10.1186/s12859-019-2704-x`
 .. [ElrodErickson1998] :doi:`10.1016/S0969-2126(98)00047-1`
 .. [Farrell2010] :doi:`10.1016/B978-0-12-374727-3.00007-3`
+.. [Filonov2015] :doi:`10.1016/j.chembiol.2015.04.018`
 .. [Gesteland1966] :doi:`10.1016/s0022-2836(66)80263-2`
 .. [Gholamalipour2018] :doi:`10.1093/nar/gky796`
 .. [Giraldo1992] :doi:`10.1016/0022-2836(92)90864-G`
@@ -49,6 +52,7 @@ References
 .. [Lovendahl2017] :doi:`10.1021/jacs.7b02572`
 .. [Kienberger2000] :doi:`10.1002/1438-5171(200006)1:2<123::AID-SIMO123>3.0.CO;2-3`
 .. [Kurz2001] Kurz M, Gu K, Al-Gawari A, Lohse PA. cDNA–Protein Fusions: Covalent Protein–Gene Conjugates for the In Vitro Selection of Peptides and Proteins. Chem Bio Chem 2:9:666-672 (2001).
+.. [Ma2011] :doi:`10.1007/978-1-61779-379-0_21`
 .. [Man2001] :doi:`10.1093/nar/29.12.2471`
 .. [Masai1988] :doi:`10.1093/nar/16.14.6493`
 .. [Masai1987] :doi:`10.1073/pnas.84.14.4781`
@@ -60,10 +64,12 @@ References
 .. [Mochizuki2011] :doi:`10.1021/co2000295`
 .. [Mochizuki2013] :doi:`10.1186/1480-9222-15-7`
 .. [Murphy2004] :doi:`10.1016/S0006-3495(04)74308-8`
+.. [Nagumo2016] :doi:`10.1093/jb/mvv131`
 .. [Naimudden2011] :doi:`10.1186/1756-6606-4-2`
 .. [Naimudden2016] :doi:`10.1021/acscombsci.5b00139`
 .. [Nakata2012] :doi:`10.1002/anie.201108199`
 .. [Newton2008] :doi:`10.2146/ajhp070138`
+.. [Niederholtmeyer2013] :doi:`10.1021/sb300104f`
 .. [Nishigaki1998] :doi:`10.1023/A:1009644028931`
 .. [Noyes2008] :doi:`10.1093/nar/gkn048`
 .. [Odegrip2004] :doi:`10.1073/pnas.0400219101`

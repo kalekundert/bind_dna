@@ -1,0 +1,51 @@
+September 18, 2020
+
+$ stepwise serial_dilution '9µL' '100ng/µL' 1e-4 7 -m p59
+$ stepwise pcr 'diluted p59, Ø' o87 o88 8 -v 66 -a 'Optimized Ta' -x 10 -m primers -p ssoadv
+
+1. Perform a serial dilution [1]:
+
+   - Put 10.00 μL 100.00 ng/µL p59 in the first tube [2].
+   - Add 9.00 μL water in the 6 remaining tubes.
+   - Transfer 1.00 μL between each tube.
+
+2. Setup 8 qPCR reactions [3]:
+
+   Reagent                Stock    Volume       8.8x
+   ─────────────────────────────────────────────────
+   water                         29.04 µL  255.55 µL
+   diluted p59, Ø                 3.30 µL
+   o87                   100 µM   0.33 µL    2.90 µL
+   o88                   100 µM   0.33 µL    2.90 µL
+   SsoAdvanced supermix      2x  33.00 µL  290.40 µL
+   ─────────────────────────────────────────────────
+                                 66.00 µL   62.70 µL/rxn
+
+   - Use any extra master mix as a negative control.
+
+3. Run the following thermocycler protocol [4]:
+
+   - 95°C for 30s
+   - Repeat 40x:
+     - 95°C for 10s
+     - Optimized Ta for 15s
+     - Measure fluorescence
+   - 65-95°C in 5s steps of 0.5°C
+     - Measure fluorescence
+
+Notes:
+[1] The final concentrations will be:
+    1  100.00 ng/µL
+    2   10.00 ng/µL
+    3    1.00 ng/µL
+    4    0.10 ng/µL
+    5    0.01 ng/µL
+    6    0.00 ng/µL
+    7    0.00 ng/µL
+
+[2] 100 ng/µL is 46 nM
+
+[3] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol
+
+[4] 3x 20 µL reactions per dilution

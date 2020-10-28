@@ -1,0 +1,132 @@
+September 17, 2020
+
+$ stepwise make p108 p109 p110 p112 p113 p114 p116 p118 p121 p122 p123 p127 p130 p133 p136 -- -v 5 -L
+$ stepwise make p140 p144 p146 p148 p149 -- -v 5 -L
+$ stepwise make p154 p155 p157 p158 p160 p161 p163 p164 -- -v 5 -L
+$ stepwise kld 'PCR product' -n 28
+
+ 1. Prepare 10x primer mix [1]:
+
+    Reagent                                                                      Stock    Volume
+    ────────────────────────────────────────────────────────────────────────────────────────────
+    water                                                                                9.00 µL
+    o187                                                                        100 µM   0.50 µL
+    o140,o141,o142,o144,o145,o146,o148,o150,o153,o154,o155,o156,o159,o162,o165  100 µM   0.50 µL
+    ────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                        10.00 µL
+
+ 2. Setup 15 PCR reactions [2]:
+
+    Reagent                                                                        Stock   Volume       17x
+    ───────────────────────────────────────────────────────────────────────────────────────────────────────
+    water                                                                                 1.50 µL  25.50 µL
+    p137,p138,p139,p141,p142,p143,p145,p147,p150,p151,p152,p156,p159,p162,p165  20 pg/µL  0.50 µL
+    primer mix                                                                       10x  0.50 µL
+    Q5 master mix                                                                     2x  2.50 µL  42.50 µL
+    ───────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                          5.00 µL   4.00 µL/rxn
+
+    - Use any extra master mix as a negative control.
+
+ 3. Run the following thermocycler protocol:
+
+    - 98°C for 30s
+    - Repeat 35x:
+      - 98°C for 10s
+      - 66°C for 20s
+      - 72°C for 2m30
+    - 72°C for 2 min
+
+ 4. Label the products:
+    p108,p109,p110,p112,p113,p114,p116,p118,p121,p122,p123,p127,p130,p133,p136
+
+ 5. Prepare 10x primer mix [1]:
+
+    Reagent                    Stock    Volume
+    ──────────────────────────────────────────
+    water                              9.00 µL
+    o171,o171,o171,o176,o171  100 µM   0.50 µL
+    o167                      100 µM   0.50 µL
+    ──────────────────────────────────────────
+                                      10.00 µL
+
+ 6. Setup 5 PCR reactions [2]:
+
+    Reagent                      Stock   Volume        7x
+    ─────────────────────────────────────────────────────
+    water                               1.50 µL  10.50 µL
+    p141,p145,p147,p150,p150  20 pg/µL  0.50 µL
+    primer mix                     10x  0.50 µL
+    Q5 master mix                   2x  2.50 µL  17.50 µL
+    ─────────────────────────────────────────────────────
+                                        5.00 µL   4.00 µL/rxn
+
+    - Use any extra master mix as a negative control.
+
+ 7. Run the following thermocycler protocol:
+
+    - 98°C for 30s
+    - Repeat 35x:
+      - 98°C for 10s
+      - 63,63,63,62,63°C for 20s
+      - 72°C for 3 min
+    - 72°C for 2 min
+
+ 8. Label the products: p140,p144,p146,p148,p149
+
+ 9. Prepare 10x primer mix [1]:
+
+    Reagent                                   Stock    Volume
+    ─────────────────────────────────────────────────────────
+    water                                             9.00 µL
+    o177,o177,o179,o179,o181,o181,o183,o183  100 µM   0.50 µL
+    o178,o178,o180,o180,o182,o182,o184,o184  100 µM   0.50 µL
+    ─────────────────────────────────────────────────────────
+                                                     10.00 µL
+
+10. Setup 8 PCR reactions [2]:
+
+    Reagent                                     Stock   Volume       10x
+    ────────────────────────────────────────────────────────────────────
+    water                                              1.50 µL  15.00 µL
+    p151,p152,p151,p152,p151,p152,p151,p152  20 pg/µL  0.50 µL
+    primer mix                                    10x  0.50 µL
+    Q5 master mix                                  2x  2.50 µL  25.00 µL
+    ────────────────────────────────────────────────────────────────────
+                                                       5.00 µL   4.00 µL/rxn
+
+    - Use any extra master mix as a negative control.
+
+11. Run the following thermocycler protocol:
+
+    - 98°C for 30s
+    - Repeat 35x:
+      - 98°C for 10s
+      - 64,64,62,62,62,62,63,63°C for 20s
+      - 72°C for 3m30
+    - 72°C for 2 min
+
+12. Label the products:
+    p154,p155,p157,p158,p160,p161,p163,p164
+
+13. Run 28 ligation reactions:
+
+    Reagent              Stock    Volume      32.2x
+    ───────────────────────────────────────────────
+    water                        6.75 µL  217.35 µL
+    T4 ligase buffer       10x   1.00 µL   32.20 µL
+    T4 PNK             10 U/µL   0.25 µL    8.05 µL
+    T4 DNA ligase     400 U/µL   0.25 µL    8.05 µL
+    DpnI               20 U/µL   0.25 µL    8.05 µL
+    PCR product       50 ng/µL   1.50 µL
+    ───────────────────────────────────────────────
+                                10.00 µL    8.50 µL/rxn
+
+    - Incubate at room temperature for 1h.
+
+Notes:
+[1] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol
+
+[2] For diluting template DNA to 20 pg/µL:
+    Dilute 1 µL twice into 7*sqrt([DNA]) µL

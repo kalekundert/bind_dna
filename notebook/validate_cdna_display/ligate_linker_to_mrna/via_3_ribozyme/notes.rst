@@ -46,6 +46,13 @@ While this would remove the need for the restriction digest, it might also
 introduce the need for a phenol-chloroform extraction (to remove RNase from 
 miniprepped plasmid DNA).
 
+.. update:: 2020/10/28
+
+  In the interest of being able to clearly see if the ribozyme worked as 
+  intended, I digested the plasmid with HaeII.  This should lead to the 
+  creation of two fragments with defined length: the gene (829 bp) and the tail 
+  (347, 336 bp for HDV67, HDV56).
+
 Note that the whole terminator is transcribed, so I don't need to worry about 
 including a spacer between the ribozyme and the terminator.  Briefly, 
 rho-independent termination works like this [Peters2011]_:

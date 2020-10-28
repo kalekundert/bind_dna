@@ -1,0 +1,63 @@
+September 8, 2020
+
+$ stepwise rnasezap
+$ stepwise purexpress f88 f89 -w 30m -v 6 -r -T 333
+$ stepwise cdna/couple_puromycin -n 2 -v 2.5
+$ stepwise gels/gel sds/o194 4 -S
+$ stepwise gels/laser_scanner blue red
+
+1. Wipe down your bench and anything you'll touch 
+   (pipets, racks, pens, etc.) with RNaseZap.
+
+2. Setup 2 PURExpress reactions:
+
+   Reagent            Stock   Volume     2.2x
+   ──────────────────────────────────────────
+   A                         2.40 µL  5.28 µL
+   B                         1.80 µL  3.96 µL
+   RNase Inhibitor  40 U/µL  0.12 µL  0.26 µL
+   f88,f89           333 nM  1.68 µL
+   ──────────────────────────────────────────
+                             6.00 µL  4.32 µL/rxn
+
+   - Keep on ice.
+   - Be sure to add A before B.
+
+3. Incubate at 37°C for 30m.
+
+4. Setup the coupling reaction:
+
+   Reagent       Stock   Volume     2.2x
+   ─────────────────────────────────────
+   PURExpress           2.50 µL
+   MgOAc       1000 mM  0.24 µL  0.52 µL
+   KCl         3000 mM  0.91 µL  2.01 µL
+   ─────────────────────────────────────
+                        3.65 µL  1.15 µL/rxn
+
+5. Incubate at 25°C for 1h.
+
+6. Prepare samples for SDS PAGE:
+
+   Reagent                  Stock    Volume        6x
+   ──────────────────────────────────────────────────
+   water                            3.93 µL  23.58 µL
+   Bolt LDS sample buffer      4x   2.50 µL  15.00 µL
+   Bolt reducing agent        10x   1.00 µL   6.00 µL
+   o194                    100 µM   0.07 µL   0.42 µL
+   sample                    7 nM   2.50 µL
+   ──────────────────────────────────────────────────
+                                   10.00 µL   7.50 µL/rxn
+
+   - Incubate at 70°C for 10 min.
+
+7. Run a gel:
+
+   - Use a 4−12% SDS PAGE gel.
+   - Load 10 µL of each sample.
+   - Run at 165V for 42 min.
+
+8. Image with a laser scanner:
+
+   lasers:   488 nm   658 nm
+   filters:  518BP22  710BP40

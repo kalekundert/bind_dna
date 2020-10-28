@@ -1,0 +1,47 @@
+October 13, 2020
+
+$ stepwise make f12 f16
+$ stepwise custom 'Purify using PCR cleanup kit.'
+
+1. Prepare 10x primer mix [1]:
+
+   Reagent     Stock    Volume
+   ───────────────────────────
+   water               9.00 µL
+   o86        100 µM   0.50 µL
+   o102,o101  100 µM   0.50 µL
+   ───────────────────────────
+                      10.00 µL
+
+2. Setup 2 PCR reactions [2]:
+
+   Reagent           Stock    Volume      2.2x
+   ───────────────────────────────────────────
+   water                    15.00 µL  33.00 µL
+   p59            20 pg/µL   5.00 µL  11.00 µL
+   primer mix          10x   5.00 µL
+   Q5 master mix        2x  25.00 µL  55.00 µL
+   ───────────────────────────────────────────
+                            50.00 µL  45.00 µL/rxn
+
+   - Use any extra master mix as a negative control.
+
+3. Run the following thermocycler protocol:
+
+   - 98°C for 30s
+   - Repeat 35x:
+     - 98°C for 10s
+     - 62°C for 20s
+     - 72°C for 15s
+   - 72°C for 2 min
+
+4. Label the products: f12,f16
+
+5. Purify using PCR cleanup kit.
+
+Notes:
+[1] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol
+
+[2] For diluting template DNA to 20 pg/µL:
+    Dilute 1 µL twice into 7*sqrt([DNA]) µL

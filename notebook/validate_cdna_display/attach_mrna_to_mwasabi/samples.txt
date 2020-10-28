@@ -1,8 +1,0 @@
-- Prepare the following samples:
-
-  poly-A linker (o129):  +  +  +  +  +  +  −  −
-    mWasabi mRNA (f85):  −  +  +  +  +  +  +  +
-        annealing step:  −  +  +  +  +  +  −  −
-         ligation step:  −  −  +  +  +  −  −  −
-       filtration step:  −  −  −  +  +  −  −  −
-       expression step:  −  −  −  −  +  +  +  −

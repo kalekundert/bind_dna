@@ -59,7 +59,7 @@ Results
     reaction increase the probability of there being extra nucleotides 
     [Gholamalipour2018]_.  Possible solutions:
 
-    - Use a cis-ribozyme.  See :ext:`64`.
+    - Use a cis-ribozyme.  See :expt:`64`.
 
     - Cleave with oligo-directed RNase H or tRNA-directed RNase P.  
       Cis-ribozymes seems simpler, though.

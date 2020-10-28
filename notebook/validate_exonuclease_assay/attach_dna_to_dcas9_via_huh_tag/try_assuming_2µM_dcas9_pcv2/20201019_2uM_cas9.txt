@@ -1,0 +1,132 @@
+October 19, 2020
+
+$ stepwise 2uM_cas9
+
+ 1. Setup 2 PCR reactions [1,2]:
+
+    Reagent           Stock     Volume       2.2x
+    ─────────────────────────────────────────────
+    water                     39.00 µL   85.80 µL
+    p59            20 pg/µL   10.00 µL   22.00 µL
+    o86              100 µM    0.50 µL
+    o102,o101        100 µM    0.50 µL
+    Q5 master mix        2x   50.00 µL  110.00 µL
+    ─────────────────────────────────────────────
+                             100.00 µL   99.00 µL/rxn
+
+    - Split each reaction into 2 tubes.
+    - Use any extra master mix as a negative control.
+
+ 2. Run the following thermocycler protocol:
+
+    - 98°C for 30s
+    - Repeat 35x:
+      - 98°C for 10s
+      - 55°C for 20s
+      - 72°C for 15s
+    - 72°C for 2 min
+
+ 3. Label the products: f12,f16
+
+ 4. Purify using a PCR cleanup column.
+
+    - Add 5 volumes PB to crude DNA.
+    - If not yellow: Add 10 µL 3M NaOAc, pH=5.
+    - Load on a spin-column.
+    - Spin 1 min, discard flowthrough.
+    - Add 750 µL PE.
+    - Spin 1 min, discard flowthrough.
+    - Spin 1 min again, discard flowthrough.
+    - Add 10 µL EB
+    - Wait at least 1 min.
+    - Spin 1 min, keep flowthrough.
+
+ 5. In the following steps, setup these reactions:
+
+    Buffer:      Mn  Mn   Mn   Mn   Mn   Mn
+    dCas9-PCV2:  +    −    +    −    +    +
+    DNA:         −   f16  f16  f12  f12  f12
+    EDTA:        −    −    −    −    −    +
+
+ 6. Attach DNA to HUH-tagged dCas9 [3-5]:
+
+    Reagent        Stock    Volume      4.4x
+    ────────────────────────────────────────
+    water                  6.67 µL  29.36 µL
+    Mn²⁺ buffer      10x   1.00 µL   4.40 µL
+    dCas9-PCV2   1.84 µM   0.54 µL   2.39 µL
+    EDTA          500 mM   0.60 µL
+    f12,f16       845 nM   1.18 µL
+    ────────────────────────────────────────
+                          10.00 µL   8.22 µL/rxn
+
+    - Add each reagent in order.
+    - Mix after adding EDTA (and before adding DNA).
+    - Incubate at 37°C for 15 min.
+
+ 7. Prepare samples for SDS PAGE:
+
+    Reagent                 Stock    Volume       15x
+    ─────────────────────────────────────────────────
+    Bolt LDS sample buffer     4x   3.85 µL  57.75 µL
+    Bolt reducing agent       10x   1.54 µL  23.10 µL
+    sample                         10.00 µL
+    ─────────────────────────────────────────────────
+                                   15.39 µL   5.39 µL/rxn
+
+    - Incubate at 70°C for 10 min.
+
+ 8. Run a gel:
+
+    - Use a 4−12% SDS PAGE gel.
+    - Load 15.39 µL of each sample.
+    - Run at 165V for 60 min.
+
+ 9. Stain the gel with Coomassie and GelGreen:
+
+    - Repeat 3 times:
+      - Add 100 mL water.
+      - Microwave until almost boiling (1 min).
+      - Shake gently for 1 min.
+
+    - Cover the gel with SimplyBlue SafeStain (30 mL).
+    - Microwave until almost boiling (45 sec).
+    - Shake gently for 5 min.
+
+    - Discard stain and add 100 mL water.
+    - Shake gently for 10 min.
+
+    - Discard water and cover the gel with 3x 
+      GelGreen, 100 mM NaCl (30 mL).
+    - Shake gently for 30 min.
+
+10. Image with a laser scanner:
+
+    lasers:   488 nm   658 nm
+    filters:  518BP22  710BP40
+
+Notes:
+[1] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol
+
+[2] For diluting template DNA to 20 pg/µL:
+    Dilute 1 µL twice into 7*sqrt([DNA]) µL
+
+[3] Invitrogen recommends loading no more than 250 
+    ng/band on Bolt SDS PAGE gels, and the detection 
+    limit for Coomassie (as an IR dye [Butt2013]) is 
+    at least 10 ng/band.  That corresponds to a range 
+    of ≈1.4-0.1 pmol Cas9-PCV2/band (MW: 176.8 kDa).  
+    I probably want to be on the high end of that.
+
+[4] The EDTA reaction is a negative control 
+    established in [VegaRocha2007].  They used 2.5 mM 
+    divalent metal and 30 mM EDTA to prevent coupling.
+
+[5] f16 and f12 are 414 bp.  At that length, 50 ng/µL 
+    (a typical PCR yield) corresponds to ≈150 nM.  
+    [Lovendahl2017] used a 10:1 DNA:protein ratio to
+    maximize the amount of coupled protein.  I'm going 
+    to use a 1:1 ratio instead, both because I don't 
+    want a lot of unbound DNA in my qPCR reactions and 
+    because a 10:1 ratio would use a lot of material.

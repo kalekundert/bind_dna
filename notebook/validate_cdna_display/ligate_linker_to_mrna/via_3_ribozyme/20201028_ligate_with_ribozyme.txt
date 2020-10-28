@@ -1,0 +1,84 @@
+October 28, 2020
+
+$ stepwise ligate_with_ribozyme
+
+ 1. In the following steps, setup these reactions:
+
+    mRNA:    −  f92  f92  f92  f94  f94  f94
+    linker:  +   −    +    +    −    +    +
+    ligase:  −   −    −    +    −    −    +
+
+ 2. Wipe down your bench and anything you'll touch 
+    (pipets, racks, pens, etc.) with RNaseZap.
+
+ 3. Setup 2 annealing reactions [1]:
+
+    Reagent              Stock   Volume     2.2x
+    ────────────────────────────────────────────
+    nuclease-free water         2.60 µL  5.72 µL
+    PBS                    10x  0.40 µL  0.88 µL
+    f92,f94              10 µM  0.50 µL
+    o129                 10 µM  0.50 µL  1.10 µL
+    ────────────────────────────────────────────
+                                4.00 µL  3.50 µL/rxn
+
+ 4. Perform the annealing reactions:
+
+    - Incubate at 95°C for 2 min.
+    - Cool at room temperature.
+
+ 5. Setup 2 ligation reactions:
+
+    Reagent                 Stock    Volume      2.2x
+    ─────────────────────────────────────────────────
+    nuclease-free water             6.88 µL  15.13 µL
+    T4 DNA ligase buffer      10x   1.00 µL   2.20 µL
+    BSA                      0.1%   1.00 µL   2.20 µL
+    T4 RNA ligase         40 U/µL   0.12 µL
+    annealed mRNA/linker  1.25 µM   1.00 µL
+    ─────────────────────────────────────────────────
+                                   10.00 µL   8.88 µL/rxn
+
+ 6. Incubate the ligation reactions as follows:
+
+    - 25°C for 10 min.
+
+ 7. Prepare samples for TBE/urea PAGE:
+
+    Reagent                    Stock    Volume     10.5x
+    ────────────────────────────────────────────────────
+    formamide loading buffer      2x   5.00 µL  52.50 µL
+    o194                      100 µM   0.56 µL   5.88 µL
+    sample                    125 nM   4.44 µL
+    ────────────────────────────────────────────────────
+                                      10.00 µL   5.56 µL/rxn
+
+    - Incubate at 70°C for 3 min.
+
+ 8. Run a gel:
+
+    - Use a 6% TBE/urea PAGE gel.
+    - Load 10 µL of each sample.
+    - Run at 180V for 40 min.
+
+ 9. Stain gel with GelGreen:
+
+    - Submerge gel in ≈50 mL 3x GelGreen [2].
+    - Shake gently for 30 min.
+
+10. Image with a laser scanner:
+
+    lasers:   488 nm   658 nm
+    filters:  518BP22  710BP40
+
+Notes:
+[1] Using 0.6x linker reduces the amount of unligated 
+    linker, see expt #1.
+
+[2] Including 100 mM NaCl in the staining solution 
+    enhances sensitivity, but may promote dye 
+    precipitation if the gel stain is reused.
+
+    Staining solution can be reused at least 2-3x.
+    Store staining solution at room temperature
+    protected from light.

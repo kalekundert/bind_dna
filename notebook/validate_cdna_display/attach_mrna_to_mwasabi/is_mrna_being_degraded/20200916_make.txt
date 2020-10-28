@@ -1,0 +1,59 @@
+September 16, 2020
+
+$ stepwise make p175
+
+1. Prepare 10x primer mix [1]:
+
+   Reagent   Stock    Volume
+   ─────────────────────────
+   water             9.00 µL
+   o202     100 µM   0.50 µL
+   o203     100 µM   0.50 µL
+   ─────────────────────────
+                    10.00 µL
+
+2. Setup 1 PCR reaction [2]:
+
+   Reagent           Stock    Volume
+   ─────────────────────────────────
+   water                     3.00 µL
+   p98            20 pg/µL   1.00 µL
+   primer mix          10x   1.00 µL
+   Q5 master mix        2x   5.00 µL
+   ─────────────────────────────────
+                            10.00 µL
+
+3. Run the following thermocycler protocol:
+
+   - 98°C for 30s
+   - Repeat 35x:
+     - 98°C for 10s
+     - 60°C for 20s
+     - 72°C for 1m30
+   - 72°C for 2 min
+
+4. Run 1 ligation reaction:
+
+   Reagent              Stock    Volume
+   ────────────────────────────────────
+   water                        6.75 µL
+   T4 ligase buffer       10x   1.00 µL
+   T4 PNK             10 U/µL   0.25 µL
+   T4 DNA ligase     400 U/µL   0.25 µL
+   DpnI               20 U/µL   0.25 µL
+   PCR product       50 ng/µL   1.50 µL
+   ────────────────────────────────────
+                               10.00 µL
+
+   - Incubate at room temperature for 1h.
+
+5. Transform 2 µL.
+
+6. Label the product: p175
+
+Notes:
+[1] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol
+
+[2] For diluting template DNA to 20 pg/µL:
+    Dilute 1 µL twice into 7*sqrt([DNA]) µL

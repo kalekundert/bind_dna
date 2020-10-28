@@ -737,3 +737,13 @@ of the mechanism.  Likewise, my DNA-binding domain assay will probably only
 probe base readout.  I can't think of a good way to vary shape readout in 
 design, off the top of my head.  Base readout is more approachable, and perhaps 
 more relevant to the general problem of interface design.
+
+2020/10/21 --- George Church:
+
+- One possible explanation for the mRNA being degraded in my expression 
+  reactions is that there's RNaseH contamination
+
+- I should try to talk to George more frequently when I get stuck with 
+  experiments.  I've gotten pretty good feedback from him so far, and I think I 
+  could move faster with more feedback.
+

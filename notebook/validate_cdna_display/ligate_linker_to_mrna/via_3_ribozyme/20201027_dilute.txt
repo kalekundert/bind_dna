@@ -1,0 +1,16 @@
+October 27, 2020
+
+$ stepwise dilute 20201027_dilute_f92_f94.tsv -V10
+
+1. Dilute the purified DNA [1]:
+
+      tag  stock_uL  water_uL
+   0  f92        10     20.53
+   1  f94        10     13.31
+
+Note:
+[1] Concentrations:
+
+       tag      mw_da  stock_ng_uL  stock_nM  final_nM
+    0  f92  380449.37       4419.5  11616.53   3804.49
+    1  f94  376803.25       3310.1   8784.69   3768.03

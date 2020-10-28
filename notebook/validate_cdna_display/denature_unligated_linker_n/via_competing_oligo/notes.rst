@@ -7,9 +7,6 @@ fully denature duplex DNA/RNA (see especially :expt:`17`, but also :expt:`49`).
 A different approach is to add a competing oligo that would prevent linker-N 
 and the mRNA from re-annealing after being heat-denatured.
 
-- Add free oligo
-- Denature by heating.
-
 Considerations
 ==============
 

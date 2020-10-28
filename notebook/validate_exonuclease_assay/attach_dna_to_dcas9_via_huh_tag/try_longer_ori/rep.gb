@@ -1,0 +1,53 @@
+LOCUS       AAQ94098                 314 aa            linear   VRL 14-OCT-2003
+DEFINITION  replicase [Porcine circovirus 2].
+ACCESSION   AAQ94098
+VERSION     AAQ94098.1
+DBSOURCE    accession AY256460.1
+KEYWORDS    .
+SOURCE      Porcine circovirus 2
+  ORGANISM  Porcine circovirus 2
+            Viruses; Monodnaviria; Shotokuvirae; Cressdnaviricota;
+            Arfiviricetes; Cirlivirales; Circoviridae; Circovirus.
+REFERENCE   1  (residues 1 to 314)
+  AUTHORS   Dan,A., Molnar,T., Biksi,I., Glavits,R., Shaheim,M. and Harrach,B.
+  TITLE     Characterisation of Hungarian porcine circovirus 2 genomes
+            associated with PMWS and PDNS cases
+  JOURNAL   Acta Vet Hung 51 (4), 551-562 (2003)
+   PUBMED   14680067
+REFERENCE   2  (residues 1 to 314)
+  AUTHORS   Harrach,B.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (14-MAR-2003) Veterinary Medical Research Institute,
+            Hungarian Academy of Sciences, Hungaria krt. 21, Budapest H-1143,
+            Hungary
+COMMENT     Method: conceptual translation supplied by author.
+FEATURES             Location/Qualifiers
+     source          1..314
+                     /organism="Porcine circovirus 2"
+                     /strain="375"
+                     /isolation_source="PDNS-affected pig lung, lymph node, and
+                     tonsil tissue"
+                     /db_xref="taxon:85708"
+                     /country="Hungary"
+     Protein         1..314
+                     /product="replicase"
+                     /name="rep"
+     Region          16..100
+                     /region_name="Viral_Rep"
+                     /note="Putative viral replication protein; pfam02407"
+                     /db_xref="CDD:280553"
+     Region          171..256
+                     /region_name="RNA_helicase"
+                     /note="RNA helicase; pfam00910"
+                     /db_xref="CDD:366365"
+     CDS             1..314
+                     /gene="rep"
+                     /coded_by="AY256460.1:51..995"
+ORIGIN      
+        1 mpskkngrsg pqphkrwvft lnnpsederk kirdlpislf dyfivgeegn eegrtphlqg
+       61 fanfvkkqtf nkvkwylgar chiekakgtd qqnkeycske gnllmecgap rsqgqrsdls
+      121 tavstllesg slvtvaeqhp vtfvrnfrgl aellkvsgkm qkrdwktnvh vivgppgcgk
+      181 skwaanfadp ettywkpprn kwwdgyhgee vvviddfygw lpwddllrlc drypltvetk
+      241 ggtvpflars ilitsnqtpl ewysstavpa vealyrrits lvfwknateq steeggqfvt
+      301 lsppcpefpy einy
+//

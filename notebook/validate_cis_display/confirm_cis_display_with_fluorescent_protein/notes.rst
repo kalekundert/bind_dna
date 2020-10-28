@@ -856,3 +856,17 @@ I checked the PCR product by E-gel:
 
 - Not sure what's wrong with 152, the primers seem like they should be fine.  
   I'll just try a temperature gradient.
+
+2020/10/27:
+
+I've been consistently getting premature termination for p140, p144, p146, and 
+p149.  According the `Amplicon Express`__, sudden termination can be due to 
+secondary structure.  All of these constructs have the Rho : CIS sequence at 
+the 3' end of the insert, right where sequencing terminates, although other 
+plasmids with the same sequence (e.g. p152) have been sequenced without issue.
+
+Regardless, without having any other good ideas, I want to try sequencing from 
+the other direction.  o165 would be a good primer for this.
+
+__ http://ampliconexpress.com/troubleshooting-dna-sequencing-evaluating-sanger-dna-sequencing-chromatogram-data/
+

@@ -1,0 +1,136 @@
+LOCUS       AF055394                1767 bp    DNA     circular VRL 19-MAR-2009
+DEFINITION  Porcine circovirus 2 from France, complete genome.
+ACCESSION   AF055394
+VERSION     AF055394.1
+KEYWORDS    .
+SOURCE      Porcine circovirus 2
+  ORGANISM  Porcine circovirus 2
+            Viruses; Monodnaviria; Shotokuvirae; Cressdnaviricota;
+            Arfiviricetes; Cirlivirales; Circoviridae; Circovirus.
+REFERENCE   1  (bases 1 to 1767)
+  AUTHORS   Meehan,B.M., McNeilly,F., Todd,D., Kennedy,S., Jewhurst,V.A.,
+            Ellis,J.A., Hassard,L.E., Clark,E.G., Haines,D.M. and Allan,G.M.
+  TITLE     Characterization of novel circovirus DNAs associated with wasting
+            syndromes in pigs
+  JOURNAL   J. Gen. Virol. 79 (Pt 9), 2171-2179 (1998)
+   PUBMED   9747726
+REFERENCE   2  (bases 1 to 1767)
+  AUTHORS   Meehan,B.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-MAR-1998) Veterinary Science, The Queen's University
+            of Belfast, Stoney Road, Belfast, Northern Ireland BT4 3SD, U.K.
+FEATURES             Location/Qualifiers
+     source          1..1767
+                     /organism="Porcine circovirus 2"
+                     /mol_type="genomic DNA"
+                     /strain="Porcine circovirus Type II"
+                     /host="Sus scrofa"
+                     /db_xref="taxon:85708"
+                     /clone="Imp.1011 48285 EcoRI No.12"
+                     /country="France"
+     CDS             complement(join(1380..1767,1..314))
+                     /note="predicted 27.8 kDa protein"
+                     /codon_start=1
+                     /product="ORF2"
+                     /protein_id="AAC35331.1"
+                     /translation="MTYPRRRYRRRRHRPRSHLGQILRRRPWLVHPRHRYRWRRKNGI
+                     FNTRLSRTFGYTVKRTTVKTPSWAVDMMRFNINDFLPPGGGSNPRSVPFEYYRIRKVK
+                     VEFWPCSPITQGDRGVGSSAVILDDNFVTKATALTYDPYVNYSSRHTITQPFSYHSRY
+                     FTPKPVLDSTIDYFQPNNKRNQLWLRLQTTGNVDHVGLGTAFENSIYDQEYNIRVTMY
+                     VQFREFNLKDPPLNP"
+     CDS             complement(101..190)
+                     /codon_start=1
+                     /product="ORF6"
+                     /protein_id="AAC35339.1"
+                     /translation="MASSTPASPAPSDILSSEPQSKRPPGRWT"
+     CDS             103..210
+                     /codon_start=1
+                     /product="ORF10"
+                     /protein_id="AAC35337.1"
+                     /translation="MSTAQEGVLTVVRLTVYPKVRERRVLKMPFFLLQR"
+     CDS             261..320
+                     /codon_start=1
+                     /product="ORF7"
+                     /protein_id="AAC35338.1"
+                     /translation="MAAGAVSSSPVTPPWIRHI"
+     CDS             complement(311..439)
+                     /note="predicted 4.6 kDa protein"
+                     /codon_start=1
+                     /product="ORF9"
+                     /protein_id="AAC35335.1"
+                     /translation="MGLGSASSILLAGHVAAEVLPRCCRCRSALVILTAHFFRFQI"
+     CDS             398..1342
+                     /codon_start=1
+                     /product="putative Rep protein (ORF1)"
+                     /protein_id="AAC35330.1"
+                     /translation="MPSKKNGRSGPQPHKRWVFTLNNPSEDERKKIRDLPISLFDYFI
+                     VGEEGNEEGRTPHLQGFANFVKKQTFNKVKWYLGARCHIEKAKGTDQQNKEYCSKEGN
+                     LLMECGAPRSQGQRSDLSTAVSTLLESGSLVTVAEQHPVTFVRNFRGLAELLKVSGKM
+                     QKRDWKTNVHVIVGPPGCGKSKWAANFADPETTYWKPPRNKWWDGYHGEEVVVIDDFY
+                     GWLPWDDLLRLCDRYPLTVETKGGTVPFLARSILITSNQTPLEWYSSTAVPAVEALYR
+                     RITSLVFWKNATEQSTEEGGQFVTLSPPCPEFPYEINY"
+     regulatory      674..679
+                     /regulatory_class="polyA_signal_sequence"
+     CDS             complement(704..1018)
+                     /note="predicted 11.9 kDa protein"
+                     /codon_start=1
+                     /product="ORF3"
+                     /protein_id="AAC35332.1"
+                     /translation="MVTIPPLVSRWFPVCGFRVCKISSPFAFTTPRWPHNDVYISLPI
+                     TLLHFPAHFQKFSQPAEISDKRYRVLLCNGHQTPALQQGTHSSRQVTPLSLRSRSSTL
+                     HQ"
+     CDS             complement(733..912)
+                     /note="predicted 6.5 kDa protein"
+                     /codon_start=1
+                     /product="ORF4"
+                     /protein_id="AAC35333.1"
+                     /translation="MTCTLVFQSRFCIFPLTFKSSASPRKFLTNVTGCCSATVTRLPL
+                     SNKVLTAVDRSLRCP"
+     CDS             complement(1035..1100)
+                     /note="predicted 2.3 kDa protein"
+                     /codon_start=1
+                     /product="ORF8"
+                     /protein_id="AAC35334.1"
+                     /translation="MDIDHTVSVDHPRAASHKSHQ"
+     regulatory      1330..1335
+                     /regulatory_class="polyA_signal_sequence"
+     CDS             complement(1336..1380)
+                     /note="predicted 1.8 kDa protein"
+                     /codon_start=1
+                     /product="ORF11"
+                     /protein_id="AAC35336.1"
+                     /translation="MNNKNHYEVIKKTQ"
+     regulatory      complement(1369..1374)
+                     /regulatory_class="polyA_signal_sequence"
+ORIGIN      
+        1 aattcaacct taacctttct tattctgtag tattcaaagg gcacagagcg ggggtttgag
+       61 ccccctcctg ggggaagaaa gtcattaata ttgaatctca tcatgtccac cgcccaggag
+      121 ggcgttttga ctgtggttcg cttgacagta tatccgaagg tgcgggagag gcgggtgttg
+      181 aagatgccat ttttccttct ccagcggtaa cggtggcggg ggtggacgag ccaggggcgg
+      241 cggcggagga tctggccaag atggctgcgg gggcggtgtc ttcttctccg gtaacgcctc
+      301 cttggatacg tcatatctga aaacgaaaga agtgcgctgt aagtattacc agcgcacttc
+      361 ggcagcggca gcacctcggc agcacctcag cagcaacatg cccagcaaga agaatggaag
+      421 aagcggaccc caaccccata aaaggtgggt gttcactctg aataatcctt ccgaagacga
+      481 gcgcaagaaa atacgggatc ttccaatatc cctatttgat tattttattg ttggcgagga
+      541 gggtaatgag gaaggacgaa cacctcacct ccaggggttc gctaattttg tgaagaagca
+      601 gacttttaat aaagtgaagt ggtatttggg tgcccgctgc cacatcgaga aagcgaaagg
+      661 aacagatcag cagaataaag aatactgcag taaagaaggc aacttactga tggagtgtgg
+      721 agctcctaga tctcagggac aacggagtga cctgtctact gctgtgagta ccttgttgga
+      781 gagcgggagt ctggtgaccg ttgcagagca gcaccctgta acgtttgtca gaaatttccg
+      841 cgggctggct gaacttttga aagtgagcgg gaaaatgcag aagcgtgatt ggaagactaa
+      901 tgtacacgtc attgtggggc cacctgggtg tggtaaaagc aaatgggctg ctaattttgc
+      961 agacccggaa accacatact ggaaaccacc tagaaacaag tggtgggatg gttaccatgg
+     1021 tgaagaagtg gttgttattg atgactttta tggctggctg ccctgggatg atctactgag
+     1081 actgtgtgat cgatatccat tgactgtaga gactaaaggt ggaactgtac cttttttggc
+     1141 ccgcagtatt ctgattacca gcaatcagac cccgttggaa tggtactcct caactgctgt
+     1201 cccagctgta gaagctcttt atcggaggat tacttccttg gtattttgga agaatgctac
+     1261 agaacaatcc acggaggaag ggggccagtt cgtcaccctt tcccccccat gccctgaatt
+     1321 tccatatgaa ataaattact gagtcttttt tatcacttcg taatggtttt tattattcat
+     1381 taagggttaa gtggggggtc tttaagatta aattctctga attgtacata catggttaca
+     1441 cggatattgt attcctggtc gtatatactg ttttcgaacg cagtgccgag gcctacgtgg
+     1501 tctacatttc cagtagtttg tagtctcagc cacagctgat ttcttttgtt gtttggttgg
+     1561 aagtaatcaa tagtggaatc taggacaggt ttgggggtaa agtagcggga gtggtaggag
+     1621 aagggctggg ttatggtatg gcgggaggag tagtttacat aggggtcata ggtgagggct
+     1681 gtggcctttg ttacaaagtt atcatctaga ataacagcac tggagcccac tcccctgtca
+     1741 ccctgggtga tcggggagca gggccag
+//
