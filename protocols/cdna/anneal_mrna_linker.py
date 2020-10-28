@@ -71,9 +71,14 @@ if x := args['--linker-stock']: anneal['linker'].stock_conc = x
 protocol = stepwise.Protocol()
 
 protocol += f"""\
-Setup {plural(n):# annealing reaction/s}:
+Setup {plural(n):# annealing reaction/s} [1]:
 
 {anneal}
+"""
+
+protocol.footnotes[1] = """\
+Using 0.6x linker reduces the amount of unligated 
+linker, see expt #1.
 """
 
 protocol += f"""\
