@@ -21,7 +21,7 @@ Options:
         How long to incubate the reaction at the temperature indicated by the 
         `-I` flag.  Include a unit.
 
-    -I --incubate-temp <temp>       [default: 25°C]
+    -t --incubate-temp <temp>       [default: 25°C]
         What temperature to incubate the reaction at.  Include a unit.
 
     -m --master-mix <reagents>      [default: peg,lig]
@@ -36,6 +36,9 @@ Options:
     -M --no-master-mix
         Exclude all optional reagents from the master mix, i.e. `-m ''`.
 
+    -L --no-ligase
+        Remove the ligase from the reaction, e.g. as a negative control.
+
     -k --pnk
         Add T4 PNK to the reaction, e.g. if using non-phosphorylated primers.
 
@@ -46,6 +49,12 @@ Options:
     -Q --no-quench
         Leave out the 65°C incubation to quench the reaction.  This is useful 
         if the reaction will be quenched by a downstream step anyways.
+
+    -I --no-incubate
+        Skip the entire incubation step.  This is useful when setting up 
+        multiple ligate reaction in a row; only the last needs include the 
+        incubation.
+
 """
 
 import stepwise, docopt
@@ -82,12 +91,15 @@ annealed mRNA/linker   1.25 µM       4.0 µL
 
 ligate.num_reactions = n = eval(args['<n>'])
 ligate.extra_percent = eval(args['--extra'])
+ligate.extra_min_volume = '0.5 µL'
 ligate.hold_ratios.volume = eval(args['--volume']), 'µL'
 ligate['T4 PNK'].master_mix = 'pnk' in master_mix
 ligate['T4 RNA ligase'].master_mix = 'lig' in master_mix
 ligate['annealed mRNA/linker'].master_mix = 'rna' in master_mix
 ligate['PEG 6000'].master_mix = 'peg' in master_mix
 
+if args['--no-ligase']:
+    del ligate['T4 RNA ligase']
 if not args['--pnk']:
     del ligate['T4 PNK']
 if not args['--peg']:
@@ -95,13 +107,15 @@ if not args['--peg']:
 
 protocol = stepwise.Protocol()
 
+term = 'negative control' if args['--no-ligase'] else 'ligation'
 protocol += f"""\
-Setup {plural(n):# ligation reaction/s}:
+Setup {plural(n):# {term} reaction/s}:
 
 {ligate}
 """
 
-protocol += f"""\
+if not args['--no-incubate']:
+    protocol += f"""\
 Incubate the {plural(n):ligation reaction/s} as follows:
 
 - {args['--incubate-temp']} for {args['--incubate']}.
