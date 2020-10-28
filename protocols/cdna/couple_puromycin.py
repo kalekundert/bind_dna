@@ -55,6 +55,7 @@ salt_uL = np.linalg.solve(M[:,:3], M[:,3])
 
 rxn = stepwise.MasterMix()
 rxn.num_reactions = int(args['--num-reactions'])
+rxn.extra_min_volume = 5, 'µL'
 rxn.solvent = None
 rxn['PURExpress'].volume = rxn_uL, 'µL'
 rxn['MgOAc'].stock_conc = mg_stock_mM, 'mM'
