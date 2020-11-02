@@ -1,0 +1,12 @@
+- Purify using a PCR cleanup column.
+  
+  - Add 5 volumes PB to crude DNA.
+  - If not yellow: Add 10 µL 3M NaOAc, pH=5.
+  - Load on a spin-column.
+  - Spin 1 min, discard flowthrough.
+  - Add 750 µL PE.
+  - Spin 1 min, discard flowthrough.
+  - Spin 1 min again, discard flowthrough.
+  - Add 10 µL EB
+  - Wait at least 1 min.
+  - Spin 1 min, keep flowthrough.
