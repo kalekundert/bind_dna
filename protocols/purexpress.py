@@ -55,16 +55,16 @@ from inform import plural
 args = docopt.docopt(__doc__)
 protocol = stepwise.Protocol()
 purexpress = stepwise.MasterMix.from_text('''\
-Reagent              Stock      Volume  MM?
-===============  =========  ==========  ===
-water                       to 10.0 µL  yes
-A                               4.0 µL  yes
-B                               3.0 µL  yes
-RNase Inhibitor    40 U/µL      0.2 µL  yes
-ZnOAc                 1 mM      0.5 µL  yes
-target DNA          750 nM      0.8 µL  yes
-template DNA         75 nM      0.8 µL
-template mRNA      1000 nM      1.6 µL
+Reagent                  Stock      Volume  MM?
+===================  =========  ==========  ===
+water                           to 10.0 µL  yes
+A                                   4.0 µL  yes
+B                                   3.0 µL  yes
+RNase Inhibitor [1]    40 U/µL      0.2 µL  yes
+ZnOAc                     1 mM      0.5 µL  yes
+target DNA              750 nM      0.8 µL  yes
+template DNA             75 nM      0.8 µL
+template mRNA          1000 nM      1.6 µL
 ''')
 
 if not args['--add-zinc']:
@@ -108,16 +108,27 @@ Setup {plural(purexpress.num_reactions):# PURExpress reaction/s}:
 {'- The control template (125 ng/µL) is 75 nM.' if not args['--mrna'] else ''}
 """
 
+protocol.footnotes[1] = """\
+The PURExpress protocol recommends 0.8 U/µL (20 U 
+per 25 µL reaction), while the product page for 
+the inhibitor itself recommends 1 U/µL.  I'm using 
+the former here because it's the recommendation I 
+encountered first.
+
+PURExpress protocol: https://tinyurl.com/y3m9lrcz
+RNAse inhibitor FAQs: https://tinyurl.com/y3zabsoz
+"""
+
 protocol += f"""\
 Incubate at 37°C for {args['--time']}."""
 
 if args['--purify']:
     protocol += """\
 Dilute reaction to 100 µL with PBS + 10 mM 
-MgOAc[1].
+MgOAc [2].
 - Save a 10 µL aliquot"""
 
-    protocol.footnotes[1] = """\
+    protocol.footnotes[2] = """\
 We recommend a minimum volume of 100 µl after 
 dilution to minimize losses during purification. 
 If the target will be too dilute after addition of 
