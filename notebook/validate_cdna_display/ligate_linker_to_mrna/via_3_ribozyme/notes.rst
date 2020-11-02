@@ -72,3 +72,84 @@ affinity tag (e.g. His6, Strep, etc.) and avoids any difficult PCR steps.  It
 does keep the AAAA overhang created by XmnI, rather than the AAA overhang used 
 by [Naimudden2016]_.  I don't think this overhang is a problem, though.  And in 
 any case, it avoids changing two variables at once.
+
+3' hydroxyl terminus
+--------------------
+As I had to discover the hard way, the 5' product of HDV ribozyme cleavage has 
+a 2',3'-cyclic phosphate terminus.  Such a terminus cannot participate in 
+ligation reactions, which require a 3' hydroxyl.
+
+.. figure:: hdv_mechanism.png
+
+  Mechanism of the HDV ribozyme.  Note that the 5' product is left with a 
+  2',3'-cyclic phosphate terminus.  By Noxwei - Own work, CC BY-SA 3.0, 
+  https://commons.wikimedia.org/w/index.php?curid=30227140
+
+[Avis2012]_ actually addresses this issue very specifically:
+
+   It is important to consider the chemical products of ribozyme cleavage as 
+   both the HH Rz and HDV Rz yield a 5'-hydroxyl and a 2',3'-cyclic phosphate 
+   (see Fig 2c).  The 5'-hydroxyl on a ribozyme-derived 5'-end is generally 
+   more useful than its 5'-triphosphate counterpart.  Direct phosphorylation 
+   of a ribozyme-derived 5'-hydroxyl is usually highly efficient since the 
+   reaction is no longer reliant upon the successful removal of the 
+   5'-triphosphate by alkaline phosphatase.  However, the 2',3'-cyclic 
+   phosphate on a ribozyme-derived 3'-end is generally less useful than its 
+   3'-hydroxyl counterpart.  It is important to be aware that RNA ligation or 
+   3'-end radiolabeling (via ligation of 
+   (5'-³²P)-cytidine-3',5'-bisphosphate) is not possible without first 
+   removing the 2',3'-cyclic phosphate using the phosphatase activity of the 
+   T4 PNK enzyme [Cameron1977]_, [Povirk1990]_.  It should also be noted that 
+   an RNA with a 2',3'-cyclic phosphate carries additional charge and will 
+   migrate approx 1 nt faster during electrophoresis than its 3'-hydroxyl 
+   counterpart.  
+
+[Schurer2002]_ references three specific protocols for recovering the 3' 
+hydroxyl:
+
+- Up to 50 pmol RNA were incubated with 6 U T4 polynucleotide kinase (New 
+  England Biolabs) in 100 mM Tris–HCl pH 6.5, 100 mM magnesium acetate, 5 mM 
+  β-mercaptoethanol in a final volume of 50 µl for 6 h at 37°C (14).
+
+- Transcripts were incubated with 0.1 mM ATP, 100 mM imidazole–HCl pH 6.0, 10 
+  mM MgCl2, 10 mM β-mercaptoethanol, 20 µg/ml BSA and 1 U T4 polynucleotide 
+  kinase (New England Biolabs) per 100 pmol RNA in a final volume of 50 µl 
+  for 6 h at 37°C (15).
+
+- Up to 300 pmol tRNA were incubated in 100 mM morpholinoethanesulfonate-NaOH 
+  pH 5.5, 10 mM MgCl2, 10 mM β-mercaptoethanol, 300 mM NaCl and 10 U T4 poly- 
+  nucleotide kinase (New England Biolabs) in a final volume of 20 µl for 6 h 
+  at 37°C [Povirk1990]_.
+
+All three protocols are pretty similar: incubate the RNA with T4 PNK for 6h at 
+37°C in a pretty standard buffer (no ATP).  I'm curious if I could just add the 
+PNK to the transcription reaction and extend the reaction for 6h.
+
+Results
+=======
+
+2020/10/28
+----------
+.. figure:: 20201028_ligate_with_ribozyme.svg
+
+- The ligation reaction did not proceed because the 3' ends produces by HDV 
+  ribozyme are not compatible with the ligation reaction.  See the `3'-hydroxyl 
+  terminus`_ section above for a complete discussion of this.
+
+- It's hard to say if the ribozyme reaction went to completion, although it 
+  definitely proceeded to an appreciable extent.  The band representing the 
+  cleaved ribozyme is clearly visible.  However, the band representing the 
+  cleaved mRNA is so diffuse that it's hard to say for sure whether or not 
+  there is a band representing the uncleaved transcript.
+
+  I measured the intensities of the 829 bp bands relative to the ≈330 bp bands.  
+  Accounting for the different lengths of the every RNA species, and assuming 
+  that any excess intensity in the 829 bp band can be fully attributed to the 
+  uncleaved transcript, it seems that only 60-70% of the transcripts were 
+  cleaved.  This would be more convincing if the uncleaved bands was visible, 
+  though.
+
+  .. datatable:: 20201028_ligate_with_ribozyme.xlsx
+
+- The HDV67 lanes have a third band at ≈200 bp.  I'm not sure what this band 
+  is.

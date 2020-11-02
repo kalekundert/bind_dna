@@ -27,23 +27,34 @@ $ stepwise ligate_with_ribozyme
     - Incubate at 95°C for 2 min.
     - Cool at room temperature.
 
- 5. Setup 2 ligation reactions:
+ 5. Setup 5 negative control reactions:
 
-    Reagent                 Stock    Volume      2.2x
+    Reagent                 Stock    Volume      5.5x
     ─────────────────────────────────────────────────
-    nuclease-free water             6.88 µL  15.13 µL
-    T4 DNA ligase buffer      10x   1.00 µL   2.20 µL
-    BSA                      0.1%   1.00 µL   2.20 µL
-    T4 RNA ligase         40 U/µL   0.12 µL
+    nuclease-free water             7.00 µL  38.50 µL
+    T4 DNA ligase buffer      10x   1.00 µL   5.50 µL
+    BSA                      0.1%   1.00 µL   5.50 µL
     annealed mRNA/linker  1.25 µM   1.00 µL
     ─────────────────────────────────────────────────
-                                   10.00 µL   8.88 µL/rxn
+                                   10.00 µL   9.00 µL/rxn
 
- 6. Incubate the ligation reactions as follows:
+ 6. Setup 2 ligation reactions:
+
+    Reagent                 Stock    Volume        4x
+    ─────────────────────────────────────────────────
+    nuclease-free water             6.88 µL  27.50 µL
+    T4 DNA ligase buffer      10x   1.00 µL   4.00 µL
+    BSA                      0.1%   1.00 µL   4.00 µL
+    T4 RNA ligase         40 U/µL   0.12 µL   0.50 µL
+    annealed mRNA/linker  1.25 µM   1.00 µL
+    ─────────────────────────────────────────────────
+                                   10.00 µL   9.00 µL/rxn
+
+ 7. Incubate the ligation reactions as follows:
 
     - 25°C for 10 min.
 
- 7. Prepare samples for TBE/urea PAGE:
+ 8. Prepare samples for TBE/urea PAGE:
 
     Reagent                    Stock    Volume     10.5x
     ────────────────────────────────────────────────────
@@ -55,18 +66,18 @@ $ stepwise ligate_with_ribozyme
 
     - Incubate at 70°C for 3 min.
 
- 8. Run a gel:
+ 9. Run a gel:
 
     - Use a 6% TBE/urea PAGE gel.
     - Load 10 µL of each sample.
     - Run at 180V for 40 min.
 
- 9. Stain gel with GelGreen:
+10. Stain gel with GelGreen:
 
     - Submerge gel in ≈50 mL 3x GelGreen [2].
     - Shake gently for 30 min.
 
-10. Image with a laser scanner:
+11. Image with a laser scanner:
 
     lasers:   488 nm   658 nm
     filters:  518BP22  710BP40

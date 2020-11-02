@@ -29,6 +29,17 @@ Results
   possible to resolve this by adding RNase inhibitor.  But there doesn't seem 
   to be any benefit of a longer incubation time anyways.
 
+  .. update:: 2020/10/29
+
+    I'm actually not convicend that this gel shows any degradation.  
+    Degradation bands should be yellow or green, not red.  It's also noteable 
+    that the high-MW red bands in the 24h reactions seem to correspond with the 
+    bands in the overloaded linker-only lane, and that there are no red bands 
+    smaller than the linker by itself.  I think what's more likely is that the 
+    linker is aggregating slowly over time, although I can't say exactly how.  
+    Maybe it would be reversible if I incubate the samples at 70°C for 10 min 
+    instead of 3 min before running the gel.
+
 - I inadvertently bleached the mRNA+linker and mRNA bands by scanning them 4-5 
   times in an effort to pick a good intensity threshold.  This can be seen by 
   comparing the yields calculated for the Cy5 channel before and after these 

@@ -870,3 +870,7 @@ the other direction.  o165 would be a good primer for this.
 
 __ http://ampliconexpress.com/troubleshooting-dna-sequencing-evaluating-sanger-dna-sequencing-chromatogram-data/
 
+.. update:: 2020/11/02
+   I got no priming.  I think there's just something wrong with my constructs.  
+   I'll have to try running some gels, I think.
+

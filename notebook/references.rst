@@ -10,6 +10,7 @@ References
 .. [Bauer2017] :doi:`10.1371/journal.pone.0190062`
 .. [Bulyk2001] :doi:`10.1073/pnas.111163698`
 .. [Butt2013] :doi:`10.1074/mcp.M112.021881`
+.. [Cameron1977] :doi:`10.1021/bi00642a027`
 .. [Chen2013] :doi:`10.1038/nmeth.2515`
 .. [Chen2013b] :doi:`10.1016/j.addr.2012.09.039`
 .. [Choo1994] :doi:`10.1073/pnas.91.23.11163`
