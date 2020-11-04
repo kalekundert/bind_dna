@@ -42,6 +42,9 @@ fine, but here are some options:
   It's also worth noting that the ori sequence used by Jorge is actually wrong: 
   the real ori begins with "tAAG" not "taAAG".
 
-I'm going to try two sequences: One based on the genome and one based on 
-exactly what Jorge told me.  That way, if it doesn't work (and I don't think it 
-will), I'll feel comfortable asking Jorge for help.
+I'm going to try two sequences: 
+
+- o204: the native genome context
+- o205: exactly what Jorge told me (with N replaced by A).
+
+
