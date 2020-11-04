@@ -1,0 +1,9 @@
+- Prepare the Vega-Rocha Rep buffer [1]:
+
+  - 20 mM Tris pH=7.4
+  - 100 mM NaCl
+  - 2.5 mM MnCl₂
+
+Notes:
+
+[1] 10.1016/j.jmb.2007.01.002
