@@ -9,10 +9,11 @@ Usage:
 Arguments:
     <dna>
         The names of 1 or more DNA molecules to attach to dCas9.  These names 
-        should be present in the PO₄ database and have associated molecular 
-        weights.  Note that PO₄ can't automatically calculate molecular weights 
-        for non-standard nucleotides like iSP9, so you may need to provide a 
-        molecular weight manually for such constructs.
+        should be present in the PO₄ database and have associated stock 
+        concentrations and molecular weights.  Note that PO₄ can't 
+        automatically calculate molecular weights for non-standard nucleotides 
+        like iSP9, so you may need to provide a molecular weight manually for 
+        such constructs.
 
 Options:
     -n --num-reactions <int>
