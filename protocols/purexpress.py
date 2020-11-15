@@ -12,6 +12,10 @@ Arguments:
         The names of the DNA/mRNA templates to express.
 
 Options:
+    -n --num-reactions <int>
+        The number of reactions to setup.  By default, there will be one 
+        reaction for each template.
+
     -v --rxn-volume <uL>                        [default: 10]
         The volume of each individual reaction (in µL).  NEB recommends 25 µL, 
         but I typically use 10 µL and get enough yield for routine experiments.
@@ -93,7 +97,8 @@ purexpress[template].hold_stock_conc.conc = float_or_default(
 purexpress[template].hold_conc.stock_conc = float_or_default(
         args['--template-stock'], default_template_stock_nM), 'nM'
 
-purexpress.num_reactions = len(args['<templates>'])
+purexpress.num_reactions = int(
+        args['--num-reactions'] or len(args['<templates>']))
 purexpress.hold_ratios.volume = eval(args['--rxn-volume']), 'µL'
 
 purexpress.fix_volumes(template)
