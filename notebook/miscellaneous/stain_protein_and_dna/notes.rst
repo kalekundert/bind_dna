@@ -15,6 +15,31 @@ There are a number of things I could try:
 Maybe the methanol/ethanol in the Coomassie staining solution is causing 
 problems.
 
+.. update:: 2020/11/15
+
+  I realized today that the pH of the Coomassie staining solution is very 
+  acidic: pH<1 for standard staining, and pH≈2.1 for SimplyBlue SafeStain.  
+  I've found anecodotal sources claiming that the phosphate backbone is 
+  hydrolyzed at pH<1.  With the solution also being microwaved to near boiling, 
+  it's not hard to imagine that the DNA is being significantly hydrolyzed.
+
+  Note that duplex DNA is also destabilised at pH<5, due to protonation of the 
+  bases.  That could also affect GelGreen binding.
+
+  If this is the case, the best course of action would be to use a different 
+  protein stain:
+
+  - SYPRO Ruby: Still requires acetic acid fixation.
+
+  - SYPRO Orange/Red: Acetic acid improves sensitivity, but does not have to be 
+    used.  Would use green laser; crosstalk may be an issue.
+
+  - SYPRO Tangerine: No fixation, but seems likely to have significant 
+    crosstalk with GelGreen.
+
+  - No-stain: No explicit fixation step, but the composition of the reaction 
+    buffer isn't disclosed.  Would use green laser; crosstalk may be an issue.
+
 Results
 =======
 

@@ -1,0 +1,143 @@
+November 10, 2020
+
+$ stepwise check_degradation_via_broccoli
+
+ 1. Wipe down your bench and anything you'll touch 
+    (pipets, racks, pens, etc.) with RNaseZap.
+
+ 2. Setup 1 annealing reaction [1]:
+
+    Reagent              Stock    Volume
+    ────────────────────────────────────
+    nuclease-free water          8.40 µL
+    PBS                    10x   1.20 µL
+    f97                  10 µM   1.50 µL
+    o129                 10 µM   0.90 µL
+    ────────────────────────────────────
+                                12.00 µL
+
+ 3. Perform the annealing reaction:
+
+    - Incubate at 95°C for 2 min.
+    - Cool at room temperature.
+
+ 4. Setup 1 ligation reaction:
+
+    Reagent                 Stock     Volume
+    ────────────────────────────────────────
+    nuclease-free water             82.50 µL
+    T4 DNA ligase buffer      10x   12.00 µL
+    BSA                      0.1%   12.00 µL
+    T4 RNA ligase         40 U/µL    1.50 µL
+    annealed mRNA/linker  1.25 µM   12.00 µL
+    ────────────────────────────────────────
+                                   120.00 µL
+
+ 5. Incubate the ligation reaction as follows:
+
+    - 25°C for 10 min.
+    - 65°C for 10 min.
+
+ 6. Remove unligated linker by ultrafiltration:
+
+    - Bring reaction to 500 µL with 8M urea.
+    - Load onto a 100 kDa MWCO spin-filter [2].
+    - Spin 14000g, 15 min.
+    - Wash with 200 µL 7M urea.
+    - Wash with 500 µL nuclease-free water.
+    - Wash with water again.
+    - Wash with water again.
+    - Invert the filter into a clean tube and spin 
+      1000g, 2 min to collect ligated product in a 
+      volume of ≈15 µL.
+
+ 7. Make 4 µL, 1 µM aliquots.
+
+ 8. Label the product: f98
+
+ 9. In the following steps, setup these reactions:
+
+    poly-A linker (o129):         +  +  −  −  +  +
+    broccoli+mWasabi mRNA (f97):  −  −  +  +  +  +
+    T4 RNA ligase::               −  −  −  −  +  +
+    PURExpress:                   −  +  −  +  −  +
+
+10. Setup 3 PURExpress reactions:
+
+    Reagent                Stock   Volume     3.3x
+    ──────────────────────────────────────────────
+    water                         0.43 µL  1.43 µL
+    A                             1.44 µL  4.75 µL
+    B                             1.08 µL  3.56 µL
+    RNase Inhibitor [3]  40 U/µL  0.07 µL  0.24 µL
+    f98                  1000 nM  0.58 µL
+    ──────────────────────────────────────────────
+                                  3.60 µL  3.02 µL/rxn
+
+    - Keep on ice.
+    - Be sure to add A before B.
+
+11. Incubate at 37°C for 2h.
+
+12. Prepare samples for SDS PAGE:
+
+    Reagent                  Stock    Volume        9x
+    ──────────────────────────────────────────────────
+    water                            3.93 µL  35.37 µL
+    Bolt LDS sample buffer      4x   2.50 µL  22.50 µL
+    Bolt reducing agent        10x   1.00 µL   9.00 µL
+    o194                    100 µM   0.07 µL   0.63 µL
+    sample                    7 nM   2.50 µL
+    ──────────────────────────────────────────────────
+                                    10.00 µL   7.50 µL/rxn
+
+    - Incubate at 70°C for 10 min.
+
+13. Run a gel:
+
+    - Use a 4−12% SDS PAGE gel.
+    - Load 10 µL of each sample.
+    - Run at 165V for 42 min.
+
+14. Image with a laser scanner:
+
+    lasers:   488 nm   658 nm
+    filters:  518BP22  710BP40
+
+15. Stain gel with DFHBI-1T [4]:
+
+    - Repeat 3 times:
+      - Add 100 mL water
+      - Shake gently for 5 min
+
+    - Submerge gel in DFHBI-1T buffer [5].
+    - Shake gently for 10-30 min.
+
+16. Image with a laser scanner:
+
+    laser:   488 nm
+    filter:  518BP22
+
+Notes:
+[1] Using 0.6x linker reduces the amount of unligated 
+    linker, see expt #1.
+
+[2] Amicon UFC510024
+
+[3] The PURExpress protocol recommends 0.8 U/µL (20 U 
+    per 25 µL reaction), while the product page for 
+    the inhibitor itself recommends 1 U/µL.  I'm using 
+    the former here because it's the recommendation I 
+    encountered first.
+
+    PURExpress protocol: https://tinyurl.com/y3m9lrcz
+    RNAse inhibitor FAQs: https://tinyurl.com/y3zabsoz
+
+[4] Filonov2015: 10.1016/j.chembiol.2015.04.018
+
+[5] DFHBI-1T buffer:
+
+    - 40 mM HEPES (pH=7.4)
+    - 100 mM KCl
+    - 1 mM MgCl₂
+    - 10 µM DFHBI-1T

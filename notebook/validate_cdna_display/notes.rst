@@ -18,6 +18,7 @@ linker.  I'm mostly intending to follow the cDNA-display protocol from
    linearize_cdna_display_gene/notes
    optimize_mrna_transcription/notes
    eliminate_mrna_degradation/notes
+   eliminate_mrna_linker_degradation/notes
    validate_pseudo_linker/notes
    denature_unligated_linker_n/notes
    anneal_linker_to_mrna/notes

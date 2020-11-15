@@ -16,6 +16,8 @@ References
 .. [Chen2013b] :doi:`10.1016/j.addr.2012.09.039`
 .. [Choo1994] :doi:`10.1073/pnas.91.23.11163`
 .. [Crinelli2002] :doi:`10.1093/nar/30.11.2435`
+.. [Compton1985] :doi:`10.1016/0003-2697(85)90190-3`
+.. [Congden1993] :doi:`10.1006/abio.1993.1439`
 .. [Cote2008] :doi:`10.1016/j.virusres.2008.01.001`
 .. [Cotten2011] :doi:`10.1038/nprot.2011.354`
 .. [Damian2009] :doi:`10.1016/j.bbrc.2009.05.044`
@@ -39,10 +41,12 @@ References
 .. [Harley1987] :doi:`10.1093/nar/15.5.2343`
 .. [Hawkins2018] :doi:`10.1073/pnas.1802640115`
 .. [Hecht2017] :doi:`10.1093/nar/gkx070`
+.. [Hu2010] :doi:`10.1002/chem.200902166`
 .. [Imburgio2000] :doi:`10.1021/bi000365w`
 .. [Inouye1985] :doi:`10.1093/nar/13.9.3101`
 .. [Iverson2016] :doi:`10.1021/acssynbio.5b00124`
 .. [Joung2000] :doi:`10.1073/pnas.110149297`
+.. [Jung2019] :doi:`10.1002/biot.201800645`
 .. [Keefe2001] :doi:`10.1002/0471142727.mb2405s53`
 .. [Kimple2013] :doi:`10.1002/0471140864.ps0909s73`
 .. [Kitamura2002] :doi:`10.1093/protein/15.10.843`
@@ -63,6 +67,7 @@ References
 .. [Meng2007] :doi:`10.1093/nar/gkm385`
 .. [Metzger1989] Metzger et al.  Characterization of the relA1 mutation and a comparison of relA1 with new relA null alleles in Escherichia coli. J. Biol.  Chem. 264:35:21146-52 (1989)
 .. [Miall1969] :doi:`10.1016/0005-2787(69)90284-6`
+.. [Miller2018] :doi:`10.1261/rna.068213.118`
 .. [Moore2016] :doi:`10.1021/acssynbio.6b00031`
 .. [Mochizuki2011] :doi:`10.1021/co2000295`
 .. [Mochizuki2013] :doi:`10.1186/1480-9222-15-7`
@@ -78,12 +83,14 @@ References
 .. [Odegrip2004] :doi:`10.1073/pnas.0400219101`
 .. [Olins1989] Olins and Ragwala. A novel sequence element derived from bacteriophage T7 mRNA acts as an enhancer of translation of the lacZ gene in Escherichia coli.  J. Biol. Chem. 264:29:16973-76 (1989).
 .. [Peters2011] :doi:`10.1016/j.jmb.2011.03.036`
+.. [Povirk1990] Povirk LF & Steighner RJ. High ionic strength promotes selective 3'-phosphatase activity of T4 polynucleotide kinase. Biotechniques 9, 562 (1990).
 .. [Praszkier1999] Praszkier J and Pittard AJ.  Role of CIS in replication of an IncB plasmid.  J Bacteriol. 1999 May;181(9):2765-72.
 .. [Praszkier2000] :doi:`10.1128/JB.182.14.3972-3980.2000`
 .. [Putney1981] :doi:`10.1073/pnas.78.12.7350`
 .. [Rebar1994] :doi:`10.1126/science.8303274`.  Too old to access...
 .. [Reiersen2005] :doi:`10.1093/nar/gni010`
 .. [Rivera2015] :doi:`10.1101/pdb.prot081331`
+.. [Rizzo2002] :doi:`10.1006/mcpr.2002.0423`
 .. [Roberts1997] :doi:`10.1073/pnas.94.23.12297`
 .. [Rohs2010] :doi:`10.1146/annurev-biochem-060408-091030`
 .. [Roth2018] :doi:`10.1021/acs.nanolett.8b02093`
@@ -101,11 +108,12 @@ References
 .. [Walker2003] :doi:`10.1093/nar/gng082`
 .. [Wang2012] :doi:`10.1007/978-1-61779-379-0_6`
 .. [Wang2014] :doi:`10.5620/eht.2014.29.e2014007`
+.. [Wang2017] :doi:`10.1021/acs.analchem.7b02899`
 .. [Weber2011] :doi:`10.1371/journal.pone.0016765`
-.. [Wei1983] Wei CF, Alianell GA, Bencen GH, Gray Jr HB. Isolation and 
-   comparison of two molecular species of the BAL 31 nuclease from 
-   Alteromonas espejiana with distinct kinetic properties. J Biol Chem.  
-   1983;258:13506--13512.
+.. [Wei1983] Wei CF, Alianell GA, Bencen GH, Gray Jr HB. Isolation and comparison of two molecular species of the BAL 31 nuclease from Alteromonas espejiana with distinct kinetic properties. J Biol Chem.  1983;258:13506--13512.
+.. [Wu2018] :doi:`10.1016/j.talanta.2018.01.075`
 .. [Yonezawa2003] :doi:`10.1093/nar/gng119`
+.. [Zhao2017] :doi:`10.1016/j.bios.2016.11.032`
+.. [Zhang2019] :doi:`10.1016/j.snb.2018.09.001`
 .. [Zhou1990] :doi:`10.1016/0167-4781(90)90087-I`
 .. [Zykovich2009] :doi:`10.1093/nar/gkp802`

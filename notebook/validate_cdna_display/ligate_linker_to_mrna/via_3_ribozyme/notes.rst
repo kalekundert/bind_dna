@@ -133,8 +133,8 @@ Results
 .. figure:: 20201028_ligate_with_ribozyme.svg
 
 - The ligation reaction did not proceed because the 3' ends produces by HDV 
-  ribozyme are not compatible with the ligation reaction.  See the `3'-hydroxyl 
-  terminus`_ section above for a complete discussion of this.
+  ribozyme are not compatible with the ligation reaction.  See the "3'-hydroxyl 
+  terminus" section above for a complete discussion of this.
 
 - It's hard to say if the ribozyme reaction went to completion, although it 
   definitely proceeded to an appreciable extent.  The band representing the 

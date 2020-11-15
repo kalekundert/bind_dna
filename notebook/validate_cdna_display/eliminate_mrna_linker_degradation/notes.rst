@@ -1,13 +1,19 @@
-***********************
-Is mRNA being degraded?
-***********************
+*********************************
+Eliminate mRNA-linker degradation
+*********************************
+
+.. toctree::
+   :hidden:
+
+   check_degradation_via_broccoli/notes
+   detect_rnase_h_activity/notes
 
 2020/09/09:
 
-In all of my reactions so far, I've seen that the linker appears to go from 
-being fully attached to the mRNA (before the PURExpress reaction) to fully 
-separated (after the ligation).  I can think of two broad explanations for 
-this:
+In all of my protein expression reactions with ligated mRNA-linker so far 
+(:expt:`65`, :expt:`61`), I've seen that the linker appears to go from being 
+fully attached to the mRNA (before the reaction) to fully separated (after the 
+reaction).  I can think of two broad explanations for this:
 
 1. The mRNA is being completely degraded, leaving only the DNA linker.  The 
    problem with this explanation is that the degradation would have to be 
@@ -24,10 +30,9 @@ this:
 .. update:: 2020/10/27
 
   George proposed a reasonable mechanism for the second possibility: RNaseH 
-  contamination.  This would cleave the linker from the mRNA.
+  contamination.  This would cleave the linker from the mRNA.  See :expt:`77`
 
-I think it's an important first step to learn whether or not the mRNA is 
-actually being degraded. 
+The goal of this series of experiments is to diagnose and solve this problem.
 
 Considerations
 ==============
@@ -99,39 +104,5 @@ mRNA band.  Some ideas:
 After talking with Fitzy about it, I think I'm going to try to pursue the 
 Northern blotting and broccoli aptamer ideas in parallel.
 
-Broccoli vs. tBroccoli
-----------------------
-[Filonov2015]_ uses both broccoli and tBroccoli (broccoli fused to a tRNA 
-scaffold to help improve folding).  I decided to use plain broccoli because 
-[Filonov2015]_ shows that the tRNA scaffold is recognized by certain RNases in 
-bacteria (specifically RNases E, T, and PH).  The broccoli aptamer seems to 
-fold just as robustly, and it's shorter.
-
-Sequence: AGACGGTCGGGTCCAGATATTCGTATCTGTCGAGTAGAGTGTGGGCT
 
 
-Results
-=======
-
-Visualize mRNA via broccoli --- 2020/11/09
-------------------------------------------
-
-.. figure:: 20201109_confirm_dfhbi_stain.svg
-
-.. datatable:: 20201109_confirm_dfhbi_stain.xlsx
-
-- The DFHBI-1T staining worked.
-
-- I got much lower sensitivity than [Filonov2015]_.
-
-  The smallest quantity of mRNA I could detect on this gel was 8 ng.  
-  [Filonov2015]_ claims that quantities as low as 100 pg can be detected.  This 
-  implies that my signal is about 80x less than it should be.
-
-  One likely problem is that I used Tris instead of HEPES for the staining 
-  buffer.  (I just ran out of time to make the HEPES buffer.)  Tris is known to 
-  chelate magnesium and many other metal ions [Fischer1979]_.  A quote from the 
-  abstract: "great reservations should be exercised in employing Tris as a 
-  buffer in systems which also contain metal ions".  This may have had the 
-  effect of reducing the amount of magnesium available to the broccoli aptamer, 
-  preventing it from folding correctly.
