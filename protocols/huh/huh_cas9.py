@@ -20,12 +20,11 @@ Options:
         The number of reactions to set up.  By default, this is the number of 
         DNA sequences given.
 
-    -b --buffer <name>              [default: CutSmart]
-        Which buffer to use.  The default is CutSmart, but the reaction may 
-        proceed better with Mn²⁺ as the divalent cation.  The buffer is assumed 
-        to be 10x.
+    -b --buffer <name>              [default: Vega-Rocha Rep buffer]
+        Which buffer to use.  The default is the buffer from [VegaRocha2007].  
+        The buffer is assumed to be 10x.
 
-    -B --buffer-divalent-conc <mM>  [default: 10]
+    -B --buffer-divalent-conc <mM>  [default: 2.5]
         The concentration of divalent cation in the buffer, in mM.  This is 
         used to calculate the appropriate concentration of EDTA to add to the 
         negative control.
@@ -45,7 +44,7 @@ import docopt
 import stepwise
 import po4
 
-# This script should be broken in two: one for proteins and general and another 
+# This script should be broken in two: one for proteins in general and another 
 # for Cas9.  The only real difference for Cas9 is that the reaction includes 
 # sgRNA and I know some concentrations up front.
 
