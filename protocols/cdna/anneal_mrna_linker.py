@@ -63,7 +63,7 @@ anneal['linker'].master_mix = 'link' in args['--master-mix']
 if x := args['<mrna>']: anneal['mRNA'].name = x
 if x := args['<linker>']: anneal['linker'].name = x
 
-anneal['mRNA'].hold_conc.stock_conc = int(args['--mrna-stock']), 'µM'
+anneal['mRNA'].hold_conc.stock_conc = float(args['--mrna-stock']), 'µM'
 anneal['linker'].volume *= float(args['--excess-linker'])
 
 if x := args['--linker-stock']: anneal['linker'].stock_conc = x

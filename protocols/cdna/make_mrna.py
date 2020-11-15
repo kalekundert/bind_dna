@@ -15,28 +15,36 @@ Options:
 import docopt
 import stepwise
 import shlex
+import po4
 
 args = docopt.docopt(__doc__)
+db = po4.load_db()
+
+mrna = args['<mrna>']
+linker = args['<linker>']
+n = args['--num-reactions']
+
+try:
+    mrna_conc = db[mrna].conc_nM / 1000
+except po4.QueryError:
+    mrna_conc = 10
 
 anneal = [
-        'cdna/anneal',
-        args['--num-reactions'],
-        args['<mrna>'],
-        args['<linker>'],
-        '-v', 8,
+        'cdna/anneal', n,
+        mrna,
+        linker,
+        '-v', 12,
         '-x', 0.6,
-        '-R', 5,
+        '-R', mrna_conc,
 ]
 ligate = [
-        'cdna/ligate',
-        args['--num-reactions'],
-        '-v', 80,
+        'cdna/ligate', n,
+        '-v', 120,
 ]
 
 p = stepwise.Protocol()
-p += stepwise.load(shlex.join(str(x) for x in anneal))
-p += stepwise.load(shlex.join(str(x) for x in ligate))
+p += stepwise.load(anneal)
+p += stepwise.load(ligate)
 p += stepwise.load('cdna/wash')
-p += stepwise.load('aliquot "4 µL" "333 nM"')
-print(p)
-
+p += stepwise.load('aliquot "4 µL" "1 µM"')
+p.print()
