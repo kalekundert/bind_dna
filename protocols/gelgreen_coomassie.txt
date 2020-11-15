@@ -1,0 +1,27 @@
+- Image the gel with GelGreen and Coomassie:
+
+  - Repeat 3 times:
+    - Submerge gel in 100 mL water.
+    - Microwave until almost boiling (1 min).
+    - Shake gently for 1 min.
+
+  - Submerge gel in 3x GelGreen, 100 mM NaCl.
+  - Shake gently for 30 min.
+
+  - Image with a laser scanner:
+    laser:   488 nm
+    filter:  518BP22
+
+  - Submerge gel in SimplyBlue SafeStain.
+  - Microwave until almost boiling (45 sec).
+  - Shake gently for 5 min.
+
+  - Submerge gel in 100 mL water.
+  - Shake gently for 10 min.
+
+  - Add 20 mL 5M NaCl
+  - Shake gently for 5 min.
+
+  - Image with a laser scanner:
+     laser:   658 nm
+    filter:  710BP40
