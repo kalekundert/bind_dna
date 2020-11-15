@@ -48,3 +48,36 @@ I'm going to try two sequences:
 - o205: exactly what Jorge told me (with N replaced by A).
 
 
+Results
+=======
+
+.. figure:: 20201105_compare_ori_linkers.svg
+
+- The highest MW bands (≈10kb) have both protein and DNA, but appear green 
+  because the protein signal is very faint.
+
+- The DNA is cleaner in this experiment than it has been previously, e.g.  
+  :expt:`46` and :expt:`68`.  This is because I ordered new primers for this 
+  experiment, specifically to get cleaner amplification.
+
+- I don't know why the DNA with the A15 ori shifts dramatically in the presence 
+  of dCas9-Rep without EDTA.
+
+  - I've seen this same effect in previous experiments, both of which used ≈10x 
+    less protein:
+
+    - :expt:`46`: Nearly all DNA in shifted band.
+    - :expt:`68`: Only about 20% of the total DNA is in the shifted band.
+
+  The easiest conclusion to make is that the DNA is reacting with truncated 
+  protein.  With the EDTA and −protein controls, it's hard to argue that Rep is 
+  not involved in the shift.  And there is a *very* faint red band under the 
+  shifted green band.
+
+- I don't know what the ≈200 bp DNA species in the A15 lanes is.
+
+  It's slightly bigger than f105, but I wouldn't rule out the possibility of 
+  contamination.  This band didn't seem to be present in the E-gel I ran after 
+  the PCR (not shown), so it probably isn't an incorrectly-amplified PCR 
+  product.
+

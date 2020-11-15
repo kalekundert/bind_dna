@@ -1,0 +1,24 @@
+- Stain gel with DFHBI-1T [1]:
+
+  - Repeat 3 times:
+    - Add 100 mL water
+    - Shake gently for 5 min
+
+  - Submerge gel in DFHBI-1T buffer [2].
+  - Shake gently for 10-30 min.
+
+- Image with a laser scanner:
+
+  laser:   488 nm
+  filter:  518BP22
+
+Notes:
+
+[1] Filonov2015: 10.1016/j.chembiol.2015.04.018
+
+[2] DFHBI-1T buffer:
+
+    - 40 mM HEPES (pH=7.4)
+    - 100 mM KCl
+    - 1 mM MgCl₂
+    - 10 µM DFHBI-1T

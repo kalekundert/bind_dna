@@ -1,0 +1,62 @@
+November 9, 2020
+
+$ stepwise visualize_mrna_via_broccoli
+
+1. Perform a serial dilution [1]:
+
+   - Put 2.60 μL 2842.95 ng/µL f97 in the first tube.
+   - Add 2.00 μL nuclease-free water in the 7 remaining tubes.
+   - Transfer 0.60 μL between each tube to make
+     8 4.3-fold dilutions.
+
+2. Prepare samples for TBE/urea PAGE:
+
+   Reagent            Stock    Volume
+   ──────────────────────────────────
+   water                      4.00 µL
+   sample buffer         2x   5.00 µL
+   f97            200 ng/µL   1.00 µL
+   ──────────────────────────────────
+                             10.00 µL
+
+   - Incubate at 70°C for 3 min.
+
+3. Run a gel:
+
+   - Use a 6% TBE/urea PAGE gel.
+   - Load 10 µL of each sample.
+   - Run at 180V for 40 min.
+
+4. Stain gel with DFHBI-1T [2]:
+
+   - Repeat 3 times:
+     - Add 100 mL water
+     - Shake gently for 5 min
+
+   - Submerge gel in DFHBI-1T buffer [3].
+   - Shake gently for 10-30 min.
+
+5. Image with a laser scanner:
+
+   laser:   488 nm
+   filter:  518BP22
+
+Notes:
+[1] The final concentrations will be:
+    1  2842.95 ng/µL
+    2   656.93 ng/µL
+    3   151.80 ng/µL
+    4    35.08 ng/µL
+    5     8.11 ng/µL
+    6     1.87 ng/µL
+    7     0.43 ng/µL
+    8     0.10 ng/µL
+
+[2] Filonov2015: 10.1016/j.chembiol.2015.04.018
+
+[3] DFHBI-1T buffer:
+
+    - 40 mM HEPES (pH=7.4)
+    - 100 mM KCl
+    - 1 mM MgCl₂
+    - 10 µM DFHBI-1T

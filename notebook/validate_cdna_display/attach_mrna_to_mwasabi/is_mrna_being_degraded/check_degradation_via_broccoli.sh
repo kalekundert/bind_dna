@@ -18,7 +18,7 @@ alias sw=stepwise
 # - Test PURExpress
 #   
 #   - Attach linker (f98)
-#     - sw cdna/make f95 o129
+#     - sw cdna/make f97 o129
 #   - PURExpress
 #     - sw purex
 #     - timecourse?
@@ -26,5 +26,11 @@ alias sw=stepwise
 #     - sw stain_dfhbi
 #
 sw zap |
-sw 
+sw cdna/make f97 o129 |
+sw step "Label the product: f98" |
+sw reactions check_degradation_via_broccoli.csv |
+sw purex f98 -n 3 -r -v 3.6 |
+sw gel sds/o194 6 -S |
+sw laser blue red |
+sw filonov2015
 

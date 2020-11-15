@@ -1,0 +1,61 @@
+November 4, 2020
+
+$ stepwise make
+
+1. Prepare 10x primer mix [1]:
+
+   Reagent          Stock    Volume
+   ────────────────────────────────
+   water                    9.00 µL
+   o165            100 µM   0.50 µL
+   o188,o204,o205  100 µM   0.50 µL
+   ────────────────────────────────
+                           10.00 µL
+
+2. Setup 3 PCR reactions [2]:
+
+   Reagent           Stock    Volume      3.3x
+   ───────────────────────────────────────────
+   water                    15.00 µL  49.50 µL
+   p137           20 pg/µL   5.00 µL  16.50 µL
+   primer mix          10x   5.00 µL
+   Q5 master mix        2x  25.00 µL  82.50 µL
+   ───────────────────────────────────────────
+                            50.00 µL  45.00 µL/rxn
+
+   - Use any extra master mix as a negative control.
+
+3. Run the following thermocycler protocol:
+
+   - 98°C for 30s
+   - Repeat 35x:
+     - 98°C for 10s
+     - 65°C for 20s
+     - 72°C for 10s
+   - 72°C for 2 min
+
+4. Label the products: f105,f106,f107
+
+5. Purify using a PCR cleanup column.
+
+   - Add 5 volumes PB to crude DNA.
+   - If not yellow: Add 10 µL 3M NaOAc, pH=5.
+   - Load on a spin-column.
+   - Spin 1 min, discard flowthrough.
+   - Add 750 µL PE.
+   - Spin 1 min, discard flowthrough.
+   - Spin 1 min again, discard flowthrough.
+   - Add 10 µL EB
+   - Wait at least 1 min.
+   - Spin 1 min, keep flowthrough.
+
+6. Run a 1% E-gel.
+
+7. Enter concentrations in the database.
+
+Notes:
+[1] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol
+
+[2] For diluting template DNA to 20 pg/µL:
+    Dilute 1 µL twice into 7*sqrt([DNA]) µL

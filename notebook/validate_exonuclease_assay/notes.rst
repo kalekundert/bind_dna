@@ -9,6 +9,7 @@ Validate exonuclease assay
    optimize_qpcr_conditions/notes
    block_bal31_via_teln/notes
    attach_dna_to_dcas9_via_huh_tag/notes
+   attach_dna_to_mwasabi_via_huh_tag/notes
    attach_dna_to_zif268_via_huh_tag/notes
    measure_dcas9_binding_via_huh_tag/notes
 

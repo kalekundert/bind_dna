@@ -18,6 +18,7 @@ Design DNA-binding proteins
    run_ashworth2006_on_zif268/notes
    model_tac_binding_difa/notes
    test_cis_display_dnase_protection_assay/notes
+   miscellaneous/notes
 
    appendix/appendix.rst
    references.rst

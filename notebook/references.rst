@@ -6,6 +6,7 @@ References
 .. [Arai2020] :doi:`10.1007/978-1-4939-9853-1_3`
 .. [Avis2012] :doi:`10.1007/978-1-62703-113-4_7`
 .. [Ashworth2006] :doi:`10.1038/nature04818`
+.. [Bertschinger2004] :doi:`10.1093/protein/gzh082`
 .. [Barendt2013] :doi:`10.1021/co300135r`
 .. [Bauer2017] :doi:`10.1371/journal.pone.0190062`
 .. [Bulyk2001] :doi:`10.1073/pnas.111163698`
@@ -25,6 +26,7 @@ References
 .. [ElrodErickson1998] :doi:`10.1016/S0969-2126(98)00047-1`
 .. [Farrell2010] :doi:`10.1016/B978-0-12-374727-3.00007-3`
 .. [Filonov2015] :doi:`10.1016/j.chembiol.2015.04.018`
+.. [Fischer1979] :doi:`10.1111/j.1432-1033.1979.tb12921.x`
 .. [Gesteland1966] :doi:`10.1016/s0022-2836(66)80263-2`
 .. [Gholamalipour2018] :doi:`10.1093/nar/gky796`
 .. [Giraldo1992] :doi:`10.1016/0022-2836(92)90864-G`

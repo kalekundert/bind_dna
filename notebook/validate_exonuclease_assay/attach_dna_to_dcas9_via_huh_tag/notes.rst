@@ -91,6 +91,11 @@ Attach DNA --- 2020/09/18
   subsequent uses, suggesting that not as much GelGreen was absorbed by the gel 
   (presumably because the SDS was preventing it from binding DNA).
 
+  .. update:: 2020/11/06
+
+    The benefit of washing SDS PAGE gels before staining with GelGreen is 
+    demonstrated clearly in this experiment: :expt:`73`
+
 - Assuming that the DNA is the band that changes between each condition (and 
   that the sgRNA is the band that stays in place), it's bizarre that the DNA 
   shifts, but doesn't run exactly with dCas9 in either condition.
@@ -106,7 +111,7 @@ Attach DNA --- 2020/10/13
 .. update:: 2020/10/15
 
   I analyzed this data thinking that the bright protein band was dCas9, when it 
-  is realy BSA.  The fainter band on top is dCas9.
+  is really BSA.  The fainter band on top is dCas9.
 
 .. protocol:: 20201013_make_custom.txt 20201013_attach_huh.txt
 
