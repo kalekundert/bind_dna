@@ -1,4 +1,4 @@
-- Dilute the dCas9 stock to 1 µM:
+- Dilute the dCas9-Rep stock(s) to 1 µM:
 
   - 18.8 µL water
   - 2.2 µL 10x Vega-Rocha Rep buffer

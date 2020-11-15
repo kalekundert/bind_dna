@@ -170,3 +170,7 @@ Conclusions:
 
   - Express protein using PURExpress.
 
+  - Move forward with binding assay.
+
+    - I want to do this, but I need more of the protein to react.
+
