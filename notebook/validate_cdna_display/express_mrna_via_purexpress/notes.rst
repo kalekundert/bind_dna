@@ -52,7 +52,7 @@ Express mWasabi --- 2020/02/25
   lanes, but I trust the Coomassie more.
 
 - It's interesting that imaging Coomassie with NIR fluorescence (ex: 658 nm) 
-  reveals bands that aren't colorimetrically (B).  This is pretty clear 
+  reveals bands that aren't visible colorimetrically (B).  This is pretty clear 
   evidence that NIR fluorescence is a more sensitive way to image Coomassie 
   staining, in agreement with [Butt2013]_.  This will definitely be good to 
   know going forward.

@@ -1,0 +1,9 @@
+- Prepare positive and negative controls:
+
+  - 10 µL 10x fluorescence buffer
+  - 2 µL 5 µM o42 (positive control) or
+         water (negative control)
+  - 88 µL water
+
+- Measure fluorescence (ex: 450, em: 521) in a plate 
+  reader for 30 min at 30°C without shaking.

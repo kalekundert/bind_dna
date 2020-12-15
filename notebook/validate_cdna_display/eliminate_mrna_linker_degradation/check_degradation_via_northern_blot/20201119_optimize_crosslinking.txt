@@ -1,0 +1,131 @@
+November 19, 2020
+
+$ stepwise optimize_crosslinking
+
+1. Prepare samples for TBE/urea PAGE:
+
+   Reagent            Stock    Volume
+   ──────────────────────────────────
+   water                     24.00 µL
+   sample buffer         2x  30.00 µL
+   f15            200 ng/µL   6.00 µL
+   ──────────────────────────────────
+                             60.00 µL
+
+   - Incubate at 70°C for 3 min.
+
+2. Run a gel:
+
+   - Use a 6% TBE/urea PAGE gel.
+   - Load 10 µL of each sample.
+   - Run at 180V for 40 min.
+
+3. Transfer the RNA to a membrane [1]:
+
+   - Equilibrate the gel in 1x TBE for 15 min with 
+     gentle shaking.  This step is not necessary if 
+     the electrophoresis buffer was 1x TBE.
+
+   - Mark the membrane, to indicate which side the 
+     samples will be on.
+
+   - Soak the following materials in 1x TBE:
+
+     - Whatman 3MM filter paper (6 sheets)
+     - HyBond N+ membrane
+
+   - Assemble the transfer sandwich.  Remove any 
+     bubbles that form [2]:
+
+     - filter paper (3 sheets)
+     - membrane (marked side facing gel)
+     - gel
+     - filter paper (3 sheets)
+
+   - Place the sandwich into a semidry transfer 
+     apparatus such that the membrane is nearer to 
+     the anode (red).  Drain any excess buffer.
+
+   - Run the transfer with the following settings:
+
+     Current: 0.5-3 mA/cm²
+     Voltage: 10-14 V
+     Time:    30m-2h
+
+4. Optimize UV crosslinking time [3,4]:
+
+   - Carefully cut the membrane into identical strips 
+     containing one lane each.  
+  
+   - Individually wrap each strip in a single layer 
+     of UV-transparent plastic wrap [5].
+
+   - Put the strips face down on a transilluminator 
+     (or face up if using a handheld light source).
+
+   - Expose individual strips to UV light for 30 
+     seconds, 45 seconds, 1 minute, 2 minutes, and 5 
+     minutes [6].
+
+5. Hybridize the probe to the blotted DNA/RNA [7]:
+
+   - Preheat ULTRAhyb-Oligo to 68°C.  Make sure that 
+     any precipitated material has redissolved.
+
+   - Add enough ULTRAhyb-Oligo to keep the membrane 
+     uniformly wet (≈1 mL per 10 cm² membrane).
+
+   - Incubate at 42°C for 30 min.
+
+   - Add o135 to a concentration of 1 nM [8,9].
+
+   - Incubate at 42°C for 14-24 h.
+
+   - Discard probe buffer.
+
+   - Repeat twice:
+     - Add 50 mL wash buffer: 2x SSC, 0.5% SDS
+     - Incubate at 42°C for 30 min.
+
+   - Allow to dry.
+
+6. Image with a laser scanner:
+
+   laser:   784 nm
+   filter:  832BP37
+
+Notes:
+[1] https://tinyurl.com/y3zmmqgd
+
+[2] Pipetting a few mL of buffer onto each layer 
+    before adding the next may help prevent bubbles.
+
+[3] https://tinyurl.com/y4xlenn3
+
+[4] This experiment should be repeated occasionally, 
+    as the energy output of a particular device may 
+    change over time.
+
+[5] This is to prevent the membrane from drying out 
+    during imaging.
+
+[6] Be sure the strips are treated exactly as they 
+    will be during actual use, especially the degree 
+    to which they are allowed to dry before 
+    irradiation.
+
+[7] ULTRAhyb-Oligo manual:
+    https://tinyurl.com/yxd8tpgt
+
+    This product is meant for hybridizing DNA probes 
+    to RNA, not DNA.  But I think it's better than 
+    using either Denhardt's solution (no nucleic acid 
+    blocking agents, e.g. ssDNA) or ULTRAhyb (not 
+    recommended for oligonucleotide probes).
+
+[8] Miller et al (2018). doi:10.1261/rna.068213.118
+
+[9] Make sure that the undiluted probe never touches 
+    the membrane directly.  If necessary, pour the 
+    blocking solution into a clean tube, add the 
+    oligo, mix, then pour back over the membrane.

@@ -1,0 +1,140 @@
+November 16, 2020
+
+$ stepwise check_degradation_via_broccoli_v2
+
+ 1. Wipe down your bench and anything you'll touch 
+    (pipets, racks, pens, etc.) with RNaseZap.
+
+ 2. Setup 2 annealing reactions [1]:
+
+    Reagent              Stock   Volume     2.2x
+    ────────────────────────────────────────────
+    nuclease-free water         2.30 µL  5.06 µL
+    PBS                    10x  0.40 µL  0.88 µL
+    f85,f97               5 µM  1.00 µL
+    o129                 10 µM  0.30 µL
+    ────────────────────────────────────────────
+                                4.00 µL  2.70 µL/rxn
+
+ 3. Perform the annealing reactions:
+
+    - Incubate at 95°C for 2 min.
+    - Cool at room temperature.
+
+ 4. Setup 2 ligation reactions:
+
+    Reagent                 Stock    Volume      2.2x
+    ─────────────────────────────────────────────────
+    nuclease-free water            27.50 µL  60.50 µL
+    T4 DNA ligase buffer      10x   4.00 µL   8.80 µL
+    BSA                      0.1%   4.00 µL   8.80 µL
+    T4 RNA ligase         40 U/µL   0.50 µL   1.10 µL
+    annealed mRNA/linker  1.25 µM   4.00 µL
+    ─────────────────────────────────────────────────
+                                   40.00 µL  36.00 µL/rxn
+
+ 5. Incubate the ligation reactions as follows:
+
+    - 25°C for 10 min.
+    - 65°C for 10 min.
+
+ 6. Label the products: f89,f98
+
+ 7. In the following steps, setup these reactions:
+
+    poly-A linker (o129):    +  +   −    −    +    +    −    −    +    +
+    broccoli+mWasabi mRNA::  −  −  f89  f89  f89  f89  f98  f98  f98  f98
+    T4 RNA ligase::          −  −   −    −    +    +    −    −    +    +
+    PURExpress:              −  +   −    +    −    +    −    +    −    +
+
+ 8. Setup 5 PURExpress reactions:
+
+    Reagent                Stock   Volume     5.5x
+    ──────────────────────────────────────────────
+    A                             1.44 µL  7.92 µL
+    B                             1.08 µL  5.94 µL
+    RNase Inhibitor [2]  40 U/µL  0.07 µL  0.40 µL
+    f89,f98               125 nM  1.01 µL
+    ──────────────────────────────────────────────
+                                  3.60 µL  2.59 µL/rxn
+
+    - Keep on ice.
+    - Be sure to add A before B.
+
+ 9. Incubate at 37°C for 2h.
+
+10. Prepare samples for SDS PAGE:
+
+    Reagent                  Stock    Volume       15x
+    ──────────────────────────────────────────────────
+    water                            3.93 µL  58.95 µL
+    Bolt LDS sample buffer      4x   2.50 µL  37.50 µL
+    Bolt reducing agent        10x   1.00 µL  15.00 µL
+    o194                    100 µM   0.07 µL   1.05 µL
+    sample                    7 nM   2.50 µL
+    ──────────────────────────────────────────────────
+                                    10.00 µL   7.50 µL/rxn
+
+    - Incubate at 70°C for 10 min.
+
+11. Run a gel:
+
+    - Use a 4−12% SDS PAGE gel.
+    - Load 10 µL of each sample.
+    - Run at 165V for 42 min.
+
+12. Image with a laser scanner:
+
+    lasers:   488 nm   658 nm
+    filters:  518BP22  710BP40
+
+13. Stain gel with DFHBI-1T [3]:
+
+    - Repeat 3 times:
+      - Add 100 mL water
+      - Shake gently for 5 min
+
+    - Submerge gel in DFHBI-1T buffer [4].
+    - Shake gently for 10-30 min.
+
+14. Image with a laser scanner:
+
+    laser:   488 nm
+    filter:  518BP22
+
+15. Stain gel with GelGreen:
+
+    - Submerge gel in ≈50 mL 3x GelGreen [5].
+    - Shake gently for 30 min.
+
+16. Image with a 254 nm UV transilluminator.
+
+Notes:
+[1] Using 0.6x linker reduces the amount of unligated 
+    linker, see expt #1.
+
+[2] The PURExpress protocol recommends 0.8 U/µL (20 U 
+    per 25 µL reaction), while the product page for 
+    the inhibitor itself recommends 1 U/µL.  I'm using 
+    the former here because it's the recommendation I 
+    encountered first.
+
+    PURExpress protocol: https://tinyurl.com/y3m9lrcz
+    RNAse inhibitor FAQs: https://tinyurl.com/y3zabsoz
+
+[3] Filonov2015: 10.1016/j.chembiol.2015.04.018
+
+[4] DFHBI-1T buffer:
+
+    - 40 mM HEPES (pH=7.4)
+    - 100 mM KCl
+    - 1 mM MgCl₂
+    - 10 µM DFHBI-1T
+
+[5] Including 100 mM NaCl in the staining solution 
+    enhances sensitivity, but may promote dye 
+    precipitation if the gel stain is reused.
+
+    Staining solution can be reused at least 2-3x.
+    Store staining solution at room temperature
+    protected from light.

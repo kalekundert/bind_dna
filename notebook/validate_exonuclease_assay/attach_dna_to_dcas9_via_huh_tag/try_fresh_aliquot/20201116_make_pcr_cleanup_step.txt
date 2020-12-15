@@ -1,0 +1,52 @@
+November 16, 2020
+
+$ stepwise make f12
+$ stepwise pcr_cleanup
+$ stepwise step 'Update concentration in database.'
+
+1. Setup 1 PCR reaction [1,2]:
+
+   Reagent           Stock     Volume
+   ──────────────────────────────────
+   water                     39.00 µL
+   p59            20 pg/µL   10.00 µL
+   o86              100 µM    0.50 µL
+   o102             100 µM    0.50 µL
+   Q5 master mix        2x   50.00 µL
+   ──────────────────────────────────
+                            100.00 µL
+
+   - Split each reaction into 2 tubes.
+
+2. Run the following thermocycler protocol:
+
+   - 98°C for 30s
+   - Repeat 35x:
+     - 98°C for 10s
+     - 55°C for 20s
+     - 72°C for 15s
+   - 72°C for 2 min
+
+3. Label the product: f12
+
+4. Purify using a PCR cleanup column.
+
+   - Add 5 volumes PB to crude DNA.
+   - If not yellow: Add 10 µL 3M NaOAc, pH=5.
+   - Load on a spin-column.
+   - Spin 1 min, discard flowthrough.
+   - Add 750 µL PE.
+   - Spin 1 min, discard flowthrough.
+   - Spin 1 min again, discard flowthrough.
+   - Add 10 µL EB
+   - Wait at least 1 min.
+   - Spin 1 min, keep flowthrough.
+
+5. Update concentration in database.
+
+Notes:
+[1] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol
+
+[2] For diluting template DNA to 20 pg/µL:
+    Dilute 1 µL twice into 7*sqrt([DNA]) µL

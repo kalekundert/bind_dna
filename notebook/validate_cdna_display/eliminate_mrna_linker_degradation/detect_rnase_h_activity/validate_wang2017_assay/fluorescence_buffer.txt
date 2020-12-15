@@ -1,0 +1,9 @@
+- Prepare 1 mL 10x fluorescence buffer [1]:
+
+  - 500 µL 1M   (20x) Tris pH=8.5
+  - 200 µL 5M   (50x) NaCl 
+  -   5 µL 2M (2000x) MgCl₂
+
+Notes:
+
+[1] DOI: 10.1021/acs.analchem.7b02899 

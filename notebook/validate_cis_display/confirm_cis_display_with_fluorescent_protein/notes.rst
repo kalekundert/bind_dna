@@ -874,3 +874,14 @@ __ http://ampliconexpress.com/troubleshooting-dna-sequencing-evaluating-sanger-d
    I got no priming.  I think there's just something wrong with my constructs.  
    I'll have to try running some gels, I think.
 
+2020/12/09:
+
+I repeated these reactions and ran a gel today:
+
+.. figure:: 20201209_check_pcr_p140_p144_p146_p149.svg
+
+- The bands are more faint than I would expect.  I might be able to optimize Ta 
+  to improve yields.
+
+- The products are about the right size, but it's hard to tell for sure because 
+  the gel is not very well-resolved in that range.

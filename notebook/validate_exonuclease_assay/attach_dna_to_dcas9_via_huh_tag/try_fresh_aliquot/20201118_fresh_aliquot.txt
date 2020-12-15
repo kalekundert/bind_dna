@@ -1,0 +1,106 @@
+November 18, 2020
+
+$ stepwise fresh_aliquot
+
+1. In the following steps, setup these reactions:
+
+   dCas9-Rep:  −  -80  -80  -80  -20  -20  -20  fresh  fresh  fresh
+   sgRNA:      −   +    +    +    +    +    +     +      +      +
+   DNA (f12):  +   −    +    +    −    +    +     −      +      +
+   EDTA:       −   −    −    +    −    −    +     −      −      +
+
+   -80: Stored at -80°C and freeze-thawed ≈5-10 times over ≈2 months.
+   -20: Thawed once and stored at -20°C for a few days.
+   fresh: Freshly thawed for the first time for this experiment.
+
+2. Dilute the dCas9-Rep stock(s) to 1 µM:
+
+   - 18.8 µL water
+   - 2.2 µL 10x Vega-Rocha Rep buffer
+   - 1.0 µL 22 µM dCas9-Rep
+
+3. Wipe down your bench and anything you'll touch 
+   (pipets, racks, pens, etc.) with RNaseZap.
+
+4. Attach DNA to HUH-tagged dCas9 [1-3]:
+
+   Reagent                  Stock    Volume      9.9x
+   ──────────────────────────────────────────────────
+   nuclease-free water              6.56 µL  64.99 µL
+   Vega-Rocha Rep buffer      10x   1.00 µL   9.90 µL
+   dCas9-PCV2                1 µM   1.00 µL
+   sgRNA                    10 µM   0.10 µL   0.99 µL
+   EDTA                    500 mM   0.60 µL
+   f12                    1360 nM   0.74 µL   7.28 µL
+   ──────────────────────────────────────────────────
+                                   10.00 µL   8.40 µL/rxn
+
+   - Add each reagent in order.
+   - Mix after adding EDTA (and before adding DNA).
+   - Incubate at 37°C for 15 min.
+
+5. Prepare samples for SDS PAGE:
+
+   Reagent                 Stock    Volume       15x
+   ─────────────────────────────────────────────────
+   Bolt LDS sample buffer     4x   3.85 µL  57.75 µL
+   Bolt reducing agent       10x   1.54 µL  23.10 µL
+   sample                         10.00 µL
+   ─────────────────────────────────────────────────
+                                  15.39 µL   5.39 µL/rxn
+
+   - Incubate at 70°C for 10 min.
+
+6. Run a gel:
+
+   - Use a 4−12% SDS PAGE gel.
+   - Load 15.39 µL of each sample.
+   - Run at 165V for 60 min.
+
+7. Image the gel with GelGreen and Coomassie:
+
+   - Repeat 3 times:
+     - Submerge gel in 100 mL water.
+     - Microwave until almost boiling (1 min).
+     - Shake gently for 1 min.
+
+   - Submerge gel in 3x GelGreen, 100 mM NaCl.
+   - Shake gently for 30 min.
+
+   - Image with a laser scanner:
+     laser:   488 nm
+     filter:  518BP22
+
+   - Submerge gel in SimplyBlue SafeStain.
+   - Microwave until almost boiling (45 sec).
+   - Shake gently for 5 min.
+
+   - Submerge gel in 100 mL water.
+   - Shake gently for 10 min.
+
+   - Add 20 mL 5M NaCl
+   - Shake gently for 5 min.
+
+   - Image with a laser scanner:
+      laser:   658 nm
+     filter:  710BP40
+
+Notes:
+[1] Invitrogen recommends loading no more than 250 
+    ng/band on Bolt SDS PAGE gels, and the detection 
+    limit for Coomassie (as an IR dye [Butt2013]) is 
+    at least 10 ng/band.  That corresponds to a range 
+    of ≈1.4-0.1 pmol Cas9-PCV2/band (MW: 176.8 kDa).  
+    I probably want to be on the high end of that.
+
+[2] The EDTA reaction is a negative control 
+    established in [VegaRocha2007].  They used 2.5 mM 
+    divalent metal and 30 mM EDTA to prevent coupling.
+
+[3] f16 and f12 are 414 bp.  At that length, 50 ng/µL 
+    (a typical PCR yield) corresponds to ≈150 nM.  
+    [Lovendahl2017] used a 10:1 DNA:protein ratio to
+    maximize the amount of coupled protein.  I'm going 
+    to use a 1:1 ratio instead, both because I don't 
+    want a lot of unbound DNA in my qPCR reactions and 
+    because a 10:1 ratio would use a lot of material.

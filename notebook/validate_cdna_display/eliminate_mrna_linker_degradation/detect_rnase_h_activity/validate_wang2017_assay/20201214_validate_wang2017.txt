@@ -1,0 +1,66 @@
+December 14, 2020
+
+$ stepwise validate_wang2017
+
+1. Perform a serial dilution [2]:
+
+   - Put 35.10 μL 10.00 U/mL RNase H in the first tube.
+   - Add 24.00 μL 1x RNase H reaction buffer in the 6 remaining tubes.
+   - Transfer 11.10 μL between each tube to make 7
+     3.2-fold dilutions.
+
+2. Prepare 5 µM dilutions of o210-o212.
+
+3. Setup 1 blank:
+
+   - 10.0 µL 1x RNase H reaction buffer
+   -  0.5 µL water [2]
+
+4. Setup 1 positive control:
+
+   - 10.0 µL 1x RNase H reaction buffer
+   -  0.5 µL 5 µM o212 [2]
+
+5. Setup 1 negative control:
+
+   - 10.0 µL 10 U/mL RNase H
+   -  0.5 µL 5 µM o211 [2]
+
+6. Setup 8 experimental samples:
+
+   - 10.0 µL RNase H dilution, including 0 U/mL.
+   -  0.5 µL 5 µM o210 [2]
+
+7. Incubate at 30°C for 10 min.
+
+8. Setup the following reactions in a black, opaque-
+   bottomed 96-well plate:
+
+   Reagent        Stock     Volume      12.1x
+   ──────────────────────────────────────────
+   water                  82.30 µL  995.83 µL
+   Tris pH=8.5  1000 mM    5.00 µL   60.50 µL
+   NaCl         5000 mM    2.00 µL   24.20 µL
+   MgCl₂        1000 mM    0.10 µL    1.21 µL
+   o213          100 µM    0.10 µL    1.21 µL
+   samples                10.50 µL
+   ──────────────────────────────────────────
+                         100.00 µL   89.50 µL/rxn
+
+9. Measure flourescence (ex: 450, em: 521) in a plate
+   reader for 30 min at 30°C without shaking.
+
+Notes:
+[1] If I could use an Echo, I would add 25 nL of 100 µM 
+    o210/o211, to minimize the amount of volume added to 
+    the sample.  But I don't think I can accurately 
+    pipet less than 0.5 µL by hand.
+
+[2] The final concentrations will be:
+    1  10.00 U/mL
+    2   3.16 U/mL
+    3   1.00 U/mL
+    4   0.32 U/mL
+    5   0.10 U/mL
+    6   0.03 U/mL
+    7   0.01 U/mL

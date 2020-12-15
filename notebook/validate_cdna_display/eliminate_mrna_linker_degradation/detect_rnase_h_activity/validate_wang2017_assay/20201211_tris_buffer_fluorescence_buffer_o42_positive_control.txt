@@ -1,0 +1,30 @@
+December 11, 2020
+
+$ stepwise recipes/tris_buffer 8.5 -v 50
+$ stepwise fluorescence_buffer
+$ stepwise o42_positive_control
+
+1. Prepare 1000.0 mM pH=8.5 Tris buffer:
+
+   - 2.21 g Tris HCl
+   - 4.36 g Tris base
+   - water to 50.0 mL
+
+2. Prepare 1 mL 10x fluorescence buffer [1]:
+
+   - 500 µL 1M   (20x) Tris pH=8.5
+   - 200 µL 5M   (50x) NaCl 
+   -   5 µL 2M (2000x) MgCl₂
+
+3. Prepare positive and negative controls:
+
+   - 10 µL 10x fluorescence buffer
+   - 2 µL 5 µM o42 (positive control) or
+          water (negative control)
+   - 88 µL water
+
+4. Measure fluorescence (ex: 450, em: 521) in a plate 
+   reader for 30 min at 30°C without shaking.
+
+Note:
+[1] DOI: 10.1021/acs.analchem.7b02899
