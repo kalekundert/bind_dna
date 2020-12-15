@@ -1,0 +1,1 @@
+/home/kale/research/projects/201511_sgrna_sensor_local/analysis/sgrna_sensor/plate_reader.py

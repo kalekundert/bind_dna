@@ -7,12 +7,12 @@ with open('README.rst') as file:
     readme = file.read()
 
 setup(
-    name='bind_dna',
+    name='dbp',
     version='0.0.0',
     author='Kale Kundert',
     long_description=readme,
     packages=[
-        'bind_dna',
+        'dbp',
     ],
     install_requires=[
     ],
