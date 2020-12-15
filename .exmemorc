@@ -21,3 +21,8 @@ postcmd = 'chmod a-x nanodrop/*.tsv'
 type = 'gdrive'
 src = '/Church/gels'
 dest = 'gels'
+
+[[data]]
+type = 'gdrive'
+src = '/Church/plate_reader'
+dest = 'plate_reader'
