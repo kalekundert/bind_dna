@@ -1,0 +1,30 @@
+- Transfer the RNA to a membrane [1]:
+
+  - Equilibrate the gel in 1x SSC for 15 min.
+
+  - Soak the following materials:
+
+    - Sponges: 1x SSC
+    - 3MM Whatman paper: 20x SSC
+    - HyBond N+ membrane: water until wet, then 20x SSC.
+
+  - Assemble the transfer sandwich, being careful to 
+    remove any bubbles that form:
+
+    - Sponge
+    - Whatman 3MM paper (2 sheets)
+    - gel
+    - HyBond N+ membrane
+    - Whatman 3MM paper (2 sheets)
+    - Sponge
+
+  - Place the sandwich into the gel cassette such 
+    that the membrane is nearer to the anode (red).
+    
+  - Fill the chamber with 1x SSC, pre-cooled to 4°C.
+
+  - Transfer at 250 mM for 2h at 4°C, then at 350 mA 
+    for a further 2h at 4°C.
+
+Notes:
+[1] Li2018: 10.1101/pdb.prot097493

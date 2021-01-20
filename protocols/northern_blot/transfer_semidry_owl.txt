@@ -1,0 +1,44 @@
+- Transfer using an Owl semidry electroblotter [1]:
+
+  - Equilibrate the gel in 1x TBE for 15 min with 
+    gentle shaking.  This step is not necessary if 
+    the electrophoresis buffer was 1x TBE.
+
+  - Mark the membrane, to indicate which side the 
+    samples will be on.
+
+  - Soak the membrane and 6 filter pads in 1x TBE.  
+
+  - Assemble the transfer sandwich.  The direction of 
+    transfer is upwards, so make sure the membrane is 
+    above the gel.  Be careful to remove any bubbles 
+    that form [2]:
+
+    - 3 filter pads
+    - membrane (marked side facing gel)
+    - gel
+    - 3 filter pads
+
+  - Drain any excess buffer from the blotter.
+
+  - Lightly tighten the lid [3].
+
+  - Run the blot with the following settings:
+
+    Current: 0.5-3 mA/cm²
+    Voltage: 10-14 V
+    Time:    30m-2h
+
+Notes:
+
+[1] Owl Semidry Electroblotter Models HEP-1 and HEP-3 
+    Operating and Maintenance Manual 7007332 Rev. 0:
+    https://tinyurl.com/y3zmmqgd
+
+[2] Pipetting a few mL of buffer onto each layer 
+    before adding the next may help prevent bubbles.
+
+[3] The weight of the lid is usually enough; the 
+    screws are not required.  If you use the screws, 
+    drain any excess buffer that was squeezed out.
+

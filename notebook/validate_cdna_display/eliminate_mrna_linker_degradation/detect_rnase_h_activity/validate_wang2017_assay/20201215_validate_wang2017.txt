@@ -1,0 +1,84 @@
+December 15, 2020
+
+$ stepwise validate_wang2017
+
+ 1. Prepare 100 U/mL RNase H:
+
+    - 44 µL nuclease-free water
+    - 5 µL 10x RNase H buffer
+    - 1 µL 5000 U/mL RNase H
+
+ 2. Perform a serial dilution [1]:
+
+    - Put 17.55 μL 100.00 U/mL RNase H in the first tube.
+    - Add 12.00 μL 1x RNase H reaction buffer in the 6 remaining tubes.
+    - Transfer 5.55 μL between each tube to make 7
+      3.2-fold dilutions.
+
+ 3. Prepare 5 µM o210-o212:
+
+    - 1 µL 100 µM oligo
+    - 19 µL nuclease-free water
+
+ 4. Setup 1 blank:
+
+    - 10.0 µL 1x RNase H reaction buffer
+    -  0.5 µL nuclease-free water [2]
+
+ 5. Setup 1 positive control:
+
+    - 10.0 µL 1x RNase H reaction buffer
+    -  0.5 µL 5 µM o212 [2]
+
+ 6. Setup 1 negative control:
+
+    - 10.0 µL 100 U/mL RNase H
+    -  0.5 µL 5 µM o211 [2]
+
+ 7. Setup 8 experimental samples:
+
+    - 10.0 µL RNase H dilution, including 0 U/mL.
+    -  0.5 µL 5 µM o210 [2]
+
+ 8. Incubate at 37°C for 120 min.
+
+ 9. Prepare 5x DNAzyme buffer:
+
+    Reagent        Stock     Volume
+    ───────────────────────────────
+    water                 259.00 µL
+    Tris pH=8.5  1000 mM  100.00 µL
+    NaCl         5000 mM   40.00 µL
+    MgCl₂        2000 mM    1.00 µL
+    ───────────────────────────────
+                          400.00 µL
+
+10. Setup the following reactions in a black, opaque-
+    bottomed 96-well plate:
+
+    Reagent               Stock     Volume      12.1x
+    ─────────────────────────────────────────────────
+    nuclease-free water           69.40 µL  839.74 µL
+    DNAzyme buffer           5x   20.00 µL  242.00 µL
+    o213                 100 µM    0.10 µL    1.21 µL
+    samples                       10.50 µL
+    ─────────────────────────────────────────────────
+                                 100.00 µL   89.50 µL/rxn
+
+11. Measure flourescence (ex: 450, em: 521) in a
+    plate reader for 30 min at 30°C without shaking.
+
+Notes:
+[1] The final concentrations will be:
+    1  100.00 U/mL
+    2   31.62 U/mL
+    3   10.00 U/mL
+    4    3.16 U/mL
+    5    1.00 U/mL
+    6    0.32 U/mL
+    7    0.10 U/mL
+
+[2] If I could use an Echo, I would add 25 nL of 100 µM 
+    o210/o211, to minimize the amount of volume added to 
+    the sample.  But I don't think I can accurately 
+    pipet less than 0.5 µL by hand.

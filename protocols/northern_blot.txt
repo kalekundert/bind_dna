@@ -1,0 +1,23 @@
+Crosslinking:
+
+http://www.protocol-online.org/biology-forums/posts/7441.html
+
+- Wrap membrane in plastic wrap
+- Place directly on UV transilluminator
+- Illuminate with 254 nm UV light for 2-3 min
+
+https://www.thermofisher.com/us/en/home/references/ambion-tech-support/northern-analysis/tech-notes/membrane-transfer-and-crosslinking-for-rna.html
+
+Usually a one minute exposure with 254 nm light or three minutes with 302 nm 
+light is sufficient. To ensure maximum sensitivity, however, the following 
+experiment should be carried out.
+
+Prepare a gel with five identical lanes containing 1 µg of RNA each. Run the gel and transfer it to the membrane.
+Carefully cut the membrane into identical strips containing one lane each. Wrap these individually in a single layer of UV-transparent plastic wrap.
+Put the strips face down on a transilluminator (or face up if using a handheld light source). Be sure to wear UV-opaque eyewear.
+Expose individual strips to UV light for 30 seconds, 45 seconds, 1 minute, 2 minutes, and 5 minutes. Be sure the strips are treated exactly as they will be during actual use, especially the degree to which they are allowed to dry before irradiation.
+Probe the blot for an abundantly to moderately abundantly expressed message, according to your Northern blot protocol.
+The strip having the highest intensity signal corresponds to the optimal 
+exposure time for a particular membrane with a particular UV source. This 
+experiment should be repeated occasionally, as the energy output of a 
+particular device may change over time.

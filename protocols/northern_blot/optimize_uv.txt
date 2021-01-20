@@ -1,0 +1,29 @@
+- Optimize UV crosslinking time [1,2]:
+
+  - Carefully cut the membrane into identical strips 
+    containing one lane each.  
+    
+  - Individually wrap each strip in a single layer 
+    of UV-transparent plastic wrap [3].
+
+  - Put the strips face down on a transilluminator 
+    (or face up if using a handheld light source).
+
+  - Expose individual strips to UV light for 30 
+    seconds, 45 seconds, 1 minute, 2 minutes, and 5 
+    minutes [4].
+
+Notes:
+[1] https://tinyurl.com/y4xlenn3
+
+[2] This experiment should be repeated occasionally, 
+    as the energy output of a particular device may 
+    change over time.
+
+[3] This is to prevent the membrane from drying out 
+    during imaging.
+
+[4] Be sure the strips are treated exactly as they 
+    will be during actual use, especially the degree 
+    to which they are allowed to dry before 
+    irradiation.

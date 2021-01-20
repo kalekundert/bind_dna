@@ -79,6 +79,11 @@ if not args['--add-target']:
 
 if args['--mrna']:
     template = 'template mRNA'
+    # The default template concentration is derived from the PURExpress manual, 
+    # which recommends 1-5 µg mRNA per 25 µL reaction.  This corresponds to  
+    # 160 nM of a Zif268 transcript.  Using a GFP transcript, I then optimized 
+    # the stock concentration while holding the total volume constant, and 
+    # found that 1 µM stock gave the most expression.  See :expt:`18`.
     default_template_conc_nM = 160
     default_template_stock_nM = 1000
     del purexpress['template DNA']

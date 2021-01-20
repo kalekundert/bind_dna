@@ -1,0 +1,99 @@
+January 13, 2021
+
+$ stepwise detect_rnase_h
+
+ 1. Prepare 5 µM o210-o212:
+
+    - 19 µL nuclease-free water
+    -  1 µL 100 µM oligo
+
+ 2. Setup two blank wells (one will become a FAM
+    positive control):
+
+    - 10.5 µL nuclease-free water
+
+ 3. Setup control reactions:
+
+    Reagent              Stock    Volume      3.3x
+    ──────────────────────────────────────────────
+    nuclease-free water         10.00 µL  33.00 µL
+    o210,o211,o212        5 µM   0.50 µL
+    ──────────────────────────────────────────────
+                                10.50 µL  10.00 µL/rxn
+
+ 4. Setup an RNase H assay for PURExpress:
+
+    Reagent                     Stock    Volume      3.3x
+    ─────────────────────────────────────────────────────
+    nuclease-free water                 2.80 µL   9.24 µL
+    A                                   4.00 µL  13.20 µL
+    B                                   3.00 µL   9.90 µL
+    RNase inhibitor (murine)  40 U/µL   0.20 µL   0.66 µL
+    o210,o211,o212               5 µM   0.50 µL
+    ─────────────────────────────────────────────────────
+                                       10.50 µL  10.00 µL/rxn
+
+ 5. Setup an RNase H assay for NEBExpress:
+
+    Reagent                       Stock    Volume      3.3x
+    ───────────────────────────────────────────────────────
+    nuclease-free water                   2.20 µL   7.26 µL
+    A: S30 extract                        2.40 µL   7.92 µL
+    B: synthesis buffer              2x   5.00 µL  16.50 µL
+    RNase inhibitor (murine)    40 U/µL   0.20 µL   0.66 µL
+    GamS nuclease inhibitor   1.5 µg/µL   0.20 µL   0.66 µL
+    o210,o211,o212                 5 µM   0.50 µL
+    ───────────────────────────────────────────────────────
+                                         10.50 µL  10.00 µL/rxn
+
+ 6. Setup an RNase H assay for Promega S30 extract:
+
+    Reagent              Stock    Volume      3.3x
+    ──────────────────────────────────────────────
+    nuclease-free water          2.00 µL   6.60 µL
+    A                      10x   1.00 µL   3.30 µL
+    B                     2.5x   4.00 µL  13.20 µL
+    C                    3.33x   3.00 µL   9.90 µL
+    o210,o211,o212        5 µM   0.50 µL
+    ──────────────────────────────────────────────
+                                10.50 µL  10.00 µL/rxn
+
+ 7. Incubate at 37°C for 30 min.
+
+ 8. Prepare 5x DNAzyme buffer:
+
+    Reagent        Stock     Volume
+    ───────────────────────────────
+    water                 259.00 µL
+    Tris pH=8.5  1000 mM  100.00 µL
+    NaCl         5000 mM   40.00 µL
+    MgCl₂        2000 mM    1.00 µL
+    ───────────────────────────────
+                          400.00 µL
+
+ 9. Setup the following reactions in a black, opaque-
+    bottomed 96-well plate:
+
+    Reagent               Stock     Volume      13.2x
+    ─────────────────────────────────────────────────
+    nuclease-free water           69.40 µL  916.08 µL
+    DNAzyme buffer           5x   20.00 µL  264.00 µL
+    o213                 100 µM    0.10 µL    1.32 µL
+    samples                       10.50 µL
+    ─────────────────────────────────────────────────
+                                 100.00 µL   89.50 µL/rxn
+
+10. Prepare a FAM control:
+
+    10 µM o42:
+    - 9 µL nuclease-free water
+    - 1 µL 100 µM o42
+
+    FAM control:
+    - 68.50 µL nuclease-free water
+    - 20.00 µL 5x DNAzyme buffer
+    -  1.00 µL 10 µM o42
+    - 10.50 µL blank
+
+11. Measure flourescence (ex: 450, em: 521) in a
+    plate reader for 30 min at 30°C without shaking.

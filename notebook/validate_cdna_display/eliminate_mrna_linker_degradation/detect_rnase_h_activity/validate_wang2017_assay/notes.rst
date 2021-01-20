@@ -91,7 +91,6 @@ Titrate RNase H --- 2020/12/14
 .. figure:: 20201214_validate_wang2017_fits.svg
 .. figure:: 20201214_validate_wang2017_slopes.svg
 
-
 Observations:
 
 - The controls look similar to before.
@@ -131,3 +130,38 @@ Ideas:
   dynamic range.
 
 - Try longer times and higher temperatures.
+
+Increase incubation time/temp --- 2020/12/15
+--------------------------------------------
+.. protocol:: 20201215_validate_wang2017.txt
+
+.. figure:: 20201215_validate_wang2017_fits.svg
+.. figure:: 20201215_validate_wang2017_slopes.svg
+
+Observations:
+
+- The limit of detection is the same as in the previous experiment.
+
+- The log(RNase H concentration) vs slope signal seems fairly linear between 10 
+  and 100 U/mL.  If I wanted to make a standard curve, though, I'd want more 
+  data points in that range.
+
+Conclusions:
+
+- The increased incubation time and temperature does not seem to have any 
+  effect on the sensitivity of the assay.  This does surprise me: it seems that 
+  a longer reaction time doesn't lead to any additional product.
+
+- I'm still planning to use a 2h incubation at 37°C when testing PURExpress.  
+  Even though the longer time and warmer temperature don't seem necessary, I 
+  think it's best to stick with the same conditions that I've experienced the 
+  problem with.
+
+Ideas:
+
+- It's possible that photobleaching from repeated measurements (i.e. the 
+  timecourse) is reducing my limit of detection.  This is based on the 
+  observation that the FAM control seems to experience photobleaching.  To 
+  check for this, it might make sense to measure fluorescence once at 30 min, 
+  like [Wang2017]_ do.  Or alternatively, a 30m time course starting after 30m.
+

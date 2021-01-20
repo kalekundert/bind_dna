@@ -2,7 +2,11 @@
 
 """\
 Usage:
-    plot_kinetic <toml>
+    plot_kinetic <toml> [-a <attr>]...
+
+Options:
+    -a --attr <name>
+        Label this attribute.
 """
 
 import wellmap
@@ -15,7 +19,7 @@ def load_fam_fluorescence(p):
     expt = BiotekExperiment(p)
     return expt.kinetic['450,521']
 
-def plot_kinetic(df, x, y, *, x_label='', y_label='', labels=[]):
+def plot_kinetic(df, x, y, *, x_label='', y_label='', labels=None):
     from matplotlib.offsetbox import AnchoredText
 
     num_rows = df.row_i.max() - df.row_i.min() + 1
@@ -34,19 +38,21 @@ def plot_kinetic(df, x, y, *, x_label='', y_label='', labels=[]):
 
         ax.plot(g[x], g[y])
 
-        label_values = {k: one(uniq(g[k])) for k in labels}
-
-        title = '\n'.join(
-                v.format(label_values[k])
-                for k, v in labels.items()
-        )
-        title_box = AnchoredText(
-                title,
-                frameon=True,
-                loc='upper left',
-        )
-
-        ax.add_artist(title_box)
+        if labels:
+            label_values = {
+                    k: one(uniq(g[k]))
+                    for k in labels
+            }
+            title = '\n'.join(
+                    v.format(label_values[k])
+                    for k, v in labels.items()
+            )
+            title_box = AnchoredText(
+                    title,
+                    frameon=True,
+                    loc='upper left',
+            )
+            ax.add_artist(title_box)
 
     for ax in axes[:, 0]:
         ax.set_ylabel(y_label)
@@ -72,8 +78,8 @@ if __name__ == '__main__':
             x_label='time [min]',
             y_label='RFU',
             labels={
-                'title': '{}',
-                'rnase_U_mL': 'RNase H: {} U/mL',
+                k: '{}'
+                for k in args['--attr']
             },
     )
 

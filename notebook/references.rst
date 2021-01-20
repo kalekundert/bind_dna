@@ -20,6 +20,7 @@ References
 .. [Congden1993] :doi:`10.1006/abio.1993.1439`
 .. [Cote2008] :doi:`10.1016/j.virusres.2008.01.001`
 .. [Cotten2011] :doi:`10.1038/nprot.2011.354`
+.. [Dobosy2011] :doi:`10.1186/1472-6750-11-80`
 .. [Damian2009] :doi:`10.1016/j.bbrc.2009.05.044`
 .. [Dick1978] :doi:`10.1113/jphysiol.1978.sp012526`
 .. [Doerr2019] :doi:`10.1088/1478-3975/aaf33d`

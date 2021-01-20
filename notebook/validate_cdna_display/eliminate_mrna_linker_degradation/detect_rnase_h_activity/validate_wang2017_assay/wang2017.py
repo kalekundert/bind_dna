@@ -6,10 +6,11 @@ import autoprop
 @autoprop
 class IncubateAndMeasure:
 
-    def __init__(self, num_reactions, rnase_incubation_time_min=30, rnase_incubation_temp_C=30):
+    def __init__(self, num_reactions, rnase_incubation_time_min=10, rnase_incubation_temp_C=30, fam_control=False):
         self.num_reactions = num_reactions
         self.rnase_incubation_time_min = rnase_incubation_time_min
         self.rnase_incubation_temp_C = rnase_incubation_temp_C
+        self.fam_control = fam_control
 
     def __iter__(self):
         yield from self.protocol.steps
@@ -52,7 +53,7 @@ class IncubateAndMeasure:
         rxn['samples'].volume = '10.5 µL'
         rxn['samples'].master_mix = False
 
-        while rxn['o213'].volume * rxn.scale < '1 µL':
+        while rxn['o213'].volume * rxn.scale < '0.5 µL':
             rxn['o213'].hold_conc.stock_conc /= 2
 
         return rxn
@@ -70,6 +71,21 @@ class IncubateAndMeasure:
                 Setup the following reactions in a black,
                 opaque-bottomed 96-well plate:
         """, self.reaction)
+
+        if self.fam_control:
+            p += """\
+Prepare a FAM control:
+
+10 µM o42:
+- 9 µL nuclease-free water
+- 1 µL 100 µM o42
+
+FAM control:
+- 68.50 µL nuclease-free water
+- 20.00 µL 5x DNAzyme buffer
+-  1.00 µL 10 µM o42
+- 10.50 µL blank
+            """
 
         p += stepwise.Step("""\
                 Measure flourescence (ex: 450, em: 521) in a plate 

@@ -1,0 +1,14 @@
+December 14, 2020
+
+$ stepwise dilute f15 2246.4 -c 5000
+
+1. Dilute the purified DNA to 5000.00 nM [1]:
+
+      tag  stock_uL  water_uL
+   0  f15     11.09      8.91
+
+Note:
+[1] Concentrations:
+
+       tag      mw_da  stock_ng_uL  stock_nM  final_nM
+    0  f15  249047.71       2246.4   9019.96      5000

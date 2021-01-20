@@ -4,13 +4,16 @@
 Ligate linker-N to the mRNA.
 
 Usage:
-    ligate <n> [-v <µL>] [-x <percent>] [-i <time>] [-m <reagents>] [options]
+    ligate [-n <int>] [-v <µL>] [-x <percent>] [-i <time>] [options]
 
 Arguments:
     <n>
         The number of reactions to set up.
 
 Options:
+    -n --num-reactions <int>        [default: 1]
+        The number of reactions to setup.
+
     -v --volume <µL>                [default: 40]
         The volume of each ligation reaction in µL.
 
@@ -89,7 +92,7 @@ T4 RNA ligase          40 U/µL       0.5 µL
 annealed mRNA/linker   1.25 µM       4.0 µL
 """)
 
-ligate.num_reactions = n = eval(args['<n>'])
+ligate.num_reactions = n = eval(args['--num-reactions'])
 ligate.extra_percent = eval(args['--extra'])
 ligate.extra_min_volume = '0.5 µL'
 ligate.hold_ratios.volume = eval(args['--volume']), 'µL'

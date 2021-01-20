@@ -1,0 +1,98 @@
+[Rio2015]
+
+Formaldehyde covalently reacts with the bases of the RNA to prevent base 
+pairing.  The below protocols claim that hybridization can follow blotting, but 
+I'm skeptical.  Seems like it'd be better to dissolve the RNA is urea/TBE (i.e.  
+PAGE buffer) and blot it like that.
+
+[Hodge1998] (based on HyBond N+ manual below)
+
+- Cut the membrane to a suitable size (allow 1 cm²
+  per RNA dot) and mark (with a pencil) to show 
+  orientation and positions for sample loading (see 
+  Note 4 ).
+
+- Wet the membrane by laying it on the surface of 
+  sterile distilled water and then wash briefly in 
+  10X SSC and air-dry thoroughly.
+
+  - The HyBond manual explicitly says that this step 
+    is unnecessary.
+
+- Thaw the RNA samples on ice and transfer 
+  appropriate amounts (see Notes 5 and 6) to fresh 
+  tubes, add 3 vol of RNA incubation solution [1] 
+  and mix thoroughly.
+
+- Heat the RNA samples at 65°C for 5 min to denature 
+  RNA secondary structure and then cool on ice
+
+- Add an equal volume of ice-cold 20X SSC and mix 
+  thoroughly.
+
+- Dot the RNA Solution onto the membrane in 2 μL 
+  aliquots using a Gilson pipet, dry the membrane 
+  between each loading. To speed up the process it 
+  is possible to use a hairdryer to dry the membrane 
+  between loadings.
+
+- After loading the last sample dry the membrane and 
+  crosslink the RNA to the membrane using a UV 
+  crosslinker such as the Stratalinker (Stratagene, 
+  La Jolla, CA) (see Note 7 ).
+
+Notes:
+
+[1] RNA incubation solution:
+
+    657 µL formamide
+    210 µL 37% (w/v) formaldehyde
+    133 µL 10x MOPS
+
+    MOPS buffer is used where formaldehyde is a 
+    component of the incubation mixture.  Tris 
+    buffers are not suitable due to the reactive 
+    amine group.
+ 
+HyBond N⁺ Manual
+https://tinyurl.com/y4o5jycn
+
+
+- Cut the membrane
+
+- Make grid with pencil
+
+  - 1 cm between samples
+  - Prewetting not required
+
+
+- Prepare samples:
+
+  DNA:
+  - Dilute to desired conc in TE or 2x SSC
+
+  RNA:
+  - RNA
+  - 2.2M formaldehyde
+  - 50% formamide
+  - 0.5x MOPS
+  - Incubate at 55°C for 15 min
+
+  1-2 µL is ideal for dot blotting
+
+- Denature the sample:
+  
+  DNA:
+  - Incubate at 95°C for 5 min, then chill on ice.  
+    Spin briefly to collect sample.
+
+  RNA:
+  - Incubate at 55°C for 15 min, then chill on ice.
+    Spin briefly to collect samples.
+
+
+
+
+
+
+

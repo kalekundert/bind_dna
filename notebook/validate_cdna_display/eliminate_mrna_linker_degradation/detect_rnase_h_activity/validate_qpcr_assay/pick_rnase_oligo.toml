@@ -1,0 +1,19 @@
+
+[row]
+C.replicate = 1
+D.replicate = 1
+E.replicate = 1
+
+[col]
+1.control = 'no-template'
+2.control = 'no-rt'
+3.control = 'no-target'
+
+4.target_oligo  = 'o216'
+5.target_oligo  = 'o217'
+6.target_oligo  = 'o218'
+7.target_oligo  = 'o219'
+8.target_oligo  = 'o220'
+9.target_oligo  = 'o221'
+10.target_oligo = 'o222'
+11.target_oligo = 'o223'

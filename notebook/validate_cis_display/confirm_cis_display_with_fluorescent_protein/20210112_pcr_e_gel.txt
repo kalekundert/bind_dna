@@ -1,0 +1,37 @@
+January 12, 2021
+
+$ stepwise pcr p141,p145,p147,p150 o171 o167 -a 63 -g 15 -x 180 -n 4 -v 40 -m primers
+$ stepwise e_gel
+
+1. Setup 4 PCR reactions [1,2]:
+
+   Reagent                 Stock    Volume      4.4x
+   ─────────────────────────────────────────────────
+   water                          15.60 µL  68.64 µL
+   p141,p145,p147,p150  20 pg/µL   4.00 µL
+   o171                   100 µM   0.20 µL   0.88 µL
+   o167                   100 µM   0.20 µL   0.88 µL
+   Q5 master mix              2x  20.00 µL  88.00 µL
+   ─────────────────────────────────────────────────
+                                  40.00 µL  36.00 µL/rxn
+
+   - Use any extra master mix as a negative control.
+
+2. Run the following thermocycler protocol:
+
+   - 98°C for 30s
+   - Repeat 35x:
+     - 98°C for 10s
+     - 56-71°C for 20s
+     - 72°C for 3 min
+   - 72°C for 2 min
+   - 4°C hold
+
+3. Run a 1% E-gel.
+
+Notes:
+[1] For resuspending lyophilized primers:
+    100.0 µM = 10 µL/nmol
+
+[2] For diluting template DNA to 20 pg/µL:
+    Dilute 1 µL twice into 7*sqrt([DNA]) µL

@@ -1,0 +1,28 @@
+- Prepare the membrane for cross-linking [1]:
+
+  - Carefully remove the gel from the membrane
+    and mark the orientation of the membrane with a 
+    ballpoint ink pen.
+
+  - Wrap the membrane in plastic wrap and place it on 
+    a sheet of Whatman 3MM paper.
+
+- Cross-link the RNA to the membrane [1]:
+   
+   Stratalinker:
+   
+   - Place the membrane in a Stratalinker with the 
+     RNA surface facing up.
+   - Expose it to short-wave UV light (254 nm; the 
+     1200 mJ auto-cross-linking setting in a 
+     Stratalinker) for 1 min.
+
+   Transilluminator:
+
+   - Place the membrane with the RNA surface facing 
+     down against the glass.
+   - Expose for the optimized amount of time, usually 
+     1-5 min.
+
+Notes:
+[1] Li2018: 10.1101/pdb.prot097493

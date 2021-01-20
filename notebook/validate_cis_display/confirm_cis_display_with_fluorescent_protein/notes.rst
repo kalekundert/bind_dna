@@ -885,3 +885,42 @@ I repeated these reactions and ran a gel today:
 
 - The products are about the right size, but it's hard to tell for sure because 
   the gel is not very well-resolved in that range.
+
+2021/01/12:
+
+I did a temperature gradient:
+
+.. protocol:: 20210112_pcr_e_gel.txt
+
+.. figure:: 20210112_optimize_ta_p140_p144_p146_p149.svg
+
+- The ideal temperature seems to be much lower than predicted.
+
+- It's kinda hard to see on this gel (I forgot that E-Gel 48 is not as 
+  sensitive as E-Gel EX), but it looks like the product at Ta=60,62 is smaller 
+  than it should be.  The gel from 2020/12/09 is consistent with this, when 
+  looked at very closely.
+
+2021/01/13:
+
+I repeated the gradient at lower temperatures for just p140, and I imaged using 
+an E-Gel EX to better visualize any minor products:
+
+.. protocol:: 20210113_pcr_e_gel.txt
+
+.. figure:: 20210113_optimize_ta_p140.svg
+
+- The optimal :math:`T_A` for this reaction is :math:`\pu{55.6 °C}`.  I'm going 
+  to assume that the other reactions will also work well at this temperature.  
+  It might be smart to setup a gradient for p144.
+
+2021/01/14:
+
+I decided to do another gradient for p144, since it didn't seem to amplify as 
+well as the others:
+
+.. protocol:: 20210114_pcr_e_gel_step_make_kld.txt
+
+.. figure:: 20210114_optimize_ta_p144.svg
+
+- 55.6°C appears to be about the optimal temperature for p144 as well.

@@ -1,0 +1,107 @@
+January 14, 2021
+
+$ stepwise pcr p145 o171 o167 -a 50-62 -x 180 -n 8 -v 5 -m dna,primers
+$ stepwise e_gel
+$ stepwise step 'Label the best product: p144'
+$ stepwise make p140 p146 p149 -- -L
+$ stepwise kld 'PCR products' -n 4
+
+ 1. Prepare 10x primer mix [1]:
+
+    Reagent   Stock    Volume
+    ─────────────────────────
+    water             9.00 µL
+    o171     100 µM   0.50 µL
+    o167     100 µM   0.50 µL
+    ─────────────────────────
+                     10.00 µL
+
+ 2. Setup 8 PCR reactions [2]:
+
+    Reagent           Stock   Volume       10x
+    ──────────────────────────────────────────
+    water                    1.50 µL  15.00 µL
+    p145           20 pg/µL  0.50 µL   5.00 µL
+    primer mix          10x  0.50 µL   5.00 µL
+    Q5 master mix        2x  2.50 µL  25.00 µL
+    ──────────────────────────────────────────
+                             5.00 µL   5.00 µL/rxn
+
+    - Use any extra master mix as a negative control.
+
+ 3. Run the following thermocycler protocol:
+
+    - 98°C for 30s
+    - Repeat 35x:
+      - 98°C for 10s
+      - 50-62°C for 20s
+      - 72°C for 3 min
+    - 72°C for 2 min
+    - 4°C hold
+
+ 4. Run a 1% E-gel.
+
+ 5. Label the best product: p144
+
+ 6. Prepare 10x primer mix [3]:
+
+    Reagent   Stock    Volume
+    ─────────────────────────
+    water             9.00 µL
+    o171     100 µM   0.50 µL
+    o167     100 µM   0.50 µL
+    ─────────────────────────
+                     10.00 µL
+
+ 7. Setup 3 PCR reactions [4]:
+
+    Reagent            Stock   Volume        5x
+    ───────────────────────────────────────────
+    water                     1.50 µL   7.50 µL
+    p141,p147,p150  20 pg/µL  0.50 µL
+    primer mix           10x  0.50 µL   2.50 µL
+    Q5 master mix         2x  2.50 µL  12.50 µL
+    ───────────────────────────────────────────
+                              5.00 µL   4.50 µL/rxn
+
+    - Use any extra master mix as a negative control.
+
+ 8. Run the following thermocycler protocol:
+
+    - 98°C for 30s
+    - Repeat 35x:
+      - 98°C for 10s
+      - 55.6°C for 20s
+      - 72°C for 3 min
+    - 72°C for 2 min
+    - 4°C hold
+
+ 9. Label the products: p140,p146,p149
+
+10. Run 4 ligation reactions:
+
+    Reagent              Stock    Volume      4.6x
+    ──────────────────────────────────────────────
+    water                        6.75 µL  31.05 µL
+    T4 ligase buffer       10x   1.00 µL   4.60 µL
+    T4 PNK             10 U/µL   0.25 µL   1.15 µL
+    T4 DNA ligase     400 U/µL   0.25 µL   1.15 µL
+    DpnI               20 U/µL   0.25 µL   1.15 µL
+    PCR products      50 ng/µL   1.50 µL
+    ──────────────────────────────────────────────
+                                10.00 µL   8.50 µL/rxn
+
+    - Incubate at room temperature for 1h.
+
+Notes:
+[1] For resuspending lyophilized primers:
+    100.0 µM = 10 µL/nmol
+
+[2] For diluting template DNA to 20 pg/µL:
+    Dilute 1 µL twice into 7*sqrt([DNA]) µL
+
+[3] For resuspending lyophilized primers:
+    100.0 µM = 10 µL/nmol
+
+[4] For diluting template DNA to 20 pg/µL:
+    Dilute 1 µL twice into 7*sqrt([DNA]) µL

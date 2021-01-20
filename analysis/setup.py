@@ -18,7 +18,8 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'dbp_relax_b = bind_dna.scripts.dbp_relax_b:main',
+            'dbp_relax_b = dbp.scripts.dbp_relax_b:main',
+            'dbp_plate_plot_kinetic = dbp.scripts.dbp_plate_plot_kinetic:main',
         ],
     },
     include_package_data=True,
