@@ -1,0 +1,136 @@
+January 26, 2021
+
+$ stepwise 02_validate_primers
+
+ 1. Wipe down your bench and anything you'll touch 
+    (pipets, racks, pens, etc.) with RNaseZap.
+
+ 2. In the following steps, setup these conditions:
+
+    template conc (nM):  100  100  10  1  0.1  0.01  0.001  0
+    RT:                   −    +   +   +   +    +      +    +
+
+ 3. Perform a serial dilution [1]:
+
+    - Put 10.00 μL 10000 nM f11 in a tube.
+
+    - Put 9.00 μL nuclease-free water in 8 adjacent
+      tubes.
+
+    - Transfer 1.00 μL between each tube *except the
+      last* to make 8 10-fold dilutions.
+
+ 4. Anneal the RT primer to the RNA template [2]:
+
+    Reagent               Stock   Volume     8.8x
+    ─────────────────────────────────────────────
+    nuclease-free water          0.90 µL  7.92 µL
+    first-strand buffer      5x  1.00 µL  8.80 µL
+    f11                  100 nM  2.00 µL
+    o214                 100 µM  0.10 µL  0.88 µL
+    ─────────────────────────────────────────────
+                                 4.00 µL  2.00 µL/rxn
+
+ 5. Incubate at 70°C for 3 min, then immediately
+    cool on ice.
+
+ 6. Setup 7 reverse transcription reactions:
+
+    Reagent                      Stock    Volume      7.7x
+    ──────────────────────────────────────────────────────
+    nuclease-free water                 10.00 µL  77.00 µL
+    first-strand buffer             5x   3.50 µL  26.95 µL
+    dNTP mix                     10 mM   2.00 µL  15.40 µL
+    DTT                         100 mM   2.00 µL  15.40 µL
+    SMART MMLV RT             200 U/µL   0.50 µL   3.85 µL
+    annealed template/primer     50 nM   2.00 µL
+    ──────────────────────────────────────────────────────
+                                        20.00 µL  18.00 µL/rxn
+
+ 7. Setup a −reverse transcriptase (NRT) control:
+
+    Reagent                    Stock    Volume
+    ──────────────────────────────────────────
+    nuclease-free water               10.50 µL
+    first-strand buffer           5x   3.50 µL
+    dNTP mix                   10 mM   2.00 µL
+    DTT                       100 mM   2.00 µL
+    annealed template/primer   50 nM   2.00 µL
+    ──────────────────────────────────────────
+                                      20.00 µL
+
+ 8. Incubate at 42°C for 60 min [3].
+
+ 9. Incubate at 70°C for 15 min.
+
+10. Setup 8 qPCR reactions [4-6]:
+
+    Reagent                Stock    Volume       8.8x
+    ─────────────────────────────────────────────────
+    water                         29.04 µL  255.55 µL
+    RT products             5 nM   3.30 µL
+    o214                  100 µM   0.33 µL    2.90 µL
+    o215                  100 µM   0.33 µL    2.90 µL
+    SsoAdvanced supermix      2x  33.00 µL  290.40 µL
+    ─────────────────────────────────────────────────
+                                  66.00 µL   62.70 µL/rxn
+
+    - Split each reaction into 2 tubes.
+    - Use any extra master mix as a negative control.
+
+11. Run the following thermocycler protocol:
+
+    - 95°C for 30s
+    - Repeat 40x:
+      - 95°C for 10s
+      - 60°C for 15s
+      - Measure fluorescence
+    - 65.0-95.0°C in 5s steps of 0.5°C:
+      - Measure fluorescence
+
+Notes:
+[1] The final concentrations will be:
+    1  1.000000e+04 nM
+    2  1.000000e+03 nM
+    3  1.000000e+02 nM
+    4  1.000000e+01 nM
+    5  1.000000e+00 nM
+    6  1.000000e-01 nM
+    7  1.000000e-02 nM
+    8  1.000000e-03 nM
+    9  0.000000e+00 nM
+
+[2] This protocol is based on the official Takara 
+    SMART MMLV reverse transcription protocol:
+
+    https://tinyurl.com/y4ash7dl
+
+    However, I made three modifications:
+
+    - I reduced the volume of the annealing step as 
+      much as possible, the increase the 
+      concentrations of the oligos.
+
+    - I added buffer to the annealing step, because 
+      annealing works much better with some salt to 
+      shield the backbone charge.  I don't actually 
+      know how much salt is in the buffer, but some is 
+      better than none.
+
+    - I included the MMLV in the transcription master 
+      mix, because excluding it seemed too inaccurate.  
+      The changes to the annealing step also mean that 
+      the master mix has a 1x buffer concentration, so 
+      I don't need to worry about the enzyme being 
+      unhappy.
+
+[3] Samples can be incubated for 50-90 min if
+    necessary.
+
+[4] https://tinyurl.com/y4qffgss
+
+[5] For resuspending lyophilized primers:
+    100.0 µM = 10 µL/nmol
+
+[6] For diluting template DNA to 5 nM:
+    Dilute 1 µL twice into 1e+01*sqrt([DNA]) µL

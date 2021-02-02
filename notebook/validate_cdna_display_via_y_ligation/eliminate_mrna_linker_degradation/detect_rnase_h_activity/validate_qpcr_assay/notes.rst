@@ -46,8 +46,17 @@ ssRNA template
   - 20 nt: qPCR reverse SR primer
   - BsaI
 
-  I might not even need to do any cloning; I could just order a gBlock and 
-  amplify it with PCR.
+  I might not even need to do any cloning; I could just order a gBlock or 
+  ultramer and amplify it with PCR.
+
+  .. update:: 2021/02/01
+
+    Get ultramers; you get about 1000x more DNA for about the same price.  The 
+    smallest gBlock is 125 bp (MW=76082.9) and you get 250 ng.  That works out 
+    to 3.28 pmol.  In contrast, with ultramers you can get either 4 or 20 nmol.
+
+  The Zymo RNA Clean & Concentrator kits recover all RNA >17 nt, so I don't 
+  need to worry about not being able to purify these constructs.
       
 - It'll be easier to just use an RNA I already have, though.  I think the best 
   candidate is f11:
@@ -151,3 +160,56 @@ qPCR
 I didn't really think about this, but one-step qPCR may have made more sense 
 than two step qPCR.  I'll stick with two-step for now, though, since I have all 
 the reagents already.
+
+Results
+=======
+
+2021/01/21 --- Optimize :math:`T_A`
+-----------------------------------
+.. protocol:: 20210121_01_pick_ta.txt
+
+.. figure:: 20210121_optimize_ta_p49_o214_o215_55_65.svg
+
+Observations:
+
+- There's isn't a clear :math:`T_A` minimum, although lower temperatures appear 
+  better.  This is the same pattern I saw repeatedly in :expt:`43`.  I don't 
+  believe these data; I think there's something wrong with the thermocycler.
+
+Conclusions:
+
+- I'm just going to use :math:`T_A = 60°C` going forward.  The SsoAdvanced 
+  protocol doesn't actually even call for :math:`T_A` optimization, it just 
+  calls for always using 60°C.
+
+2021/01/22 --- Check efficiency
+-------------------------------
+.. protocol:: 20210122_02_validate_rt_qpcr.txt 20210126_02_validate_primers.txt
+
+.. figure:: check_efficiency_f11_o214_o215.svg
+
+Observations:
+
+- The :math:`R^2` values are above 0.99, which isn't bad, but the data points 
+  have a distinct downward curve to them.
+
+- The efficiencies are very poor.  This could mean that something is inhibiting 
+  the PCR reaction, but most likely the primers just aren't very good.
+
+- The −RT control has a very significant amount of signal.  Presumably this is 
+  leftover DNA from the in vitro transcription reaction.  Normally I don't care 
+  whether there's leftover DNA or not, so I use a ton of template and skip the 
+  DNase treatment step.  For this assay, though, I should probably include that 
+  step.
+
+- I repeated this experiment because I initially thought that the small volumes 
+  being pipetted in the first replicate would lead to significant errors.  I 
+  modified the protocol for the second replicate to always pipet at least 2 µL 
+  for any step involving the template.  However, the data from both replicates 
+  are very consistent.
+
+Conclusions:
+
+- I'm going to design a template specifically for this experiment.  I initially 
+  decided to use a template I already had, but seeing as how I'll have to 
+  purify new RNA anyways, I might as well use an ideal template.

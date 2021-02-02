@@ -15,7 +15,7 @@ sw reaction -t 'RNase H' 'nuclease-free water;;to 10 µL' 'RNase H buffer;10x;1 
 sw note "100 U/mL RNase H" |
 sw add_probe.sh |
 sw smart_mmlv.py 'crude samples + probes' o214 -n 9 -m primer -t 0.5 -T 100 |
-sw qpcr 'crude RT products' o214 o215 -a 'optimal Ta' -l 88 -n 11 -v 66 -m primers
+sw qpcr 'crude RT products' o214 o215 -a 60 -l 88 -n 11 -v 66 -m primers
 
 # I might want to add more of the RT product to the qPCR reaction if 
 # sensitivity is an issue, but I want to start off being conservative

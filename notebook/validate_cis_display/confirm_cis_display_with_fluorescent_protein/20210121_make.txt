@@ -1,0 +1,62 @@
+January 21, 2021
+
+$ stepwise make p111 p115 p117 p119 p120 p125 p126 p128 p129 p131 p132 p134 p135
+
+1. Prepare 10x primer mix [1]:
+
+   Reagent                                                            Stock    Volume
+   ──────────────────────────────────────────────────────────────────────────────────
+   water                                                                      9.00 µL
+   o187                                                              100 µM   0.50 µL
+   o143,o147,o149,o151,o152,o154,o155,o157,o158,o160,o161,o163,o164  100 µM   0.50 µL
+   ──────────────────────────────────────────────────────────────────────────────────
+                                                                             10.00 µL
+
+2. Setup 13 PCR reactions [2]:
+
+   Reagent                                                              Stock    Volume     14.3x
+   ──────────────────────────────────────────────────────────────────────────────────────────────
+   water                                                                        3.00 µL  42.90 µL
+   p140,p144,p146,p148,p149,p154,p155,p157,p158,p160,p161,p163,p164  20 pg/µL   1.00 µL
+   primer mix                                                             10x   1.00 µL
+   Q5 master mix                                                           2x   5.00 µL  71.50 µL
+   ──────────────────────────────────────────────────────────────────────────────────────────────
+                                                                               10.00 µL   8.00 µL/rxn
+
+   - Use any extra master mix as a negative control.
+
+3. Run the following thermocycler protocol:
+
+   - 98°C for 30s
+   - Repeat 35x:
+     - 98°C for 10s
+     - 66°C for 20s
+     - 72°C for 2m30
+   - 72°C for 2 min
+
+4. Run 13 ligation reactions:
+
+   Reagent              Stock    Volume     ≈14.9x
+   ───────────────────────────────────────────────
+   water                        6.75 µL  100.91 µL
+   T4 ligase buffer       10x   1.00 µL   14.95 µL
+   T4 PNK             10 U/µL   0.25 µL    3.74 µL
+   T4 DNA ligase     400 U/µL   0.25 µL    3.74 µL
+   DpnI               20 U/µL   0.25 µL    3.74 µL
+   PCR product       50 ng/µL   1.50 µL
+   ───────────────────────────────────────────────
+                               10.00 µL    8.50 µL/rxn
+
+   - Incubate at room temperature for 1h.
+
+5. Transform 2 µL.
+
+6. Label the products:
+   p111,p115,p117,p119,p120,p125,p126,p128,p129,p131,p132,p134,p135
+
+Notes:
+[1] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol
+
+[2] For diluting template DNA to 20 pg/µL:
+    Dilute 1 µL twice into 7*sqrt([DNA]) µL

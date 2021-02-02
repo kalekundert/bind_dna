@@ -871,6 +871,7 @@ the other direction.  o165 would be a good primer for this.
 __ http://ampliconexpress.com/troubleshooting-dna-sequencing-evaluating-sanger-dna-sequencing-chromatogram-data/
 
 .. update:: 2020/11/02
+
    I got no priming.  I think there's just something wrong with my constructs.  
    I'll have to try running some gels, I think.
 
@@ -924,3 +925,45 @@ well as the others:
 .. figure:: 20210114_optimize_ta_p144.svg
 
 - 55.6°C appears to be about the optimal temperature for p144 as well.
+
+EMSA --- 2021/01/28
+-------------------
+Test if RNAP is responsible for shifting the DNA:
+
+.. protocol:: 20210128_purexpress_gel.txt
+
+:download:`Expected results <20200430_expected_results.svg>`
+
+.. figure:: 20210128_test_rnap_release.svg
+
+Observations:
+
+- The f50-f60 amplicons are pretty clean.  It looks like f58 has a minor slight 
+  product, but I don't think it will affect the interpretation.
+
+- The amplicons are all the exact same length (2333 bp), but run slightly 
+  differently.  I've seen this in my previous experiments as well; I don't 
+  think it's significant.
+
+- The only difference between f57/f58 and f59/f60 is that the former fuse the 
+  last 18 amino acids of RepA (which doubles as the rho terminator) to mWasabi.  
+  These amino acids have a total charge of +4 (4 Arg, 0 Lys, 0 Asp, 0 Glu).  
+  This is probably responsible for the striking upwards shift.  Note that 
+  mWasabi has a −7 overall charge (including the N-terminal Strep tag).
+
+- The DNA is not shifted in any of the conditions.
+
+- The actual results agree with the expected results really well, except I 
+  underestimated the effect of fusing the C-terminal end of RepA (e.g. the Rho 
+  terminator) to mWasabi.
+
+Conclusions:
+
+- RNAP is not responsible for shifting the DNA.  This experiment has constructs 
+  with and without all the promoter and terminator components, and in no case 
+  does the DNA shift.  Instead, it seems likely that the shift is caused solely 
+  by RepA (which is absent from all these conditions).  This would support the 
+  "cryptic RBS" hypothesis from the 2019/11/16 experiment.
+
+- The ribosome is also not responsible for shifting the DNA, but I knew that 
+  already.

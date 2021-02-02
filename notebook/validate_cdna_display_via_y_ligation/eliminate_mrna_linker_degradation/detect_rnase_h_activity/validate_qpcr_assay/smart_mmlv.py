@@ -16,7 +16,7 @@ transcriptase.
 
 Usage:
     smart_mmlv <templates> <primers> [-n <rxns>] [-m <reagents>] [-v <µL>]
-        [-t <pmol>] [-T <nM>] [-p <fold>] [-P <µM>] [-C] [-q <step>] 
+        [-t <nM>] [-T <nM>] [-p <fold>] [-P <µM>] [-C] [-q <step>] 
 
 Arguments:
     <templates>
@@ -35,27 +35,36 @@ Options:
         mix.  Understood reagents are 'rna' and 'primer'.  By default, each 
         reaction is assembled independently.
 
-    -v --volume <µL>                [default: ${app.volume_uL}]
+    -v --volume <µL>                    [default: ${app.volume_uL}]
         The volume of the reaction, in µL.
 
-    -t --template-pmol <pmol>       [default: ${app.template_pmol}]
-        The amount of template to use, in pmol.  Note that this value is for a 
-        20 µL reaction, and will be scaled if the `--volume` option is given.
+    -t --template-conc <nM>             [default: ${app.template_conc_nM}]
+        The final concentration of the template in the reverse transcription 
+        reaction.  Note that a higher concentration will be used in the 
+        annealing reaction.
 
-    -T --template-conc <nM>         [default: ${app.template_conc_nM}]
+    -T --template-stock <nM>            [default: ${app.template_stock_nM}]
         The stock concentration of the template, in nM.
 
-    -p --excess-primer <fold>       [default: ${app.primer_excess}]
+    -p --excess-primer <fold>           [default: ${app.primer_excess}]
         The amount of primer to use, relative to the template concentration.
 
-    -P --primer-conc <µM>           [default: ${app.primer_conc_uM}]
+    -P --primer-stock <µM>              [default: ${app.primer_stock_uM}]
         The stock concentration of the primer, in µM.
+
+    -r --rna-min-volume <µL>            [default: ${app.rna_min_volume_uL}]
+        The smallest volume of RNA to pipet in any step.  This is meant to help 
+        avoid pipetting errors when trying to be quantitative, e.g. for qPCR.
+
+    -a --extra-anneal <percent>         [default: ${app.extra_anneal_percent}]
+        How much extra annealing reaction to prepare, e.g. to facilitate 
+        multichannel pipetting.
 
     -C --no-control
         Exclude the control reaction with no reverse transcriptase.  This is a 
         standard control in RT-qPCR workflows.
 
-    -q --quench <step>      [default: ${app.quench}]
+    -q --quench <step>                  [default: ${app.quench}]
         How to quench the reaction:
 
         heat: Incubate at 70°C.
@@ -87,18 +96,23 @@ References:
             default=None,
             get=lambda self, n: n if n else len(self.templates),
     )
+    master_mix = appcli.param(
+            '--master-mix',
+            cast=comma_set,
+            default_factory=set,
+    )
     volume_uL = appcli.param(
             '--volume',
             cast=float,
             default=20,
     )
-    template_pmol = appcli.param(
-            '--template-pmol',
-            cast=float,
-            default=1,
-    )
     template_conc_nM = appcli.param(
             '--template-conc',
+            cast=float,
+            default=50,
+    )
+    template_stock_nM = appcli.param(
+            '--template-stock',
             cast=float,
             default=1000,
     )
@@ -107,15 +121,20 @@ References:
             cast=float,
             default=50,
     )
-    primer_conc_uM = appcli.param(
+    primer_stock_uM = appcli.param(
             '--primer-conc',
             cast=float,
             default=100,
     )
-    master_mix = appcli.param(
-            '--master-mix',
-            cast=comma_set,
-            default_factory=set,
+    rna_min_volume_uL = appcli.param(
+            '--rna-min-volume',
+            cast=float,
+            default=2,
+    )
+    extra_anneal_percent = appcli.param(
+            '--extra-anneal',
+            cast=float,
+            default=20,
     )
     nrt_control = appcli.param(
             '--no-control',
@@ -207,28 +226,44 @@ Add 4 µL 60 mM EDTA.
         return p
     
     def get_reactions(self):
+
+        # Define the annealing reaction:
+
         anneal = stepwise.MasterMix()
         anneal.num_reactions = self.num_reactions
         anneal.solvent = None
         anneal.extra_min_volume = 0.5, 'µL'
 
+        template_fmol = self.volume_uL * self.template_conc_nM
+
         anneal['template'].name = ','.join(self.templates)
-        anneal['template'].stock_conc = self.template_conc_nM, 'nM'
-        anneal['template'].volume = 1e3 * self.template_pmol / self.template_conc_nM, 'µL'
+        anneal['template'].stock_conc = self.template_stock_nM, 'nM'
+        anneal['template'].volume = template_fmol / self.template_stock_nM, 'µL'
         anneal['template'].master_mix = 'rna' in self.master_mix
         anneal['template'].order = 2
 
         anneal['primer'].name = ','.join(self.primers)
-        anneal['primer'].stock_conc = self.primer_conc_uM, 'µM'
-        anneal['primer'].volume = self.primer_excess * self.template_pmol / self.primer_conc_uM, 'µL'
+        anneal['primer'].stock_conc = self.primer_stock_uM, 'µM'
+        anneal['primer'].volume = self.primer_excess * template_fmol / self.primer_stock_uM / 1e3, 'µL'
         anneal['primer'].master_mix = 'primer' in self.master_mix
         anneal['primer'].order = 3
+
+        # If necessary, dilute the annealing reaction such that it will be 
+        # necessary to add the given volume to the RT reaction.  The purpose of 
+        # this is to ensure that we can pipet this volume accurately, since we 
+        # often want to be quantitative about how much RNA we have (e.g. qPCR).
+
+        if anneal.volume < (self.rna_min_volume_uL, 'µL'):
+            anneal.solvent = 'nuclease-free water'
+            anneal.volume = self.rna_min_volume_uL, 'µL'
 
         anneal['first-strand buffer'].stock_conc = '5x'
         anneal['first-strand buffer'].volume = 0, 'µL'
         anneal['first-strand buffer'].volume = anneal.volume / 4
         anneal['first-strand buffer'].master_mix = bool(self.master_mix)
         anneal['first-strand buffer'].order = 1
+
+        # Define the MMLV reaction:
 
         mmlv = stepwise.MasterMix("""\
                 Reagent                      Stock      Volume  MM?
@@ -241,30 +276,30 @@ Add 4 µL 60 mM EDTA.
                 annealed template/primer                0.0 µL
         """)
         mmlv.num_reactions = self.num_reactions
+        mmlv.hold_ratios.volume = self.volume_uL, 'µL'
         mmlv['first-strand buffer'].volume -= anneal['first-strand buffer'].volume
         mmlv['annealed template/primer'].volume = anneal.volume
         mmlv['annealed template/primer'].stock_conc = \
                 anneal['template'].stock_conc * (
                         anneal['template'].volume / anneal.volume)
 
-        # Scale the volume of the RT reaction as requested, and scale the 
-        # volume of the annealing reaction accordingly, but not so much that 
-        # we'd need to pipet volumes smaller than 0.5 µL:
+        # Scale the volume of the annealing reaction to guarantee that none of 
+        # the volume are too small to pipet accurately.
 
-        mmlv.hold_ratios.volume = self.volume_uL, 'µL'
-        anneal.hold_ratios.volume = mmlv['annealed template/primer'].volume * 1.2
-
+        min_pipet_volumes = {
+                'template': (self.rna_min_volume_uL, 'µL'),
+        }
         pipet_volumes = [
-                anneal.master_mix_volume,
+                (anneal.master_mix_volume, '0.5 µL'),
         ]
         pipet_volumes += [
-                anneal[k].volume
+                (anneal[k].volume, min_pipet_volumes.get(k, '0.5 µL'))
                 for k in ['template', 'primer']
                 if not anneal[k].master_mix
         ]
         anneal.hold_ratios.volume *= max(
-                1,
-                *('0.5 µL' / x for x in pipet_volumes),
+                1 + self.extra_anneal_percent / 100,
+                *(limit / curr for curr, limit in pipet_volumes),
         )
 
         return anneal, mmlv

@@ -1,0 +1,39 @@
+January 28, 2021
+
+$ stepwise make f61 f62 f63 f64 f65 f66 f67 f68 f69 f70 f71 f72 f73 f74 f75 f76 f77 f78
+
+1. Setup 18 PCR reactions [1-3]:
+
+   Reagent                                                                                       Stock    Volume      19.8x
+   ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   water                                                                                                19.50 µL  386.10 µL
+   p119,p120,p121,p122,p123,p124,p125,p126,p127,p128,p129,p130,p131,p132,p133,p134,p135,p136  20 pg/µL   5.00 µL
+   o186                                                                                         100 µM   0.25 µL    4.95 µL
+   o189                                                                                         100 µM   0.25 µL    4.95 µL
+   Q5 master mix                                                                                    2x  25.00 µL  495.00 µL
+   ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                        50.00 µL   45.00 µL/rxn
+
+   - Use any extra master mix as a negative control.
+
+2. Run the following thermocycler protocol:
+
+   - 98°C for 30s
+   - Repeat 35x:
+     - 98°C for 10s
+     - 65°C for 20s
+     - 72°C for 1m30
+   - 72°C for 2 min
+   - 4°C hold
+
+3. Label the products:
+   f61,f62,f63,f64,f65,f66,f67,f68,f69,f70,f71,f72,f73,f74,f75,f76,f77,f78
+
+Notes:
+[1] https://tinyurl.com/y27ralt4
+
+[2] For resuspending lyophilized primers:
+    100.0 µM = 10 µL/nmol
+
+[3] For diluting template DNA to 20 pg/µL:
+    Dilute 1 µL twice into 7*sqrt([DNA]) µL

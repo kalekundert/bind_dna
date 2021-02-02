@@ -11,7 +11,8 @@ Design DNA-binding proteins
    pick_initial_model_system/notes
    plan_dna_binding_assay/notes
    create_minimal_cloning_vector/notes
-   validate_cdna_display/notes
+   validate_cdna_display_via_y_ligation/notes
+   validate_cdna_display_via_splint_ligation/notes
    validate_cis_display/notes
    validate_exonuclease_assay/notes
    validate_b1h/notes

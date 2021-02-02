@@ -1,6 +1,6 @@
-*********************
-Validate cDNA display
-*********************
+************************************
+Validate cDNA display via Y-ligation
+************************************
 I want to see whether or not I can successfully attach a translated protein to 
 the cDNA encoding it.  This is the first step in doing cDNA-display-based 
 DNA-binding assays.  My goal is to run a gel where both the protein and the 
