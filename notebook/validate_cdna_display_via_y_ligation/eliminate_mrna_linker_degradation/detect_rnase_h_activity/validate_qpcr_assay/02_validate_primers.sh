@@ -14,6 +14,6 @@ sw cond validate_primers_cond.xlsx |
 #   dilutions from 100 nM onwards.
 sw serial 9µL 10000nM / 10 8 -0 -m f11 -d "nuclease-free water" |
 
-sw smart_mmlv.py f11 o214 -n 7 -m primer -t 5 -T 100 |
+sw smart_mmlv.py f108 o116 -n 7 -m primer -t 5 -T 100 |
 
-sw qpcr 'RT products' o214 o215 -a 60 -l 88 -n 8 -v 66 -m primers -T '5 nM'
+sw qpcr 'RT products' o115 o116 -a 'optimal Ta' -l 100 -n 8 -m primers -T '5 nM'
