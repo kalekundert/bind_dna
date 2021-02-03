@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import docopt
 import stepwise
 import wang2017
 
@@ -17,6 +18,16 @@ nuclease-free water                       to 10.5 µL   x
 A                                             4.0 µL   x
 B                                             3.0 µL   x
 RNase inhibitor (murine)         40 U/µL      0.2 µL   x
+o210,o211,o212                      5 µM      0.5 µL
+""")
+
+pfrex = stepwise.MasterMix("""\
+Reagent                            Stock      Volume  MM?
+===============================  =======  ==========  ===
+nuclease-free water                       to 10.5 µL   x
+Solution I                                    5.0 µL   x
+Solution II                                   0.5 µL   x
+Solution III                                  1.0 µL   x
 o210,o211,o212                      5 µM      0.5 µL
 """)
 
@@ -42,8 +53,9 @@ o210,o211,o212                      5 µM      0.5 µL
 """)
 
 controls.num_reactions = 3
-nebex.num_reactions = 3
 purex.num_reactions = 3
+pfrex.num_reactions = 3
+nebex.num_reactions = 3
 s30.num_reactions = 3
 
 p = stepwise.Protocol()
@@ -77,18 +89,25 @@ Setup an RNase H assay for PURExpress:
 """
 
 p += f"""\
-Setup an RNase H assay for NEBExpress:
+Setup an RNase H assay for PUREfrex:
 
-{nebex}
+{pfrex}
 """
 
-p += f"""\
-Setup an RNase H assay for Promega S30 extract:
+#p += f"""\
+#Setup an RNase H assay for NEBExpress:
+#
+#{nebex}
+#"""
 
-{s30}
-"""
+#p += f"""\
+#Setup an RNase H assay for Promega S30 extract:
+#
+#{s30}
+#"""
 
 # PURExpress: 37°C for 2 h
+# PUREfrex: 37°C for 2-4h
 # NEBExpress: 37°C for 2-4 h
 # Promega S30 Extract (for Linear Templates): 37°C for 1-2 h
 
@@ -98,7 +117,7 @@ Setup an RNase H assay for Promega S30 extract:
 # expt 61: 37°C for 30 min, same result as expt 65 (all mRNA/DNA degraded).
 
 p += wang2017.IncubateAndMeasure(
-        num_reactions=12,
+        num_reactions=9,
         rnase_incubation_time_min=30,
         rnase_incubation_temp_C=37,
         fam_control=True,
