@@ -50,6 +50,9 @@ Options:
         Add ZnOAc to the PURExpress reaction.  This is necessary when 
         expressing Zn-finger proteins.
 
+    -I --no-inhibitor
+        Don't include RNase inhibitor in the reaction.
+
 """
 
 import docopt
@@ -76,6 +79,21 @@ if not args['--add-zinc']:
 
 if not args['--add-target']:
     del purexpress['target DNA']
+
+if args['--no-inhibitor']:
+    del purexpress['RNase Inhibitor [1]']
+else:
+    protocol.footnotes[1] = """\
+The PURExpress protocol recommends 0.8 U/µL (20 U 
+per 25 µL reaction), while the product page for 
+the inhibitor itself recommends 1 U/µL.  I'm using 
+the former here because it's the recommendation I 
+encountered first.
+
+PURExpress protocol: https://tinyurl.com/y3m9lrcz
+RNAse inhibitor FAQs: https://tinyurl.com/y3zabsoz
+"""
+
 
 if args['--mrna']:
     template = 'template mRNA'
@@ -116,17 +134,6 @@ Setup {plural(purexpress.num_reactions):# PURExpress reaction/s}:
 - Keep on ice.
 - Be sure to add A before B.
 {'- The control template (125 ng/µL) is 75 nM.' if not args['--mrna'] else ''}
-"""
-
-protocol.footnotes[1] = """\
-The PURExpress protocol recommends 0.8 U/µL (20 U 
-per 25 µL reaction), while the product page for 
-the inhibitor itself recommends 1 U/µL.  I'm using 
-the former here because it's the recommendation I 
-encountered first.
-
-PURExpress protocol: https://tinyurl.com/y3m9lrcz
-RNAse inhibitor FAQs: https://tinyurl.com/y3zabsoz
 """
 
 protocol += f"""\
