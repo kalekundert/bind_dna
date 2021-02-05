@@ -39,7 +39,7 @@ Options:
         s += "Wash with 500 µL 8M urea."
         s += "Wash with 500 µL nuclease-free water."
         s += "Wash with water again."
-        s += "Wash with water again [2]."
+        s += "Wash with water again, but spin for 30 min [1]."
         s += """\
                 Invert the filter into a clean tube and spin 1000g, 2 min to 
                 collect ligated product in a volume of ≈15 µL."""

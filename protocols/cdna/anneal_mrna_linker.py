@@ -99,6 +99,13 @@ Options:
             default=None,
     )
 
+    def __bareinit__(self):
+        self.db = po4.load_db()
+
+    def __init__(self, mrnas, linkers):
+        self.mrnas = list_if_str(mrnas)
+        self.linkers = list_if_str(linkers)
+
     def get_protocol(self):
         p = stepwise.Protocol()
         rxn = self.reaction
@@ -145,19 +152,20 @@ Options:
         if self.linkers:
             rxn['linker'].name = ','.join(self.linkers)
 
-        db = po4.load_db()
-
         rxn['mRNA'].hold_conc.stock_conc = consensus(
-                get_conc_uM(db, x, self.mrna_stock_uM)
+                get_conc_uM(self.db, x, self.mrna_stock_uM)
                 for x in self.mrnas
         )
         rxn['linker'].hold_conc.stock_conc = consensus(
-                get_conc_uM(db, x, self.linker_stock_uM)
+                get_conc_uM(self.db, x, self.linker_stock_uM)
                 for x in self.linkers
         )
         rxn['linker'].volume *= self.excess_linker
 
         return rxn
+
+def list_if_str(x):
+    return [x] if isinstance(x, str) else x
 
 def get_conc_uM(db, tag, override):
     if override:
