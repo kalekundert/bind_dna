@@ -4,7 +4,7 @@
 Ligate a puromycin linker to mRNA.
 
 Usage:
-    make_mrna.py <mrna> <linker> [-n <rxns>]
+    make_mrna.py <mrna> <linker> [-n <rxns>] [-WA]
 
 Arguments:
     <mrna>
@@ -14,11 +14,14 @@ Arguments:
         A comma-separated list of linker names (e.g. o129).
 
 Options:
-    -n --num-reactions <int>
+    -n --num-reactions <int>  [default: 1]
         The number of separate reactions to set up.
 
     -W --no-wash
         Skip the wash step.
+
+    -A --no-aliquot
+        Skip the aliquot step.
 """
 
 import docopt
@@ -48,6 +51,7 @@ p += stepwise.load(ligate)
 if not args['--no-wash']:
     p += stepwise.load('cdna/wash')
 
-p += stepwise.load('aliquot "4 µL" "1 µM"')
+if not args['--no-aliquot']:
+    p += stepwise.load('aliquot "4 µL" "1 µM"')
 
 p.print()
