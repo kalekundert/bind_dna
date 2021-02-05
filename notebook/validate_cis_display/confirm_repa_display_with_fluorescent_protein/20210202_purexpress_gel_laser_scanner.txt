@@ -1,0 +1,48 @@
+February 2, 2021
+
+$ stepwise purexpress f61 f62 f63 f64 f65 f66 -v 5
+$ stepwise gels/gel agarose15 6 -a 'wells in the middle'
+$ stepwise gels/laser_scanner blue red
+
+1. Setup 6 PURExpress reactions:
+
+   Reagent                    Stock   Volume      6.6x
+   ───────────────────────────────────────────────────
+   water                             1.00 µL   6.60 µL
+   A                                 2.00 µL  13.20 µL
+   B                                 1.50 µL   9.90 µL
+   RNase Inhibitor          40 U/µL  0.10 µL   0.66 µL
+   f61,f62,f63,f64,f65,f66    75 nM  0.40 µL
+   ───────────────────────────────────────────────────
+                                     5.00 µL   4.60 µL/rxn
+
+   - Keep on ice.
+   - Be sure to add A before B.
+   - The control template (125 ng/µL) is 75 nM.
+
+2. Incubate at 37°C for 2h.
+
+3. Prepare samples for electrophoresis [1]:
+
+   Reagent         Stock   Volume       9x
+   ───────────────────────────────────────
+   loading buffer     6x  1.00 µL  9.00 µL
+   sample                 5.00 µL
+   ───────────────────────────────────────
+                          6.00 µL  1.00 µL/rxn
+
+4. Run a gel:
+
+   - Use a 1.5% agarose gel with wells in the middle.
+   - Load 5 µL of each sample.
+   - Run at 100V for 60 min.
+
+5. Image with a laser scanner:
+
+   lasers:   488 nm   658 nm
+   filters:  518BP22  710BP40
+
+Note:
+[1] I haven't used these electrophoresis parameters
+    before.  It might take some trial and error to
+    get them right.

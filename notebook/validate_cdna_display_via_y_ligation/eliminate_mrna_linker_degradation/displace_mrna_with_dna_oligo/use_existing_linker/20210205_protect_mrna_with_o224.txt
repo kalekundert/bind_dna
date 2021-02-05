@@ -1,0 +1,168 @@
+February 5, 2021
+
+$ stepwise protect_mrna_with_o224
+
+ 1. Wipe down your bench and anything you'll touch 
+    (pipets, racks, pens, etc.) with RNaseZap.
+
+ 2. In the following steps, setup these conditions:
+
+    mRNA (f85):            +  −  −  −  −  −  −  −   −    −    −
+    poly-A linker (o129):  −  +  −  −  −  −  −  −   −    −    −
+    mRNA + linker (f89):   −  −  −  +  +  +  +  +   +    +    +
+    dna/dna oligo (o224):  0  0  1  0  0  1  1  10  10  100  100
+    RNase H:               −  −  −  −  +  −  +  −   +    −    +
+
+    dna/dna oligo values are molar ratios relative to mRNA+linker
+
+ 3. Setup 1 annealing reaction [1]:
+
+    Reagent              Stock    Volume
+    ────────────────────────────────────
+    nuclease-free water          6.90 µL
+    PBS                    10x   1.20 µL
+    f85                   5 µM   3.00 µL
+    o129                 10 µM   0.90 µL
+    ────────────────────────────────────
+                                12.00 µL
+
+ 4. Perform the annealing reaction:
+
+    - Incubate at 95°C for 2 min.
+    - Cool at room temperature.
+
+ 5. Setup 1 ligation reaction:
+
+    Reagent                 Stock     Volume
+    ────────────────────────────────────────
+    nuclease-free water             82.50 µL
+    T4 DNA ligase buffer      10x   12.00 µL
+    BSA                      0.1%   12.00 µL
+    T4 RNA ligase         40 U/µL    1.50 µL
+    annealed mRNA/linker  1.25 µM   12.00 µL
+    ────────────────────────────────────────
+                                   120.00 µL
+
+ 6. Incubate the ligation reaction as follows:
+
+    - 25°C for 10 min.
+    - 65°C for 10 min.
+
+ 7. Remove unligated linker by ultrafiltration:
+
+    - Bring reaction to 500 µL with 8M urea.
+    - Load onto a 100 kDa MWCO spin-filter [2].
+    - Spin 14000g, 15 min.
+    - Wash with 500 µL 8M urea.
+    - Wash with 500 µL nuclease-free water.
+    - Wash with water again.
+    - Wash with water again [3].
+    - Invert the filter into a clean tube and spin 
+      1000g, 2 min to collect ligated product in a 
+      volume of ≈15 µL.
+
+ 8. Label the product: f89
+
+ 9. Perform a serial dilution [4]:
+
+    - Put 10.00 μL 100 µM o224 in a tube.
+
+    - Put 9.00 μL water in 3 adjacent tubes.
+
+    - Transfer 1.00 μL between each tube *except the
+      last* to make 3 10-fold dilutions.
+
+10. Setup 4 annealing reactions:
+
+    Reagent    Stock   Volume     4.4x
+    ──────────────────────────────────
+    PBS          10x  0.30 µL  1.32 µL
+    f89         1 µM  1.35 µL  5.94 µL
+    o224     0-100µM  1.35 µL
+    ──────────────────────────────────
+                      3.00 µL  1.65 µL/rxn
+
+11. Incubate at 95°C for 2 min, then let cool at room
+    temperature.
+
+12. Setup 4 +RNase H reactions [5] [6]:
+
+    Reagent                  Stock   Volume      4.4x
+    ─────────────────────────────────────────────────
+    nuclease-free water             4.28 µL  18.83 µL
+    RNase H buffer             10x  0.60 µL   2.64 µL
+    f89 + o224                1 µM  1.00 µL
+    RNase H              5000 U/mL  0.12 µL   0.53 µL
+    ─────────────────────────────────────────────────
+                                    6.00 µL   5.00 µL/rxn
+
+13. Setup 4 −RNase H reactions:
+
+    Reagent              Stock   Volume      4.4x
+    ─────────────────────────────────────────────
+    nuclease-free water         4.40 µL  19.36 µL
+    RNase H buffer         10x  0.60 µL   2.64 µL
+    f89 + o224            1 µM  1.00 µL
+    ─────────────────────────────────────────────
+                                6.00 µL   5.00 µL/rxn
+
+14. Incubate at 37°C for 20 min [7].
+
+15. Prepare 11 samples for TBE/urea PAGE:
+
+    Reagent            Stock    Volume     16.5x
+    ────────────────────────────────────────────
+    sample buffer         2x   5.00 µL  82.50 µL
+    sample         200 ng/µL   5.00 µL
+    ────────────────────────────────────────────
+                              10.00 µL   5.00 µL/rxn
+
+    - Incubate at 70°C for 3 min.
+
+16. Run a gel:
+
+    - Gel: 6% TBE/urea PAGE
+    - Buffer: 1x TBE
+    - Load 10 µL of each sample.
+    - Run at 180V for 40 min.
+
+17. Stain gel with GelGreen:
+
+    - Submerge gel in ≈50 mL 3x GelGreen [8].
+    - Shake gently for 30 min.
+
+18. Image with a laser scanner:
+
+    lasers:   488 nm   658 nm
+    filters:  518BP22  710BP40
+
+Notes:
+[1] Using 0.6x linker reduces the amount of unligated 
+    linker, see expt #1.
+
+[2] Amicon UFC510024
+
+[3] Final urea concentration: ~200 µM
+
+[4] The final concentrations will be:
+    1  1.000000e+02 µM
+    2  1.000000e+01 µM
+    3  1.000000e+00 µM
+    4  0.000000e+00 µM
+
+[5] mRNA volume and concentration derived from expt
+    #18.  Expts #61,62,65 have a different ratio, but
+    I'm not sure why.
+
+[6] 100 U/mL RNase H final; need at least 8 U/mL to
+    digest all template, see expt #77.
+
+[7] https://tinyurl.com/y2deaw9k
+
+[8] Including 100 mM NaCl in the staining solution 
+    enhances sensitivity, but may promote dye 
+    precipitation if the gel stain is reused.
+
+    Staining solution can be reused at least 2-3x.
+    Store staining solution at room temperature
+    protected from light.

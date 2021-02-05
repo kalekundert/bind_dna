@@ -63,6 +63,10 @@ p = stepwise.Protocol()
 p += stepwise.load('zap')
 
 p += """\
+Set the plate reader temperature to 30°C.
+"""
+
+p += """\
 Prepare 5 µM o210-o212:
 
 - 19 µL nuclease-free water

@@ -20,7 +20,7 @@ like this:
 
 I look briefly to see if an assay like this has already been described.  I 
 found [Dobosy2011]_, which is an interesting idea to use RNase H to eliminate 
-primer dimers and other incorrect PCR products, but not an RNAse H assay.  I 
+primer dimers and other incorrect PCR products, but not an RNase H assay.  I 
 didn't find anything else.
 
 I don't want to waste too much time on this idea, but I think it's worth a 

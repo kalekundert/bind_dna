@@ -1,6 +1,6 @@
-********************************************
-Confirm CIS-display with fluorescent protein
-********************************************
+*********************************************
+Confirm repA-display with fluorescent protein
+*********************************************
 
 I decided that since my goal is to find out whether or not CIS-display (and 
 later: cDNA-display) is working, it would make the most sense to use 
@@ -967,3 +967,90 @@ Conclusions:
 
 - The ribosome is also not responsible for shifting the DNA, but I knew that 
   already.
+
+EMSA --- 2021/02/02
+-------------------
+.. protocol:: 20210202_purexpress_gel_laser_scanner.txt
+
+.. figure:: 20210202_test_aggregation.svg
+
+Observations:
+
+- The input DNA looks very clean.
+
+- No species migrate backwards.  This means I can use native PAGE going 
+  forward.
+
+- The mWasabi is very diffuse; much more diffuse than the DNA.  I'm not sure 
+  exactly how to interpret this, but it doesn't seem consistent with mWasabi 
+  being tethered to the DNA.
+
+- Some material remains in the well for the +PURExpress, −mWasabi conditions.  
+  Interestingly, this is not the case for the +PURExpress, +mWasabi conditions.  
+  But the mWasabi conditions don't really make sense on their own.
+
+- The DNA in the +CIS/+oriR conditions migrates more slowly than in either the 
+  −CIS/+oriR or −CIS/−oriR conditions.  This is consistent with repA binding 
+  the DNA, although it may also be consistent with aggregation.
+
+- The DNA in all of the +PURExpress conditions migrates more slowly than it 
+  does in the −PURExpress conditions, but I'm not sure if this is an artifact 
+  of running an agarose gel.  Maybe it would be smart to include f50 (buffer 
+  only) or f60 (+mWasabi, −repA, +Cis, +oriR) as an additional control.
+
+Conclusions:
+
+- I want to repeat this experiment with native PAGE.  I suspect the GFP will 
+  run differently in a PAGE gel, and will hopefully be more interpretable.
+
+EMSA --- 2021/02/03
+-------------------
+.. protocol:: 20210203_conditions_purexpress_gel.txt
+
+.. figure:: 20210203_test_aggregation.svg
+
+Observations:
+
+- The PCR amplicons aren't as clean for these constructs.  A number of minor 
+  products are visible.  These products weren't visible on the agarose gel, 
+  though, so I wonder if they appeared overnight (e.g. DNase contamination in 
+  my EB).
+
+- The DNA runs pretty much the same in the +/− PURExpress conditions.  This is 
+  different than what I observed in the agarose gel.  I'm not sure why there 
+  would be a discrepancy; normally I'd consider PAGE better for separating 
+  small differences.
+
+- The DNA is clearly shifted in the +CIS/+oriR conditions.
+
+- The proteins always run in the same band, which is where the "ripple" in the 
+  gel is (only visible by eye; not really captured by the laser scanner).
+
+Conclusions:
+
+- RepA binds oriR as intended!  I think this is the first time I've felt 
+  comfortable saying this, although previous experiments have hinted at it.  
+  The difference is that, in those previous experiment, the DNA was shifted 
+  into the "repA" band even in conditions where it shouldn't have been (e.g.  
+  2019/11/16).  This time, the shift only occurs when repA, CIS, and oriR are 
+  all present.
+
+  It seems likely that the previous results were due to the way I was shuffling 
+  the various functional sequences.  This approach seemed to leave sequence 
+  with unintended or partial activity.
+
+- While I can't say for sure whether or not repA is aggregating, I can say that 
+  it's not migrating on it's own.  The "repA" band is in the same place for 
+  both repA and the mWasabi-repA fusion; two species that should migrate 
+  differently (because mWasabi has considerable negative charge).  This band 
+  also coincides with a visible "ripple" in the gel that's present for every 
+  +PURExpress lane, so I think it's fair to say that repA is remaining 
+  associated with various PURExpress components.  However, this may just be an 
+  artifact of running a native gel.
+
+- It might be interesting to do a control with repA and CIS/oriR on different 
+  molecules, as a quick way to check that repA is actually attaching to its own 
+  gene. Specifically, I could mix f52 (oriR) or f54 (CIS/oriR) with f61 (repA), 
+  f62 (CIS/repA), f64 (mWasabi/repA), or f65 (mWasabi/repA/CIS).  That said, I 
+  don't really have any reason to doubt that this is the case, and it'd 
+  probably be better to validate this in the context of the exonuclease assay.

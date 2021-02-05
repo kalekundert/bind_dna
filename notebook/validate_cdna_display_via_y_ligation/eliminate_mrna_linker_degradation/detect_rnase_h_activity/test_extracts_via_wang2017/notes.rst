@@ -52,9 +52,67 @@ Observations:
   considering that the positive and negative controls worked well in the water 
   conditions.
 
+
+Conclusions:
+
+- The results for the lysates are meaningless and should be ignored.
+
+- There may be RNase H activity in PURExpress, but I'm hesitant to make any 
+  strong conclusions because the positive control doesn't make sense.  That 
+  said, in both PURExpress replicates the o210 well had a significantly greater 
+  slope that the o211 sample, and it'd be surprising if PUREfrex had RNase H 
+  activity and PURExpress didn't.
+
+2021/02/03
+----------
+.. protocol:: 20210203_detect_rnase_h.txt
+
+.. figure:: 20210203_test_extracts_for_rnase_h_fits.svg
+.. figure:: 20210203_test_extracts_for_rnase_h_slopes.svg
+
+Observations:
+
+- I only used the first 10 min of data for the fits, because the plate sat in 
+  the plate reader (at 37°C) for ~15 min while the plate reader cooled itself 
+  down to 30°C, and the data didn't seem very linear after about 10 min.
+
+  For this experiment, I think it's probably more informative to look at the 
+  raw fluorescence values at :math:`t=\pu{0 min}` rather than the slopes.  For 
+  instance, the PURExpress/o210 sample has a slightly lower slope than the 
+  PURExpress/o211 sample, but starts at a higher level.  This probably means 
+  that the o210 trace initially had a higher slope, and therefore started 
+  running out of substrate earlier.  So take the bar plots (which are based on 
+  the slopes) with a grain of salt.
+
+- The controls work well for PUREfrex, but (as I've seen before) not for 
+  PURExpress.  It'd good to know that the previous PURExpress results weren't 
+  just a fluke, although I don't really have any idea what's happening to the 
+  positive control.  Maybe there's some DNase activity in PURExpress?  That 
+  seems unlikely, though.
+  
+  In any case, the PUREfrex controls give me a lot of confidence in the 
+  PUREfrex data.  
+
+- There does seem to be RNase H activity in PUREfrex.  I compared the o210 
+  slope to the standard curve I measured in :expt:`82`, and I'd say the RNase H 
+  activity is between 10-30 U/mL.  It's hard to say for sure, because the 0 
+  U/mL control has a lower slope in that experiment (1.6 RFU/min) than this one 
+  (3.1 RFU/min).  The slope of the PUREfrex/o210 sample (7.1 RFU/min) is 
+  comparable to that of the 31.6 U/mL control (9.8 RFU/min), but the o210/o211 
+  ratio of the PUREfrex sample (2.3x) is more comparable to that of the 10.0 
+  U/mL control (4.7 RFU/min, 3.0x).  On top of that I don't think the slopes 
+  from this experiment are particularly reliable, but 10-30 U/mL seems like a 
+  reasonable range.
+
 Discussion
 ==========
-- The results for the lysates are meaningless and should be ignored.
+- There does seem to be RNase H activity in PUREfrex.  The data for PURExpress 
+  is less clear, but if I had to guess, I'd say it has RNase H activity as 
+  well.  Furthermore, the level of RNase H activity appears to be above to 4.2 
+  U/mL threshold that would be necessary to degrade all of my mRNA 
+  (:expt:`77`).  Based on this conclusion, I think it make sense to move 
+  forward with strategies to eliminate RNase H activity, e.g. :expt:`89`, 
+  :expt:`88`
 
 - I won't be able to use assays with fluorescent readouts to measure RNase H 
   activity in lysates.  [Wang2007]_ claimed to measure RNase H activity in 
@@ -63,9 +121,4 @@ Discussion
   activity if I did the same, though.
 
   I might be able to measure RNase H activity in these samples using a qPCR 
-  based assay.
-
-- There may be RNase H activity in PURExpress, but I'm hesitant to make any 
-  strong conclusions because the positive control doesn't make sense.  That 
-  said, in both PURExpress replicates the o210 well had a significantly greater 
-  slope that the o211 sample.
+  based assay.  See :expt:`87`.

@@ -6,24 +6,22 @@ Compare the slopes of fluorescent signals between wells in an RNase H assay.
 Usage:
     compare_slopes <toml> [-I] [-y <min,max>]
 
-Options:
-    -y --y-lim <min,max>
-        The minimum and maximum values to display on the y-axis.
+Arguments:
+    <toml>
+        A wellmap file describing the layout of the experiment.  The layout 
+        should be associated with data from a kinetic run measuring 450/521 
+        fluorescence exported from a BioTek plate reader.  The following 
+        parameters should be specified:
 
-    -I --no-interactive
-        Don't show an interactive GUI.
+        - "control": The name of the control, for wells that are just testing 
+          that the assay worked.  This fields should be set to '' for all 
+          experimental wells.
 
-Config:
-    The <toml> file specified above should match the following format:
+        - "fit_start_min": Exclude time points earlier than the given value (in 
+          minutes) from the linear fit.
 
-    - The associated data should be kinetic run exported from a Biotek plate 
-      reader measuring 450/521 fluorescence.
-
-    - The following fields should be defined:
-
-        - "control": The name of the control, for wells that are just 
-          testing that the assay worked.  This fields should be set to '' for 
-          all experimental wells.
+        - "fit_stop_min": Exclude time points later than the given value (in 
+          minutes) from the linear fit.
 
         - "style.label": A format string that will be used to create a label 
           for each well.
@@ -33,16 +31,25 @@ Config:
 
         - "style.marker_by": A list of the field names that should be 
           considered when choosing markers.
+
+Options:
+    -y --y-lim <min,max>
+        The minimum and maximum values to display on the y-axis.
+
+    -I --no-interactive
+        Don't show an interactive GUI.
 """
 
 import wellmap
 import docopt
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 import math
 from dbp.plate_reader import BiotekExperiment
 from scipy.stats import linregress
 from color_me.ucsf import iter_colors, dark_grey
+from matplotlib.lines import Line2D
 from more_itertools import one, unique_everseen as uniq
 from itertools import cycle
 from pathlib import Path
@@ -148,52 +155,92 @@ def load_plate_reader(p):
     expt = BiotekExperiment(p)
     return expt.kinetic['450,521']
 
+def get_fit_indices(df):
+    return (df['minutes'] >= df['fit_start_min']) & \
+           (df['minutes'] <= df['fit_stop_min'])
+
 def calc_linear_fits(df):
     fits = {}
 
     for well, g in df.groupby(['well']):
-        m, b, r, p, err = linregress(g['minutes'], g['read'])
+        i = get_fit_indices(df)
+        m, b, r, p, err = linregress(g['minutes'][i], g['read'][i])
 
         fits[well] = (m, b, r, p, err)
 
     return fits
 
+def record_fits(df, fits, style, path):
+    table = []
+    for (well, control), g in df.groupby(['well', 'control']):
+        fit = fits[well]
+        row = dict(
+                well=well,
+                label=control or style.format_label(g),
+                slope=fit[0],
+                intercept=fit[1],
+                r2=fit[2]**2,
+        )
+        table.append(row)
+
+    table = pd.DataFrame(table)
+    table.to_csv(path)
+
 def plot_linear_fits(df, fits, style):
-    fig, axes = plt.subplots(1, 2, sharex=True, sharey=True)
+    fig, axes = plt.subplots(
+            1, 2,
+            sharex=True,
+            sharey=True,
+            figsize=[8.0, 4.8],
+            constrained_layout=True,
+    )
 
     axes[0].set_title('Controls')
     axes[1].set_title('Experiments')
+    axes[0].set_ylabel('RFU')
+    axes[0].set_xlabel('time [min]')
+    axes[1].set_xlabel('time [min]')
 
-    for ax in axes[:0]:
-        ax.set_ylabel('RFU')
-    for ax in axes[-1:]:
-        ax.set_xlabel('time [min]')
+    artists = {True: [], False: []}
 
     for control, gi in df.groupby(['control']):
         ax = axes[0 if control else 1]
 
         for well, gj in gi.groupby(['well']):
-            plot_linear_fit(
+            artists[bool(control)] += plot_linear_fit(
                     ax, gj, fits[well],
                     color=style.pick_color(gj),
                     marker=style.pick_marker(gj),
                     label=control or style.format_label(gj),
             )
 
-        ax.legend(loc='best')
+    blank = Line2D([], [], linestyle='none')
+    axes[1].legend(
+            handles=artists[True] + [blank] + artists[False],
+            bbox_to_anchor=(1.05, 1.00),
+            loc='upper left',
+            borderaxespad=0,
+    )
 
     return fig, axes
 
 def plot_linear_fit(ax, df, fit, *, color, marker, label):
+    i = get_fit_indices(df)
     x, y = df['minutes'], df['read']
 
     ax.plot(
-            x, y,
+            x[i], y[i],
             marker=marker,
             linestyle='none',
-            color=color,
+            color=color[0],
             mfc='none',
-            label=label,
+    )
+    ax.plot(
+            x[~i], y[~i],
+            marker=marker,
+            linestyle='none',
+            color=color[2],
+            mfc='none',
     )
 
     m, b, r, p, err = fit
@@ -203,11 +250,20 @@ def plot_linear_fit(ax, df, fit, *, color, marker, label):
     ax.plot(
             x_fit, y_fit,
             linestyle=':',
-            color=color,
+            color=color[0],
     )
 
+    artist = Line2D(
+            [], [], 
+            marker=marker,
+            linestyle=':',
+            color=color[0],
+            label=label,
+    )
+    return [artist]
+
 def plot_slopes(df, fits, style, ylim):
-    fig, ax = plt.subplots()
+    fig, ax = plt.subplots(constrained_layout=True)
     ax.set_ylabel('slope [RFU/min]')
 
     x = 0
@@ -217,7 +273,7 @@ def plot_slopes(df, fits, style, ylim):
     groups = df.groupby(['control', *style.sort_by, 'well'])
     for (control, *_, well), g in sorted(groups):
         m, b, r, p, err = fits[well]
-        color = style.pick_color(g)
+        color = style.pick_color(g)[0]
         label = control or style.format_label(g)
 
         ax.plot(
@@ -246,8 +302,6 @@ def plot_slopes(df, fits, style, ylim):
     else:
         ax.set_ylim(0, ax.get_ylim()[1])
 
-    fig.tight_layout()
-
     return fig, ax
 
 
@@ -261,6 +315,10 @@ if __name__ == '__main__':
             path_guess='{0.stem}.xlsx',
             extras='style',
     )
+    if 'fit_start_min' not in df:
+        df['fit_start_min'] = 0
+    if 'fit_stop_min' not in df:
+        df['fit_stop_min'] = max(df['minutes'])
 
     df['control'] = df['control'].fillna('')
     style = Style.from_extras(df, extras)
@@ -270,6 +328,8 @@ if __name__ == '__main__':
         ylim = map(float, args['--y-lim'].split(','))
     else:
         ylim = None
+
+    record_fits(df, fits, style, toml_path.stem + '_fits.csv')
 
     plot_linear_fits(df, fits, style)
     plt.savefig(toml_path.stem + '_fits.svg')

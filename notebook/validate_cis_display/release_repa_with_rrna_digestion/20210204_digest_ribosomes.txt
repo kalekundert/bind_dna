@@ -1,0 +1,50 @@
+February 4, 2021
+
+$ stepwise digest_ribosomes
+
+1. Setup 4 PURExpress reactions:
+
+   Reagent          Stock   Volume     4.4x
+   ────────────────────────────────────────
+   water                   1.10 µL  4.84 µL
+   A                       2.00 µL  8.80 µL
+   B                       1.50 µL  6.60 µL
+   f62,f63,f65,f66  75 nM  0.40 µL
+   ────────────────────────────────────────
+                           5.00 µL  4.60 µL/rxn
+
+   - Keep on ice.
+   - Be sure to add A before B.
+   - The control template (125 ng/µL) is 75 nM.
+
+2. Incubate at 37°C for 2h.
+
+3. Add 0.5 µL RNase A/RNase T1 cocktail to each
+   reaction.
+
+4. Divide each reaction into 2x 2.5 µL aliquots.
+
+5. Incubate the aliquots at 37°C and 65°C
+   respectively for 15 min.
+
+6. Prepare 8 samples for native PAGE:
+
+   Reagent        Stock   Volume       12x
+   ───────────────────────────────────────
+   water                 3.25 µL  39.00 µL
+   sample buffer     4x  1.50 µL  18.00 µL
+   sample                1.25 µL
+   ───────────────────────────────────────
+                         6.00 µL   4.75 µL/rxn
+
+7. Run a gel:
+
+   - Gel: 3−12% Bis-Tris Novex NativePAGE
+   - Buffer: NativePAGE running buffer
+   - Load 5 µL of each sample.
+   - Run at 150V for 115 min.
+
+8. Image with a laser scanner:
+
+   lasers:   488 nm   658 nm
+   filters:  518BP22  710BP40

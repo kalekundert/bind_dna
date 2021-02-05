@@ -84,6 +84,9 @@ Methods
          - I'm going to use 0.5 μL/rxn, which for my 10 μL reactions is the 
            same proportion as above.
 
+      - NEB Monarch DNA extraction kit uses RNase A (bovine pancreatic) for 5 
+        min at 56°C.
+
       - No specific buffer recommended or provided.
 
          - Storage buffer is:

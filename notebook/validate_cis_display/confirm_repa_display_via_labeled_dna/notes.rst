@@ -1,6 +1,6 @@
-***********************************
-Confirm CIS-display via labeled DNA
-***********************************
+************************************
+Confirm repA-display via labeled DNA
+************************************
 
 My goal with this experiment is to observe that CIS-display if successfully 
 linking the DNA encoding a protein with that protein.  The approach I am taking 
