@@ -1,6 +1,17 @@
 #!/usr/bin/env python3
 
-"""\
+import stepwise
+import docopt
+import appcli
+import autoprop
+import po4
+
+from appcli import DocoptConfig, Key
+from inform import plural
+
+@autoprop
+class AnnealMrnaLinker(appcli.App):
+    """\
 Anneal linker-N and mRNA prior to ligation.
 
 Usage:
@@ -8,9 +19,6 @@ Usage:
         [-R <µM>] [-L <conc>]
 
 Arguments:
-    <n>
-        The number of reactions to set up.
-
     <mrna>
         The name of the mRNA, e.g. f11.  Multiple comma-separated names may be 
         given.
@@ -24,15 +32,15 @@ Options:
         The number of reactions to setup up.  The default is the number of 
         unique combinations of mRNA and linker.
 
-    -v --volume <µL>                    [default: 4]
+    -v --volume <µL>                    [default: ${app.volume_uL}]
         The volume of each annealing reaction in µL.
 
-    -m --master-mix <reagents>          [default: ]
+    -m --master-mix <reagents>          [default: ${','.join(app.master_mix)}]
         A comma-separated list of reagents to include in the master mix.  This 
         flag is only relevant in <n> is more than 1.  The following reagents 
         are understood: mrna, link
 
-    -x --excess-linker <fold>           [default: 1]
+    -x --excess-linker <fold>           [default: ${app.excess_linker}]
         The amount of linker to add to the reaction, relative to the amount of 
         mRNA in the reaction.
 
@@ -47,38 +55,111 @@ Options:
         volume of linker will not be updated, so this will change the relative 
         proportion of linker to mRNA.
 """
+    __config__ = [
+            DocoptConfig(),
+    ]
 
-import stepwise
-import docopt
-from inform import plural
-import po4
+    mrnas = appcli.param(
+            '<mrna>',
+            cast=lambda x: x.split(','),
+            default_factory=list,
+    )
+    linkers = appcli.param(
+            '<linker>',
+            cast=lambda x: x.split(','),
+            default_factory=list,
+    )
+    num_reactions = appcli.param(
+            '--num-reactions',
+            cast=int,
+            default=0,
+            get=lambda self, x: x or len(self.mrnas) * len(self.linkers),
+    )
+    volume_uL = appcli.param(
+            '--volume',
+            cast=eval,
+            default=4,
+    )
+    master_mix = appcli.param(
+            '--master-mix',
+            cast=lambda x: set(x.split(',')),
+            default_factory=set,
+    )
+    excess_linker = appcli.param(
+            '--excess-linker',
+            cast=float,
+            default=1,
+    )
+    mrna_stock_uM = appcli.param(
+            '--mrna-stock',
+            default=None,
+    )
+    linker_stock_uM = appcli.param(
+            '--mrna-stock',
+            default=None,
+    )
 
-args = docopt.docopt(__doc__)
-db = po4.load_db()
-mrnas = args['<mrna>'].split(',') if args['<mrna>'] else []
-linkers = args['<linker>'].split(',') if args['<linker>'] else []
+    def get_protocol(self):
+        p = stepwise.Protocol()
+        rxn = self.reaction
+        n = rxn.num_reactions
 
-anneal = stepwise.MasterMix.from_text("""\
-Reagent              Stock     Volume  MM?
-===================  =====  =========  ===
-nuclease-free water         to 4.0 µL  yes
-PBS                  10x       0.4 µL  yes
-mRNA                 10 µM     0.5 µL
-linker               10 µM     0.5 µL
-""")
+        p += stepwise.Step(
+                f"Setup {plural(n):# annealing reaction/s} [1]:",
+                rxn,
+        )
 
-anneal.num_reactions = n = int(
-        args['--num-reactions'] or 
-        len(mrnas) * len(linkers)
-)
-anneal.hold_ratios.volume = eval(args['--volume']), 'µL'
-anneal['mRNA'].master_mix = 'mrna' in args['--master-mix']
-anneal['linker'].master_mix = 'link' in args['--master-mix']
+        p.footnotes[1] = stepwise.Footnote("""\
+                Using 0.6x linker reduces the amount of unligated 
+                linker, see expt #1."""
+        )
 
-if mrnas: anneal['mRNA'].name = ','.join(mrnas)
-if linkers: anneal['linker'].name = ','.join(linkers)
+        p += stepwise.Step(
+                f"Perform the {plural(n):annealing reaction/s}:",
+                substeps=[
+                    "Incubate at 95°C for 2 min.",
+                    "Cool at room temperature.",
+                ],
+                br='\n',
+        )
 
-def get_conc_uM(tag, override):
+        return p
+
+    def get_reaction(self):
+        rxn = stepwise.MasterMix.from_text("""\
+                Reagent              Stock     Volume  MM?
+                ===================  =====  =========  ===
+                nuclease-free water         to 4.0 µL   +
+                PBS                  10x       0.4 µL   +
+                mRNA                 10 µM     0.5 µL   -
+                linker               10 µM     0.5 µL   -
+        """)
+
+        rxn.num_reactions = n = self.num_reactions
+        rxn.hold_ratios.volume = self.volume_uL, 'µL'
+        rxn['mRNA'].master_mix = 'mrna' in self.master_mix
+        rxn['linker'].master_mix = 'link' in self.master_mix
+    
+        if self.mrnas:
+            rxn['mRNA'].name = ','.join(self.mrnas)
+        if self.linkers:
+            rxn['linker'].name = ','.join(self.linkers)
+
+        db = po4.load_db()
+
+        rxn['mRNA'].hold_conc.stock_conc = consensus(
+                get_conc_uM(db, x, self.mrna_stock_uM)
+                for x in self.mrnas
+        )
+        rxn['linker'].hold_conc.stock_conc = consensus(
+                get_conc_uM(db, x, self.linker_stock_uM)
+                for x in self.linkers
+        )
+        rxn['linker'].volume *= self.excess_linker
+
+        return rxn
+
+def get_conc_uM(db, tag, override):
     if override:
         return float(override), 'µM'
     try:
@@ -91,34 +172,10 @@ def consensus(values):
     from more_itertools import one
     return one((x[0] for x in groupby(values)))
 
-anneal['mRNA'].hold_conc.stock_conc = consensus(
-        get_conc_uM(x, args['--mrna-stock']) for x in mrnas
-)
-anneal['linker'].hold_conc.stock_conc = consensus(
-        get_conc_uM(x, args['--linker-stock']) for x in linkers
-)
-anneal['linker'].volume *= float(args['--excess-linker'])
 
-protocol = stepwise.Protocol()
-
-protocol += f"""\
-Setup {plural(n):# annealing reaction/s} [1]:
-
-{anneal}
-"""
-
-protocol.footnotes[1] = """\
-Using 0.6x linker reduces the amount of unligated 
-linker, see expt #1.
-"""
-
-protocol += f"""\
-Perform the {plural(n):annealing reaction/s}:
-
-- Incubate at 95°C for 2 min.
-- Cool at room temperature.
-"""
-
-print(protocol)
+if __name__ == '__main__':
+    app = AnnealMrnaLinker.from_params()
+    appcli.load(app)
+    app.protocol.print()
 
 
