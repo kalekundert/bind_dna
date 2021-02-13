@@ -32,6 +32,9 @@ but other separations are tolerated.
 
 Considerations
 ==============
+
+PURExpress
+----------
 The PURExpress manual makes the following recommendations regarding the RBS:
 
 - The DHFR control plasmid uses the g10-L RBS [Olins1989]_, i.e. the "leader" 
@@ -93,17 +96,29 @@ recommendations.  I'm sure the recommended RBSs would work fine, but PURExpress
 is expensive, so it seems worth using a good RBS to get the most possible 
 expression out of each reaction.
 
-For this reason, I decided to try using the Salis lab RBS calculator to design 
-RBSs that satisfy a thermodynamic model.
+Native
+------
+:expt:`97` explains why it might actually make the most sense to use a weak 
+RBS.  The native RBS is a good candidate for this.  I don't know how strong it 
+really is, but it seems reasonable that it would be weak.
 
+Below are two possible alignments (with and without gaps) of the native repA 
+RBS to the "optimal" RBS.  Note that repA has a GTG start codon, which may also 
+decrease expression::
+
+  repA:    TAAGtgcAGGatggt-GTG
+  optimal: TAAG--GAGGTnnnnnATG
+
+  repA:    TAAGtgcaggatggtGTG
+  optimal: TAAGGAGGTnnnnnnATG
   
-   
-In addition to these recommendations, 
+Synthetic
+---------
+[Zelcbuch2013]_ introduce a method to optimize protein expression using a set 
+of 6 RBS sequences with varying levels of activity.  These same sequence might 
+also be a good test set for me.  Note that these sequences actually come from 
+[Salis2009]_, but [Zelcbuch2013]_ use them in the same way I would (i.e. to 
+titrate expression level):
 
-g10L
-----
-T
-
-
-g10L
+.. datatable:: zelcbuch_2013.xlsx
 

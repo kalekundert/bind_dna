@@ -18,6 +18,7 @@ sequence.
    express_zif268_in_vitro/notes
    express_mwasabi_repa_in_s30_lysate/notes
    express_mwasabi_repa_with_nebexpress/notes
+   express_mwasabi_repa_with_excess_template/notes
    check_for_repa_aggregation_via_centrifugation/notes
    visualize_plasmid_dna_in_s30_lysate_via_rna_digestion/notes
    visualize_plasmid_dna_in_s30_lysate_via_blotting/notes

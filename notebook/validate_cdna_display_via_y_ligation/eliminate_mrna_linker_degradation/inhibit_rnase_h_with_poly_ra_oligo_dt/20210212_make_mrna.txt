@@ -1,0 +1,71 @@
+February 12, 2021
+
+$ stepwise cdna/make_mrna f85 o129 -v 16+5.19
+
+1. Setup 1 annealing reaction [1]:
+
+   Reagent  Stock    Volume
+   ────────────────────────
+   PBS              3.06 µL
+   f85       5 µM  21.19 µL
+   o129     10 µM   6.36 µL
+   ────────────────────────
+                   30.61 µL
+
+2. Perform the annealing reaction:
+
+   - Incubate at 95°C for 2 min.
+   - Cool at room temperature.
+
+3. Setup 1 ligation reaction:
+
+   Reagent                    Stock     Volume
+   ───────────────────────────────────────────
+   nuclease-free water               208.96 µL
+   T4 DNA ligase buffer         10x   30.61 µL
+   BSA                         0.1%   30.61 µL
+   T4 RNA ligase [2]        40 U/µL    5.30 µL
+   annealed mRNA/linker  3.46154 µM   30.61 µL
+   ───────────────────────────────────────────
+                                     306.08 µL
+
+4. Incubate the ligation reaction as follows:
+
+   - 25°C for 10 min.
+   - 65°C for 10 min.
+
+5. Remove unligated linker by ultrafiltration:
+
+   - Bring reaction to 500 µL with 8M urea.
+   - Load onto a 100 kDa MWCO spin-filter [3].
+   - Spin 14000g, 15 min.
+   - Wash with 500 µL 8M urea.
+   - Wash with 500 µL nuclease-free water.
+   - Wash with water again.
+   - Wash with water again, but spin for 30 min [3].
+   - Invert the filter into a clean tube and spin
+     1000g, 2 min to collect ligated product in a
+     volume of ≈15 µL.
+
+6. Dilute the purified mRNA to 1 µM.
+
+7. Make 4 µL, 1 µM aliquots.
+
+Notes:
+[1] Using 0.6x linker reduces the amount of unligated
+    linker, see expt #1.
+
+[2] 2x excess of T4 RNA ligase relative to unit
+    definition:
+
+    https://tinyurl.com/3lhzf7a6
+
+    "One unit is defined as the amount of enzyme that
+    converts 1 pmol of [5'-32P]pCp into its acid-
+    insoluble form in 10 minutes at 5°C, using
+    oligo(A) as the substrate during 3' end labeling
+    of RNA."
+
+[3] Amicon UFC510024
+
+[4] Final urea concentration: ≈200 µM

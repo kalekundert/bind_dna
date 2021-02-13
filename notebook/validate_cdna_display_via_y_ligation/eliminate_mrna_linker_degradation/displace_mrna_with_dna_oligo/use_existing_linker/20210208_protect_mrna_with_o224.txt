@@ -1,0 +1,113 @@
+February 8, 2021
+
+$ stepwise protect_mrna_with_o224
+
+ 1. Wipe down your bench and anything you'll touch 
+    (pipets, racks, pens, etc.) with RNaseZap.
+
+ 2. In the following steps, setup these conditions:
+
+    mRNA (f85):            +  −  −  −  −  −  −  −   −    −    −
+    poly-A linker (o129):  −  +  −  −  −  −  −  −   −    −    −
+    mRNA + linker (f89):   −  −  −  +  +  +  +  +   +    +    +
+    dna/dna oligo (o224):  0  0  1  0  0  1  1  10  10  100  100
+    RNase H:               −  −  −  −  +  −  +  −   +    −    +
+
+    dna/dna oligo values are molar ratios relative to mRNA+linker
+
+ 3. Perform a serial dilution [1]:
+
+    - Put 10.00 μL 100 µM o224 in a tube.
+
+    - Put 9.00 μL water in 3 adjacent tubes.
+
+    - Transfer 1.00 μL between each tube *except the
+      last* to make 3 10-fold dilutions.
+
+ 4. Setup 4 annealing reactions:
+
+    Reagent     Stock   Volume      4.4x
+    ────────────────────────────────────
+    PBS           10x  0.74 µL   3.26 µL
+    f89        500 nM  4.44 µL  19.54 µL
+    o224     0-100 µM  2.22 µL
+    ────────────────────────────────────
+                       7.40 µL   5.18 µL/rxn
+
+ 5. Incubate at 95°C for 2 min, then let cool at room
+    temperature.
+
+ 6. Setup 4 +RNase H reactions [2] [3]:
+
+    Reagent                  Stock   Volume     4.4x
+    ────────────────────────────────────────────────
+    nuclease-free water             2.10 µL  9.24 µL
+    RNase H buffer             10x  0.60 µL  2.64 µL
+    f89 + o224              300 nM  3.20 µL
+    RNase H              5000 U/mL  0.10 µL  0.44 µL
+    ────────────────────────────────────────────────
+                                    6.00 µL  2.80 µL/rxn
+
+ 7. Setup 4 −RNase H reactions:
+
+    Reagent               Stock   Volume     4.4x
+    ─────────────────────────────────────────────
+    nuclease-free water          2.20 µL  9.68 µL
+    RNase H buffer          10x  0.60 µL  2.64 µL
+    f89 + o224           300 nM  3.20 µL
+    ─────────────────────────────────────────────
+                                 6.00 µL  2.80 µL/rxn
+
+ 8. Incubate at 37°C for 20 min [4].
+
+ 9. Prepare 11 samples for TBE/urea PAGE:
+
+    Reagent            Stock    Volume     16.5x
+    ────────────────────────────────────────────
+    sample buffer         2x   5.00 µL  82.50 µL
+    sample         200 ng/µL   5.00 µL
+    ────────────────────────────────────────────
+                              10.00 µL   5.00 µL/rxn
+
+    - Incubate at 70°C for 3 min.
+
+10. Run a gel:
+
+    - Gel: 6% TBE/urea PAGE
+    - Buffer: 1x TBE
+    - Load 10 µL of each sample.
+    - Run at 180V for 40 min.
+
+11. Stain gel with GelGreen:
+
+    - Submerge gel in ≈50 mL 3x GelGreen [5].
+    - Shake gently for 30 min.
+
+12. Image with a laser scanner:
+
+    lasers:   488 nm   658 nm
+    filters:  518BP22  710BP40
+
+Notes:
+[1] The final concentrations will be:
+    1  1.000000e+02 µM
+    2  1.000000e+01 µM
+    3  1.000000e+00 µM
+    4  0.000000e+00 µM
+
+[2] mRNA volume and concentration derived from expt
+    #18.  Expts #61,62,65 have a different ratio, but
+    I'm not sure why.
+
+[3] 100 U/mL RNase H final; need at least 8 U/mL to
+    digest all template, see expt #77.
+
+[4] https://tinyurl.com/y2deaw9k
+
+[5] Including 100 mM NaCl in the staining solution 
+    enhances sensitivity, but may promote dye 
+    precipitation if the gel stain is reused.
+
+    Staining solution can be reused at least 2-3x.
+    Store staining solution at room temperature
+    protected from light.

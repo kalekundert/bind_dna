@@ -46,6 +46,7 @@ Conclusions:
 - I can't really take away much from this gel.
 
 - Maybe I should try the agarose again, on the theory that digesting the 
-  ribosomes may allow things to move backwards.
+  ribosomes may allow things to move backwards.  I don't really think that 
+  would give me good data, though.
 
 - Maybe it wasn't great to exclude the RNase inhibitor.

@@ -14,3 +14,15 @@ but this should be doable.
 
 My thought is to begin by trying to replicate [Barendt2013]_, and then to worry 
 about adding the RT primer.
+
+Considerations
+==============
+
+RT primer
+---------
+- Sequester RT primer with dsDNA, use exonuclease to free:
+
+  - Modify desired strand with 5' biotin
+  - Treat dsDNA with 5'→3' exonuclease that would be blocked by biotin (e.g. λ 
+    exonuclease, T7 exonuclease).
+  - Can also use biotin in affinity selection steps.

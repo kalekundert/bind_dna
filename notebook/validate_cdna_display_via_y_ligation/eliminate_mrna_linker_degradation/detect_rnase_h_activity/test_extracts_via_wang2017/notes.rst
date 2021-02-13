@@ -1,6 +1,6 @@
-**************************
-Test extracts via Wang2017
-**************************
+*****************************
+Test extracts via [Wang2017]_
+*****************************
 
 Now that I've shown that I can detect RNase H activity using the [Wang2017]_ 
 assay, I want to see if I can detect RNase H activity in any of my *in vitro* 
@@ -18,6 +18,7 @@ Results
 
 To do:
 - Should repeat with the following controls:
+
   - −DNAzyme, to really see what the baseline fluorescence looks like.
   - −beacon, −DNAzyme same idea.
   - o212, to see if signal is detectable.
@@ -115,7 +116,7 @@ Discussion
   :expt:`88`
 
 - I won't be able to use assays with fluorescent readouts to measure RNase H 
-  activity in lysates.  [Wang2007]_ claimed to measure RNase H activity in 
+  activity in lysates.  [Wang2017]_ claimed to measure RNase H activity in 
   lysates, and got around the background fluorescence problem diluting the 
   lysate 100-fold.  I don't think the assay would be sensitive enough to detect 
   activity if I did the same, though.

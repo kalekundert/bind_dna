@@ -25,6 +25,11 @@ visualize plasmid DNA.  Here I will experiment with different ways to do this:
 This experiment will focus on the first two approaches.  See :expt:`28` for the 
 third.
 
+..update:: 2021/02/12
+
+  :expt:`92` tests a related idea, and ended up with a very smeary (native 
+  PAGE) gel.  Something to keep in mind.
+
 Considerations
 ==============
 

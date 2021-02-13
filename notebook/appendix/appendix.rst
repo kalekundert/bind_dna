@@ -43,7 +43,7 @@ in the original PURE system [Shimizu2001] is (50 μL for mass/quantity units):
 - 2.8 A260 units tRNA mix (KBK: 112 ng/µL, 5.6 µg) (Roche, Mannheim, Germany)
 - 0.5 μg 10-formyl-5,6,7,8-tetrahydrofolic acid
 - 0.1 mM each of amino acids
-- 12 pmol (32.4 μg) ribosome
+- 12 pmol (32.4 μg, 240 nM) ribosome
 - 1 μg IF1
 - 2 μg IF2
 - 0.75 μg IF3
@@ -58,10 +58,13 @@ in the original PURE system [Shimizu2001] is (50 μL for mass/quantity units):
 - 0.15 μg myokinase (Sigma, St. Louis, MO)
 - 0.054 μg nucleoside-diphosphate kinase
 - 0.1 units pyrophosphatase (Sigma)
-- 0.5 μg T7 RNA polymerase
+- 0.5 μg T7 RNA polymerase (NEB: 99 kDa; KBK: 100 nM)
 
 PURExpress FAQs
 ===============
+7. "The concentration of ribosomes in a standard reaction is approximately 2 µM 
+   ±20%." (I calculated 2.4 µM in :expt:`30`.)
+
 11. "For the control template DHFR, we estimate the ribosome recycled 5 times 
     successfully."
 

@@ -17,10 +17,11 @@ References
 .. [Choo1994] :doi:`10.1073/pnas.91.23.11163`
 .. [Crinelli2002] :doi:`10.1093/nar/30.11.2435`
 .. [Compton1985] :doi:`10.1016/0003-2697(85)90190-3`
-.. [Congden1993] :doi:`10.1006/abio.1993.1439`
+.. [Congdon1993] :doi:`10.1006/abio.1993.1439`
 .. [Cote2008] :doi:`10.1016/j.virusres.2008.01.001`
 .. [Cotten2011] :doi:`10.1038/nprot.2011.354`
 .. [Dobosy2011] :doi:`10.1186/1472-6750-11-80`
+.. [Dames2007] :doi:`10.2353/jmoldx.2007.060139`
 .. [Damian2009] :doi:`10.1016/j.bbrc.2009.05.044`
 .. [Dick1978] :doi:`10.1113/jphysiol.1978.sp012526`
 .. [Doerr2019] :doi:`10.1088/1478-3975/aaf33d`
@@ -57,8 +58,10 @@ References
 .. [Lee2018] :doi:`10.1007/s00604-017-2610-8`
 .. [Lesley1995] :doi:`10.1385/0-89603-288-4:265`
 .. [Liese2015] :doi:`10.3762/bjoc.11.90`
+.. [Liu1993] :doi:`10.1006/jmbi.1993.1288`
 .. [Liu2000] :doi:`10.1016/s0076-6879(00)18058-9`
 .. [Lovendahl2017] :doi:`10.1021/jacs.7b02572`
+.. [Kabat1977] :doi:`10.1016/S0021-9258(17)40513-8`
 .. [Kienberger2000] :doi:`10.1002/1438-5171(200006)1:2<123::AID-SIMO123>3.0.CO;2-3`
 .. [Kurz2001] Kurz M, Gu K, Al-Gawari A, Lohse PA. cDNA–Protein Fusions: Covalent Protein–Gene Conjugates for the In Vitro Selection of Peptides and Proteins. Chem Bio Chem 2:9:666-672 (2001).
 .. [Ma2011] :doi:`10.1007/978-1-61779-379-0_21`
@@ -82,6 +85,7 @@ References
 .. [Niederholtmeyer2013] :doi:`10.1021/sb300104f`
 .. [Nishigaki1998] :doi:`10.1023/A:1009644028931`
 .. [Noyes2008] :doi:`10.1093/nar/gkn048`
+.. [Odegrip2001] :doi:`10.1006/jmbi.2001.4607`
 .. [Odegrip2004] :doi:`10.1073/pnas.0400219101`
 .. [Olins1989] Olins and Ragwala. A novel sequence element derived from bacteriophage T7 mRNA acts as an enhancer of translation of the lacZ gene in Escherichia coli.  J. Biol. Chem. 264:29:16973-76 (1989).
 .. [Peters2011] :doi:`10.1016/j.jmb.2011.03.036`
@@ -96,6 +100,7 @@ References
 .. [Roberts1997] :doi:`10.1073/pnas.94.23.12297`
 .. [Rohs2010] :doi:`10.1146/annurev-biochem-060408-091030`
 .. [Roth2018] :doi:`10.1021/acs.nanolett.8b02093`
+.. [Salis2009] :doi:`10.1038/nbt.1568`
 .. [Seelig2011] :doi:`10.1038/nprot.2011.312`
 .. [Sera2002] :doi:`10.1021/bi020095c`
 .. [Schagger2006] :doi:`10.1038/nprot.2006.4`
@@ -106,6 +111,7 @@ References
 .. [Thyme2014] :doi:`10.1007/978-1-62703-968-0_17`
 .. [VegaRocha2007] :doi:`10.1016/j.jmb.2007.01.002`
 .. [Vorackova2011] :doi:`10.1016/j.pep.2011.04.022`
+.. [Walder1988] :doi:`10.1073/pnas.85.14.5011`
 .. [Waldo1999] :doi:`10.1038/10904`
 .. [Walker2003] :doi:`10.1093/nar/gng082`
 .. [Wang2012] :doi:`10.1007/978-1-61779-379-0_6`
@@ -115,6 +121,7 @@ References
 .. [Wei1983] Wei CF, Alianell GA, Bencen GH, Gray Jr HB. Isolation and comparison of two molecular species of the BAL 31 nuclease from Alteromonas espejiana with distinct kinetic properties. J Biol Chem.  1983;258:13506--13512.
 .. [Wu2018] :doi:`10.1016/j.talanta.2018.01.075`
 .. [Yonezawa2003] :doi:`10.1093/nar/gng119`
+.. [Zelcbuch2013] :doi:`10.1093/nar/gkt151`
 .. [Zhao2017] :doi:`10.1016/j.bios.2016.11.032`
 .. [Zhang2019] :doi:`10.1016/j.snb.2018.09.001`
 .. [Zhou1990] :doi:`10.1016/0167-4781(90)90087-I`

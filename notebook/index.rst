@@ -14,6 +14,7 @@ Design DNA-binding proteins
    validate_cdna_display_via_y_ligation/notes
    validate_cdna_display_via_splint_ligation/notes
    validate_cis_display/notes
+   validate_p2a_display/notes
    validate_exonuclease_assay/notes
    validate_b1h/notes
    run_ashworth2006_on_zif268/notes

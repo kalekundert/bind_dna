@@ -1,0 +1,202 @@
+February 11, 2021
+
+$ stepwise make_f89
+
+ 1. Setup 1 XmnI digestion [1]:
+
+    Reagent              Stock    Volume
+    ────────────────────────────────────
+    water                        3.50 µL
+    p98              200 ng/µL   5.00 µL
+    CutSmart Buffer        10x   1.00 µL
+    XmnI               20 U/µL   0.50 µL
+    ────────────────────────────────────
+                                10.00 µL
+
+ 2. Incubate at the following temperatures [2]:
+
+    - 37°C for 5–15 min
+    - 65°C for 20 min
+
+ 3. Label the product: f42
+
+ 4. Purify DNA via phenol-chloroform extraction:
+
+    - Dilute or divide your sample as necessary to 
+      ensure that each tube has between 100-700 µL [3].
+
+    - Repeat twice:
+
+      - Add an equal volume of phenol:chloroform:isoamyl
+        alcohol (pH≈8 for DNA) to the tube.
+
+      - Vortex vigorously to mix the phases.
+   
+      - Spin in a microfuge at top speed for 1-2 min to 
+        separate the phases.
+   
+      - Transfer the aqueous (upper) phase to a new tube, 
+        being careful not to transfer any of the protein 
+        at the phase interface.
+ 
+    - Extract the sample with an equal volume of 
+      chloroform:isoamyl alcohol to remove the phenol.
+
+ 5. Perform an ethanol precipitation [4,5]:
+
+    - Add sodium acetate, pH=5.2 to 300 mM.
+    - Add linear polyacrylamide (LPA) to 20 ng/µL.
+    - Add 3 volumes 100% ethanol and mix well.
+    - If necessary, divide the sample between
+      microfuge tubes such that none holds more than
+      400 µL.
+    - Centrifuge >7500g, 60 min, 4°C.  Remove the
+      supernatant, but save it in case the
+      precipitation needs to be repeated.
+    - Add 800 µL recently-prepared 70% ethanol [6].
+    - Centrifuge >7500g, 2 min, 4°C.  Discard
+      supernatant.
+    - Centrifuge >7500g, 30 s, 4°C.  Discard any
+      remaining supernatant.
+    - Leave the tube open at room temperature until
+      ethanol has evaporated [7].
+    - Resuspend the pellet in 2 µL of nuclease-free
+      water [8].
+
+ 6. Wipe down your bench and anything you'll touch 
+    (pipets, racks, pens, etc.) with RNaseZap.
+
+ 7. Setup 1 in vitro transcription reaction [9,10] by 
+    mixing the following reagents at room temperature 
+    in the order given:
+
+    Reagent                  Stock    Volume
+    ────────────────────────────────────────
+    nuclease-free water              6.00 µL
+    reaction buffer            10x   2.00 µL
+    rNTP mix                100 mM   8.00 µL
+    HiScribe T7                10x   2.00 µL
+    f42                  500 ng/µL   2.00 µL
+    ────────────────────────────────────────
+                                    20.00 µL
+
+ 8. Incubate at 37°C for 2 hours [11].
+
+ 9. Remove unincorporated ribonucleotides using Zymo 
+    RNA Clean & Concentrator 25 spin columns.
+
+10. Label the product: f85
+
+11. Setup 1 annealing reaction [12]:
+
+    Reagent              Stock    Volume
+    ────────────────────────────────────
+    nuclease-free water         23.00 µL
+    PBS                    10x   4.00 µL
+    f85                   5 µM  10.00 µL
+    o129                 10 µM   3.00 µL
+    ────────────────────────────────────
+                                40.00 µL
+
+12. Perform the annealing reaction:
+
+    - Incubate at 95°C for 2 min.
+    - Cool at room temperature.
+
+13. Setup 1 ligation reaction:
+
+    Reagent                 Stock     Volume
+    ────────────────────────────────────────
+    nuclease-free water            275.00 µL
+    T4 DNA ligase buffer      10x   40.00 µL
+    BSA                      0.1%   40.00 µL
+    T4 RNA ligase         40 U/µL    5.00 µL
+    annealed mRNA/linker  1.25 µM   40.00 µL
+    ────────────────────────────────────────
+                                   400.00 µL
+
+14. Incubate the ligation reaction as follows:
+
+    - 25°C for 10 min.
+    - 65°C for 10 min.
+
+15. Label the product: f89
+
+16. Remove unligated linker by ultrafiltration:
+
+    - Bring reaction to 500 µL with 8M urea.
+    - Load onto a 100 kDa MWCO spin-filter [13].
+    - Spin 14000g, 15 min.
+    - Wash with 500 µL 8M urea.
+    - Wash with 500 µL nuclease-free water.
+    - Wash with water again.
+    - Wash with water again, but spin for 30 min
+      [13].
+    - Invert the filter into a clean tube and spin
+      1000g, 2 min to collect ligated product in a
+      volume of ≈15 µL.
+
+17. Dilute the purified mRNA to 1 µM.
+
+18. Make 4 µL, 1 µM aliquots.
+
+Notes:
+ [1] NEB recommends 5–10 units of enzyme per µg DNA 
+     (10–20 units for genomic DNA).  Enzyme volume 
+     should not exceed 10% of the total reaction 
+     volume to prevent star activity due to excess 
+     glycerol.
+
+ [2] The heat inactivation step is not necessary if 
+     the DNA will be purified before use.
+
+ [3] It is difficult to do the extraction with volumes 
+     smaller than 100 µL. The sample can be 
+     concentrated again after precipitation.
+
+ [4] Li2020: 10.2144/btn-2019-0109
+     Sambrook2006: 10.1101/pdb.prot4456
+
+ [5] This protocol was optimized for 100 ng/µL
+     nucleic acid.  If your sample is substantially
+     more dilute, it may be necessary to compensate
+     by increasing the incubation time, the
+     centrifugation time, or the centrifugation
+     speed.
+
+ [6] Ethanol evaporates more quickly than water, so a
+     solution that was 70% ethanol several months ago
+     may be significantly more aqueous now.  If you
+     are unsure, 100 µL of 70% EtOH should weigh 88.6
+     mg.
+
+ [7] Do not dry pellets of nucleic acid in a
+     lyophilizer, as this causes denaturation of
+     small (<400-nucleotide) fragments of DNA and
+     greatly reduces the recovery of larger fragments
+     of DNA.
+
+     If necessary, the open tube containing the
+     redissolved DNA can be incubated for 2-3 minutes
+     at 45°C in a heating block to allow any traces
+     of ethanol to evaporate.
+
+ [8] Up to 50% of the DNA is smeared on the wall of
+     the tube. To recover all of the DNA, push a bead
+     of fluid backward and forward over the
+     appropriate quadrant of wall with a pipette tip.
+
+ [9] https://tinyurl.com/y4a2j8w5
+
+[10] I've found that T7 kits which have been in the 
+     freezer for more than ≈4 weeks seem to produce 
+     more degraded RNA.
+
+[11] Use a thermocycler to prevent evaporation.
+
+[12] Using 0.6x linker reduces the amount of
+     unligated linker, see expt #1.
+
+[13] Amicon UFC510024
+
+[14] Final urea concentration: ≈200 µM

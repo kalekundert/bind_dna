@@ -6,7 +6,11 @@ Eliminate mRNA-linker degradation
    :hidden:
 
    check_degradation_via_broccoli/notes
+   check_degradation_via_northern_blot/notes
    detect_rnase_h_activity/notes
+   displace_mrna_with_dna_oligo/notes
+   inhibit_rnase_h_with_poly_ra_oligo_dt/notes
+   ligate_with_rna_oligo/notes
 
 2020/09/09:
 
