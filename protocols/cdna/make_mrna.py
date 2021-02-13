@@ -15,7 +15,7 @@ class MakeMrnaLinker(appcli.App):
 Ligate a puromycin linker to mRNA.
 
 Usage:
-    make_mrna.py <mrna> <linker> [-n <rxns>] [-v <µL> | -V <µL>] [-WA]
+    make_mrna.py <mrna> <linker> [-n <rxns>] [-v <µL>] [options]
 
 Arguments:
     <mrna>
@@ -38,7 +38,7 @@ Options:
         annealing and ligation reactions such that the result should be more 
         concentrated than the target.
 
-    -V --mrna-volume <µL>
+    -v --mrna-volume <µL>
         The volume of mRNA to use, e.g. if you have an entire aliquot you want 
         to use.  This can only increase the amount of mRNA that will be used; 
         if you want to use less mRNA you may also need to lower the target 
@@ -53,6 +53,9 @@ Options:
         The volume of purified mRNA that you expect to recover from the spin 
         column.  The 500 µL Amicon spin filters have a minimum dead volume of 
         15 µL, but I usually recover somewhat more than that.
+
+    -l --label <name>
+        The label that should be used for the ligated and purified product.
         
     -W --no-wash
         Skip the wash step.
@@ -87,7 +90,7 @@ Options:
     )
     mrna_volume_uL = appcli.param(
             '--mrna-volume',
-            cast=float,
+            cast=eval,
             default=0,
     )
     expected_yield = appcli.param(
@@ -99,6 +102,10 @@ Options:
             '--expected-dead-volume',
             cast=float,
             default=25,
+    )
+    label = appcli.param(
+            '--label',
+            default=None,
     )
     wash = appcli.param(
             '--no-wash',
@@ -113,9 +120,7 @@ Options:
 
     def get_protocol(self):
         anneal = AnnealMrnaLinker(self.mrnas, self.linkers)
-        anneal.excess_linker = 0.6  # See expt #1
-        ligate = LigateMrnaLinker()
-        wash = WashBarendt()
+        anneal.linker_ratio = 0.6  # See expt #1
 
         # Scale the reactions such that we'll end up with enough mRNA:
         anneal_rxn = anneal.reaction
@@ -125,21 +130,24 @@ Options:
                 self.expected_yield
         )
         mrna_conc_uM = anneal_rxn['mRNA'].stock_conc.value
-        mrna_volume_uL = max(
+
+        anneal.mrna_volume_uL = max(
                 mrna_pmol / mrna_conc_uM,
                 self.mrna_volume_uL,
         )
 
-        anneal.volume_uL *= mrna_volume_uL / anneal_rxn['mRNA'].volume.value
-        ligate.volume_uL = 10 * anneal.volume_uL
+        ligate = LigateMrnaLinker(anneal)
+        wash = WashBarendt()
 
         p = stepwise.Protocol()
         p += anneal.protocol
         p += ligate.protocol
 
+        if self.label:
+            p += f"Label the product: {self.label}"
         if self.wash:
             p += wash.protocol
-            p += f"Dilute the purified mRNA to {self.target_conc_uM:g} µM"
+            p += f"Dilute the purified mRNA to {self.target_conc_uM:g} µM."
         if self.aliquot:
             p += stepwise.load('aliquot "4 µL" "1 µM"')
 

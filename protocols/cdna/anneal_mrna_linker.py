@@ -15,8 +15,8 @@ class AnnealMrnaLinker(appcli.App):
 Anneal linker-N and mRNA prior to ligation.
 
 Usage:
-    anneal [<mrna>] [<linker>] [-n <int>] [-v <µL>] [-m <reagents>] [-x <fold>] 
-        [-R <µM>] [-L <conc>]
+    anneal [<mrna>] [<linker>] [-n <int>] [-m <reagents>] [-V <µL>]
+            [-r <µL>] [-R <µM>] [-l <ratio>] [-L <µM>]
 
 Arguments:
     <mrna>
@@ -32,28 +32,30 @@ Options:
         The number of reactions to setup up.  The default is the number of 
         unique combinations of mRNA and linker.
 
-    -v --volume <µL>                    [default: ${app.volume_uL}]
-        The volume of each annealing reaction in µL.
-
     -m --master-mix <reagents>          [default: ${','.join(app.master_mix)}]
         A comma-separated list of reagents to include in the master mix.  This 
         flag is only relevant in <n> is more than 1.  The following reagents 
         are understood: mrna, link
 
-    -x --excess-linker <fold>           [default: ${app.excess_linker}]
-        The amount of linker to add to the reaction, relative to the amount of 
-        mRNA in the reaction.
+    -r --mrna-volume <µL>               [default: ${app.mrna_volume_uL}]
+        The volume of mRNA to use in each annealing reaction, in µL.
 
     -R --mrna-stock <µM>
         The stock concentration of the mRNA, in µM.  The volume of mRNA will be 
         updated accordingly to keep the amount of material in the reaction 
         constant.  The default is read from the PO₄ database, or 10 µM if the 
-        given mRNA is not in the database.
+        given mRNA is not in the database.  Use '--mrna-volume' to change the 
+        amount of mRNA in the reaction.
 
-    -L --linker-stock <conc>
-        The stock concentration of the linker, in user-specified units.  The 
-        volume of linker will not be updated, so this will change the relative 
-        proportion of linker to mRNA.
+    -l --linker-ratio <float>           [default: ${app.linker_ratio}]
+        The amount of linker to add to the reaction, relative to the amount of 
+        mRNA in the reaction.
+
+    -L --linker-stock <µM>
+        The stock concentration of the linker, in µM.  The volume of linker be 
+        updated accordingly, to keep the amount of material in the reaction 
+        constant.  The default is read from the PO₄ database, or 10 µM if the 
+        given linker is not in the database.  
 """
     __config__ = [
             DocoptConfig(),
@@ -75,18 +77,18 @@ Options:
             default=0,
             get=lambda self, x: x or len(self.mrnas) * len(self.linkers),
     )
-    volume_uL = appcli.param(
-            '--volume',
+    mrna_volume_uL = appcli.param(
+            '--mrna-volume',
             cast=eval,
-            default=4,
+            default=1,
     )
     master_mix = appcli.param(
             '--master-mix',
             cast=lambda x: set(x.split(',')),
             default_factory=set,
     )
-    excess_linker = appcli.param(
-            '--excess-linker',
+    linker_ratio = appcli.param(
+            '--linker-ratio',
             cast=float,
             default=1,
     )
@@ -133,17 +135,26 @@ Options:
         return p
 
     def get_reaction(self):
-        rxn = stepwise.MasterMix.from_text("""\
-                Reagent              Stock     Volume  MM?
-                ===================  =====  =========  ===
-                nuclease-free water         to 4.0 µL   +
-                PBS                  10x       0.4 µL   +
-                mRNA                 10 µM     0.5 µL   -
-                linker               10 µM     0.5 µL   -
-        """)
-
+        rxn = stepwise.MasterMix()
         rxn.num_reactions = n = self.num_reactions
-        rxn.hold_ratios.volume = self.volume_uL, 'µL'
+        rxn.solvent = None
+
+        rxn['mRNA'].stock_conc = consensus(
+                get_conc_uM(self.db, x, self.mrna_stock_uM)
+                for x in self.mrnas
+        )
+        rxn['linker'].stock_conc = consensus(
+                get_conc_uM(self.db, x, self.linker_stock_uM)
+                for x in self.linkers
+        )
+
+        rxn['mRNA'].volume = self.mrna_volume_uL, 'µL'
+        rxn['linker'].volume = (
+                self.linker_ratio
+                * rxn['mRNA'].volume
+                * (rxn['mRNA'].stock_conc / rxn['linker'].stock_conc)
+        )
+
         rxn['mRNA'].master_mix = 'mrna' in self.master_mix
         rxn['linker'].master_mix = 'link' in self.master_mix
     
@@ -152,15 +163,8 @@ Options:
         if self.linkers:
             rxn['linker'].name = ','.join(self.linkers)
 
-        rxn['mRNA'].hold_conc.stock_conc = consensus(
-                get_conc_uM(self.db, x, self.mrna_stock_uM)
-                for x in self.mrnas
-        )
-        rxn['linker'].hold_conc.stock_conc = consensus(
-                get_conc_uM(self.db, x, self.linker_stock_uM)
-                for x in self.linkers
-        )
-        rxn['linker'].volume *= self.excess_linker
+        rxn['PBS'].volume = rxn.volume / 9
+        rxn['PBS'].order = -1
 
         return rxn
 
