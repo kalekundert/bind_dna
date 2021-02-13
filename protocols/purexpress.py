@@ -5,7 +5,8 @@ Setup in vitro transcription/translation (IVTT) reactions using the NEB
 PURExpress system (E6800).
 
 Usage:
-    purexpress.py <templates>... [-v <uL>] [-D <nM>] [options]
+    purexpress.py <templates>... [-n <int>] [-v <uL>] [-t <nM>] [-T <nM>]
+        [-w <time>] [-rpgzI] [-a <name;conc;vol;mm>]...
 
 Arguments:
     <templates>
@@ -53,6 +54,10 @@ Options:
     -I --no-inhibitor
         Don't include RNase inhibitor in the reaction.
 
+    -a --additive <name;conc;vol;mm>
+        Add an additional reagent to the reaction.  See `sw reaction -h` for a 
+        complete description of the syntax.  This optiona can be specified 
+        multiple times.
 """
 
 import docopt
@@ -67,7 +72,7 @@ Reagent                  Stock      Volume  MM?
 water                           to 10.0 µL  yes
 A                                   4.0 µL  yes
 B                                   3.0 µL  yes
-RNase Inhibitor [1]    40 U/µL      0.2 µL  yes
+RNase inhibitor [1]    40 U/µL      0.2 µL  yes
 ZnOAc                     1 mM      0.5 µL  yes
 target DNA              750 nM      0.8 µL  yes
 template DNA             75 nM      0.8 µL
@@ -81,7 +86,7 @@ if not args['--add-target']:
     del purexpress['target DNA']
 
 if args['--no-inhibitor']:
-    del purexpress['RNase Inhibitor [1]']
+    del purexpress['RNase inhibitor [1]']
 else:
     protocol.footnotes[1] = """\
 The PURExpress protocol recommends 0.8 U/µL (20 U 
@@ -93,7 +98,6 @@ encountered first.
 PURExpress protocol: https://tinyurl.com/y3m9lrcz
 RNAse inhibitor FAQs: https://tinyurl.com/y3zabsoz
 """
-
 
 if args['--mrna']:
     template = 'template mRNA'
@@ -115,6 +119,7 @@ def float_or_default(x, default):
     return float(x) if x else default
 
 purexpress[template].name = ','.join(args['<templates>'])
+purexpress[template].master_mix = (len(args['<templates>']) == 1)
 purexpress[template].hold_stock_conc.conc = float_or_default(
         args['--template-conc'], default_template_conc_nM), 'nM'
 purexpress[template].hold_conc.stock_conc = float_or_default(
@@ -123,6 +128,17 @@ purexpress[template].hold_conc.stock_conc = float_or_default(
 purexpress.num_reactions = int(
         args['--num-reactions'] or len(args['<templates>']))
 purexpress.hold_ratios.volume = eval(args['--rxn-volume']), 'µL'
+
+# Add additive after setting the user-specified volume, so that the volums 
+# given by the user for the additive are consistent with that information.
+#
+# It would be better if there was a utility in stepwise for parsing `sw 
+# reaction`-style strings.
+for additive in args['--additive']:
+    reagent, stock_conc, volume, master_mix = additive.split(';')
+    purexpress[reagent].stock_conc = stock_conc
+    purexpress[reagent].volume = volume
+    purexpress[reagent].master_mix = {'+': True, '-': False, '': False}[master_mix]
 
 purexpress.fix_volumes(template)
 
