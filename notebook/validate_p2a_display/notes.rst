@@ -13,7 +13,7 @@ Considerations
 
 P2A sequence
 ------------
-The first step is to figure out the sequence of the P2A gene.  [Reierson2005]_ 
+The first step is to figure out the sequence of the P2A gene.  [Reiersen2005]_ 
 doesn't actually include this information, instead just stating that the y got 
 the P2A vector from Isogenica Ltd.  This is definitely a red flag, but I'm 
 still curious enough to try the idea at least once.  Interestingly, the 
@@ -86,4 +86,4 @@ I'm wondering if it would make the most sense to use the native P2A RBS:
 
 - The native RBS appears to be very weak.
 
-- See :expt:`??` for a discussion of why a strong RBS might not be a good idea.
+- See :expt:`97` for a discussion of why a strong RBS might not be a good idea.

@@ -1,0 +1,105 @@
+February 15, 2021
+
+$ stepwise protect_mrna_with_ra_dt
+
+ 1. Wipe down your bench and anything you'll touch 
+    (pipets, racks, pens, etc.) with RNaseZap.
+
+ 2. In the following steps, setup these conditions:
+
+    PURExpress:                    −  −  −  −  +   +   +  +  +  +
+    linker (o129, f89):            +  +  +  +  +   +   +  +  +  +
+    mRNA (f89):                    −  −  +  +  +   +   +  +  +  +
+    poly-rA/oligo-dT [A260 U/mL]:  0  8  0  8  0  0.5  1  2  4  8
+
+ 3. Dilute lyophilized poly-rA/oligo-dT (Midland
+    P-4012) to 80 A260 U/mL:
+
+    - 5 A260 U poly-rA/oligo-dT
+    - 62.5 µL nuclease-free water
+
+ 4. Perform a serial dilution [1]:
+
+    - Put 20.00 μL 8 U/mL poly-rA/oligo-dT in a tube.
+    - Put 10.00 μL nuclease-free water in 5 adjacent
+      tubes.
+    - Transfer 10.00 μL between each tube *except the
+      last* to make 5 2-fold dilutions.
+
+ 5. Setup 6 PURExpress (NEB E6800) reactions [2]:
+
+    Reagent                           Stock   Volume      6.6x
+    ──────────────────────────────────────────────────────────
+    water                                    0.10 µL   0.66 µL
+    solution A                               2.00 µL  13.20 µL
+    solution B                               1.50 µL   9.90 µL
+    RNase inhibitor, murine         40 U/µL  0.10 µL   0.66 µL
+    f89                             1000 nM  0.80 µL   5.28 µL
+    poly-rA/oligo-dT         0-80 A260 U/mL  0.50 µL
+    ──────────────────────────────────────────────────────────
+                                             5.00 µL   4.50 µL/rxn
+
+    - Thaw all components on ice.
+    - Mix A well; certain components may precipitate
+      during storage.
+    - Mix B gently; do not vortex.
+    - Add A before B.
+
+ 6. Incubate at 37°C for 30 min.
+
+ 7. Setup 2 −mRNA controls:
+
+    Reagent                     Stock   Volume     2.2x
+    ───────────────────────────────────────────────────
+    nuclease-free water                3.70 µL  8.14 µL
+    o129                         1 µM  0.80 µL  1.76 µL
+    poly-rA/oligo-dT     80 A260 U/mL  0.50 µL
+    ───────────────────────────────────────────────────
+                                       5.00 µL  4.50 µL/rxn
+
+ 8. Setup 2 −PURExpress controls:
+
+    Reagent                     Stock   Volume     2.2x
+    ───────────────────────────────────────────────────
+    nuclease-free water                3.70 µL  8.14 µL
+    f89                          1 µM  0.80 µL  1.76 µL
+    poly-rA/oligo-dT     80 A260 U/mL  0.50 µL
+    ───────────────────────────────────────────────────
+                                       5.00 µL  4.50 µL/rxn
+
+ 9. Prepare 10 samples for SDS PAGE:
+
+    Reagent                  Stock    Volume       15x
+    ──────────────────────────────────────────────────
+    water                            3.93 µL  58.95 µL
+    Bolt LDS sample buffer      4x   2.50 µL  37.50 µL
+    Bolt reducing agent        10x   1.00 µL  15.00 µL
+    o194                    100 µM   0.07 µL   1.05 µL
+    sample                    7 nM   2.50 µL
+    ──────────────────────────────────────────────────
+                                    10.00 µL   7.50 µL/rxn
+
+    - Incubate at 70°C for 10 min.
+
+10. Run a gel:
+
+    - Gel: 4−12% Bolt Bis-Tris SDS PAGE
+    - Buffer: Bolt MES SDS running buffer
+    - Load 10 µL of each sample.
+    - Run at 165V for 42 min.
+
+11. Image with a laser scanner:
+
+    lasers:   488 nm   658 nm
+    filters:  518BP22  710BP40
+
+Notes:
+[1] The final concentrations will be:
+    1  8.000000e+00 U/mL
+    2  4.000000e+00 U/mL
+    3  2.000000e+00 U/mL
+    4  1.000000e+00 U/mL
+    5  5.000000e-01 U/mL
+    6  0.000000e+00 U/mL
+
+[2] https://tinyurl.com/dxapyo69

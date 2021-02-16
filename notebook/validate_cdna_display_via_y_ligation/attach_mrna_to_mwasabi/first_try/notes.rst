@@ -81,6 +81,16 @@ Results
   at room temperature.  I'd be a little surprised if this made a big 
   difference, but it's probably worth doing a time course.
 
+- Note that the low-MW Cy5 band is shifted in the +everything lane as compared 
+  to all of the other o129 bands.  I think this is evidence in favor of 
+  nuclease contamination.  As illustrated below, the idea is that RNase H would 
+  only cleave the RNA that was duplexed with DNA.  This would leave at least 4 
+  un-paired RNA nucleotides (i.e. those making up one "arm" of the Y-ligation, 
+  and maybe a few more 5' of that) attached to the linker, which might be 
+  enough to explain the difference in apparent band sizes.
+
+  .. figure:: band_size_hypothesis.svg
+
 - There is no indication that any of the puromycin reacts with any of the 
   protein.  Even if the mRNA ends up being degraded (as discussed above), the 
   Cy5 would stay coupled to the peptide and be visibly retarded if the 

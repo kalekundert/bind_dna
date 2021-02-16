@@ -24,13 +24,14 @@ sw serial \
   -d "nuclease-free water" \
   |
 
-sw purex \
+sw ivtt \
   f89 \
-  -n 6 \
+  -p 'purex/gfp' \
   -v 5 \
-  -r \
-  -w '30 min' \
+  -n 6 \
+  -mr \
   -a 'poly-rA/oligo-dT;0-80 A260 U/mL;0.5 µL;-' \
+  -t '30 min' \
   |
   
 # Should I include the coupling reaction?  It's not really what I'm trying to 

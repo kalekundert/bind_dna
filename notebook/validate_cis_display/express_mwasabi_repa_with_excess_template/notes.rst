@@ -29,10 +29,11 @@ Considerations
   can express each one.
 
   - The final ribosome concentration in a PURExpress reaction is 2 µM 
-    (:doc:`appendix`).
+    (:doc:`/appendix/appendix`).
 
-  - PURE reactions have a 2.4:1 ribosome:RNAP ratio (:doc:`appendix`).  I 
-    couldn't find the same ratio for PURExpress, but I assume it's similar.
+  - PURE reactions have a 2.4:1 ribosome:RNAP ratio 
+    (:doc:`/appendix/appendix`).  I couldn't find the same ratio for 
+    PURExpress, but I assume it's similar.
 
   - NEB recommends a final concentration of 6 nM for the DHFR control template.  
     This is much lower than the final ribosome and (assumed) RNAP 
@@ -42,7 +43,7 @@ Considerations
     are available for making protein:
     
     - NEB estimates that each ribosome is recycled 5 times with the control 
-      DHFR template (:doc:`appendix`).
+      DHFR template (:doc:`/appendix/appendix`).
 
     - P2A is about 10x longer than DHFR (≈2000 vs ≈200 aa), so I would expect 
       each ribosome to be used 0.5 times on average in these reactions. 

@@ -51,3 +51,43 @@ How much poly-rA/oligo-dT?
 
 - I ordered 5 A260 U, so I'll probably want a stock of 80 U/mL, which would be 
   62.5 µL.  I'd use ≈1 µL per reaction.
+
+Results
+=======
+
+2021/02/15
+----------
+.. protocol:: 20210215_protect_mrna_with_ra_dt.txt
+
+.. figure:: 20210215_protect_mrna_with_ra_dt.svg
+
+.. datatable:: 20210215_protect_mrna_with_ra_dt.xlsx
+
+Observations:
+
+- The poly-rA/oligo-dT seems to have a minor positive effect on mRNA stability, 
+  and a minor negative effect on protein expression.  These differences are 
+  hard to see in the gel itself, but are apparent in the densiometry analysis.
+
+- I see once again that the "cleaved" Cy5 band runs a bit slower than the o129 
+  band.  I think this is consistent with RNase H contamination.  See :expt:`65` 
+  for a discussion of this.
+
+- The GFP signal was very faint, probably for the same reasons discussed in 
+  :expt:`62` (i.e. short reaction time).
+
+- About 90% of the linker in this f89 prep is ligated to mRNA (data not shown).
+
+Conclusions:
+
+- It would've been nice to include an f85 control.  I'm curious if f85 would 
+  give a different level of mWasabi expression than f89.
+
+- I'm still not sure what going on.  On one hand, if there was RNase H 
+  contamination, I would've expected poly-rA/oligo-dT to have a bigger 
+  inhibitory effect.  On the other hand, if there wasn't RNase H contamination, 
+  I wouldn't have expected poly-rA/oligo-dT to have any effect at all.  The 
+  weak effect that I observe could go either way.
+
+- I wonder if it would be informative to do similar experiments with decoy 
+  ssDNA, dsDNA, ssRNA, and dsRNA.
