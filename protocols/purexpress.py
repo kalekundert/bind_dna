@@ -5,8 +5,8 @@ Setup in vitro transcription/translation (IVTT) reactions using the NEB
 PURExpress system (E6800).
 
 Usage:
-    purexpress.py <templates>... [-n <int>] [-v <uL>] [-t <nM>] [-T <nM>]
-        [-w <time>] [-rpgzI] [-a <name;conc;vol;mm>]...
+    purexpress.py <templates>... [-n <int>] [-v <uL>] [-c <nM>] [-C <nM>]
+        [-t <time>] [-rpgzI] [-a <name;conc;vol;mm>]...
 
 Arguments:
     <templates>
@@ -21,19 +21,19 @@ Options:
         The volume of each individual reaction (in µL).  NEB recommends 25 µL, 
         but I typically use 10 µL and get enough yield for routine experiments.
 
-    -t --template-conc <nM>
+    -c --template-conc <nM>
         The desired final concentration of template in the reaction.  The 
         default differs depending on whether the template is DNA or mRNA.  If 
         this differs from the default, the volume of the template will be 
         adjusted accordingly.
 
-    -T --template-stock <nM>
+    -C --template-stock <nM>
         The concentration of the DNA/RNA being added to the reaction.  The 
         default depends on whether the template is DNA or mRNA.  If this 
         differs from the default, the volume of the template will be adjusted 
         accordingly.
 
-    -w --time <time>                            [default: 2h]
+    -t --time <time>                            [default: 2h]
         The amount of time to run the transcription/translation reaction for.  
         No unit is assumed, so be sure to specify one.
 
@@ -66,7 +66,7 @@ from inform import plural
 
 args = docopt.docopt(__doc__)
 protocol = stepwise.Protocol()
-purexpress = stepwise.MasterMix.from_text('''\
+purexpress = stepwise.MasterMix('''\
 Reagent                  Stock      Volume  MM?
 ===================  =========  ==========  ===
 water                           to 10.0 µL  yes

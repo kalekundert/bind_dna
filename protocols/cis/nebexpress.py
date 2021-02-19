@@ -1,63 +1,121 @@
 #!/usr/bin/env python3
 
-"""\
+import stepwise, appcli, autoprop
+from inform import fatal, warn, plural
+
+@autoprop
+class NebExpress(appcli.App):
+    """\
 Express proteins from linear DNA templates using NEBExpress.
 
 Usage:
-    nebexpress.py <templates> [options]
+    nebexpress.py <templates>... [-v <µL>] [-n <rxns>] [-c <nM>] [-C <nM>]
+        [-t <time>] [-T <°C>] [-r]
 
 Arguments:
     <templates>
-        Comma-separated list of templates.  The number of reactions will be 
-        inferred from this list.
+        The templates to express.  The number of reactions will be inferred 
+        from this list.
 
 Options:
-    -v --volume <µL>                    [default: 10]
+    -v --volume <µL>                    [default: ${app.volume_uL}]
         The volume of the reaction in µL.
 
-    -n --num-reactions <n>
+    -n --num-reactions <int>
         The number of reactions to set up.  By default, this is inferred from
         the number of templates.
 
-    -d --template-stock <nM>            [default: 75]
-        The stock concentration of the template DNA, in units of nM.
+    -c --template-conc <nM>
+        The desired final concentration of template in the reaction.
 
-    -t --incubation-time <time>         [default: 2-4 hours]
-        The amount of time to incubate the reactions.
+    -C --template-stock <nM>
+        The stock concentration of the template DNA, in units of nM.  If not 
+        specified, a concentration will be queried from the PO₄ database.  In 
+        this case, all templates must be in the database and must have 
+        identical concentrations.
 
-    -T --incubation-temperature <temp>  [default: 37°C]
-        The temperature to incubate the reactions at.
+    -t --incubation-time <time>         [default: ${app.incubation_time}]
+        The amount of time to incubate the reactions.  No unit is assumed, so 
+        be sure to include one.
+
+    -T --incubation-temperature <°C>    [default: ${app.incubation_temp_C}]
+        The temperature to incubate the reactions at, in °C.
+
+    -r --mrna
+        Use mRNA as the template instead of DNA.
 """
+    __config__ = [
+            appcli.DocoptConfig(),
+    ]
 
-import docopt
-import stepwise
-from inform import plural
+    templates = appcli.param(
+            '<templates>',
+    )
+    volume_uL = appcli.param(
+            '--volume',
+            cast=eval,
+            default=10,
+    )
+    num_reactions = appcli.param(
+            '--num-reactions',
+            cast=eval,
+            default=None,
+    )
+    incubation_time = appcli.param(
+            '--incubation-time',
+            default='2-4 hours',
+    )
+    incubation_temp_C = appcli.param(
+            '--incubation-temp',
+            cast=float,
+            default=37,
+    )
+    use_mrna = appcli.param(
+            '--mrna',
+            default=False,
+    )
 
-args = docopt.docopt(__doc__)
-templates = args['<templates>']
-num_templates = len(templates.split(','))
+    @appcli.param(
+            '--template-conc',
+            cast=float,
+            default=None,
+    )
+    def template_conc_nM(self, x):
+        if x is not None:
+            return x
 
-rxn = stepwise.MasterMix.from_text("""\
-Reagent                            Stock    Volume  MM?
-=============================  =========  ========  ===
-water                                     to 50 µL  yes
-S30 extract [2]                              12 µL  yes
-synthesis buffer [2]                  2x     25 µL  yes
-T7 RNA polymerase               450 U/µL      1 µL  yes
-RNase inhibitor (murine)         40 U/µL      1 µL  yes
-GamS nuclease inhibitor [2,3]  1.5 µg/µL      1 µL  yes
-linear DNA template                75 nM      2 µL
-""")
-rxn.hold_ratios.volume = args['--volume'], 'µL'
-rxn.num_reactions = int(args['--num-reactions'] or num_templates)
-rxn['linear DNA template'].name = f'{templates} [3]'
-rxn['linear DNA template'].hold_conc.stock_conc = (
-        eval(args['--template-stock']), 'nM')
+        if self.use_mrna:
+            warn("mRNA template concentrations must be empirically optimized.  The default value is just a plausible starting point recommended by NEB (3 µg/50 µL reaction, for the DHFR control).")
+            # NEB recommends 1–5 µg mRNA
+            # Control DHFR mRNA: 760 bp, MW=469647 Da
+            # 3 µg / 50 µL = 128 nM
+            return 125
 
-protocol = stepwise.Protocol()
+        else:
+            warn("DNA template concentrations must be empirically optimized.  The default value is just a plausible starting point recommended by NEB (250 ng/50 µL reaction, for the DHFR control).")
+            # NEB recommends 250 ng
+            # Control DHFR plasmid: 2727 bp, MW=1.69e6 Da
+            # 250 ng / 50 µL = 3 nM
+            return 3
 
-protocol += f"""\
-Setup {plural(rxn.num_reactions):# NEBExpress reaction/s} [1]:
+    @appcli.param(
+            '--template-stock',
+            cast=float,
+            default=None,
+    )
+    def template_stock_nM(self, x):
+        if x is not None:
+            return x
+
+        fatal("Must specify a template stock concentration")
+
+
+    def get_protocol(self):
+        p = stepwise.Protocol()
+        rxn = self.reaction
+
+        p += f"""\
+Setup {plural(self.num_reactions):# NEBExpress reaction/s} [1]:
 
 {rxn}
 
@@ -66,31 +124,59 @@ Setup {plural(rxn.num_reactions):# NEBExpress reaction/s} [1]:
   by gently vortexing.
 """
 
-protocol += f"""\
-Incubate at {args['--incubation-temperature']} for {args['--incubation-time']} [4].
+        p += f"""\
+Incubate at {self.incubation_temp_C}°C for {self.incubation_time} [4].
 """
 
-protocol.footnotes[1] = """\
+        p.footnotes[1] = """\
 During the experimental setup, it is recommended 
 to add the linear DNA template in the last step to 
 allow GamS to bind and inhibit RecBCD exonuclease 
 before RecBCD has a chance to act on the DNA. 
 """
 
-protocol.footnotes[2] = """\
+        p.footnotes[2] = """\
 Aliquot to avoid multiple freeze/thaw cycles.
 """
 
-protocol.footnotes[3] = """\
+        p.footnotes[3] = """\
 Optimal concentration must be determined 
 empirically for each template.
 """
 
-protocol.footnotes[4] = """\
+        p.footnotes[4] = """\
 Additional incubation time (maximum 10 hours) at 
 37°C may increase yield.
 """
 
-print(protocol)
+        return p
 
-# vim: tw=50
+    def get_reaction(self):
+        rxn = stepwise.MasterMix("""\
+                Reagent                            Stock    Volume  MM?
+                =============================  =========  ========  ===
+                water                                     to 50 µL   +
+                S30 extract [2]                              12 µL   +
+                synthesis buffer [2]                  2x     25 µL   +
+                T7 RNA polymerase               450 U/µL      1 µL   +
+                RNase inhibitor (murine)         40 U/µL      1 µL   +
+                GamS nuclease inhibitor [2,3]  1.5 µg/µL      1 µL   +
+        """)
+        rxn.hold_ratios.volume = self.volume_uL, 'µL'
+        rxn.num_reactions = self.num_reactions or len(self.templates)
+
+        rxn['template'].name = f"{','.join(self.templates)} [3]"
+        rxn['template'].stock_conc = self.template_stock_nM, 'nM'
+        rxn['template'].hold_stock_conc.conc = self.template_conc_nM, 'nM'
+
+        rxn.hold_ratios.volume =  self.volume_uL, 'µL'
+
+        if self.use_mrna:
+            del rxn['T7 RNA polymerase']
+
+        return rxn
+
+if __name__ == '__main__':
+    app = NebExpress.from_params()
+    app.load()
+    app.protocol.print()
