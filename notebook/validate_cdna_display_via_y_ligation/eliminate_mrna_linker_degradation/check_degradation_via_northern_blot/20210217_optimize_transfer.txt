@@ -1,0 +1,66 @@
+February 17, 2021
+
+$ stepwise optimize_transfer
+
+1. Prepare 2 samples for SDS PAGE:
+
+   Reagent                  Stock    Volume        3x
+   ──────────────────────────────────────────────────
+   water                            4.00 µL  12.00 µL
+   Bolt LDS sample buffer      4x   2.50 µL   7.50 µL
+   Bolt reducing agent        10x   1.00 µL   3.00 µL
+   ladder,f15              160 nM   2.50 µL
+   ──────────────────────────────────────────────────
+                                   10.00 µL   7.50 µL/rxn
+
+   - Incubate at 70°C for 10 min.
+
+2. Run a gel:
+
+   - Gel: 4−12% Bolt Bis-Tris SDS PAGE
+   - Buffer: Bolt MES SDS running buffer
+   - Load 10 µL of each sample.
+   - Run at 165V for 42 min.
+
+3. Visualize RNA using TLC plate
+
+4. Transfer the RNA to a membrane [1]:
+
+   - Equilibrate the gel in 1x TBE for 15 min with 
+     gentle shaking.  This step is not necessary if 
+     the electrophoresis buffer was 1x TBE.
+
+   - Mark the membrane, to indicate which side the 
+     samples will be on.
+
+   - Soak the following materials in 1x TBE:
+
+     - Whatman 3MM filter paper (6 sheets)
+     - HyBond N+ membrane
+
+   - Assemble the transfer sandwich.  Remove any 
+     bubbles that form [2]:
+
+     - filter paper (3 sheets)
+     - membrane (marked side facing gel)
+     - gel
+     - filter paper (3 sheets)
+
+   - Place the sandwich into a semidry transfer 
+     apparatus such that the membrane is nearer to 
+     the anode (red).  Drain any excess buffer.
+
+   - Run the transfer with the following settings:
+
+     Current: 0.5-3 mA/cm²
+     Voltage: 10-14 V
+     Time:    30m-2h
+
+5. Stop the transfer every 30 min, and check how much
+   of the RNA has been transferred.
+
+Notes:
+[1] https://tinyurl.com/y3zmmqgd
+
+[2] Pipetting a few mL of buffer onto each layer 
+    before adding the next may help prevent bubbles.

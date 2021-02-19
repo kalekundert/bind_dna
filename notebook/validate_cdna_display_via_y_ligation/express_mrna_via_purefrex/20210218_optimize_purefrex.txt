@@ -1,0 +1,72 @@
+February 18, 2021
+
+$ stepwise optimize_purefrex
+
+1. Wipe down your bench and anything you'll touch 
+   (pipets, racks, pens, etc.) with RNaseZap.
+
+2. Perform a serial dilution [1]:
+
+   - Put 4.85 μL 5000 nM f15 in a tube.
+   - Put 2.60 μL nuclease-free water in 7 adjacent
+     tubes.
+   - Transfer 2.25 μL between each tube *except the
+     last* to make 7 2.2-fold dilutions.
+
+3. Setup 8 PUREfrex 2.0 (GeneFrontier PF201)
+   reactions [2]:
+
+   Reagent         Stock   Volume      8.8x
+   ────────────────────────────────────────
+   water                  0.75 µL   6.60 µL
+   solution I             2.50 µL  22.00 µL
+   solution II            0.25 µL   2.20 µL
+   solution III           0.50 µL   4.40 µL
+   f15           5000 nM  1.00 µL
+   ────────────────────────────────────────
+                          5.00 µL   4.00 µL/rxn
+
+   - Thaw solution I at 25–37°C for 1 min, then keep
+     on ice.
+   - Thaw solutions II and III on ice.
+   - Vortex all thawed solutions before use.
+
+4. Incubate at 37°C for 2–4 h.
+
+5. Prepare 8 samples for SDS PAGE:
+
+   Reagent                     Stock    Volume       12x
+   ─────────────────────────────────────────────────────
+   water                               4.00 µL  48.00 µL
+   Bolt LDS sample buffer         4x   2.50 µL  30.00 µL
+   Bolt reducing agent           10x   1.00 µL  12.00 µL
+   sample                  100 ng/µL   2.50 µL
+   ─────────────────────────────────────────────────────
+                                      10.00 µL   7.50 µL/rxn
+
+   - Incubate at 70°C for 10 min.
+
+6. Run a gel:
+
+   - Gel: 4−12% Bolt Bis-Tris SDS PAGE
+   - Buffer: Bolt MES SDS running buffer
+   - Load 10 µL of each sample.
+   - Run at 165V for 42 min.
+
+7. Image with a laser scanner:
+
+   lasers:   488 nm   658 nm
+   filters:  518BP22  710BP40
+
+Notes:
+[1] The final concentrations will be:
+    1  5.000000e+03 nM
+    2  2.320794e+03 nM
+    3  1.077217e+03 nM
+    4  5.000000e+02 nM
+    5  2.320794e+02 nM
+    6  1.077217e+02 nM
+    7  5.000000e+01 nM
+    8  0.000000e+00 nM
+
+[2] https://tinyurl.com/ml26pu09

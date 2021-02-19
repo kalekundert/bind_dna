@@ -25,6 +25,9 @@ linker.  I'm mostly intending to follow the cDNA-display protocol from
    ligate_linker_to_mrna/notes
    remove_unligated_linker/notes
    express_mrna_via_purexpress/notes
+   express_mrna_via_purefrex/notes
+   express_mrna_via_nebexpress/notes
+   express_mrna_via_s30_lysate/notes
    attach_mrna_to_mwasabi/notes
    attach_mrna_to_zif268/notes
 

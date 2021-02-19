@@ -155,3 +155,10 @@ Express Zif268 (StrepTag) --- 2020/02/28
   could be the cause of the poor expression/purification.
 
 - Maybe I should include a positive control next time.
+
+Discussion
+==========
+- For mWasabi (f15), the optimal final concentration is 160 nM (which I 
+  achieved by using 0.8 µL of a 1 µM stock in a 5 µL reaction).
+
+- For Zif268, I was not able to detect protein expression.
