@@ -1,0 +1,123 @@
+February 22, 2021
+
+$ stepwise compare_ivtt
+
+ 1. Wipe down your bench and anything you'll touch 
+    (pipets, racks, pens, etc.) with RNaseZap.
+
+ 2. In the following steps, setup these conditions:
+
+    PURExpress:                    −  +  −  −  −
+    PUREfrex:                      −  −  +  −  −
+    NEBExpress:                    −  −  −  +  −
+    Promega S30 extract (linear):  −  −  −  −  +
+    mRNA + linker (f89):           +  +  +  +  +
+
+ 3. Setup 1 PURExpress (NEB E6800) reaction [1]:
+
+    Reagent                    Stock    Volume
+    ──────────────────────────────────────────
+    water                              1.20 µL
+    solution A                         4.00 µL
+    solution B                         3.00 µL
+    RNase inhibitor, murine  40 U/µL   0.20 µL
+    f89                      1000 nM   1.60 µL
+    ──────────────────────────────────────────
+                                      10.00 µL
+
+    - Thaw all components on ice.
+    - Mix A well; certain components may precipitate
+      during storage.
+    - Mix B gently; do not vortex.
+    - Add A before B.
+
+ 4. Setup 1 PUREfrex 2.0 (GeneFrontier PF201)
+    reaction [2]:
+
+    Reagent         Stock    Volume
+    ───────────────────────────────
+    water                   1.50 µL
+    solution I              5.00 µL
+    solution II             0.50 µL
+    solution III            1.00 µL
+    f89           1000 nM   2.00 µL
+    ───────────────────────────────
+                           10.00 µL
+
+    - Thaw solution I at 25–37°C for 1 min, then keep
+      on ice.
+    - Thaw solutions II and III on ice.
+    - Vortex all thawed solutions before use.
+
+ 5. Setup 1 NEBExpress (NEB E5360) reaction [3]:
+
+    Reagent                    Stock    Volume
+    ──────────────────────────────────────────
+    S30 extract                        2.40 µL
+    synthesis buffer              2x   5.00 µL
+    RNase inhibitor, murine  40 U/µL   0.20 µL
+    f89                      1000 nM   2.40 µL
+    ──────────────────────────────────────────
+                                      10.00 µL
+
+    - Thaw all components on ice.
+    - Gently vortex the S30 extract and the synthesis
+      buffer before use.
+    - Add template after nuclease inhibitors.
+
+ 6. Setup 1 S30 (Promega L1030) reaction [4]:
+
+    Reagent                        Stock    Volume
+    ──────────────────────────────────────────────
+    complete amino acid mixture            1.00 µL
+    S30 premix                             4.00 µL
+    S30 extract, linear                    3.00 µL
+    f89                          1000 nM   2.00 µL
+    ──────────────────────────────────────────────
+                                          10.00 µL
+
+    - Gently mix all thawed components before use.
+
+ 7. Incubate all 4 IVTT reactions at 37°C for 30 min.
+
+ 8. Prepare 200 nM f89 as a control.
+
+ 9. Prepare 5 samples for SDS PAGE:
+
+    Reagent                     Stock    Volume      7.5x
+    ─────────────────────────────────────────────────────
+    water                               4.00 µL  30.00 µL
+    Bolt LDS sample buffer         4x   2.50 µL  18.75 µL
+    Bolt reducing agent           10x   1.00 µL   7.50 µL
+    sample                  100 ng/µL   2.50 µL
+    ─────────────────────────────────────────────────────
+                                       10.00 µL   7.50 µL/rxn
+
+    - Incubate at 70°C for 10 min.
+
+10. Run a gel:
+
+    - Gel: 4−12% Bolt Bis-Tris SDS PAGE
+    - Buffer: Bolt MES SDS running buffer
+    - Load 10 µL of each sample.
+    - Run at 165V for 42 min.
+
+11. Image with a laser scanner:
+
+    lasers:   488 nm   658 nm
+    filters:  518BP22  710BP40
+
+Notes:
+[1] https://tinyurl.com/dxapyo69
+
+[2] https://tinyurl.com/ml26pu09
+
+[3] https://tinyurl.com/3e8tlw36
+
+[4] https://tinyurl.com/2bvzhpdz
+
+    The activity of the S30 system may be inhibited
+    by NaCl (≥50mM), glycerol (≥1%), or by very small
+    amounts of magnesium or potassium salts.
+    Precipitate the DNA template with sodium acetate
+    rather than ammonium acetate.

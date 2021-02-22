@@ -28,3 +28,22 @@ my mRNA (:expt:`66`), I think it's worth trying some other systems:
 I think it's worth trying rabbit reticulocyte lysate as well, but that would be 
 a more involved experiment because I'd first have to reclone my constructs.
 
+Results
+=======
+
+Observations:
+
+- My f89 stock is not concentrated enough to reach the ideal concentration for 
+  the NEBExpress reaction (400 nM).  The most I can reach is:
+
+  .. math::
+
+    \frac{\pu{1000 nM} \times \pu{1.44 µL}}{\pu{6 µL}} = \pu{240 nM}
+
+  According to the results from :expt:`98`, that should be enough to get ≈50% 
+  of the maximum expression.  Hopefully that will be good enough.
+
+- I mistakenly entered the wrong target concentration for the PUREfrex 
+  reaction.  As a result, I used 200 nM and not 500 nM.  I actually could not 
+  have reached 500 nM, but I could've gotten to 350 nM.  Note that 200 nM 
+  should still be enough to get 70% yield.

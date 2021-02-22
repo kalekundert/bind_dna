@@ -117,3 +117,27 @@ Conclusions:
   load more material in the first place.  Note that wet transfers are generally 
   recommended Western blotting for large proteins.
 
+Optimize UV exposure --- 2021/02/20
+===================================
+.. protocol:: 20210219_optimize_crosslinking.txt
+
+.. figure:: 20210220_optimize_crosslinking.svg
+
+Observations:
+
+- No signal at all.
+
+- The hybridization solution had kinda solidified after the overnight 
+  incubation at 37°C.  I wonder if I need to find a way to really do the 
+  incubation at 42°C.
+
+Troubleshooting:
+
+- Maybe the UV crosslinking didn't work.  I am using an old lamp of unknown 
+  power and/or wavelength.  Is there anything I can do about this other than 
+  buying a new lamp?
+
+- Maybe the dye didn't work.  I can try spotting a positive control and making 
+  sure it's visible.
+
+- Maybe the hybridization didn't work.  How can I test this...
