@@ -29,6 +29,7 @@ linker.  I'm mostly intending to follow the cDNA-display protocol from
    express_mrna_via_nebexpress/notes
    express_mrna_via_s30_lysate/notes
    attach_mrna_to_mwasabi/notes
+   attach_mrna_to_flag/notes
    attach_mrna_to_zif268/notes
 
 Considerations

@@ -55,13 +55,9 @@ How much poly-rA/oligo-dT?
 Results
 =======
 
-2021/02/15
-----------
 .. protocol:: 20210215_protect_mrna_with_ra_dt.txt
 
 .. figure:: 20210215_protect_mrna_with_ra_dt.svg
-
-.. datatable:: 20210215_protect_mrna_with_ra_dt.xlsx
 
 Observations:
 
@@ -76,7 +72,7 @@ Observations:
 - The GFP signal was very faint, probably for the same reasons discussed in 
   :expt:`62` (i.e. short reaction time).
 
-- About 90% of the linker in this f89 prep is ligated to mRNA (data not shown).
+- About 90% of the linker in this f89 prep is ligated to mRNA.
 
 Conclusions:
 
@@ -87,7 +83,7 @@ Conclusions:
   contamination, I would've expected poly-rA/oligo-dT to have a bigger 
   inhibitory effect.  On the other hand, if there wasn't RNase H contamination, 
   I wouldn't have expected poly-rA/oligo-dT to have any effect at all.  The 
-  weak effect that I observe could go either way.
+  weak effect that I observe is hard to interpret.
 
 - I wonder if it would be informative to do similar experiments with decoy 
   ssDNA, dsDNA, ssRNA, and dsRNA.

@@ -94,6 +94,7 @@ References
 .. [Praszkier2000] :doi:`10.1128/JB.182.14.3972-3980.2000`
 .. [Putney1981] :doi:`10.1073/pnas.78.12.7350`
 .. [Rebar1994] :doi:`10.1126/science.8303274`.  Too old to access...
+.. [Reyes2021] :doi:`10.1002/bit.27696`
 .. [Reiersen2005] :doi:`10.1093/nar/gni010`
 .. [Rivera2015] :doi:`10.1101/pdb.prot081331`
 .. [Rizzo2002] :doi:`10.1006/mcpr.2002.0423`

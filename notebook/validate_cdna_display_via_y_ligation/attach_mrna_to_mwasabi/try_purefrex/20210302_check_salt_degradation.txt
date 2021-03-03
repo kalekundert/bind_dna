@@ -1,0 +1,49 @@
+March 2, 2021
+
+$ stepwise check_salt_degradation
+
+1. Wipe down your bench and anything you'll touch 
+   (pipets, racks, pens, etc.) with RNaseZap.
+
+2. In the following steps, setup these conditions:
+
+   f89:    +  +  +  +
+   KCl:    −  −  +  +
+   MgOAc:  −  +  −  +
+
+3. Setup the coupling reaction:
+
+   Reagent    Stock   Volume
+   ─────────────────────────
+   f89       330 nM  5.00 µL
+   MgOAc    1000 mM  0.47 µL
+   KCl      3000 mM  1.82 µL
+   ─────────────────────────
+                     7.30 µL
+
+4. Incubate at 25°C for 1h.
+
+5. Prepare 4 samples for SDS PAGE:
+
+   Reagent                  Stock    Volume        6x
+   ──────────────────────────────────────────────────
+   water                            4.00 µL  24.00 µL
+   Bolt LDS sample buffer      4x   2.50 µL  15.00 µL
+   Bolt reducing agent        10x   1.00 µL   6.00 µL
+   sample                  160 nM   2.50 µL
+   ──────────────────────────────────────────────────
+                                   10.00 µL   7.50 µL/rxn
+
+   - Incubate at 70°C for 10 min.
+
+6. Run a gel:
+
+   - Gel: 4−12% Bolt Bis-Tris SDS PAGE
+   - Buffer: Bolt MES SDS running buffer
+   - Load 10 µL of each sample.
+   - Run at 165V for 42 min.
+
+7. Image with a laser scanner:
+
+   lasers:   488 nm   658 nm
+   filters:  518BP22  710BP40

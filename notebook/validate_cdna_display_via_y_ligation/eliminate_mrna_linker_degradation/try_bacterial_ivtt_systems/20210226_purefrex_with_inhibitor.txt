@@ -1,0 +1,60 @@
+February 26, 2021
+
+$ stepwise purefrex_with_inhibitor
+
+1. Wipe down your bench and anything you'll touch 
+   (pipets, racks, pens, etc.) with RNaseZap.
+
+2. In the following steps, setup these conditions:
+
+   PUREfrex:             +  +  +  +
+   RNase inhibitor:      −  −  +  +
+   mRNA + linker (f89):  −  +  −  +
+
+3. Setup 4 PUREfrex 2.0 (GeneFrontier PF201)
+   reactions [1]:
+
+   Reagent                    Stock   Volume      4.4x
+   ───────────────────────────────────────────────────
+   solution I                        2.50 µL  11.00 µL
+   solution II                       0.25 µL   1.10 µL
+   solution III                      0.50 µL   2.20 µL
+   RNase inhibitor, murine  40 U/µL  0.20 µL
+   f89                      1000 nM  1.55 µL
+   ───────────────────────────────────────────────────
+                                     5.00 µL   3.25 µL/rxn
+
+   - Thaw solution I at 25–37°C for 1 min, then keep
+     on ice.
+   - Thaw solutions II and III on ice.
+   - Vortex all thawed solutions before use.
+
+4. Incubate at 37°C for 30.
+
+5. Prepare 4 samples for SDS PAGE:
+
+   Reagent                     Stock    Volume        6x
+   ─────────────────────────────────────────────────────
+   water                               4.00 µL  24.00 µL
+   Bolt LDS sample buffer         4x   2.50 µL  15.00 µL
+   Bolt reducing agent           10x   1.00 µL   6.00 µL
+   sample                  100 ng/µL   2.50 µL
+   ─────────────────────────────────────────────────────
+                                      10.00 µL   7.50 µL/rxn
+
+   - Incubate at 70°C for 10 min.
+
+6. Run a gel:
+
+   - Gel: 4−12% Bolt Bis-Tris SDS PAGE
+   - Buffer: Bolt MES SDS running buffer
+   - Load 10 µL of each sample.
+   - Run at 165V for 42 min.
+
+7. Image with a laser scanner:
+
+   lasers:   488 nm   658 nm
+   filters:  518BP22  710BP40
+
+Note:
+[1] https://tinyurl.com/ml26pu09

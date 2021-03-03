@@ -40,14 +40,24 @@ Observations:
   the major product at lower mRNA concentrations.  Instead, the products appear 
   to be in about the same ratio at each mRNA concentration.
 
+With RNase inhibitor --- 2021/02/23
+===================================
+.. protocol:: 20210223_optimize_purefrex_rnase.txt
+
+.. figure:: 20210223_optimize_purefrex_rnase.svg
+
+Observations:
+
+- Ratio of small to large mWasabi bands is about equal in all conditions.
+
+- Relative expression levels are comparable to the −RNase inhibitor reactions 
+  from 2021/02/19.
+
 Discussion
 ==========
 - The optimal mWasabi mRNA concentration for a PUREfrex reaction is ≈500 nM.  1 
-  µM mRNA gives only slightly higher expression.
+  µM mRNA gives only slightly higher expression.  Adding RNase inhibitor does 
+  not affect this concentration.
 
 - For some reason, the PUREfrex kit is the only one that does not give a 
   homogeneous product for mWasabi.
-
-
-
-- 

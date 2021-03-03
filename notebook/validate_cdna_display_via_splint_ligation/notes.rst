@@ -26,3 +26,23 @@ RT primer
   - Treat dsDNA with 5'→3' exonuclease that would be blocked by biotin (e.g. λ 
     exonuclease, T7 exonuclease).
   - Can also use biotin in affinity selection steps.
+
+  - Biotin would also block RT, though, right?
+
+DNA vs RNA linker
+-----------------
+- I'd prefer to have a DNA linker:
+
+  - Cheaper
+  - No RNA in final construct; should be more stable.
+
+- DNA *can* be used as the template for MMLV RT:
+
+  https://www.neb.com/faqs/0001/01/01/can-dna-be-used-as-a-template-for-m-mulv-reverse-transcriptase
+
+  - This suggests that the following architecture might work:
+
+    .. figure:: architecture.svg
+
+    The reverse transcriptase would have to transcribe a few bases of DNA 
+    before getting the the RNA, but it might work.

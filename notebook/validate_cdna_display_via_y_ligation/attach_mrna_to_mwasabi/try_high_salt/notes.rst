@@ -39,6 +39,35 @@ most trying the replicate.
   method with the same ribosome as I'm using, but it doesn't mention a 
   high-salt incubation.  I think this might be an omission.
 
+[Reyes2021]_
+------------
+.. note::
+
+  I didn't find this paper until 2021/02/26.
+
+- Expression reaction:
+
+  - PUREfrex 1.0
+
+    - "According to GeneFrontier, PUREfrex 2.0 is optimized for maximizing the 
+      protein translation efficiency and therefore it does not match the 
+      purpose of stabilizing the ribosome at the mRNA/DNA‐tag junction to form 
+      an mRNA‐peptide conjugate."
+
+    - I have PUREfrex 2.0, but maybe it's worth trying PUREfrex 1.0 as well.
+
+  - 37°C for 30 min
+
+- Coupling reaction:
+
+  - 32.5 mM MgCl₂
+  - 375 mM KCl
+
+- Electrophoresis:
+
+  - 2x Laemmli buffer
+  - Spin 1m, 10000g to remove salt precipitate
+
 [Liu2000]_
 ----------
 - Expression reaction:

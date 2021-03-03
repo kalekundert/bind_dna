@@ -2,7 +2,9 @@
 Ligate with RNA oligo
 *********************
 
-- If the linker is RNA -> no RNase H substrate
+- If the linker is RNA, then there would be no substrate for RNase H.
+
+  - Until the RT step...
 
 - `RtcB ligase <https://www.neb.com/products/m0458-rtcb-ligase>`_ can ligate 
   RNA with 2',3'-cyclic phosphate to RNA with 5'-OH.  2',3'-cyclic phosphates 
@@ -16,7 +18,7 @@ Ligate with RNA oligo
     ligases) and 5'-hydroxyls.  These 5'-hydroxyls would be substrates for 
     RtcB, but would simply reform the ribozyme.
 
-  - The linker is totally synthetic, so I could easily order it with a 5-OH.
+  - The linker is totally synthetic, so I could easily order it with a 5'-OH.
 
   - Thus, the combination of RtcB and HDV-ribozyme would mean that the only 
     ligation that could possibly go forward would be the one between the linker 

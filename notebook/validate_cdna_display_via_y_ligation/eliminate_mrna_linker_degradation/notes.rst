@@ -11,6 +11,7 @@ Eliminate mRNA-linker degradation
    displace_mrna_with_dna_oligo/notes
    inhibit_rnase_h_with_poly_ra_oligo_dt/notes
    ligate_with_rna_oligo/notes
+   try_bacterial_ivtt_systems/notes
 
 2020/09/09:
 
@@ -25,16 +26,25 @@ reaction).  I can think of two broad explanations for this:
    how this could happen: The reaction has RNase-inhibitor, and shouldn't have 
    any RNase in the first place.
 
+   .. update:: 2021/02/22
+
+     This idea is not really consistent with results from :expt:`18` or 
+     expecially :expt:`67`, which both show either full length mRNA or 
+     linker-length oligo---but nothing in between.  However, neither of these 
+     experiments were designed to test this hypothesis.  A timecourse (0-30 
+     min) would probably provide better evidence.
+
 2. The linker is not actually ligated to the mRNA.  Either it was never ligated 
    in the first place, or something is undoing the ligation.  The problem with 
    this explanation is that it's just implausible.  Experiments such as 
    :expt:`50` convincingly show that the ligation is working,and I just can't 
    imagine how the ligation could be reversed.
 
-.. update:: 2020/10/27
-
-  George proposed a reasonable mechanism for the second possibility: RNaseH 
-  contamination.  This would cleave the linker from the mRNA.  See :expt:`77`
+   .. update:: 2020/10/27
+   
+     George proposed a reasonable mechanism for this idea: RNaseH 
+     contamination.  This would cleave the linker from the mRNA.  See 
+     :expt:`77`.
 
 The goal of this series of experiments is to diagnose and solve this problem.
 
@@ -109,4 +119,11 @@ After talking with Fitzy about it, I think I'm going to try to pursue the
 Northern blotting and broccoli aptamer ideas in parallel.
 
 
+
+Discussion
+==========
+- I'm quite confident, but not quite certain, that the degradation observed in 
+  :expt:`61` and :expt:`65` is caused by RNase H.
+
+- Using PUREfrex instead of PURExpress eliminates this degradation.
 

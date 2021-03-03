@@ -102,6 +102,21 @@ In vitro translation
    - I'll have to test if the high-salt incubation is important.  For now, I 
      should just do it.
 
+Visualizing Zif268
+------------------
+2021/03/01:
+
+I've been using mWasabi for all of my experiments up to this point, because I 
+haven't been able to easily visualize Zif268.  However, the FluoroTect reagent 
+from Promega (L5001) seems very promising.  Basically, it's just tRNA loaded 
+with fluorescently tagged Lys.  This gets incorporated into newly expressed 
+protein, and can be easily visualized on a gel.  The actual fluorescent 
+molecule is BODIPY-FL, which has basically the same spectrum as FITC and should 
+be completely orthogonal to Cy5.
+
+Furthermore, the FluoroTect reagent is actually recommended by the PUREfrex 
+manual, so there's definitely reason to think it should work well.
+
 Results
 =======
 
