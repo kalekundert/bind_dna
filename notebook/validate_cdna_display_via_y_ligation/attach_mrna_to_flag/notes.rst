@@ -10,9 +10,8 @@ very polar.  It should also be easy to detect by Western blot.
 
 Given that FLAG seems to be a standard positive control and/or 
 proof-of-principle, I think it would be smart to try getting to work in my 
-hands.
-
-I'm going
+hands.  My goal is to establish a good positive control, from which I can try 
+to get display with Zif268 working.
 
 Considerations
 ==============
@@ -34,10 +33,11 @@ Ordering
 
 - ???_REYES2021_LIG_RT_16
 
-  - IDT: "The internal version of this modification is attached to the oligo 
-    through a dT base. Incorporation of the internal version will add a dT 
-    nucleotide at that position. To avoid adding an extra nucleotide, replace 
-    an existing T nucleotide in your sequence with the required modification."
+  - IDT: "The internal version of this modification [iAzideN] is attached to 
+    the oligo through a dT base. Incorporation of the internal version will add 
+    a dT nucleotide at that position. To avoid adding an extra nucleotide, 
+    replace an existing T nucleotide in your sequence with the required 
+    modification."
 
   - The [Naimudden2016]_ linker has 6 nt 3' of the azide, which is consistent 
     with the use of 6 nt primers for RT.  Conveniently, this sequence has a T 
@@ -65,4 +65,16 @@ Ordering
   think I can just reuse o125.
 
   o125:   /5DBCOTEG/AAAAAAAAAAAAAAAAAA/iSp18//iSp18//iSp18//iCy5//iSp18/CC/3Puro/
-  reyes:  /5DBCOTEG/AAAAAAAAAAAAAAAAAA/iSp18/       /iSp18//iCy5//iSp18/CC/3Puro/
+  reyes:            AAAAAAAAAAAAAAAAAA/iSp18/       /iSp18//iCy5//iSp18/CC/3Puro/
+
+
+Conditions
+----------
+- F
+  o
+
+Protocols
+---------
+- Order everything
+
+- 

@@ -101,133 +101,133 @@ different length linker would be optimal for me.
     [Liu2000] has data showing that the PEG spacer actually improves mRNA 
     display.  So the arguments below are probably wrong.
 
-   - PEG has a much shorter persistence length than ssDNA:
+  - PEG has a much shorter persistence length than ssDNA:
 
-     ===========================  =======  ===========================
-     Parameter                      Value  Reference
-     ===========================  =======  ===========================
-     oligo-dT monomer length        6.3 Å  [Murphy2004]_
-     oligo-dT persistence length   25.0 Å  [Murphy2004]_ (100 mM NaCl)
+    ===========================  =======  ===========================
+    Parameter                      Value  Reference
+    ===========================  =======  ===========================
+    oligo-dT monomer length        6.3 Å  [Murphy2004]_
+    oligo-dT persistence length   25.0 Å  [Murphy2004]_ (100 mM NaCl)
 
-     PEG monomer length             3.5 Å  (pymol measurement)
-     Spacer18 monomer length      6×3.5 Å
-     PEG persistence length         3.8 Å  [Kienberger2000]_
-     ===========================  =======  ===========================
+    PEG monomer length             3.5 Å  (pymol measurement)
+    Spacer18 monomer length      6×3.5 Å
+    PEG persistence length         3.8 Å  [Kienberger2000]_
+    ===========================  =======  ===========================
 
-     The parameters for ssDNA depend on salt concentration and (to a lesser 
-     extent) sequence (more so if the sequence can form hairpins).  The above 
-     values were measured for oligo-dT in 100 mM NaCl, which I think mimics my 
-     experimental system fairly well.  Still, even studies that look at 
-     different sequences/salt concentrations report fairly similar values.
+    The parameters for ssDNA depend on salt concentration and (to a lesser 
+    extent) sequence (more so if the sequence can form hairpins).  The above 
+    values were measured for oligo-dT in 100 mM NaCl, which I think mimics my 
+    experimental system fairly well.  Still, even studies that look at 
+    different sequences/salt concentrations report fairly similar values.
 
-   - The `wormlike-chain model 
-     <https://en.wikipedia.org/wiki/Worm-like_chain>`__ can be used to 
-     calculate the average end-to-end distance of semi-flexible linkers with 
-     ssDNA and PEG.  The relevant equation is below, where :math:`R` is the 
-     end-to-end distance, :math:`P` is the persistence length, and :math:`L_0` 
-     is the "contour length", or the length of the fully extended polymer:
+  - The `wormlike-chain model 
+    <https://en.wikipedia.org/wiki/Worm-like_chain>`__ can be used to 
+    calculate the average end-to-end distance of semi-flexible linkers with 
+    ssDNA and PEG.  The relevant equation is below, where :math:`R` is the 
+    end-to-end distance, :math:`P` is the persistence length, and :math:`L_0` 
+    is the "contour length", or the length of the fully extended polymer:
 
-     .. math::
+    .. math::
 
-         \langle R^2 \rangle = 2 P L_0 \left[ 1 - \frac{P}{L_0} \left( 1 - 
-         e^{-L_0/P} \right) \right]
+        \langle R^2 \rangle = 2 P L_0 \left[ 1 - \frac{P}{L_0} \left( 1 - 
+        e^{-L_0/P} \right) \right]
 
-     In the limit that :math:`L_0 \gg P`, this simplifies to:
+    In the limit that :math:`L_0 \gg P`, this simplifies to:
 
-     .. math::
+    .. math::
 
-         \langle R^2 \rangle = 2 P L_0
+        \langle R^2 \rangle = 2 P L_0
 
-   - The distance between where the mRNA exits the ribosome and where 
-     puromycins binds in the A-site is about 85Å.  Additionally, the shortest 
-     physical path between these two points (i.e. not going through the 
-     ribosome) is about 185Å.  I determined these distances by aligning 4V5D 
-     and 1Q82 in pymol.  4V5D shows where the mRNA exists the ribosome and 
-     where the tRNAs bind, while 1Q82 show where puromycin binds.  Both are 
-     prokaryotic ribosomes.
+  - The distance between where the mRNA exits the ribosome and where 
+    puromycins binds in the A-site is about 85Å.  Additionally, the shortest 
+    physical path between these two points (i.e. not going through the 
+    ribosome) is about 185Å.  I determined these distances by aligning 4V5D 
+    and 1Q82 in pymol.  4V5D shows where the mRNA exists the ribosome and 
+    where the tRNAs bind, while 1Q82 show where puromycin binds.  Both are 
+    prokaryotic ribosomes.
 
-     :download:`ribosome_puro.pse`
+    :download:`ribosome_puro.pse`
 
-   - I assumed that the ideal linker length would be the one where the average 
-     end-to-end distance would equal the target end-to-end distance (provided 
-     that the linker length is at least as long as the shortest path length).  
-     This assumption is a bit sloppy, but probably about right [Liese2015]_:
+  - I assumed that the ideal linker length would be the one where the average 
+    end-to-end distance would equal the target end-to-end distance (provided 
+    that the linker length is at least as long as the shortest path length).  
+    This assumption is a bit sloppy, but probably about right [Liese2015]_:
 
-      - Really what I care about is the effective concentration, which requires 
-        a volume normalization.  But there is a consistent relationship between 
-        average end-to-end distance and effective concentration.
+     - Really what I care about is the effective concentration, which requires 
+       a volume normalization.  But there is a consistent relationship between 
+       average end-to-end distance and effective concentration.
 
-      - This doesn't account for the excluded volume of the ribosome.
+     - This doesn't account for the excluded volume of the ribosome.
 
-      - This also doesn't account for potential interactions between the linker 
-        and the ribosome (e.g. ssDNA may be more likely to interact with the 
-        ribosome than PEG).
+     - This also doesn't account for potential interactions between the linker 
+       and the ribosome (e.g. ssDNA may be more likely to interact with the 
+       ribosome than PEG).
 
-   - In the case that :math:`L_0 \gg P`, the ideal linker-length is easy to 
-     calculate:
+  - In the case that :math:`L_0 \gg P`, the ideal linker-length is easy to 
+    calculate:
 
-     .. math::
+    .. math::
 
-         L_0 = \frac{\langle R^2 \rangle}{2 P}
+        L_0 = \frac{\langle R^2 \rangle}{2 P}
 
-     The general case cannot be computed analytically, but can be solved 
-     numerically.  I went to the effort to do this because ssDNA is somewhat in 
-     the intermediate domain.
+    The general case cannot be computed analytically, but can be solved 
+    numerically.  I went to the effort to do this because ssDNA is somewhat in 
+    the intermediate domain.
 
-   - Given :math:`L_0`, the length of the linker in terms of the number of 
-     monomer units can be calculated as follows, where :math:`N` is the number 
-     of monomers and :math:`b` is the length of a single monomer:
+  - Given :math:`L_0`, the length of the linker in terms of the number of 
+    monomer units can be calculated as follows, where :math:`N` is the number 
+    of monomers and :math:`b` is the length of a single monomer:
 
-     .. math::
+    .. math::
 
-         N = \frac{L_0}{b}
+        N = \frac{L_0}{b}
 
-   - Solving the above equations gives the following ideal linker lengths for 
-     Spacer-18 and poly-dT::
+  - Solving the above equations gives the following ideal linker lengths for 
+    Spacer-18 and poly-dT::
 
-         $ ./wlc_end_to_end.py
+        $ ./wlc_end_to_end.py
 
-     ==========  ===========  =========
-     Monomer     :math:`L_0`  :math:`N`
-     ==========  ===========  =========
-     Spacer-18         919 Å         44
-     dT                164 Å         29
-     ==========  ===========  =========
+    ==========  ===========  =========
+    Monomer     :math:`L_0`  :math:`N`
+    ==========  ===========  =========
+    Spacer-18         919 Å         44
+    dT                164 Å         29
+    ==========  ===========  =========
 
-     Note that the ideal length dT oligo is slightly shorter than the minimum 
-     path length I measured (185 Å).  :math:`N = 29` is calculated based on the 
-     minimum path length, not the :math:`L_0` in the table.
+    Note that the ideal length dT oligo is slightly shorter than the minimum 
+    path length I measured (185 Å).  :math:`N = 29` is calculated based on the 
+    minimum path length, not the :math:`L_0` in the table.
 
-   - Spacer-18 requires a much longer polymer than dT to reach the same average 
-     end-to-end distance.  This was counter-intuitive to me at first, but it 
-     makes sense because PEG is much floppier (i.e. is has a much shorter 
-     persistence length).  In effect, it's taking a random walk with shorter 
-     steps, so it's hard for it to get as far.  Another way to think about it 
-     is that Spacer-18 has more conformational entropy, so it's harder to 
-     extend it as far.
+  - Spacer-18 requires a much longer polymer than dT to reach the same average 
+    end-to-end distance.  This was counter-intuitive to me at first, but it 
+    makes sense because PEG is much floppier (i.e. is has a much shorter 
+    persistence length).  In effect, it's taking a random walk with shorter 
+    steps, so it's hard for it to get as far.  Another way to think about it 
+    is that Spacer-18 has more conformational entropy, so it's harder to 
+    extend it as far.
 
-   - I expect that the 27x dA spacer commonly used for mRNA display is in fact 
-     also the best linker for cDNA display.  It's interesting that the length 
-     of this spacer (27) corresponds very closely to the optimal lengths I 
-     calculated (29 considering the minimum path length, 26 ignoring it).  It's 
-     also worth pointing out that [Roberts1997]_ successfully used a 21x dA 
-     linker, which suggests that my minimum path length is an overestimate.
-     
-     Note than mRNA display uses dA in the spacer because it's known to halt 
-     translation [Roberts1997]_.  That consideration isn't relevant to cDNA 
-     display, but   [Naimudden2016]_ also uses dA for a different reason: 
-     compatibility with commercially available oligo-dT beads.  dA may have a 
-     longer persistence length than dT, due to increased base stacking, but the 
-     difference probably isn't significant.  I'm going to stick with oligo-dA.
-     
-   - I expect that the 4x spacer-18 spacers used by [Mochizuki2011]_ and others 
-     are actually pretty bad.  They are only about 90 Å at full extension, 
-     significantly shorter than the minimal path length I measured (185 Å), and 
-     their average end-to-end distance would be much shorter than that.
+  - I expect that the 27x dA spacer commonly used for mRNA display is in fact 
+    also the best linker for cDNA display.  It's interesting that the length 
+    of this spacer (27) corresponds very closely to the optimal lengths I 
+    calculated (29 considering the minimum path length, 26 ignoring it).  It's 
+    also worth pointing out that [Roberts1997]_ successfully used a 21x dA 
+    linker, which suggests that my minimum path length is an overestimate.
+    
+    Note than mRNA display uses dA in the spacer because it's known to halt 
+    translation [Roberts1997]_.  That consideration isn't relevant to cDNA 
+    display, but   [Naimudden2016]_ also uses dA for a different reason: 
+    compatibility with commercially available oligo-dT beads.  dA may have a 
+    longer persistence length than dT, due to increased base stacking, but the 
+    difference probably isn't significant.  I'm going to stick with oligo-dA.
+    
+  - I expect that the 4x spacer-18 spacers used by [Mochizuki2011]_ and others 
+    are actually pretty bad.  They are only about 90 Å at full extension, 
+    significantly shorter than the minimal path length I measured (185 Å), and 
+    their average end-to-end distance would be much shorter than that.
 
-     The 18x dA, 4x spacer-18 spacer used by [Naimudden2016]_ is better, but 
-     mostly because it adds dA; I don't think the spacer-18 is doing much 
-     (besides making the oligo more expensive).
+    The 18x dA, 4x spacer-18 spacer used by [Naimudden2016]_ is better, but 
+    mostly because it adds dA; I don't think the spacer-18 is doing much 
+    (besides making the oligo more expensive).
 
 I want to try using a 27x dA arm, because it will be relatively cheap, and I 
 think it will work well.

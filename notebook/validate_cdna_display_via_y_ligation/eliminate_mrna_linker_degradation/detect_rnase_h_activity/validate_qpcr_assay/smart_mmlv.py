@@ -5,6 +5,7 @@ from po4 import load_db
 from appcli import Key, DocoptConfig
 from inform import plural
 from copy import deepcopy
+from stepwise import pl, ul, pre
 from stepwise_mol_bio import Main, comma_list, comma_set
 from operator import not_
 
@@ -156,12 +157,12 @@ References:
             anneal.num_reactions += 1
             del mmlv_nrt['SMART MMLV RT']
 
-        p += f"""\
-Anneal the {plural(self.primers):RT primer/s} to the {plural(self.templates):RNA template/s} [1]:
+        p += pl(
+                f"Anneal the {plural(self.primers):RT primer/s} to the {plural(self.templates):RNA template/s} [1]:",
+                anneal,
+        )
 
-{anneal}
-"""
-        p.footnotes[1] = """\
+        p.footnotes[1] = pre("""\
 This protocol is based on the official Takara 
 SMART MMLV reverse transcription protocol:
 
@@ -185,41 +186,30 @@ However, I made three modifications:
   the master mix has a 1x buffer concentration, so 
   I don't need to worry about the enzyme being 
   unhappy.
-"""
-        p += f"""\
-Incubate at 70°C for 3 min, then immediately
-cool on ice.
-"""
-        p += f"""\
-Setup {plural(mmlv.num_reactions):# reverse transcription reaction/s}:
-
-{mmlv}
-"""
+""")
+        p += "Incubate at 70°C for 3 min, then immediately cool on ice."
+        p += pl(
+                "Setup {plural(mmlv.num_reactions):# reverse transcription reaction/s}:",
+                mmlv,
+        )
         if self.nrt_control:
-            p += f"""\
-Setup a −reverse transcriptase (NRT) control:
+            p += pl(
+                    f"Setup a −reverse transcriptase (NRT) control:",
+                    mmlv_nrt,
+            )
 
-{mmlv_nrt}
-"""
+        p += "Incubate at 42°C for 60 min [2]."
+        p.footnotes[2] = "Samples can be incubated for 50-90 min if necessary."
 
-        p += """\
-Incubate at 42°C for 60 min [2].
-"""
-        p.footnotes[2] = """\
-Samples can be incubated for 50-90 min if
-necessary.
-"""
         if self.quench == 'none':
             pass
 
         elif self.quench == 'heat':
-            p += """\
-Incubate at 70°C for 15 min.
-"""
+            p += "Incubate at 70°C for 15 min."
+
         elif self.quench == 'edta':
-            p += """\
-Add 4 µL 60 mM EDTA.
-"""
+            p += "Add 4 µL 60 mM EDTA."
+
         else:
             raise ConfigError(f"unexpected value for quench parameter: {self.quench}")
 

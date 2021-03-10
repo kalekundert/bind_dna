@@ -18,6 +18,7 @@ References
 .. [Crinelli2002] :doi:`10.1093/nar/30.11.2435`
 .. [Compton1985] :doi:`10.1016/0003-2697(85)90190-3`
 .. [Congdon1993] :doi:`10.1006/abio.1993.1439`
+.. [Contreras2007] :doi:`10.1016/j.jmb.2007.06.070`
 .. [Cote2008] :doi:`10.1016/j.virusres.2008.01.001`
 .. [Cotten2011] :doi:`10.1038/nprot.2011.354`
 .. [Dobosy2011] :doi:`10.1186/1472-6750-11-80`
@@ -81,6 +82,7 @@ References
 .. [Naimudden2011] :doi:`10.1186/1756-6606-4-2`
 .. [Naimudden2016] :doi:`10.1021/acscombsci.5b00139`
 .. [Nakata2012] :doi:`10.1002/anie.201108199`
+.. [Nakatoga2002] :doi:`10.1016/S0092-8674(02)00649-9`
 .. [Newton2008] :doi:`10.2146/ajhp070138`
 .. [Niederholtmeyer2013] :doi:`10.1021/sb300104f`
 .. [Nishigaki1998] :doi:`10.1023/A:1009644028931`

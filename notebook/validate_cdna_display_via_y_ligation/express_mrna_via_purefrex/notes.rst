@@ -6,13 +6,13 @@ Before I an do experiments with PUREfrex, I need to determine the optimal
 amount of mRNA to use in reactions.  My plan is to closely follow the protocol 
 from :expt:`18` (2020/02/26).
 
-2021/02/19
-==========
-.. protocol:: 20210219_optimize_purefrex_s30.txt
+PUREfrex 2.0, mWasabi --- 2021/02/19
+====================================
+.. protocol:: 20210219_optimize_purefrex2_s30.txt
 
-.. figure:: 20210219_optimize_purefrex_s30.svg
+.. figure:: 20210219_optimize_purefrex2_s30.svg
 
-.. datatable:: 20210219_optimize_purefrex.xlsx
+.. datatable:: 20210219_optimize_purefrex2.xlsx
 
 Observations:
 
@@ -40,11 +40,11 @@ Observations:
   the major product at lower mRNA concentrations.  Instead, the products appear 
   to be in about the same ratio at each mRNA concentration.
 
-With RNase inhibitor --- 2021/02/23
-===================================
-.. protocol:: 20210223_optimize_purefrex_rnase.txt
+PUREfrex 2.0 + RNase inhibitor, mWasabi --- 2021/02/23
+======================================================
+.. protocol:: 20210223_optimize_purefrex2_rnase.txt
 
-.. figure:: 20210223_optimize_purefrex_rnase.svg
+.. figure:: 20210223_optimize_purefrex2_rnase.svg
 
 Observations:
 
@@ -52,6 +52,12 @@ Observations:
 
 - Relative expression levels are comparable to the −RNase inhibitor reactions 
   from 2021/02/19.
+
+PUREfrex 1.0, mWasabi
+=====================
+
+PUREfrex 1.0, FLAG
+==================
 
 Discussion
 ==========
