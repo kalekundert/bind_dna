@@ -4,15 +4,25 @@
 Describe how to setup the puromycin/peptide coupling reaction.
 
 Usage:
-    couple_puromycin [-n <rxns>] [-v <µL>] [-m <mM>] [-M <mM>] [-k <mM>]
-        [-K <mM>] [-t <time>] [-T <°C>]
+    couple_puromycin [<reagent>] [-n <rxns>] [-v <µL>] [-C <conc>]
+        [-m <mM>] [-M <mM>] [-k <mM>] [-K <mM>] [-t <time>] [-T <°C>]
 
+Arguments:
+    <reagent>
+        The name of the mRNA/protein reagent.  By default, this vaguely refers 
+        to the "translation reaction" with the intent that the actual identity 
+        of the reaction should be clear from a previous step.
 Options:
     -n --num-reactions <int>        [default: 1]
         The number of reactions to setup.
 
     -v --volume <µL>                [default: 5]
         The volume of the expression reaction.
+
+    -C --ivtt-stock <conc>
+        The stock concentration of the translation reaction.  This is left 
+        unspecified by default, because it's often not known.  No unit is 
+        assumed.
 
     -m --mg-conc <mM>               [default: 65]
         The desired final concentration of Mg²⁺, in mM.  The default is from 
@@ -57,7 +67,9 @@ rxn = stepwise.MasterMix()
 rxn.num_reactions = int(args['--num-reactions'])
 rxn.extra_min_volume = 5, 'µL'
 rxn.solvent = None
-rxn['PURExpress'].volume = rxn_uL, 'µL'
+rxn['translation reaction'].volume = rxn_uL, 'µL'
+rxn['translation reaction'].name = args['<reagent>']
+rxn['translation reaction'].stock_conc = args['--ivtt-stock']
 rxn['MgOAc'].stock_conc = mg_stock_mM, 'mM'
 rxn['MgOAc'].volume = salt_uL[1], 'µL'
 rxn['MgOAc'].master_mix = True

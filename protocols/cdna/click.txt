@@ -1,9 +1,0 @@
-- Couple the puromycin and annealing oligos:
-
-  Reagent                  Stock  Volume
-  ──────────────────────────────────────
-  puromycin oligo (DBCO)    2 mM   10 µL
-  annealing oligo (azide)   1 mM   10 µL
-
-  - Incubate at room temperature overnight.
-   

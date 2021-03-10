@@ -3,7 +3,9 @@
 import stepwise
 import appcli
 import autoprop
+
 from inform import plural
+from stepwise import pl, ul
 
 @autoprop
 class ZymoCleanAndConcentrator(appcli.App):
@@ -74,10 +76,10 @@ Options:
             if self.sample_volume_uL:
                 mm['RNA sample'].volume = self.sample_volume_uL, 'µL'
 
-            p += stepwise.Step(step, mm)
-            p += stepwise.Step("Incubate at room temperature for 15 min.")
+            p += pl(step, mm)
+            p += "Incubate at room temperature for 15 min."
 
-            p.footnotes[1] = stepwise.Footnote("Reconstitute lyophilized DNase I (#E1009-A; 250U) with 275 µL nuclease-free water and mix by gentle inversion.  Store frozen aliquots.")
+            p.footnotes[1] = "Reconstitute lyophilized DNase I (#E1009-A; 250U) with 275 µL nuclease-free water and mix by gentle inversion.  Store frozen aliquots."
 
         if self.dnase_treatment == 'post':
             mm = stepwise.MasterMix("""\
@@ -89,16 +91,10 @@ Options:
             if self.num_samples:
                 mm.num_reactions = self.num_samples
 
-            p += stepwise.Step(
-                    "Prepare 80 µL DNase I reaction mix for each sample:",
-                    mm,
-            )
+            p += pl("Prepare 80 µL DNase I reaction mix for each sample:", mm)
 
-        s = stepwise.Step(
-                "Purify RNA using Zymo Clean & Concentrator spin columns:",
-                br='\n',
-        )
-        p += s
+        s = ul()
+        p += pl("Purify RNA using Zymo Clean & Concentrator spin columns:", s)
 
         if self.sample_volume_uL:
             if self.sample_volume_uL < 50:

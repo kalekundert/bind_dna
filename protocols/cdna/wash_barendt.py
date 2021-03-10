@@ -4,6 +4,8 @@ import stepwise
 import appcli
 import autoprop
 
+from stepwise import pl, ul
+
 @autoprop
 class WashBarendt(appcli.App):
     """\
@@ -28,27 +30,22 @@ Options:
     )
 
     def get_protocol(self):
-        s = stepwise.Step(
+        p = stepwise.Protocol()
+        p += pl(
                 "Remove unligated linker by ultrafiltration:",
-                br='\n',
+                s := ul(
+                    "Bring reaction to 500 µL with 8M urea.",
+                    "Load onto a 100 kDa MWCO spin-filter [1].",
+                    "Spin 14000g, 15 min.",
+                    "Wash with 500 µL 8M urea.",
+                    "Wash with 500 µL nuclease-free water.",
+                    "Wash with water again.",
+                    "Wash with water again, but spin for 30 min [1].",
+                    "Invert the filter into a clean tube and spin 1000g, 2 min to collect ligated product in a volume of ≈15 µL.",
+                ),
         )
-
-        s += "Bring reaction to 500 µL with 8M urea."
-        s += "Load onto a 100 kDa MWCO spin-filter [1]."
-        s += "Spin 14000g, 15 min."
-        s += "Wash with 500 µL 8M urea."
-        s += "Wash with 500 µL nuclease-free water."
-        s += "Wash with water again."
-        s += "Wash with water again, but spin for 30 min [1]."
-        s += """\
-                Invert the filter into a clean tube and spin 1000g, 2 min to 
-                collect ligated product in a volume of ≈15 µL."""
-
         if self.volume_uL > 15:
             s += f"Dilute to {self.volume_uL:g} µL with nuclease-free water"
-
-        p = stepwise.Protocol()
-        p += s
 
         p.footnotes[1] = 'Amicon UFC510024'
         p.footnotes[2] = 'Final urea concentration: ≈200 µM'

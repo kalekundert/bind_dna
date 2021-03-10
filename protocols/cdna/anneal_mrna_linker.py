@@ -6,6 +6,7 @@ import appcli
 import autoprop
 import po4
 
+from stepwise import pl, ul
 from appcli import DocoptConfig, Key
 from inform import plural
 
@@ -113,23 +114,21 @@ Options:
         rxn = self.reaction
         n = rxn.num_reactions
 
-        p += stepwise.Step(
+        p += pl(
                 f"Setup {plural(n):# annealing reaction/s} [1]:",
                 rxn,
         )
 
-        p.footnotes[1] = stepwise.Footnote("""\
+        p.footnotes[1] = """\
                 Using 0.6x linker reduces the amount of unligated 
                 linker, see expt #1."""
-        )
 
-        p += stepwise.Step(
+        p += pl(
                 f"Perform the {plural(n):annealing reaction/s}:",
-                substeps=[
+                ul(
                     "Incubate at 95°C for 2 min.",
                     "Cool at room temperature.",
-                ],
-                br='\n',
+                ),
         )
 
         return p

@@ -5,8 +5,9 @@ import appcli
 import autoprop
 
 from appcli import DocoptConfig, Key
-from inform import plural
+from stepwise import pl, ul
 from anneal_mrna_linker import AnnealMrnaLinker
+from inform import plural
 from operator import not_
 
 # I can't remember where exactly this protocol came from.  Some thoughts:
@@ -155,11 +156,11 @@ Options:
         rxn_name = 'ligation' if self.use_ligase else 'negative control'
         n = rxn.num_reactions
 
-        p += stepwise.Step(
+        p += stepwise.pl(
                 f"Setup {plural(n):# {rxn_name} reaction/s}:",
                 rxn,
         )
-        p.footnotes[1] = stepwise.Footnote("""\
+        p.footnotes[1] = """\
                 2x excess of T4 RNA ligase relative to unit definition: 
 
                 https://tinyurl.com/3lhzf7a6
@@ -168,19 +169,17 @@ Options:
                 pmol of [5'-32P]pCp into its acid-insoluble form in 10 minutes 
                 at 5°C, using oligo(A) as the substrate during 3' end labeling 
                 of RNA."
-        """)
+        """
 
         if self.incubate:
-            s = stepwise.Step(
+            p += pl(
                     f"Incubate the {plural(n):ligation reaction/s} as follows:",
-                    br='\n',
+                    s := ul(
+                        f"{self.incubate_temp} for {self.incubate_time}."
+                    ),
             )
-
-            s += f"{self.incubate_temp} for {self.incubate_time}."
             if self.quench:
                 s += "65°C for 10 min."
-
-            p += s
 
         return p
 
