@@ -1,38 +1,46 @@
-- Transfer the RNA to a membrane [1]:
+- Transfer the RNA to a membrane [1,2]:
 
-  - Equilibrate the gel in 1x TBE for 15 min with 
-    gentle shaking.  This step is not necessary if 
-    the electrophoresis buffer was 1x TBE.
+  - If the electrophoresis buffer was not 1x TBE:
 
-  - Mark the membrane, to indicate which side the 
-    samples will be on.
+    - Rinse the gel with water.
+    - Equilibrate the gel in 1x TBE for 15 min 
+      with gentle shaking.
 
-  - Soak the following materials in 1x TBE:
+  - Assemble the transfer sandwich:
 
-    - Whatman 3MM filter paper (6 sheets)
-    - HyBond N+ membrane
+    - Cut a HyBond N+ membrane and 6 sheets of 
+      Whatman 3MM filter paper to the size of the 
+      lanes of interest.
 
-  - Assemble the transfer sandwich.  Remove any 
-    bubbles that form [2]:
+    - Soak the membrane in 1x TBE for ≈1 min.
 
-    - filter paper (3 sheets)
-    - membrane (marked side facing gel)
-    - gel
-    - filter paper (3 sheets)
+    - Place the membrane on the gel, over the 
+      lanes of interest.
 
-  - Place the sandwich into a semidry transfer 
-    apparatus such that the membrane is nearer to 
-    the anode (red).  Drain any excess buffer.
+    - Trim the gel to the size of the membrane.
+
+    - Wet 3 sheets of filter paper in 1x TBE and 
+      layer them on top of the membrane.
+
+    - Flip the sandwich over and place it on the 
+      anode (red) of a semidry transfer apparatus.
+
+    - Wet 3 more sheets of filter paper in 1x TBE 
+      and layer them on top of the gel.
+
+    - Use a roller to remove bubbles.
 
   - Run the transfer with the following settings:
 
-    Current: 0.5-3 mA/cm²
-    Voltage: 10-14 V
-    Time:    30m-2h
+    Current: 0.5-4 mA/cm²
+    Voltage: 14 V
+    Time:    60 min
 
 Notes:
 
 [1] https://tinyurl.com/y3zmmqgd
 
-[2] Pipetting a few mL of buffer onto each layer 
+[2] https://tinyurl.com/1fdcskiw 
+
+[3] Pipetting a few mL of buffer onto each layer 
     before adding the next may help prevent bubbles.

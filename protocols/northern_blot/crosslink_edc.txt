@@ -1,0 +1,28 @@
+
+
+Notes:
+
+[1] Pall 2008: 10.1038/nprot.2008.67
+
+    This protocol is intended for micro RNAs: "Cross-linking with UV is rapid, 
+    inexpensive and works well for RNA >100 nt in length."
+
+    THE EDC chemistry requires a 5' monophosphate.  If the RNA is not 5' 
+    phosphorylated, it can be phosphorylated with T4 PNK.
+
+    The enhanced detection we observed was significant for RNA molecules <40 nt 
+    in length. No great enhancement was detected for larger molecules, for 
+    example, miRNA precursors ∼70 nt (ref. 14). From this, we infer that the 
+    enhanced detection afforded by EDC cross-linking declines as the size of 
+    the RNA of interest increases. Thus, owing to its greater simplicity, UV 
+    cross-linking would remain the method of choice for RNA greater than ∼70 
+    nt.
+
+    Would have to avoid using TBE gels, because Tris contains free amines (EDC 
+    catalyzes the reaction between 5' phosphate and amines in the membrane).  
+    Uses MOPS-NaOH electrophoresis buffer instead.
+
+    Doesn't work as well with Hybond N+.  Works best with neutral nylon 
+    membranes.
+
+[2] https://tinyurl.com/1fdcskiw  
