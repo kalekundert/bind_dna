@@ -1,0 +1,29 @@
+- Make 2.42x 10 µL reaction aliquots of PUREfrex 1.0 
+  (GeneFrontier PF001) [1]:
+
+  Solution I:   12.1 µL [2]
+  Solution II:  1.21 µL [3]
+  Solution III: 1.21 µL [3]
+
+  - Thaw solution I at room temperature, then keep 
+    on ice.  Thaw solutions II and III on ice.
+  - Spin down aliquots before storing.
+  - Flash-freeze and store at -80°C.
+
+Notes:
+
+[1] https://tinyurl.com/2zue5vy4
+
+[2] Solution I may have a precipitate.  If so, 
+    distribute it evenly between the aliquots by 
+    vortexing and not spinning down.
+
+[3] Solutions II and III are very viscous and 
+    difficult to pipet.  Some notes:
+
+    - Reverse pipetting doesn't work.
+    - Aspiration looks accurate, but dispensing is 
+      difficult.
+    - Drag tip up wall of tube while dispensing to 
+      get everything out.
+    - Use p10.

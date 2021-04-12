@@ -1,0 +1,12 @@
+- Make 3 µL aliquots of FluoroTect GreenLys (Promega 
+  L5001) [1-2].
+
+  - Thaw by hand-warming.
+  - Label aliquots "FG".
+  - Store at −80°C.
+
+Notes:
+
+[1] https://tinyurl.com/2ky7hehs
+
+[2] Do not subject to >5 freeze-thaw cycles.
