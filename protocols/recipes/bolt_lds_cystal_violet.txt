@@ -1,0 +1,26 @@
+- Prepare 10 mL 4x Bolt LDS sample buffer with
+  crystal violet [1,2]:
+
+  Reagent             Stock        4x         1x
+  ──────────────────────────────────────────────
+  water                      to 10 mL     pH=8.5
+  tris HCl                     666 mg     106 mM
+  tris base                    682 mg     141 mM
+  LDS                          800 mg         2%
+  EDTA                           6 mg    0.51 mM
+  glycerol                    4000 mg        10%
+  crystal violet   10 mg/mL    100 µL  0.1 mg/mL
+
+Notes:
+
+[1] Tice1991: patent #US5064519A
+
+[2] Recipe from personal communication with Thermo 
+    Fisher, but also listed at URL below.  Thermo 
+    notes that the pH is a crucial parameter.  It is 
+    quite different from the classical Laemmli 
+    formulation, and allows near-neutral pH during 
+    the migration in Bis-Tris gels.
+
+    https://tinyurl.com/yprj3828
+
