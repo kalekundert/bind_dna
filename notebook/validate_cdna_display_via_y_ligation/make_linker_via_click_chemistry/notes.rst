@@ -381,3 +381,50 @@ considerations above), but it's still worth trying.
 
 - It's weird that the ladder is visible at all in the Cy5 channel.  Presumably 
   that's due to some sort of crosstalk.
+
+Optimize salt and temperature --- 2021/04/06
+--------------------------------------------
+.. protocol:: 20210405_optimize_click_freeze.txt
+
+  - Cy5: intensity level 1
+  - SYBR Green II: intensity level 9
+
+.. figure:: 20210406_optimize_click_freeze.svg
+
+Observations:
+
+- I nearly ran the ligation/RT oligo off the bottom of the gel.  This makes it 
+  hard to quantify that oligo, but you can still see what's going on 
+  qualitatively.  Next time I'll only run the gel for 30 min.
+
+- The yields calculated using the Cy5 and SYBR Green II channels have 
+  significantly different magnitudes (although the same qualitative trends).  
+  Part of this could be related to the gel being overrun, but I think it's also 
+  likely that my stock concentrations are inaccurate and that I added an excess 
+  of the ligation/RT arms (o233).
+
+- PBS clearly helps the reaction.
+
+  Although one of the −PBS reactions gives good yield, the other two don't.  
+  I'm suspicious that this one good reaction might be a fluke, e.g. some 
+  stochastic effect of a mistake setting up the reaction.
+
+- The room temperature incubation also seems to help, although the effect is 
+  less dramatic.  This probably means that the act of freezing is not what gets 
+  the reaction to 100%.  More likely is just that the reaction continues 
+  (slowly) at −20°C---perhaps because the solution doesn't actually 
+  freeze---and gets closer to 100% over a week or two.
+
+Conclusions:
+
+- When making o128, I also saw a discrepancy between the GelGreen and Cy5 
+  channels, although only for one of the samples.  (Note that I did not 
+  normalize for the different lengths of the 2 oligos in that experiment, so 
+  those percentages are probably an overestimate.)
+
+  Then as now, I'm inclined to put more trust in the Cy5 channel, because it's 
+  a bright fluorophore than I know for sure is present 1x per molecule.
+
+- My yield (in the Cy5 channel) is a little worse this time (≈80%) than it was 
+  previously (≈90%).  I'm not sure what the difference is, but for now I'm 
+  going to attribute it to random variation.

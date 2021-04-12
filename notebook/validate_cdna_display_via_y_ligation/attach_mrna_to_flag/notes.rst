@@ -77,4 +77,14 @@ Protocols
 ---------
 - Order everything
 
-- 
+Preparation
+===========
+.. protocol:: 20210408_make_mrna_gel.txt
+
+- I lost all the RNA on the spin column, because I forgot that the FLAG mRNA 
+  only 40 kDa---not large enough to be retained by the 100 kDa MWCO filter.  
+
+  For comparison, o237 is 17 kDa.  I don't think a spin filter will be adequate 
+  to separate these.  For now I'll probably just skip this step, and maybe I'll 
+  try to do a gel purification eventually.
+

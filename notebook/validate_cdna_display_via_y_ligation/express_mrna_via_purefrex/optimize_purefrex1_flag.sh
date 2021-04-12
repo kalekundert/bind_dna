@@ -24,5 +24,11 @@ sw ivtt f111 -p frex1/lys -v 2.5 -n 8 -c 2000 -C 10000  |
 sw step "Add 0.5 µL 1 mg/mL RNase A to each reaction." |
 sw step "Incubate at 37°C for 15 min." |
 
-sw gel bolt/gfp-mrna 8 -v 1
+# Run time:
+# - When I've run gels for 42m in previous experiments, the 3 kb band has been 
+#   right at or just past the bottom.
+# - My FLAG peptide is 2.2 kDa (assuming it is translated all the way to the 
+#   end of the transcript; there is no stop codon).
+# - 42m is probably too long; I'll try 30m to start.
+sw gel bolt/ivtt 8 -v 1 -r 30
 

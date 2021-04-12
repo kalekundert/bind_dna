@@ -1,0 +1,116 @@
+March 30, 2021
+
+$ sw make f110
+$ sw spin_cleanup
+$ sw make f111
+$ sw zymo_clean_and_concentrator
+$ sw aliquot '5 µL' '10 µM'
+
+ 1. Prepare 10x primer mix [1]:
+
+    Reagent   Stock    Volume
+    ─────────────────────────
+    water             9.00 µL
+    o231     100 µM   0.50 µL
+    o232     100 µM   0.50 µL
+    ─────────────────────────
+                     10.00 µL
+
+ 2. Setup 1 PCR reaction [2,3]:
+
+    Reagent           Stock    Volume
+    ─────────────────────────────────
+    water                    15.00 µL
+    f109           20 pg/µL   5.00 µL
+    primer mix          10x   5.00 µL
+    Q5 master mix        2x  25.00 µL
+    ─────────────────────────────────
+                             50.00 µL
+
+ 3. Run the following thermocycler protocol:
+
+    - 98°C for 30s
+    - Repeat 35x:
+      - 98°C for 10s
+      - 64°C for 20s
+      - 72°C for 10s
+    - 72°C for 2 min
+    - 4°C hold
+
+ 4. Label the product: f110
+
+ 5. Purify using Qiagen MinElute PCR purification kit
+    (28004) [4]:
+
+    - Perform all spin steps at 17900g.
+    - Add 5 volumes PB to the crude DNA.
+    - If not yellow: Add 0.2 volumes 3M sodium
+      acetate, pH=5.0.
+    - Load on a MinElute column.
+    - Spin 1m; discard flow-through.
+    - Add 750 µL PE.
+    - Spin 1m; discard flow-through.
+    - Spin 1m; discard flow-through.
+    - Add 10 µL EB.
+    - Wait at least 1m.
+    - Spin 1m; keep flow-through.
+
+ 6. Wipe down your bench and anything you'll touch
+    (pipets, racks, pens, etc.) with RNaseZap.
+
+ 7. Setup 1 in vitro transcription reaction [5,6]:
+
+    Reagent                  Stock    Volume
+    ────────────────────────────────────────
+    nuclease-free water              6.50 µL
+    reaction buffer            10x   1.50 µL
+    rNTP mix                100 mM   6.00 µL
+    HiScribe T7                10x   2.00 µL
+    f110                 250 ng/µL   4.00 µL
+    ────────────────────────────────────────
+                                    20.00 µL
+
+    - Mix reagents in the order given.
+    - Ok to handle at room temperature.
+
+ 8. Incubate at 37°C for 4 hours [7].
+
+ 9. Label the product: f111
+
+10. Purify RNA using Zymo Clean & Concentrator spin
+    columns:
+
+    - If necessary, bring each sample to 50 µL.
+    - Add 2 volumes RNA binding buffer; mix.
+    - Add 3 volumes >95% ethanol; mix.
+    - Load sample on spin column.
+    - Spin 1 min, 16000g; discard flow-through.
+    - Add 400 µL RNA prep buffer.
+    - Spin 30s, 16000g; discard flow-through.
+    - Add 700 µL RNA wash buffer.
+    - Spin 30s, 16000g; discard flow-through.
+    - Add 400 µL RNA wash buffer.
+    - Spin 60s, 16000g; discard flow-through.
+    - Add 25 µL nuclease-free water.
+    - Spin 30s, 16000g.
+
+11. Make 5 µL, 10 µM aliquots.
+
+Notes:
+[1] For resuspending lyophilized primers:
+    100.0 µM = 10 µL/nmol
+
+[2] https://tinyurl.com/y27ralt4
+
+[3] For diluting template DNA to 20 pg/µL:
+    Dilute 1 µL twice into 7*sqrt([DNA]) µL
+
+[4] https://tinyurl.com/59wynv64
+
+[5] https://tinyurl.com/y4a2j8w5
+
+[6] I've found that T7 kits which have been in the
+    freezer for more than ≈4 weeks seem to produce
+    more degraded RNA.
+
+[7] Use a thermocycler to prevent evaporation.

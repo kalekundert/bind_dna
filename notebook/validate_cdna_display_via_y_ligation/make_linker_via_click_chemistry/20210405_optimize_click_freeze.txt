@@ -1,0 +1,78 @@
+April 5, 2021
+
+$ sw optimize_click_freeze
+
+ 1. In the following steps, setup these conditions:
+
+    ligation/RT arms (o233):  +  −   +    +    +    +    +    +
+    puromycin arm (o126):     −  +   +    +    +    +    +    +
+    PBS:                      −  −   +    +    +    −    −    −
+    25°C incubation:          −  −   −   4h   o/n   −   4h   o/n
+    -20°C incubation:         −  −  o/n  o/n   −   o/n  o/n   −
+
+ 2. Setup 2 click reactions:
+
+    Reagent   Stock   Volume       2x
+    ─────────────────────────────────
+    PBS          2x  1.50 µL
+    o126     400 µM  0.75 µL  1.50 µL
+    o233     400 µM  0.75 µL  1.50 µL
+    ─────────────────────────────────
+                     3.00 µL  1.50 µL/rxn
+
+ 3. Divide each reaction in three.
+
+ 4. Incubate the reactions as follows:
+
+    - −20°C overnight
+    - 25°C for 4h, −20°C overnight
+    - 25°C overnight
+
+ 5. Label the product: o236
+
+ 6. Prepare 8 samples for TBE/urea PAGE:
+
+    Reagent             Stock    Volume       12x
+    ─────────────────────────────────────────────
+    water                       4.88 µL  58.61 µL
+    sample buffer          2x   5.00 µL  60.00 µL
+    sample         1730 ng/µL   0.12 µL
+    ─────────────────────────────────────────────
+                               10.00 µL   9.88 µL/rxn
+
+    - Incubate at 70°C for 3 min.
+
+ 7. Run a gel [1]:
+
+    gel: 6% TBE/urea PAGE
+    buffer: 1x TBE
+    samples: 10 µL
+    run: 180V for 40 min
+
+ 8. Stain gel with SYBR Green II [2,3]:
+
+    - Keep the stain protected from light.
+
+    - Submerge gel in ≈30 mL 1x SYBR Green II, 1x TBE
+      (89 mM Tris, 89 mM boric acid, 1 mM EDTA,
+      pH=8.0).
+    - Shake gently for 10m.
+
+ 9. Image with a 300 nm UV transilluminator.
+
+10. Image with a laser scanner:
+
+    lasers:   488 nm   658 nm
+    filters:  518BP22  710BP40
+
+Notes:
+[1] The product (o236) has MW = 17285 g/mol, so:
+    100 µM = 1730 ng/µL
+
+[2] https://tinyurl.com/y8n7237s
+
+[3] Staining with SYBR Green II reagent is pH
+    sensitive.  For optimal sensitivity, verify that
+    the pH of the staining solution at the
+    temperature used for staining is between 7.5 and
+    8.0 (preferably 8.0).

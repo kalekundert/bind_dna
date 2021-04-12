@@ -111,6 +111,7 @@ References
 .. [Shimizu2001] :doi:`10.1038/90802`
 .. [Shine1974] :doi:`10.1073/pnas.71.4.1342`
 .. [Subramanian2018] :doi:`10.1093/synbio/ysx008`
+.. [Tice1991] Patent: `US5064519A <https://patents.google.com/patent/US5064519A/en>`_
 .. [Thyme2014] :doi:`10.1007/978-1-62703-968-0_17`
 .. [VegaRocha2007] :doi:`10.1016/j.jmb.2007.01.002`
 .. [Vorackova2011] :doi:`10.1016/j.pep.2011.04.022`

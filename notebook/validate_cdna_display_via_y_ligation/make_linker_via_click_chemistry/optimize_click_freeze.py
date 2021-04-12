@@ -33,7 +33,9 @@ p += pl(
     ),
 )
 
-p += stepwise.load(f"gel urea {rxn.num_reactions + 2} -c 1730 -S")
+p += "Label the product: o236"
+
+p += stepwise.load(f"gel urea {3 * rxn.num_reactions + 2} -c 1730 -S")
 p.insert_footnotes(
         pl(
             "The product (o236) has MW = 17285 g/mol, so:",
@@ -41,7 +43,7 @@ p.insert_footnotes(
             br='\n',
         ),
 )
-p += stepwise.load("stain sybr-green-ii/page")
+p += stepwise.load("stain sybr-green-ii/page -I")
 p += stepwise.load("laser blue red")
 
 p.print()

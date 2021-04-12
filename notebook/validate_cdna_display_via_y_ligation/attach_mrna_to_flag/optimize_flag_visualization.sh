@@ -2,6 +2,8 @@
 set -euo pipefail
 
 # Quick experiment to make sure I can visualize FLAG expression.
+# - I'm going to wait to do this experiment until I can make the correct 
+#   loading dye.
 
 # Load volumes:
 # - Want to try two volumes:
@@ -9,7 +11,16 @@ set -euo pipefail
 #   - 1.0 µL: What the PUREfrex manual recommends with FluoroTect.
 sw cond optimize_flag_visualization_cond.xlsx |
 
-sw ivtt f110 -p frex1/lys -n 2 -v 10 -c 2 -C 75 |
+# Template:
+# - I definitely want to use f110/f111 for this experiment, because the FLAG 
+#   peptide is especially tough to see given how small it is.
+#
+# Template concentration:
+# - Based on #99, 2 nM final concentration for the DNA template seems too low.
+# - I could use 800 nM of the RNA template instead.  That seems to be the best  
+#   based on what I know so far.
+sw ivtt f111 -p frex1/lys -n 2 -v 10 -c 800 -C 10000 -r |
+#sw ivtt f110 -p purex/lys -n 2 -v 10 -c 2 -C 75 |
 
 # RNase A volume:
 # - The PUREfrex 2.0 manual calls for 1 µL 1 mg/mL RNase A per 10 µL reaction.  
@@ -26,6 +37,6 @@ sw step "Split each reaction into 2x 4 µL aliquots." |
 sw step "Add 0.4 µL RNase cocktail (Invitrogen AM2286) to the +RNase A aliquots." |
 sw step "Incubate at 37°C for 15 min." |
 
-sw gel bolt/ivtt/blue 8
+sw gel bolt/ivtt/flag 8
 
 

@@ -1,0 +1,87 @@
+April 7, 2021
+
+$ sw optimize_purefrex1_flag
+
+ 1. Wipe down your bench and anything you'll touch 
+    (pipets, racks, pens, etc.) with RNaseZap.
+
+ 2. In the following steps, setup these conditions:
+
+    DNA template (f110) [nM]:   2   0     0    0    0   0   0   0
+    mRNA template (f111) [nM]:  0  2000  796  317  126  50  20  0
+
+ 3. Perform a serial dilution [1]:
+
+    - Put 4.32 μL 10000 nM f111 in a tube.
+    - Put 2.60 μL nuclease-free water in 6 adjacent
+      tubes.
+    - Transfer 1.72 μL between each tube *except the
+      last* to make 6 2.5-fold dilutions.
+
+ 4. Dilute f110 to 10 nM so that it will have a final
+    concentration of 2 nM in the following reaction.
+
+ 5. Setup 8 PUREfrex 1.0 (GeneFrontier PF001)
+    reactions [2]:
+
+    Reagent                       Stock   Volume      8.8x
+    ──────────────────────────────────────────────────────
+    water                                0.32 µL   2.86 µL
+    solution I                           1.25 µL  11.00 µL
+    solution II                          0.12 µL   1.10 µL
+    solution III                         0.12 µL   1.10 µL
+    RNase inhibitor, murine     40 U/µL  0.05 µL   0.44 µL
+    FluoroTect GreenLys                  0.12 µL   1.10 µL
+    f111                       10000 nM  0.50 µL
+    ──────────────────────────────────────────────────────
+                                         2.50 µL   2.00 µL/rxn
+
+    - Thaw solution I at 25–37°C for 1 min, then keep
+      on ice.
+    - Thaw solutions II and III on ice.
+    - Vortex all thawed solutions before use.
+
+ 6. Incubate at 37°C for 2h.
+
+ 7. Add 0.5 µL 1 mg/mL RNase A to each reaction.
+
+ 8. Incubate at 37°C for 15 min.
+
+ 9. Prepare 8 samples for SDS PAGE:
+
+    Reagent                  Stock    Volume       12x
+    ──────────────────────────────────────────────────
+    water                            5.50 µL  66.00 µL
+    Bolt LDS sample buffer      4x   2.50 µL  30.00 µL
+    Bolt reducing agent        10x   1.00 µL  12.00 µL
+    sample                  160 nM   1.00 µL
+    ──────────────────────────────────────────────────
+                                    10.00 µL   9.00 µL/rxn
+
+    - Incubate at 70°C for 10 min.
+
+10. Run a gel:
+
+    gel: 4−12% Bolt Bis-Tris SDS PAGE
+    buffer: Bolt MES SDS running buffer
+    ladder: 5 µL NativeMark unstained protein
+      standard
+    samples: 10 µL
+    run: 165V for 42 min
+
+11. Image with a laser scanner:
+
+    lasers:   488 nm   658 nm
+    filters:  518BP22  710BP40
+
+Notes:
+[1] The final concentrations will be:
+    1  1.000000e+04 nM
+    2  3.981072e+03 nM
+    3  1.584893e+03 nM
+    4  6.309573e+02 nM
+    5  2.511886e+02 nM
+    6  1.000000e+02 nM
+    7  0.000000e+00 nM
+
+[2] https://tinyurl.com/2zue5vy4

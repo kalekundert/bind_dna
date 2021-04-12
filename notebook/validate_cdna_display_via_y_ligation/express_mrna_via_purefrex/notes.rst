@@ -56,8 +56,30 @@ Observations:
 PUREfrex 1.0, mWasabi
 =====================
 
+
 PUREfrex 1.0, FLAG
 ==================
+.. protocol:: 20210407_optimize_purefrex1_flag.txt
+
+.. figure:: 20210407_optimize_purefrex1_flag.svg
+
+Observations:
+
+- I'm not sure whether or not I can see the FLAG peptide product.  There's a 
+  band at 3 kDa that seems to get brighter with increased template 
+  concentration, but the band is present even in the −template control.  Also, 
+  the FLAG peptide is 2.2 kDa, so the band isn't quite in the right spot.  
+  Maybe peptides don't run exactly at their MW, though.
+
+- The loading dye is very clearly visible, which annoys me.  I'm going to try 
+  avoid this problem by making a crystal violet loading dye next time 
+  [Tice1991]_.
+
+Conclusions:
+
+- I need to try adding RNase to see if that helps the visualization.  I won't 
+  be able to do that when I also want to visualize mRNA, but it could still be 
+  useful for experiments like this (or once I have cDNA).
 
 Discussion
 ==========

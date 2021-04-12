@@ -1,0 +1,103 @@
+April 8, 2021
+
+$ sw cdna/make_mrna f111 o237
+$ sw gels/gel urea 2
+
+ 1. Setup 1 annealing reaction [1]:
+
+    Reagent  Stock   Volume
+    ───────────────────────
+    PBS        10x  0.89 µL
+    f111     10 µM  5.00 µL
+    o237     10 µM  3.00 µL
+    ───────────────────────
+                    8.89 µL
+
+ 2. Perform the annealing reaction:
+
+    - Incubate at 95°C for 2 min.
+    - Cool at room temperature.
+
+ 3. Setup 1 ligation reaction:
+
+    Reagent                       Stock    Volume
+    ─────────────────────────────────────────────
+    nuclease-free water                  59.72 µL
+    T4 RNA ligase buffer            10x   8.89 µL
+    ATP                           10 mM   8.89 µL
+    T4 RNA ligase (NEB M0204)   10 U/µL   2.50 µL
+    annealed mRNA/linker       5.625 µM   8.89 µL
+    ─────────────────────────────────────────────
+                                         88.89 µL
+
+ 4. Incubate the ligation reaction as follows:
+
+    - 25°C for 10 min.
+    - 65°C for 10 min.
+
+ 5. Remove unligated linker by ultrafiltration:
+
+    - Bring reaction to 500 µL with 8M urea.
+    - Load onto a 100 kDa MWCO spin-filter [2].
+    - Spin 14000g, 15 min.
+    - Wash with 500 µL 8M urea.
+    - Wash with 500 µL nuclease-free water.
+    - Wash with water again.
+    - Wash with water again, but spin for 30 min [2].
+    - Invert the filter into a clean tube and spin
+      1000g, 2 min to collect ligated product in a
+      volume of ≈15 µL.
+
+ 6. Dilute the purified mRNA to 1 µM.
+
+ 7. Make 4 µL, 1 µM aliquots.
+
+ 8. Prepare 2 samples for TBE/urea PAGE:
+
+    Reagent            Stock    Volume        3x
+    ────────────────────────────────────────────
+    water                      4.00 µL  12.00 µL
+    sample buffer         2x   5.00 µL  15.00 µL
+    sample         200 ng/µL   1.00 µL
+    ────────────────────────────────────────────
+                              10.00 µL   9.00 µL/rxn
+
+    - Incubate at 70°C for 3 min.
+
+ 9. Run a gel:
+
+    gel: 6% TBE/urea PAGE
+    buffer: 1x TBE
+    samples: 10 µL
+    run: 180V for 40 min
+
+10. Stain gel with GelGreen [4-6]:
+
+    - Keep the stain protected from light.
+
+    - Submerge gel in ≈30 mL 3x GelGreen, 100 mM
+      NaCl.
+    - Shake gently for 30m.
+
+11. Image with a laser scanner:
+
+    laser:   488 nm
+    filter:  518BP22
+
+Notes:
+[1] Using 0.6x linker reduces the amount of unligated
+    linker, see expt #1.
+
+[2] Amicon UFC510024
+
+[3] Final urea concentration: ≈200 µM
+
+[4] https://tinyurl.com/etxhfxws
+
+[5] Including 100 mM NaCl in the staining solution
+    enhances sensitivity, but may promote dye
+    precipitation if the gel stain is reused.
+
+[6] Staining solution can be reused at least 2-3x.
+    Store staining solution at room temperature
+    protected from light.
