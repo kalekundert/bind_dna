@@ -62,7 +62,7 @@ Options:
         pnk: T4 PNK
         lig: T4 RNA ligase
         rna: annealed mRNA/linker
-        peg: PEG-6000
+        peg: PEG-8000
 
     -M --no-master-mix
         Exclude all optional reagents from the master mix, i.e. `-m ''`.
@@ -74,8 +74,9 @@ Options:
         Add T4 PNK to the reaction, e.g. if using non-phosphorylated primers.
 
     -p --peg
-        Include PEG-6000 in the reaction.  Many T4 RNA ligase protocols 
-        recommend this, but in my hands it does not improve yield.
+        Include PEG-8000 in the reaction.  Many T4 RNA ligase protocols 
+        recommend this, but in my hands it does not improve yield.  This may be 
+        because my substrates are already annealed.
 
     -Q --no-quench
         Leave out the 65°C incubation to quench the reaction.  This is useful 
@@ -160,17 +161,6 @@ Options:
                 f"Setup {plural(n):# {rxn_name} reaction/s}:",
                 rxn,
         )
-        p.footnotes[1] = """\
-                2x excess of T4 RNA ligase relative to unit definition: 
-
-                https://tinyurl.com/3lhzf7a6
-
-                "One unit is defined as the amount of enzyme that converts 1 
-                pmol of [5'-32P]pCp into its acid-insoluble form in 10 minutes 
-                at 5°C, using oligo(A) as the substrate during 3' end labeling 
-                of RNA."
-        """
-
         if self.incubate:
             p += pl(
                     f"Incubate the {plural(n):ligation reaction/s} as follows:",
@@ -184,20 +174,66 @@ Options:
         return p
 
     def get_reaction(self):
+        return self.reaction_neb
+
+    def get_reaction_takara(self):
+        # Unit definition:
+        # - One unit is defined as the amount of enzyme that converts 1 pmol of 
+        #   [5'-32P]pCp into its acid-insoluble form in 10 minutes at 5°C, 
+        #   using oligo(A) as the substrate during 3' end labeling of RNA.
+        # - 2x excess relative to above definition.
+        # - https://tinyurl.com/3lhzf7a6
         rxn = stepwise.MasterMix.from_text("""\
                 Reagent                  Stock       Volume  MM?
                 =====================  =======  ===========  ===
                 nuclease-free water             to 40.00 µL   +
                 T4 DNA ligase buffer       10x       4.0 µL   +
                 BSA                       0.1%       4.0 µL   +
-                PEG 6000                   50%      20.0 µL   +
+                PEG 8000                   50%      20.0 µL   +
                 T4 PNK                 10 U/µL      0.33 µL   -
-                T4 RNA ligase [1]      40 U/µL      0.25 µL   -
+                T4 RNA ligase          40 U/µL      0.25 µL   -
                 annealed mRNA/linker   1.25 µM       4.0 µL   -
         """)
+        rxn['T4 RNA ligase'].name = "T4 RNA ligase (Takara 2050)"
+        return self._adjust_reaction(rxn)
 
-        a = rxn['annealed mRNA/linker']
+    def get_reaction_neb(self):
+        # Unit definition:
+        # - One unit is defined as the amount of enzyme required to convert 1 
+        #   nanomole of 5´-[32P]rA16 into a phosphatase-resistant form in 30 
+        #   minutes at 37°C.
+        #
+        #   - I'm going to use the same volume of NEB enzyme as I did of Takara 
+        #     enzyme.
+        #   - This unit definition has 1000x more RNA, but a longer reaction 
+        #     time and a warmer reaction temperature.
+        #   - The NEB enzyme is also 10 U/µL, which the Takara one is 40 U/µL.
+        #   - I'm not sure how these effects cancel out, so I'm just going to 
+        #     assume that the same volume will be about right.
+        #
+        # - The NEB ligation protocol calls for:
+        #   - 10 U T4 RNA ligase
+        #   - 20 pmol RNA
+        #   - 2h incubation at 25°C
+        #   - https://www.neb.com/protocols/2018/10/17/protocol-ligation-of-an-oligo-to-the-3-end-of-rna-using-t4-rna-ligase-1m0204
+        #
+        # - My oligos are annealed, though, which should significantly speed up 
+        #   the reaction.
+        rxn = stepwise.MasterMix("""\
+                Reagent                  Stock       Volume  MM?
+                =====================  =======  ===========  ===
+                nuclease-free water             to 40.00 µL   +
+                T4 RNA ligase buffer       10x       4.0 µL   +
+                ATP                      10 mM       4.0 µL   +
+                PEG 8000                   50%      20.0 µL   +
+                T4 PNK                 10 U/µL      0.33 µL   -
+                T4 RNA ligase          10 U/µL      0.25 µL   -
+                annealed mRNA/linker   1.25 µM       4.0 µL   -
+        """)
+        rxn['T4 RNA ligase'].name = "T4 RNA ligase (NEB M0204)"
+        return self._adjust_reaction(rxn)
 
+    def _adjust_reaction(self, rxn):
         v = self.mrna_volume_uL / rxn['annealed mRNA/linker'].volume.value
         c = self.mrna_conc_uM / rxn['annealed mRNA/linker'].stock_conc.value
 
@@ -205,11 +241,11 @@ Options:
         rxn.extra_percent = self.extra_percent
         rxn.extra_min_volume = '0.5 µL'
         rxn.hold_ratios.volume *= v
-        rxn['PEG 6000'].master_mix = 'peg' in self.master_mix
+        rxn['PEG 8000'].master_mix = 'peg' in self.master_mix
         rxn['T4 PNK'].volume *= c
         rxn['T4 PNK'].master_mix = 'pnk' in self.master_mix
-        rxn['T4 RNA ligase [1]'].volume *= c
-        rxn['T4 RNA ligase [1]'].master_mix = 'lig' in self.master_mix
+        rxn['T4 RNA ligase'].volume *= c
+        rxn['T4 RNA ligase'].master_mix = 'lig' in self.master_mix
         rxn['annealed mRNA/linker'].volume = self.mrna_volume_uL, 'µL'
         rxn['annealed mRNA/linker'].stock_conc = self.mrna_conc_uM, 'µM'
         rxn['annealed mRNA/linker'].master_mix = 'rna' in self.master_mix
@@ -219,9 +255,10 @@ Options:
         if not self.use_kinase:
             del rxn['T4 PNK']
         if not self.use_peg:
-            del rxn['PEG 6000']
+            del rxn['PEG 8000']
 
         return rxn
+
 
 
 if __name__ == '__main__':

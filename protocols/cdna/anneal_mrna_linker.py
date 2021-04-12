@@ -163,6 +163,7 @@ Options:
             rxn['linker'].name = ','.join(self.linkers)
 
         rxn['PBS'].volume = rxn.volume / 9
+        rxn['PBS'].stock_conc = '10x'
         rxn['PBS'].order = -1
 
         return rxn
