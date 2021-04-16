@@ -1,0 +1,15 @@
+- Prepare 10 mL 2x tris-tricine SDS sample
+  buffer [1]:
+
+  Reagent            Stock        2x        1x
+  ────────────────────────────────────────────
+  water                     to 10 mL
+  tris HCl                   1418 mg    450 mM
+  glycerol             50%    4.8 mL       12%
+  SDS                         800 mg        4%
+  Coomassie Blue G      1%     15 µL  0.00075%
+  phenol red            1%     50 µL   0.0025%
+
+Notes:
+
+[1] https://tinyurl.com/yprj3828

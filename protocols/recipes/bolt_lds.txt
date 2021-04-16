@@ -6,7 +6,7 @@
   tris HCl                    666 mg   106 mM
   tris base                   682 mg   141 mM
   LDS                         800 mg       2%
-  EDTA                          6 mg  0.51 mM
+  EDTA              500 mM     40 µL   0.5 mM
   glycerol                   4000 mg      10%
   SERVA blue G250       1%    750 µL  0.22 mM
   phenol red            1%    250 µL  0.18 mM
