@@ -1,0 +1,43 @@
+April 15, 2021
+
+$ sw recipes/novex_tricine_sds_crystal_violet
+
+1. Prepare 10 mL 2x tris-tricine SDS sample
+   buffer [1,2]:
+   
+   Reagent            Stock        2x        1x
+   ────────────────────────────────────────────
+   water                     to 10 mL
+   tris HCl                    608 mg    193 mM
+   tris base                   622 mg    257 mM
+   glycerol                   2400 mg       12%
+   SDS                         800 mg        4%
+   crystal violet  10 mg/mL    200 µL  0.1 mg/mL
+   
+   - pH=8.5
+   
+   - ≈7 mL water will be needed.  Start with
+     2-3 mL to have some extra space.
+   
+   - SDS is slightly difficult to dissolve.
+     Incubate at ≈60°C with stirring if necessary.
+
+Notes:
+[1] https://tinyurl.com/yprj3828
+
+[2] Assuming glycerol is (w/v) because that's what 
+    it is in the Bolt LDS recipe I got from Thermo.
+
+[3] The Thermo recipe [1] calls only for tris HCl (no 
+    tris base).  But the same recipe also calls for 
+    pH=8.45, which implies that tris base is present.  
+    
+    I'm going with the latter, because it doesn't 
+    really make sense to use tris HCl/base without 
+    the other (the result would have no buffering 
+    capacity).
+    
+    I don't know eactly what ratio would be necessary 
+    to reach pH=8.45, so I copied the ratio from the 
+    Bolt LDS buffer, which should give pH=8.5 (close 
+    enough).

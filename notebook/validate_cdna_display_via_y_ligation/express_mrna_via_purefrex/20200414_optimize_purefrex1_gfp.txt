@@ -1,0 +1,76 @@
+April 14, 2021
+
+$ sw rnasezap
+$ sw serial_dilution 2.6 '10000 nM' to 100 7 -0 -m f15 -d 'nuclease-free water'
+$ sw ivtt f15 -p purefrex1 -v 2.5 -n 8 -c 2000 -C 10000
+$ sw gels/gel bolt/ivtt 8
+
+1. Wipe down your bench and anything you'll touch 
+   (pipets, racks, pens, etc.) with RNaseZap.
+
+2. Perform a serial dilution [1]:
+
+   - Put 4.85 μL 10000 nM f15 in a tube.
+   - Put 2.60 μL nuclease-free water in 7 adjacent
+     tubes.
+   - Transfer 2.25 μL between each tube *except the
+     last* to make 7 2.2-fold dilutions.
+
+3. Setup 8 PUREfrex 1.0 (GeneFrontier PF001)
+   reactions [2]:
+
+   Reagent          Stock   Volume      8.8x
+   ─────────────────────────────────────────
+   water                   0.50 µL   4.40 µL
+   solution I              1.25 µL  11.00 µL
+   solution II             0.12 µL   1.10 µL
+   solution III            0.12 µL   1.10 µL
+   f15           10000 nM  0.50 µL
+   ─────────────────────────────────────────
+                           2.50 µL   2.00 µL/rxn
+
+   - Thaw solution I at 25–37°C for 1 min, then keep
+     on ice.
+   - Thaw solutions II and III on ice.
+   - Vortex all thawed solutions before use.
+
+4. Incubate at 37°C for 2h.
+
+5. Prepare 8 samples for SDS PAGE:
+
+   Reagent                                    Stock    Volume       12x
+   ────────────────────────────────────────────────────────────────────
+   water                                              4.00 µL  48.00 µL
+   Bolt LDS loading buffer (crystal violet)      4x   2.50 µL  30.00 µL
+   Bolt reducing agent                          10x   1.00 µL  12.00 µL
+   sample                                    160 nM   2.50 µL
+   ────────────────────────────────────────────────────────────────────
+                                                     10.00 µL   7.50 µL/rxn
+
+   - Incubate at 70°C for 10 min.
+
+6. Run a gel:
+
+   gel: 4−12% Bolt Bis-Tris SDS PAGE
+   buffer: Bolt MES SDS running buffer
+   ladder: 5 µL SeeBlue Plus2 (Invitrogen LC5925)
+   samples: 10 µL
+   run: 165V for 42 min
+
+7. Image with a laser scanner:
+
+   lasers:   488 nm   658 nm
+   filters:  518BP22  710BP40
+
+Notes:
+[1] The final concentrations will be:
+    1  1.000000e+04 nM
+    2  4.641589e+03 nM
+    3  2.154435e+03 nM
+    4  1.000000e+03 nM
+    5  4.641589e+02 nM
+    6  2.154435e+02 nM
+    7  1.000000e+02 nM
+    8  0.000000e+00 nM
+
+[2] https://tinyurl.com/2zue5vy4

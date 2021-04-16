@@ -53,12 +53,28 @@ Observations:
 - Relative expression levels are comparable to the −RNase inhibitor reactions 
   from 2021/02/19.
 
-PUREfrex 1.0, mWasabi
-=====================
+PUREfrex 1.0, mWasabi --- 2021/04/14
+====================================
+.. protocol:: 20200414_optimize_purefrex1_gfp.txt
+
+.. figure:: 20210414_optimize_purefrex1_gfp.svg
+
+Observations:
+
+- Unlike with PUREfrex 2.0, with PUREfrex 1.0 there is only a single GFP band.
+
+- Looks like much lower GFP expression relative to PUREfrex 2.0, based on the 
+  fact intensity of the mWasabi bands relative to the ladder.  I'd need to 
+  compare both in the same experiment to know for sure, though.  As noted by 
+  [Reyes2021]_, high expression is not necessarily desirable for DNA display.
+
+Conclusions:
+
+- 1000 nM is the optimal mRNA concentration for mWasabi with PUREfrex 1.0.
 
 
-PUREfrex 1.0, FLAG
-==================
+PUREfrex 1.0, FLAG --- 2021/04/07
+=================================
 .. protocol:: 20210407_optimize_purefrex1_flag.txt
 
 .. figure:: 20210407_optimize_purefrex1_flag.svg
@@ -83,9 +99,11 @@ Conclusions:
 
 Discussion
 ==========
-- The optimal mWasabi mRNA concentration for a PUREfrex reaction is ≈500 nM.  1 
-  µM mRNA gives only slightly higher expression.  Adding RNase inhibitor does 
-  not affect this concentration.
+- For every condition, 1 µM seems to be the optimal mRNA concentration.  
+  However, 500 nM often gives comparable expression, and so might be preferred 
+  in the interest of conserving material.
 
-- For some reason, the PUREfrex kit is the only one that does not give a 
-  homogeneous product for mWasabi.
+- Adding RNase inhibitor does not affect the optimal mRNA concentration.
+
+- PUREfrex 2.0 does not give a homogeneous product for mWasabi.  Every other 
+  kit I've tried—including PUREfrex 1.0—does.

@@ -1,0 +1,33 @@
+April 12, 2021
+
+$ sw make f15
+
+1. Wipe down your bench and anything you'll touch
+   (pipets, racks, pens, etc.) with RNaseZap.
+
+2. Setup 1 in vitro transcription reaction [1]:
+
+   Reagent                  Stock    Volume
+   ────────────────────────────────────────
+   nuclease-free water              3.00 µL
+   reaction buffer            10x   2.00 µL
+   rNTP mix                100 mM   8.00 µL
+   HiScribe T7                10x   2.00 µL
+   f14                  200 ng/µL   5.00 µL
+   ────────────────────────────────────────
+                                   20.00 µL
+
+   - Mix reagents in the order given.
+   - Ok to handle at room temperature.
+
+3. Incubate at 37°C for 2 hours [2].
+
+4. Remove unincorporated ribonucleotides using Zymo
+   RNA Clean & Concentrator 25 spin columns.
+
+5. Label the product: f15
+
+Notes:
+[1] https://tinyurl.com/y4a2j8w5
+
+[2] Use a thermocycler to prevent evaporation.

@@ -1,0 +1,14 @@
+April 13, 2021
+
+$ sw dilute f15 3084.2 -V 22.0
+
+1. Dilute the purified DNA to 10000 nM [1]:
+
+      tag  stock_uL  water_uL
+   0  f15      22.0      5.24
+
+Note:
+[1] Concentrations:
+
+       tag      mw_da  stock_ng_uL  stock_nM  final_nM
+    0  f15  249047.71       3084.2  12383.97   10000.0

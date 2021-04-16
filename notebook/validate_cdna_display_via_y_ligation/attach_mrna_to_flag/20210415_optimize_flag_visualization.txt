@@ -1,0 +1,115 @@
+April 15, 2021
+
+$ sw optimize_flag_visualization
+
+ 1. In the following steps, setup these conditions:
+
+    RNA template (f111):  −  +  −  +  −  +  −  +  −  +  −  +
+    RNase A:              −  −  +  +  −  −  +  +  −  −  +  +
+    Gel:                  A  A  A  A  B  B  B  B  C  C  C  C
+
+    - A: Bolt Bis-Tris-MES 4-16%
+    - B: Novex Tris-Tricine 10-20%
+    - C: Novex Tris-Tricine 16%
+
+ 2. Setup 2 PUREfrex 1.0 (GeneFrontier PF001)
+    reactions [1]:
+
+    Reagent                       Stock    Volume      2.2x
+    ───────────────────────────────────────────────────────
+    water                                 2.50 µL   5.50 µL
+    solution I                            5.00 µL  11.00 µL
+    solution II                           0.50 µL   1.10 µL
+    solution III                          0.50 µL   1.10 µL
+    RNase inhibitor, murine     40 U/µL   0.20 µL   0.44 µL
+    FluoroTect GreenLys                   0.50 µL   1.10 µL
+    f111                       10000 nM   0.80 µL
+    ───────────────────────────────────────────────────────
+                                         10.00 µL   9.20 µL/rxn
+
+    - Thaw solution I at 25–37°C for 1 min, then keep
+      on ice.
+    - Thaw solutions II and III on ice.
+    - Vortex all thawed solutions before use.
+
+ 3. Incubate at 37°C for 2h.
+
+ 4. Split each reaction into 2x 4 µL aliquots.
+
+ 5. Add 0.4 µL RNase cocktail (Invitrogen AM2286) to
+    the +RNase A aliquots.
+
+ 6. Incubate at 37°C for 15 min.
+
+ 7. Prepare 4 samples for SDS PAGE:
+
+    Reagent               Stock    Volume        6x
+    ───────────────────────────────────────────────
+    water                         5.50 µL  33.00 µL
+    TGLEV                    4x   2.50 µL  15.00 µL
+    Bolt reducing agent     10x   1.00 µL   6.00 µL
+    sample               160 nM   1.00 µL
+    ───────────────────────────────────────────────
+                                 10.00 µL   9.00 µL/rxn
+
+    - Incubate at 70°C for 10 min.
+
+ 8. Run a gel:
+
+    gel: 4–12% Bolt Bis-Tris SDS PAGE
+    buffer: Bolt MES SDS running buffer
+    ladder: 5 µL SeeBlue Plus2 (Invitrogen LC5925)
+    samples: 10 µL
+    run: 165V for 42 min
+
+ 9. Prepare 4 samples for SDS PAGE:
+
+    Reagent                Stock    Volume        6x
+    ────────────────────────────────────────────────
+    water                          3.00 µL  18.00 µL
+    TGSV                      2x   5.00 µL  30.00 µL
+    NuPAGE reducing agent    10x   1.00 µL   6.00 µL
+    sample                         1.00 µL
+    ────────────────────────────────────────────────
+                                  10.00 µL   9.00 µL/rxn
+
+    - Incubate at 85°C for 2 min.
+
+10. Run a gel [2]:
+
+    gel: 10–20% Novex tris-tricine SDS PAGE
+    buffer: tricine SDS running buffer
+    ladder: 5 µL SeeBlue Plus2 (Invitrogen LC5925)
+    samples: 10 µL
+    run: 125V for 90 min
+
+11. Prepare 4 samples for SDS PAGE:
+
+    Reagent                Stock    Volume        6x
+    ────────────────────────────────────────────────
+    water                          3.00 µL  18.00 µL
+    TGSV                      2x   5.00 µL  30.00 µL
+    NuPAGE reducing agent    10x   1.00 µL   6.00 µL
+    sample                         1.00 µL
+    ────────────────────────────────────────────────
+                                  10.00 µL   9.00 µL/rxn
+
+    - Incubate at 85°C for 2 min.
+
+12. Run a gel [2]:
+
+    gel: 16% Novex tris-tricine SDS PAGE
+    buffer: tricine SDS running buffer
+    ladder: 5 µL SeeBlue Plus2 (Invitrogen LC5925)
+    samples: 10 µL
+    run: 125V for 90 min
+
+13. Image with a laser scanner:
+
+    lasers:   488 nm   658 nm
+    filters:  518BP22  710BP40
+
+Notes:
+[1] https://tinyurl.com/2zue5vy4
+
+[2] https://tinyurl.com/4nzuxfdb
