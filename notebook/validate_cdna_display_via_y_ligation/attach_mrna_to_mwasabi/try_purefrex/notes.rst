@@ -6,13 +6,16 @@ I learned in :expt:`67` that using PUREfrex instead of PURExpress stops the
 linker from being cleaved from the mRNA.  With that problem solved, I now want 
 to test if I can observe attachment of mWasabi to its mRNA when using PUREfrex.
 
-Results
-========
+Attach mRNA --- PUREfrex2.0 --- 2021/03/01
+==========================================
 .. protocol:: 20210301_attach_via_purefrex.txt
 
 .. figure:: 20210301_attach_mwasabi_purefrex.svg
 
 Observations:
+
+- I added 2.2x less RNase inhibitor than I should have, due to a bug in my 
+  protocol script.  I don't think this should have much of an effect, though.
 
 - The image is really poor quality.  I don't know why.  I tried restarting the 
   software and the imager, but neither had any effect.
@@ -86,3 +89,106 @@ Observations:
   and hoping it has less nuclease activity...
 
 
+Attach mRNA --- PUREfrex1.0 --- 2021/04/16
+==========================================
+.. protocol:: 20210416_attach_via_purefrex.txt
+
+.. figure:: 20210416_attach_via_purefrex1.svg
+
+.. figure:: 20210420_attach_via_purefrex1_urea.svg
+
+  The control lanes are faint because I had <1 µL left over.
+
+Observations:
+
+- The SDS PAGE gel didn't run well, and the TBE/urea gel is also somewhat 
+  distorted lower down.  I suspect that this has to do with with fact that (i) 
+  I had samples with high salt concentrations and/or (ii) I had samples with 
+  very different salt concentrations.
+
+- The precipitation of the SDS PAGE loading buffer causes sample to be lost.  
+  In the SDS PAGE gel, there is a clear loss of full-length mRNA at higher salt 
+  concentrations.  In the TBE/urea gel, in contrast, every sample has the same 
+  high level of full-length mRNA.  This indicates that full length mRNA is 
+  getting trapped in the SDS precipitate.  
+
+  Note that I saw the same effect in :expt:`99` (2021/03/02).
+
+  If I want to use SDS PAGE going forward, I'll need to desalt my samples.  
+  Maybe I can get away without this for the FLAG peptide, since it's much 
+  smaller and [Reyes2021]_ doesn't mention any desalting steps.  But in general 
+  this is something I'll have to work around.
+
+- The TBE/urea gel might show the mRNA/protein fusion.  
+
+  The band above the full-length mRNA is about what I'd expect the fusion to 
+  look like, especially since the band grows more pronounced at high salt 
+  concentrations.  There is no corresponding green band, but the green channel 
+  is pretty much missing completely in this gel.  I think this may be some 
+  consequence of the over-the-weekend −20°C incubation.
+
+  I can't really quantify the intensities of the potential fusion bands, 
+  because they're just too close to the full-length band.  But it does seem 
+  qualitatively as if 375 mM KCl, 32.5 mM MgOAc condition gives the most 
+  coupling.  This is the same condition that was optimal for [Reyes2021]_.  
+  Note that I can't even estimate the fraction of coupled mRNA from this image, 
+  because the full-length band is highly oversaturated.
+  
+- This gel is very similar to the PUREfrex2.0 gel.  But comparing the two gels 
+  is still quite informative:
+
+  - The level of mWasabi expression is much lower in PUREfrex1.0.  This is 
+    consistent with what I saw in :expt:`99`, and consistent with the marketing 
+    for PUREfrex2.0.
+
+  - The same two GFP bands are present in both reactions.  This is noteworthy 
+    because PUREfrex1.0—unlike PUREfrex2.0—only exhibits a single band when 
+    expressing mWasabi from regular mRNA (:expt:`99`). With PUREfrex2.0, I just 
+    attributed the second band to whatever mysterious process was creating an 
+    extra band with regular mRNA.  With PUREfrex1.0, that explanation doesn't 
+    work.  Furthermore, based on the fact that the MWs of the PUREfrex2.0 bands 
+    didn't really agree, I suspect that something complicated is happening.
+
+    - Is the 40 kDa band the mRNA display product?
+
+      - What else could it be?
+
+      - It's not the right MW.  I'd expect the mWasabi/mRNA fusion to run 
+        slower than both the mRNA (≈270 kDa) and mWasabi (27 kDa), but this 
+        band runs much faster than the mRNA.
+
+        One possible explanation for this could be that DNA both has a smaller 
+        hydrodynamic radius and a smaller charge than SDS-coated protein.  This 
+        would allow DNA to migrate faster when attached to protein.  This idea 
+        seems at least plausible given some estimates of hydrodynamic radius 
+        (assuming both molecules adopt extended linear conformations):
+
+        - SDS-coated protein: 18Å [`source 
+          <http://hackert.cm.utexas.edu/courses/ch370/old2008/Electrophor/Electrophoresis.htm>`__.  
+          This isn't a primary source, and gives the above number without any 
+          reference.  So takes this with an extra-big grain of salt.
+
+        - dsDNA: 11-13Å [`source 
+          <https://bionumbers.hms.harvard.edu/bionumber.aspx?id=105243&ver=4&trm=dna+radius&org=>`__].  
+          This doesn't account for possible secondary structure in the mRNA, 
+          which would not be denatured in SDS-PAGE conditions.
+
+        The relative charge of the protein vs. mRNA boils down to the density 
+        with which SDS coats the protein vs. the intrinsic charge density of 
+        the ssRNA backbone.  Assuming that SDS forms a micelle around the 
+        protein, it's at least plausible that the proteins would have a higher 
+        charge density.
+      
+      - The Cy5 signal doesn't really superimpose with the mWasabi signal.  
+        This is more clear in the PUREfrex2.0 gel, which is just a higher 
+        quality gel.  Even in the PUREfrex1.0 gel, the brightness of the 
+        almost-superimposed red band is inversely proportional to the 
+        brightness of the green band.
+
+Conclusions:
+
+- SDS precipitation is a major problem.  I'll have to either continue using 
+  TBE/urea PAGE, or start desalting my samples.
+
+- I might have seen coupling.  I'll have to repeat the experiment to see if I 
+  can visualize the protein as well as the mRNA.

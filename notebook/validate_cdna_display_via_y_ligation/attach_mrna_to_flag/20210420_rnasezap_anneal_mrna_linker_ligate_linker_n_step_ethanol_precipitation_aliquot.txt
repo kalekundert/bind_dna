@@ -1,0 +1,104 @@
+April 20, 2021
+
+$ sw rnasezap
+$ sw cdna/anneal_mrna_linker f111 o237 -l 0.6 -r 10
+$ sw cdna/ligate_linker_n 17.78 5.624296962879639
+$ sw step 'Label the product: f113'
+$ sw ethanol_precipitation -p pcr -v 10
+$ sw aliquot '5 µL' '2 µM'
+
+1. Wipe down your bench and anything you'll touch 
+   (pipets, racks, pens, etc.) with RNaseZap.
+
+2. Setup 1 annealing reaction [1]:
+
+   Reagent  Stock    Volume
+   ────────────────────────
+   PBS        10x   1.78 µL
+   f111     10 µM  10.00 µL
+   o237     10 µM   6.00 µL
+   ────────────────────────
+                   17.78 µL
+
+3. Perform the annealing reaction:
+
+   - Incubate at 95°C for 2 min.
+   - Cool at room temperature.
+
+4. Setup 1 ligation reaction:
+
+   Reagent                        Stock     Volume
+   ───────────────────────────────────────────────
+   nuclease-free water                   123.96 µL
+   T4 RNA ligase buffer             10x   17.78 µL
+   ATP                            10 mM   17.78 µL
+   T4 RNA ligase (NEB M0204)    10 U/µL    0.50 µL
+   annealed mRNA/linker       5.6243 µM   17.78 µL
+   ───────────────────────────────────────────────
+                                         177.80 µL
+
+5. Incubate the ligation reaction as follows:
+
+   - 25°C for 10 min.
+   - 65°C for 10 min.
+
+6. Label the product: f113
+
+7. Perform an ethanol precipitation [2,3]:
+
+   - Add magnesium chloride (MgCl₂) to 10 mM.
+   - Add glycogen to 50 ng/µL.
+   - Add 2 volumes 100% ethanol and mix well.
+   - If necessary, divide the sample between
+     microfuge tubes such that none holds more than
+     400 µL.
+   - Incubate at -20°C overnight [4].
+   - Centrifuge >7500g, 60 min, 4°C.  Remove the
+     supernatant, but save it in case the
+     precipitation needs to be repeated.
+   - Add 800 µL recently-prepared 70% ethanol [5].
+   - Centrifuge >7500g, 2 min, 4°C.  Discard
+     supernatant.
+   - Centrifuge >7500g, 30 s, 4°C.  Discard any
+     remaining supernatant.
+   - Leave the tube open at room temperature until
+     ethanol has evaporated [6].
+   - Resuspend the pellet in 10 µL of water [7].
+
+8. Make 5 µL, 2 µM aliquots.
+
+Notes:
+[1] Using 0.6x linker reduces the amount of unligated
+    linker, see expt #1.
+
+[2] Li2020: 10.2144/btn-2019-0109
+    Sambrook2006: 10.1101/pdb.prot4456
+
+[3] This protocol was optimized for 100 ng/µL nucleic
+    acid.  If your sample is substantially more
+    dilute, it may be necessary to compensate by
+    increasing the incubation time, the
+    centrifugation time, or the centrifugation speed.
+
+[4] DNA can be stored indefinitely in ethanolic
+    solutions at either 0°C or −20°C.
+
+[5] Ethanol evaporates more quickly than water, so a
+    solution that was 70% ethanol several months ago
+    may be significantly more aqueous now.  If you
+    are unsure, 100 µL of 70% EtOH should weigh 88.6
+    mg.
+
+[6] Do not dry pellets of nucleic acid in a
+    lyophilizer, as this causes denaturation of small
+    (<400-nucleotide) fragments of DNA and greatly
+    reduces the recovery of larger fragments of DNA.
+    If necessary, the open tube containing the
+    redissolved DNA can be incubated for 2-3 minutes
+    at 45°C in a heating block to allow any traces of
+    ethanol to evaporate.
+
+[7] Up to 50% of the DNA is smeared on the wall of
+    the tube. To recover all of the DNA, push a bead
+    of fluid backward and forward over the
+    appropriate quadrant of wall with a pipette tip.

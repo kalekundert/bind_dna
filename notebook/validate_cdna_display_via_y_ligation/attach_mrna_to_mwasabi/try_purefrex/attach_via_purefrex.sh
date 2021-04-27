@@ -1,9 +1,17 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+echo TODO: Add +mRNA, −linker, +PUREfrex control
+
 sw zap |
 
 sw cond attach_via_purefrex_cond.xlsx |
+
+# f89 volume:
+# - Total volume of 5 µL to load 2.5 µL of each control.
+# - I only really need 4.2 µL, because the +salt control will have some volume 
+#   of salt added.  But it's not bad to have some extra.
+sw step "Setup the −PUREfrex control:~1.90 µL 1 µM f89~3.10 µL nuclease-free water~Include this control in the 37°C incubation." |
 
 # reaction time:
 # - Most protocols have 30 min incubations.
@@ -11,11 +19,7 @@ sw cond attach_via_purefrex_cond.xlsx |
 # - But I'm making mWasabi, and most of the other papers are making peptides.  
 #   I've also seen pretty low levels of mWasabi fluorescence after 30 min, so I 
 #   think it's reasonable to give it more time
-sw ivtt f89 -p frex/gfp -t '60 min' -v 8*2.5*1.1 -r |
-
-# f89 volume:
-# - Chose 2.5 µL to use remainder of thawed aliquots.
-sw step "Setup the −PUREfrex control:~2.50 µL 1 µM f89~5.05 µL nuclease-free water" |
+sw ivtt f89 -p frex1/gfp -t '60 min' -v 8*2.5*1.1 -r |
 
 # salt concentrations:
 # - Want to reproduce the titration in [Reyes2021] (Fig 2a).
@@ -33,7 +37,7 @@ sw step "Setup the −PUREfrex control:~2.50 µL 1 µM f89~5.05 µL nuclease-fre
 #   calulate the corresponding volumes:
 #
 #     $ sw cdna/couple -n 2 -v 5 -k 750 -m 65
-sw step "Prepare a 3.17x salt solution:~5.00 µL 1M MgOAc~19.23 µL 3M KCl" |
+sw step "Prepare a 3.17x salt solution:~5.00 µL 1M MgOAc~19.23 µL 3M KCl~Keep at room temperature." |
 
 # Same dilution as [Reyes2021] (Fig 2a), except without the 1/8 dilution 
 # because I only want to use 1 aliquot of PUREfrex.
@@ -42,12 +46,9 @@ sw serial 10µL 3.17x / 2 3 -0 -m "salt solution" -d "nuclease-free water" |
 # Volume of salt dilution from above `sw cdna/couple` command.
 sw step "Setup 4 coupling reactions:~5.0 µL translation reaction~2.3 µL salt dilution" |
 
-# incubation time:
-# - The one example I have of a −20°C incubation [Cotten2011] does both the 
-#   25°C step and the −20°C step.  So I'll do the same here.
+sw step "Setup the +salt control:~2.0 µL −PUREfrex control~0.92 µL 3.17x salt solution" |
+
 sw step "Incubate at 25°C for 1h." |
 
-sw gel bolt/gfp-mrna 5 |
-
-sw step "Incubate the remaining coupling reaction overnight at −20°C, and run the same gel as above the next day."
+sw gel bolt/ivtt 6
 

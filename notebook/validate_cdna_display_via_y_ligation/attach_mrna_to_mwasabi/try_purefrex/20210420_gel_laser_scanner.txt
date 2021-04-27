@@ -1,0 +1,28 @@
+April 20, 2021
+
+$ sw gels/gel urea 6 -v 2.5 -S
+$ sw gels/laser_scanner blue red
+
+1. Prepare 6 samples for TBE/urea PAGE:
+
+   Reagent            Stock    Volume        9x
+   ────────────────────────────────────────────
+   water                      2.50 µL  22.50 µL
+   sample buffer         2x   5.00 µL  45.00 µL
+   sample         200 ng/µL   2.50 µL
+   ────────────────────────────────────────────
+                             10.00 µL   7.50 µL/rxn
+
+   - Incubate at 70°C for 3 min.
+
+2. Run a gel:
+
+   gel: 6% TBE/urea PAGE
+   buffer: 1x TBE
+   samples: 10 µL
+   run: 180V for 40 min
+
+3. Image with a laser scanner:
+
+   lasers:   488 nm   658 nm
+   filters:  518BP22  710BP40
