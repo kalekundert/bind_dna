@@ -4,7 +4,7 @@ import stepwise
 import docopt
 import appcli
 import autoprop
-import po4
+import freezerbox
 
 from stepwise import pl, ul
 from appcli import DocoptConfig, Key
@@ -103,7 +103,7 @@ Options:
     )
 
     def __bareinit__(self):
-        self.db = po4.load_db()
+        self.db = freezerbox.load_db()
 
     def __init__(self, mrnas, linkers):
         self.mrnas = list_if_str(mrnas)
@@ -176,7 +176,7 @@ def get_conc_uM(db, tag, override):
         return float(override), 'µM'
     try:
         return db[tag].conc_nM / 1000, 'µM'
-    except po4.QueryError:
+    except freezerbox.QueryError:
         return 10, 'µM'
 
 def consensus(values):
