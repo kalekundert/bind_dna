@@ -44,7 +44,12 @@ Options:
         if you want to use less mRNA you may also need to lower the target 
         concentration (--target-conc).
 
-    -y --expected-yield <percent>    [default: ${100 * app.expected_yield}]
+    -m --mwco <kDa>                 [default: ${app.mwco_kDa}]
+        The MWCO of the spin filter.  According to Millipore Sigma, this should 
+        be 2-3x smaller than the molecular weight of the ligated product: 
+        https://tinyurl.com/4ffxu8zb
+
+    -y --expected-yield <percent>   [default: ${100 * app.expected_yield}]
         The percentage of the mRNA added to the reaction that you expect to 
         recover from the spin filter.  This is used to ensure that you start 
         with enough mRNA to reach the desired final concentration.
@@ -82,6 +87,11 @@ Options:
             cast=int,
             default=0,
             get=lambda self, x: x or len(self.mrnas) * len(self.linkers),
+    )
+    mwco_kDa = appcli.param(
+            '--mwco',
+            cast=int,
+            default=100,
     )
     target_conc_uM = appcli.param(
             '--target-conc',
@@ -138,6 +148,7 @@ Options:
 
         ligate = LigateMrnaLinker(anneal)
         wash = WashBarendt()
+        wash.mwco_kDa = self.mwco_kDa
 
         p = stepwise.Protocol()
         p += anneal.protocol
