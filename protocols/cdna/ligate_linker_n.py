@@ -181,6 +181,7 @@ Options:
         # - One unit is defined as the amount of enzyme that converts 1 pmol of 
         #   [5'-32P]pCp into its acid-insoluble form in 10 minutes at 5°C, 
         #   using oligo(A) as the substrate during 3' end labeling of RNA.
+        # - The above definition is also about consistent with the volume of 
         # - 2x excess relative to above definition.
         # - https://tinyurl.com/3lhzf7a6
         rxn = stepwise.MasterMix.from_text("""\
@@ -198,18 +199,28 @@ Options:
         return self._adjust_reaction(rxn)
 
     def get_reaction_neb(self):
-        # Unit definition:
+        # Enzyme volume:
         # - One unit is defined as the amount of enzyme required to convert 1 
         #   nanomole of 5´-[32P]rA16 into a phosphatase-resistant form in 30 
         #   minutes at 37°C.
         #
-        #   - I'm going to use the same volume of NEB enzyme as I did of Takara 
-        #     enzyme.
-        #   - This unit definition has 1000x more RNA, but a longer reaction 
-        #     time and a warmer reaction temperature.
+        #   - Compared to the unit definition for the Takara enzyme, this 
+        #     definition has:
+        #
+        #     - 1000x more RNA
+        #     - 3x longer reaction time
+        #     - 28°C warner reaction temperature
+        #
         #   - The NEB enzyme is also 10 U/µL, which the Takara one is 40 U/µL.
-        #   - I'm not sure how these effects cancel out, so I'm just going to 
-        #     assume that the same volume will be about right.
+        #
+        # - [Reyes2021] used:
+        #   - 20 U T4 RNA ligase
+        #   - 3 U T4 PNK
+        #   - 400 pmol mRNA (100 µL at 4 µM)
+        #
+        #   Scaled to 5 pmol RNA (40 µL at 125 nM):
+        #   - 0.25 U (0.025 µL) T4 RNA ligase
+        #   - 0.0375 U (0.00375 µL) T4 PNK
         #
         # - The NEB ligation protocol calls for:
         #   - 10 U T4 RNA ligase
@@ -217,8 +228,27 @@ Options:
         #   - 2h incubation at 25°C
         #   - https://www.neb.com/protocols/2018/10/17/protocol-ligation-of-an-oligo-to-the-3-end-of-rna-using-t4-rna-ligase-1m0204
         #
-        # - My oligos are annealed, though, which should significantly speed up 
-        #   the reaction.
+        #   Scaled to 5 pmol RNA (40 µL at 125 nM):
+        #   - 2.5 U T4 RNA ligase (0.25 µL)
+        #
+        # - I'm going to follow [Reyes2021]:
+        #
+        #   - [Reyes2021] uses annealed oligos, like my reaction.  The other 
+        #     reactions/definitions are based on unannealed RNAs.  It's very 
+        #     likely that the ligation reaction would be much faster with 
+        #     annealed oligos, meaning that less enzyme would be needed.
+        #
+        #   - The reactions I'm doing are big enough that if I don't follow 
+        #     [Reyes2021], I'd need to use ≈10 µL volumes of enzyme, which 
+        #     would get very expensive.  Maybe I'll need to optimize this, but 
+        #     for now it just feels more practical to use the smaller volumes 
+        #     called for by [Reyes2021].
+        #
+        #   - I used the T4 PNK concentration from [Reyes2021], even though I 
+        #     normally don't use PNK.  As with the ligase, this PNK 
+        #     concentration is also much lower than what I'd been using in the 
+        #     Takara reaction.
+
         rxn = stepwise.MasterMix("""\
                 Reagent                  Stock       Volume  MM?
                 =====================  =======  ===========  ===
@@ -226,8 +256,8 @@ Options:
                 T4 RNA ligase buffer       10x       4.0 µL   +
                 ATP                      10 mM       4.0 µL   +
                 PEG 8000                   50%      20.0 µL   +
-                T4 PNK                 10 U/µL      0.33 µL   -
-                T4 RNA ligase          10 U/µL      0.25 µL   -
+                T4 PNK                 10 U/µL     0.004 µL   -
+                T4 RNA ligase          10 U/µL     0.025 µL   -
                 annealed mRNA/linker   1.25 µM       4.0 µL   -
         """)
         rxn['T4 RNA ligase'].name = "T4 RNA ligase (NEB M0204)"
