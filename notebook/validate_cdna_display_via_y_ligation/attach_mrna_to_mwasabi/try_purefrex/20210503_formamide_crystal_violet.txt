@@ -1,0 +1,21 @@
+May 3, 2021
+
+$ sw recipes/formamide_crystal_violet
+
+1. Prepare 1 mL 2x formamide loading buffer with 
+   crystal violet [1,2]:
+   
+   Reagent                 Stock       2x         1x
+   ─────────────────────────────────────────────────
+   nuclease-free water              38 µL
+   formamide                100%   950 µL      47.5%
+   SDS                       10%     1 µL      0.01%
+   EDTA                   500 mM     1 µL     0.5 mM
+   crystal violet       10 mg/mL    10 µL  0.1 mg/mL
+   
+   - Store at −20°C.
+
+Notes:
+[1] https://tinyurl.com/mvw8wna3
+
+[2] Tice1991: patent #US5064519A

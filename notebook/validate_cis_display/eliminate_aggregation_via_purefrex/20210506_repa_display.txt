@@ -1,0 +1,56 @@
+May 6, 2021
+
+$ sw repa_display
+
+1. In the following steps, setup these conditions:
+
+   PUREfrex 1.0:  −  −  −  −  −  −  −  +  +  +  +  +  +  +
+   mWasabi:       −  −  −  −  +  +  +  −  −  −  −  +  +  +
+   repA:          −  +  +  +  +  +  +  −  +  +  +  +  +  +
+   CIS:           −  −  +  +  −  +  +  −  −  +  +  −  +  +
+   oriR:          −  −  −  +  −  −  +  −  −  −  +  −  −  +
+
+2. Setup 7 PUREfrex 1.0 (GeneFrontier PF001)
+   reactions [1]:
+
+   Reagent                        Stock   Volume      7.7x
+   ───────────────────────────────────────────────────────
+   solution I                            1.50 µL  11.55 µL
+   solution II                           0.15 µL   1.16 µL
+   solution III                          0.15 µL   1.16 µL
+   RNase inhibitor, murine      40 U/µL  0.06 µL   0.46 µL
+   f50,f61,f62,f63,f64,f65,f66    75 nM  1.14 µL
+   ───────────────────────────────────────────────────────
+                                         3.00 µL   1.86 µL/rxn
+
+   - Thaw solution I at 25–37°C for 1 min, then keep
+     on ice.
+   - Thaw solutions II and III on ice.
+   - Vortex all thawed solutions before use.
+
+3. Incubate at 37°C for 2h.
+
+4. Prepare 14 samples for native PAGE:
+
+   Reagent        Stock   Volume       21x
+   ───────────────────────────────────────
+   water                 3.25 µL  68.25 µL
+   sample buffer     4x  1.50 µL  31.50 µL
+   sample                1.25 µL
+   ───────────────────────────────────────
+                         6.00 µL   4.75 µL/rxn
+
+5. Run a gel:
+
+   gel: 3−12% Bis-Tris Novex NativePAGE
+   buffer: NativePAGE running buffer
+   samples: 5 µL
+   run: 150V for 115 min
+
+6. Image with a laser scanner:
+
+   lasers:   488 nm   658 nm
+   filters:  518BP22  710BP40
+
+Note:
+[1] https://tinyurl.com/2zue5vy4

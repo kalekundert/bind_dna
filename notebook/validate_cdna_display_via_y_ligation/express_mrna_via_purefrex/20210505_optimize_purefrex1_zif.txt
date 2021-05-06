@@ -1,0 +1,97 @@
+May 5, 2021
+
+$ sw optimize_purefrex1_zif
+
+ 1. Wipe down your bench and anything you'll touch 
+    (pipets, racks, pens, etc.) with RNaseZap.
+
+ 2. In the following steps, setup these conditions:
+
+    DNA template (p49) [nM]:   2   0     0     0    0   0   0   0
+    mRNA template (f11) [nM]:  0  3300  1313  523  208  82  33  0
+
+ 3. Perform a serial dilution [1]:
+
+    - Put 4.98 μL 10000 nM f11 in a tube.
+    - Put 3.00 μL nuclease-free water in 6 adjacent
+      tubes.
+    - Transfer 1.98 μL between each tube *except the
+      last* to make 6 2.5-fold dilutions.
+
+ 4. Dilute the following stock solution to 6 nM [2]:
+
+    Name  Stock Vol  Diluent Vol
+    ────────────────────────────
+    p49     2.00 µL     92.66 µL
+
+ 5. Setup 8 PUREfrex 1.0 (GeneFrontier PF001)
+    reactions [3]:
+
+    Reagent                       Stock   Volume      8.8x
+    ──────────────────────────────────────────────────────
+    solution I                           1.25 µL  11.00 µL
+    solution II                          0.12 µL   1.10 µL
+    solution III                         0.12 µL   1.10 µL
+    RNase inhibitor, murine     40 U/µL  0.05 µL   0.44 µL
+    FluoroTect GreenLys                  0.12 µL   1.10 µL
+    p49,f11                    10000 nM  0.82 µL
+    ──────────────────────────────────────────────────────
+                                         2.50 µL   1.68 µL/rxn
+
+    - Thaw solution I at 25–37°C for 1 min, then keep
+      on ice.
+    - Thaw solutions II and III on ice.
+    - Vortex all thawed solutions before use.
+
+ 6. Incubate at 37°C for 2h.
+
+ 7. Add 0.5 µL RNase cocktail (Invitrogen AM2286) to
+    each reaction.
+
+ 8. Incubate at 37°C for 15 min.
+
+ 9. Prepare 8 samples for SDS PAGE:
+
+    Reagent                Stock    Volume       12x
+    ────────────────────────────────────────────────
+    water                          1.50 µL  18.00 µL
+    TGSB                      2x   5.00 µL  60.00 µL
+    NuPAGE reducing agent    10x   1.00 µL  12.00 µL
+    sample                         2.50 µL
+    ────────────────────────────────────────────────
+                                  10.00 µL   7.50 µL/rxn
+
+    - Incubate at 85°C for 2 min.
+
+10. Run a gel [4]:
+
+    gel: 10–20% Novex tris-tricine SDS PAGE
+    buffer: tricine SDS running buffer
+    ladder: 5 µL SeeBlue Plus2 (Invitrogen LC5925)
+    samples: 10 µL
+    run: 125V for 90 min
+
+11. Image with a laser scanner:
+
+    lasers:   488 nm   658 nm
+    filters:  518BP22  710BP40
+
+Notes:
+[1] The final concentrations will be:
+    1  1.000000e+04 nM
+    2  3.981072e+03 nM
+    3  1.584893e+03 nM
+    4  6.309573e+02 nM
+    5  2.511886e+02 nM
+    6  1.000000e+02 nM
+    7  0.000000e+00 nM
+
+[2] Concentrations:
+
+    Name         MW              Stock Conc  Target Conc
+    ────────────────────────────────────────────────────
+    p49   1369853.0  389 ng/µL = 283.972 nM         6 nM
+
+[3] https://tinyurl.com/2zue5vy4
+
+[4] https://tinyurl.com/4nzuxfdb

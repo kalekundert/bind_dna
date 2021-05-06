@@ -1,0 +1,16 @@
+April 29, 2021
+
+$ sw dilute f89:395.4 -v 20.1
+
+1. Dilute in water to 1 µM [1]:
+
+   Name  Stock Vol  Diluent Vol
+   ────────────────────────────
+   f89    20.10 µL      7.41 µL
+
+Note:
+[1] Concentrations:
+
+    Name        MW                Stock Conc  Final Conc
+    ────────────────────────────────────────────────────
+    f89   288940.0  395.4 ng/µL = 1.36845 µM        1 µM

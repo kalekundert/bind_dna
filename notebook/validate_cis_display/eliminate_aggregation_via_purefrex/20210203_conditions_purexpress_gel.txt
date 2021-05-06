@@ -1,0 +1,62 @@
+February 3, 2021
+
+$ stepwise conditions test_aggregation_cond.xlsx
+$ stepwise purexpress f50 f61 f62 f63 f64 f65 f66 -v 5
+$ stepwise gels/gel natbr 14
+
+1. In the following steps, setup these conditions:
+
+   PURExpress:  −  −  −  −  −  −  −  +  +  +  +  +  +  +
+   mWasabi:     −  −  −  −  +  +  +  −  −  −  −  +  +  +
+   repA:        −  +  +  +  +  +  +  −  +  +  +  +  +  +
+   CIS:         −  −  +  +  −  +  +  −  −  +  +  −  +  +
+   oriR:        −  −  −  +  −  −  +  −  −  −  +  −  −  +
+
+2. Setup 7 PURExpress reactions:
+
+   Reagent                        Stock   Volume      7.7x
+   ───────────────────────────────────────────────────────
+   water                                 1.00 µL   7.70 µL
+   A                                     2.00 µL  15.40 µL
+   B                                     1.50 µL  11.55 µL
+   RNase Inhibitor [1]          40 U/µL  0.10 µL   0.77 µL
+   f50,f61,f62,f63,f64,f65,f66    75 nM  0.40 µL
+   ───────────────────────────────────────────────────────
+                                         5.00 µL   4.60 µL/rxn
+
+   - Keep on ice.
+   - Be sure to add A before B.
+   - The control template (125 ng/µL) is 75 nM.
+
+3. Incubate at 37°C for 2h.
+
+4. Prepare 14 samples for native PAGE:
+
+   Reagent        Stock   Volume       21x
+   ───────────────────────────────────────
+   water                 3.25 µL  68.25 µL
+   sample buffer     4x  1.50 µL  31.50 µL
+   sample                1.25 µL
+   ───────────────────────────────────────
+                         6.00 µL   4.75 µL/rxn
+
+5. Run a gel:
+
+   - Use a 3−12% native PAGE gel.
+   - Load 5.0 µL of each sample.
+   - Run at 150.0V for 115 min.
+
+6. Image with a laser scanner:
+
+   lasers:   488 nm   658 nm
+   filters:  518BP22  710BP40
+
+Note:
+[1] The PURExpress protocol recommends 0.8 U/µL (20 U 
+    per 25 µL reaction), while the product page for 
+    the inhibitor itself recommends 1 U/µL.  I'm using 
+    the former here because it's the recommendation I 
+    encountered first.
+
+    PURExpress protocol: https://tinyurl.com/y3m9lrcz
+    RNAse inhibitor FAQs: https://tinyurl.com/y3zabsoz

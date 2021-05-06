@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo TODO: Add +mRNA, −linker, +PUREfrex control
+# Estimated time required: 4h30
 
 sw zap |
 
@@ -19,7 +19,15 @@ sw step "Setup the −PUREfrex control:~1.90 µL 1 µM f89~3.10 µL nuclease-fre
 # - But I'm making mWasabi, and most of the other papers are making peptides.  
 #   I've also seen pretty low levels of mWasabi fluorescence after 30 min, so I 
 #   think it's reasonable to give it more time
-sw ivtt f89 -p frex1/gfp -t '60 min' -v 8*2.5*1.1 -r |
+#
+# reaction volume:
+# - Need at least 2.5 µL of material (after adding salt) to run the gel.
+# - To help make pipetting more accurate, I increased the volume as much as I 
+#   could without using more than one aliquot (see `sw aliquot_purefrex1`).
+# - If I add more samples in the future, I might have to decrease the reaction 
+#   volume accordingly.
+sw ivtt f85 f89 -p frex1/gfp -n 5 -v 4 -x 20 -r -t 0 |
+sw ivtt f85 f89 -p frex2/gfp -n 5 -v 4 -x 20 -r -t '60 min' |
 
 # salt concentrations:
 # - Want to reproduce the titration in [Reyes2021] (Fig 2a).
@@ -36,7 +44,7 @@ sw ivtt f89 -p frex1/gfp -t '60 min' -v 8*2.5*1.1 -r |
 # - Given these target concentrations, I used the `cdna/couple` protocol to 
 #   calulate the corresponding volumes:
 #
-#     $ sw cdna/couple -n 2 -v 5 -k 750 -m 65
+#     $ sw cdna/couple -n 2 -v 4 -k 750 -m 65
 sw step "Prepare a 3.17x salt solution:~5.00 µL 1M MgOAc~19.23 µL 3M KCl~Keep at room temperature." |
 
 # Same dilution as [Reyes2021] (Fig 2a), except without the 1/8 dilution 
@@ -44,11 +52,11 @@ sw step "Prepare a 3.17x salt solution:~5.00 µL 1M MgOAc~19.23 µL 3M KCl~Keep 
 sw serial 10µL 3.17x / 2 3 -0 -m "salt solution" -d "nuclease-free water" |
 
 # Volume of salt dilution from above `sw cdna/couple` command.
-sw step "Setup 4 coupling reactions:~5.0 µL translation reaction~2.3 µL salt dilution" |
+sw step "Setup 8 coupling reactions:~4.00 µL translation reaction~1.84 µL salt dilution" |
 
 sw step "Setup the +salt control:~2.0 µL −PUREfrex control~0.92 µL 3.17x salt solution" |
 
 sw step "Incubate at 25°C for 1h." |
 
-sw gel bolt/ivtt 6
+sw gel urea/ivtt 12
 

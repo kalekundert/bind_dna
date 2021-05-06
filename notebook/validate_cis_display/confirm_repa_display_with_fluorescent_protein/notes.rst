@@ -118,18 +118,15 @@ not sure):
    laser at all, but if Azure says it'll work, I'll trust them.
 
 
-Results
-=======
-
 Reverse translation
--------------------
+===================
 The ``reverse_translate.sh`` script automatically includes the proper 5' and 3' 
 sequences for Golden Gate assembly into pKBK022::
 
    ./reverse_translate.sh
 
 Amplify CDS --- 2019/07/24
---------------------------
+==========================
 .. protocol:: 20190724_pcr.txt 20190724_dilute_amplicons.txt
 
    I accidentally added 2x too much forward primer to the reaction.
@@ -156,7 +153,7 @@ Amplify CDS --- 2019/07/24
   old gel, but I think I have the assignments right.
 
 EMSA --- 2019/07/24
--------------------
+===================
 .. protocol:: 20190724_purexpress.txt
 
    ***
@@ -266,7 +263,7 @@ to be sure.  It'd be more clear with purified protein and a better separated
 fluorophores (e.g. mWasabi and Cy5), but mScarlet-I might be good enough.
 
 EMSA --- 2019/07/26
--------------------
+===================
 .. protocol:: 20190725_pcr_cloning.txt 20190726_dilute_amplicons.txt 20190726_purexpress.txt
 
    Printed the wrong protocol by mistake.  Only did the PCR part, not the 
@@ -336,7 +333,7 @@ EMSA --- 2019/07/26
      the signal is instead crosstalk.
 
 EMSA --- 2019/08/06
--------------------
+===================
 I had the thought that if the fluorophores are bright enough, I could get 
 better data by diluting the reaction so that the lanes wouldn't be so 
 overloaded.  Towards this end, I tried serially diluting the IVTT reaction into 
@@ -421,7 +418,7 @@ Mg helps release product from the ribosome.
   stuck to the ribosome, this might also help unstick them.
 
 EMSA --- 2019/08/07
--------------------
+===================
 .. protocol::
    
    The same as yesterday, except:
@@ -439,7 +436,7 @@ EMSA --- 2019/08/07
   anything that the previous gel didn't.
 
 EMSA --- 2019/09/16
--------------------
+===================
 .. protocol:: 20190916_purexpress.txt
 
    Used the following genes:
@@ -519,7 +516,7 @@ EMSA --- 2019/09/16
   checked for this possibility in any of my native gels yet.
 
 EMSA --- 2019/10/03
--------------------
+===================
 .. figure:: 20191003_shuffle_cis_ori.svg
 
 Caveats:
@@ -631,7 +628,7 @@ Other observations:
      with the transcription/translation machinery.
 
 EMSA --- 2019/11/16
--------------------
+===================
 I wanted to repeat the above experiment with a shuffled-RBS control to 
 distinguish what part of the transcription/translation machinery (e.g. the RNA 
 polymerase or the ribosome) is responsible for shifting the DNA.  I also wanted 
@@ -758,7 +755,7 @@ Other observations:
   2019/10/03 experiment, I don't want to read anything into it.
 
 Cloning --- 2020/06/07
-----------------------
+======================
 To address concerns about functional sequences in the shuffled genes, I 
 designed a new set of plasmids that delete (rather than shuffle) regions of 
 interest.  The length of each deletion construct is kept constant by adding a 
@@ -927,7 +924,7 @@ well as the others:
 - 55.6°C appears to be about the optimal temperature for p144 as well.
 
 EMSA --- 2021/01/28
--------------------
+===================
 Test if RNAP is responsible for shifting the DNA:
 
 .. protocol:: 20210128_purexpress_gel.txt
@@ -969,7 +966,7 @@ Conclusions:
   already.
 
 EMSA --- 2021/02/02
--------------------
+===================
 .. protocol:: 20210202_purexpress_gel_laser_scanner.txt
 
 .. figure:: 20210202_test_aggregation.svg
@@ -1004,7 +1001,7 @@ Conclusions:
   run differently in a PAGE gel, and will hopefully be more interpretable.
 
 EMSA --- 2021/02/03
--------------------
+===================
 .. protocol:: 20210203_conditions_purexpress_gel.txt
 
 .. figure:: 20210203_test_aggregation.svg

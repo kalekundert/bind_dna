@@ -24,6 +24,8 @@ linker.  I'm mostly intending to follow the cDNA-display protocol from
    anneal_linker_to_mrna/notes
    ligate_linker_to_mrna/notes
    remove_unligated_linker/notes
+   remove_unligated_mrna_via_page/notes
+   remove_unligated_mrna_via_biotin/notes
    express_mrna_via_purexpress/notes
    express_mrna_via_purefrex/notes
    express_mrna_via_nebexpress/notes

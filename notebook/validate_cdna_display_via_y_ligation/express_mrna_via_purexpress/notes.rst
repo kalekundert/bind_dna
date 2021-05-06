@@ -17,11 +17,8 @@ Considerations
 NEB recommends using 1--5 µg mRNA per 25 µL PURExpress reaction.  This 
 corresponds to 1.6 µL of 10 µM f11 per 10 µL reaction.
 
-Results
-=======
-
-Express mWasabi --- 2020/02/25
-------------------------------
+mWasabi --- 2020/02/25
+======================
 .. protocol:: 20200225_split_purex_page.txt
 
 .. figure:: 20200225_express_mwasabi_mrna.svg
@@ -60,8 +57,8 @@ Express mWasabi --- 2020/02/25
 - mWasabi runs a little higher than it should, but I'm not going to read 
   anything into that.
 
-Express mWasabi (gradient) --- 2020/02/26
------------------------------------------
+mWasabi (gradient) --- 2020/02/26
+=================================
 I'm going to do a serial dilution of mRNA from 10 µM to 0.1 µM in 7 steps.  I 
 know that expression is higher at 1 µM than at 10 µM, so I'm hoping that 0.1 µM 
 is low enough to see expression go back down again (since I want to find the 
@@ -90,8 +87,8 @@ maximum).   I chose 7 steps for several reasons:
 - The Coomassie gel is warped because it dried out and started to roll up while 
   the image was being taken.
 
-Express Zif268 (gradient) --- 2020/02/27
-----------------------------------------
+Zif268 (gradient) --- 2020/02/27
+================================
 .. protocol:: 20200227_serial_purex_page_coom.txt
 
 .. figure:: 20200227_express_zif268_mrna.svg
@@ -143,8 +140,8 @@ Express Zif268 (gradient) --- 2020/02/27
 
 - I could've run the gel for 52 min without running Zif268 off the bottom.
 
-Express Zif268 (StrepTag) --- 2020/02/28
-----------------------------------------
+Zif268 (StrepTag) --- 2020/02/28
+================================
 .. protocol:: 20200228_purex_streptactin_page_coom.txt
 
 .. figure:: 20200304_express_zif268_mrna_streptag.svg

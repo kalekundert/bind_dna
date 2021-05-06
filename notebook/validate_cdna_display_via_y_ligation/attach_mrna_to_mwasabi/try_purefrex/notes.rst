@@ -6,8 +6,8 @@ I learned in :expt:`67` that using PUREfrex instead of PURExpress stops the
 linker from being cleaved from the mRNA.  With that problem solved, I now want 
 to test if I can observe attachment of mWasabi to its mRNA when using PUREfrex.
 
-Attach mRNA --- PUREfrex2.0 --- 2021/03/01
-==========================================
+Try PUREfrex2.0 --- 2021/03/01
+==============================
 .. protocol:: 20210301_attach_via_purefrex.txt
 
 .. figure:: 20210301_attach_mwasabi_purefrex.svg
@@ -88,12 +88,13 @@ Observations:
   I don't really know what else I can do, though, other than trying PUREfrex1.0 
   and hoping it has less nuclease activity...
 
-
-Attach mRNA --- PUREfrex1.0 --- 2021/04/16
-==========================================
+Try PUREfrex1.0 --- 2021/04/16
+==============================
 .. protocol:: 20210416_attach_via_purefrex.txt
 
 .. figure:: 20210416_attach_via_purefrex1.svg
+
+.. protocol:: 20210420_gel_laser_scanner.txt
 
 .. figure:: 20210420_attach_via_purefrex1_urea.svg
 
@@ -192,3 +193,42 @@ Conclusions:
 
 - I might have seen coupling.  I'll have to repeat the experiment to see if I 
   can visualize the protein as well as the mRNA.
+
+Without SDS PAGE --- 2021/05/03
+===============================
+.. protocol:: 20210503_attach_via_purefrex.txt
+
+.. figure:: 20210503_attach_via_purefrex.svg
+
+Observations:
+
+- I do not see any coupling between the mRNA and the protein.
+  
+  - The PUREfrex 1.0 reactions have the same shifted bands that I saw in the 
+    previous reaction (albeit more faint), but they are not superimposed with 
+    any GFP signal.
+
+  - The PUREfrex 2.0 reactions don't really have the same shifted bands, 
+    although they do seem to have more smeared signal above the main mRNA band 
+    in this high-salt conditions.
+
+- All of the PUREfrex 2.0 reaction have a significant amount of Cy5 stuck in 
+  the well.  I assume this is mRNA that's still associated with the ribosome, 
+  but I don't know.
+
+- I don't know which green bands are GP and which are FluoroTect.  In 
+  retrospect, I probably shouldn't have used FluoroTect without having a 
+  +FluoroTect −mRNA control.
+
+- I don't know why the green bands don't exactly correspond between the 
+  PUREfrex 1.0 and 2.0 conditions.
+
+- The concentration of free linker in this f89 prep is surprisingly high.  
+  Maybe this is because I decreased the concentration of ligase.  I should've 
+  been more careful about that.
+
+- The crystal violet loading dye worked really well.
+
+Conclusions:
+
+- These results are not promising.

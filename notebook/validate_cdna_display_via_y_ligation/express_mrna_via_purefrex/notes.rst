@@ -72,7 +72,6 @@ Conclusions:
 
 - 1000 nM is the optimal mRNA concentration for mWasabi with PUREfrex 1.0.
 
-
 PUREfrex 1.0, FLAG --- 2021/04/07
 =================================
 .. protocol:: 20210407_optimize_purefrex1_flag.txt
@@ -96,6 +95,26 @@ Conclusions:
 - I need to try adding RNase to see if that helps the visualization.  I won't 
   be able to do that when I also want to visualize mRNA, but it could still be 
   useful for experiments like this (or once I have cDNA).
+
+PUREfrex 1.0, Zif286
+====================
+.. protocol:: 20210505_optimize_purefrex1_zif.txt
+
+.. figure:: 20210505_optimize_purefrex1_zif.svg
+
+Observations:
+
+- The optimal mRNA concentration is about 1000 nM.  This is in line with all of 
+  my other experiments.
+
+- The Zif268 is discernible with LysGreen and tricine PAGE.
+
+  - This is a big improvement over Coomassie staining with bis/tris/MES PAGE 
+    (:expt:`18`), which doesn't detect Zif268 at all.
+
+  - The bands are still very faint (you can see how high the contrast is turned 
+    up).  Part of the problem is just that PUREfrex 1.0 has relatively low 
+    expression.  I'd probably see a stronger band with PUREfrex 2.0.
 
 Discussion
 ==========
