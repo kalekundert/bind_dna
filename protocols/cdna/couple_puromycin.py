@@ -48,6 +48,7 @@ Options:
 import docopt
 import stepwise
 import numpy as np
+from stepwise import pl
 
 args = docopt.docopt(__doc__)
 rxn_uL = float(args['--volume'])
@@ -78,13 +79,10 @@ rxn['KCl'].volume = salt_uL[2], 'µL'
 rxn['KCl'].master_mix = True
 
 p = stepwise.Protocol()
-p += f"""\
-Setup the coupling reaction:
+p += pl(
+        f"Setup the coupling reaction:",
+        rxn,
+)
+p += f"Incubate at {args['--incubate-temp']}°C for {args['--incubate-time']}."
 
-{rxn}
-"""
-p += f"""\
-Incubate at {args['--incubate-temp']}°C for {args['--incubate-time']}.
-"""
-
-print(p)
+p.print()
