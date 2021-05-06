@@ -158,7 +158,6 @@ Options:
             p += f"Label the product: {self.label}"
         if self.wash:
             p += wash.protocol
-            p += f"Dilute the purified mRNA to {self.target_conc_uM:g} µM."
         if self.aliquot:
             p += stepwise.load('aliquot "4 µL" "1 µM"')
 
