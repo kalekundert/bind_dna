@@ -19,6 +19,12 @@ postcmd = 'chmod a-x nanodrop/*.tsv'
 
 [[data]]
 type = 'gdrive'
+src = '/Church/nanodrop'
+dest = 'nanodrop'
+postcmd = 'nanodrop/csv_to_tsv.sh'
+
+[[data]]
+type = 'gdrive'
 src = '/Church/gels'
 dest = 'gels'
 
