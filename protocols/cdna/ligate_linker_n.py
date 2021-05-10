@@ -102,7 +102,7 @@ Options:
     )
     mrna_conc_uM = appcli.param(
             '<mrna_µM>',
-            cast=float,
+            cast=eval,
     )
     extra_percent = appcli.param(
             '--extra',
@@ -248,6 +248,13 @@ Options:
         #     normally don't use PNK.  As with the ligase, this PNK 
         #     concentration is also much lower than what I'd been using in the 
         #     Takara reaction.
+        #
+        # - Update: 2021/05/06
+        #   
+        #   - I decided to double the enzyme volumes relative to [Reyes2021]_, 
+        #     because I suspect that I wasn't getting as much ligation with 
+        #     those volumes as I used to.  I haven't rigorously tried to 
+        #     optimize this, yet.
 
         rxn = stepwise.MasterMix("""\
                 Reagent                  Stock       Volume  MM?
@@ -256,8 +263,8 @@ Options:
                 T4 RNA ligase buffer       10x       4.0 µL   +
                 ATP                      10 mM       4.0 µL   +
                 PEG 8000                   50%      20.0 µL   +
-                T4 PNK                 10 U/µL     0.004 µL   -
-                T4 RNA ligase          10 U/µL     0.025 µL   -
+                T4 PNK                 10 U/µL     0.008 µL   -
+                T4 RNA ligase          10 U/µL     0.050 µL   -
                 annealed mRNA/linker   1.25 µM       4.0 µL   -
         """)
         rxn['T4 RNA ligase'].name = "T4 RNA ligase (NEB M0204)"
