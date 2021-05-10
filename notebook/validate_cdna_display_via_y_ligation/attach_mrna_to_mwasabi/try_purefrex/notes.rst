@@ -111,14 +111,22 @@ Observations:
   In the SDS PAGE gel, there is a clear loss of full-length mRNA at higher salt 
   concentrations.  In the TBE/urea gel, in contrast, every sample has the same 
   high level of full-length mRNA.  This indicates that full length mRNA is 
-  getting trapped in the SDS precipitate.  
-
-  Note that I saw the same effect in :expt:`99` (2021/03/02).
+  getting trapped in the SDS precipitate.  Note that I saw the same effect in 
+  :expt:`99` (2021/03/02).
 
   If I want to use SDS PAGE going forward, I'll need to desalt my samples.  
   Maybe I can get away without this for the FLAG peptide, since it's much 
   smaller and [Reyes2021]_ doesn't mention any desalting steps.  But in general 
   this is something I'll have to work around.
+
+  .. update:: 2021/05/06
+
+    I looked more closely into ordering desalting columns, and I realized that 
+    they have molecular weight cutoffs.  Specifically, the Zeba micro spin 
+    desalting columns claim to retain any molecules <1 kDa and elute any 
+    molecules >7 kDa.  This means that I probably can't desalt my FLAG (2 kDa) 
+    samples.  Zif268 (11 kDa) is on the border, but should be eluted.  mWasabi 
+    should be totally fine.
 
 - The TBE/urea gel might show the mRNA/protein fusion.  
 

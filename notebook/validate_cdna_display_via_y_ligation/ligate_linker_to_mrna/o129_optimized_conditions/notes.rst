@@ -1,6 +1,6 @@
-**************************************
-Poly-A linker via optimized conditions
-**************************************
+**************************
+o129, optimized conditions
+**************************
 
 Previously, I determined reasonable salt and temperature conditions for 
 annealing, see :expt:`12` and :expt:`13`.  These conditions gave rise to 

@@ -113,6 +113,11 @@ Observations:
 
 - I can't see the 17 kDa ladder band on the tricine gels.  I don't know why.
 
+  .. update:: 2021/05/06
+
+    After looking at some more of these gels (e.g. :expt:`99`), I think the 14 
+    and 17 kDa ladder bands are just nearly superimposed.
+
 - The crystal violet loading dye moves into the gel, despite its positive 
   charge.  This is the case even with (i) only loading buffer and (ii) only 
   glycerol + crystal violet.  These lanes are not in the above figure, but are 

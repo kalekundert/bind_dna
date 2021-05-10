@@ -5,14 +5,16 @@ Ligate linker to mRNA
 .. toctree::
    :hidden:
 
-   linker_n_via_naimudden2016/notes
-   linker_n_via_kitamura2002/notes
-   linker_n_via_optimized_conditions/notes
+   linker_n_naimudden2016/notes
+   linker_n_kitamura2002/notes
+   linker_n_salt/notes
+   linker_n_optimized_conditions/notes
    pseudo_linker_via_5_phosphorylation/notes
-   poly_a_linker_via_optimized_conditions/notes
-   poly_a_linker_via_crowding_agents/notes
-   poly_a_linker_via_incubation_time/notes
-   poly_a_linker_via_linker_concentration/notes
+   o129_optimized_conditions/notes
+   o129_crowding_agents/notes
+   o129_incubation_time/notes
+   o129_linker_concentration/notes
+   o129_ribozyme/notes
 
 
 [Naimudden2016]_ reports a 90--95% efficiency ligating linker-N to mRNA.  My 

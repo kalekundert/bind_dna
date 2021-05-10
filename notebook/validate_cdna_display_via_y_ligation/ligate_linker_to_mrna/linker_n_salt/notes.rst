@@ -1,10 +1,11 @@
 ********
 Via salt
 ********
-As discussed in :expt:`53`, salt is widely used in oligo annealing reactions to 
+As discussed in :expt:`59`, salt is widely used in oligo annealing reactions to 
 help shield the charge of the phosphate backbone.  However, [Naimudden2016]_ 
 doesn't clearly specify the buffer used to anneal the oligos.  Therefore, this 
 is a parameter that I need to optimize myself.
+
 
 Results
 =======
@@ -13,8 +14,9 @@ Removing salt --- 2019/12/19
 ----------------------------
 A significant issue with the annealing reaction is that salt is inhibitory to 
 the phosphorylation step, and may also be inhibitory to the ligation step.  See 
-more discussion in :expt:`19`.  To find the best way to address this issue, I'm 
-trying 4 different strategies for removing/diluting the salt:
+more discussion in :expt:`59` ("Ambiguities" section).  To find the best way to 
+address this issue, I'm trying 4 different strategies for removing/diluting the 
+salt:
 
 - A: Pre-phosphorylate the linker; add 50-150 mM NaCl to the annealing 
   reaction; don't bother removing it before the ligation reaction.
@@ -176,3 +178,8 @@ for annealing than Na⁺.
 Discussion
 ==========
 - I'm tentatively planning to use PBS for future experiments.
+
+- The reaction seems to require high salt for annealing and low salt for 
+  ligation.  Note however that salt is only expected to interfere with 
+  phosphorylation, not ligation (:expt:`59`).  With phosphorylated linkers 
+  (e.g. o129, o239), the results may be different.

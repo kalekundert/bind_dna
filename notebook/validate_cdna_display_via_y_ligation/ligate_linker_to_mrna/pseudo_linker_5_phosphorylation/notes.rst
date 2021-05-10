@@ -1,6 +1,6 @@
-*****************************
-Ligate via 5' phosphorylation
-*****************************
+*********************************
+Pseudo-linker, 5' phosphorylation
+*********************************
 
 The 5' end of linker-N must be phosphorylated in order for it to be ligated to 
 the mRNA.  [Naimudden2016]_ used T4 kinase to phosphorylate linker-N during the 

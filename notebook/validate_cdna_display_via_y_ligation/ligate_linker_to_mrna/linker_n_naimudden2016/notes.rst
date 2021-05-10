@@ -1,6 +1,6 @@
-*****************************
-Linker-N via [Naimudden2016]_
-*****************************
+**************************
+Linker-N, [Naimudden2016]_
+**************************
 
 In this experiment, I try to follow the [Naimudden2016]_ protocol as closely as 
 possible, filling in ambiguous details as necessary.

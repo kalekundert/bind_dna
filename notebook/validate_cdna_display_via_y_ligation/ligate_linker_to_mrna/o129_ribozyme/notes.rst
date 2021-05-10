@@ -1,6 +1,6 @@
-***************
-Via 3' ribozyme
-***************
+**************
+o129, ribozyme
+**************
 
 :expt:`1` shows that only about half of the mRNA appears to be capable of being 
 ligated to the linker.  This maybe due to heterogeneity at the 3' end of the 

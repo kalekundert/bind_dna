@@ -2,12 +2,14 @@
 Express mRNA via PUREfrex
 *************************
 
-Before I an do experiments with PUREfrex, I need to determine the optimal 
+Before I can do experiments with PUREfrex, I need to determine the optimal 
 amount of mRNA to use in reactions.  My plan is to closely follow the protocol 
 from :expt:`18` (2020/02/26).
 
-PUREfrex 2.0, mWasabi --- 2021/02/19
-====================================
+mWasabi, PUREfrex 2.0
+=====================
+2021/02/19:
+
 .. protocol:: 20210219_optimize_purefrex2_s30.txt
 
 .. figure:: 20210219_optimize_purefrex2_s30.svg
@@ -40,8 +42,10 @@ Observations:
   the major product at lower mRNA concentrations.  Instead, the products appear 
   to be in about the same ratio at each mRNA concentration.
 
-PUREfrex 2.0 + RNase inhibitor, mWasabi --- 2021/02/23
-======================================================
+mWasabi, PUREfrex 2.0 + RNase inhibitor
+=======================================
+2021/02/23:
+
 .. protocol:: 20210223_optimize_purefrex2_rnase.txt
 
 .. figure:: 20210223_optimize_purefrex2_rnase.svg
@@ -53,8 +57,10 @@ Observations:
 - Relative expression levels are comparable to the −RNase inhibitor reactions 
   from 2021/02/19.
 
-PUREfrex 1.0, mWasabi --- 2021/04/14
-====================================
+mWasabi, PUREfrex 1.0
+=====================
+2021/04/14:
+
 .. protocol:: 20200414_optimize_purefrex1_gfp.txt
 
 .. figure:: 20210414_optimize_purefrex1_gfp.svg
@@ -72,8 +78,37 @@ Conclusions:
 
 - 1000 nM is the optimal mRNA concentration for mWasabi with PUREfrex 1.0.
 
-PUREfrex 1.0, FLAG --- 2021/04/07
-=================================
+Zif268, PUREfrex 1.0
+====================
+2021/05/05:
+
+.. protocol:: 20210505_optimize_purefrex1_zif.txt
+
+.. figure:: 20210505_optimize_purefrex1_zif.svg
+
+Observations:
+
+- The optimal mRNA concentration is about 1000 nM.  This is in line with all of 
+  my other experiments.
+
+- The Zif268 is discernible with LysGreen and tricine PAGE.
+
+  - This is a big improvement over Coomassie staining with bis/tris/MES PAGE 
+    (:expt:`18`), which doesn't detect Zif268 at all.
+
+  - The bands are still very faint (you can see how high the contrast is turned 
+    up).  Part of the problem is just that PUREfrex 1.0 has relatively low 
+    expression.  I'd probably see a stronger band with PUREfrex 2.0.
+
+- The 208 nM reaction got less master mix than the others due to a pipetting 
+  error.  This is visible in the data; the digested GreenLys bands are fainter 
+  in that lane.  It doesn't affect the fact that 1000 nM is the optimal 
+  concentration,  though.
+
+FLAG, PUREfrex 1.0
+==================
+2021/04/07:
+
 .. protocol:: 20210407_optimize_purefrex1_flag.txt
 
 .. figure:: 20210407_optimize_purefrex1_flag.svg
@@ -96,28 +131,8 @@ Conclusions:
   be able to do that when I also want to visualize mRNA, but it could still be 
   useful for experiments like this (or once I have cDNA).
 
-PUREfrex 1.0, Zif286
-====================
-.. protocol:: 20210505_optimize_purefrex1_zif.txt
-
-.. figure:: 20210505_optimize_purefrex1_zif.svg
-
-Observations:
-
-- The optimal mRNA concentration is about 1000 nM.  This is in line with all of 
-  my other experiments.
-
-- The Zif268 is discernible with LysGreen and tricine PAGE.
-
-  - This is a big improvement over Coomassie staining with bis/tris/MES PAGE 
-    (:expt:`18`), which doesn't detect Zif268 at all.
-
-  - The bands are still very faint (you can see how high the contrast is turned 
-    up).  Part of the problem is just that PUREfrex 1.0 has relatively low 
-    expression.  I'd probably see a stronger band with PUREfrex 2.0.
-
-Discussion
-==========
+Conclusions
+===========
 - For every condition, 1 µM seems to be the optimal mRNA concentration.  
   However, 500 nM often gives comparable expression, and so might be preferred 
   in the interest of conserving material.

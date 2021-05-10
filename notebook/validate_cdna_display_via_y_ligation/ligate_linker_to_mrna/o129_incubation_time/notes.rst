@@ -1,6 +1,6 @@
-*********************************
-Poly-A linker via incubation time
-*********************************
+*********************
+o129, incubation time
+*********************
 
 In this experiment, I want to test if I can improve ligation efficiency by 
 incubation the reaction for different times at different temperatures.

@@ -1,6 +1,6 @@
-****************************
-Linker-N via [Kitamura2002]_
-****************************
+*************************
+Linker-N, [Kitamura2002]_
+*************************
 [Kitamura2002]_ has a better description of the Y-ligation method than any 
 other paper I've found (including [Nishigaki1998]_, which introduces the idea).  
 This version of the protocol is for ligating two DNA oligos (although T4 RNA 

@@ -1,6 +1,6 @@
-**************************************
-Poly-A linker via linker concentration
-**************************************
+**************************
+o129, linker concentration
+**************************
 Although the annealing and ligation reactions seem to work with the poly-A 
 linker (o129), only about half of the mRNA is modified.  An obvious way to try 
 modifying more of the mRNA is to use more linker.
