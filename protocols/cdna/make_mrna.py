@@ -131,6 +131,7 @@ Options:
 
     def get_protocol(self):
         anneal = AnnealMrnaLinker(self.mrnas, self.linkers)
+        anneal.num_reactions = self.num_reactions
         anneal.linker_ratio = 0.6  # See expt #1
 
         # Scale the reactions such that we'll end up with enough mRNA:
