@@ -9,8 +9,8 @@ Usage:
 Arguments:
     <dna>
         The names of 1 or more DNA molecules to attach to dCas9.  These names 
-        should be present in the PO₄ database and have associated stock 
-        concentrations and molecular weights.  Note that PO₄ can't 
+        should be present in the FreezerBox database and have associated stock 
+        concentrations and molecular weights.  Note that FreezerBox can't 
         automatically calculate molecular weights for non-standard nucleotides 
         like iSP9, so you may need to provide a molecular weight manually for 
         such constructs.
@@ -42,7 +42,7 @@ Options:
 
 import docopt
 import stepwise
-import po4
+import freezerbox
 
 # This script should be broken in two: one for proteins in general and another 
 # for Cas9.  The only real difference for Cas9 is that the reaction includes 
@@ -62,7 +62,7 @@ EDTA        500 mM      1 µL
 DNA         200 nM      5 µL
 """)
 
-db = po4.load_db()
+db = freezerbox.load_db()
 
 dna = args['<dna>']
 dna_nM = min([round(db[x].conc_nM) for x in dna])

@@ -20,11 +20,12 @@ Usage:
 Arguments:
     <mrna>
         A comma-separated list of mRNA names (e.g. f85).  If possible, the 
-        concentrations of these mRNAs will be read from the PO₄ database.
+        concentrations of these mRNAs will be read from the FreezerBox database.
 
     <linker>
         A comma-separated list of linker names (e.g. o129).  If possible, the 
-        concentrations of these linkers will be read from the PO₄ database.
+        concentrations of these linkers will be read from the FreezerBox 
+        database.
 
 Options:
     -n --num-reactions <int>        [default: ${app.num_reactions}]

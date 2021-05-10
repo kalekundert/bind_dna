@@ -44,9 +44,9 @@ Options:
     -R --mrna-stock <µM>
         The stock concentration of the mRNA, in µM.  The volume of mRNA will be 
         updated accordingly to keep the amount of material in the reaction 
-        constant.  The default is read from the PO₄ database, or 10 µM if the 
-        given mRNA is not in the database.  Use '--mrna-volume' to change the 
-        amount of mRNA in the reaction.
+        constant.  The default is read from the FreezerBox database, or 10 µM 
+        if the given mRNA is not in the database.  Use '--mrna-volume' to 
+        change the amount of mRNA in the reaction.
 
     -l --linker-ratio <float>           [default: ${app.linker_ratio}]
         The amount of linker to add to the reaction, relative to the amount of 
@@ -55,8 +55,8 @@ Options:
     -L --linker-stock <µM>
         The stock concentration of the linker, in µM.  The volume of linker be 
         updated accordingly, to keep the amount of material in the reaction 
-        constant.  The default is read from the PO₄ database, or 10 µM if the 
-        given linker is not in the database.  
+        constant.  The default is read from the FreezerBox database, or 10 µM 
+        if the given linker is not in the database.  
 """
     __config__ = [
             DocoptConfig(),
