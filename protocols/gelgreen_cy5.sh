@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 set -euo pipefail
-stepwise gelgreen -I | stepwise laser blue red
+stepwise stain gelgreen -I | stepwise laser blue red
