@@ -1,6 +1,6 @@
-***********************
-Remove unligated linker
-***********************
+****************************************
+Remove unligated linker via spin filters
+****************************************
 Most mRNA/cDNA display protocols include a step to remove unligated linker, 
 although the specific step varies:
 

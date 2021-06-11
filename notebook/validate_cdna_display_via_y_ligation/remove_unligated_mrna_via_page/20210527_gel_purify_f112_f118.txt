@@ -1,0 +1,113 @@
+May 27, 2021
+
+$ sw gel_purify_f112_f118
+
+ 1. Wipe down your bench and anything you'll touch 
+    (pipets, racks, pens, etc.) with RNaseZap.
+
+ 2. Setup 2 ligation reactions:
+
+    Reagent               Stock    Volume      2.2x
+    ───────────────────────────────────────────────
+    nuclease-free water           6.00 µL  13.20 µL
+    T4 RNA ligase buffer    10x   5.00 µL  11.00 µL
+    ATP                   10 mM   5.00 µL  11.00 µL
+    f111,f11              10 µM  20.00 µL
+    o236,o128             10 µM  12.00 µL
+    ───────────────────────────────────────────────
+                                 48.00 µL  16.00 µL/rxn
+
+ 3. Incubate as follows:
+
+    - 90°C for 30s
+    - Cool to 25°C at 1°C/s
+
+ 4. Add to each reaction:
+
+    - 2 µL 10 U/µL T4 RNA ligase
+
+ 5. Incubate at 25°C for 30 min.
+
+ 6. Label the products: f112, f118
+
+ 7. Concentrate the reaction to ≈5 µL by
+    lyophilization.
+
+ 8. Prepare 2 samples for TBE/urea PAGE:
+
+    Reagent          Stock    Volume
+    ────────────────────────────────
+    RNA loading dye     2x   5.00 µL
+    f112,f118        10 µM   5.00 µL
+    ────────────────────────────────
+                            10.00 µL
+
+    - Incubate at 70°C for 3 min.
+
+ 9. Run a gel:
+
+    gel: 6% TBE/urea PAGE
+    buffer: 1x TBE
+    ladder: 1 µL low range ssRNA ladder (NEB N0364S)
+    run: 180V for 40 min
+
+10. Cut the ligated and unligated mRNA bands out of
+    the gel [1].
+
+    - Place the gel over a TLC plate.
+    - Use a UV light to visualize the RNA (dark spot)
+    - Consider visualizing remaining gel to ensure
+      that all desired RNA was excised.
+
+11. Crush gel slices.
+
+    - Poke 3-4 holes in 0.65 mL tube with 27 g
+      needle.
+    - Place gel slice inside 0.65 mL tube.
+    - Place 0.65 mL tube inside 1.5 mL tube.
+    - Centrifuge 5 min at max speed.
+
+12. Resuspend gel in 400 µL PAGE elution buffer
+
+    - Tris-HCl, pH 7.5 10 mM
+    - NaCl 500 mM
+    - EDTA 1 mM
+    - SDS 0.1%
+
+13. Incubate at 4°C overnight with end-over-end
+    mixing.
+
+14. Spin-elute through a Spin-X column or similar to
+    remove gel slices
+
+    - 4 min at 7000 rpm
+
+15. Purify using Zymo Clean & Concentrator-5 kit
+    (R1015) [2,3]:
+
+    - Perform all spin steps at 16000g.
+    - Add 800.0 µL RNA binding buffer to the crude
+      RNA.
+    - Add 1200.0 µL 95-100% ethanol to the crude RNA.
+    - Load on a Zymo-Spin IICR column.
+    - Spin 30s; discard flow-through.
+
+    - Add 400 µL RNA prep buffer.
+    - Spin 30s; discard flow-through.
+    - Add 700 µL RNA wash buffer.
+    - Spin 30s; discard flow-through.
+    - Add 400 µL RNA wash buffer.
+    - Spin 1m; discard flow-through.
+
+    - Add 15 µL nuclease-free water.
+    - Spin 30s; keep flow-through.
+
+16. Make 5 µL, 2 µM aliquots.
+
+Notes:
+[1] Based on Fitzy's DNA PAGE purification protocol,
+    [Nilson2013], and [Petrov2013].
+
+[2] https://tinyurl.com/yd699u8b
+
+[3] Column capacity: 10 µg

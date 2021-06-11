@@ -1,0 +1,54 @@
+May 17, 2021
+
+$ sw make f111
+
+1. Wipe down your bench and anything you'll touch 
+   (pipets, racks, pens, etc.) with RNaseZap.
+
+2. Setup 1 in vitro transcription reaction [1]:
+
+   Reagent                  Stock    Volume
+   ────────────────────────────────────────
+   nuclease-free water              6.23 µL
+   reaction buffer            10x   2.25 µL
+   rNTP mix                100 mM   9.00 µL
+   HiScribe T7                10x   2.25 µL
+   f110                 146 ng/µL  10.27 µL
+   ────────────────────────────────────────
+                                   30.00 µL
+
+   - Mix reagents in the order given.
+   - Ok to handle at room temperature.
+
+3. Incubate at 37°C for 4h [2,3].
+
+4. Label the product: f111
+
+5. Purify RNA using Zymo Clean & Concentrator spin
+   columns:
+
+   - If necessary, bring each sample to 50 µL.
+   - Add 2 volumes RNA binding buffer; mix.
+   - Add 3 volumes >95% ethanol; mix.
+   - Load sample on spin column.
+   - Spin 1 min, 16000g; discard flow-through.
+   - Add 400 µL RNA prep buffer.
+   - Spin 30s, 16000g; discard flow-through.
+   - Add 700 µL RNA wash buffer.
+   - Spin 30s, 16000g; discard flow-through.
+   - Add 400 µL RNA wash buffer.
+   - Spin 60s, 16000g; discard flow-through.
+   - Add 25 µL nuclease-free water.
+   - Spin 30s, 16000g.
+
+6. Make 5 uL, 10 µM aliquots.
+
+Notes:
+[1] https://tinyurl.com/cbnz445t
+
+[2] For reaction times longer than 60 minutes, we
+    recommend using a dry air incubator or a PCR
+    instrument, to prevent evaporation.
+
+[3] Reaction time is different than usual because the
+    template is short (<300 bp).

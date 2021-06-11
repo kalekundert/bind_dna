@@ -1,0 +1,34 @@
+June 9, 2021
+
+$ sw dilute f11:201.5 f118:222.9 -c '1.5µM' -v 14
+$ sw dilute f111:112.2 f112:200.9 -c '2µM' -v 14
+
+1. Dilute the following stock solutions to 1.5 µM
+   [1]:
+
+   Name  Stock Vol  Diluent Vol
+   ────────────────────────────
+   f11    14.00 µL      0.92 µL
+   f118   14.00 µL      0.46 µL
+
+2. Dilute the following stock solutions to 2 µM [2]:
+
+   Name  Stock Vol  Diluent Vol
+   ────────────────────────────
+   f111   14.00 µL      5.69 µL
+   f112   14.00 µL     11.52 µL
+
+Notes:
+[1] Concentrations:
+
+    Name        MW                Stock Conc  Target Conc
+    ─────────────────────────────────────────────────────
+    f11   126045.5  201.5 ng/µL = 1.59863 µM       1.5 µM
+    f118  143876.2  222.9 ng/µL = 1.54925 µM       1.5 µM
+
+[2] Concentrations:
+
+    Name       MW                Stock Conc  Target Conc
+    ────────────────────────────────────────────────────
+    f111  39892.9  112.2 ng/µL = 2.81253 µM         2 µM
+    f112  55110.0  200.9 ng/µL = 3.64544 µM         2 µM

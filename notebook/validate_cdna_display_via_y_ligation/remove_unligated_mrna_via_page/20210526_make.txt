@@ -1,0 +1,22 @@
+May 26, 2021
+
+$ sw make o236
+
+1. Couple the linker oligos:
+
+   Reagent   Stock   Volume
+   ────────────────────────
+   o233     400 µM  1.00 µL
+   o125     400 µM  1.00 µL
+   PBS          2x  2.00 µL
+   ────────────────────────
+                    4.00 µL
+
+2. Incubate in the dark as follows:
+
+   - room temperature for >4h
+   - −20°C overnight
+
+3. Dilute 10x to 10 µM.
+
+4. Label the product: o236

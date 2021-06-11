@@ -24,3 +24,12 @@ Specifically:
   sequence for the binding assay, and I haven't been able to clone p176 yet.
 
 
+.. protocol:: 20201118_fresh_aliquot.txt
+
+.. figure:: 20201118_compare_dcas9_aliquots.svg
+
+Observations:
+
+- All of the aliquots seem to have the same level of degradation.
+
+- I don't know what's going on.

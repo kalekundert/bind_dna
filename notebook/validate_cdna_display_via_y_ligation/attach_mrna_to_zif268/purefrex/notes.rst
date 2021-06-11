@@ -4,7 +4,7 @@ PUREfrex
 
 2021/04/21:
 
-I'm coming back to this experiment after have don a lot of optimization with 
+I'm coming back to this experiment after have done a lot of optimization with 
 mWasabi, e.g. :expt:`101`.  The main takeaways from that work are that I 
 should:
 
@@ -42,4 +42,4 @@ I'll start with f11.
 
 mRNA concentration
 ------------------
-Se :expt:`99`.
+See :expt:`99`.

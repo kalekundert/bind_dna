@@ -1,0 +1,59 @@
+- Prepare buffer B [2]:
+
+  - 100 mM (13.8 g/L) NaH₂PO₄
+  - 10 mM (1.2 g/L) Tris Cl
+  - 8M (480.5 g/L) urea
+  - Adjust pH to 8.0 using NaOH
+
+- Prepare buffer C [2]:
+
+  - 100 mM (13.8 g/L) NaH₂PO₄
+  - 10 mM (1.2 g/L) Tris Cl
+  - 8M (480.5 g/L) urea
+  - Adjust pH to 6.3 using HCl
+
+- Prepare buffer E [2]:
+
+  - 100 mM (13.8 g/L) NaH₂PO₄
+  - 10 mM (1.2 g/L) Tris Cl
+  - 8M (480.5 g/L) urea
+  - Adjust pH to 4.5 using HCl
+
+- Resuspend cells in 400 µL buffer B.
+  - Keep 10 µL for SDS PAGE.
+
+- Lyse cells by vortexing gently (e.g. taking care 
+  to avoid frothing).  The solutions should become 
+  translucent.
+
+- Centrifuge the lysates for 20-30 min at 15,000g.  
+  Transfer supernatants to a clean tube.
+  - Keep 10 µL for SDS PAGE.
+
+- Purify the lysates using Ni-NTA spin columns:
+
+  - Load 600 µL buffer B.
+  - Centrifuge for 2 min at 700g.
+
+  - Load the cleared lysate.
+  - Centrifuge for 2 min at 700g [3].
+  - Keep 10 µL for SDS PAGE.
+
+  - Repeat 1-3x [4]:
+    - Load 600 µL buffer C.
+    - Centrifuge for 2 min at 700g.
+    - Keep 10 µL for SDS PAGE.
+
+  - Repeat 1-2x [5]:
+    - Load 200 µL buffer E.
+    - Centrifuge for 2 min at 700g.
+    - Keep 10 µL for SDS PAGE.
+    - Combine the remaining eluate.
+
+Notes:
+
+[1] Protocol 5: Rapid screening of small 
+    expression cultures.  The QIAexpressionist 
+    (2003), pg. 45
+
+# vim: tw=50

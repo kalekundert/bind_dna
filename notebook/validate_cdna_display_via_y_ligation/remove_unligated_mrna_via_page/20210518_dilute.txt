@@ -1,0 +1,16 @@
+May 18, 2021
+
+$ sw dilute f111 -C 1477.1 -v 92.5
+
+1. Dilute the following stock solution to 10 µM [1]:
+
+   Name  Stock Vol  Diluent Vol
+   ────────────────────────────
+   f111   92.50 µL    250.00 µL
+
+Note:
+[1] Concentrations:
+
+    Name       MW                 Stock Conc  Target Conc
+    ─────────────────────────────────────────────────────
+    f111  39892.9  1477.1 ng/µL = 37.0266 µM        10 µM

@@ -1,0 +1,151 @@
+May 14, 2021
+
+$ sw ligate_undiluted_salt
+
+ 1. In the following steps, setup these conditions:
+
+    gene:      F  F  F  F  F  Z  Z  Z  Z  Z
+    mRNA:      +  −  +  +  +  +  −  +  +  +
+    linker:    −  +  +  +  +  −  +  +  +  +
+    ligase:    −  −  −  +  +  −  −  −  +  +
+    dilution:  −  −  −  −  +  −  −  −  −  +
+
+    - F: FLAG (f115 = f111 + o237)
+    - Z: Zif268 (f119 = f11 + o119)
+
+ 2. Wipe down your bench and anything you'll touch 
+    (pipets, racks, pens, etc.) with RNaseZap.
+
+ 3. Setup 1 +linker control:
+
+    Reagent              Stock    Volume
+    ────────────────────────────────────
+    nuclease-free water         16.80 µL
+    linker               10 µM   0.80 µL
+    ────────────────────────────────────
+                                17.60 µL
+
+ 4. Setup 1 +mRNA control:
+
+    Reagent              Stock    Volume
+    ────────────────────────────────────
+    nuclease-free water         16.80 µL
+    mRNA                 10 µM   0.80 µL
+    ────────────────────────────────────
+                                17.60 µL
+
+ 5. Keep these controls on ice until ready to run the
+    gel.
+
+ 6. Setup 2 annealing reactions [1]:
+
+    Reagent    Stock   Volume
+    ─────────────────────────
+    f11,f111   10 µM  3.00 µL
+    o129,o237  10 µM  3.00 µL
+    PBS          10x  0.67 µL
+    ─────────────────────────
+                      6.67 µL
+
+ 7. Perform the annealing reactions:
+
+    - Incubate at 95°C for 2 min.
+    - Cool at room temperature.
+
+ 8. Setup 2 −ligase controls:
+
+    Reagent                 Stock   Volume    ≈6.2x
+    ───────────────────────────────────────────────
+    nuclease-free water            1.44 µL  9.00 µL
+    T4 RNA ligase buffer      10x  0.40 µL  2.50 µL
+    ATP                     10 mM  0.40 µL  2.50 µL
+    annealed mRNA/linker  4.54 µM  1.76 µL
+    ───────────────────────────────────────────────
+                                   4.00 µL  2.24 µL/rxn
+
+ 9. Setup 2 concentrated ligation reactions:
+
+    Reagent                 Stock   Volume    ≈6.2x
+    ───────────────────────────────────────────────
+    nuclease-free water            1.36 µL  8.50 µL
+    T4 RNA ligase buffer      10x  0.40 µL  2.50 µL
+    ATP                     10 mM  0.40 µL  2.50 µL
+    T4 RNA ligase         10 U/µL  0.08 µL  0.50 µL
+    annealed mRNA/linker  4.54 µM  1.76 µL
+    ───────────────────────────────────────────────
+                                   4.00 µL  2.24 µL/rxn
+
+10. Setup 2 ligation reactions:
+
+    Reagent                      Stock    Volume     ≈6.3x
+    ──────────────────────────────────────────────────────
+    nuclease-free water                 12.24 µL  76.59 µL
+    T4 RNA ligase buffer           10x   1.76 µL  11.01 µL
+    ATP                          10 mM   1.76 µL  11.01 µL
+    T4 RNA ligase (NEB M0204)  10 U/µL   0.08 µL   0.50 µL
+    annealed mRNA/linker       4.54 µM   1.76 µL
+    ──────────────────────────────────────────────────────
+                                        17.60 µL  15.84 µL/rxn
+
+11. Incubate the ligation reactions as follows:
+
+    - 25°C for 10 min.
+    - 65°C for 10 min.
+
+12. Label the products: f119, f115
+
+13. Dilute the concentrated reactions to 17.60 µL
+
+    - 4 µL reactions: Add 13.6 µL nuclease-free water
+    - Final mRNA/linker concentration: 454 nM
+
+14. Prepare 10 samples for TBE/urea PAGE:
+
+    Reagent                    Stock    Volume       15x
+    ────────────────────────────────────────────────────
+    nuclease free water                3.22 µL  48.26 µL
+    formamide loading buffer      2x   5.00 µL  75.00 µL
+    o194                      100 µM   0.56 µL   8.40 µL
+    sample                    454 nM   1.22 µL
+    ────────────────────────────────────────────────────
+                                      10.00 µL   8.78 µL/rxn
+
+    - Incubate at 70°C for 3 min.
+
+15. Run a gel:
+
+    gel: 6% TBE/urea PAGE
+    buffer: 1x TBE
+    ladder: 1 µL low range ssRNA ladder (NEB N0364)
+      with −o194 loading dye
+    samples: 10 µL
+    run: 180V for 40 min
+
+16. Stain gel with SYBR Green II [2-4]:
+
+    - Keep the stain protected from light.
+
+    - Submerge gel in ≈30 mL 1x SYBR Green II, 1x TBE
+      (89 mM Tris, 89 mM boric acid, 1 mM EDTA,
+      pH=8.0).
+    - Shake gently for 10m.
+
+17. Image with a laser scanner:
+
+    lasers:   488 nm   658 nm
+    filters:  518BP22  710BP40
+
+Notes:
+[1] Using 0.6x linker reduces the amount of unligated
+    linker, see expt #1.
+
+[2] https://tinyurl.com/y8n7237s
+
+[3] Staining with SYBR Green II reagent is pH
+    sensitive.  For optimal sensitivity, verify that
+    the pH of the staining solution at the
+    temperature used for staining is between 7.5 and
+    8.0 (preferably 8.0).
+
+[4] The staining solution may be stored in the dark
+    (preferably refrigerated) and reused 3-4 times.

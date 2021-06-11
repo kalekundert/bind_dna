@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+cat <<EOF
+- Add mRNA/linker only controls
+- Specify that all samples should be diluted to roughly the same concentration, 
+  otherwise it's hard to get a good image for densiometry
+EOF
+
 # I went back and forth on which conditions to test, and ultimately I decided 
 # to simply compare my established protocol to the [Reyes2021] protocol.  
 # Depending on what I see, I can make more fine-grained comparisons later.
@@ -27,7 +33,7 @@ sw reaction \
   'T4 RNA ligase buffer ;     10x ;      1 µL ; +' \
   'ATP                  ;   10 mM ;      1 µL ; +' \
   'f11,f111             ;   10 µM ;      2 µL ; -' \
-  'o129,o239            ;   10 µM ;      3 µL ; -' \
+  'o129,o237            ;   10 µM ;      3 µL ; -' \
   -n 2 |
 
 sw step "Incubate as follows:~90°C for 30s~Cool to 25°C at 1°C/s" |
@@ -44,7 +50,7 @@ sw step "Label the products: f119, f115" |
 
 sw cdna/make f11,f111 o129,o239 -n 2 -v 2 -c 0 -W -A |
 
-sw step "Label the products: f119, f115" |
+sw step "Label the products: f119, f113" |
 
 sw gel urea/o194 4
 

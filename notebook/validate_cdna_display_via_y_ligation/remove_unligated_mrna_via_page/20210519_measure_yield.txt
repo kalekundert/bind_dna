@@ -1,0 +1,84 @@
+May 19, 2021
+
+$ sw measure_yield
+
+1. Prepare 2 samples for TBE/urea PAGE:
+
+   Reagent          Stock    Volume
+   ────────────────────────────────
+   RNA loading dye     2x   5.00 µL
+   f11,f111         10 µM   5.00 µL
+   ────────────────────────────────
+                           10.00 µL
+
+   - Incubate at 70°C for 3 min.
+
+2. Run a gel:
+
+   gel: 6% TBE/urea PAGE
+   buffer: 1x TBE
+   ladder: 1 µL low range ssRNA ladder (NEB N0364S)
+   samples: 10 µL
+   run: 180V for 40 min
+
+3. Cut the desired band out of the gel [1].
+
+   - Place the gel over a TLC plate.
+   - Use a UV light to visualize the RNA (dark spot)
+   - Consider visualizing remaining gel to ensure
+     that all desired RNA was excised.
+
+4. Crush gel slices.
+
+   - Poke 3-4 holes in 0.65 mL tube with 27 g needle.
+   - Place gel slice inside 0.65 mL tube.
+   - Place 0.65 mL tube inside 1.5 mL tube.
+   - Centrifuge 5 min at max speed.
+
+5. Resuspend gel in 400 µL PAGE elution buffer
+
+   - Tris-HCl, pH 7.5 10 mM
+   - NaCl 500 mM
+   - EDTA 1 mM
+   - SDS 0.1%
+
+6. Incubate overnight at room temperature with
+   agitation.
+
+   - 4°C would also be ok.
+   - thermomixer at 800 rpm or nutator.
+
+7. Spin-elute through a Spin-X column or similar to
+   remove gel slices
+
+   - 4 min at 7000 rpm
+
+8. Purify using Zymo Clean & Concentrator-5 kit
+   (R1015) [2,3]:
+
+   - Perform all spin steps at 16000g.
+   - Add 800.0 µL RNA binding buffer to the crude
+     RNA.
+   - Add 1200.0 µL 95-100% ethanol to the crude RNA.
+   - Load on a Zymo-Spin IICR column.
+   - Spin 30s; discard flow-through.
+
+   - Add 400 µL RNA prep buffer.
+   - Spin 30s; discard flow-through.
+   - Add 700 µL RNA wash buffer.
+   - Spin 30s; discard flow-through.
+   - Add 400 µL RNA wash buffer.
+   - Spin 1m; discard flow-through.
+
+   - Add 15 µL nuclease-free water.
+   - Spin 30s; keep flow-through.
+
+9. Measure yield by NanoDrop
+
+Notes:
+[1] Based on Fitzy's DNA PAGE purification protocol,
+    [Nilson2013], and [Petrov2013].
+
+[2] https://tinyurl.com/yd699u8b
+
+[3] Column capacity: 10 µg

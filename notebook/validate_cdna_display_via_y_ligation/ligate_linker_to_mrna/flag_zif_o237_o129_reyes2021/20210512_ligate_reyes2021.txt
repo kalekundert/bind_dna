@@ -1,0 +1,116 @@
+May 12, 2021
+
+$ sw ligate_reyes2021
+
+ 1. In the following steps, setup these conditions:
+
+    FLAG (f111, o239):     +  +  −  −
+    Zif268 (f11, o129):    −  −  +  +
+    established protocol:  +  −  +  −
+    Reyes2021 protocol:    −  +  −  +
+
+ 2. Setup 2 ligation reactions:
+
+    Reagent               Stock   Volume     2.2x
+    ─────────────────────────────────────────────
+    nuclease-free water          2.80 µL  6.16 µL
+    T4 RNA ligase buffer    10x  1.00 µL  2.20 µL
+    ATP                   10 mM  1.00 µL  2.20 µL
+    f11,f111              10 µM  2.00 µL
+    o129,o239             10 µM  3.00 µL
+    ─────────────────────────────────────────────
+                                 9.80 µL  4.80 µL/rxn
+
+ 3. Incubate as follows:
+
+    - 90°C for 30s
+    - Cool to 25°C at 1°C/s
+
+ 4. Add to each reaction:
+
+    - 0.2 µL 10 U/µL T4 RNA ligase
+
+ 5. Incubate at 25°C for 30 min.
+
+ 6. Label the products: f119, f115
+
+ 7. Setup 2 annealing reactions [1]:
+
+    Reagent    Stock   Volume
+    ─────────────────────────
+    f11,f111   10 µM  2.00 µL
+    o129,o239  10 µM  1.20 µL
+    PBS          10x  0.36 µL
+    ─────────────────────────
+                      3.56 µL
+
+ 8. Perform the annealing reactions:
+
+    - Incubate at 95°C for 2 min.
+    - Cool at room temperature.
+
+ 9. Setup 1 ligation reaction:
+
+    Reagent                       Stock    Volume
+    ─────────────────────────────────────────────
+    nuclease-free water                  24.69 µL
+    T4 RNA ligase buffer            10x   3.56 µL
+    ATP                           10 mM   3.56 µL
+    T4 RNA ligase (NEB M0204)   10 U/µL   0.20 µL
+    annealed mRNA/linker       5.625 µM   3.56 µL
+    ─────────────────────────────────────────────
+                                         35.56 µL
+
+10. Incubate the ligation reaction as follows:
+
+    - 25°C for 10 min.
+    - 65°C for 10 min.
+
+11. Label the products: f119, f115
+
+12. Prepare 4 samples for TBE/urea PAGE:
+
+    Reagent                    Stock    Volume        6x
+    ────────────────────────────────────────────────────
+    formamide loading buffer      2x   5.00 µL  30.00 µL
+    o194                      100 µM   0.56 µL   3.36 µL
+    sample                    125 nM   4.44 µL
+    ────────────────────────────────────────────────────
+                                      10.00 µL   5.56 µL/rxn
+
+    - Incubate at 70°C for 3 min.
+
+13. Run a gel:
+
+    gel: 6% TBE/urea PAGE
+    buffer: 1x TBE
+    ladder: 1 µL low range ssRNA ladder (NEB N0364)
+    samples: 10 µL
+    run: 180V for 40 min
+
+14. Stain gel with GelGreen [2-4]:
+
+    - Keep the stain protected from light.
+
+    - Submerge gel in ≈30 mL 3x GelGreen, 100 mM
+      NaCl.
+    - Shake gently for 30m.
+
+15. Image with a laser scanner:
+
+    lasers:   488 nm   658 nm
+    filters:  518BP22  710BP40
+
+Notes:
+[1] Using 0.6x linker reduces the amount of unligated
+    linker, see expt #1.
+
+[2] https://tinyurl.com/etxhfxws
+
+[3] Including 100 mM NaCl in the staining solution
+    enhances sensitivity, but may promote dye
+    precipitation if the gel stain is reused.
+
+[4] Staining solution can be reused at least 2-3x.
+    Store staining solution at room temperature
+    protected from light.

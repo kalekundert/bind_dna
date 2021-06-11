@@ -105,3 +105,24 @@ GelGreen vs. SYBR
   considered "safe".
 
 - GelGreen is also much cheaper.
+
+FluoroTect GreenLys
+===================
+I want to know the length and molecular weight of the FluoroTect GreenLys 
+reagent, for the purpose of properly labeling my gels.  Unfortunately, this 
+information doesn't seem to be readily available, so I had to piece it 
+together.
+
+The `FluoroTect GreenLys manual`__ states that the reagent is based on the E.  
+coli lysine tRNA.  There are `at least 3 such tRNAs`__: lysY, lysZ, and lyzQ.  
+They all seem quite similar, so I chose to use lysQ purely because it showed up 
+first in the search engine.  lysQ has:
+
+- Length: 76 nt
+- MW (tRNA only): 24.361 kDa 
+- MW (with lysine and BODIPY): 24.769
+  - BODIPY: 262 Da
+  - lysine: 146
+
+__ https://www.promega.com/-/media/files/resources/protocols/technical-bulletins/0/fluorotect-greenlys-in-vitro-translation-labeling-system-protocol.pdf
+__ https://biocyc.org/ECOLI/NEW-IMAGE?type=LOCUS-POSITION&object=G6392&chromosome=COLI-K12&orgids=ECOLI&bp-range=780646/782584

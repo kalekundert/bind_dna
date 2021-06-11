@@ -1,0 +1,119 @@
+June 10, 2021
+
+$ sw ligate_unreacted_mrna
+
+ 1. In the following steps, setup these conditions:
+
+    unreacted:      −  −  +  −  +  −  +
+    mRNA (f111):    −  +  +  +  +  +  +
+    linker (o237):  +  −  −  +  +  +  +
+    ligase:         −  −  −  −  −  +  +
+
+ 2. Wipe down your bench and anything you'll touch 
+    (pipets, racks, pens, etc.) with RNaseZap.
+
+ 3. Dilute the following stock solutions to 1 µM in
+    nuclease-free water [1]:
+
+    Name             Stock Vol  Diluent Vol
+    ───────────────────────────────────────
+    o237               1.00 µL      9.00 µL
+    f11                1.00 µL      9.00 µL
+    f11 (unreacted)    1.00 µL      1.00 µL
+
+ 4. Keep these controls on ice until ready to run the
+    gel.
+
+ 5. Setup 2 annealing reactions:
+
+    Reagent               Stock   Volume     2.2x
+    ─────────────────────────────────────────────
+    T4 RNA ligase buffer    10x  0.54 µL  1.18 µL
+    f111                   2 µM  4.00 µL
+    o237                  10 µM  0.80 µL  1.76 µL
+    ─────────────────────────────────────────────
+                                 5.33 µL  1.33 µL/rxn
+
+ 6. Incubate as follows:
+
+    - 90°C for 30s
+    - Cool to 25°C at 1°C/s
+
+ 7. Setup 2 ligation reactions:
+
+    Reagent                 Stock   Volume    ≈8.3x
+    ───────────────────────────────────────────────
+    nuclease-free water            0.54 µL  4.50 µL
+    T4 RNA ligase buffer      10x  0.10 µL  0.83 µL
+    ATP                     10 mM  0.30 µL  2.50 µL
+    T4 RNA ligase         10 U/µL  0.06 µL  0.50 µL
+    annealed mRNA          1.5 µM  2.00 µL
+    ───────────────────────────────────────────────
+                                   3.00 µL  1.00 µL/rxn
+
+ 8. Setup 2 -ligase controls:
+
+    Reagent                Stock   Volume     2.2x
+    ──────────────────────────────────────────────
+    nuclease-free water           0.60 µL  1.32 µL
+    T4 RNA ligase buffer     10x  0.10 µL  0.22 µL
+    ATP                    10 mM  0.30 µL  0.66 µL
+    annealed mRNA         1.5 µM  2.00 µL
+    ──────────────────────────────────────────────
+                                  3.00 µL  1.00 µL/rxn
+
+ 9. Incubate at 25°C for 30 min.
+
+10. Label the products: f113
+
+11. Prepare 7 samples for TBE/urea PAGE:
+
+    Reagent    Stock    Volume     10.5x
+    ────────────────────────────────────
+    water              4.00 µL  42.00 µL
+    FESV          2x   5.00 µL  52.50 µL
+    sample   1000 nM   1.00 µL
+    ────────────────────────────────────
+                      10.00 µL   9.00 µL/rxn
+
+    - Incubate at 70°C for 3 min.
+
+12. Run a gel:
+
+    gel: 6% TBE/urea PAGE
+    buffer: 1x TBE
+    ladder: 1 µL low range ssRNA ladder (NEB N0364S)
+    samples: 10 µL/lane
+    run: 180V for 40 min
+
+13. Stain gel with GelGreen [2-4]:
+
+    - Keep the stain protected from light.
+
+    - Submerge gel in ≈30 mL 3x GelGreen, 100 mM
+      NaCl.
+    - Shake gently for 30m.
+
+14. Image with a laser scanner:
+
+    lasers:   488 nm   658 nm
+    filters:  518BP22  710BP40
+
+Notes:
+[1] Concentrations:
+
+    Name                   MW  Stock Conc  Target Conc
+    ──────────────────────────────────────────────────
+    o237              17285.2       10 µM         1 µM
+    f11              125265.1       10 µM         1 µM
+    f11 (unreacted)       nan        2 µM         1 µM
+
+[2] https://tinyurl.com/etxhfxws
+
+[3] Including 100 mM NaCl in the staining solution
+    enhances sensitivity, but may promote dye
+    precipitation if the gel stain is reused.
+
+[4] Staining solution can be reused at least 2-3x.
+    Store staining solution at room temperature
+    protected from light.

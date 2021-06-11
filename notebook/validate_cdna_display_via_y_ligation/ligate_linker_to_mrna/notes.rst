@@ -9,12 +9,15 @@ Ligate linker to mRNA
    linker_n_kitamura2002/notes
    linker_n_salt/notes
    linker_n_optimized_conditions/notes
-   pseudo_linker_via_5_phosphorylation/notes
+   pseudo_linker_5_phosphorylation/notes
    o129_optimized_conditions/notes
    o129_crowding_agents/notes
    o129_incubation_time/notes
    o129_linker_concentration/notes
    o129_ribozyme/notes
+   flag_zif_o237_o129_reyes2021/notes
+   flag_zif_o237_o129_undiluted/notes
+   flag_o237_unreacted_mrna/notes
 
 
 [Naimudden2016]_ reports a 90--95% efficiency ligating linker-N to mRNA.  My 
