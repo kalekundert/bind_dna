@@ -1,0 +1,104 @@
+- Purify proteins using Ni-NTA spin columns under 
+  denaturing conditions [1].
+
+  - Freeze cell pellets for at least 30 min [2].
+  - Thaw cell pellets for 15 min.
+
+  - Resuspend each pellet in 700 µL buffer B [3].
+  - Add 3 U/mL culture volume Benzonase.
+
+  - Incubate at room temperature for 15 min with 
+    gentle agitation.  The solutions should become 
+    translucent.
+    - Keep 10 µL for SDS PAGE.
+
+  - Centrifuge the lysates at 12,000g for 15-30 
+    min at 20-25°C.
+    - Discard pellet.
+    - Keep 10 µL supernatant for SDS PAGE.
+
+  - Equilibrate a Ni-NTA spin column for each 
+    sample with 600 µL buffer B.
+  - Centrifuge for 2 min at 890g.
+
+  - Load the cleared lysates.
+  - Centrifuge for 2 min at 270g [4].
+  - Keep 10 µL for SDS PAGE.
+
+  - Repeat 1-3x [5]:
+    - Load 600 µL buffer C.
+    - Centrifuge for 2 min at 890g.
+    - Keep 10 µL for SDS PAGE.
+
+  - Repeat 1-2x [6]:
+    - Load 200 µL buffer E.
+    - Centrifuge for 2 min at 890g.
+    - Keep 10 µL for SDS PAGE.
+    - Combine the remaining eluate.
+
+Notes:
+
+[1] https://tinyurl.com/ty89azj9
+
+[2] Fresh (i.e., not frozen) pellets require 
+    sonication or homogenization in addition to 
+    the addition of 3 U/ml culture volume 
+    Benzonase nuclease and 1 mg/ml culture volume 
+    lysozyme.
+
+[3] Buffer B is the preferred lysis buffer, as the 
+    cell lysate can be analyzed directly by 
+    SDS-PAGE. If the cells or the protein do not 
+    solubilize in Buffer B, then Buffer A must be 
+    used.
+    
+    Since fractions which contain GuHCl will 
+    precipitate with SDS when loaded onto an SDS  
+    PAGE gel, they must either be diluted (1:6), 
+    dialyzed, or separated from GuHCl by TCA 
+    precipitation (see Appendix A, page 29).  
+
+    Please note that Benzonase is inactive in the 
+    presence of GuHCl concentrations >100 mM.  If 
+    cells are lysed in GuHCl, genomic DNA must be 
+    sedimented by centrifugation during collection 
+    of the cleared lysate supernatant, as 
+    aggregated gDNA may clog the Ni-NTA spin 
+    column.
+
+[4] To ensure efficient binding, it is important 
+    not to exceed 270g when centrifuging Ni-NTA 
+    spin columns.  At higher forces, even if the 
+    binding kinetics are high, the time the lysate 
+    is in contact with the resin is not sufficient 
+    for effective binding.
+    
+    Please take into account that the time needed 
+    for the centrifugation step during protein 
+    binding is influenced by the viscosity of the 
+    cleared lysate. For very concentrated cell 
+    lysates, it may be necessary to extend the 
+    centrifugation time to 3-4 min at 700g.
+
+[5] It may not be necessary to repeat the buffer C 
+    wash.  The number of wash steps required to 
+    obtain highly pure protein is determined 
+    primarily by the expression level of the 
+    His-tagged protein.  When the expression level 
+    is high, two wash steps are usually sufficient 
+    for removal of contaminants.  For very low 
+    expression levels or highly concentrated 
+    lysates, three wash steps or washes with 
+    buffer D may be required to achieve high 
+    purity.
+
+[6] Most of the His-tagged protein (>80%) should 
+    elute in the first 200 µL eluate, especially 
+    when proteins smaller than 30 kDa are 
+    purified.  The remainder will elute in the 
+    second 200 µL.  If the protein should be more 
+    concentrated or if the expected expression 
+    level is low, elute in 100–150 µL aliquots 
+    and/or do not combine eluates.
+
+# vim: tw=50

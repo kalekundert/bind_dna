@@ -1,0 +1,35 @@
+- Batch-purify His-tagged proteins under native 
+  conditions [1]:
+
+  - Add 1 mL 50% Ni-NTA slurry for every 4 mL 
+    cleared lysate [1].
+
+  - Incubate at 4°C for 1h with gentle shaking 
+    (e.g. end-over-end mixing, or orbital mixing 
+    at 200 rpm).
+
+  - Load the lysate into a column with the bottom 
+    outlet capped (e.g. BioRad Poly-Prep or 
+    Econo-Pac).
+
+  - Remove the bottom cap:
+    - Save 10 µL for SDS PAGE: FT
+
+  - Repeat 2x:
+    - Wash with 4 mL wash buffer.
+    - Save 10 µL for SDS PAGE: W1,W2
+
+  - Repeat 4x:
+    - Elute with 500 µL elution buffer
+    - Collect in separate, clean tubes.
+    - Reserve 10 µL for SDS PAGE: E1-E4
+
+Notes:
+
+[1] Protocol 12: Batch purification of 
+    6xHis-tagged proteins from E. coli under 
+    native conditions.  The QIAexpressionist 
+    (2003), pg. 82
+
+
+  

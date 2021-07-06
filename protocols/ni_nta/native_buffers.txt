@@ -1,0 +1,25 @@
+- Prepare NPI-10 (lysis buffer):
+
+  - 50 mM NaH₂PO₄
+  - 300 mM NaCl
+  - 10 mM imidazole
+  - pH 8.0
+
+- Prepare NPI-20 (wash buffer):
+
+  - 50 mM NaH₂PO₄
+  - 300 mM NaCl
+  - 20 mM imidazole
+  - pH 8.0
+
+- Prepare NPI-500 (elution buffer):
+
+  - 50 mM NaH₂PO₄
+  - 300 mM NaCl
+  - 500 mM imidazole
+  - pH 8.0
+
+Notes:
+
+[1] https://tinyurl.com/ty89azj9
+

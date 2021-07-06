@@ -1,0 +1,38 @@
+- Prepare buffer B [1]:
+
+  - 100 mM (13.8 g/L) NaH₂PO₄⋅H₂O
+  - 10 mM (1.2 g/L) Tris base
+  - 8M (480.5 g/L) urea
+  - Adjust pH to 8.0 using NaOH
+
+- Prepare buffer C [1]:
+
+  - 100 mM (13.8 g/L) NaH₂PO₄
+  - 10 mM (1.2 g/L) Tris Cl
+  - 8M (480.5 g/L) urea
+  - Adjust pH to 6.3 using HCl
+
+- Prepare buffer E [1]:
+
+  - 100 mM (13.8 g/L) NaH₂PO₄
+  - 10 mM (1.2 g/L) Tris Cl
+  - 8M (480.5 g/L) urea
+  - Adjust pH to 4.5 using HCl
+
+pH0 = 6.36-6.39
+
+5 mL buffer:
+- 4 drops + 27 µL 5N NaOH: pH = 8.08
+- 4 µL 1N HCl: pH 6.33
+- 70 µL 1N HCl: pH 4.49
+
+
+Notes:
+
+[1] Due to the dissociation of urea, the pH of 
+    Buffers B, C, D, and E should be adjusted 
+    immediately prior to use.  Do not autoclave.
+
+# vim: tw=50
+
+

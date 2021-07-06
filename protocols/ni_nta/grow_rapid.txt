@@ -1,0 +1,23 @@
+- Start 1.5 mL overnight cultures from individual 
+  colonies [1].
+
+- Inoculate 2 10 mL day cultures (+/− induction) 
+  with 500 µL overnight culture.
+
+- Incubate at 37°C with vigorous shaking until 
+  OD600 is 0.5-0.7 (30 min).
+
+- Add IPTG to a final concentration of 1 mM in the 
+  +induction cultures.
+
+- Continue incubating for 4-5h.
+
+- Harvest cells by centrifugation for 1 min at 
+  15,000g.  Discard supernatant.
+
+Notes:
+
+[1] Protocol 5: Rapid screening of small 
+    expression cultures.  The QIAexpressionist 
+    (2003), pg. 45
+

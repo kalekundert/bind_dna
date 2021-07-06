@@ -1,0 +1,62 @@
+- Purify proteins by "Ni-NTA miniprep" under 
+  native conditions [1]:
+
+  - Transfer 1 mL of each bacterial culture to a 
+    microcentrifuge tube [2].
+
+  - Centrifuge at 15,000g for 1 min.  Discard 
+    supernatant [3].
+
+  - Resuspend cells in 100 µL NPI-10.
+  - Add lysozyme to 1 mg/mL.
+  - Incubate on ice for 30 min.
+
+  - Vortex gently to lyse cells (avoid frothing). 
+  - Centrifuge at 15,000g for 10 min.
+    - Discard pellet.
+    - Save 4 µL supernatant for SDS PAGE.
+
+  - Add 20 µL of a 50% slurry of Ni-NTA resin to 
+    each lysate.
+  - Incubate at 4°C for 30 min.
+
+  - Centrifuge at 1000g for 10s.
+    - Keep 4.83 µL supernatant for SDS PAGE.
+    - Discard remaining supernatant.
+
+  - Repeat 2x:
+    - Add 100 µL NPI-20.
+    - Centrifuge at 1000g for 10s.
+    - Keep 4.35,4.55 µL supernatant for SDS PAGE.
+    - Discard remaining supernatant.
+
+  - Repeat 3x:
+    - Add 20 µL NPI-500.
+    - Centrifuge at 1000g for 10s.
+    - Keep 0.95,1.00 µL supernatant for SDS PAGE.
+    - Collect remaining supernatant.
+
+Notes:
+
+[1] Protocol 14. Protein minipreps of 6xHis-tagged 
+    proteins from E. coli under native conditions.  
+    The QIAexpressionist (2003), pg. 85.
+
+[2] The amount of culture used depends on the 
+    protein expression level.  1 mL is sufficient 
+    if the protein is expressed at high rates (see 
+    Table 3, page 65). If lower expression rates 
+    are expected, larger volumes may be necessary.
+
+    If a time course of expression is being 
+    performed, take 1 mL samples of a larger 
+    culture at 30 min intervals after induction, 
+    collect the cell pellets and store them at 
+    –20°C until all the samples are ready for 
+    processing.
+
+[3] If larger culture volumes are required, refill 
+    and re-centrifuge the same tube until all 
+    cells are harvested.
+
+# vim: tw=50

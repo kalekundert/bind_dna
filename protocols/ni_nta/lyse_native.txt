@@ -1,0 +1,70 @@
+- Prepare cleared E. coli lysate under native 
+  conditions [1]:
+
+  - Thaw the pellet on ice for 15 min.
+
+    Keep the protein at 4°C for all subsequent 
+    steps.  Repeated changes in temperature may be 
+    harmful to protein activity and structure [2].
+
+  - Resuspend the cell pellet in 2-5 mL lysis 
+    buffer per gram wet weight [3,4].
+
+  - Add lysozyme to 1 mg/mL.
+
+    - Lysozyme is not stable in solution, so 
+      prepare a fresh 10x solution of lysozyme in 
+      lysis buffer each time.  
+
+  - Incubate on ice for 30 min.
+
+  - Lyse cells by sonication:
+
+    - Keep cells on ice.
+    - Repeat 6 times:
+      - 10s sonication at 200-300 W
+      - 10s cooling period
+
+  - If the lysate is very viscous, apply one of 
+    the following treatments:
+    
+    - DNase/RNase [1]:
+      - Add RNase A to 10 µg/mL.
+      - Add DNase I to 5 µg/mL.
+      - Incubate on ice for 10-15 min.
+
+    - Benzonase [2]:
+      - Add 3U benzonase per mL culture volume.
+      - Incubate on ice for 15-30 min.
+
+    - Physical [1]:
+      - Repeatedly draw sample through a 
+        narrow-gauge, blunt-ended needle.
+
+  - Centrifuge lysate at 10,000g and 4°C for 20-30 
+    min.  Collect supernatant.
+    - Save 10 µL for SDS PAGE: CL
+
+Notes:
+
+[1] Protocol 9: Preparation of cleared E. coli 
+    lysates under native conditions.  The 
+    QIAexpressionist (2003), pg. 79
+
+[2] https://tinyurl.com/bmypurmk
+
+[3] The amount of cells required depends on the 
+    expression level of the 6xHis-tagged protein 
+    and the expression system used.  The binding 
+    capacity of Ni-NTA resins is protein-dependent 
+    and normally lies between 5–10 mg/mL.
+
+[4] Lysis buffer contains 10 mM imidazole to 
+    minimize binding of untagged, contaminating 
+    proteins and increase purity with fewer wash 
+    steps.  If the tagged protein does not bind 
+    under these conditions, the amount of 
+    imidazole should be reduced to 1–5 mM.  With 
+    6xHis-tagged proteins exhibiting high binding 
+    affinities, the imidazole concentration can be 
+    increased to 20 mM.

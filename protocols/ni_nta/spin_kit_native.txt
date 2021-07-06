@@ -1,0 +1,77 @@
+- Purify proteins using Ni-NTA spin columns under 
+  native conditions [1].
+
+  - Resuspend 5 mL culture volume cell pellets in 
+    630 µL NPI-10, then add:
+    - 70 µL 10 mg/mL lysozyme
+    - 3 U/mL culture volume Benzonase
+
+  - Incubate on ice for 15-30 min.
+
+  - Centrifuge lysates at 12,000g for 15-30 min at 
+    4°C.
+    - Discard pellet.
+    - Keep 10 µL supernatant for SDS PAGE.
+
+  - Equilibrate a Ni-NTA spin column for each 
+    sample with 600 µL NPI-10 [2].
+  - Centrifuge for 2 min at 890g.
+
+  - Load the cleared lysates.
+  - Centrifuge for 5 min at 270g [3].
+  - Keep 10 µL for SDS PAGE.
+
+  - Repeat 1-3x [4]:
+    - Load 600 µL NPI-20.
+    - Centrifuge for 2 min at 890g.
+    - Keep 10 µL for SDS PAGE.
+
+  - Repeat 1-2x [6]:
+    - Load 300 µL NPI-500
+    - Centrifuge for 2 min at 890g.
+    - Keep 10 µL for SDS PAGE.
+    - Combine the remaining eluate.
+
+Notes:
+
+[1] https://tinyurl.com/ty89azj9
+
+[2] By adding 10 mM imidazole, the binding of 
+    non-tagged contaminating proteins is 
+    inhibited, leading to greater purity in fewer 
+    steps.  If the tagged protein does not bind  
+    under these conditions the amount of  
+    imidazole should be reduced to 1–5 mM.
+
+[3] To ensure efficient binding, it is important 
+    not to exceed 270g when centrifuging Ni-NTA 
+    spin columns.  At higher forces, even if the 
+    binding kinetics are high, the time the lysate 
+    is in contact with the resin is not sufficient 
+    for effective binding.
+    
+    Please take into account that the time needed 
+    for the centrifugation step during protein 
+    binding is influenced by the viscosity of the 
+    cleared lysate. For very concentrated cell 
+    lysates, it may be necessary to extend the 
+    centrifugation time to 3-4 min at 700g.
+
+[4] The number of wash steps required to obtain 
+    highly pure protein is determined primarily by 
+    the expression level of the His-tagged 
+    protein.  When the expression level is high, 2 
+    washes are usually sufficient for removal of 
+    contaminants.  For very low expression levels 
+    or highly concentrated lysates, 3 wash steps 
+    may be required to achieve high purity.
+
+[5] Most of the His-tagged protein (>80%) should 
+    elute in the first 300 µL eluate.  The 
+    remainder will elute in the second 300 µL.  If 
+    the protein should be more concentrated or if 
+    the expected expression level is low, elute in 
+    100–150 µL aliquots and/or do not combine 
+    eluates.
+
+# vim: tw=50

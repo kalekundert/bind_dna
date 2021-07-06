@@ -1,0 +1,67 @@
+- Purify proteins using Ni-NTA spin columns under 
+  denaturing conditions [1]:
+
+  - Resuspend each cell pellet in 400 µL buffer B.
+    - Keep 10 µL for SDS PAGE.
+
+  - Lyse cells by vortexing gently (avoid 
+    frothing).  The solutions should become 
+    translucent.
+
+  - Centrifuge the lysates for 20-30 min at 
+    15,000g.
+    - Discard pellet.
+    - Keep 10 µL supernatant for SDS PAGE.
+
+  - Equilibrate a Ni-NTA spin column for each 
+    sample with 600 µL buffer B.
+  - Centrifuge for 2 min at 700g.
+
+  - Load the cleared lysates.
+  - Centrifuge for 2 min at 700g [2].
+  - Keep 10 µL for SDS PAGE.
+
+  - Repeat 1-3x [3]:
+    - Load 600 µL buffer C.
+    - Centrifuge for 2 min at 700g.
+    - Keep 10 µL for SDS PAGE.
+
+  - Repeat 1-2x [4]:
+    - Load 200 µL buffer E.
+    - Centrifuge for 2 min at 700g.
+    - Keep 10 µL for SDS PAGE.
+    - Combine the remaining eluate.
+
+Notes:
+
+[1] Protocol 5: Rapid screening of small 
+    expression cultures.  The QIAexpressionist 
+    (2003), pg. 45
+
+[2] It is important not to exceed 700g when 
+    centrifuging Ni-NTA Spin Columns. Higher 
+    speeds reduce binding time, resulting in 
+    inefficient binding.
+
+[3] It may not be necessary to repeat the buffer C 
+    wash.  The number of wash steps required to 
+    obtain highly pure protein is determined 
+    primarily by the expression level of the 
+    His-tagged protein.  When the expression level 
+    is high, two wash steps are usually sufficient 
+    for removal of contaminants.  For very low 
+    expression levels or highly concentrated 
+    lysates, three wash steps or washes with 
+    buffer D may be required to achieve high 
+    purity.
+
+[4] Most of the His-tagged protein (>80%) should 
+    elute in the first 200 µL eluate, especially 
+    when proteins smaller than 30 kDa are 
+    purified.  The remainder will elute in the 
+    second 200 µL.  If the protein should be more 
+    concentrated or if the expected expression 
+    level is low, elute in 100–150 µL aliquots 
+    and/or do not combine eluates.
+
+# vim: tw=50

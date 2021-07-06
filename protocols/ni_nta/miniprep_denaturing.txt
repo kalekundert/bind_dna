@@ -1,0 +1,67 @@
+- Purify proteins by "Ni-NTA miniprep" under 
+  denaturing conditions [1]:
+
+  - Transfer 1 mL of each bacterial culture to a 
+    microcentrifuge tube [2].
+
+  - Centrifuge at 15,000g for 1 min.  Discard 
+    supernatants [3].
+
+  - Resuspend cells in 200 µL buffer B.
+  - Vortex gently to lyse cells (avoid frothing).  
+    The solutions should become translucent [4].
+  - Centrifuge at 15,000g for 10 min.  Discard 
+    pellet.
+
+  - Add 50 µL of a 50% slurry of Ni-NTA resin [5] 
+    to each lysate.
+  - Incubate at room temperature for 30 min.
+
+  - Centrifuge at 15,000g for 10s.
+    - Keep 10 µL supernatant for SDS PAGE.
+    - Discard remaining supernatant.
+
+  - Repeat 2x:
+    - Add 250 µL buffer C.
+    - Centrifuge at 15,000g for 10s.
+    - Keep 10 µL supernatant for SDS PAGE.
+    - Discard remaining supernatant.
+
+  - Repeat 3x:
+    - Add 25 µL buffer E.
+    - Centrifuge at 15,000g for 10s.
+    - Keep 10 µL supernatant for SDS PAGE.
+    - Collect remaining supernatant.
+
+Notes:
+
+[1] Protocol 19. 6xHis-tagged protein minipreps 
+    under denaturing conditions. The 
+    QIAexpressionist (2003), pg. 92.
+
+[2] The amount of culture used depends on the 
+    protein expression level.  1 mL is sufficient 
+    if the protein is expressed at high rates (see 
+    Table 3, page 65). If lower expression rates 
+    are expected, larger volumes may be necessary.
+
+    If a time course of expression is being 
+    performed, take 1 mL samples of a larger 
+    culture at 30 min intervals after induction, 
+    collect the cell pellets and store them at 
+    –20°C until all the samples are ready for 
+    processing.
+
+[3] If larger culture volumes are required, refill 
+    and re-centrifuge the same tube until all 
+    cells are harvested.
+
+[4] Most proteins are soluble in buffer B.  If the 
+    solution does not become translucent, lyse 
+    cells with buffer A.
+
+[5] 25 µL of Ni-NTA resin has a capacity for 
+    125-250 µg His-tagged protein.
+
+# vim: tw=50
+
