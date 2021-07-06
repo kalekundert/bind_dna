@@ -2,12 +2,13 @@
 o129, ribozyme
 **************
 
-:expt:`1` shows that only about half of the mRNA appears to be capable of being 
-ligated to the linker.  This maybe due to heterogeneity at the 3' end of the 
-mRNA.  There are several ways to eliminate that heterogeneity [Avis2012]_, but 
-the simplest and most popular is to include a cis-acting ribozyme after the 
-sequence of interest [Schurer2002]_ [Walker2003]_ [Akoopie2018]_.  The HDV 
-ribozyme is efficient and puts no sequence requirements on the transcript.
+:expt:`1` and :expt:`116` show that only about half of the mRNA appears to be 
+capable of being ligated to the linker.  This maybe due to heterogeneity at the 
+3' end of the mRNA.  There are several ways to eliminate that heterogeneity 
+[Avis2012]_, but the simplest and most popular is to include a cis-acting 
+ribozyme after the sequence of interest [Schurer2002]_ [Walker2003]_ 
+[Akoopie2018]_.  The HDV ribozyme is efficient and puts no sequence 
+requirements on the transcript.
 
 Considerations
 ==============
@@ -121,15 +122,67 @@ hydroxyl:
   nucleotide kinase (New England Biolabs) in a final volume of 20 µl for 6 h 
   at 37°C [Povirk1990]_.
 
+.. note::
+  
+   NEB T4 PNK buffer is:
+
+   - 70 mM Tris-HCl
+   - 10 mM MgCl2
+   - 5 mM DTT
+   - (pH 7.6 @ 25°C)
+
 All three protocols are pretty similar: incubate the RNA with T4 PNK for 6h at 
 37°C in a pretty standard buffer (no ATP).  I'm curious if I could just add the 
 PNK to the transcription reaction and extend the reaction for 6h.
 
+
+Preparation
+===========
+2021/06/21:
+
+My Gibson assembly for p177/p178 didn't work on the first try.  I want to:
+
+- Check that the XmnI digestion worked
+- Try new Gibson mix.
+
+.. figure:: 20210621_check_digestion_f120.svg
+
+Observations:
+
+- The digestion didn't go to completion.  This might be why I have a lot of 
+  backbone colonies.
+
+  How to deal with this:
+
+  - Repeat digestion for longer time.
+    
+  - Gel purify: this would be hard; the bands aren't that separate.
+
+  - Order new enzyme: I do use this enzyme for other things
+
+  Let me start by just doing the digestion for longer, maybe 1h.
+
+  NEB `troubleshooting guide <https://www.neb.com/tools-and-resources/troubleshooting-guides/restriction-enzyme-troubleshooting-guide>`__:
+
+  - Use 5-10 U/µg DNA
+  - Digest for 1-2h
+  - Ensure that DNA < 25% total reaction volume
+
+.. update:: 2021/06/23
+
+  I got good results after making two changes:
+
+  - I used my less-expired tube of 2x Gibson master mix.
+  - I digested the backbone for 2h, and added extra enzyme after 1h30.
+
+  I don't know which change was responsible.  It's possible that both my XmnI 
+  and my original Gibson master mix are going bad.
+
 Results
 =======
 
-2020/10/28
-----------
+−PNK --- 2020/10/28
+-------------------
 .. figure:: 20201028_ligate_with_ribozyme.svg
 
 - The ligation reaction did not proceed because the 3' ends produces by HDV 
@@ -153,3 +206,31 @@ Results
 
 - The HDV67 lanes have a third band at ≈200 bp.  I'm not sure what this band 
   is.
+
++PNK --- 2021/07/01
+-------------------
+.. figure:: 20210702_fix_ends_f123_f124.svg
+
+Observations:
+
+- The bands didn't run as far as they usually do.  Compare the ladder from this 
+  gel to the ladder in the experiment above: the 150bp band should be about 50% 
+  down the gel,  but is only 25% here.
+
+  I think the problem was that the current setting on the gel was much too low, 
+  so the voltage was lower than usually because the current was capped.  Ugh...
+
+- I think the HDV56 ribozyme might cleave itself more efficiently, but it's 
+  hard to be sure.  I only see the cleaved ribozyme band for the HDV56 
+  ribozyme, and although I think I see the cleaved mRNA bands for both 
+  ribozymes, it appears stronger relative to the uncleaved band for HDV56.
+
+- I should run a gel of the purified mRNA.  Not sure if I just do that as part 
+  of the ligation reaction.  Even though f124 seems to be cleaved more 
+  efficiently, I recovered more f123.  That may indicate that my gel 
+  purification wasn't very good.
+
+- I need to use razors to cut out these bands.  Those plastic tube things get 
+  too much.
+
+

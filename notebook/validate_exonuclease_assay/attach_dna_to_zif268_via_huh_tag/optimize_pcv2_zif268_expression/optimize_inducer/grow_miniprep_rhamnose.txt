@@ -1,0 +1,35 @@
+- Start 1.5 mL overnight cultures from individual 
+  colonies in LB+Carb+Chlor [1,2].
+
+- Setup 3 day cultures:
+  
+  - 9.5 mL LB
+  - 500 µL overnight culture
+  - 0, 2, 5 µL 500 mM rhamnose
+    - 0, 100, 250 µM final
+
+- Incubate at 37°C with vigorous shaking until 
+  OD600 is 0.5-0.7 (30 min).
+
+- Add IPTG to a final concentration of 400 µM.
+  - Pellet 160 µL uninduced cells for SDS PAGE.  
+    Resuspend in 1x SDS PAGE loading buffer [3].
+
+- Continue incubating for 4-5h.
+  - Pellet 40 µL induced cells for SDS PAGE.
+    Resuspend in 1x SDS PAGE loading buffer [3].
+
+Notes:
+
+[1] Protocol 5: Rapid screening of small 
+    expression cultures.  The QIAexpressionist 
+    (2003), pg. 45
+
+[2] Protocol 6: Determination of target protein 
+    solubility.  The QIAexpressionist (2003), pg.  
+    59
+
+[3] Don't freeze; I think that freezing might 
+    cause the sample to get really gummy.
+
+# vim: tw=50

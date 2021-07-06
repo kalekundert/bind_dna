@@ -1,6 +1,6 @@
-******************************
-Purify ligated mRNA via biotin
-******************************
+********************************
+Remove unligated mRNA via biotin
+********************************
 
 Dan suggested that the easiest way to separate ligated from unligated mRNA 
 might be to include biotin in the linker and to purify with streptavidin beads.  

@@ -1,0 +1,48 @@
+June 29, 2021
+
+$ sw clean_rna
+
+1. Resuspend each vial of lyophilized DNase I (Zymo
+   E1009-A, 250 U) in 275 µL nuclease-rfee water.
+   Mix by gentle inversion.  Store frozen aliquots.
+
+2. Setup 2 DNase reactions [1]:
+
+   Reagent                Stock     Volume       2.2x
+   ──────────────────────────────────────────────────
+   water                         140.00 µL  308.00 µL
+   DNA digestion buffer     10x   20.00 µL   44.00 µL
+   DNase I               1 U/µL   20.00 µL   44.00 µL
+   IVT reaction          1 U/µL   20.00 µL
+   ──────────────────────────────────────────────────
+                                 200.00 µL  180.00 µL/rxn
+
+3. Incubate at room temperature for 15 min.
+
+4. Purify using Zymo Clean & Concentrator-100 kit
+   (R1019) [2,3]:
+
+   - Perform all spin steps at 16000g.
+   - Add 2 volumes RNA binding buffer to the crude
+     RNA.
+   - Add 3 volumes 95-100% ethanol to the crude RNA.
+   - Load on a Zymo-Spin V-E column with reservoir.
+   - Apply vacuum.
+
+   - Add 400 µL RNA prep buffer.
+   - Apply vacuum.
+   - Add 400 µL RNA wash buffer.
+   - Apply vacuum.
+   - Add 400 µL RNA wash buffer.
+   - Apply vacuum.
+   - Spin 1m; discard flow-through.
+
+   - Add 100 µL nuclease-free water.
+   - Spin 30s; keep flow-through.
+
+Notes:
+[1] From Zymo Clean & Concentrator manual
+
+[2] https://tinyurl.com/2va2v8hm
+
+[3] Column capacity: 250 µg

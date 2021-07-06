@@ -1,0 +1,49 @@
+- Express PCV2-Zif268 in Lemo21(DE3) cells [1,2]:
+
+  - Start a 5 mL overnight culture of s9 in 
+    LB+Carb+Chlor [1].
+
+  - Prepare 100 mL day culture media:
+
+    - 100 mL LB
+    - 100 µL 1000x Carb
+    - 100 µL 1000x Chlor
+    - 20 µL 500 mM L-rhamnose [2]
+    - Pre-warm to 37°C
+
+  - Inoculate day culture with 5 mL overnight 
+    culture.
+
+  - Incubate at 37°C with vigorous shaking until 
+    OD600=0.6 (30–60 min).
+
+  - Move 5 mL of culture to a separate tube to 
+    serve as an uninduced control.  Add 40 µL 1M 
+    IPTG [2] to the remaining culture.
+
+  - Continue incubating for 4-5h.
+
+  - Prepare NI/I controls:
+    - Pellet 80 µL cells at 15,000g for 1 min.
+    - Resuspend in 10 µL lysis buffer with 0.24 U 
+      benzonase.
+    - Incubate on ice for 15-30 min.
+    - Add 10 µL 2x SDS PAGE loading buffer.
+
+  - Harvest cells by centrifugation at 4000g for 
+    20 min.  Discard supernatant.
+
+    - Weigh the centrifuge container before adding 
+      the cells and after discarding the media, to 
+      get the mass of the cell pellet.
+
+  - Flash-freeze and store at −20°C for at least 
+    1h, or incubate at −20°C overnight.
+
+Notes:
+
+[1] Protocol 7: Growth of standard E. coli 
+    expression cultures (100 mL).  The 
+    QIAexpressionist (2003), pg. 61
+
+[2] https://tinyurl.com/kyzbm658

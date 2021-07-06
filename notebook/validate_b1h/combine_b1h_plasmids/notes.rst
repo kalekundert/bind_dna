@@ -262,9 +262,8 @@ promoters/parts to try.  I also have concerns like getting good transformation
 efficiency or being able to read my barcodes that these modular systems may get 
 in the way of.
 
-
-Assembly
-========
+Golden Gate junctions
+---------------------
 7 parts:
 
 - f35: pSC101 from pH3U3
@@ -288,3 +287,93 @@ Assembly
 I used the Potapov2018/37C Golden Gate junctions, which was a bit of a mistake 
 because I'll actually be doing this assembly using the 5h cycled 16°C/37°C 
 protocol.  I'm sure it'll be fine, though.
+
+
+Preparation
+===========
+
+p169: optimize Ta
+-----------------
+2021/06/16:
+
+I didn't get any colonies the first time I tried to make p169, so I tried 
+optimizing Ta:
+
+.. protocol:: 20210616_pcr.txt
+
+.. figure:: 20210616_optimize_ta_p169.svg
+
+Observations:
+
+- The reaction amplifies well for a wide range of annealing temperatures.  I'm 
+  going to continue using 59°C moving forward (the initial recommendation), but 
+  I still don't know what the problem is.
+
+2021/07/01:
+
+I tried doing a large-scale PCR, to have clean product with which to try 
+different ligation conditions.  However, the conditions from the above Ta 
+optimization did not give clean product:
+
+.. protocol:: 20210701_pcr_spin_cleanup_step.txt
+
+.. figure:: 20210701_check_pcr_p169.svg
+
+2021/07/02:
+
+Based on the above, I repeated the Ta optimization:
+
+.. protocol:: 20210702_pcr.txt
+
+.. figure:: 20210702_optimize_ta_p169.svg
+
+Observations:
+
+- This time, none of the reactions gave the expected product.  Even the 
+  relatively clean product in the 66.8°C condition is not the right size (≈2.5 
+  kb instead of 5.8 kb).
+
+2021/07/05:
+
+Fitzy suggested that there might be something wrong with my water.  There might 
+also be something wrong with my PCR master mix.  I'll setup four reactions to 
+try all combinations of old/new water and old/new PCR mix.  I'll also use a 
+fresh box of tips for everything.
+
+.. protocol:: 20210705_pcr.txt
+
+.. figure:: 20210705_compare_water_q5_p169.svg
+
+Observations:
+
+- The old PCR mix worked while the new mix didn't.  That doesn't really make 
+  sense.
+
+- The new water does seem to amplify better than the old water, although the 
+  difference is slight.
+
+- This time, the gel looks like what I saw on 7/1.
+
+2021/07/05:
+
+I repeated the temperature gradient with the new water and the old PCR mix:
+
+.. figure:: 20210705_optimize_ta_p169.svg
+
+Observations:
+
+- This time, :math:`T_A = \pu{57°C}` seems optimal.  That seems plausible to 
+  me, so I'll probably use that temperature going forward.
+
+2021/07/06:
+
+Given the stark difference between the old and new Q5 aliquots (and considering 
+that both are form the same batch), I want to try using fresh Q5.
+
+.. protocol:: 20210706_pcr.txt
+
+.. figure:: 20210706_compare_q5_p169.svg
+
+Observations:
+
+- Neither master mix gave a significant amount of product this time.

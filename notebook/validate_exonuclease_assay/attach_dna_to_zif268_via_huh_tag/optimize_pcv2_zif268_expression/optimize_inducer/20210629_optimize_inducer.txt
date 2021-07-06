@@ -1,0 +1,141 @@
+June 29, 2021
+
+$ sw optimize_inducer
+
+ 1. In the following steps, setup these conditions:
+
+    PCV2 : Zif268 (p107):  +   +  +   +   +   +   +   +    +    +    +    +    +    +    +    +    +    +    +    +    +    +    +    +
+    Rhamnose [uM]:         0   0  0   0   0   0   0   0   100  100  100  100  100  100  100  100  250  250  250  250  250  250  250  250
+    Fraction:              NI  I  CL  FT  W1  W2  E1  E2  NI    I   CL   FT   W1   W2   E1   E2   NI    I   CL   FT   W1   W2   E1   E2
+
+ 2. Thaw rhamnose and make 1 mL aliquots.
+
+ 3. Start 1.5 mL overnight cultures from individual 
+    colonies in LB+Carb+Chlor [1,2].
+
+ 4. Setup 3 day cultures:
+    
+    - 9.5 mL LB
+    - 500 µL overnight culture
+    - 0, 2, 5 µL 500 mM rhamnose
+      - 0, 100, 250 µM final
+
+ 5. Incubate at 37°C with vigorous shaking until 
+    OD600 is 0.5-0.7 (30 min).
+
+ 6. Add IPTG to a final concentration of 400 µM.
+    - Pellet 160 µL uninduced cells for SDS PAGE.  
+      Resuspend in 1x SDS PAGE loading buffer [3].
+
+ 7. Continue incubating for 4-5h.
+    - Pellet 40 µL induced cells for SDS PAGE.
+      Resuspend in 1x SDS PAGE loading buffer [3].
+
+ 8. Purify proteins by "Ni-NTA miniprep" under 
+    native conditions [4]:
+    
+    - Transfer 1 mL of each bacterial culture to a 
+      microcentrifuge tube [5].
+    
+    - Centrifuge at 15,000g for 1 min.  Discard 
+      supernatant [6].
+    
+    - Resuspend cells in 100 µL NPI-10.
+    - Add lysozyme to 1 mg/mL.
+    - Incubate on ice for 30 min.
+    
+    - Vortex gently to lyse cells (avoid frothing). 
+    - Centrifuge at 15,000g for 10 min.
+      - Discard pellet.
+      - Save 4 µL supernatant for SDS PAGE.
+    
+    - Add 20 µL of a 50% slurry of Ni-NTA resin to 
+      each lysate.
+    - Incubate at 4°C for 30 min.
+    
+    - Centrifuge at 1000g for 10s.
+      - Keep 4.83 µL supernatant for SDS PAGE.
+      - Discard remaining supernatant.
+    
+    - Repeat 2x:
+      - Add 100 µL NPI-20.
+      - Centrifuge at 1000g for 10s.
+      - Keep 4.35,4.55 µL supernatant for SDS PAGE.
+      - Discard remaining supernatant.
+    
+    - Repeat 3x:
+      - Add 20 µL NPI-500.
+      - Centrifuge at 1000g for 10s.
+      - Keep 0.95,1.00 µL supernatant for SDS PAGE.
+      - Collect remaining supernatant.
+
+ 9. Prepare 32 samples for SDS PAGE:
+
+    Reagent                     Stock    Volume        48x
+    ──────────────────────────────────────────────────────
+    water                               4.00 µL  192.00 µL
+    Bolt LDS sample buffer         4x   2.50 µL  120.00 µL
+    Bolt reducing agent           10x   1.00 µL   48.00 µL
+    sample                  100 ng/µL   2.50 µL
+    ──────────────────────────────────────────────────────
+                                       10.00 µL    7.50 µL/rxn
+
+    - Incubate at 70°C for 10 min.
+
+10. Run a gel:
+
+    gel: 4–12% Bolt Bis-Tris SDS PAGE
+    buffer: Bolt MES SDS running buffer
+    ladder: 5 µL SeeBlue Plus2 (Invitrogen LC5925)
+    samples: 10 µL/lane
+    run: 165V for 42 min
+
+11. Stain gel with Coomassie [7]:
+
+    - Submerge gel in ≈30 mL 0.1% Coomassie R250, 10%
+      acetic acid, 40% methanol.
+    - Microwave until almost boiling (≈45s).
+    - Shake gently for 5m.
+    - Rinse 2x with water.
+
+    - Repeat until the background is clear (2-3x):
+      - Submerge gel in ≈30 mL 20% methanol, 10%
+        acetic acid.
+      - Microwave until almost boiling (≈45s).
+      - Place a wadded-up kimwipe in the destain
+      - Shake gently for 10m.
+
+Notes:
+[1] Protocol 5: Rapid screening of small 
+    expression cultures.  The QIAexpressionist 
+    (2003), pg. 45
+
+[2] Protocol 6: Determination of target protein 
+    solubility.  The QIAexpressionist (2003), pg.  
+    59
+
+[3] Don't freeze; I think that freezing might 
+    cause the sample to get really gummy.
+
+[4] Protocol 14. Protein minipreps of 6xHis-tagged 
+    proteins from E. coli under native conditions.  
+    The QIAexpressionist (2003), pg. 85.
+
+[5] The amount of culture used depends on the 
+    protein expression level.  1 mL is sufficient 
+    if the protein is expressed at high rates (see 
+    Table 3, page 65). If lower expression rates 
+    are expected, larger volumes may be necessary.
+    
+    If a time course of expression is being 
+    performed, take 1 mL samples of a larger 
+    culture at 30 min intervals after induction, 
+    collect the cell pellets and store them at 
+    –20°C until all the samples are ready for 
+    processing.
+
+[6] If larger culture volumes are required, refill 
+    and re-centrifuge the same tube until all 
+    cells are harvested.
+
+[7] https://tinyurl.com/4dtc22hz
