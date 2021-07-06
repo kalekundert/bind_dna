@@ -25,7 +25,7 @@ Options:
         https://tinyurl.com/4ffxu8zb
 """
     __config__ = [
-            appcli.DocoptConfig(),
+            appcli.DocoptConfig,
     ]
 
     volume_uL = appcli.param(

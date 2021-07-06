@@ -32,7 +32,7 @@ Options:
         mix.
 """
     __config__ = [
-            appcli.DocoptConfig(),
+            appcli.DocoptConfig,
     ]
 
     elute_volume_uL = appcli.param(
