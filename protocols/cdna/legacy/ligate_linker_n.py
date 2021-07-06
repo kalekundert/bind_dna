@@ -48,6 +48,10 @@ Options:
     -x --extra <percent>            [default: ${app.extra_percent}]
         How much extra master mix to prepare.
 
+    -X --extra-min-volume <µL>      [default: ${app.extra_min_volume}]
+        Scale the master mix such that no reagent has less than the given 
+        volume.
+
     -i --incubate <time>            [default: ${app.incubate_time}]
         How long to incubate the reaction at the temperature indicated by the 
         `-t` flag.  Include a unit.
@@ -108,6 +112,11 @@ Options:
             '--extra',
             cast=float,
             default=10,
+    )
+    extra_min_volume = appcli.param(
+            '--extra-min-volume',
+            cast=float,
+            default=0.5,
     )
     incubate_time = appcli.param(
             '--incubate',
@@ -276,7 +285,7 @@ Options:
 
         rxn.num_reactions = self.num_reactions
         rxn.extra_percent = self.extra_percent
-        rxn.extra_min_volume = '0.5 µL'
+        rxn.extra_min_volume = self.extra_min_volume, 'µL'
         rxn.hold_ratios.volume *= v
         rxn['PEG 8000'].master_mix = 'peg' in self.master_mix
         rxn['T4 PNK'].volume *= c

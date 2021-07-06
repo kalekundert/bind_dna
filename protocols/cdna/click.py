@@ -17,13 +17,14 @@ Options:
 
 import docopt
 import stepwise
+from stepwise import pl, ul
 
 args = docopt.docopt(__doc__)
 
 # PBS:
-# - I don't remember why I decided to add PBS to this reaction.
+# - Adding salt seems to dramatically increase yield, see expt #57.
 # - The Glen Research protocol referenced by expt #57 doesn't call for any 
-#   salt.
+#   salt, though.
 rxn = stepwise.MasterMix("""\
   Reagent                  Stock  Volume
   ======================  ======  ======
@@ -40,7 +41,7 @@ if v := args['--volume']:
 
 p = stepwise.Protocol()
 
-p += stepwise.Step(
+p += pl(
         "Couple the linker oligos:",
         rxn,
 )
@@ -50,14 +51,13 @@ p += stepwise.Step(
 # - In principle, it would work by increasing the concentration of the oligos 
 #   or the salts (or both) as the solvent crystallizes.
 if not args['--no-incubation']:
-    p += stepwise.Step(
+    p += pl(
         "Incubate in the dark as follows:",
-        substeps=[
+        ul(
             "room temperature for >4h",
             "−20°C overnight",
-        ],
+        ),
     )
-
     p += "Dilute 10x to 10 µM."
 
 p.print()
