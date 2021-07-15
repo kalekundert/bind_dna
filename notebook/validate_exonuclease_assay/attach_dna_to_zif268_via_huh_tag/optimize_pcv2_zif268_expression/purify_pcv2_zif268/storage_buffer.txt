@@ -1,0 +1,12 @@
+- Prepare 10 mL 10x Zif268 storage buffer:
+
+  Reagent        Stock  1x Conc  10x Volume
+  ─────────────────────────────────────────
+  water                             7060 µL
+  tris, pH=7.5     1 M    10 mM     1000 µL
+  NaCl             5 M    90 mM     1800 µL
+  MgCl₂            2 M     1 mM       50 µL
+  Zn(OAc)₂      100 mM    90 µM       90 µL
+
+  - Add 1/100 volumes 500 mM DTT to 1x buffer 
+    immediately before use.

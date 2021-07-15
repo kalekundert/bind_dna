@@ -24,9 +24,33 @@ UV tray: 280-400 nm, max 300 nm
 Blue tray: 430-460 nm, max 440 nm
 White tray: visible spectra
 
+Zif268 binding buffers
+======================
+Many different Zif268 binding buffers have been described.  Below are some of 
+the ones I've found:
+
+.. datatable:: zif268_buffers.xlsx
+
+Some general takeaways:
+
+- The buffer is typically ≈10 mM and around pH=7.5.
+- The monovalent salt concentration is often ≈100 mM.  The specific cation 
+  doesn't seem important.
+- Mg is often (but not always) present at 1 mM.
+- The Zn counter-ion doesn't seem important.
+- The reducing agent is probably important.  The only Cys residues in Zif268 
+  are involved in coordinating the Zn.  Obviously the protein won't work if 
+  these residues form disulfide bonds, but too much reducing agent might also 
+  interfere with Zn binding (I'm not sure exactly what oxidation state the 
+  Zn/Cys need to have).
+- A variety of nonspecific binding inhibitors are used.
+
+I used variants of the [Lam2011]_ buffer for my initial experiments, because it 
+was the only reference I found to express Zif268 with PURExpress.
+
 PURE reaction components
 ========================
-I couldn’t find the composition of NEB’s PURExpress buffer, but the buffer used 
+I couldn't find the composition of NEB's PURExpress buffer, but the buffer used 
 in the original PURE system [Shimizu2001] is (50 μL for mass/quantity units):
 
 - 9 mM magnesium acetate

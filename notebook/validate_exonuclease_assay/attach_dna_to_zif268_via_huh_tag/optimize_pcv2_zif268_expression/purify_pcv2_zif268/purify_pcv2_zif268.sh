@@ -23,3 +23,6 @@ sw gel bolt/mes NI,I,CL,FT,W1,W2,E1,E2,E3,E4 -v 5 --mix-volume 20
 #   - −20°C in 50% glycerol
 #
 # This experiment is just about expressing the protein, though.
+#
+# I should've included steps to concentrate the protein (Amicon) and transfer 
+# in to storage buffer.

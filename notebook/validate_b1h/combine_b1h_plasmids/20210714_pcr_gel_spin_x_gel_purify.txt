@@ -1,0 +1,79 @@
+July 14, 2021
+
+$ sw pcr -u p169 -v 50
+$ sw gels/gel agarose/purify/1 1
+$ sw spin_x_gel_purify
+
+1. Prepare 10x primer mix [1]:
+
+   Reagent   Stock    Volume
+   ─────────────────────────
+   water             9.00 µL
+   o244     100 µM   0.50 µL
+   o245     100 µM   0.50 µL
+   ─────────────────────────
+                    10.00 µL
+
+2. Setup 1 PCR reaction [2,3]:
+
+   Reagent           Stock    Volume
+   ─────────────────────────────────
+   water                    15.00 µL
+   p167           20 pg/µL   5.00 µL
+   primer mix          10x   5.00 µL
+   Q5 master mix        2x  25.00 µL
+   ─────────────────────────────────
+                            50.00 µL
+
+3. Run the following thermocycler protocol:
+
+   - 98°C for 30s
+   - Repeat 35x:
+     - 98°C for 10s
+     - 59°C for 20s
+     - 72°C for 3 min
+   - 72°C for 2 min
+   - 4°C hold
+
+4. Prepare 1 sample for electrophoresis:
+
+   Reagent         Stock    Volume
+   ───────────────────────────────
+   loading buffer     6x  10.00 µL
+   sample                 50.00 µL
+   ───────────────────────────────
+                          60.00 µL
+
+5. Run a gel:
+
+   gel: 1% agarose/TAE with 1x GelGreen
+   buffer: 1x TAE
+   samples: 30 µL/lane
+   run: 100V for 60 min
+
+6. Image with a 470 nm blue-light transilluminator.
+
+7. Cut desired band out of an agarose gel.
+
+8. Place the gel slice in a Spin-X column with
+   100-200 µL EB.  Spin at 13,000g for 5-20 min
+   at room temperature [4].
+   
+   The following optional steps may improve yield:
+   
+   - Macerate the gel.
+   - Freeze/thaw the gel.
+   - Add 200 µL EB after the first spin and
+     re-centrifuge.
+   - Spin for longer.
+
+Notes:
+[1] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol
+
+[2] https://tinyurl.com/y27ralt4
+
+[3] For diluting template DNA to 20 pg/µL:
+    Dilute 1 µL twice into 7*sqrt([DNA]) µL
+
+[4] https://tinyurl.com/fh2jtd

@@ -20,3 +20,18 @@ Planning
   just try to load the most sample I can per lane.  I won't be able to compare 
   the intensities of the lanes, but hopefully I'll best be able to see what 's 
   happening at each step.
+
+Results
+=======
+.. protocol:: 20210707_purify_pcv2_zif268.pdf 20210707_purify_pcv2_zif268.txt
+
+.. figure:: 20210712_purify_pcv2_zif268.svg
+
+Observations:
+
+- The purification seems to work relatively well.
+
+- The purified protein precipitated after incubating at 4°C for three days.
+
+- Adding benzonase really helped with the induced control.  The sample was 
+  still somewhat viscous, but much better than before.

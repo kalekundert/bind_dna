@@ -1,0 +1,35 @@
+July 13, 2021
+
+$ sw store_pcv2_zif268
+
+1. Measure concentration by nanodrop
+
+   - Extinction coefficient: 17460 M⁻¹cm⁻¹ [ExPASy
+     ProtParam]
+
+2. Prepare 10 mL 10x Zif268 storage buffer:
+   
+   Reagent        Stock  1x Conc  10x Volume
+   ─────────────────────────────────────────
+   water                             7060 µL
+   tris, pH=7.5     1 M    10 mM     1000 µL
+   NaCl             5 M    90 mM     1800 µL
+   MgCl₂            2 M     1 mM       50 µL
+   Zn(OAc)₂      100 mM    90 µM       90 µL
+   
+   - Add 1/100 volumes 500 mM DTT to 1x buffer 
+     immediately before use.
+
+3. Concentrate the sample and tranfser it to storage
+   buffer:
+
+   - Load the eluted protein on a 4 mL, 10K Amicon
+     spin filter.
+   - Spin 7000g, 4°C, 15 min.
+   - Add 4 mL Zif268 storage buffer.
+   - Spin 7000g, 4°C, 15 min.
+   - Dilute to 64 µM (1.785 mg/mL).
+
+4. Add 1 volume 80% glycerol.  Mix well.
+
+5. Store at −20°C.

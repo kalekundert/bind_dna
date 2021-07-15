@@ -234,3 +234,71 @@ Observations:
   too much.
 
 
+.. protocol:: 20210707_ligate_with_ribozyme.pdf 20210707_ligate_with_ribozyme.txt
+.. figure:: 20210707_ligate_with_ribozyme.svg
+
+Observations:
+
+- The gel purification described above was not very effective.  A lot of 
+  uncleaved mRNA and cleaved ribozyme was present in both purified samples.
+
+- The ribozyme reaction apparently proceeded to completion during the 
+  annealing/ligation reactions.  This is surprising to me because it didn't go 
+  to completion after 4h transcription and 6h KLD reactions.  Some steps that 
+  could be responsible:
+
+  - The 90°C incubation and subsequent ramp-down.
+  - The T4 RNA ligase buffer (50 mM Tris, 10 mM MgCl₂, 1 mM DTT, pH 7.5)
+
+  I think the 90°C incubation is the more likely culprit.  The T4 RNA ligase 
+  buffer is almost identical to the T4 PNK buffer used in the dephosphorylation 
+  reaction (70 mM Tris, 10 mM MgCl₂, 5 mM DTT, pH 7.6).
+
+  This is interesting because one of the concerns with the ribozyme approach is 
+  that the cleavage step itself is relatively low efficiency.  This seems to be 
+  a solution to that problem.
+
+- The ligation efficiency seems low.  It's hard to say exactly what the 
+  ligation efficiency is, because there is clearly a lot of freshly-cleaved 
+  (and therefore non-PNK-treated mRNA) in the reaction.  But just comparing the 
+  amount of ligated mRNA to the amount of KLD-treated mRNA in the −linker 
+  control, it's clear that only a small fraction of the mRNA was ligated.
+
+  Poor efficiency could be attributed to T4 PNK or T4 RNA ligase.  Both should 
+  work well, though.  [Schurer2002]_ claims that dephosphorylation goes to 
+  completion, and I've seen in the past that ligation is efficient (for the 
+  subset of mRNA that is reactive).
+
+- More of the HDV56 mRNA is ligated, compared to the HDV67 mRNA.  I think this 
+  is just because the HDV56 purification recovered more of the cleaved and 
+  dephosphorylated starting material.
+
+- There are some bands I can't identify:
+  
+  - The two bands above the 411 nt cleaved mRNA.  Both disappear in the +linker 
+    lanes, suggesting that both are uncleaved mRNA+HDV.  The upper one is close 
+    to the expected MW for this band.  The lower one is two small
+
+  - The 100 nt bands in the +linker conditions.  This is probably cleaved 
+    ribozyme, given that it's not present in the −linker condition.
+
+  I think it's likely that my DNA template didn't amplify very cleanly.  I 
+  never ran a gel of the template, so I don't know what it looks like.  But I 
+  seem to have two dominant template lengths.  Both would contain full-length 
+  ribozyme, because I included some buffer to make the cleaved HDV band a 
+  certain size.
+
+Conclusions:
+
+- If I can get cleavage to go to completion, it would make sense to add a 
+  restriction site just after the ribozyme.
+
+  - Making the ribozyme as short as possible would make gel purification 
+    easier.
+  - Linearization by restriction digest is less error-prone than linearization 
+    by PCR.
+
+- I'm inclined to try this again.  I think I can do a much better job making 
+  the starting material—especially if the temperature trick works—and its 
+  possible that the efficiency will look much better with clean starting 
+  material.

@@ -377,3 +377,20 @@ that both are form the same batch), I want to try using fresh Q5.
 Observations:
 
 - Neither master mix gave a significant amount of product this time.
+
+2021/07/09:
+
+I tried ordering new primers.
+
+.. protocol:: 20210709_pcr.txt
+
+.. figure:: 20210709_optimize_ta_p169.svg
+
+Observations:
+
+- Compared to the old primers, the new primers:
+
+  - Give more of the intended product.
+  - Require lower annealing temperatures.
+
+- The product is still not clean.

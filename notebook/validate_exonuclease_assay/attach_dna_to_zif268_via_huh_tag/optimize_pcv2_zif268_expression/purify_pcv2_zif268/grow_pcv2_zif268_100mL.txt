@@ -5,14 +5,16 @@
 
   - Prepare 100 mL day culture media:
 
-    - 100 mL LB
-    - 100 µL 1000x Carb
-    - 100 µL 1000x Chlor
-    - 20 µL 500 mM L-rhamnose [2]
+    - 110 mL LB
+    - 110 µL 1000x Carb
+    - 110 µL 1000x Chlor
+    - 22 µL 500 mM L-rhamnose [2]
     - Pre-warm to 37°C
 
-  - Inoculate day culture with 5 mL overnight 
-    culture.
+  - Reserve 10 mL for making OD600 measurements.
+
+  - Inoculate 100 mL day culture with 5 mL 
+    overnight culture.
 
   - Incubate at 37°C with vigorous shaking until 
     OD600=0.6 (30–60 min).

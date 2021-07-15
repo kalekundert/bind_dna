@@ -1,0 +1,25 @@
+July 13, 2021
+
+$ sw recipes/bis_tris_buffer 7.2
+$ sw recipes/btsgv
+
+1. Prepare 1000 mM pH=7.2 bis-tris buffer:
+
+   - 20.924 g bis-tris
+   - 80 mL water
+   - adjust pH from ≈9.9 to 7.2 with HCl
+   - bring volume to 100 mL
+
+2. Prepare 1 mL 4x NativePAGE bis-tris sample 
+   buffer with crystal violet [1]:
+   
+   Reagent               Stock    1x Conc  4x Volume
+   ─────────────────────────────────────────────────
+   water                                    323.6 µL
+   bis-tris, pH=7.2        1 M      50 mM   200.0 µL 
+   NaCl                    5 M      50 mM    40.0 µL 
+   glycerol          80% (v/v)  10% (w/v)   396.4 µL 
+   crystal violet     10 mg/mL  0.1 mg/mL    40.0 µL
+
+Note:
+[1] https://tinyurl.com/n5mxdpau

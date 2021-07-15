@@ -44,6 +44,7 @@ References
 .. [Harley1987] :doi:`10.1093/nar/15.5.2343`
 .. [Hawkins2018] :doi:`10.1073/pnas.1802640115`
 .. [Hecht2017] :doi:`10.1093/nar/gkx070`
+.. [Hellman2007] :doi:`10.1038/nprot.2007.249`
 .. [Hu2010] :doi:`10.1002/chem.200902166`
 .. [Imburgio2000] :doi:`10.1021/bi000365w`
 .. [Inouye1985] :doi:`10.1093/nar/13.9.3101`
@@ -114,6 +115,7 @@ References
 .. [Tice1991] Patent: `US5064519A <https://patents.google.com/patent/US5064519A/en>`_
 .. [Thyme2014] :doi:`10.1007/978-1-62703-968-0_17`
 .. [VegaRocha2007] :doi:`10.1016/j.jmb.2007.01.002`
+.. [Volk2018] :doi:`10.1007/s00348-018-2527-y`
 .. [Vorackova2011] :doi:`10.1016/j.pep.2011.04.022`
 .. [Walder1988] :doi:`10.1073/pnas.85.14.5011`
 .. [Waldo1999] :doi:`10.1038/10904`

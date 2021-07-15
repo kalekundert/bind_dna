@@ -52,7 +52,7 @@ set -euo pipefail
 sw reaction \
   -s "phosphatase" \
   "water;; to 110 µL; + " \
-  "buffer; 10x; 11 µL; +" \
+  "T4 PNK buffer; 10x; 11 µL; +" \
   "T4 PNK; 10 U/µL; 2 µL; +" \
   "f123,f124; 4 µM; 90 µL; -" \
   -n 2 \

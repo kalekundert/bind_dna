@@ -1,0 +1,18 @@
+July 2, 2021
+
+$ sw dilute f123:207 f124:173 -v 48 -c 1uM
+
+1. Dilute the following stock solutions to 1 uM [1]:
+
+   Name  Stock Vol  Diluent Vol   Final Conc
+   ─────────────────────────────────────────
+   f123   48.00 µL      4.40 µL         1 uM
+   f124   48.00 µL      0.00 µL  0.930163 uM
+
+Note:
+[1] Concentrations:
+
+    Name        MW               Stock Conc  Target Conc
+    ────────────────────────────────────────────────────
+    f123  189635.1   207 ng/µL = 1.09157 uM         1 uM
+    f124  185988.9  173 ng/µL = 0.930163 uM         1 uM
