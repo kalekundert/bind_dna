@@ -1,0 +1,14 @@
+- Prepare 1 mL 4x NativePAGE bis-tris sample 
+  buffer with crystal violet [1]:
+
+  Reagent               Stock    1x Conc  4x Volume
+  ─────────────────────────────────────────────────
+  water                                    323.6 µL
+  bis-tris, pH=7.2        1 M      50 mM   200.0 µL 
+  NaCl                    5 M      50 mM    40.0 µL 
+  glycerol          80% (v/v)  10% (w/v)   396.4 µL 
+  crystal violet     10 mg/mL  0.1 mg/mL    40.0 µL 
+
+Notes:
+
+[1] https://tinyurl.com/n5mxdpau

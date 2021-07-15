@@ -1,0 +1,16 @@
+- Prepare 1 mL 4x NativePAGE bis-tris sample 
+  buffer [1]:
+
+  Reagent            Stock        4x            1x
+  ────────────────────────────────────────────────
+  water                     323.6 µL
+  bis-tris             1 M  200.0 µL         50 mM
+  NaCl                 5 M   40.0 µL         50 mM
+  glycerol       80% (v/v)  396.4 µL     10% (w/v)
+  Ponceau S     0.1% (w/v)   40.0 µL  0.001% (v/v)
+
+  - Adjust pH to 7.2 with HCl.
+
+Notes:
+
+[1] https://tinyurl.com/n5mxdpau
