@@ -39,8 +39,7 @@ set -euo pipefail
 
 # Protein concentration:
 #
-# - 
-#   https://www.sheffield.ac.uk/polopoly_fs/1.779623!/file/PurificationGuide.pdf#
+# - https://www.sheffield.ac.uk/polopoly_fs/1.779623!/file/PurificationGuide.pdf#
 #
 #   - "Please note that during centrifugation protein concentration becomes 
 #     very high at the bottom of the concentrator which could cause protein 
@@ -51,8 +50,7 @@ set -euo pipefail
 #     necessary to add anti-freezing agent such as glycerol, but for dilute 
 #     solutions it is better to add glycerol to a 10-40% concentration."
 #
-# - 
-#   http://tools.thermofisher.com/content/sfs/brochures/TR0043-Protein-storage.pdf
+# - http://tools.thermofisher.com/content/sfs/brochures/TR0043-Protein-storage.pdf
 #
 #   - "Dilute protein solutions (<1 mg/ml) are more prone to inactivation and 
 #     loss as a result of low-level binding to the storage vessel.  Therefore, 

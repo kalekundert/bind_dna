@@ -1,0 +1,51 @@
+July 16, 2021
+
+$ sw debug_ligase
+
+1. Setup 1 HaeII digestion [1,2]:
+
+   Reagent               Stock    Volume
+   ─────────────────────────────────────
+   water                         4.15 µL
+   p2                230 ng/µL   4.35 µL
+   rCutSmart Buffer        10x   1.00 µL
+   HaeII               20 U/µL   0.50 µL
+   ─────────────────────────────────────
+                                10.00 µL
+
+2. Incubate at the following temperatures [3]:
+
+   - 37°C for 5–15 min
+   - 80°C for 20 min
+
+3. Setup 1 ligation reaction [4]:
+
+   Reagent               Stock   Volume
+   ────────────────────────────────────
+   water                        3.27 µL
+   T4 ligase buffer        10x  0.50 µL
+   T4 DNA ligase      400 U/µL  0.25 µL
+   HaeII fragments   100 ng/µL  0.98 µL
+   ────────────────────────────────────
+                                5.00 µL
+
+4. Incubate at the following temperatures:
+
+   - 25°C for 15 min
+   - 65°C for 10 min
+
+5. Run a 1% E-gel.
+
+Notes:
+[1] https://www.neb.com/products/r0107-haeii
+
+[2] NEB recommends 5–10 units of enzyme per µg DNA
+    (10–20 units for genomic DNA).  Enzyme volume
+    should not exceed 10% of the total reaction
+    volume to prevent star activity due to excess
+    glycerol.
+
+[3] The heat inactivation step is not necessary if
+    the DNA will be purified before use.
+
+[4] https://tinyurl.com/y7gxfv5m

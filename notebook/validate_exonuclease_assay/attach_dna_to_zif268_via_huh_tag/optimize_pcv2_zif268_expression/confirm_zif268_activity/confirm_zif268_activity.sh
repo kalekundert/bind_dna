@@ -62,7 +62,7 @@ sw reaction \
   "water;                ; to 10 µL; +" \
   "binding buffer;     5x;     2 µL; +" \
   "f128,f129;      100 nM;     1 µL; +" \
-  "PCV2-Zif268;          ;     1 µL; -" \
+  "PCV2-Zif268;       10x;     1 µL; -" \
   -n 7 \
   -i "Make a separate master mix for each target." |
 

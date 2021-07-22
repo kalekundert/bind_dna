@@ -1,0 +1,19 @@
+July 20, 2021
+
+$ sw dilute f128:43.5 f129:52.3 -v 9 -c 100nM
+
+1. Dilute the following stock solutions to 100 nM
+   [1]:
+
+   Name  Stock Vol  Diluent Vol
+   ────────────────────────────
+   f128    9.00 µL    171.33 µL
+   f129    9.00 µL    208.27 µL
+
+Note:
+[1] Concentrations:
+
+    Name       MW               Stock Conc  Target Conc
+    ───────────────────────────────────────────────────
+    f128  21710.2  43.5 ng/µL = 2003.66 nM       100 nM
+    f129  21664.3  52.3 ng/µL = 2414.11 nM       100 nM

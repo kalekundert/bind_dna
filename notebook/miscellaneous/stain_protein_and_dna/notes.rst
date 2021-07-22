@@ -29,16 +29,34 @@ problems.
   If this is the case, the best course of action would be to use a different 
   protein stain:
 
-  - SYPRO Ruby: Still requires acetic acid fixation.
+  - SYPRO Ruby:
 
-  - SYPRO Orange/Red: Acetic acid improves sensitivity, but does not have to be 
-    used.  Would use green laser; crosstalk may be an issue.
+    - Still requires acetic acid fixation.
 
-  - SYPRO Tangerine: No fixation, but seems likely to have significant 
-    crosstalk with GelGreen.
+  - SYPRO Orange/Red:
 
-  - No-stain: No explicit fixation step, but the composition of the reaction 
-    buffer isn't disclosed.  Would use green laser; crosstalk may be an issue.
+    - Acetic acid improves sensitivity, but does not have to be used.
+    - SYPRO Red uses the 532 nm laser.
+      - Certainly crosstalk with the 488 nm (FITC) channel
+      - Maybe crosstalk with the 658 nm (Cy5) channel
+    - SYPRO Orange uses the 488 nm laser:
+      - Unlikely to crosstalk with the 658 nm (Cy5) channel.
+    - So neither stain is compatible with GelRed/GelGreen, but SYPRO Orange 
+      might be compatible with my Cy5-labeled oligos.
+    - For EMSA experiments (e.g. native PAGE), would need to soak the gel in 
+      0.05% SDS prior to staining: 
+      https://www.thermofisher.com/us/en/home/references/molecular-probes-the-handbook/protein-detection-and-proteomics-technology/detection-of-the-total-protein-profile-in-gels-on-blots-on-microarrays-and-in-capillary-electrophoresis.html
+
+  - SYPRO Tangerine:
+
+    - No fixation
+    - Seems likely to have significant crosstalk with GelGreen.
+
+  - No-stain:
+    
+    - No explicit fixation step, but the composition of the reaction buffer 
+      isn't disclosed.
+    - Would use green laser; crosstalk may be an issue.
 
 Results
 =======

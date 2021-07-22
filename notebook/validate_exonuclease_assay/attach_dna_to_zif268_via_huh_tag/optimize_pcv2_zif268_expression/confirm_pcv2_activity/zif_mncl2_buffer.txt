@@ -1,0 +1,8 @@
+- Prepare 80 µL 5x Zif268 storage buffer + MnCl₂:
+
+  Reagent                   Stock  1x Conc  Volume
+  ────────────────────────────────────────────────
+  water                                      35 µL
+  Zif268 storage buffer       10x       1x   40 µL
+  DTT                      500 mM   5.0 mM    4 µL
+  MnCl₂                   1000 mM   2.5 mM    1 µL

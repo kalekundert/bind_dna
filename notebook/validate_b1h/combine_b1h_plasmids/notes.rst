@@ -394,3 +394,22 @@ Observations:
   - Require lower annealing temperatures.
 
 - The product is still not clean.
+
+.. protocol:: 20210714_pcr_gel_spin_x_gel_purify.txt
+
+.. figure:: 20210715_gel_purify_p169.svg
+
+Observations:
+
+- The 4 and 2.5 kb minor products are the same ones I've seen previously.
+
+- The PCR reaction worked very well this time, though.  The only thing I did 
+  differently this time was to freshly dilute the template to 20 pg/µL from the 
+  miniprepped stock.  I think it's very possible that my diluted stock was 
+  somehow contaminated, and the cause of my problems.
+
+- The gel purification yield was poor.  From a 50 µL PCR reaction, I recovered 
+  10 µL of 22 ng/µL DNA.  That might even be an overestimate, because the 
+  A260/A230 ratio was very poor.  Next time, I'll macerate the gel.
+
+

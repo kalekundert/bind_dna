@@ -1,0 +1,46 @@
+July 19, 2021
+
+$ sw make p168
+
+1. Setup 1 annealing reaction:
+
+   Reagent   Stock   Volume
+   ────────────────────────
+   PBS         10x  0.40 µL
+   o190     100 µM  1.80 µL
+   o191     100 µM  1.80 µL
+   ────────────────────────
+                    4.00 µL
+
+2. Perform the annealing reaction:
+
+   - Incubate at 95°C for 2 min.
+   - Cool at room temperature.
+
+3. Label the product: f80
+
+4. Dilute f80 to 90 nM.
+
+5. Setup 1 ligation reaction [1]:
+
+   Reagent               Stock   Volume
+   ────────────────────────────────────
+   T4 ligase buffer        10x  0.50 µL
+   T4 DNA ligase      400 U/µL  0.25 µL
+   T4 PNK              10 U/µL  0.25 µL
+   f79               100 ng/µL  2.07 µL
+   f80                   90 nM  1.93 µL
+   ────────────────────────────────────
+                                5.00 µL
+
+6. Incubate at the following temperatures:
+
+   - 25°C for 15 min
+   - 65°C for 10 min
+
+7. Label the product: p168
+
+8. Miniprep.
+
+Note:
+[1] https://tinyurl.com/y7gxfv5m

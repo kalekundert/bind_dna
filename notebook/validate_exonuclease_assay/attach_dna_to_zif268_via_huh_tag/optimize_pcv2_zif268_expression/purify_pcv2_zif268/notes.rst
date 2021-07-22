@@ -21,8 +21,8 @@ Planning
   the intensities of the lanes, but hopefully I'll best be able to see what 's 
   happening at each step.
 
-Results
-=======
+First Try
+=========
 .. protocol:: 20210707_purify_pcv2_zif268.pdf 20210707_purify_pcv2_zif268.txt
 
 .. figure:: 20210712_purify_pcv2_zif268.svg
@@ -35,3 +35,44 @@ Observations:
 
 - Adding benzonase really helped with the induced control.  The sample was 
   still somewhat viscous, but much better than before.
+
+Second Try
+==========
+I had to repeat the purification because the protein from the first 
+purification precipitated.  In addition to promptly transferring the protein to 
+storage buffer, I also decided to modify the previous protocol by performing 
+the entire purification in Zif268 storage buffer (10 mM tris, 90 mM NaCl, 1 mM 
+MgCl₂, 90 µM Zn(OAc)₂, 5 mM DTT, pH=7.5) instead of the purification buffer 
+recommended by Qiagen (50 mM NaH₂PO₄, 300 mM NaCl, 0.05% tween-20, pH=8.0).  
+Some noteworthy differences between these buffers:
+
+- The storage has Zn and a reducing agent, both of which may help stabilize the 
+  fusion protein.  This is what motivated me to make the switch.
+
+- The Qiagen buffer has detergent and more salt, both of which may help reduce 
+  nonspecific binding.  High salt could potentially interfere with the native 
+  PAGE step of EMSA, however.
+
+- Qiagen recommends against using >100 mM tris or >10 mM DTT, as both are 
+  capable of reducing Ni.  The storage buffer is below both limits, but the 
+  Qiagen buffer avoids the problem altogether by using phosphate buffer and no 
+  reducing agent.
+
+.. protocol:: 20210713_purify_store_pcv2_zif268.pdf 20210713_purify_store_pcv2_zif268.txt
+
+.. figure:: 20210720_purify_pcv2_zif268.svg
+
+Observations:
+
+- The eluate is not as clean as it was previously.  If this turns out to be a 
+  problem, adding tween-20 to the purification buffer would probably help.
+
+- My final yield was 3.9 mL at 64 µM.  That should be way more than I'll ever 
+  need.
+
+2021/07/21:
+
+Based on my initial attempts to measure Zif268 and PCV2 activity of the 
+purified fusion protein, I'm suspicious that the concentration I measured with 
+the nanodrop is inaccurate.  To be sure, I want to measure concentration via 
+densiometry of a SYPRO Orange stained SDS PAGE gel [Knight2003]_.
