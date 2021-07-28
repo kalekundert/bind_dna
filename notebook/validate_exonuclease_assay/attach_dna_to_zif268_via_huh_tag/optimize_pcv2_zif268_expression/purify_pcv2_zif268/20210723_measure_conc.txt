@@ -1,0 +1,95 @@
+July 23, 2021
+
+$ sw measure_conc
+
+1. Dilute the following stock solution to 80 µg/mL
+   [1]:
+
+   Name          Stock Vol  Diluent Vol
+   ────────────────────────────────────
+   BSA standard   20.00 µL    480.00 µL
+
+2. Prepare the following dilutions:
+
+     Final    Stock  BSA standard  water
+   [µg/mL]  [µg/mL]          [µL]   [µL]
+   ─────────────────────────────────────
+     80.00    80.00         62.25   0.00
+     56.57    80.00         14.14   5.86
+     40.00    80.00         10.00  10.00
+     28.28    80.00          7.07  12.93
+     20.00    80.00          5.00  15.00
+     14.14    80.00          3.54  16.46
+     10.00    80.00          2.50  17.50
+
+3. Prepare the same dilutions of the PCV2-Zif268
+   stock.
+
+4. Prepare 14 samples for SDS PAGE:
+
+   Reagent                     Stock    Volume       21x
+   ─────────────────────────────────────────────────────
+   water                               1.50 µL  31.50 µL
+   Bolt LDS sample buffer         4x   2.50 µL  52.50 µL
+   Bolt reducing agent           10x   1.00 µL  21.00 µL
+   sample                  100 ng/µL   5.00 µL
+   ─────────────────────────────────────────────────────
+                                      10.00 µL   5.00 µL/rxn
+
+   - Incubate at 70°C for 10 min.
+
+5. Run a gel:
+
+   gel: 4–12% Bolt Bis-Tris SDS PAGE
+   buffer: Bolt MES SDS running buffer
+   ladder: 5 µL SeeBlue Plus2 (Invitrogen LC5925)
+   samples: 10 µL/lane
+   run: 165V for 42 min
+
+6. Stain gel with SYPRO Orange [2-5]:
+
+   - Submerge gel in ≈50 mL 1x SYPRO Orange, 7.5%
+     acetic acid.
+   - Shake gently for 40m.
+
+   - Submerge gel in ≈50 mL 7.5% acetic acid.
+   - Shake gently for 1m.
+
+7. Image with a laser scanner:
+
+   laser:    488 nm
+   filter:  518BP22
+
+8. Quantify band intensities and calculate
+   PCV2-Zif268 concentration by linear regression.
+
+Notes:
+[1] Concentrations:
+
+    Name          MW            Stock Conc  Target Conc
+    ───────────────────────────────────────────────────
+    BSA standard   ?  2 mg/mL = 2000 µg/mL     80 µg/mL
+
+[2] https://tinyurl.com/r7p6juer
+
+[3] The stain solution may be reused up to four
+    times, but sensitivity is dramatically reduced.
+    Use fresh stain for optimal sensitivity.
+
+[4] For low percentage gels and for very small
+    proteins, 10% acetic acid will result in better
+    retention of the protein in the gel without
+    compromising sensitivity.  Do not fix the
+    proteins with methanol-containing solutions.
+    Methanol removes the SDS coat from proteins,
+    strongly reducing the signal from SYPRO Orange
+    and Red.
+
+[5] Acetic acid will interfere with transfer of the
+    proteins to a blot.  You can try diluting SYPRO
+    Red or Orange in transfer buffer, but this will
+    result in lower sensitivity staining.
+    Alternatively, you can stain the gel with SYPRO
+    Tangerine (which does not require acetic acid
+    fixation) or you can stain the blot directly with
+    SYPRO Ruby.

@@ -76,7 +76,7 @@ sw reaction \
 #
 # - I did 1h on 2019/8/28.  I might just do that again.
 
-sw step "Incubate at room temperature for 1h." \
+sw step "Incubate at room temperature for 1h." |
 
 sw gel emsa/zif 14
 

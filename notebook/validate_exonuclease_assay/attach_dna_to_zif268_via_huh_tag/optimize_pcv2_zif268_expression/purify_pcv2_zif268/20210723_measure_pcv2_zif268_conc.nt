@@ -1,0 +1,53 @@
+image: 20210723_measure_pcv2_zif268_conc_plots.tif
+lanes:
+  -
+    ladder: True
+  -
+    band: BSA
+    conc: 80 µg/mL
+  -
+    band: BSA
+    conc: 56.57 µg/mL
+  -
+    band: BSA
+    conc: 40 µg/mL
+  -
+    band: BSA
+    conc: 28.28 µg/mL
+  -
+    band: BSA
+    conc: 20 µg/mL
+  -
+    band: BSA
+    conc: 14.14 µg/mL
+  -
+    band: BSA
+    conc: 10 µg/mL
+  -
+    bands: PCV2-Zif268
+    dilution: 1
+  -
+    bands: PCV2-Zif268
+    dilution: 1.41
+  -
+    bands: PCV2-Zif268
+    dilution: 2
+  -
+    bands: PCV2-Zif268
+    dilution: 2.83
+  -
+    bands: PCV2-Zif268
+    dilution: 4
+  -
+    bands: PCV2-Zif268
+    dilution: 5.66
+  -
+    bands: PCV2-Zif268
+    dilution: 8
+bands:
+  BSA:
+    center: 150
+    range: 50-250
+  PCV2-Zif268:
+    center: 485
+    range: 400-600

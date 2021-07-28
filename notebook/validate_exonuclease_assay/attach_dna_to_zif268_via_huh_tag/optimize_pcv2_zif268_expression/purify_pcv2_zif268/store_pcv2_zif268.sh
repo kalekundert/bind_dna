@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+sw warn "Increase glycerol to 60-67%, see expt 122" |
+
 # Storage buffer:
 # - Binding buffer with the following modifications:
 #   - Without nonspecific binding agents.

@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+sw warn "Add tween-20 to purification buffer" |
+
 # Culture volume:
 # - In "The QIAexpressionist", a "standard" culture is 100 mL.  That seems 
 #   reasonable to me.

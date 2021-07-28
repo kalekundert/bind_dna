@@ -76,3 +76,47 @@ Based on my initial attempts to measure Zif268 and PCV2 activity of the
 purified fusion protein, I'm suspicious that the concentration I measured with 
 the nanodrop is inaccurate.  To be sure, I want to measure concentration via 
 densiometry of a SYPRO Orange stained SDS PAGE gel [Knight2003]_.
+
+.. protocol:: 20210723_measure_conc.txt
+
+.. figure:: 20210723_measure_pcv2_zif268_conc_gel.svg
+
+  Grey numbers in the ladder represent bands that aren't visible in this gel, 
+  but that I could roughly position by comparing to other gels with the same 
+  ladder.
+
+.. figure:: 20210723_measure_pcv2_zif268_conc_plots_results.svg
+
+  Right panel: "plus" symbols show data points with signal inside the linear 
+  range of the standard curve; "circle" symbols show data points outside that 
+  range.  Only the former are used to calculate the average concentration.
+
+Observations:
+
+- The ladder didn't get stained for some reason.  Maybe it doesn't have an SDS 
+  coat?  
+
+- The background was very high in the bottom of the gel.  I think this is most 
+  likely the result of using a stain solution that I made ≈1 year ago.  
+  However, it's interesting that this may also reflect the fact that more SDS 
+  is trapped in the lower part of the gel.
+
+  I was worried that the high background would make the gel uninterpretable, 
+  but the background subtraction in ImageJ seemed to work well.  Both the 
+  standard curve and the measured concentration seem to have very low variance, 
+  which also makes them easier to trust.
+
+- The protein seems to be much less concentrated that I measured with the 
+  nanodrop:
+
+  - Nanodrop (after dilution): 1787 µg/mL (64.04 µM)
+  - SDS PAGE: 56 µg/mL (2.01 µM)
+
+  This is a 32x difference, and I'm inclined to trust the PAGE data more.  At 
+  the concentration indicated by the gel, and assuming my stock of the protein 
+  is still 3.9 mL (i.e. assuming the amount I've used so far is negligible), 
+  I'd need to concentrate the stock to 122.77 µL to reach 64 µM.  This should 
+  be doable with an Amicon spin filter.  I might go for 32 µM (245.53 µL) or 16 
+  µM (491.06 µL) instead, depending on how things go.
+
+
