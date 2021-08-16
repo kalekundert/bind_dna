@@ -1,0 +1,88 @@
+August 11, 2021
+
+$ sw make p167 p168 p169 -x p180
+
+1. Setup 3 PCR reactions [1-3]:
+
+   Reagent            Stock    Volume      3.3x
+   ────────────────────────────────────────────
+   water                     19.50 µL  64.35 µL
+   p179,p180,p181  20 pg/µL   5.00 µL
+   o248              100 µM   0.25 µL   0.83 µL
+   o249              100 µM   0.25 µL   0.83 µL
+   Q5 master mix         2x  25.00 µL  82.50 µL
+   ────────────────────────────────────────────
+                             50.00 µL  45.00 µL/rxn
+
+   - Use any extra master mix as a negative control.
+
+2. Run the following thermocycler protocol:
+
+   - 98°C for 30s
+   - Repeat 35x:
+     - 98°C for 10s
+     - 60°C for 20s
+     - 72°C for 3 min
+   - 72°C for 2 min
+   - 4°C hold
+
+3. Label the products: f131, f132, f133
+
+4. Purify using Qiagen MinElute reaction cleanup kit
+   (28204) [4,5]:
+
+   - Perform all spin steps at 17900g.
+   - Ensure that the sample is between 20–100 µL.
+   - Add 300 µL ERC to the crude DNA.
+   - If not yellow: Add 10 µL 3M sodium acetate,
+     pH=5.0.
+   - Load on a MinElute column.
+   - Spin 1m; discard flow-through.
+
+   - Add 750 µL PE.
+   - Spin 1m; discard flow-through.
+   - Spin 1m; discard flow-through.
+   - Add 10 µL EB.
+   - Wait at least 1m.
+   - Spin 1m; keep flow-through.
+
+5. Setup 3 Golden Gate assemblies [6]:
+
+   Reagent               Stock   Volume       4x
+   ─────────────────────────────────────────────
+   water                        1.72 µL  6.89 µL
+   T4 ligase buffer        10x  0.50 µL  2.00 µL
+   T4 DNA ligase      400 U/µL  0.12 µL  0.50 µL
+   BsaI-HFv2           20 U/µL  0.12 µL  0.50 µL
+   f130               10 ng/µL  0.86 µL  3.42 µL
+   f131,f132,f133    250 ng/µL  1.67 µL
+   ─────────────────────────────────────────────
+                                5.00 µL  3.33 µL/rxn
+
+6. Run the following thermocycler protocol:
+
+   - 37°C for 5 min
+
+   Or, to maximize the number of transformants:
+
+   - 37°C for 60 min
+   - 60°C for 5 min
+
+7. Label the products: p167, p168, p169
+
+8. Miniprep.
+
+Notes:
+[1] https://tinyurl.com/y27ralt4
+
+[2] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol
+
+[3] For diluting template DNA to 20 pg/µL:
+    Dilute 1 µL twice into 7*sqrt([DNA]) µL
+
+[4] https://www.qiagen.com/HB-2069
+
+[5] Column capacity: 5 µg
+
+[6] https://tinyurl.com/yaa5mqz5

@@ -28,7 +28,7 @@ Second try
 After remeasuring the concentration of PCV2-Zif268 via PAGE, I'm repeating this 
 experiment with (hopefully) the correct amount of protein.
 
-.. protocol:: 20210727_confirm_pcv2.txt
+.. protocol:: 20210727_confirm_pcv2.pdf 20210727_confirm_pcv2.txt
 
 .. figure:: 20210727_confirm_pcv2.svg
 
@@ -64,7 +64,10 @@ Observations:
 
 __ https://www.engineeringtoolbox.com/glycerine-boiling-freezing-points-d_1590.html
 
+Third Try
+=========
+Although my purified protein didn't react very well with f12, I think it might 
+react better with f107 (or f134, which is f107 plus Cy5) based on the 
+difference between :expt:`72` and :expt:`68`.
 
-Conclusions:
 
-- Could I find another amplicon, ideally with Cy5?

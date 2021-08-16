@@ -5,19 +5,18 @@ sw zap |
 
 # Controls:
 # - Based on expt 101: Without SDS PAGE
-# - Add FluoroTect control as described in observations.
 sw cond reproduce_reyes2021_cond.xlsx |
 
-# f112 concentration:
+# f127 concentration:
 # - 363 nM; same as in IVTT reaction
 # - See below for discussion.
 #
-# f112 volume:
+# f127 volume:
 # - Total volume of 5 µL to load 2.5 µL of each control.
 # - I only really need 4.2 µL, because the +salt control will have some volume 
 #   of salt added.  But it's not bad to have some extra.
 sw step "Setup the −PUREfrex control:
-    ~0.91 µL 2 µM f112
+    ~0.91 µL 2 µM f127
     ~4.09 µL nuclease-free water
     ~Include this control in the 37°C incubation." |
 
@@ -25,7 +24,7 @@ sw step "Setup the −PUREfrex control:
 # - I'm still not sure whether PUREfrex 1.0 or 2.0 is better
 # - I'm using 1.0 here because I'm trying to reproduce [Reyes2021].
 #
-# reaction volume:
+# Reaction volume:
 # - Need at least 2.5 µL of material (after adding salt) to run the gel.
 # - To help make pipetting more accurate, I increased the volume as much as I 
 #   could without using more than one aliquot.
@@ -47,11 +46,32 @@ sw step "Setup the −PUREfrex control:
 #
 # - In the interest of reproducing [Reyes2021], I'm going to use 363 nM.
 #
-# reaction time:
+# Reaction time:
 # - [Reyes2021] calls for 30 min.
-sw ivtt f112,f111 -p frex1/flag -n 6 -v 3.333 -C 2000 -c 363 -r -t '30 min' |
+#
+# FLAG visualization:
+# - o243 is labeled with FITC, so I won't be able to distinguish the RNA 
+#   species from any peptide labeled with FluoroTect.
+# - In my previous experiment with o236, I didn't observe any FLAG expression 
+#   in the TBE/urea gel using FluoroTect.  Maybe there just wasn't any 
+#   expression, or maybe the urea gel just didn't resolve it from the 
+#   unincorporated FluoroTect.
+# - [Reyes2021] only observed the FLAG peptide by Western blot.  In most 
+#   experiments, they measured coupling only on on the basis of the difference 
+#   between the conjugated and unconjugated mRNA bands (Fig 2).
+# - Based on all this, I'm going to not use FluoroTect in this reaction.
+sw ivtt \
+  f127 f111 \
+  -p frex1/flag \
+  -d 'FluoroTect GreenLys' \
+  -n 6 \
+  -v 3.333 \
+  -C 2000 \
+  -c 363 \
+  -r \
+  -t '30 min' |
 
-# salt concentrations:
+# Salt concentrations:
 # - Want to reproduce the titration in [Reyes2021] (Fig 2a).
 #
 #   - The reaction seems more sensitive to the salt concentration than to any 
@@ -84,7 +104,7 @@ sw step "Setup the +salt control:
 # Incubation time and temperature from [Reyes2021].
 sw step "Incubate at 37°C for 1h." |
 
-# gel chemistry:
+# Gel chemistry:
 # - [Reyes2021] used SDS/urea PAGE, which I don't have.
 #
 # - TBE/urea PAGE:
@@ -109,11 +129,4 @@ sw step "Incubate at 37°C for 1h." |
 #    effect on the gel.
 #
 # - I think TBE/urea PAGE is the best alternative.
-#
-# digest FluoroTect:
-# - I can't: I won't be able to see coupling if I add RNase.
-# - I don't need to: the tRNA is only about half the length of the FLAG mRNA, 
-#   so it shouldn't overlap with the coupling product or the uncoupled mRNA.  
-#   Plus, I should be able to tell if the coupling worked just from the Cy5 
-#   channel.  The BODIPY channel would just be icing on the cake.
-sw gel urea/ivtt 8
+sw gel urea/ivtt 8 -S | sw laser blue

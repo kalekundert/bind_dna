@@ -11,7 +11,12 @@ sw zif_mncl2_buffer.txt |
 # Controls:
 # - Include the fusion protein in the master mix, because it's very 
 #   concentrated.
-sw step "Prepare the +DNA control:~7.26 µL water~2 µL 5x Zif268 storage buffer + MnCl₂~0.74 µL 1360 nM f12" |
-sw huh PCV2-Zif268 f12 -n4 -P 1.81 -b "Zif268 storage buffer + MnCl₂" -C 5 |
+sw step "Prepare the +DNA control:~7.24 µL water~2 µL 5x Zif268 storage buffer + MnCl₂~0.76 µL 1314 nM f107" |
+sw huh PCV2-Zif268 f107 -n7 -P 16 -b "Zif268 storage buffer + MnCl₂" -C 5 |
 
-sw gel bolt/pcv2 4 -S | sw stain gelgreen | sw stain sypro-ruby/microwave
+# Stain:
+# - I've tried using SYPRO Ruby to more sensitively detect the protein, but 
+#   didn't get good results.  Not sure why.
+# - Once I make f134, I can try staining with SYPRO Orange and directly imaging 
+#   both channels.  I don't know if this will work, though.
+sw gel bolt/pcv2 7

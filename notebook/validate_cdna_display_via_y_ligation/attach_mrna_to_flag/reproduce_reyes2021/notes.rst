@@ -24,5 +24,16 @@ Observations:
   desalting columns, but FLAG is small enough that it'd be retained by the 
   column.
 
+  [Reyes2021]_ used SDS/urea PAGE, and just pelleted the SDS precipitate.  In 
+  my expreience, though, this causes some bands to not appear.
+
 [Reyes2021] linker
 ==================
+Since I still haven't seen any evidence of mRNA/peptide coupling, I want to try 
+reproducing the [Reyes2021] protocol exactly---namely with the same linker.
+
+.. protocol:: 20210810_make_f127.pdf 20210810_make.txt 20210813_dilute.txt
+
+.. protocol:: 20210813_reproduce_reyes2021_o243.pdf 20210813_reproduce_reyes2021_o243.txt
+
+

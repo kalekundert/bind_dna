@@ -1,0 +1,118 @@
+August 10, 2021
+
+$ sw make f127
+
+ 1. Setup 1 annealing reaction:
+
+    Reagent                     Stock    Volume
+    ───────────────────────────────────────────
+    water                              33.67 µL
+    T4 DNA ligase buffer          10x  10.00 µL
+    FLAG mRNA (f111)            10 µM  50.00 µL
+    [Reyes2021] linker (o243)  100 µM   5.00 µL
+    ───────────────────────────────────────────
+                                       98.67 µL
+
+ 2. Incubate as follows:
+
+    - 90°C for 30s
+    - Cool to 25°C at 1°C/s
+
+ 3. Add to the reaction:
+
+    - 0.33 µL × 10 U/µL = 3U T4 PNK
+    - 2 µL × 10 U/µL = 20U T4 RNA ligase
+
+ 4. Incubate at 25°C for 30 min.
+
+ 5. Label the product: f127
+
+ 6. Concentrate the sample to 5 uL by lyophilization.
+
+ 7. Prepare 1 sample for TBE/urea PAGE:
+
+    Reagent          Stock    Volume
+    ────────────────────────────────
+    RNA loading dye     2x   5.00 µL
+    f127              5 uM   5.00 µL
+    ────────────────────────────────
+                            10.00 µL
+
+    - Incubate at 70°C for 3 min.
+
+ 8. Run a gel:
+
+    gel: 6% TBE/urea PAGE
+    buffer: 1x TBE
+    ladder: 1 µL low range ssRNA ladder (NEB N0364S)
+    samples: 10 µL/lane
+    run: 180V for 40 min
+
+ 9. Cut the desired band out of the gel [1].
+
+    - Place the gel over a TLC plate.
+    - Use a UV light to visualize the RNA (dark
+      spot).
+    - Consider visualizing remaining gel to ensure
+      that all desired RNA was excised.
+
+10. Crush the gel slice.
+
+    - Poke a hole in the bottom of a 0.65 mL tube
+      with a 27 g needle.
+    - Place gel slice inside the 0.65 mL tube.
+    - Place the 0.65 mL tube inside a 1.5 mL tube.
+    - Spin at max speed for 5 min.
+
+11. Resuspend gel in 400 µL PAGE elution buffer:
+
+    Reagent               Stock     Volume
+    ──────────────────────────────────────
+    nuclease-free water          439.00 µL
+    Tris, pH 7.5            1 M    5.00 µL
+    NaCl                    5 M   50.00 µL
+    EDTA                 500 mM    1.00 µL
+    SDS                     10%    5.00 µL
+    ──────────────────────────────────────
+                                 500.00 µL
+
+12. Incubate at 4°C overnight with end-over-end
+    mixing.
+
+13. Remove gel debris by spin filtration:
+
+    - Load samples onto a 0.22 µm cellose-acetate
+      Spin-X column [2].
+    - Spin at 13,000g for 5 min.
+
+14. Purify using Zymo Clean & Concentrator-5 kit
+    (R1015) [3,4]:
+
+    - Perform all spin steps at 16000g.
+    - Add 800 µL RNA binding buffer to the crude RNA.
+    - Add 1200 µL 95-100% ethanol to the crude RNA.
+    - Load on a Zymo-Spin IICR column.
+    - Spin 30s; discard flow-through.
+
+    - Add 400 µL RNA prep buffer.
+    - Spin 30s; discard flow-through.
+    - Add 700 µL RNA wash buffer.
+    - Spin 30s; discard flow-through.
+    - Add 400 µL RNA wash buffer.
+    - Spin 1m; discard flow-through.
+
+    - Add 15 µL nuclease-free water.
+    - Spin 30s; keep flow-through.
+
+15. Make 5 µL, 2 µM aliquots.
+
+Notes:
+[1] Based on Fitzy's DNA PAGE purification protocol,
+    [Nilson2013], and [Petrov2013].
+
+[2] Nylon and cellulose nitrate have high DNA-
+    binding: https://tinyurl.com/3pkyc8dr
+
+[3] https://tinyurl.com/yd699u8b
+
+[4] Column capacity: 10 µg

@@ -1,0 +1,16 @@
+August 13, 2021
+
+$ sw dilute f127 -v 15 -c 4uM -C 472.8ng/uL
+
+1. Dilute the following stock solution to 4 uM [1]:
+
+   Name  Stock Vol  Diluent Vol
+   ────────────────────────────
+   f127   15.00 µL     17.68 µL
+
+Note:
+[1] Concentrations:
+
+    Name       MW                Stock Conc  Target Conc
+    ────────────────────────────────────────────────────
+    f127  54247.8  472.8 ng/uL = 8.71556 uM         4 uM

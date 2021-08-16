@@ -1,0 +1,62 @@
+August 11, 2021
+
+$ sw pcr -u f134 -n 4
+$ sw e_gel
+$ sw spin_cleanup
+
+1. Setup 4 PCR reactions [1-3]:
+
+   Reagent           Stock    Volume       4.4x
+   ────────────────────────────────────────────
+   water                    19.50 µL   85.80 µL
+   p182           20 pg/µL   5.00 µL   22.00 µL
+   o186             100 µM   0.25 µL    1.10 µL
+   o205             100 µM   0.25 µL    1.10 µL
+   Q5 master mix        2x  25.00 µL  110.00 µL
+   ────────────────────────────────────────────
+                            50.00 µL   50.00 µL/rxn
+
+   - Use any extra master mix as a negative control.
+
+2. Run the following thermocycler protocol:
+
+   - 98°C for 30s
+   - Repeat 35x:
+     - 98°C for 10s
+     - 60°C for 20s
+     - 72°C for 10s
+   - 72°C for 2 min
+   - 4°C hold
+
+3. Run a 1% E-gel.
+
+4. Purify using Qiagen MinElute reaction cleanup kit
+   (28204) [4,5]:
+
+   - Perform all spin steps at 17900g.
+   - Ensure that the sample is between 20–100 µL.
+   - Add 300 µL ERC to the crude DNA.
+   - If not yellow: Add 10 µL 3M sodium acetate,
+     pH=5.0.
+   - Load on a MinElute column.
+   - Spin 1m; discard flow-through.
+
+   - Add 750 µL PE.
+   - Spin 1m; discard flow-through.
+   - Spin 1m; discard flow-through.
+   - Add 10 µL EB.
+   - Wait at least 1m.
+   - Spin 1m; keep flow-through.
+
+Notes:
+[1] https://tinyurl.com/y27ralt4
+
+[2] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol
+
+[3] For diluting template DNA to 20 pg/µL:
+    Dilute 1 µL twice into 7*sqrt([DNA]) µL
+
+[4] https://www.qiagen.com/HB-2069
+
+[5] Column capacity: 5 µg

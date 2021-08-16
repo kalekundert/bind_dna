@@ -1,0 +1,100 @@
+August 13, 2021
+
+$ sw reproduce_reyes2021_o243
+
+ 1. Wipe down your bench and anything you'll touch 
+    (pipets, racks, pens, etc.) with RNaseZap.
+
+ 2. In the following steps, setup these conditions:
+
+    PUREfrex 1.0:            −   −   +    +      +    +  +  +
+    FLAG mRNA (f111,f127):   +   +   +    +      +    +  +  −
+    linker (o236):           +   +   +    +      +    +  −  −
+    KCl [mM]:               750  0  750  375   187.5  0  0  0
+    MgOAc [mM]:             65   0  65   32.5  16.25  0  0  0
+
+ 3. Setup the −PUREfrex control:
+
+    - 0.91 µL 2 µM f127
+    - 4.09 µL nuclease-free water
+    - Include this control in the 37°C incubation.
+
+ 4. Setup 6 PUREfrex 1.0 (GeneFrontier PF001)
+    reactions [1]:
+
+    Reagent                    Stock   Volume      6.6x
+    ───────────────────────────────────────────────────
+    water                             0.66 µL   4.37 µL
+    solution I                        1.67 µL  11.00 µL
+    solution II                       0.17 µL   1.10 µL
+    solution III                      0.17 µL   1.10 µL
+    RNase inhibitor, murine  40 U/µL  0.07 µL   0.44 µL
+    f127,f111                2000 nM  0.60 µL
+    ───────────────────────────────────────────────────
+                                      3.33 µL   2.73 µL/rxn
+
+    - Thaw solution I at 25–37°C for 1 min, then keep
+      on ice.
+    - Thaw solutions II and III on ice.
+    - Vortex all thawed solutions before use.
+
+ 5. Incubate at 37°C for 30 min.
+
+ 6. Prepare a 3.17x salt solution:
+
+    - 5.00 µL 1M MgOAc
+    - 19.23 µL 3M KCl
+    - Keep at room temperature.
+
+ 7. Perform a serial dilution [2]:
+
+    - Put 20.00 μL 3.17 x salt solution in a tube.
+    - Put 10.00 μL nuclease-free water in 3 adjacent
+      tubes.
+    - Transfer 10.00 μL between each tube *except the
+      last* to make 3 2-fold dilutions.
+
+ 8. Setup 8 coupling reactions:
+
+    - 3.33 µL translation reaction
+    - 1.53 µL salt dilution
+
+ 9. Setup the +salt control:
+
+    - 2.00 µL −PUREfrex control
+    - 0.92 µL 3.17x salt solution
+
+10. Incubate at 37°C for 1h.
+
+11. Prepare 8 samples for TBE/urea PAGE:
+
+    Reagent  Stock    Volume       12x
+    ──────────────────────────────────
+    water            2.50 µL  30.00 µL
+    FESV        2x   5.00 µL  60.00 µL
+    sample           2.50 µL
+    ──────────────────────────────────
+                    10.00 µL   7.50 µL/rxn
+
+    - Incubate at 70°C for 3 min.
+
+12. Run a gel:
+
+    gel: 6% TBE/urea PAGE
+    buffer: 1x TBE
+    samples: 10 µL/lane
+    run: 180V for 40 min
+
+13. Image with a laser scanner:
+
+    laser:    488 nm
+    filter:  518BP22
+
+Notes:
+[1] https://tinyurl.com/2zue5vy4
+
+[2] The final concentrations will be:
+    1  3.170000e+00 x
+    2  1.585000e+00 x
+    3  7.925000e-01 x
+    4  0.000000e+00 x
