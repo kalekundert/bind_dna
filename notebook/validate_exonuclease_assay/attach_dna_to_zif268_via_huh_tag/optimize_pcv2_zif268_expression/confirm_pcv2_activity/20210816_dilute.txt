@@ -1,0 +1,16 @@
+August 16, 2021
+
+$ sw dilute f134 -v 9.4 -C 171
+
+1. Dilute the following stock solution to 1 uM [1]:
+
+   Name  Stock Vol  Diluent Vol
+   ────────────────────────────
+   f134    9.40 µL      1.53 µL
+
+Note:
+[1] Concentrations:
+
+    Name        MW              Stock Conc  Target Conc
+    ───────────────────────────────────────────────────
+    f134  147070.2  171 ng/µL = 1.16271 uM         1 uM

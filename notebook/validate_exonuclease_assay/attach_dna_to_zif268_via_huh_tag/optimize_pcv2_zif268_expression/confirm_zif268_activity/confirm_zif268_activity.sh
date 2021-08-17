@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-sw make f128 f129 |
-
 # Binding buffer:
 # - Storage buffer (expt 121) + BSA + ssDNA
 #   
@@ -22,6 +20,9 @@ sw make f128 f129 |
 #   - Leaving it out just to follow [Zykovich2009], no really good reason.
 
 sw binding_buffer.txt |
+sw step "Prepare 80 µL 1x buffer:
+  ~64 µL water
+  ~18 µL 5x Zif268 binding buffer" |
 
 # Steps:
 # - Want to fit everything on a single gel, i.e. 15 lanes.
@@ -45,10 +46,21 @@ sw cond confirm_zif268_activity_cond.xlsx |
 #   - I'm inclined to pick a round number in the middle of the range, so I'm 
 #     going to go with 10 nM.
 #
+# - 2021/08/17: The signal with 10 nM DNA has been too faint, so I'm going to 
+#   double the volume of DNA being added to the reaction to reach 20 nM.  
+#   That's probably still not enough to get good signal, but it should be a 
+#   step in the right direction.  I'm not going to increase the protein 
+#   concentration accordingly; see below.
+#
 # Protein concentration:
 # - [Hellman2007] recommends titrating against constant DNA.  Seems reasonable.
 # - [Hellman2007] concentrations: 0.75x to 21x in 9 (unevenly spaced) steps
 # - I'm doing 0.5x to 16x in 6 (evenly spaced) steps.  Seems comparable.
+#
+# - 2021/08/17: I want to have more lanes with <1x protein, and I also want to 
+#   increase the quantity of DNA in the reaction.  So I'm going to double the 
+#   quantity of DNA while holding the quantity of protein constant, meaning 
+#   that my titration will become 8x to 0.25x.
 #
 # Protein diluent:
 # - The protein is already in storage buffer, so it makes sense to use that for 
@@ -61,9 +73,10 @@ sw reaction \
   -s binding \
   "water;                ; to 10 µL; +" \
   "binding buffer;     5x;     2 µL; +" \
-  "f128,f129;      100 nM;     1 µL; +" \
+  "f128,f129;      100 nM;     2 µL; +" \
   "PCV2-Zif268;       10x;     1 µL; -" \
   -n 7 \
+  --extra-reactions 1 \
   -i "Make a separate master mix for each target." |
 
 # Incubation time:

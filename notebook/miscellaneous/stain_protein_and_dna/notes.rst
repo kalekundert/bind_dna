@@ -58,12 +58,8 @@ problems.
       isn't disclosed.
     - Would use green laser; crosstalk may be an issue.
 
-Results
-=======
-
-Test order --- 2020/11/04
--------------------------
-
+GelGreen + Coomassie --- 2020/11/04
+===================================
 .. protocol:: 20201104_test_staining.txt
 
 .. figure:: 20201104_test_staining_order.svg
@@ -96,3 +92,16 @@ Test order --- 2020/11/04
   - Coomassie: Maybe GelGreen is very efficiently quenched by the background 
     levels of Coomassie.
 
+Cy5 + SYPRO Orange --- 2021/08/17
+=================================
+In :expt:`122`, I tried simultaneously imaging DNA and protein with Cy5 and 
+SYPRO Orange.  The protein wasn't visible in that gel, but I think that's just 
+because I didn't add enough protein (and SYPRO Orange never seems to stain my 
+ladder for some reason).  More importantly, the DNA was clearly visible.  I 
+wasn't sure if this would be the case, because I thought that the acetic acid 
+in the staining solution might damage the DNA.  Given that success, I want to 
+take a closer look at this visualization protocol to see how well it works.
+
+It's worth noting that this protocol isn't exactly what I'm looking for, 
+because Cy5 isn't a stain.  But labeling DNA with Cy5 is usually not too hard, 
+so I can imagine this protocol being useful in plenty of circumstances.

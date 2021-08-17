@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-sw warn "Increase glycerol to 60-67%, see expt 122" |
-
 # Storage buffer:
 # - Binding buffer with the following modifications:
 #   - Without nonspecific binding agents.
@@ -34,6 +32,9 @@ sw warn "Increase glycerol to 60-67%, see expt 122" |
 #
 # - I'll add the glycerol directly to the 1x buffer above.  Technically that 
 #   will make the buffer 0.5x.
+#
+# - https://www.engineeringtoolbox.com/glycerine-boiling-freezing-points-d_1590.html
+#   - Need 60-70% (w/v) glycerol to avoid freezing at −20°C.
 #
 # - Store at -20°C
 #   - It may not work to simply add glycerol and store at -20°C, but I'm just 
@@ -138,15 +139,15 @@ sw warn "Increase glycerol to 60-67%, see expt 122" |
 #
 # - I think 1 dilution will be enough.
 
-sw step "Measure concentration by nanodrop~Extinction coefficient: 17460 M⁻¹cm⁻¹ [ExPASy ProtParam]" |
+sw measure_conc.sh |
 sw storage_buffer.txt |
 sw step "Concentrate the purified protein and tranfser it to storage buffer:
       ~ Load the eluted protein on a 4 mL, 10K Amicon spin filter.
       ~ Spin 7000g, 4°C, 15 min.
       ~ Add 4 mL Zif268 storage buffer.
       ~ Spin 7000g, 4°C, 15 min.
-      ~ Dilute to 64 µM (1.785 mg/mL)." |
-sw step "Add 1 volume 80% glycerol.  Mix well." |
+      ~ Dilute to 16 µM (0.447 mg/mL)." |
+sw step "Add 100% glycerol to reach 60% (w/v) glycerol.  Mix well." |
 sw step "Store at −20°C."
 
 

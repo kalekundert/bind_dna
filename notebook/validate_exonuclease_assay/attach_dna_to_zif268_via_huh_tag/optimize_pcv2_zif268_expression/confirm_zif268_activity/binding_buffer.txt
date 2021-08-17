@@ -1,11 +1,11 @@
-- Prepare 40 µL 5x Zif268 binding buffer:
+- Prepare 80 µL 5x Zif268 binding buffer:
 
   Reagent                   Stock    1x Conc  5x Volume
   ─────────────────────────────────────────────────────
-  water                                         12.4 µL
-  Zif268 storage buffer       10x         1x    20.0 µL
-  DTT                      500 mM       5 mM     2.0 µL
-  BSA                    10 mg/mL  200 µg/mL     4.0 µL
-  ssDNA                  10 mg/mL   80 µg/mL     1.6 µL
+  water                                         24.8 µL
+  Zif268 storage buffer       10x         1x    40.0 µL
+  DTT                      500 mM       5 mM     4.0 µL
+  BSA                    10 mg/mL  200 µg/mL     8.0 µL
+  ssDNA                  10 mg/mL   80 µg/mL     3.2 µL
 
 

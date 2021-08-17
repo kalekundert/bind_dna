@@ -70,4 +70,39 @@ Although my purified protein didn't react very well with f12, I think it might
 react better with f107 (or f134, which is f107 plus Cy5) based on the 
 difference between :expt:`72` and :expt:`68`.
 
+.. protocol:: 20210816_confirm_pcv2.pdf 20210816_confirm_pcv2.txt 20210816_dilute.txt
+
+.. figure:: 20210816_confirm_pcv2.svg
+
+Observations:
+
+- The A15 linker doesn't seem to improve yield at all.
+
+  Should I try f107 instead?  Because I've definitely seen it work previously, 
+  and I could compare it to f12.  I would need to separately image the protein 
+  and DNA channels (although imaging the protein channel seems to be a waste of 
+  time anyways).
+
+- I was able to see the Cy5 DNA bands even after staining with SYPRO orange.  
+  That means that the acetic acid didn't destroy the DNA.  Also, the two 
+  channels seem completely orthogonal.
+
+  I don't know why SYPRO orange doesn't seem to stain the ladder (an effect 
+  I've seen consistently).
+
+- I know the protein concentration is about right, given that I observe robust 
+  Zif268 activity (:expt:`123`).
+
+Conclusions:
+
+- I wonder if the problem is that the protein isn't fresh.  When I was working 
+  with PCV2-dCas9, I observed inconsistent effects that may have been 
+  attributable to the protein losing activity over time.  Perhaps the PCV2 
+  domain just isn't that stable.  I could test this by expressing the fusion 
+  via PURExpress immediately before the tagging reaction (or even doing the 
+  tagging and expression reactions simultaneously, although that would make the 
+  −EDTA control less useful).  If that works, it should be sufficient for my 
+  applications.  I ultimately want to do qPCR, so I don't need much material.
+
+
 
