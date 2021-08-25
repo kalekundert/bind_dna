@@ -1,0 +1,18 @@
+- Prepare 100 mL blocking buffer:
+
+  - 100 mL 1x TBS
+  - 5 g nonfat dry milk (5% w/v final)
+
+  Mix well and filter [1].
+
+Notes:
+
+[1] Undissolved particles within buffers (milk 
+    powder in blocking buffer for example) 
+    potentially can settle on the membrane and 
+    create fluorescent artifacts.  Therefore, we 
+    suggest using high quality reagents, allowing 
+    suitable time for all components to fully 
+    dissolve, and filter sterilize all buffers.
+
+    https://tinyurl.com/8k7mtdr4

@@ -36,4 +36,25 @@ reproducing the [Reyes2021] protocol exactly---namely with the same linker.
 
 .. protocol:: 20210813_reproduce_reyes2021_o243.pdf 20210813_reproduce_reyes2021_o243.txt
 
+.. figure:: 20210813_reproduce_reyes2021_o243.svg
+
+Observations:
+
+- I can only visualize the mRNA in this experiment, because I'm using the exact 
+  same linker as [Reyes2021]_, which is FITC-labeled.
+
+- This doesn't look like Fig 2a from [Reyes2021]_.  That figure shows two 
+  distinct (and sharp) bands, representing the reacted and unreacted mRNA.  The 
+  sharpness may be attributable to their using SDS-PAGE (although this doesn't 
+  work in my hands...).
+
+- The high-salt bands are slightly shifted relative to the mRNA control, but I 
+  think this is probably just because of the PUREfrex mixture.
+
+- I've repeatedly seen that the +salt −PUREfrex  control is much dimmer than 
+  the corresponding −salt control.  I don't think this is a fluke anymore, but 
+  I don't have an explanation.
+
+- I need to do a western blot.  It'll be a lot easier to see the FLAG moving.
+
 

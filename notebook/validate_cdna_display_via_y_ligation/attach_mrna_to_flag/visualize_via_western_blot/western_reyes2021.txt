@@ -1,0 +1,19 @@
+- Semi-dry transfer to PVDF membrane:
+
+  - 110 mA
+  - 60 min
+
+- Block with: PVDF Blocking reagent for Can Get Signal (Toyobo)
+
+- Add antibody:
+
+  - Anti-DYKDDDDK tag monoclonal antibody peroxidase‐conjugated (FUJIFILM Wako 
+    Pure Chemical)
+
+  - 1:12,000 ratio
+
+  - Can Get Signal, solution 2
+
+- Image chemiluminescence using ECL Select Western Blotting detection reagent 
+  (GE Healthcare). 
+
