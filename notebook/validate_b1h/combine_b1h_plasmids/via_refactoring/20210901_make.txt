@@ -1,0 +1,146 @@
+September 1, 2021
+
+$ sw make p172
+
+ 1. Setup 1 Golden Gate assembly [1]:
+
+    Reagent               Stock    Volume
+    ─────────────────────────────────────
+    T4 ligase buffer        10x   1.00 µL
+    T4 DNA ligase      400 U/µL   0.25 µL
+    BsaI-HFv2           20 U/µL   0.25 µL
+    f35               104 ng/uL   0.22 µL
+    f36                67 ng/uL   0.09 µL
+    f82               124 ng/uL   0.28 µL
+    f38                80 ng/uL   0.12 µL
+    f83                10 ng/uL   7.35 µL
+    f40               129 ng/uL   0.29 µL
+    f41                36 ng/uL   0.14 µL
+    ─────────────────────────────────────
+                                 10.00 µL
+
+ 2. Run the following thermocycler protocol:
+
+    - Repeat 30 times:
+    - - 37°C for 1 min
+      - 16°C for 1 min
+    - 60°C for 5 min
+
+ 3. Label the product: p170
+
+ 4. Miniprep.
+
+ 5. Prepare 10x primer mix [2]:
+
+    Reagent   Stock    Volume
+    ─────────────────────────
+    water             9.00 µL
+    o192     100 µM   0.50 µL
+    o193     100 µM   0.50 µL
+    ─────────────────────────
+                     10.00 µL
+
+ 6. Setup 1 PCR reaction [3,4]:
+
+    Reagent           Stock   Volume
+    ────────────────────────────────
+    water                    1.50 µL
+    p170           20 pg/µL  0.50 µL
+    primer mix          10x  0.50 µL
+    Q5 master mix        2x  2.50 µL
+    ────────────────────────────────
+                             5.00 µL
+
+ 7. Run the following thermocycler protocol:
+
+    - 98°C for 30s
+    - Repeat 35x:
+      - 98°C for 10s
+      - 60°C for 20s
+      - 72°C for 3 min
+    - 72°C for 2 min
+    - 4°C hold
+
+ 8. Setup 1 ligation reaction:
+
+    Reagent              Stock    Volume
+    ────────────────────────────────────
+    water                        6.75 µL
+    T4 ligase buffer       10x   1.00 µL
+    T4 PNK             10 U/µL   0.25 µL
+    T4 DNA ligase     400 U/µL   0.25 µL
+    DpnI               20 U/µL   0.25 µL
+    PCR product       50 ng/µL   1.50 µL
+    ────────────────────────────────────
+                                10.00 µL
+
+ 9. Incubate at room temperature for 1h.
+
+10. Label the product: p171
+
+11. Miniprep.
+
+12. Setup 1 restriction digestion [5,6]:
+
+    Reagent               Stock    Volume
+    ─────────────────────────────────────
+    water                         3.00 µL
+    p171              200 ng/µL   5.00 µL
+    rCutSmart Buffer        10x   1.00 µL
+    EcoRI-HF            20 U/µL   0.50 µL
+    NotI-HF             20 U/µL   0.50 µL
+    ─────────────────────────────────────
+                                 10.00 µL
+
+13. Incubate at the following temperatures [7]:
+
+    - 37°C for 5–15 min
+    - 65°C for 20 min
+
+14. Label the product: f84
+
+15. Setup 1 ligation reaction [8]:
+
+    Reagent               Stock   Volume
+    ────────────────────────────────────
+    water                        0.20 µL
+    T4 ligase buffer        10x  0.50 µL
+    T4 DNA ligase      400 U/µL  0.25 µL
+    f84               100 ng/µL  2.05 µL
+    f80                   90 nM  2.00 µL
+    ────────────────────────────────────
+                                 5.00 µL
+
+16. Incubate at the following temperatures:
+
+    - 25°C for 15 min
+    - 65°C for 10 min
+
+17. Label the product: p172
+
+18. Miniprep.
+
+Notes:
+[1] https://tinyurl.com/yaa5mqz5
+
+[2] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol
+
+[3] https://tinyurl.com/y27ralt4
+
+[4] For diluting template DNA to 20 pg/µL:
+    Dilute 1 µL twice into 7*sqrt([DNA]) µL
+
+[5] https://www.neb.com/products/r3101-ecori-hf
+    https://www.neb.com/products/r3189-noti-hf
+
+[6] NEB recommends 5–10 units of enzyme per µg DNA
+    (10–20 units for genomic DNA).  Enzyme volume
+    should not exceed 10% of the total reaction
+    volume to prevent star activity due to excess
+    glycerol.
+
+[7] The heat inactivation step is not necessary if
+    the DNA will be purified before use.
+
+[8] https://tinyurl.com/y7gxfv5m

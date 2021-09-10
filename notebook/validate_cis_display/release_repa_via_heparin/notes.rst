@@ -1,6 +1,11 @@
-*************************
-Release repA with heparin
-*************************
+************************
+Release repA via heparin
+************************
+
+.. note::
+
+  This experiment was done before :expt:`36`, so I hadn't really shown that 
+  CIS-display was working yet, and I wasn't using the best constructs.
 
 My interpretation of :expt:`36` is that the repA fusion is not being released 
 from the transcription/translation machinery.  I think that adding heparin may 

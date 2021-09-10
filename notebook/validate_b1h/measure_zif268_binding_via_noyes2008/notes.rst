@@ -67,3 +67,9 @@ Observation:
   for the reaction with an accidental ≈20x excess of insert.  I'm a little 
   surprised this made a difference.  Maybe the problem is that not all of the 
   inserts were phosphorylated in the latter reaction.
+
+2021/09/08:
+
+- I tried to gel purify f131 and f132, but failed because the sample floated 
+  out of the well.  I think I accidentally "eluted" in PE.  That said, the 
+  Nanodrop concentration looked reasonable; not sure how to explain that.

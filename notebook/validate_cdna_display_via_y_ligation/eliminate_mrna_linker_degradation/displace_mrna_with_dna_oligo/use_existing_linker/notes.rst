@@ -57,9 +57,7 @@ Observations:
   mRNA is not cleaved, regardless of how much o224 is present.  
   
 - o224 does seem to affect how the cleaved linker runs.  Specifically, it seems 
-  to make the linker run slower, which doesn't make sense to me.  makes the 
-  linker appear to appear to make the cleaved linker run slower.  That doesn't 
-  make sense to me...
+  to make the linker run slower, which doesn't make sense to me.
 
   Did I order an oligo that anneals with the RNA by mistake?  No, I double 
   checked that o224 is complementary to o127 (a precursor to o129).

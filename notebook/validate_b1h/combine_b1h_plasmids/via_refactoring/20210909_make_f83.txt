@@ -1,0 +1,126 @@
+September 9, 2021
+
+$ sw make f83
+
+ 1. Prepare 10x primer mix [1]:
+
+    Reagent   Stock    Volume
+    ─────────────────────────
+    water             9.00 µL
+    o109     100 µM   0.50 µL
+    o110     100 µM   0.50 µL
+    ─────────────────────────
+                     10.00 µL
+
+ 2. Setup 1 PCR reaction [2,3]:
+
+    Reagent           Stock    Volume
+    ─────────────────────────────────
+    water                    15.00 µL
+    f81            20 pg/µL   5.00 µL
+    primer mix          10x   5.00 µL
+    Q5 master mix        2x  25.00 µL
+    ─────────────────────────────────
+                             50.00 µL
+
+ 3. Run the following thermocycler protocol:
+
+    - 98°C for 30s
+    - Repeat 35x:
+      - 98°C for 10s
+      - 60°C for 20s
+      - 72°C for 1 min
+    - 72°C for 2 min
+    - 4°C hold
+
+ 4. Label the product: f83
+
+ 5. Prepare 1 sample for electrophoresis:
+
+    Reagent         Stock   Volume
+    ──────────────────────────────
+    loading buffer     6x  1.00 µL
+    f83                    5.00 µL
+    ──────────────────────────────
+                           6.00 µL
+
+ 6. Run a gel:
+
+    gel: 1% agarose/TAE
+    buffer: 1x TAE
+    samples: 5 µL/lane
+    run: 100V for 60 min
+
+ 7. Stain gel with GelGreen [4-6]:
+
+    - Keep the stain protected from light.
+
+    - Submerge gel in ≈30 mL 3x GelGreen, 100 mM
+      NaCl.
+    - Shake gently for 30m.
+
+ 8. Image with a laser scanner:
+
+    laser:    488 nm
+    filter:  518BP22
+
+ 9. Cut desired band out of an agarose gel.
+
+10. Place the gel slice in a Spin-X column with
+    1 µL/mg EB.  Spin at 13,000g for 5-20 min
+    at room temperature [7].
+    
+    The following optional steps may improve yield:
+    
+    - Macerate the gel.
+    - Freeze/thaw the gel.
+    - Add 200 µL EB after the first spin and
+      re-centrifuge.
+    - Spin for longer.
+
+11. Purify using Qiagen MinElute reaction cleanup kit
+    (28204) [8,9]:
+
+    - Perform all spin steps at 17900g.
+    - Ensure that the sample is between 20–100 µL.
+    - Add 300 µL ERC to the crude DNA.
+    - If not yellow: Add 10 µL 3M sodium acetate,
+      pH=5.0.
+    - Load on a MinElute column.
+    - Spin 1m; discard flow-through.
+
+    - Add 750 µL PE.
+    - Spin 1m; discard flow-through.
+    - Spin 1m; discard flow-through.
+    - Add 10.0 µL EB.
+    - Wait at least 1m.
+    - Spin 1m; keep flow-through.
+
+Notes:
+[1] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol
+
+[2] https://tinyurl.com/y27ralt4
+
+[3] For diluting template DNA to 20 pg/µL:
+    Dilute 1 µL twice into 7*sqrt([DNA]) µL
+
+[4] https://tinyurl.com/etxhfxws
+
+[5] Including 100 mM NaCl in the staining solution
+    enhances sensitivity, but may promote dye
+    precipitation if the gel stain is reused.
+
+[6] Staining solution can be reused at least 2-3x.
+    Store staining solution at room temperature
+    protected from light.
+
+[7] https://tinyurl.com/fh2jtd
+    
+    The official protocol just recommends 100-200 µL 
+    EB, but I personally find that 1 µL/mg is a more 
+    robust approach.
+
+[8] https://www.qiagen.com/HB-2069
+
+[9] Column capacity: 5 µg

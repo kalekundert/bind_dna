@@ -1,0 +1,146 @@
+September 2, 2021
+
+$ sw make_p107_ivtt
+$ sw optimize_pcv2_zif268_ivtt
+
+ 1. Transform 0.5 µL p107 (124 ng/µL) with 10 µL
+    MACH1 cells.
+
+ 2. Miniprep directly from the resulting lawn.  Elute
+    in 200 µL water.
+
+ 3. Purify DNA via phenol-chloroform extraction:
+    
+    - Dilute or divide your sample as necessary to 
+      ensure that each tube has between 100-700 µL [1].
+    
+    - Repeat twice:
+    
+      - Add an equal volume of phenol:chloroform:isoamyl
+        alcohol (pH≈8 for DNA) to the tube.
+    
+      - Vortex vigorously to mix the phases.
+       
+      - Spin in a microfuge at top speed for 1-2 min to 
+        separate the phases.
+       
+      - Transfer the aqueous (upper) phase to a new tube, 
+        being careful not to transfer any of the protein 
+        at the phase interface.
+     
+    - Extract the sample with an equal volume of 
+      chloroform:isoamyl alcohol to remove the phenol.
+
+ 4. Concentrate the sample(s) to 100 nM (408.9 ng/µL)
+    by lyophilization.
+
+ 5. Wipe down your bench and anything you'll touch 
+    (pipets, racks, pens, etc.) with RNaseZap.
+
+ 6. In the following steps, setup these conditions:
+
+    DNA template (p107) [nM]:  100  46  22  10  5  2  1  0
+
+ 7. Perform a serial dilution [2]:
+
+    - Put 4.85 μL 100 nM p107 in a tube.
+    - Put 2.60 μL nuclease-free water in 7 adjacent
+      tubes.
+    - Transfer 2.25 μL between each tube *except the
+      last* to make 7 2.2-fold dilutions.
+
+ 8. Setup 8 PURExpress (NEB E6800) reactions [3]:
+
+    Reagent                    Stock   Volume      8.8x
+    ───────────────────────────────────────────────────
+    water                             0.40 µL   3.52 µL
+    solution A                        2.00 µL  17.60 µL
+    solution B                        1.50 µL  13.20 µL
+    RNase inhibitor, murine  40 U/µL  0.10 µL   0.88 µL
+    p107                      100 nM  1.00 µL
+    ───────────────────────────────────────────────────
+                                      5.00 µL   4.00 µL/rxn
+
+    - Thaw all components on ice.
+    - Mix A well; certain components may precipitate
+      during storage.
+    - Mix B gently; do not vortex.
+    - Add A before B.
+
+ 9. Incubate at 37°C for 2h.
+
+10. Prepare 8 samples for SDS PAGE:
+
+    Reagent                 Stock    Volume       12x
+    ─────────────────────────────────────────────────
+    water                           4.00 µL  48.00 µL
+    Bolt LDS sample buffer     4x   2.50 µL  30.00 µL
+    Bolt reducing agent       10x   1.00 µL  12.00 µL
+    sample                          2.50 µL
+    ─────────────────────────────────────────────────
+                                   10.00 µL   7.50 µL/rxn
+
+    - Incubate at 70°C for 10 min.
+
+11. Run a gel:
+
+    gel: 4–12% Bolt Bis-Tris SDS PAGE
+    buffer: Bolt MES SDS running buffer
+    ladder: 5 µL PageRuler unstained protein ladder
+    samples: 10 µL/lane
+    run: 165V for 42 min
+
+12. Stain gel with SYPRO Orange [4-7]:
+
+    - Submerge gel in ≈50 mL 1x SYPRO Orange, 7.5%
+      acetic acid.
+    - Shake gently for 40m.
+
+    - Submerge gel in ≈50 mL 7.5% acetic acid.
+    - Shake gently for 1m.
+
+13. Image with a laser scanner:
+
+    laser:    488 nm
+    filter:  518BP22
+
+Notes:
+[1] It is difficult to do the extraction with volumes 
+    smaller than 100 µL. The sample can be 
+    concentrated again after precipitation.
+
+[2] The final concentrations will be:
+    1  1.000000e+02 nM
+    2  4.641589e+01 nM
+    3  2.154435e+01 nM
+    4  1.000000e+01 nM
+    5  4.641589e+00 nM
+    6  2.154435e+00 nM
+    7  1.000000e+00 nM
+    8  0.000000e+00 nM
+
+[3] https://tinyurl.com/dxapyo69
+
+[4] https://tinyurl.com/r7p6juer
+
+[5] The stain solution may be reused up to four
+    times, but sensitivity is dramatically reduced.
+    Use fresh stain for optimal sensitivity.
+
+[6] For low percentage gels and for very small
+    proteins, 10% acetic acid will result in better
+    retention of the protein in the gel without
+    compromising sensitivity.  Do not fix the
+    proteins with methanol-containing solutions.
+    Methanol removes the SDS coat from proteins,
+    strongly reducing the signal from SYPRO Orange
+    and Red.
+
+[7] Acetic acid will interfere with transfer of the
+    proteins to a blot.  You can try diluting SYPRO
+    Red or Orange in transfer buffer, but this will
+    result in lower sensitivity staining.
+    Alternatively, you can stain the gel with SYPRO
+    Tangerine (which does not require acetic acid
+    fixation) or you can stain the blot directly with
+    SYPRO Ruby.

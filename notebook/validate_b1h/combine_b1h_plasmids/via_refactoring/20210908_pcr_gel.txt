@@ -1,0 +1,84 @@
+September 8, 2021
+
+$ sw pcr -u f83 -v5 -g14 -a65 -n10
+$ sw gels/gel agarose/1 10 -r40
+
+1. Prepare 10x primer mix [1]:
+
+   Reagent   Stock    Volume
+   ─────────────────────────
+   water             9.00 µL
+   o109     100 µM   0.50 µL
+   o110     100 µM   0.50 µL
+   ─────────────────────────
+                    10.00 µL
+
+2. Setup 10 PCR reactions [2,3]:
+
+   Reagent           Stock   Volume       12x
+   ──────────────────────────────────────────
+   water                    1.50 µL  18.00 µL
+   f81            20 pg/µL  0.50 µL   6.00 µL
+   primer mix          10x  0.50 µL   6.00 µL
+   Q5 master mix        2x  2.50 µL  30.00 µL
+   ──────────────────────────────────────────
+                            5.00 µL   5.00 µL/rxn
+
+   - Use any extra master mix as a negative control.
+
+3. Run the following thermocycler protocol:
+
+   - 98°C for 30s
+   - Repeat 35x:
+     - 98°C for 10s
+     - 58-72°C for 20s
+     - 72°C for 1 min
+   - 72°C for 2 min
+   - 4°C hold
+
+4. Prepare 10 samples for electrophoresis:
+
+   Reagent         Stock   Volume
+   ──────────────────────────────
+   loading buffer     6x  1.00 µL
+   sample                 5.00 µL
+   ──────────────────────────────
+                          6.00 µL
+
+5. Run a gel:
+
+   gel: 1% agarose/TAE
+   buffer: 1x TAE
+   samples: 5 µL/lane
+   run: 100V for 40 min
+
+6. Stain gel with GelGreen [4-6]:
+
+   - Keep the stain protected from light.
+
+   - Submerge gel in ≈30 mL 3x GelGreen, 100 mM NaCl.
+   - Shake gently for 30m.
+
+7. Image with a laser scanner:
+
+   laser:    488 nm
+   filter:  518BP22
+
+Notes:
+[1] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol
+
+[2] https://tinyurl.com/y27ralt4
+
+[3] For diluting template DNA to 20 pg/µL:
+    Dilute 1 µL twice into 7*sqrt([DNA]) µL
+
+[4] https://tinyurl.com/etxhfxws
+
+[5] Including 100 mM NaCl in the staining solution
+    enhances sensitivity, but may promote dye
+    precipitation if the gel stain is reused.
+
+[6] Staining solution can be reused at least 2-3x.
+    Store staining solution at room temperature
+    protected from light.

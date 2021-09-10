@@ -1,6 +1,6 @@
-**********************************
-Eliminate aggregation via PUREfrex
-**********************************
+*************************
+Release repA via PUREfrex
+*************************
 
 I think the aggregation problem I've been seeing with this technique might be 
 because too much protein is being expressed.  A simple way to test this is to 

@@ -1,0 +1,94 @@
+August 27, 2021
+
+$ sw optimize_pcr_yield
+
+1. Prepare 10x primer mix [1]:
+
+   Reagent   Stock    Volume
+   ─────────────────────────
+   water            12.00 µL
+   o186     100 µM   4.00 µL
+   o189     100 µM   4.00 µL
+   ─────────────────────────
+                    20.00 µL
+
+2. Perform a serial dilution [2]:
+
+   - Put 20.00 μL 10 x primer mix in a tube.
+   - Put 10.00 μL water in 2 adjacent tubes.
+   - Transfer 10.00 μL between each tube to make 3
+     2-fold dilutions.
+
+3. Setup 3 PCR reactions [3,4]:
+
+   Reagent           Stock    Volume     ≈3.4x
+   ───────────────────────────────────────────
+   water                     7.20 µL  24.60 µL
+   p124           20 pg/µL   2.40 µL   8.20 µL
+   primer mix          10x   2.40 µL
+   Q5 master mix        2x  12.00 µL  41.00 µL
+   ───────────────────────────────────────────
+                            24.00 µL  21.60 µL/rxn
+
+   - Use any extra master mix as a negative control.
+
+4. Split each reaction into two 10 µL reactions, one
+   for each of the following thermocyler protocols.
+
+5. Run the following thermocycler protocol:
+
+   - 98°C for 30s
+   - Repeat 35x:
+     - 98°C for 10s
+     - 60°C for 20s
+     - 72°C for 1m30
+   - 72°C for 2 min
+   - 4°C hold
+
+6. Run the following thermocycler protocol:
+
+   - 98°C for 30s
+   - Repeat 45x:
+     - 98°C for 10s
+     - 60°C for 20s
+     - 72°C for 1m30
+   - 72°C for 2 min
+   - 4°C hold
+
+7. Purify using Qiagen MinElute reaction cleanup kit
+   (28204) [5,6]:
+
+   - Perform all spin steps at 17900g.
+   - Ensure that the sample is between 20–100 µL.
+   - Add 300 µL ERC to the crude DNA.
+   - If not yellow: Add 10 µL 3M sodium acetate,
+     pH=5.0.
+   - Load on a MinElute column.
+   - Spin 1m; discard flow-through.
+
+   - Add 750 µL PE.
+   - Spin 1m; discard flow-through.
+   - Spin 1m; discard flow-through.
+   - Add 10 µL EB.
+   - Wait at least 1m.
+   - Spin 1m; keep flow-through.
+
+8. Measure yield by NanoDrop.
+
+Notes:
+[1] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol
+
+[2] The final concentrations will be:
+    1  1.000000e+01 x
+    2  5.000000e+00 x
+    3  2.500000e+00 x
+
+[3] https://tinyurl.com/y27ralt4
+
+[4] For diluting template DNA to 20 pg/µL:
+    Dilute 1 µL twice into 7*sqrt([DNA]) µL
+
+[5] https://www.qiagen.com/HB-2069
+
+[6] Column capacity: 5 µg

@@ -1,0 +1,47 @@
+August 31, 2021
+
+$ sw pick_seq_primers
+
+1. Prepare 10x primer mix [1]:
+
+   Reagent                    Stock    Volume
+   ──────────────────────────────────────────
+   water                              9.00 µL
+   o246                      100 µM   0.50 µL
+   o247,o250,o251,o252,o253  100 µM   0.50 µL
+   ──────────────────────────────────────────
+                                     10.00 µL
+
+2. Setup 5 PCR reactions [2,3]:
+
+   Reagent           Stock   Volume        7x
+   ──────────────────────────────────────────
+   water                    1.50 µL  10.50 µL
+   p181           20 pg/µL  0.50 µL   3.50 µL
+   primer mix          10x  0.50 µL
+   Q5 master mix        2x  2.50 µL  17.50 µL
+   ──────────────────────────────────────────
+                            5.00 µL   4.50 µL/rxn
+
+   - Use any extra master mix as a negative control.
+
+3. Run the following thermocycler protocol:
+
+   - 98°C for 30s
+   - Repeat 35x:
+     - 98°C for 10s
+     - 60°C for 20s
+     - 72°C for 1m30
+   - 72°C for 2 min
+   - 4°C hold
+
+4. Run a 1% E-gel.
+
+Notes:
+[1] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol
+
+[2] https://tinyurl.com/y27ralt4
+
+[3] For diluting template DNA to 20 pg/µL:
+    Dilute 1 µL twice into 7*sqrt([DNA]) µL

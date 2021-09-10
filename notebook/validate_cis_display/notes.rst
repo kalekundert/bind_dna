@@ -22,8 +22,6 @@ sequence.
    check_for_repa_aggregation_via_centrifugation/notes
    visualize_plasmid_dna_in_s30_lysate_via_rna_digestion/notes
    visualize_plasmid_dna_in_s30_lysate_via_blotting/notes
-   release_repa_with_heparin/notes
-   release_repa_with_rrna_digestion/notes
    purify_zif268_repa_via_reverse_his/notes
    purify_zif268_repa_via_ribosome_pull_down/notes
    purify_zif268_repa_via_rrna_digestion/notes
@@ -32,4 +30,8 @@ sequence.
    confirm_zif268_emsa/notes
    confirm_repa_display_via_labeled_dna/notes
    confirm_repa_display_with_fluorescent_protein/notes
+   release_repa_via_heparin/notes
+   release_repa_via_rrna_digestion/notes
+   release_repa_via_purefrex/notes
+   release_repa_via_dna_concentration/notes
 
