@@ -180,6 +180,10 @@ p170: Golden Gate
 
 - Got 0 colonies.
 
+  .. update:: 2021/09/13
+
+    After the plate sat on my bench over the weekend, 4 colonies appeared.
+
 - I don't think this plasmid is functional.  I can't think of any other reason 
   why the assembly would fail:
 
@@ -189,3 +193,18 @@ p170: Golden Gate
     number.
   - I used a whole aliquot of fresh competent cells.
 
+2021/09/13:
+
+I did colony PCR on the colonies that appeared over the weekend to see if any 
+are worth miniprepping and sequencing:
+
+.. protocol:: 20210913_check_junctions.txt
+
+.. figure:: 20210913_check_p170.svg
+
+- None of the clones evince the expected bands.  All of the bands are about 2 
+  kb too short, suggesting that the HIS/URA fragment was left out (somehow).
+
+- The amplification is much cleaner for clone A, which is the only one of the 
+  five that I miniprepped.  This is unsurprising, but going forward I think the 
+  colony PCR results are good enough that I'd be able to detect a hit.

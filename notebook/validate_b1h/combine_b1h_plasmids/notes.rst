@@ -71,7 +71,7 @@ In [Noyes2008]_, the rpoZ fusion was expressed with three different promoters
   used promoter.  It is a mutated version of the lac promoter that better 
   matches the -10 consensus sequence, and as a result gives higher expression.
 
-- lacUV5 is a mutated lacUV5 promoter that gives weaker expression. 
+- lacUV5m is a mutated lacUV5 promoter that gives weaker expression. 
 
 From [Noyes2008]_:
 
@@ -172,7 +172,7 @@ much of this insulation as possible:
   feedback loop where rpoA expression induces its own expression.
 
   This also relates to concerns about getting the barcodes near each other, 
-  which is discussed elsewhere.
+  which is discussed below.
 
 Reading the barcodes
 --------------------
@@ -190,6 +190,12 @@ Another option is to include restriction sites that can be used to cut out
 everything between the two barcodes.  This could either be a regular enzyme 
 (Type IIP) or a Golden Gate enzyme (Type IIS), although the former would 
 require a gel purification.
+
+I don't necessarily even want the barcodes next to each other.  The point of 
+having them close is to remove a cloning step, but since there's very little 
+space available in the oligo pool, I couldn't have any padding between the 
+barcodes.  One barcode is actually a target sequence, and I might want to have 
+that insulated from other variable sequences.
 
 Ultimately, it's premature to think about how I'll do NGS at this point.  I 
 will include PCR primers that will allow me to amplify the barcodes, though, 
@@ -287,5 +293,59 @@ Golden Gate junctions
 I used the Potapov2018/37C Golden Gate junctions, which was a bit of a mistake 
 because I'll actually be doing this assembly using the 5h cycled 16°C/37°C 
 protocol.  I'm sure it'll be fine, though.
+
+Sequence verification
+---------------------
+Sanger:
+- Need 4 primers to verify all inserts.
+- I don't have known good primers for most junctions, so I'd probably want to 
+  try 2-3 for each.
+
+Full plasmid:
+- Need to know it's the right length, first.
+
+Digest + gel:
+- First step for either approach.
+
+PCR junctions:
+- Each junction installed an SR primer.
+- Each primer that can be used for PCR implies the presence of the two 
+  fragments that combined to form it.
+- Can test colony without miniprep.
+- All primers known to bee good.
+
+- Each primer faces the same direction, so I need a reverse primer:
+
+  - pUC-seq-amp:
+    
+    - Faces the right direction
+    - Known to amplify well.
+    - Should be present, because the plasmid can't grow without Carb 
+      resistance.
+
+- Primers to use:
+
+  - Don't need to test AmpR junctions, because they're implied by pUC-seq-amp.
+    That leaves:
+
+    - SR045: URA/HIS and barcode
+    - SR188: Zif-rpoZ and ori terminator
+    - SR091: ori and AmpR terminator
+
+  - Using only primers I have on hand:
+
+    - o88/SR013:
+
+      - Barcode must be present.
+      - URA/HIS present if amplicon ≈2 kb.
+
+    - o185/SR022:
+
+      - Barcode and Zif-rpoZ must be present.
+
+    - o188/SR151:
+
+      - Zif-rpoZ and ori terminator must be present.
+
 
 
