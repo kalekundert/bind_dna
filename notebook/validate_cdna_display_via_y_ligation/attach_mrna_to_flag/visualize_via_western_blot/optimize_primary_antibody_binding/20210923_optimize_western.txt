@@ -1,0 +1,172 @@
+September 23, 2021
+
+$ sw optimize_western
+
+ 1. Prepare 6 samples for SDS PAGE:
+
+    Reagent                   Stock    Volume        9x
+    ───────────────────────────────────────────────────
+    water                             5.50 µL  49.50 µL
+    Bolt LDS sample buffer       4x   2.50 µL  22.50 µL
+    Bolt reducing agent         10x   1.00 µL   9.00 µL
+    FLAG peptide            2 ng/µL   1.00 µL
+    ───────────────────────────────────────────────────
+                                     10.00 µL   9.00 µL/rxn
+
+    - Incubate at 70°C for 10 min.
+
+ 2. Run a gel:
+
+    gel: 4–12% Bolt Bis-Tris SDS PAGE
+    buffer: Bolt MES SDS running buffer
+    ladder: 5 µL Chameleon 800
+    samples: 10 µL/lane
+    run: 165V for 42 min
+
+ 3. Transfer proteins to a PVDF membrane via iBlot:
+    
+    - Place the anode stack (in its plastic tray) in 
+      the iBlot machine.
+      - Remove any bubbles underneath the membrane.
+    
+    - Place the gel on the membrane.
+      - Rinse the gel with water beforehand.
+      - Remove any bubbles.
+    
+    - Soak included filter paper in water
+    - Place filter paper on gel.
+      - Remove any bubbles.
+    
+    - Place the cathode stack on the filter paper 
+      (copper side up, agarose side down).
+      - Remove any bubbles.
+    
+    - Attach disposable sponge to the lid of the 
+      iBlot machine.
+    
+    - Run at 20V for 5-6 min [2].
+    
+    - Transfer the membrane to water immediately 
+      after the run finishes.  If the membrane dries 
+      out, re-wet it in methanol and rinse with 
+      water before blocking.
+
+ 4. Prepare 1 L 1x TBST:
+    
+    - 100 mL 10x TBS
+    - 1 mL Tween-20
+    - water to 1 L
+
+ 5. Visualize the protein with Ponceau staining:
+
+    - Soak membrane in Ponceau stain for 15 min.
+    - Rinse membrane in water until bands are
+      visible.
+    - Cut each band into its own strip.
+    - Label the side of the membrane with protein.
+    - Repeat until stain is no longer visible (4-5x):
+      - Rinse for 5-10 min in 1x TBST.
+
+ 6. Prepare 100 mL blocking buffer:
+    
+    - 100 mL 1x TBS
+    - 5 g nonfat dry milk (5% w/v final)
+    
+    Mix well and filter [3].
+
+ 7. Incubate each membrane strip in blocking buffer
+    for 1h at room temperature with gentle shaking
+    [4].
+
+ 8. Prepare 3 dilutions of the primary antibody:
+
+    - 12 mL TBST
+    - 12 mL blocking buffer
+    - 24 µL, 6 µL, 2 µL monoclonal mouse anti-
+      DYKDDDDK tag
+
+ 9. Place each membrane strip in 10 mL primary
+    antibody dilution [4].
+
+10. Incubate 3 of the strips (one for each dilution)
+    at room temperature for 1h, with gentle shaking.
+
+    - Continue visualizing these strips immediately
+      after the blocking is complete; don't wait for
+      the overnight incubation to finish.
+
+11. Incubate the remaining strips at 4°C overnight,
+    with gentle shaking [4].
+
+12. Discard the primary antibody solution [4].
+
+13. Wash the membrane as follows [4,5]:
+
+    - Rinse 2x with TBST
+    - Wash 1x for 15 min in TBST (with shaking)
+    - Wash 3x for 10 min in TBST (with shaking)
+
+14. Prepare a 10,000x dilution of the secondary
+    antibody [4].  Keep the antibody in the dark as
+    much as possible:
+
+    - 17 mL TBST
+    - 17 mL blocking buffer
+    - 3.4 µL goat anti-mouse IRDye 800CW
+
+15. Incubate each of the strips in 10 mL secondary
+    antibody dilution at room temperature for 1h [4].
+
+16. Repeat the above washing procedure [4].
+
+17. Image with a laser scanner:
+
+    laser:    784 nm
+    filter:  832BP37
+
+    - Place the membrane in the scanner protein-side
+      down.
+
+18. Dry the membrane strips overnight between two
+    sheets of filter paper, covered by aluminum foil.
+
+19. Image with a laser scanner:
+
+    laser:    784 nm
+    filter:  832BP37
+
+    - Place the membrane in the scanner protein-side
+      down.
+
+Notes:
+[1] https://tinyurl.com/yb5cj5ac
+    
+    Do not touch the membrane or gel with bare or 
+    gloved hands. This may contaminate the gel or 
+    membrane and interfere with further analysis. 
+    If you need to adjust the membrane, always use 
+    forceps.
+
+[2] Small proteins <30 kDa migrate more rapidly 
+    during electrophoretic separation, and 
+    consequently require less time to transfer 
+    from the gel matrix to the membrane. If your 
+    protein of interest is in this size range, you 
+    may need to reduce the Run Time to 5–6 minutes 
+    for your transfer.
+
+[3] Undissolved particles within buffers (milk 
+    powder in blocking buffer for example) 
+    potentially can settle on the membrane and 
+    create fluorescent artifacts.  Therefore, we 
+    suggest using high quality reagents, allowing 
+    suitable time for all components to fully 
+    dissolve, and filter sterilize all buffers.
+    
+    https://tinyurl.com/8k7mtdr4
+
+[4] https://tinyurl.com/t2n6tr63
+
+[5] The specifics of the washes don't seem to be
+    important.  I've seen other protocols that call
+    for 3x rinses and 5x 5-10 min washes.

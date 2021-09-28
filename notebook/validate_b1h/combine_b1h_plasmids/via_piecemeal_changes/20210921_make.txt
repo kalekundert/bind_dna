@@ -1,0 +1,93 @@
+September 21, 2021
+
+$ sw make p184 p185 p186
+
+1. Prepare 10x primer mix [1]:
+
+   Reagent          Stock    Volume
+   ────────────────────────────────
+   water                    9.00 µL
+   o256,o258,o260  100 µM   0.50 µL
+   o257,o259,o261  100 µM   0.50 µL
+   ────────────────────────────────
+                           10.00 µL
+
+2. Setup 3 PCR reactions [2,3]:
+
+   Reagent           Stock    Volume     ≈3.7x
+   ───────────────────────────────────────────
+   water                     4.50 µL  16.50 µL
+   p183           20 pg/µL   1.50 µL   5.50 µL
+   primer mix          10x   1.50 µL
+   Q5 master mix        2x   7.50 µL  27.50 µL
+   ───────────────────────────────────────────
+                            15.00 µL  13.50 µL/rxn
+
+   - Use any extra master mix as a negative control.
+
+3. Run the following thermocycler protocol:
+
+   - 98°C for 30s
+   - Repeat 35x:
+     - 98°C for 10s
+     - 64°C,65°C,66°C for 20s
+     - 72°C for 3 min
+   - 72°C for 2 min
+   - 4°C hold
+
+4. Label the products: f136, f137, f138
+
+5. Purify using Qiagen MinElute PCR purification kit
+   (28004) [4,5]:
+
+   - Perform all spin steps at 17900g.
+   - Add 5 volumes PB to the crude DNA.
+   - If not yellow: Add 0.2 volumes 3M sodium
+     acetate, pH=5.0.
+   - Load on a MinElute column.
+   - Spin 1m; discard flow-through.
+
+   - Add 750 µL PE.
+   - Spin 1m; discard flow-through.
+   - Spin 1m; discard flow-through.
+   - Add 10.0 µL EB.
+   - Wait at least 1m.
+   - Spin 1m; keep flow-through.
+
+6. Setup 3 Golden Gate assemblies [6]:
+
+   Reagent               Stock   Volume       4x
+   ─────────────────────────────────────────────
+   T4 ligase buffer        10x  0.50 µL  2.00 µL
+   T4 DNA ligase      400 U/µL  0.12 µL  0.50 µL
+   BsaI-HFv2           20 U/µL  0.12 µL  0.50 µL
+   f136,f137,f138     60 ng/µL  3.35 µL
+   f38                80 ng/uL  0.22 µL  0.87 µL
+   f82               124 ng/uL  0.52 µL  2.07 µL
+   f36                67 ng/uL  0.17 µL  0.67 µL
+   ─────────────────────────────────────────────
+                                5.00 µL  1.65 µL/rxn
+
+7. Run the following thermocycler protocol:
+
+   - 37°C for 60 min
+   - 60°C for 5 min
+
+8. Label the products: p184, p185, p186
+
+9. Miniprep.
+
+Notes:
+[1] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol
+
+[2] https://tinyurl.com/y27ralt4
+
+[3] For diluting template DNA to 20 pg/µL:
+    Dilute 1 µL twice into 7*sqrt([DNA]) µL
+
+[4] https://www.qiagen.com/HB-2069
+
+[5] Column capacity: 5 µg
+
+[6] https://tinyurl.com/yaa5mqz5

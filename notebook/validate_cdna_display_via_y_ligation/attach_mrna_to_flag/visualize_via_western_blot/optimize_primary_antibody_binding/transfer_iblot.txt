@@ -13,13 +13,15 @@
     - Remove any bubbles.
 
   - Place the cathode stack on the filter paper 
-    (copper side up, agarose side down).
+    (copper side up, agarose side down, discard 
+    tray).
     - Remove any bubbles.
 
   - Attach disposable sponge to the lid of the 
-    iBlot machine.
+    iBlot machine.  Make sure the metal band is in 
+    the upper right, aligned with the electrode.
 
-  - Run at 20V for 5-6 min [2].
+  - Run at 20V (P3) for 5-6 min [2].
 
   - Transfer the membrane to water immediately 
     after the run finishes.  If the membrane dries 

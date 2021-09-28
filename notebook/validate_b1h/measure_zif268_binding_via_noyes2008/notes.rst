@@ -68,8 +68,29 @@ Observation:
   surprised this made a difference.  Maybe the problem is that not all of the 
   inserts were phosphorylated in the latter reaction.
 
+2021/09/03:
+
+I'm having trouble cloning p167 and p168, so I want to check if f131 and f132 
+are clean.
+
+.. protocol:: 20210903_make.txt
+
+.. figure:: 20210903_check_f131_f132.svg
+
 2021/09/08:
 
-- I tried to gel purify f131 and f132, but failed because the sample floated 
-  out of the well.  I think I accidentally "eluted" in PE.  That said, the 
-  Nanodrop concentration looked reasonable; not sure how to explain that.
+I tried to gel purify f131 and f132, but failed because the sample floated out 
+of the well.  I think I accidentally "eluted" in PE.  That said, the Nanodrop 
+concentration looked reasonable; not sure how to explain that.
+
+I also did a :math:`T_A` optimization:
+
+.. protocol:: 20210908_pcr.txt
+
+.. figure:: 20210908_optimize_ta_f131.svg
+
+- My  scripts are miscalculating :math:`T_A`...  Both primers in this reaction 
+  (o248, o249) have :math:`T_M = \pu{63°C}`, but the protocol called for 
+  :math:`T_A = \pu{60°C}`.  I was a little skeptical of the :math:`T_A = 
+  \pu{66°C}` result from this experiment, but knowing that the recommended 
+  :math:`T_A` is actually pretty close to that is reassuring.

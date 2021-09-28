@@ -1,0 +1,125 @@
+September 16, 2021
+
+$ sw make p167 p168
+
+ 1. Setup 2 PCR reactions [1-3]:
+
+    Reagent           Stock    Volume      2.2x
+    ───────────────────────────────────────────
+    water                    19.50 µL  42.90 µL
+    p179,p180      20 pg/µL   5.00 µL
+    o248             100 µM   0.25 µL   0.55 µL
+    o249             100 µM   0.25 µL   0.55 µL
+    Q5 master mix        2x  25.00 µL  55.00 µL
+    ───────────────────────────────────────────
+                             50.00 µL  45.00 µL/rxn
+
+    - Use any extra master mix as a negative control.
+
+ 2. Run the following thermocycler protocol:
+
+    - 98°C for 30s
+    - Repeat 35x:
+      - 98°C for 10s
+      - 66°C for 20s
+      - 72°C for 3 min
+    - 72°C for 2 min
+    - 4°C hold
+
+ 3. Label the products: f131, f132
+
+ 4. Prepare 2 samples for electrophoresis:
+
+    Reagent         Stock   Volume
+    ──────────────────────────────
+    loading buffer     6x  1.00 µL
+    sample                 5.00 µL
+    ──────────────────────────────
+                           6.00 µL
+
+ 5. Run a gel:
+
+    gel: 1% agarose/TBE with 1x GelGreen
+    buffer: 1x TBE
+    samples: 5 µL/lane
+    run: 100V for 60 min
+
+ 6. Image with a 470 nm blue-light transilluminator.
+
+ 7. Cut desired band out of an agarose gel.
+
+ 8. Place the gel slice in a Spin-X column with
+    1 µL/mg EB.  Spin at 13,000g for 5-20 min
+    at room temperature [4].
+    
+    The following optional steps may improve yield:
+    
+    - Macerate the gel.
+    - Freeze/thaw the gel.
+    - Add 200 µL EB after the first spin and
+      re-centrifuge.
+    - Spin for longer.
+
+ 9. Purify using Qiagen MinElute PCR purification kit
+    (28004) [5,6]:
+
+    - Perform all spin steps at 17900g.
+    - Add 5 volumes PB to the crude DNA.
+    - If not yellow: Add 0.2 volumes 3M sodium
+      acetate, pH=5.0.
+    - Load on a MinElute column.
+    - Spin 1m; discard flow-through.
+
+    - Add 750 µL PE.
+    - Spin 1m; discard flow-through.
+    - Spin 1m; discard flow-through.
+    - Add 10.0 µL EB.
+    - Wait at least 1m.
+    - Spin 1m; keep flow-through.
+
+10. Setup 2 Golden Gate assemblies [7]:
+
+    Reagent               Stock   Volume       4x
+    ─────────────────────────────────────────────
+    water                        1.30 µL  5.22 µL
+    T4 ligase buffer        10x  0.50 µL  2.00 µL
+    T4 DNA ligase      400 U/µL  0.12 µL  0.50 µL
+    BsaI-HFv2           20 U/µL  0.12 µL  0.50 µL
+    f130               10 ng/µL  0.86 µL  3.42 µL
+    f131,f132         200 ng/µL  2.09 µL
+    ─────────────────────────────────────────────
+                                 5.00 µL  2.91 µL/rxn
+
+11. Run the following thermocycler protocol:
+
+    - 37°C for 5 min
+
+    Or, to maximize the number of transformants:
+
+    - 37°C for 60 min
+    - 60°C for 5 min
+
+12. Label the products: p167, p168
+
+13. Miniprep.
+
+Notes:
+[1] https://tinyurl.com/y27ralt4
+
+[2] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol
+
+[3] For diluting template DNA to 20 pg/µL:
+    Dilute 1 µL twice into 7*sqrt([DNA]) µL
+
+[4] https://tinyurl.com/fh2jtd
+    
+    The official protocol just recommends 100-200 µL 
+    EB, but I personally find that 1 µL/mg is a more 
+    robust approach.
+
+[5] https://www.qiagen.com/HB-2069
+
+[6] Column capacity: 5 µg
+
+[7] https://tinyurl.com/yaa5mqz5

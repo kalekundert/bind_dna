@@ -1,0 +1,29 @@
+September 27, 2021
+
+$ sw make p184 p185 p186
+
+1. Setup 3 Golden Gate assemblies [1]:
+
+   Reagent               Stock   Volume    ≈5.4x
+   ─────────────────────────────────────────────
+   T4 ligase buffer        10x  0.50 µL  2.68 µL
+   T4 DNA ligase      400 U/µL  0.12 µL  0.67 µL
+   BsaI-HFv2           20 U/µL  0.12 µL  0.67 µL
+   f136,f137,f138     30 ng/uL  3.75 µL
+   f38                80 ng/uL  0.12 µL  0.65 µL
+   f82               124 ng/uL  0.29 µL  1.55 µL
+   f36                67 ng/uL  0.09 µL  0.50 µL
+   ─────────────────────────────────────────────
+                                5.00 µL  1.25 µL/rxn
+
+2. Run the following thermocycler protocol:
+
+   - 37°C for 60 min
+   - 60°C for 5 min
+
+3. Label the products: p184, p185, p186
+
+4. Miniprep.
+
+Note:
+[1] https://tinyurl.com/yaa5mqz5

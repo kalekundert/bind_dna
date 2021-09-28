@@ -47,3 +47,21 @@ I want a site that is as unlikely as possible to cause problems.  Candidates:
 
   - May not be a good idea for reasons discussed in :expt:`-1`, but worth 
     trying for the sake of completeness.
+
+Results
+=======
+
+.. protocol:: 20210923_pcr_verification.txt
+
+.. figure:: 20210923_check_p184_p185_p186.svg
+
+- The negative control for the o188 reaction wasn't clean, so I should be 
+  skeptical of those results.
+
+- None of the picks seem to be correct.
+
+- I'm not sure why most of the reactions have a smear around 0.2 kb.
+
+- I think this is a pretty good test.  I'll try the cloning again with 
+  gel-purified fragments and more competent cells.
+

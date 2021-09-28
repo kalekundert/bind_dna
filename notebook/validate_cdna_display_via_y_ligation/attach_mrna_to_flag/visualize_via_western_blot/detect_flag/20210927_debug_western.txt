@@ -1,0 +1,146 @@
+September 27, 2021
+
+$ sw debug_western
+
+ 1. Prepare 1 sample for SDS PAGE:
+
+    Reagent                      Stock    Volume
+    ────────────────────────────────────────────
+    water                                5.50 µL
+    Bolt LDS sample buffer          4x   2.50 µL
+    Bolt reducing agent            10x   1.00 µL
+    FLAG peptide            1000 ng/µL   1.00 µL
+    ────────────────────────────────────────────
+                                        10.00 µL
+
+    - Incubate at 70°C for 10 min.
+
+ 2. Run a gel:
+
+    gel: 4–12% Bolt Bis-Tris SDS PAGE
+    buffer: Bolt MES SDS running buffer
+    ladder: 5 µL Chameleon 800
+    samples: 10 µL/lane
+    run: 165V for 42 min
+
+ 3. Transfer proteins to a PVDF membrane via iBlot:
+    
+    - Place the anode stack (in its plastic tray) in 
+      the iBlot machine.
+      - Remove any bubbles underneath the membrane.
+    
+    - Place the gel on the membrane.
+      - Rinse the gel with water beforehand.
+      - Remove any bubbles.
+    
+    - Soak included filter paper in water
+    - Place filter paper on gel.
+      - Remove any bubbles.
+    
+    - Place the cathode stack on the filter paper 
+      (copper side up, agarose side down).
+      - Remove any bubbles.
+    
+    - Attach disposable sponge to the lid of the 
+      iBlot machine.
+    
+    - Run at 20V for 5-6 min [2].
+    
+    - Transfer the membrane to water immediately 
+      after the run finishes.  If the membrane dries 
+      out, re-wet it in methanol and rinse with 
+      water before blocking.
+
+ 4. Pipet 1 µL FLAG peptide directly onto the
+    membrane.
+
+ 5. Trim off unused parts of the membrane.
+
+ 6. Prepare 1 L 1x TBST:
+    
+    - 100 mL 10x TBS
+    - 1 mL Tween-20
+    - water to 1 L
+
+ 7. Prepare 100 mL blocking buffer [3]:
+    
+    - 100 mL 1x TBS
+    - 5 g nonfat dry milk (5% w/v final)
+    - Mix for at least 30 min [4].
+
+ 8. Incubate the membrane in blocking buffer for 1h
+    at room temperature with gentle shaking [5].
+
+ 9. Prepare the primary antibody:
+
+    - 5 mL TBST
+    - 5 mL blocking buffer
+    - 10 µL monoclonal mouse anti-DYKDDDDK tag
+
+10. Incubate the membrane in the primary antibody
+    solution overnight at 4°C, in the dark and with
+    gentle shaking [5].
+
+11. Discard the primary antibody solution [5].
+
+12. Wash the membrane as follows [5]:
+
+    - Wash 3x for 5 min in TBST (with shaking)
+
+13. Prepare a 1000x dilution of the secondary
+    antibody [5].  Keep the antibody in the dark as
+    much as possible:
+
+    - 5 mL TBST
+    - 5 mL blocking buffer
+    - 10 µL goat anti-mouse IRDye 800CW
+
+14. Incubate the membrane in the secondary antibody
+    solution at room temperature for 1h, with shaking
+    [5].
+
+15. Repeat the above washing procedure [5].
+
+16. Image with a laser scanner:
+
+    laser:    784 nm
+    filter:  832BP37
+
+    - Place the membrane in the scanner protein-side
+      down.
+
+Notes:
+[1] https://tinyurl.com/yb5cj5ac
+    
+    Do not touch the membrane or gel with bare or 
+    gloved hands. This may contaminate the gel or 
+    membrane and interfere with further analysis. 
+    If you need to adjust the membrane, always use 
+    forceps.
+
+[2] Small proteins <30 kDa migrate more rapidly 
+    during electrophoretic separation, and 
+    consequently require less time to transfer 
+    from the gel matrix to the membrane. If your 
+    protein of interest is in this size range, you 
+    may need to reduce the Run Time to 5–6 minutes 
+    for your transfer.
+
+[3] It's important that the blocking buffer *not* 
+    contain any detergent.
+    
+    https://tinyurl.com/yv7844ra
+
+[4] Undissolved particles within buffers (milk 
+    powder in blocking buffer for example) 
+    potentially can settle on the membrane and 
+    create fluorescent artifacts.  Therefore, we 
+    suggest using high quality reagents, allowing 
+    suitable time for all components to fully 
+    dissolve, and filter sterilize all buffers 
+    (KBK: in my hands, milk cannot be sterile 
+    filtered).
+    
+    https://tinyurl.com/8k7mtdr4
+
+[5] https://tinyurl.com/t2n6tr63

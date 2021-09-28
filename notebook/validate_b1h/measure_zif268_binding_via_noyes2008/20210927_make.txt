@@ -1,0 +1,31 @@
+September 27, 2021
+
+$ sw make p168
+
+1. Setup 1 Golden Gate assembly [1]:
+
+   Reagent              Stock   Volume
+   ───────────────────────────────────
+   T4 ligase buffer       10x  0.50 µL
+   T4 DNA ligase     400 U/µL  0.12 µL
+   BsaI-HFv2          20 U/µL  0.12 µL
+   f130              10 ng/µL  0.43 µL
+   f132              55 ng/µL  3.82 µL
+   ───────────────────────────────────
+                               5.00 µL
+
+2. Run the following thermocycler protocol:
+
+   - 37°C for 5 min
+
+   Or, to maximize the number of transformants:
+
+   - 37°C for 60 min
+   - 60°C for 5 min
+
+3. Label the product: p168
+
+4. Miniprep.
+
+Note:
+[1] https://tinyurl.com/yaa5mqz5
