@@ -9,7 +9,11 @@ Usage:
 Arguments:
     <plasmids>
         The names of the plasmids to check.  It's ok to specify the same 
-        plasmid multiple times, e.g. to check multiple colonies.
+        plasmid multiple times, e.g. to check multiple colonies.  
+        Alternatively, you can specify "N*plasmid" to repeat the given plasmid 
+        the given number of times (you may have to make sure that the '*' isn't 
+        interpreted as a glob).
+
 """
 
 import stepwise
@@ -17,11 +21,26 @@ import docopt
 
 from stepwise import pl, ul
 from stepwise_mol_bio import Pcr
+from more_itertools import flatten
+
+def parse_plasmids(plasmid_strs):
+    return list(flatten(parse_plasmid(x) for x in plasmid_strs))
+
+def parse_plasmid(plasmid_str):
+    fields = plasmid_str.split('*')
+
+    if len(fields) == 1:
+        return fields
+    if len(fields) == 2:
+        return int(fields[0]) * fields[1:]
+
+    raise ValueError(f"expected <plasmid> or <N*plasmid>, got: {plasmid_str}")
+
 
 if __name__ == '__main__':
     args = docopt.docopt(__doc__)
 
-    plasmids = args['<plasmids>']
+    plasmids = parse_plasmids(args['<plasmids>'])
     fwd_primer = fwd = 'o2'
     rev_primers = 'o262', 'o185', 'o188'
 
@@ -76,13 +95,19 @@ if __name__ == '__main__':
 
     p += pcr_thermo.protocol
 
-    p += pl("Run a 1% E-gel 48:", ul(
-        "Add 15 µL water to each reaction.",
-        "Load 15 µL in each lane.",
-        pl("Ladder:", ul(
-            "10 µL water",
-            "5 µL 50 ng/µL 1kb+ ladder",
+    egel_quickstart = 'https://tinyurl.com/38nmnmk5'
+    p += pl(f"Run a 1% E-gel 48{p.add_footnotes(egel_quickstart)}:", ul(
+        pl("Prepare the samples:", ul(
+            "5 µL PCR reaction",
+            "15 µL water"
         ), br='\n'),
+        pl("Prepare the ladder:", ul(
+            "10 µL water",
+            "10 µL 50 ng/µL 1kb+ ladder",
+        ), br='\n'),
+        "Load 15 µL of each sample.",
+        "Run for 20 min.",
+        "Visualize with a blue-light transilluminator.",
     ))
     p.print()
 
