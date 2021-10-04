@@ -1,7 +1,8 @@
-- Prepare 100 mL blocking buffer [1]:
+- Prepare 50 mL blocking buffer [1]:
 
-  - 100 mL 1x TBS
-  - 5 g nonfat dry milk (5% w/v final)
+  - 5 mL 10x TBS
+  - 45 mL water
+  - 2.5 g nonfat dry milk (5% w/v final)
   - Mix for at least 30 min [2].
 
 Notes:

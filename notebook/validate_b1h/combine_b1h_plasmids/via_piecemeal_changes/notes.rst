@@ -65,3 +65,11 @@ Results
 - I think this is a pretty good test.  I'll try the cloning again with 
   gel-purified fragments and more competent cells.
 
+
+.. protocol:: 20210928_check_rpoZ_zif268_insert.pdf 20210927_make.txt 20210928_check_rpoZ_zif268_insert.txt
+
+.. figure:: 20210928_check_rpoz_zif268_insert.svg
+
+- Got lots of p184 colonies; very few p185/p186 colonies.
+
+- Still no clear hits.

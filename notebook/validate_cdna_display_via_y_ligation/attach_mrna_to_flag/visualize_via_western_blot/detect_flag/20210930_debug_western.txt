@@ -1,0 +1,136 @@
+September 30, 2021
+
+$ sw debug_western
+
+ 1. Prepare 1 L 1x TBST:
+    
+    - 100 mL 10x TBS
+    - 1 mL Tween-20
+    - water to 1 L
+
+ 2. Prepare 100 mL blocking buffer [1]:
+    
+    - 100 mL 1x TBS
+    - 5 g nonfat dry milk (5% w/v final)
+    - Mix for at least 30 min [2].
+
+ 3. Load 10 µL of FLAG-fusion positive control.
+
+ 4. Run a gel:
+
+    gel: 4–12% Bolt Bis-Tris SDS PAGE
+    buffer: Bolt MES SDS running buffer
+    ladder: 5 µL Chameleon 800
+    samples: 10 µL/lane
+    run: 165V for 42 min
+
+ 5. Transfer proteins to a PVDF membrane via iBlot:
+    
+    - Place the anode stack (in its plastic tray) in 
+      the iBlot machine.
+      - Remove any bubbles underneath the membrane.
+    
+    - Place the gel on the membrane.
+      - Rinse the gel with water beforehand.
+      - Remove any bubbles.
+    
+    - Soak included filter paper in water
+    - Place filter paper on gel.
+      - Remove any bubbles.
+    
+    - Place the cathode stack on the filter paper 
+      (copper side up, agarose side down, discard 
+      tray).
+      - Remove any bubbles.
+    
+    - Attach disposable sponge to the lid of the 
+      iBlot machine.  Make sure the metal band is in 
+      the upper right, aligned with the electrode.
+    
+    - Run at 20V (P3) for 5-6 min [4].
+    
+    - Transfer the membrane to water immediately 
+      after the run finishes.  If the membrane dries 
+      out, re-wet it in methanol and rinse with 
+      water before blocking.
+
+ 6. Trim off unused parts of the membrane.
+
+ 7. Incubate the membrane in 20 mL blocking buffer
+    for 1h at room temperature with gentle shaking
+    [5].
+
+ 8. Prepare the primary antibody:
+
+    - 5 mL TBST
+    - 5 mL blocking buffer
+    - 10 µL monoclonal mouse anti-DYKDDDDK tag (r4)
+
+ 9. Incubate the membrane in the primary antibody
+    solution overnight at 4°C, in the dark and with
+    gentle shaking [5].
+
+10. Store unused blocking buffer at 4°C overnight
+    [5].
+
+11. Wash the membrane as follows [5]:
+
+    - Wash 3x for 5 min in TBST (with shaking)
+
+12. Prepare a 1000x dilution of the secondary
+    antibody [5].  Keep the antibody in the dark as
+    much as possible:
+
+    - 5 mL TBST
+    - 5 mL blocking buffer
+    - 10 µL goat anti-mouse IRDye 800CW (r3)
+
+13. Incubate the membrane in the secondary antibody
+    solution at room temperature for 1h, with shaking
+    [5].
+
+14. Repeat the above washing procedure [5].
+
+15. Image with a laser scanner:
+
+    laser:    784 nm
+    filter:  832BP37
+
+    - Place the membrane in the scanner protein-side
+      down.
+
+Notes:
+[1] It's important that the blocking buffer *not* 
+    contain any detergent.
+    
+    https://tinyurl.com/yv7844ra
+
+[2] Undissolved particles within buffers (milk 
+    powder in blocking buffer for example) 
+    potentially can settle on the membrane and 
+    create fluorescent artifacts.  Therefore, we 
+    suggest using high quality reagents, allowing 
+    suitable time for all components to fully 
+    dissolve, and filter sterilize all buffers 
+    (KBK: in my hands, milk cannot be sterile 
+    filtered).
+    
+    https://tinyurl.com/8k7mtdr4
+
+[3] https://tinyurl.com/yb5cj5ac
+    
+    Do not touch the membrane or gel with bare or 
+    gloved hands. This may contaminate the gel or 
+    membrane and interfere with further analysis. 
+    If you need to adjust the membrane, always use 
+    forceps.
+
+[4] Small proteins <30 kDa migrate more rapidly 
+    during electrophoretic separation, and 
+    consequently require less time to transfer 
+    from the gel matrix to the membrane. If your 
+    protein of interest is in this size range, you 
+    may need to reduce the Run Time to 5–6 minutes 
+    for your transfer.
+
+[5] https://tinyurl.com/t2n6tr63

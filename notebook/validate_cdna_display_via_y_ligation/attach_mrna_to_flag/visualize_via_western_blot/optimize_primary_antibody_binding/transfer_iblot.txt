@@ -1,4 +1,4 @@
-- Transfer proteins to a PVDF membrane via iBlot:
+- Transfer proteins to a PVDF membrane via iBlot [1]:
 
   - Place the anode stack (in its plastic tray) in 
     the iBlot machine.
@@ -31,17 +31,30 @@
 Notes:
 
 [1] https://tinyurl.com/yb5cj5ac
+    https://tinyurl.com/t89e2n43
 
     Do not touch the membrane or gel with bare or 
     gloved hands. This may contaminate the gel or 
     membrane and interfere with further analysis. 
     If you need to adjust the membrane, always use 
-    forceps. 
+    tweezers. 
+
+    Sometimes there is green discoloration around 
+    the sides of the membrane after the transfer.  
+    This is due to copper ions from the transfer 
+    stacks being carried by liquids and deposited 
+    on the membrane.  These deposits do not 
+    interfere with downstream processes.  The 
+    stained regions can be cut away, but membrane 
+    washing typically results in their removal.  
+    To minimize this effect, shake excess water 
+    off the filter paper and buffer from the gel 
+    before placing each on the stack.
 
 [2] Small proteins <30 kDa migrate more rapidly 
     during electrophoretic separation, and 
     consequently require less time to transfer 
     from the gel matrix to the membrane. If your 
     protein of interest is in this size range, you 
-    may need to reduce the Run Time to 5–6 minutes 
+    may need to reduce the run time to 5–6 minutes 
     for your transfer. 

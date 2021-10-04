@@ -17,13 +17,13 @@ sw tbst |
 
 sw blocking_buffer.txt |
 
-sw gel bolt/mes "FLAG peptide (r5)" -c 1000 -v 1 -r 30 -S -L "5 µL Chameleon 800" |
+#sw gel bolt/mes "FLAG peptide (r5)" -c 1000 -v 1 -r 30 -S -L "5 µL Chameleon 800" |
+sw step "Load 10 µL of FLAG-fusion positive control." |
+sw gel bolt/mes -M -S -L "5 µL Chameleon 800" |
 
 sw transfer_iblot.txt |
 
-sw step "Pipet 1 µL FLAG peptide directly onto the membrane." |
-
-sw step "Trim off unused parts of the membrane." |
+sw step "Trim off unused parts of the membrane and mark the side facing the gel." |
 
 # Blocking buffer:
 # - Abcam's general western blotting protocol calls for Tween-20 in the 
@@ -39,7 +39,8 @@ sw step "Trim off unused parts of the membrane." |
 #   https://www.licor.com/documents/dq6jb8sgnkiwlas0g99b5hq0tsuvcyyz
 #
 # I'm inclined to trust LiCor, since it's the most clear and specific 
-# reference.  I'll just block with 5% milk.
+# reference.  It also makes sense: how will casein bind the membrane if it's 
+# surrounded by detergent?  I'll just block with 5% milk.
 
 sw step "Incubate the membrane in 20 mL blocking buffer for 1h at room 
 temperature with gentle shaking." |
