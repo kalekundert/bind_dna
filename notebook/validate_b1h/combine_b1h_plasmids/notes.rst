@@ -297,17 +297,21 @@ protocol.  I'm sure it'll be fine, though.
 Sequence verification
 ---------------------
 Sanger:
+
 - Need 4 primers to verify all inserts.
 - I don't have known good primers for most junctions, so I'd probably want to 
   try 2-3 for each.
 
 Full plasmid:
+
 - Need to know it's the right length, first.
 
 Digest + gel:
+
 - First step for either approach.
 
 PCR junctions:
+
 - Each junction installed an SR primer.
 - Each primer that can be used for PCR implies the presence of the two 
   fragments that combined to form it.

@@ -17,11 +17,13 @@ sw tbst |
 
 sw blocking_buffer.txt |
 
-#sw gel bolt/mes "FLAG peptide (r5)" -c 1000 -v 1 -r 30 -S -L "5 µL Chameleon 800" |
-sw step "Load 10 µL of FLAG-fusion positive control." |
-sw gel bolt/mes -M -S -L "5 µL Chameleon 800" |
+sw gel novex/tricine "FLAG peptide (r5)" -c 1000 -v 1 -S -L "2×5 µL Chameleon 800, 10 µL FLAG-fusion control" |
+#sw step "Load 10 µL of FLAG-fusion positive control." |
+#sw gel novex/tricine -M -S -L "5 µL Chameleon 800" |
 
-sw transfer_iblot.txt |
+sw step "Cut one of the ladder lanes out of the gel.  Store the slice in water and in the dark." |
+
+sw transfer_iblot.py -t 2 |
 
 sw step "Trim off unused parts of the membrane and mark the side facing the gel." |
 
@@ -46,15 +48,17 @@ sw step "Incubate the membrane in 20 mL blocking buffer for 1h at room
 temperature with gentle shaking." |
 sw note $ABCAM_PROTOCOL |
 
+sw step "Image the gel and the ladder slice to evaluate how well the transfer worked." |
+
 # Primary antibody concentrations:
 # - FUJIFILM recommends 1,000x-10,000x dilution.
 # - [Reyes2021]_ used 12,000x dilution.
-# - I'm going to use 1000x until I detect some signal.
+# - I'm going to try 10,000x not that I have a positive control I can detect.
 
-sw step "Prepare the primary antibody:
+sw step "Prepare a 10,000x dilution of the primary antibody:
 ~5 mL TBST
 ~5 mL blocking buffer
-~10 µL monoclonal mouse anti-DYKDDDDK tag (r4)" |
+~1 µL monoclonal mouse anti-DYKDDDDK tag (r4)" |
 
 sw step "Incubate the membrane in the primary antibody solution overnight at 
 4°C, in the dark and with gentle shaking." |
@@ -81,11 +85,11 @@ sw step "Wash the membrane as follows:
 ~Wash 3x for 5 min in TBST (with shaking)" |
 sw note $ABCAM_PROTOCOL |
 
-sw step "Prepare a 1000x dilution of the secondary antibody.  Keep the antibody 
+sw step "Prepare a 10,000x dilution of the secondary antibody.  Keep the antibody 
 in the dark as much as possible:
 ~5 mL TBST
 ~5 mL blocking buffer
-~10 µL goat anti-mouse IRDye 800CW (r3)" |
+~1 µL goat anti-mouse IRDye 800CW (r3)" |
 sw note $ABCAM_PROTOCOL |
 
 sw step "Incubate the membrane in the secondary antibody solution at room 
