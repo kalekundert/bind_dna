@@ -1,0 +1,86 @@
+October 12, 2021
+
+$ sw recipes/glucose_20
+$ sw recipes/thiamine
+$ sw recipes/histidine
+$ sw recipes/3_aminotriazole
+$ sw b1h/make_nm_agar
+
+1. Prepare 100 mL 200 mg/mL (20% w/v) glucose:
+   
+   - 20 g glucose
+   - water to 100 mL
+   - sterile filter (0.2 µm)
+
+2. Prepare 1 mg/mL thiamine-HCl [1]:
+   
+   - 10 mg thiamine
+   - 10 mL water
+
+3. Prepare 50 mL 100 mM histidine:
+   
+   - 575.75 mg L-histidine
+   - water to 50 mL
+
+4. Prepare 10 mL 1M 3-AT [3,4]:
+   
+   - 840.8 mg 3-amino-1,2,4-triazole
+   - water to 10 mL
+   - sterile filter (0.2 µm)
+
+5. Prepare 500 mL NM-agar [5]:
+   
+   - 5.25 g M9 salts (1x final)
+   - 385 mg −His DO supplement (Clontech 630422) [6]
+   - water to 380 mL
+   - 7.5 g agar (1.5% w/v final)
+   
+   - Autoclave at 121°C for 15 min
+   - Cool to ≈55°C
+   
+   - 10 mL 20% glucose (4 mg/mL final)
+   - 5 mL 1 mg/mL thiamine (10 µg/mL final)
+   - 5 mL 100 mM MgSO₄ (1 mM final)
+   - 50 µL 100 mM ZnSO₄ (10 µM final)
+   - 50 µL 1M CaCl₂ (100 µM final)
+   - 250 µL 50 mg/mL kanamycin (25 µg/mL, 0.5x final)
+   - 500 µL 100 mg/mL carbenicillin (100 µg/mL, 1x final)
+   - 5 µL 1M IPTG (10 µM final)
+
+6. Add selective reagents [7]:
+   
+   - Split NM-agar into 4x 120 mL parts.
+   
+   - 5 mM His:  6 mL 100 mM histidine
+   - 1 mM 3-AT: 120 µL 1M 3-AT
+   - 2 mM 3-AT: 240 µL 1M 3-AT
+   - 4 mM 3-AT: 480 µL 1M 3-AT
+
+7. Pour 20-25 mL plates.
+
+Notes:
+[1] I make this recipe with "hydrated" thiamine.  
+    The degree of hydration is unknown, so this is 
+    not particularly accurate.
+
+[2] Sigma H6034.  According to the label, solubility is 50 mg/mL = 322 mM.
+
+[3] https://tinyurl.com/3xz8euwt
+
+[4] Solubility: 280 mg/mL = 3330 mM
+    https://en.wikipedia.org/wiki/3-Amino-1,2,4-triazole
+
+[5] Noyes et al. (2008) DOI: 10.1093/nar/gkn048
+
+[6] This supplement isn't exactly what [Noyes2008] 
+    calls for: it's missing 9 of the amino acids, 
+    and includes uracil (although I've ordered the 
+    −His/−Ura supplement).
+
+[7] 3-AT is heat labile and will be destroyed if 
+    added to media hotter that 55°C.
+    
+    https://tinyurl.com/3xz8euwt
+    
+    Store plates containing 3-AT at 4°C for up to 
+    2 months.

@@ -1,0 +1,42 @@
+October 18, 2021
+
+$ sw gels/stain sypro-orange
+
+1. Stain gel with SYPRO Orange [1-4]:
+
+   - Submerge gel in ≈50 mL 1x SYPRO Orange, 7.5%
+     acetic acid.
+   - Shake gently for 40m.
+
+   - Submerge gel in ≈50 mL 7.5% acetic acid.
+   - Shake gently for 1m.
+
+2. Image with a laser scanner:
+
+   laser:    488 nm
+   filter:  518BP22
+
+Notes:
+[1] https://tinyurl.com/r7p6juer
+
+[2] The stain solution may be reused up to four
+    times, but sensitivity is dramatically reduced.
+    Use fresh stain for optimal sensitivity.
+
+[3] For low percentage gels and for very small
+    proteins, 10% acetic acid will result in better
+    retention of the protein in the gel without
+    compromising sensitivity.  Do not fix the
+    proteins with methanol-containing solutions.
+    Methanol removes the SDS coat from proteins,
+    strongly reducing the signal from SYPRO Orange
+    and Red.
+
+[4] Acetic acid will interfere with transfer of the
+    proteins to a blot.  You can try diluting SYPRO
+    Red or Orange in transfer buffer, but this will
+    result in lower sensitivity staining.
+    Alternatively, you can stain the gel with SYPRO
+    Tangerine (which does not require acetic acid
+    fixation) or you can stain the blot directly with
+    SYPRO Ruby.

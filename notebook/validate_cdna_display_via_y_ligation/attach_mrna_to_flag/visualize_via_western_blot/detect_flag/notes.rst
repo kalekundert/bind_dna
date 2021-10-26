@@ -54,7 +54,7 @@ FLAG peptide --- 2021/09/27
 I ordered another FLAG positive control, but I suspect the problem is either 
 with the primary or secondary antibodies.  How do I troubleshoot that?
 
-FLAG fusion protein --- 2021/09/30
+FLAG fusion control --- 2021/09/30
 ==================================
 .. protocol:: 20210930_debug_western.pdf 20210930_debug_western.txt
 
@@ -83,4 +83,48 @@ FLAG fusion protein --- 2021/09/30
   kDa peptide.  The dot blot in the previous experiment was meant to test for 
   this possibility, but maybe it didn't work.  Dima was skeptical about it, and 
   thought that maybe SDS was necessary for FLAG to bind the membrane.
+
+FLAG peptide + FLAG fusion control --- 2021/10/08
+=================================================
+Three changes:
+
+- Tricine SDS PAGE (instead of bis-tris/MES)
+- 2 min transfer (instead of 5 min)
+- 1:10,000x primary antibody dilution (instead of 1:1000)
+
+.. protocol:: 20211008_debug_western.pdf 20211008_debug_western.txt
+
+.. figure:: 20211009_debug_western.svg
+
+- There's no signal for the peptide.  With the positive control clearly 
+  visible, this shows pretty convincingly that there's a problem with the 
+  peptide.  I suspect that it's not adhering to the membrane.  
+  
+  It might be worth trying a nitrocellulose membrane, which may `bind better to 
+  polar molecules`__.  Nylon membranes are also an option.  They're typically 
+  used for nucleic acid blotting, but I think that that's because they have 
+  amide groups that can crosslink with the nucleic acids.  I think they're less 
+  polar than nitrocellulose.
+
+  __ https://www.thermofisher.com/us/en/home/life-science/protein-biology/protein-biology-learning-center/protein-biology-resource-library/pierce-protein-methods/western-blot-transfer-methods.html#blotting
+
+- The 8 kDa ladder band is brighter in this experiment than it was in my 
+  previous experiments.  I think this means that the shorter transfer is better 
+  for peptides.  The high MW bands still tranferred very well though, which 
+  means I probably still have room to decrease transfer time and/or voltage.
+
+- The fusion control band is fainter in this experiment than it was previously.  
+  This is probably because I used less primary antibody.  The "off-target" 
+  bands is also fainter, but I still think that those bands are actually 
+  tagged.
+
+- Crystal violet has a strong fluorescent signal in the 700 nm channel (not 
+  shown above, but clearly visible in the raw data).  It's not really a 
+  problem, since I'm only using the 800 nm channel, but I think it'd be smart 
+  to use a different loading buffer in the future.
+
+Nitrocellulose --- 2021/10/18
+=============================
+.. protocol:: 20211018_debug_western.pdf 20211018_debug_western.txt
+
 

@@ -17,13 +17,13 @@ sw tbst |
 
 sw blocking_buffer.txt |
 
-sw gel novex/tricine "FLAG peptide (r5)" -c 1000 -v 1 -S -L "2×5 µL Chameleon 800, 10 µL FLAG-fusion control" |
+sw gel novex/tricine "FLAG peptide (r5)" -p 16 -c 1000 -v 1 -S -L "2×5 µL Chameleon 800, 10 µL FLAG-fusion control" |
 #sw step "Load 10 µL of FLAG-fusion positive control." |
 #sw gel novex/tricine -M -S -L "5 µL Chameleon 800" |
 
 sw step "Cut one of the ladder lanes out of the gel.  Store the slice in water and in the dark." |
 
-sw transfer_iblot.py -t 2 |
+sw transfer_iblot.py -t 2 -m nitrocellulose |
 
 sw step "Trim off unused parts of the membrane and mark the side facing the gel." |
 

@@ -1,0 +1,171 @@
+October 18, 2021
+
+$ sw debug_western
+
+ 1. Prepare 1 L 1x TBST [1]:
+    
+    - 100 mL 10x TBS
+    - 1 mL 100% Tween-20
+    - water to 1 L
+
+ 2. Prepare 50 mL blocking buffer [2]:
+    
+    - 5 mL 10x TBS
+    - 45 mL water
+    - 2.5 g nonfat dry milk (5% w/v final)
+    - Mix for at least 30 min [3].
+
+ 3. Prepare 1 sample for SDS PAGE:
+
+    Reagent                         Stock    Volume
+    ───────────────────────────────────────────────
+    water                                   3.00 µL
+    tricine SDS sample buffer          2x   5.00 µL
+    NuPAGE reducing agent             10x   1.00 µL
+    FLAG peptide (r5)          1000 ng/µL   1.00 µL
+    ───────────────────────────────────────────────
+                                           10.00 µL
+
+    - Incubate at 85°C for 2 min.
+
+ 4. Run a gel [4]:
+
+    gel: 16% Novex tris-tricine SDS PAGE
+    buffer: tricine SDS running buffer
+    ladder: 2×5 µL Chameleon 800, 10 µL FLAG-fusion
+      control
+    samples: 10 µL/lane
+    run: 125V for 90 min
+
+ 5. Cut one of the ladder lanes out of the gel.
+    Store the slice in water and in the dark.
+
+ 6. Transfer proteins to a nitrocellulose membrane
+    via iBlot [5]:
+
+    - Place the anode stack (in its plastic tray) in
+      the iBlot machine.
+      - Remove any bubbles underneath the membrane.
+
+    - Place the gel on the membrane.
+      - Rinse the gel with water beforehand.
+      - Remove any bubbles.
+
+    - Soak included filter paper in water
+    - Place filter paper on gel.
+      - Remove any bubbles.
+
+    - Place the cathode stack on the filter paper
+      (copper side up, agarose side down, discard
+      tray).
+      - Remove any bubbles.
+
+    - Attach disposable sponge to the lid of the
+      iBlot machine.  Make sure the metal band is in
+      the upper right, aligned with the electrode.
+
+    - Run at 20V (P3) for 2 min.
+
+    - Transfer the membrane to water immediately
+      after the run finishes.  If the membrane dries
+      out, re-wet it in methanol and rinse with water
+      before blocking.
+
+ 7. Trim off unused parts of the membrane and mark
+    the side facing the gel.
+
+ 8. Incubate the membrane in 20 mL blocking buffer
+    for 1h at room temperature with gentle shaking
+    [6].
+
+ 9. Image the gel and the ladder slice to evaluate
+    how well the transfer worked.
+
+10. Prepare a 10,000x dilution of the primary
+    antibody:
+
+    - 5 mL TBST
+    - 5 mL blocking buffer
+    - 1 µL monoclonal mouse anti-DYKDDDDK tag (r4)
+
+11. Incubate the membrane in the primary antibody
+    solution overnight at 4°C, in the dark and with
+    gentle shaking [6].
+
+12. Store unused blocking buffer at 4°C overnight
+    [6].
+
+13. Wash the membrane as follows [6]:
+
+    - Wash 3x for 5 min in TBST (with shaking)
+
+14. Prepare a 10,000x dilution of the secondary
+    antibody [6].  Keep the antibody in the dark as
+    much as possible:
+
+    - 5 mL TBST
+    - 5 mL blocking buffer
+    - 1 µL goat anti-mouse IRDye 800CW (r3)
+
+15. Incubate the membrane in the secondary antibody
+    solution at room temperature for 1h, with shaking
+    [6].
+
+16. Repeat the above washing procedure [6].
+
+17. Image with a laser scanner:
+
+    laser:    784 nm
+    filter:  832BP37
+
+    - Place the membrane in the scanner protein-side
+      down.
+
+Notes:
+[1] 0.1% Tween final.  I've also found recipes 
+    that call for 0.2% or 0.05%, but 0.1% is 
+    recommended by both Abcam and CSH:
+    
+    http://cshprotocols.cshlp.org/content/2013/3/pdb.rec074104.full?rss=1
+    https://docs.abcam.com/pdf/protocols/buffer-and-stock-solutions-for-western-blot.pdf
+
+[2] It's important that the blocking buffer *not* 
+    contain any detergent.
+    
+    https://tinyurl.com/yv7844ra
+
+[3] Undissolved particles within buffers (milk 
+    powder in blocking buffer for example) 
+    potentially can settle on the membrane and 
+    create fluorescent artifacts.  Therefore, we 
+    suggest using high quality reagents, allowing 
+    suitable time for all components to fully 
+    dissolve, and filter sterilize all buffers 
+    (KBK: in my hands, milk cannot be sterile 
+    filtered).
+    
+    https://tinyurl.com/8k7mtdr4
+
+[4] https://tinyurl.com/4nzuxfdb
+
+[5] https://tinyurl.com/yb5cj5ac
+    https://tinyurl.com/t89e2n43
+
+    Do not touch the membrane or gel with bare or
+    gloved hands. This may contaminate the gel or
+    membrane and interfere with further analysis. If
+    you need to adjust the membrane, always use
+    tweezers.
+
+    Sometimes there is green discoloration around the
+    sides of the membrane after the transfer.  This
+    is due to copper ions from the transfer stacks
+    being carried by liquids and deposited on the
+    membrane.  These deposits do not interfere with
+    downstream processes.  The stained regions can be
+    cut away, but membrane washing typically results
+    in their removal.  To minimize this effect, shake
+    excess water off the filter paper and buffer from
+    the gel before placing each on the stack.
+
+[6] https://tinyurl.com/t2n6tr63

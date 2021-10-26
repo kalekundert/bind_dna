@@ -4,7 +4,7 @@
 Use PCR to verify the insertion of the rpoZ-zif268 fragment.
 
 Usage:
-    check_rpoZ_zif268_insert <plasmids>... [-p]
+    check_rpoZ_zif268_insert <plasmids>... [-p] [-r <primers>]
 
 Arguments:
     <plasmids>
@@ -18,6 +18,10 @@ Options:
     -p --plasmid
         Use purified plasmid as the template (instead of bacterial colonies).
 
+    -r --primers <names>        [default: o262,o185,o188]
+        The names of the reverse primers to use, separated by commas.  Each 
+        primer must be present in the freezerbox database.
+
 """
 
 import stepwise
@@ -26,6 +30,7 @@ import docopt
 from stepwise import pl, ul
 from stepwise_mol_bio import Pcr
 from more_itertools import flatten, unique_everseen as unique
+from inform import plural
 
 def parse_plasmids(plasmid_strs):
     return list(flatten(parse_plasmid(x) for x in plasmid_strs))
@@ -40,6 +45,8 @@ def parse_plasmid(plasmid_str):
 
     raise ValueError(f"expected <plasmid> or <N*plasmid>, got: {plasmid_str}")
 
+def parse_primers(primers_str):
+    return primers_str.split(',')
 
 if __name__ == '__main__':
     args = docopt.docopt(__doc__)
@@ -47,7 +54,7 @@ if __name__ == '__main__':
 
     plasmids = parse_plasmids(args['<plasmids>'])
     fwd_primer = fwd = 'o2'
-    rev_primers = 'o262', 'o185', 'o188'
+    rev_primers = parse_primers(args['--primers'])
 
     n = len(plasmids) + 1  # +1: negative control
     m = len(rev_primers)
@@ -74,7 +81,7 @@ if __name__ == '__main__':
 
     primer_mix['reverse primer'].name = ','.join(rev_primers)
     primer_mix['forward primer'].master_mix = True
-    primer_mix.num_reactions = 3
+    primer_mix.num_reactions = m
 
     vol_rxn = mm.volume
     vol_template = mm['template DNA'].volume
@@ -86,7 +93,7 @@ if __name__ == '__main__':
     del mm['template DNA']
 
     p += pcr_setup.protocol
-    p += pl("Setup 3 PCR master mixes:", mm)
+    p += pl(f"Setup {plural(m):# PCR master mix/es}:", mm)
 
     rxn = stepwise.MasterMix()
     rxn.volume = vol_rxn, 'µL'
@@ -103,7 +110,7 @@ if __name__ == '__main__':
 
     p += pcr_thermo.protocol
 
-    if n*m < 10:
+    if n*m <= 10:
         p += pl("Run a 1% E-gel EX.")
     else:
         egel_quickstart = 'https://tinyurl.com/38nmnmk5'

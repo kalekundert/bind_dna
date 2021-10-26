@@ -4,7 +4,7 @@
 Transfer protein to a PVDF membrane using an iBlot device
 
 Usage:
-    transfer_iblot [-p <program>] [-t <min>]
+    transfer_iblot [-p <program>] [-t <min>] [-m <membrane>]
 
 Options:
     -p --program <name>     [default: P3]
@@ -13,6 +13,8 @@ Options:
     -t --time <min>
         How long to run the transfer.  If not specified, the default time for 
         the chosen protocol will be used.
+
+    -m --membrane <name>    [default: PVDF]
 """
 
 import stepwise
@@ -36,6 +38,7 @@ if __name__ == '__main__':
     args = docopt.docopt(__doc__)
 
     program = args['--program']
+    membrane = args['--membrane']
     voltage, time_min = programs[program]
     if t := args['--time']:
         time_min = t
@@ -69,7 +72,7 @@ if __name__ == '__main__':
     """)
 
     p += pl(
-            f"Transfer proteins to a PVDF membrane via iBlot{p.add_footnotes(f1)}:",
+            f"Transfer proteins to a {membrane} membrane via iBlot{p.add_footnotes(f1)}:",
             ul(
                 pl(
                     "Place the anode stack (in its plastic tray) in the iBlot machine.",

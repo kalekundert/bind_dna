@@ -65,7 +65,6 @@ Results
 - I think this is a pretty good test.  I'll try the cloning again with 
   gel-purified fragments and more competent cells.
 
-
 .. protocol:: 20210928_check_rpoZ_zif268_insert.pdf 20210927_make.txt 20210928_check_rpoZ_zif268_insert.txt
 
 .. figure:: 20210928_check_rpoz_zif268_insert.svg
@@ -73,3 +72,32 @@ Results
 - Got lots of p184 colonies; very few p185/p186 colonies.
 
 - Still no clear hits.
+
+2021/10/13:
+
+After checking the hits I'd found previously, and finding that none had the 
+Zif-rpoZ insert, I decided to start screening colonies using o266:
+
+.. protocol:: 20211013_check_rpoZ_zif268_insert.txt
+
+.. figure:: 20211013_check_p184.svg
+
+- Still no hits, although I'm tempted to sequence the plasmid with the 
+  insert...
+
+2021/10/21:
+
+.. protocol:: 20211021_check_rpoZ_zif268_insert.txt
+
+.. figure:: 20211021_check_p184.svg
+
+- The bands are hard to see, but there are a few hits with ≈1kb amplicons.  
+  None with the expected insert (2.5 kb amplicon), though.
+
+- I'm not sure what else I can do to improve the assembly.  I already used 
+  gel-purified fragments and lots of competent cells.  Ideas:
+
+  - No terminators: just a single insert.
+
+  - Clone GFP instead of zif: I can see it, and I can use it as a drop-out in 
+    subsequent steps?  Seems like a lot of work, though.
