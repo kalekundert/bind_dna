@@ -1,0 +1,10 @@
+- Prepare 20% (w/v) LDS [1,2]:
+
+  - 2 g LDS
+  - water to 10 mL
+
+Notes:
+
+[1] DOI: 10.1101/pdb.rec10480
+
+[2] Stable at room temperature for 6 months.
