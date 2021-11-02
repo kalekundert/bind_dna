@@ -4,7 +4,7 @@ import stepwise
 import appcli
 import autoprop
 
-from stepwise import Quantity, pl, ul
+from stepwise import Quantity, Q, pl, ul
 from stepwise_mol_bio import Main, Lyophilize
 from appcli import DocoptConfig
 from inform import plural
@@ -17,23 +17,68 @@ Ligate a puromycin linker to an mRNA transcript via split ligation.
 This protocol is based on [Doshi2014].
 
 Usage:
-    split_ligation_doshi <mrna> [<linker>] [<splint>]
+    split_ligation_doshi <mrna> [<linker>] [<splint>] [--debug]
+
+Options:
+    -d --debug
+        Save aliquots after each step, to ensure that the reaction worked as 
+        expected, and include steps describing how to setup −ligation, 
+        −digestion, and −purification controls.
 """
+
     __config__ = [
             DocoptConfig,
     ]
 
-    mrna = appcli.param("<mrna>")
-    splint = appcli.param("<splint>", default="o277")
-    linker = appcli.param("<linker>", default="o278")
+    mrna = appcli.param('<mrna>')
+    splint = appcli.param('<splint>', default='o277')
+    linker = appcli.param('<linker>', default='o278')
+    debug = appcli.param('--debug', default=False)
 
     def get_protocol(self):
         p = stepwise.Protocol()
+        if self.debug:
+            p += self.control_protocol
         p += self.annealing_protocol
         p += self.ligation_protocol
         p += self.digestion_protocol
         p += self.purification_protocol
         p += self.concentration_protocol
+        return p
+
+    def get_control_protocol(self):
+        p = stepwise.Protocol()
+
+        # These concentrations are not exactly the same as in the reactions.  
+        # The actual concentrations change after each step, so it wouldn't be 
+        # easy to match them exactly.  Instead, I chose round numbers that are 
+        # just slightly less dilute than the actual concentrations.
+
+        # I'm not concerned that these volumes are too small to pipet 
+        # accurately.  I'm not going to be comparing the intensities of these 
+        # bands to anything.
+
+        p += pl(
+                "Prepare a 500 nM mRNA-only control:",
+                ul(
+                    f"4.75 µL nuclease-free water",
+                    f"0.25 µL 10 µM {self.mrna}",
+                ),
+        )
+        p += pl(
+                "Prepare a 2 µM linker-only control:",
+                ul(
+                    f"4.90 µL nuclease-free water",
+                    f"0.10 µL 100 µM {self.linker}",
+                ),
+        )
+        p += pl(
+                "Prepare a 2 µM splint-only control:",
+                ul(
+                    f"4.90 µL nuclease-free water",
+                    f"0.10 µL 100 µM {self.splint}",
+                ),
+        )
         return p
 
     def get_annealing_reaction(self):
@@ -54,7 +99,7 @@ Usage:
         rxn = stepwise.MasterMix("""\
                 Reagent               Stock      Volume  MM?
                 ===================  ======  ==========  ===
-                water                        to 50.0 µL   +
+                nuclease-free water          to 50.0 µL   +
                 ssRNA ligase buffer     10x      6.0 µL   +
                 mRNA                  10 µM      3.5 µL
                 splint               100 µM      1.6 µL   +
@@ -63,6 +108,15 @@ Usage:
         rxn['mRNA'].name = f"{self.mrna} (mRNA)"
         rxn['splint'].name = f"{self.splint} (splint)"
         rxn['linker'].name = f"{self.linker} (puro)"
+
+        # control aliquot volumes:
+        # - I just need enough to run a gel, which is 3.2 µL (see notes for 
+        #   `urea/ligate/doshi2014` gel preset).
+        # - Round to 5 µL to be safe.
+
+        if self.debug:
+            rxn.hold_ratios.volume += 10, 'µL'
+
         return rxn
 
     def get_annealing_protocol(self):
@@ -73,29 +127,41 @@ Usage:
                 f"Setup {plural(rxn.num_reactions):# annealing reaction/s}{p.add_footnotes('[Doshi2014] DOI:10.1038/srep06760')}:",
                 rxn,
         )
+
+        # This annealing protocol is not specified by [Doshi2014].  I got this 
+        # protocol from Erkin.  I imagine that a lot of protocols would work, 
+        # though.
         p += pl(
                 "Incubate as follows:",
                 ul(
-                    "95°C for 2 min",
-                    "Cool at room temperature",
+                    "82°C for 2 min",
+                    "Cool to 25°C over 5 min",
                 ),
         )
         return p
 
     def get_ligation_protocol(self):
         p = stepwise.Protocol()
+        k = 1
+
+        if self.debug:
+            k = (self.annealing_reaction.volume - Q('5 µL')) / Q('50 µL')
+            p += pl(
+                    "Remove a 5 µL −ligase aliquot.  Store at −20°C.",
+            )
 
         # enzyme volume:
         # - [Doshi2014] specifies this volume of enzyme, but doesn't specify 
         #   the stock concentration (or the catalog number).  I'm assuming that 
         #   they used NEB T4 ssRNA ligase (M0204) since most of their other 
         #   reagents are from NEB.
+
         p += pl(
                 "Add the following to the reaction:",
                 ul(
-                    "6 µL 10 mM ATP",
-                    "1 µL RNase inhibitor (murine)",
-                    "3 µL 10 U/µL ssRNA ligase (NEB M0204)",
+                    f"{6*k:.2g} µL 10 mM ATP",
+                    f"{1*k:.2g} µL RNase inhibitor (murine)",
+                    f"{3*k:.2g} µL 10 U/µL ssRNA ligase (NEB M0204)",
                 ),
         )
         p += "Incubate at room temperature overnight."
@@ -105,7 +171,7 @@ Usage:
         return stepwise.MasterMix("""\
                 Reagent                Stock     Volume  MM?
                 ====================  ======  =========  ===
-                water                         to 240 µL   +
+                nuclease-free water           to 240 µL   +
                 λ exonuclease buffer     10x      24 µL   +
                 λ exonuclease         5 U/µL       5 µL   +
                 ligation reaction                 60 µL
@@ -114,6 +180,11 @@ Usage:
     def get_digestion_protocol(self):
         p = stepwise.Protocol()
         rxn = self.digestion_reaction
+
+        if self.debug:
+            p += pl(
+                    "Remove a 5 µL −digestion aliquot.  Store at −20°C.",
+            )
 
         p += pl(
                 f"Setup {plural(rxn.num_reactions):# digestion reaction/s}:",
@@ -131,6 +202,18 @@ Usage:
 
     def get_purification_protocol(self):
         p = stepwise.Protocol()
+
+        if self.debug:
+            # Aliquot volume:
+            # - The digestion reaction is 4x more dilute than the annealing/ 
+            #   ligation reaction.
+            # - So I would need a 20 µL aliquot to get the same amount of 
+            #   material.
+            # - I think 10 µL is the most I can load on a gel without a 
+            #   concentration step, so that what I went for.
+            p += pl(
+                    "Remove a 10 µL −purification aliquot.  Store at −20°C.",
+            )
 
         # Binding buffer:
         # - The NEB protocol calls for the RNA to be in "lysis/binding buffer":
@@ -162,7 +245,7 @@ Usage:
         p += pl(
                 "Prepare 100 µL 10x lysis/binding buffer (−tris):",
                 ul(
-                    "20.5 µL water"
+                    "20.5 µL water",
                     "50 µL 10M LiCl",
                     "25 µL 20% (w/v) LDS",
                     "2 µL 500 mM EDTA",
