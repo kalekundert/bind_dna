@@ -92,7 +92,7 @@ Options:
         incubation.
 """
     __config__ = [
-            DocoptConfig(),
+            DocoptConfig,
     ]
 
     num_reactions = appcli.param(

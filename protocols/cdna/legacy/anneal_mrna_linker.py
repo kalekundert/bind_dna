@@ -59,7 +59,7 @@ Options:
         if the given linker is not in the database.  
 """
     __config__ = [
-            DocoptConfig(),
+            DocoptConfig,
     ]
 
     mrnas = appcli.param(
