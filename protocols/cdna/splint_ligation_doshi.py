@@ -63,6 +63,7 @@ Options:
                 ul(
                     f"4.75 µL nuclease-free water",
                     f"0.25 µL 10 µM {self.mrna}",
+                    f"Store at −20°C",
                 ),
         )
         p += pl(
@@ -70,6 +71,7 @@ Options:
                 ul(
                     f"4.90 µL nuclease-free water",
                     f"0.10 µL 100 µM {self.linker}",
+                    f"Store at −20°C",
                 ),
         )
         p += pl(
@@ -77,6 +79,7 @@ Options:
                 ul(
                     f"4.90 µL nuclease-free water",
                     f"0.10 µL 100 µM {self.splint}",
+                    f"Store at −20°C",
                 ),
         )
         return p
@@ -97,13 +100,13 @@ Options:
         # oligo volumes:
         # - [Doshi2014] calls for 2.67 µM final concentrations of both oligos.
         rxn = stepwise.MasterMix("""\
-                Reagent               Stock      Volume  MM?
-                ===================  ======  ==========  ===
-                nuclease-free water          to 50.0 µL   +
-                ssRNA ligase buffer     10x      6.0 µL   +
-                mRNA                  10 µM      3.5 µL
-                splint               100 µM      1.6 µL   +
-                linker               100 µM      1.6 µL
+                Reagent                Stock      Volume  MM?
+                ====================  ======  ==========  ===
+                nuclease-free water           to 50.0 µL   +
+                T4 RNA ligase buffer     10x      6.0 µL   +
+                mRNA                   10 µM      3.5 µL
+                splint                100 µM      1.6 µL   +
+                linker                100 µM      1.6 µL
         """)
         rxn['mRNA'].name = f"{self.mrna} (mRNA)"
         rxn['splint'].name = f"{self.splint} (splint)"
@@ -160,8 +163,8 @@ Options:
                 "Add the following to the reaction:",
                 ul(
                     f"{6*k:.2g} µL 10 mM ATP",
-                    f"{1*k:.2g} µL RNase inhibitor (murine)",
-                    f"{3*k:.2g} µL 10 U/µL ssRNA ligase (NEB M0204)",
+                    f"{1*k:.2g} µL 40 U/µL RNase inhibitor (murine)",
+                    f"{3*k:.2g} µL 10 U/µL T4 RNA ligase I (NEB M0204)",
                 ),
         )
         p += "Incubate at room temperature overnight."
@@ -241,16 +244,26 @@ Options:
         #
         # - Perhaps I could make a 10x mix of the remaining chemicals, and add 
         #   it to the reaction.  I have all the necessary chemicals on hand.
+        #
+        #   - Can't do this: LDS precipitates in ≈7.5M LiCl.
 
+        p += stepwise.load('./neb_s1419_buffers')
+        
+        buffers = stepwise.MasterMix("""\
+                Reagent               Stock   Final  Volume
+                ==================  =======  ======  ======
+                digestion reaction                   300 µL
+                LiCl                7500 mM  500 mM
+                LDS                     20%    0.5%
+                EDTA                 500 mM    1 mM
+                DTT                  500 mM    5 mM
+        """)
+        buffers.show_concs = True
+
+        f = "My initial thought was to create a 10x lysis/binding (−tris) buffer, but LDS is not soluble in ≈7.5M LiCl."
         p += pl(
-                "Prepare 100 µL 10x lysis/binding buffer (−tris):",
-                ul(
-                    "20.5 µL water",
-                    "50 µL 10M LiCl",
-                    "25 µL 20% (w/v) LDS",
-                    "2 µL 500 mM EDTA",
-                    "2.5 µL 1 M DTT",
-                ),
+                f"Add the lysis/binding buffer components to the digestion reaction{p.add_footnotes(f)}:",
+                buffers,
         )
 
         # Wash buffer volume:
@@ -261,18 +274,27 @@ Options:
         p += pl(
                 f"Purify using magnetic oligo-dT(25 beads){p.add_footnotes(f)}:",
                 ul(
-                    "Equilibrate 70 µL beads in 200 µL lysis/binding buffer.",
-                    "Add 33 µL 10x lysis/binding buffer (−tris) to the digestion reaction.",
+                    "Resuspend beads by gently vortexing.",
+                    "Mix 70 µL beads with 200 µL lysis/binding buffer.",
+                    "Agitate at room temperature for 2 min.",
+                    "Spin briefly.",
+                    "Apply magnet for 1 min.",
+                ),
+                ul(
                     "Remove buffer from beads and immediately add digestion reaction.",
                     "Agitate at room temperature for 10 min.",
+                    "Spin briefly.",
+                    "Apply magnet for 1 min.",
                     "Discard supernatant.",
                 ),
                 ul(
                     pl(
                         "Repeat 2x:",
                         ul(
-                            "Add 350 µL wash buffer 1",
+                            "Add 350 µL wash buffer 1.",
                             "Agitate at room temperature for 1 min.",
+                            "Spin briefly.",
+                            "Apply magnet for 1 min.",
                             "Discard supernatant.",
                         ),
                         br='\n',
@@ -282,16 +304,20 @@ Options:
                     pl(
                         "Repeat 2x:",
                         ul(
-                            "Add 350 µL wash buffer 2",
+                            "Add 350 µL wash buffer 2.",
                             "Agitate at room temperature for 1 min.",
+                            "Spin briefly.",
+                            "Apply magnet for 1 min.",
                             "Discard supernatant.",
                         ),
                         br='\n',
                     ),
                 ),
                 ul(
-                    "Add 350 µL low salt buffer",
+                    "Add 350 µL low salt buffer.",
                     "Agitate at room temperature for 1 min.",
+                    "Spin briefly.",
+                    "Apply magnet for 1 min.",
                     "Discard supernatant.",
                 ),
                 ul(
@@ -301,6 +327,8 @@ Options:
                             "Add 30 µL nuclease-free water.",
                             "Vortex gently to resuspend beads.",
                             "Agitate at 50°C for 2 min.",
+                            "Spin briefly.",
+                            "Apply magnet for 1 min.",
                             "Recover supernatant.",
                         ),
                         br='\n',
@@ -311,7 +339,7 @@ Options:
 
     def get_concentration_protocol(self):
         # [Doshi2014] concentrates by precipitation, but doing so adds salt to 
-        # the reaction.  Maybe that's not a bad thing, though...
+        # the reaction.
         lyo = Lyophilize(volume=Quantity(6.5, 'µL'))
         return lyo.protocol
 
@@ -319,48 +347,3 @@ Options:
 if __name__ == '__main__':
     SplitLigation.main()
 
-    
-
-
-
-                    
-
-
-
-# Anneal:
-# - 581 nM mRNA (paper calls for 5 µg; mRNA MW=143365.24; volume=60 µL)
-# - 2.67 µM (final) splint
-# - 2.67 µM (final) puromycin linker
-#   - ≈5x excess of splint/linker is expensive, but won't cause problems 
-#     because it'll be destroyed in the exonuclease step.
-# - 1x ssRNA ligase buffer
-# - Water to 60 µL
-#
-# Annealing protocol unspecified, but I assume that 95°C for 2 min is 
-# reasonable.
-#
-# Ligate:
-# - 1 mM ATP
-# - 1 µL RNase inhibitor (NEB)
-# - 3 µL ssRNA ligase
-#
-# Incubate at room temperature overnight.
-#
-# Digest:
-# - 5 µL lambda exonuclease (NEB)
-# - 1x lambda exonuclease buffer
-# - water to 240 µL
-#
-# Incubate at 37°C for 45 min.
-# Add 60 µL 1M tris, pH 7.5
-# Incubate at 65°C for 5 min.
-#
-# Bead purification
-# - Follow manufacturer's protocol (NEB, OligodT₂₅ beads)
-# - Elute twice in 30 µL 10 mM Tris-HCl, pH 7.5
-#   - Might do nuclease free water instead.
-# 
-# Concentrate:
-# - Protocol calls for precipitation.
-# - Might do lyophilization instead.
-#
