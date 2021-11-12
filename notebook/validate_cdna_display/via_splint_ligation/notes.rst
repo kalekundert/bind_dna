@@ -1,6 +1,6 @@
-*****************************************
-Validate cDNA display via splint-ligation
-*****************************************
+*******************
+Via splint-ligation
+*******************
 
 I'm suspicious that RNase H contamination in PURExpress is preventing 
 :expt:`53` from working, due to the RNA-DNA duplex inherent to Y-ligation.  One 

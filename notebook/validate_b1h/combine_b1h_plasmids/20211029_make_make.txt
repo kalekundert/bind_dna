@@ -1,0 +1,213 @@
+October 29, 2021
+
+$ sw make f151 f152 f153
+$ sw make p184 p185 p186 p187 p188 p189
+
+ 1. Prepare 10x primer mix [1]:
+
+    Reagent          Stock    Volume
+    ────────────────────────────────
+    water                    9.00 µL
+    o289,o291,o293  100 µM   0.50 µL
+    o290,o292,o294  100 µM   0.50 µL
+    ────────────────────────────────
+                            10.00 µL
+
+ 2. Setup 3 PCR reactions [2,3]:
+
+    Reagent           Stock    Volume     ≈3.7x
+    ───────────────────────────────────────────
+    water                     4.50 µL  16.50 µL
+    f33,p166,f33   20 pg/µL   1.50 µL
+    primer mix          10x   1.50 µL
+    Q5 master mix        2x   7.50 µL  27.50 µL
+    ───────────────────────────────────────────
+                             15.00 µL  12.00 µL/rxn
+
+    - Use any extra master mix as a negative control.
+
+ 3. Run the following thermocycler protocol:
+
+    - 98°C for 30s
+    - Repeat 35x:
+      - 98°C for 10s
+      - 65°C,61°C,63°C for 20s
+      - 72°C for 30s
+    - 72°C for 2 min
+    - 4°C hold
+
+ 4. Label the products: f151, f152, f153
+
+ 5. Purify using Qiagen MinElute PCR purification kit
+    (28004) [4,5]:
+
+    - Perform all spin steps at 17900g.
+    - Add 5 volumes PB to the crude DNA.
+    - If not yellow: Add 0.2 volumes 3M sodium
+      acetate, pH=5.0.
+    - Load on a MinElute column.
+    - Spin 1m; discard flow-through.
+
+    - Add 750 µL PE.
+    - Spin 1m; discard flow-through.
+    - Spin 1m; discard flow-through.
+    - Add 10.0 µL EB.
+    - Wait at least 1m.
+    - Spin 1m; keep flow-through.
+
+ 6. Prepare 10x primer mix [1]:
+
+    Reagent          Stock    Volume
+    ────────────────────────────────
+    water                    9.00 µL
+    o281,o283,o285  100 µM   0.50 µL
+    o282,o284,o286  100 µM   0.50 µL
+    ────────────────────────────────
+                            10.00 µL
+
+ 7. Setup 3 PCR reactions [2,3]:
+
+    Reagent           Stock    Volume      3.3x
+    ───────────────────────────────────────────
+    water                    15.00 µL  49.50 µL
+    p183           20 pg/µL   5.00 µL  16.50 µL
+    primer mix          10x   5.00 µL
+    Q5 master mix        2x  25.00 µL  82.50 µL
+    ───────────────────────────────────────────
+                             50.00 µL  45.00 µL/rxn
+
+    - Use any extra master mix as a negative control.
+
+ 8. Run the following thermocycler protocol:
+
+    - 98°C for 30s
+    - Repeat 35x:
+      - 98°C for 10s
+      - 64°C,65°C,66°C for 20s
+      - 72°C for 3 min
+    - 72°C for 2 min
+    - 4°C hold
+
+ 9. Label the products: f147, f148, f149
+
+10. Prepare 10x primer mix [1]:
+
+    Reagent     Stock    Volume
+    ───────────────────────────
+    water               9.00 µL
+    o287,o265  100 µM   0.50 µL
+    o288,o295  100 µM   0.50 µL
+    ───────────────────────────
+                       10.00 µL
+
+11. Setup 2 PCR reactions [2,3]:
+
+    Reagent                 Stock    Volume     ≈2.7x
+    ─────────────────────────────────────────────────
+    water                           4.50 µL  12.00 µL
+    p166,f151+f152+f153  20 pg/µL   1.50 µL
+    primer mix                10x   1.50 µL
+    Q5 master mix              2x   7.50 µL  20.00 µL
+    ─────────────────────────────────────────────────
+                                   15.00 µL  12.00 µL/rxn
+
+    - Use any extra master mix as a negative control.
+
+12. Run the following thermocycler protocol:
+
+    - 98°C for 30s
+    - Repeat 35x:
+      - 98°C for 10s
+      - 61°C for 20s
+      - 72°C for 1 min
+    - 72°C for 2 min
+    - 4°C hold
+
+13. Label the products: f150, f154
+
+14. Prepare 3 samples for electrophoresis:
+
+    Reagent         Stock   Volume
+    ──────────────────────────────
+    loading buffer     6x  1.00 µL
+    sample                 5.00 µL
+    ──────────────────────────────
+                           6.00 µL
+
+15. Run a gel:
+
+    gel: 1% agarose/TBE with 1x GelGreen
+    buffer: 1x TBE
+    samples: 5 µL/lane
+    run: 100V for 60 min
+
+16. Image with a 470 nm blue-light transilluminator.
+
+17. Cut desired band out of an agarose gel.
+
+18. Place the gel slice in a Spin-X column with
+    1 µL/mg EB.  Spin at 13,000g for 5-20 min
+    at room temperature [6].
+    
+    The following optional steps may improve yield:
+    
+    - Macerate the gel.
+    - Freeze/thaw the gel.
+    - Add 200 µL EB after the first spin and
+      re-centrifuge.
+    - Spin for longer.
+
+19. Purify using Qiagen MinElute PCR purification kit
+    (28004) [4,5]:
+
+    - Perform all spin steps at 17900g.
+    - Add 5 volumes PB to the crude DNA.
+    - If not yellow: Add 0.2 volumes 3M sodium
+      acetate, pH=5.0.
+    - Load on a MinElute column.
+    - Spin 1m; discard flow-through.
+
+    - Add 750 µL PE.
+    - Spin 1m; discard flow-through.
+    - Spin 1m; discard flow-through.
+    - Add 10.0 µL EB.
+    - Wait at least 1m.
+    - Spin 1m; keep flow-through.
+
+20. Setup 6 Gibson assemblies [7]:
+
+    Reagent                            Stock   Volume
+    ─────────────────────────────────────────────────
+    Gibson master mix                     2x  2.50 µL
+    f147,f148,f149,f147,f148,f149  200 ng/µL  1.04 µL
+    f154,f154,f154,f150,f150,f150   60 ng/µL  1.46 µL
+    ─────────────────────────────────────────────────
+                                              5.00 µL
+
+21. Incubate at 50°C for 15 min.
+
+22. Label the products: p184, p185, p186, p187, p188,
+    p189
+
+23. Miniprep.
+
+Notes:
+[1] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol
+
+[2] https://tinyurl.com/y27ralt4
+
+[3] For diluting template DNA to 20 pg/µL:
+    Dilute 1 µL twice into 7*sqrt([DNA]) µL
+
+[4] https://www.qiagen.com/HB-2069
+
+[5] Column capacity: 5 µg
+
+[6] https://tinyurl.com/fh2jtd
+    
+    The official protocol just recommends 100-200 µL 
+    EB, but I personally find that 1 µL/mg is a more 
+    robust approach.
+
+[7] https://tinyurl.com/ychbvkra

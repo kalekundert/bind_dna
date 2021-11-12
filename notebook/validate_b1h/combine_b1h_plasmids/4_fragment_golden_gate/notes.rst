@@ -1,6 +1,6 @@
-*********************
-Via piecemeal changes
-*********************
+**********************
+4-fragment Golden Gate
+**********************
 
 2021/09/10:
 
@@ -87,7 +87,7 @@ Zif-rpoZ insert, I decided to start screening colonies using o266:
 
 2021/10/21:
 
-.. protocol:: 20211021_check_rpoZ_zif268_insert.txt
+.. protocol:: 20211021_check_rpoZ_zif268_insert.pdf 20211021_check_rpoZ_zif268_insert.txt
 
 .. figure:: 20211021_check_p184.svg
 
@@ -101,3 +101,4 @@ Zif-rpoZ insert, I decided to start screening colonies using o266:
 
   - Clone GFP instead of zif: I can see it, and I can use it as a drop-out in 
     subsequent steps?  Seems like a lot of work, though.
+

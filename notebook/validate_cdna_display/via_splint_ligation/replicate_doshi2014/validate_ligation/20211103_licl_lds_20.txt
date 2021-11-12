@@ -1,0 +1,23 @@
+November 3, 2021
+
+$ sw recipes/licl
+$ sw recipes/lds_20
+
+1. Prepare 10 mL 10M LiCl [1]:
+   
+   - 4.239 g LiCl
+   - water to 10 mL
+   - sterile filter (0.22 µm)
+   - store at 4°C
+
+2. Prepare 20% (w/v) LDS [2,3]:
+   
+   - 2 g LDS
+   - water to 10 mL
+
+Notes:
+[1] DOI: 10.1101/pdb.rec8041
+
+[2] DOI: 10.1101/pdb.rec10480
+
+[3] Stable at room temperature for 6 months.

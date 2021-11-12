@@ -1,0 +1,17 @@
+block.6x1.A1.plasmid = 'p184'
+block.3x1.B1.plasmid = 'p184'
+
+block.3x1.B4.plasmid = 'p185'
+block.6x1.C1.plasmid = 'p185'
+
+block.6x1.D1.plasmid = 'p186'
+
+block.6x1.E1.plasmid = 'p187'
+block.3x1.F1.plasmid = 'p187'
+
+block.3x1.F4.plasmid = 'p188'
+block.6x1.G1.plasmid = 'p188'
+
+block.4x1.H1.plasmid = 'p189'
+
+well.H5.plasmid = 'Ø'

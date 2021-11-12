@@ -1,0 +1,54 @@
+November 10, 2021
+
+$ sw neb_s1419_buffers
+
+1. Prepare 100 µL lysis/binding buffer [1]:
+   
+   Reagent               Stock   Final     Volume
+   ──────────────────────────────────────────────
+   water                                160.27 µL
+   tris HCl, pH=7.5        1 M  100 mM   20.00 µL
+   LiCl                  7.5 M  500 mM   13.33 µL
+   LDS               20% (w/v)    0.5%    5.00 µL
+   EDTA                 500 mM    1 mM    0.40 µL
+   DTT                  500 mM    5 mM    2.00 µL
+   ──────────────────────────────────────────────
+                                        200.00 µL
+
+2. Prepare 400 µL wash buffer I [1]:
+   
+   Reagent               Stock   Final     Volume
+   ──────────────────────────────────────────────
+   water                                360.53 µL
+   tris HCl, pH=7.5        1 M   20 mM    8.00 µL
+   LiCl                  7.5 M  500 mM   26.67 µL
+   LDS               20% (w/v)    0.1%    2.00 µL
+   EDTA                 500 mM    1 mM    0.80 µL
+   DTT                     1 M    5 mM    2.00 µL
+   ──────────────────────────────────────────────
+                                        400.00 µL
+
+3. Prepare 400 µL wash buffer II [1]:
+   
+   Reagent               Stock   Final     Volume
+   ──────────────────────────────────────────────
+   water                                364.53 µL
+   tris HCl, pH=7.5        1 M   20 mM    8.00 µL
+   LiCl                  7.5 M  500 mM   26.67 µL
+   EDTA                 500 mM    1 mM    0.80 µL
+   ──────────────────────────────────────────────
+                                        400.00 µL
+
+4. Prepare 400 µL low-salt buffer [1]:
+   
+   Reagent               Stock   Final     Volume
+   ──────────────────────────────────────────────
+   water                                380.53 µL
+   tris HCl, pH=7.5        1 M   20 mM    8.00 µL
+   LiCl                  7.5 M  200 mM   10.67 µL
+   EDTA                 500 mM    1 mM    0.80 µL
+   ──────────────────────────────────────────────
+                                        400.00 µL
+
+Note:
+[1] https://tinyurl.com/5b9sujn2

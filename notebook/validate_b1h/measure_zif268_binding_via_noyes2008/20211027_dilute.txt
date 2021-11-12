@@ -1,0 +1,16 @@
+October 27, 2021
+
+$ sw dilute f141:45uM -c 90nM -v 2
+
+1. Dilute the following stock solution to 90 nM [1]:
+
+   Name  Stock Vol  Diluent Vol
+   ────────────────────────────
+   f141    2.00 µL    998.00 µL
+
+Note:
+[1] Concentrations:
+
+    Name       MW        Stock Conc  Target Conc
+    ────────────────────────────────────────────
+    f141  15328.8  45 uM = 45000 nM        90 nM

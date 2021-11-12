@@ -1,0 +1,109 @@
+November 12, 2021
+
+$ sw validate_puro
+
+ 1. Wipe down your bench and anything you'll touch 
+    (pipets, racks, pens, etc.) with RNaseZap.
+
+ 2. In the following steps, setup these conditions:
+
+    PURExpress:          +  +  +
+    mRNA+linker (f146):  +  −  −
+    mRNA (f145):         −  +  −
+
+ 3. Setup 2 PURExpress (NEB E6800) reactions [1]:
+
+    Reagent                    Stock    Volume     2.2x
+    ───────────────────────────────────────────────────
+    solution A                         4.00 µL  8.80 µL
+    solution B                         3.00 µL  6.60 µL
+    RNase inhibitor, murine  40 U/µL   0.20 µL  0.44 µL
+    FluoroTect GreenLys                0.50 µL  1.10 µL
+    f146,f145                2500 nM   2.30 µL
+    ───────────────────────────────────────────────────
+                                      10.00 µL  7.70 µL/rxn
+
+    - Thaw all components on ice.
+    - Mix A well; certain components may precipitate
+      during storage.
+    - Mix B gently; do not vortex.
+    - Add A before B.
+
+ 4. Incubate at 37°C for 90 min.
+
+ 5. Incubate on ice for 10 min.
+
+ 6. Add 3.15 µL of the following salt solution to
+    each reaction:
+
+    - 3 µL 2M MgCl₂
+    - 20 µL 3M KCl
+
+ 7. Incubate as follows:
+
+    - RT for 10 min
+    - −20°C overnight
+
+ 8. Desalt using Zeba 75 µL spin columns [2]:
+    
+    - Remove column's bottom enclosure and loosen 
+      (but don't remove) cap.
+    - Place column in clean microcentrifuge tube.
+    - Spin 1000g, 1 min.
+    - Discard flow-through.
+    
+    - Repeat 3x:
+      - Add 50 µL water.
+      - Spin 1000g, 1 min [3].
+      - Discard flow-through.
+    
+    - Blot bottom of column to remove excess 
+      liquid.
+    - Place column in new collection tube.
+    - Apply 2-12 µL sample to the resin bed [4].
+    - Apply 3 µL water or buffer to the resin bed 
+      after the sample has absorbed.
+    - Spin 1000g, 2 min to collect desalted sample.
+
+ 9. Prepare 3 samples for SDS PAGE:
+
+    Reagent                 Stock    Volume      4.5x
+    ─────────────────────────────────────────────────
+    water                           1.50 µL   6.75 µL
+    Bolt LDS sample buffer     4x   2.50 µL  11.25 µL
+    Bolt reducing agent       10x   1.00 µL   4.50 µL
+    sample                          5.00 µL
+    ─────────────────────────────────────────────────
+                                   10.00 µL   5.00 µL/rxn
+
+    - Incubate at 70°C for 10 min.
+
+10. Run a gel:
+
+    gel: 4–12% Bolt Bis-Tris SDS PAGE
+    buffer: Bolt MES SDS running buffer
+    ladder: 5 µL PageRuler unstained protein ladder
+    samples: 10 µL/lane
+    run: 165V for 42 min
+
+11. Image with a laser scanner:
+
+    laser:    488 nm
+    filter:  518BP22
+
+Notes:
+[1] https://tinyurl.com/dxapyo69
+
+[2] https://tinyurl.com/4ud2p29e
+
+[3] After each spin, the resin should appear white 
+    and free of liquid. If liquid is present, make 
+    sure you are using the correct centrifugation 
+    speed and time. Incomplete centrifugation may 
+    result in poor sample recovery or sample 
+    dilution.
+
+[4] In general, reducing the sample volume added 
+    to the column increases small molecule removal,
+    and increasing sample volume maximizes protein 
+    recovery.

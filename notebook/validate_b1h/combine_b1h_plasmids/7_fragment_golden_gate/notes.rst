@@ -1,6 +1,6 @@
-***************
-Via refactoring
-***************
+**********************
+7-fragment Golden Gate
+**********************
 
 My first approach to make a combined plasmid will be to aggressively eliminate 
 any sequences that seem unnecessary.  This should leave me with the smallest 

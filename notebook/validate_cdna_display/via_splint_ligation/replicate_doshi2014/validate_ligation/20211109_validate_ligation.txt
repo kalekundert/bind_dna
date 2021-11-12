@@ -1,0 +1,171 @@
+November 9, 2021
+
+$ sw validate_ligation
+
+ 1. Wipe down your bench and anything you'll touch 
+    (pipets, racks, pens, etc.) with RNaseZap.
+
+ 2. In the following steps, setup these conditions:
+
+    mRNA:          +  −  −  +  +  +  +
+    linker:        −  +  −  +  +  +  +
+    splint:        −  −  +  +  +  +  +
+    ligation:      −  −  −  −  +  +  +
+    digestion:     −  −  −  −  −  +  +
+    purification:  −  −  −  −  −  −  +
+
+ 3. Prepare a 500 nM mRNA-only control:
+
+    - 4.75 µL nuclease-free water
+    - 0.25 µL 10 µM f145
+
+ 4. Prepare a 2 µM linker-only control:
+
+    - 4.90 µL nuclease-free water
+    - 0.10 µL 100 µM o278
+
+ 5. Prepare a 2 µM splint-only control:
+
+    - 4.90 µL nuclease-free water
+    - 0.10 µL 100 µM o277
+
+ 6. Setup 1 annealing reaction [1]:
+
+    Reagent                Stock    Volume
+    ──────────────────────────────────────
+    nuclease-free water           44.76 µL
+    T4 RNA ligase buffer     10x   7.20 µL
+    f145 (mRNA)            10 µM   4.20 µL
+    o277 (splint)         100 µM   1.92 µL
+    o278 (puro)           100 µM   1.92 µL
+    ──────────────────────────────────────
+                                  60.00 µL
+
+ 7. Incubate as follows:
+
+    - 82°C for 2 min
+    - Cool to 25°C over 5 min
+
+ 8. Remove a 5 µL −ligase aliquot.  Store at −20°C.
+
+ 9. Add the following to the reaction:
+
+    - 6.6 µL 10 mM ATP
+    - 1.1 µL 40 U/µL RNase inhibitor (murine)
+    - 3.3 µL 10 U/µL T4 RNA ligase I (NEB M0204)
+
+10. Incubate at room temperature overnight.
+
+11. Remove a 5 µL −digestion aliquot.  Store at
+    −20°C.
+
+12. Setup 1 digestion reaction:
+
+    Reagent                Stock     Volume
+    ───────────────────────────────────────
+    nuclease-free water           151.00 µL
+    λ exonuclease buffer     10x   24.00 µL
+    λ exonuclease         5 U/µL    5.00 µL
+    ligation reaction              60.00 µL
+    ───────────────────────────────────────
+                                  240.00 µL
+
+13. Incubate at 37°C for 45 min.
+
+14. Denature the exonuclease:
+
+    - Add 60 µL 1M tris-HCl, pH 7.5
+    - Incubate at 65°C for 5 min.
+
+15. Remove a 10 µL −purification aliquot.  Store at
+    −20°C.
+
+16. Prepare 100 µL 10x lysis/binding buffer (−tris):
+
+    - 20.5 µL water
+    - 50 µL 10M LiCl
+    - 25 µL 20% (w/v) LDS
+    - 2 µL 500 mM EDTA
+    - 2.5 µL 1 M DTT
+
+17. Purify using magnetic oligo-dT(25 beads) [2]:
+
+    - Equilibrate 70 µL beads in 200 µL lysis/binding
+      buffer.
+    - Add 33 µL 10x lysis/binding buffer (−tris) to
+      the digestion reaction.
+    - Remove buffer from beads and immediately add
+      digestion reaction.
+    - Agitate at room temperature for 10 min.
+    - Discard supernatant.
+
+    - Repeat 2x:
+      - Add 350 µL wash buffer 1
+      - Agitate at room temperature for 1 min.
+      - Discard supernatant.
+
+    - Repeat 2x:
+      - Add 350 µL wash buffer 2
+      - Agitate at room temperature for 1 min.
+      - Discard supernatant.
+
+    - Add 350 µL low salt buffer
+    - Agitate at room temperature for 1 min.
+    - Discard supernatant.
+
+    - Repeat 2x:
+      - Add 30 µL nuclease-free water.
+      - Vortex gently to resuspend beads.
+      - Agitate at 50°C for 2 min.
+      - Recover supernatant.
+
+18. Concentrate the sample(s) to 6.5 µL by
+    lyophilization.
+
+19. Prepare 7 samples for TBE/urea PAGE:
+
+    Reagent               Stock    Volume     10.5x
+    ───────────────────────────────────────────────
+    nuclease free water           1.80 µL  18.90 µL
+    FESV                     2x   5.00 µL  52.50 µL
+    sample               500 nM   3.20 µL
+    ───────────────────────────────────────────────
+                                 10.00 µL   6.80 µL/rxn
+
+    - Incubate at 70°C for 3 min.
+
+20. Run a gel:
+
+    gel: 6% TBE/urea PAGE
+    buffer: 1x TBE
+    ladder: 1 µL low range ssRNA ladder (NEB N0364S)
+    samples: 10 µL/lane
+    run: 180V for 40 min
+
+21. Stain gel with GelGreen [3-5]:
+
+    - Keep the stain protected from light.
+
+    - Submerge gel in ≈30 mL 3x GelGreen, 100 mM
+      NaCl.
+    - Shake gently for 30m.
+
+22. Image with a laser scanner:
+
+    laser:    488 nm
+    filter:  518BP22
+
+Notes:
+[1] [Doshi2014] DOI:10.1038/srep06760
+
+[2] https://tinyurl.com/3mmtjk5h
+
+[3] https://tinyurl.com/etxhfxws
+
+[4] Including 100 mM NaCl in the staining solution
+    enhances sensitivity, but may promote dye
+    precipitation if the gel stain is reused.
+
+[5] Staining solution can be reused at least 2-3x.
+    Store staining solution at room temperature
+    protected from light.

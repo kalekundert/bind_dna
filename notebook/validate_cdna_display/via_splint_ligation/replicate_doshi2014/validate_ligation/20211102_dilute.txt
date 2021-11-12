@@ -1,0 +1,16 @@
+November 2, 2021
+
+$ sw dilute f145 -C 1705ng/uL -v5
+
+1. Dilute the following stock solution to 10 µM [1]:
+
+   Name  Stock Vol  Diluent Vol
+   ────────────────────────────
+   f145    5.00 µL      0.95 µL
+
+Note:
+[1] Concentrations:
+
+    Name        MW               Stock Conc  Target Conc
+    ────────────────────────────────────────────────────
+    f145  143365.2  1705 ng/uL = 11.8927 µM        10 µM
