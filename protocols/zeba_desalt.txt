@@ -1,0 +1,35 @@
+1. Desalt using Zeba 75 µL spin columns [1]:
+
+   - Remove column's bottom enclosure and loosen 
+     (but don't remove) cap.
+   - Place column in clean microcentrifuge tube.
+   - Spin 1000g, 1 min.
+   - Discard flow-through.
+
+   - Repeat 3x:
+     - Add 50 µL water.
+     - Spin 1000g, 1 min [2].
+     - Discard flow-through.
+
+   - Blot bottom of column to remove excess 
+     liquid.
+   - Place column in new collection tube.
+   - Apply 2-12 µL sample to the resin bed [3].
+   - Apply 3 µL water or buffer to the resin bed 
+     after the sample has absorbed.
+   - Spin 1000g, 2 min to collect desalted sample.
+
+Notes:
+[1] https://tinyurl.com/4ud2p29e
+
+[2] After each spin, the resin should appear white 
+    and free of liquid. If liquid is present, make 
+    sure you are using the correct centrifugation 
+    speed and time. Incomplete centrifugation may 
+    result in poor sample recovery or sample 
+    dilution.
+
+[3] In general, reducing the sample volume added 
+    to the column increases small molecule removal,
+    and increasing sample volume maximizes protein 
+    recovery.
