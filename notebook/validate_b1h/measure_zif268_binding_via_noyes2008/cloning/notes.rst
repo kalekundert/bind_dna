@@ -1,0 +1,79 @@
+*******
+Cloning
+*******
+
+2021/07/15:
+
+.. protocol:: 20210715_make.txt
+
+No colonies.
+
+2021/07/16:
+
+.. protocol:: 20210716_debug_digest.pdf 20210716_debug_digest.txt
+
+.. figure:: 20210716_check_ecori_noti.svg
+
+Observations:
+
+- Both enzymes appear to have full activity.
+
+- The backbone I used for the ligation cloning reaction yesterday seems to be 
+  fully linearized.  This makes me think that the ligation was the problem.
+
+2021/07/16:
+
+.. protocol:: 20210716_debug_ligase.pdf 20210716_debug_ligase.txt
+
+.. figure:: 20210716_debug_ligase.svg
+
+Observations:
+
+- I tried to reuse an E-gel, and this is what I get.  It's not really clear to 
+  me if the ligase is working well or not.  I'm going to repeat this experiment 
+  more rigorously here: :expt:`124`
+
+- Also, this wasn't a great experiment because the fragments didn't have to 
+  reassemble into the original product.
+
+2021/07/19:
+
+I realized that I forgot to use PNK the first time I tried this reaction.  PNK 
+is important, because the annealed oligos aren't phosphorylated.
+
+.. protocol:: 20210719_make_p168.pdf 20210719_make.txt
+
+Observation:
+
+- I got colonies for the reaction with the intended amount of insert, but not 
+  for the reaction with an accidental ≈20x excess of insert.  I'm a little 
+  surprised this made a difference.  Maybe the problem is that not all of the 
+  inserts were phosphorylated in the latter reaction.
+
+2021/09/03:
+
+I'm having trouble cloning p167 and p168, so I want to check if f131 and f132 
+are clean.
+
+.. protocol:: 20210903_make.txt
+
+.. figure:: 20210903_check_f131_f132.svg
+
+2021/09/08:
+
+I tried to gel purify f131 and f132, but failed because the sample floated out 
+of the well.  I think I accidentally "eluted" in PE.  That said, the Nanodrop 
+concentration looked reasonable; not sure how to explain that.
+
+I also did a :math:`T_A` optimization:
+
+.. protocol:: 20210908_pcr.txt
+
+.. figure:: 20210908_optimize_ta_f131.svg
+
+- My  scripts are miscalculating :math:`T_A`...  Both primers in this reaction 
+  (o248, o249) have :math:`T_M = \pu{63°C}`, but the protocol called for 
+  :math:`T_A = \pu{60°C}`.  I was a little skeptical of the :math:`T_A = 
+  \pu{66°C}` result from this experiment, but knowing that the recommended 
+  :math:`T_A` is actually pretty close to that is reassuring.
+

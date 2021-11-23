@@ -1,5 +1,5 @@
 *****************
-4 fragment Gibson
+4-fragment Gibson
 *****************
 
 2021/10/29:

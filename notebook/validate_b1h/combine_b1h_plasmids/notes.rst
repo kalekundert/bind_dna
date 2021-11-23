@@ -16,6 +16,14 @@ seriously pursue this.  Frankly, though, it seemed complicated and noisy.
 The other way to do this is to clone everything into a single plasmid.  This is 
 the approach that I want to start exploring here.
 
+.. toctree::
+
+   7_fragment_golden_gate/notes
+   4_fragment_golden_gate/notes
+   2_fragment_golden_gate/notes
+   4_fragment_gibson/notes
+   2_fragment_gibson/notes
+
 Considerations
 ==============
 
@@ -351,5 +359,28 @@ PCR junctions:
 
       - Zif-rpoZ and ori terminator must be present.
 
+Target site cloning
+-------------------
+2021/11/17:
 
+- With the two-plasmid system from [Noyes2008]_, I cloned new target sites by 
+  (i) digesting the plasmid with EcoRI and NotI, (ii) annealing target site 
+  oligos with matching sticky ends, (iii) ligating.  
+
+- I didn't realize that:
+  
+  - The AmpR cassette contains an EcoRI site.
+
+  - The Zif268-rpoZ fusion also contains a NotI site.
+    
+  So I can't use the same approach as before.
+
+- I adopted the restriction digest strategy because inverse PCR seemed unlikely 
+  to work: the 17 bp 5' of the 2TGG site are 94% GC.  But I never actually 
+  tried it...
+
+- I can use BsrGI-HF instead of NotI: it's a bit further away, so my annealed 
+  oligos will have to be 33 nt instead of 21 nt, but it avoids the need to 
+  change the Zif268-rpoZ coding sequence.  I'll still need to cure the plasmid 
+  of the EcoRI site, though.
 

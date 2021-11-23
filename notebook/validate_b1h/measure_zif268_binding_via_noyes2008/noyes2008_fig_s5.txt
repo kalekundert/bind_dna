@@ -1,0 +1,87 @@
+- Transform the following plasmids into the 
+  selection strain:
+
+  - Mix on ice:
+    - 80 µL selection strain
+    - 100 ng pB1H2ω2-Zif268
+    - 50 ng reporter pH3U3 plasmid containing one 
+      of four different Zif268 finger 1 binding 
+      sites (GCG, GCA, GAG, or GGG)
+
+  - Electroporate.
+  - Add 1 mL SOC.
+  - Incubate at 37°C for 1h.
+
+- Plate cells on rich media plates (2xYT, 25 µg/mL 
+  Kan, 100 µg/mL Carb).
+
+- Incubate at 37°C overnight.
+
+- Inoculate 5 mL rich media (2xYT +Kan +Carb) with 
+  a single colony for each strain.
+
+- Incubate at 37 overnight.
+
+- Inoculate 5 mL rich media (2xYT +Kan +Carb) with 
+  50 µL saturated overnight culture.
+
+- Incubate at 37°C with shaking until OD600 
+  reaches 0.2-0.4.
+
+- Acclimate cells to NM media:
+  - Spin at 3000 rpm for 15 minutes.
+  - Resuspend in 5 mL NM media supplemented with 
+    200 µM uracil [2].
+  - Incubate at 37°C for 1h with rotating.
+
+- Wash cells 4x:
+  - Spin at 3000 rpm for 15 minutes.
+  - Resuspend in 5 mL (1 mL on last iteration) NM 
+    media supplemented with 200 µM uracil.
+
+- Plate a 10x serial dilution of 20 µL of the 
+  washed cells on rich media (2xYT, 25 µg/mL Kan, 
+  100 µg/mL Carb).  
+
+- Incubate the plates at 37°C overnight.  
+  Meanwhile, store the remaining 980 µL of washed 
+  cells at 4°C.
+
+- Dilute a fraction of the remaining cultures to 
+  ≈500 cells per 750 µL [3].
+
+- Plate 750 µL of each culture on selective plates 
+  in triplicate.
+
+- Wrap plates in parafilm.
+
+- Incubate at 37°C for 36-48h.
+
+- Count colonies.
+
+- Resuspend the colonies on each plate in 5 mL 
+  2xYT. Pool resuspensions for triplicate plates.
+
+- Spin at 3000 rpm for 15 min.
+
+- Resuspend pellets in 100 mL 2xYT.
+
+- Measure OD600 in triplicate.
+
+Notes:
+
+[1] [Noyes2008]
+    
+    Protocol: Supplementary Methods: "Zif268 
+    activity on mutant finger 1 binding sites"
+
+    Expected results: Supplementary figure 5
+
+[2] For screens, it seems that the wash media does 
+    not have uracil.
+
+[3] [Noyes2008] does not make it clear what the 
+    cells should be diluted into.  I assume that 
+    they're diluted into the same media they are 
+    already in.  Importantly, this media contains 
+    200 µL uracil.

@@ -1,0 +1,18 @@
+1. Grow an overnight culture of a freshly- 
+   transformed s5 colony in LB+Carb+Kan.
+
+2. Inoculate 4 day cultures by diluting the 
+   following volumes of overnight culture into
+   3 mL NM+His+Ura+Carb+Kan:
+
+   - 10 µL
+   - 30 µL
+   - 90 µL
+   - 270 µL
+
+3. Incubate day cultures at 37°C with shaking at 
+   225 rpm.
+
+4. Measure the OD600 of each culture every hour.
+
+

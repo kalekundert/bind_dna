@@ -29,7 +29,9 @@ References
 .. [Doerr2019] :doi:`10.1088/1478-3975/aaf33d`
 .. [Doshi2014] :doi:`10.1038/srep06760`
 .. [Durfee2008] :doi:`10.1128/JB.01695-07`
+.. [ElOmari2006] :doi:`10.1074/jbc.M509658200`
 .. [ElrodErickson1998] :doi:`10.1016/S0969-2126(98)00047-1`
+.. [England1977] :doi:`10.1073/pnas.74.11.4839`
 .. [Farrell2010] :doi:`10.1016/B978-0-12-374727-3.00007-3`
 .. [Filonov2015] :doi:`10.1016/j.chembiol.2015.04.018`
 .. [Fischer1979] :doi:`10.1111/j.1432-1033.1979.tb12921.x`
@@ -52,6 +54,7 @@ References
 .. [Iverson2016] :doi:`10.1021/acssynbio.5b00124`
 .. [Joung2000] :doi:`10.1073/pnas.110149297`
 .. [Jung2019] :doi:`10.1002/biot.201800645`
+.. [Kannan2007] :doi:`10.1529/biophysj.107.108019`
 .. [Keefe2001] :doi:`10.1002/0471142727.mb2405s53`
 .. [Kimple2013] :doi:`10.1002/0471140864.ps0909s73`
 .. [Kitamura2002] :doi:`10.1093/protein/15.10.843`
@@ -82,6 +85,7 @@ References
 .. [Mochizuki2013] :doi:`10.1186/1480-9222-15-7`
 .. [Murphy2004] :doi:`10.1016/S0006-3495(04)74308-8`
 .. [Nagumo2016] :doi:`10.1093/jb/mvv131`
+.. [Nakano2002] :doi:`10.1021/bi026479k`
 .. [Naimudden2011] :doi:`10.1186/1756-6606-4-2`
 .. [Naimudden2016] :doi:`10.1021/acscombsci.5b00139`
 .. [Nakata2012] :doi:`10.1002/anie.201108199`
@@ -116,12 +120,15 @@ References
 .. [Subramanian2018] :doi:`10.1093/synbio/ysx008`
 .. [Tice1991] Patent: `US5064519A <https://patents.google.com/patent/US5064519A/en>`_
 .. [Thyme2014] :doi:`10.1007/978-1-62703-968-0_17`
+.. [VanDongen1997] :doi:`10.1093/nar/25.8.1537`
+.. [Vallone1999] :doi:`10.1002/(SICI)1097-0282(19991005)50:4<425::AID-BIP8>3.0.CO;2-B`
 .. [VegaRocha2007] :doi:`10.1016/j.jmb.2007.01.002`
 .. [Volk2018] :doi:`10.1007/s00348-018-2527-y`
 .. [Vorackova2011] :doi:`10.1016/j.pep.2011.04.022`
 .. [Walder1988] :doi:`10.1073/pnas.85.14.5011`
 .. [Waldo1999] :doi:`10.1038/10904`
 .. [Walker2003] :doi:`10.1093/nar/gng082`
+.. [Wang2006] :doi:`10.1261/rna.271706`
 .. [Wang2012] :doi:`10.1007/978-1-61779-379-0_6`
 .. [Wang2014] :doi:`10.5620/eht.2014.29.e2014007`
 .. [Wang2017] :doi:`10.1021/acs.analchem.7b02899`

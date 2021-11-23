@@ -11,17 +11,17 @@ $ sw validate_puro
     mRNA+linker (f146):  +  −  −
     mRNA (f145):         −  +  −
 
- 3. Setup 2 PURExpress (NEB E6800) reactions [1]:
+ 3. Setup 3 PURExpress (NEB E6800) reactions [1]:
 
-    Reagent                    Stock    Volume     2.2x
-    ───────────────────────────────────────────────────
-    solution A                         4.00 µL  8.80 µL
-    solution B                         3.00 µL  6.60 µL
-    RNase inhibitor, murine  40 U/µL   0.20 µL  0.44 µL
-    FluoroTect GreenLys                0.50 µL  1.10 µL
-    f146,f145                2500 nM   2.30 µL
-    ───────────────────────────────────────────────────
-                                      10.00 µL  7.70 µL/rxn
+    Reagent                    Stock    Volume      3.3x
+    ────────────────────────────────────────────────────
+    solution A                         4.00 µL  13.20 µL
+    solution B                         3.00 µL   9.90 µL
+    RNase inhibitor, murine  40 U/µL   0.20 µL   0.66 µL
+    FluoroTect GreenLys                0.50 µL   1.65 µL
+    f146,f145,Ø              2500 nM   2.30 µL
+    ────────────────────────────────────────────────────
+                                      10.00 µL   7.70 µL/rxn
 
     - Thaw all components on ice.
     - Mix A well; certain components may precipitate

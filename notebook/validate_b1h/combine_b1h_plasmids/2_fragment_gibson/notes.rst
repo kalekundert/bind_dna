@@ -1,8 +1,8 @@
 *****************
-2 fragment Gibson
+2-fragment Gibson
 *****************
 
-.. protocol:: 20211105_check_rpoZ_zif268_insert.txt 
+.. protocol:: 20211105_check_rpoZ_zif268_insert.pdf 20211105_check_rpoZ_zif268_insert.txt 
 
 .. figure:: 20211105_check_p184_p189.svg
 
@@ -15,10 +15,16 @@
 - p186/p189 had the fewest colonies, but almost every one had the expected 
   insert.
 
-Plan:
+2021/11/17:
 
-- I'll pick colonies for every plasmid except p184.  I want to sequence 
-  p185,p187,p188 to see what's going on.  I can send p186/p189 directly for 
-  plasmid sequencing.  In fact, I might just send them all for plasmid 
-  sequencing to just know what's going on.  It could be hard to interpret the 
-  Sanger results for p185/p187/p188.
+I sent 1 plasmid from each reaction for complete sequencing:
+
+- All 5 assemblies were correct, even though p185, p187, and p188 all had the 
+  wrong-length amplicon.
+
+- The specific p185 colony I picked has a point mutation near the TGG target 
+  site.  This mutation eliminates the NotI site that I'd use to replace the 
+  target site (although the Zif268-rpoZ cassette also introduces a NotI site 
+  I'd need to eliminate).
+
+

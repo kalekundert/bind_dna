@@ -16,7 +16,7 @@ sw cond validate_puro.xlsx |
 # IVTT volume:
 # - 12 µL is max that can be loaded on desalting column.
 # - I'll go with 10 µL: round number close to max, should se something.
-sw ivtt f146 f145 -p purex/doshi2014 |
+sw ivtt f146 f145 Ø -p purex/doshi2014 |
 
 sw step "Incubate on ice for 10 min." |
 

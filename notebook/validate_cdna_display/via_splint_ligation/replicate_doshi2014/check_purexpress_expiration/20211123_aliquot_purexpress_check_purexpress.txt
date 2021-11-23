@@ -1,0 +1,67 @@
+November 23, 2021
+
+$ sw aliquot_purexpress
+$ sw check_purexpress
+
+1. Make 2.42x 10 µL reaction aliquots of PURExpress 
+   (NEB E6800) [1]:
+   
+   Solution A: 9.68 µL
+   Solution B: 7.26 µL
+
+2. Setup 2 PURExpress (NEB E6800) reactions [1]:
+
+   Reagent                    Stock    Volume     2.5x
+   ───────────────────────────────────────────────────
+   water                              1.50 µL  3.75 µL
+   solution A                         4.00 µL
+   solution B                         3.00 µL
+   RNase inhibitor, murine  40 U/µL   0.20 µL  0.50 µL
+   FluoroTect GreenLys                0.50 µL  1.25 µL
+   DHFR                       75 nM   0.80 µL  2.00 µL
+   ───────────────────────────────────────────────────
+                                     10.00 µL  3.00 µL/rxn
+
+   - Setup the above reaction with both new and old
+     PURExpress.
+   - Thaw all components on ice.
+   - Mix A well; certain components may precipitate
+     during storage.
+   - Mix B gently; do not vortex.
+   - Add A before B.
+
+3. Incubate at 37°C for 2h.
+
+4. Add 1 µL RNase cocktail (Invitrogen AM2286) to
+   each 10 µL IVTT reaction.
+
+5. Incubate at 37°C for 15 min.
+
+6. Prepare 2 samples for SDS PAGE:
+
+   Reagent                 Stock    Volume        3x
+   ─────────────────────────────────────────────────
+   water                           4.00 µL  12.00 µL
+   Bolt LDS sample buffer     4x   2.50 µL   7.50 µL
+   Bolt reducing agent       10x   1.00 µL   3.00 µL
+   sample                          2.50 µL
+   ─────────────────────────────────────────────────
+                                  10.00 µL   7.50 µL/rxn
+
+   - Incubate at 70°C for 10 min.
+
+7. Run a gel:
+
+   gel: 4–12% Bolt Bis-Tris SDS PAGE
+   buffer: Bolt MES SDS running buffer
+   ladder: 5 µL SeeBlue Plus2 (Invitrogen LC5925)
+   samples: 10 µL/lane
+   run: 165V for 42 min
+
+8. Image with a laser scanner:
+
+   laser:    488 nm
+   filter:  518BP22
+
+Note:
+[1] https://tinyurl.com/dxapyo69
