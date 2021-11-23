@@ -1,0 +1,9 @@
+- Make 2.42x 10 µL reaction aliquots of PURExpress 
+  (NEB E6800) [1]:
+
+  Solution A: 9.68 µL
+  Solution B: 7.26 µL
+
+Note:
+[1] https://tinyurl.com/dxapyo69
+
