@@ -152,14 +152,16 @@ class PlateAssay(Main):
         # - Once I'm testing my single plasmid, I should plate everything on Carb 
         #   plates, and then also plate the two-plasmid system on Carb+Kan plates.
         p += pl(
-                "Plate 5 µL of each dilution in triplicate on permissive/selective plates with the appropriate antibiotics.",
+                "Spot 5 µL of each dilution in triplicate on permissive/selective plates with the appropriate antibiotics.",
                 ul(
+                    "Reverse pipet to avoid splashing",
                     "Don't draw a grid on the plate directly.  It makes it hard to count colonies.  Instead, place a guide underneath the plate and spot based on that.",
                 )
         )
+        p += "Incubate at 37°C for 36h."
+        p += "Image using a white-light transilluminator."
 
         return p
-
 
 if __name__ == '__main__':
     PlateAssay.main()
