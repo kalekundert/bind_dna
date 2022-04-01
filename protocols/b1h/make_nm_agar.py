@@ -26,7 +26,7 @@ import docopt
 import stepwise
 
 from stepwise import pl, ul, table
-from stepwise_mol_bio import round_up_to_1_sig_fig
+from stepwise_mol_bio import Autoclave
 from fractions import Fraction
 
 args = docopt.docopt(__doc__)
@@ -61,6 +61,8 @@ def nm_agar_recipe(n_plates, n_conds):
             align='<<>>',
     )
 
+    autoclave = Autoclave(437*k)
+
     antibiotic_rows = []
     if 'kan' in antibiotics:
         antibiotic_rows += ['kanamycin', '50 mg/mL', '25 µg/mL, 0.5x', f'{250*k:.2f} µL'],
@@ -89,7 +91,7 @@ def nm_agar_recipe(n_plates, n_conds):
             pre_autoclave,
             ul(
                 f"Add {7.5*k:.2g} g agar",
-                "Autoclave at 121°C for 15 min.",
+                autoclave.step,
                 "Cool to ≈55°C [3].",
             ),
             post_autoclave,
