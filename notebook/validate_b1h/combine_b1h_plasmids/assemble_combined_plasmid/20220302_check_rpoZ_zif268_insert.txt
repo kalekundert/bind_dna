@@ -1,0 +1,49 @@
+March 2, 2022
+
+$ sw check_rpoZ_zif268_insert -r o266 '8*p184'
+
+1. Resuspend each colony in 20 µL EB.
+
+2. Prepare 10x primer mix [1]:
+
+   Reagent   Stock    Volume
+   ─────────────────────────
+   water             9.00 µL
+   o2       100 µM   0.50 µL
+   o266     100 µM   0.50 µL
+   ─────────────────────────
+                    10.00 µL
+
+3. Setup 8 PCR reactions [2,3]:
+
+   Reagent           Stock   Volume       10x
+   ──────────────────────────────────────────
+   water                    1.50 µL  15.00 µL
+   8×p184         20 pg/µL  0.50 µL   5.00 µL
+   primer mix          10x  0.50 µL   5.00 µL
+   Q5 master mix        2x  2.50 µL  25.00 µL
+   ──────────────────────────────────────────
+                            5.00 µL   5.00 µL/rxn
+
+   - Use any extra master mix as a negative control.
+
+4. Run the following thermocycler protocol:
+
+   - 98°C for 30s
+   - Repeat 35x:
+     - 98°C for 10s
+     - 61°C for 20s
+     - 72°C for 1m30
+   - 72°C for 2 min
+   - 4°C hold
+
+5. Run a 1% E-gel EX.
+
+Notes:
+[1] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol
+
+[2] https://tinyurl.com/y27ralt4
+
+[3] For diluting template DNA to 20 pg/µL:
+    Dilute 1 µL twice into 7*sqrt([DNA]) µL

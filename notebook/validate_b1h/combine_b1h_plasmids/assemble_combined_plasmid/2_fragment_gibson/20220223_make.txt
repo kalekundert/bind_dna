@@ -1,0 +1,38 @@
+February 23, 2022
+
+$ sw make p184
+
+1. Setup 1 Gibson assembly [1]:
+
+   Reagent               Stock   Volume
+   ────────────────────────────────────
+   Gibson master mix        2x  2.50 µL
+   f147               27 ng/uL  1.33 µL
+   f154               13 ng/uL  1.17 µL
+   ────────────────────────────────────
+                                5.00 µL
+
+2. Incubate at 50°C for 15 min.
+
+3. Label the product: p184
+
+4. Transform p184 into MACH1 [2]:
+
+   - Pre-warm 1 LB+Amp plate.
+   - Thaw 10 µL competent MACH1 cells on ice.
+   - Add 2 µL plasmid.
+   - Gently flick to mix
+
+   - Incubate at 42°C for 30s.
+   - Incubate on ice for 2 min.
+   - Add 90 µL SOC.
+
+   - Plate 100 µL cells.
+   - Incubate at 37°C for 16h.
+
+5. Miniprep.
+
+Notes:
+[1] https://tinyurl.com/ychbvkra
+
+[2] https://tinyurl.com/fwk2c36b

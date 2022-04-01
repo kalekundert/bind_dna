@@ -1,0 +1,23 @@
+February 23, 2022
+
+$ sw transform p168
+
+1. Transform p168 into MACH1 [1]:
+
+   - Pre-warm 1 LB+Kan plate.
+   - Thaw 10 µL competent MACH1 cells on ice.
+   - Add 2 µL plasmid.
+   - Gently flick to mix
+   - Incubate on ice for 30 min.
+
+   - Incubate at 42°C for 30s.
+   - Incubate on ice for 2 min.
+   - Add 90 µL SOC.
+   - Incubate at 37°C for 60 min with end-over-end
+     mixing.
+
+   - Plate 100 µL cells.
+   - Incubate at 37°C for 16h.
+
+Note:
+[1] https://tinyurl.com/fwk2c36b

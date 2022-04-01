@@ -148,5 +148,26 @@ first in the search engine.  lysQ has:
   - BODIPY: 262 Da
   - lysine: 146
 
+Ideal RBS
+=========
+The most important part of a bacterial RBS is the Shine-Dalgarno (SD) sequence.  
+This sequence binds to part of the 16S rRNA with the sequence ``ACCUCCUUA`` 
+[Shine1974]_.  A perfectly complementary SD sequence would therefore be 
+``TAAGGAGGT``, but most SD sequences only match some of these positions 
+(usually matching better in the middle than the edges).  Ideally, the SD 
+sequence would end 5 bp before the start codon, e.g.  ``TAAGGAGGTnnnnnATG``, 
+but other separations are tolerated.
+
+Terminators
+===========
+Here are the "recombination-resistant" terminators from [Chen2013]_, ranked in 
+order of measured strength:
+
+.. datatable:: chen2013_terminators.xlsx
+
+Note that "recombination-resistant" means no more than ≈20 bp of identity.  
+Some of the terminators are still identical at the start/end, which could cause 
+problems for cloning.
+
 __ https://www.promega.com/-/media/files/resources/protocols/technical-bulletins/0/fluorotect-greenlys-in-vitro-translation-labeling-system-protocol.pdf
 __ https://biocyc.org/ECOLI/NEW-IMAGE?type=LOCUS-POSITION&object=G6392&chromosome=COLI-K12&orgids=ECOLI&bp-range=780646/782584

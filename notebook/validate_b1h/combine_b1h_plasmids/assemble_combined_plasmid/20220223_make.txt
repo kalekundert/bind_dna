@@ -1,0 +1,91 @@
+February 23, 2022
+
+$ sw make p194 p195 p196
+
+1. Prepare 10x primer mix [1]:
+
+   Reagent   Stock    Volume
+   ─────────────────────────
+   water             9.00 µL
+   o304     100 µM   0.50 µL
+   o305     100 µM   0.50 µL
+   ─────────────────────────
+                    10.00 µL
+
+2. Setup 3 PCR reactions [2,3]:
+
+   Reagent            Stock   Volume        5x
+   ───────────────────────────────────────────
+   water                     1.50 µL   7.50 µL
+   p185,p187,p188  20 pg/µL  0.50 µL
+   primer mix           10x  0.50 µL   2.50 µL
+   Q5 master mix         2x  2.50 µL  12.50 µL
+   ───────────────────────────────────────────
+                             5.00 µL   4.50 µL/rxn
+
+   - Use any extra master mix as a negative control.
+
+3. Run the following thermocycler protocol:
+
+   - 98°C for 30s
+   - Repeat 35x:
+     - 98°C for 10s
+     - 59°C for 20s
+     - 72°C for 4 min
+   - 72°C for 2 min
+   - 4°C hold
+
+4. Setup 3 ligation reactions:
+
+   Reagent              Stock    Volume     ≈3.4x
+   ──────────────────────────────────────────────
+   water                        6.75 µL  23.29 µL
+   T4 ligase buffer       10x   1.00 µL   3.45 µL
+   T4 PNK             10 U/µL   0.25 µL   0.86 µL
+   T4 DNA ligase     400 U/µL   0.25 µL   0.86 µL
+   DpnI               20 U/µL   0.25 µL   0.86 µL
+   PCR product       50 ng/µL   1.50 µL
+   ──────────────────────────────────────────────
+                               10.00 µL   8.50 µL/rxn
+
+5. Incubate at room temperature for 1h.
+
+6. Label the products: p194, p195, p196
+
+7. Transform the following plasmids: p194, p195, p196
+   [4]
+
+   - Pre-warm 3 LB+Amp plates.
+   - For each transformation:
+
+     - Thaw 10 µL competent MACH1 cells on ice.
+     - Add 2 µL plasmid.
+     - Gently flick to mix
+
+     - Incubate at 42°C for 30s.
+     - Incubate on ice for 2 min.
+     - Add 90 µL SOC.
+
+     - Plate 100 µL cells.
+     - Incubate at 37°C for 16h.
+
+8. Sequence the following plasmids:
+
+   Plasmid  Primers
+   ────────────────
+   p194     o2
+   p195     o2
+   p196     o2
+
+9. Miniprep.
+
+Notes:
+[1] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol
+
+[2] https://tinyurl.com/y27ralt4
+
+[3] For diluting template DNA to 20 pg/µL:
+    Dilute 1 µL twice into 7*sqrt([DNA]) µL
+
+[4] https://tinyurl.com/fwk2c36b

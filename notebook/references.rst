@@ -4,6 +4,7 @@ References
 .. [Ando2010] :doi:`10.1073/pnas.1011354107`
 .. [Arai2001] :doi:`10.1093/protein/14.8.529`
 .. [Arai2020] :doi:`10.1007/978-1-4939-9853-1_3`
+.. [Auld2020] Auld et al. Microplate Selection and Recommended Practices in High-throughput Screening and Quantitative Biology. 2020.
 .. [Avis2012] :doi:`10.1007/978-1-62703-113-4_7`
 .. [Ashworth2006] :doi:`10.1038/nature04818`
 .. [Bertschinger2004] :doi:`10.1093/protein/gzh082`
@@ -15,6 +16,7 @@ References
 .. [Chen2013] :doi:`10.1038/nmeth.2515`
 .. [Chen2013b] :doi:`10.1016/j.addr.2012.09.039`
 .. [Choo1994] :doi:`10.1073/pnas.91.23.11163`
+.. [Clifton2018] :doi:`10.1186/s13036-018-0115-6`
 .. [Crinelli2002] :doi:`10.1093/nar/30.11.2435`
 .. [Compton1985] :doi:`10.1016/0003-2697(85)90190-3`
 .. [Congdon1993] :doi:`10.1006/abio.1993.1439`
@@ -31,6 +33,7 @@ References
 .. [Durfee2008] :doi:`10.1128/JB.01695-07`
 .. [ElOmari2006] :doi:`10.1074/jbc.M509658200`
 .. [ElrodErickson1998] :doi:`10.1016/S0969-2126(98)00047-1`
+.. [ElrodErickson1999] :doi:`10.1074/jbc.274.27.19281`
 .. [England1977] :doi:`10.1073/pnas.74.11.4839`
 .. [Farrell2010] :doi:`10.1016/B978-0-12-374727-3.00007-3`
 .. [Filonov2015] :doi:`10.1016/j.chembiol.2015.04.018`
@@ -52,6 +55,8 @@ References
 .. [Imburgio2000] :doi:`10.1021/bi000365w`
 .. [Inouye1985] :doi:`10.1093/nar/13.9.3101`
 .. [Iverson2016] :doi:`10.1021/acssynbio.5b00124`
+.. [Jamieson1994] :doi:`10.1021/bi00185a004`
+.. [Jamieson1996] :doi:`10.1073/pnas.93.23.12834`
 .. [Joung2000] :doi:`10.1073/pnas.110149297`
 .. [Jung2019] :doi:`10.1002/biot.201800645`
 .. [Kannan2007] :doi:`10.1529/biophysj.107.108019`
@@ -60,6 +65,7 @@ References
 .. [Kitamura2002] :doi:`10.1093/protein/15.10.843`
 .. [Knight2003] :doi:`10.1385/MB:23:1:19`
 .. [Kubo2020] :doi:`10.1007/978-1-4939-9853-1_4`
+.. [LaFleur2021] :doi:`10.1101/2021.09.01.458561v1`
 .. [Lam2011] :doi:`10.1093/nar/gkq1303`
 .. [Lee2008] :doi:`10.1529/biophysj.108.133025`
 .. [Lee2018] :doi:`10.1007/s00604-017-2610-8`
@@ -75,6 +81,7 @@ References
 .. [Man2001] :doi:`10.1093/nar/29.12.2471`
 .. [Masai1988] :doi:`10.1093/nar/16.14.6493`
 .. [Masai1987] :doi:`10.1073/pnas.84.14.4781`
+.. [Matos2010] :doi:`10.1007/s10930-010-9265-1`
 .. [Meng2005] :doi:`10.1038/nbt1120`
 .. [Meng2007] :doi:`10.1093/nar/gkm385`
 .. [Metzger1989] Metzger et al.  Characterization of the relA1 mutation and a comparison of relA1 with new relA null alleles in Escherichia coli. J. Biol.  Chem. 264:35:21146-52 (1989)
@@ -84,6 +91,7 @@ References
 .. [Mochizuki2011] :doi:`10.1021/co2000295`
 .. [Mochizuki2013] :doi:`10.1186/1480-9222-15-7`
 .. [Murphy2004] :doi:`10.1016/S0006-3495(04)74308-8`
+.. [Mutalik2013] :doi:`10.1038/nmeth.2404`
 .. [Nagumo2016] :doi:`10.1093/jb/mvv131`
 .. [Nakano2002] :doi:`10.1021/bi026479k`
 .. [Naimudden2011] :doi:`10.1186/1756-6606-4-2`
@@ -98,6 +106,7 @@ References
 .. [Odegrip2004] :doi:`10.1073/pnas.0400219101`
 .. [Olins1989] Olins and Ragwala. A novel sequence element derived from bacteriophage T7 mRNA acts as an enhancer of translation of the lacZ gene in Escherichia coli.  J. Biol. Chem. 264:29:16973-76 (1989).
 .. [Peters2011] :doi:`10.1016/j.jmb.2011.03.036`
+.. [Piatkevich2011] :doi:`10.1016/B978-0-12-374912-3.00017-1`
 .. [Povirk1990] Povirk LF & Steighner RJ. High ionic strength promotes selective 3'-phosphatase activity of T4 polynucleotide kinase. Biotechniques 9, 562 (1990).
 .. [Praszkier1999] Praszkier J and Pittard AJ.  Role of CIS in replication of an IncB plasmid.  J Bacteriol. 1999 May;181(9):2765-72.
 .. [Praszkier2000] :doi:`10.1128/JB.182.14.3972-3980.2000`
@@ -111,13 +120,15 @@ References
 .. [Rohs2010] :doi:`10.1146/annurev-biochem-060408-091030`
 .. [Roth2018] :doi:`10.1021/acs.nanolett.8b02093`
 .. [Salis2009] :doi:`10.1038/nbt.1568`
-.. [Seelig2011] :doi:`10.1038/nprot.2011.312`
-.. [Sera2002] :doi:`10.1021/bi020095c`
 .. [Schagger2006] :doi:`10.1038/nprot.2006.4`
 .. [Schurer2002] :doi:`10.1093/nar/gnf055`
+.. [Seelig2011] :doi:`10.1038/nprot.2011.312`
+.. [SegallShapiro2018] :doi:`10.1038/nbt.4111`
+.. [Sera2002] :doi:`10.1021/bi020095c`
 .. [Shimizu2001] :doi:`10.1038/90802`
 .. [Shine1974] :doi:`10.1073/pnas.71.4.1342`
 .. [Subramanian2018] :doi:`10.1093/synbio/ysx008`
+.. [Sugiura1993] :doi:`10.1128/jb.175.18.5993-6001.1993`
 .. [Tice1991] Patent: `US5064519A <https://patents.google.com/patent/US5064519A/en>`_
 .. [Thyme2014] :doi:`10.1007/978-1-62703-968-0_17`
 .. [VanDongen1997] :doi:`10.1093/nar/25.8.1537`
@@ -134,7 +145,10 @@ References
 .. [Wang2017] :doi:`10.1021/acs.analchem.7b02899`
 .. [Weber2011] :doi:`10.1371/journal.pone.0016765`
 .. [Wei1983] Wei CF, Alianell GA, Bencen GH, Gray Jr HB. Isolation and comparison of two molecular species of the BAL 31 nuclease from Alteromonas espejiana with distinct kinetic properties. J Biol Chem.  1983;258:13506--13512.
+.. [Wu1995] :doi:`10.1073/pnas.92.2.344`
 .. [Wu2018] :doi:`10.1016/j.talanta.2018.01.075`
+.. [Yang1995] :doi:`10.1016/0022-1759(95)00048-F`
+.. [Yang2016] :doi:`10.1016/j.ab.2016.06.024`
 .. [Yonezawa2003] :doi:`10.1093/nar/gng119`
 .. [Zelcbuch2013] :doi:`10.1093/nar/gkt151`
 .. [Zhao2017] :doi:`10.1016/j.bios.2016.11.032`

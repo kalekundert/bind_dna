@@ -11,6 +11,11 @@ non-target bait plasmids.
 
 .. protocol:: 20211019_make_nm_agar.txt 20211102_make_nm_media.txt 20211104_test_controls.pdf 20211104_test_controls.txt
 
+  Image analysis: I took the images using the Gel Doc EZ imager.  I opened the 
+  raw image files in GIMP and increased to contrast to about "90" (to make the 
+  colonies more visible).  I cropped everything outside of the plate in 
+  inkscape.
+
 .. figure:: 20211109_noyes2008_controls.svg
 
   s4: USE hisB- pyrF- rpoZ- target=TGG; s5: USE hisB- pyrF- rpoZ- target=AAA.  
@@ -85,7 +90,7 @@ Next steps:
 
 - Make exact same media as [Noyes2008]_.
 
-  - I cut a corner by use a −His −Ura amino acid mix.
+  - I cut a corner by using a −His −Ura amino acid mix.
   - The amino acid mix used by [Noyes2008]_ includes more amino acids.
   - I don't think this is really the problem, though.
 
@@ -98,3 +103,34 @@ Next steps:
 
   - What can go wrong?
 
+2022/03/02:
+
+.. protocol:: 20220302_test_controls.pdf 20220302_test_controls.txt
+
+.. figure:: 20220305_test_controls.svg
+
+  See above for information on strains and image processing.  Briefly, s4 has 
+  the TGG target while s5 has the AAA target.
+
+Observations:
+
+- Both controls worked as expected this time.  It seems that the lack of uracil 
+  in the permissive plate was the main issue previously (and probably it 
+  wouldn't have been an issue if I'd been using the same controls as 
+  [Noyes2008]_).  Note that the positive control (s4) is apparently unaffected 
+  by 10 mM 3-AT.  This is also consistent with [Noyes2008]_, IIRC.
+
+- The colonies were noticeably smaller in the selective condition, but this 
+  makes sense.
+
+- The selective plate has lots of little bubbles in it.  That's what all those 
+  black flecks in the image are.
+
+- The results were very consistent between the two times I did this experiment.  
+  That makes me feel really good about my approach of growing to a specific OD, 
+  diluting to a specific OD, then plating.  Seems very reproducible.
+
+Conclusion:
+
+- The B1H assay appears to work in my hands.  Now I just need to get it on one 
+  plasmid.

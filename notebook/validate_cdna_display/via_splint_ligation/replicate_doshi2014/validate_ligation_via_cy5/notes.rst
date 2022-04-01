@@ -22,7 +22,7 @@ Considerations
 
     /5Phos/CCCTTCACCTGATCCGCTGAAAAAAAAAAAAAAAAAA/iSp18//iSp18//iFluorT//iSp18/CC/3Puro/
 
-- The [Nagumo2015]_ linker::
+- The [Nagumo2016]_ linker::
 
     p(dCp)2-T(fluorescein)p-PEGp-(dCp)2-puromycin
 

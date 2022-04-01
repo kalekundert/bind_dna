@@ -3,7 +3,7 @@ Combine B1H plasmids
 ********************
 [Meng2005]_ uses separate plasmids for the protein "bait" and DNA target 
 "prey".  However, this approach doesn't work if both components are libraries, 
-because there;s no way to tell which protein went with which DNA target.  For 
+because there's no way to tell which protein went with which DNA target.  For 
 my library-vs-library assay, then, I will need to have the protein and the 
 target on the same plasmid.
 
@@ -14,15 +14,7 @@ idea in lab meeting about a year ago, so I should talk to them if I want to
 seriously pursue this.  Frankly, though, it seemed complicated and noisy.
 
 The other way to do this is to clone everything into a single plasmid.  This is 
-the approach that I want to start exploring here.
-
-.. toctree::
-
-   7_fragment_golden_gate/notes
-   4_fragment_golden_gate/notes
-   2_fragment_golden_gate/notes
-   4_fragment_gibson/notes
-   2_fragment_gibson/notes
+the approach that I want to explore here.
 
 Considerations
 ==============
@@ -92,6 +84,13 @@ It's convenient that the weakest promoter was the best for Zif268 fusions.
 Since I'll be expressing Zif268-rpoZ from a lower copy plasmid, it may be 
 necessary to use a stronger promoter.
 
+---
+
+I decided to look for alternative promoters to use, to tune the expression 
+level of the DNA-binding protein.  Unfortunately, I wasn't able to find any 
+promoter library papers that compare against any of the promoters used here, so 
+I don't really have a good point of reference.  
+
 Ribosome binding sites
 ----------------------
 The lpp-lacUV5 construct has a different 5' UTR than the lacUV5/lacUV5m 
@@ -130,6 +129,66 @@ It seems like I have room to dramatically increase expression of the rpoZ
 fusions by using a better RBS.  That's good, because moving the fusion to a 
 lower-copy plasmid will reduce expression, and this gives me another knob to 
 compensate for that.
+
+RBS insulation
+--------------
+Translation levels can be affected by the sequence of the gene of interest and 
+its interactions with the RBS [Mutalik2013]_.  At first I thought that this was 
+something I should be concerned about, since my ultimate goal is to compare 
+proteins with different sequences.  But this quote from [Mutalik2013]_ 
+(specifically the parenthetical comment) makes me less worried:
+
+  We then assembled a test panel of 14 chimeric reporter GOIs by fusing the 
+  first 36 nt (a length thought sufficient to encompass effects of ribosome 
+  footprint and mRNA secondary-structure formation on translation initiation) 
+  from the coding sequences of eight transcription factors or enzymes in-frame 
+  to the second codon of a gene encoding GFP or RFP.
+
+In other words, only the beginning of the gene has a strong likelihood to 
+interfere with the RBS.  In my case, it's most likely that that part of the 
+protein will be constant.
+
+I still might want to use the bicistronic insulated RBS sequences described by 
+[Mutalik2013]_; they just seem like a good idea in general.  But I don't think 
+it's necessary.
+
+I was a bit worried about maintaining IPTG-inducible expression with the 
+[Mutalik2013]_ BCD system.  But the authors confirm that their system is 
+compatible with such control:
+
+  We also tested the performance of one BCD with variable-strength promoters 
+  regulated by one of two popular transcription repressors (Supplementary Fig. 
+  27 and Supplementary Table 1). These results confirmed that BCDs can be used 
+  in conjunction with inducible promoters.
+
+- Interestingly, when they test LacI-regulated promoters, they put the operator 
+  sequence between the -35 and -10 promoter elements.  I'm more used to seeing 
+  the lac operator downstream of the promoter.
+
+I need to pick some sequences to try.  Obviously I want to span a range of 
+activities.  I'll keep IPTG-induction, though.
+
+- Promoters:
+
+  - LacIo_apFAB80: strongest
+  - LacIo_apFAB105: medium-low
+
+- BCDs:
+
+  - BCD2: strongest
+  - BCD14: medium
+  - BCD22: weakest
+
+  Is there a minimal set of BCDs they use in the paper?  Yes, Fig 3d.  But 
+  maybe those aren't supposed to go too low, since they want to see the effect 
+  of rare codons in that panel.  Yeah, none of these go too low, they probably 
+  aren't the best if I want to span the whole dynamic range.
+
+  - BCD2
+  - BCD6
+  - BCD12
+  - BCD19
+
 
 Gene insulation
 ---------------

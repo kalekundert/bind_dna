@@ -425,7 +425,7 @@ LR-P
     shouldn't be a substrate for lambda exonuclease or T4 RNA ligase, since it 
     isn't phosphorylated.
 
-  - DBCOTEG_: the DBCO is basically attached to iSp9_, and the DBCO moiety 
+  - 5DBCOTEG_: the DBCO is basically attached to iSp9_, and the DBCO moiety 
     itself has 9 heavy atoms leading up to the alkyne, so this effectively 
     includes an iSp18_ spacer.  The azide is also on a fairly long liker.
 

@@ -1,7 +1,19 @@
 #!/usr/bin/env python3
 
+"""\
+Usage:
+    test_controls.py [-P]
+
+Options:
+    -P --no-plates
+        Skip the plate-pouring steps.
+"""
+
+import docopt
 import stepwise
 from stepwise import pl, ul, table
+
+args = docopt.docopt(__doc__)
 
 # Reference:
 # - [Noyes2008]
@@ -39,7 +51,8 @@ p = stepwise.Protocol()
 #   the single plasmid is.  But I think it's reasonable to use 10 mM 3-AT to 
 #   just ask, "does these plasmids/strains mostly work".
 
-p += stepwise.load('make_nm_agar')
+if not args['--no-plates']:
+    p += stepwise.load('make_nm_agar')
 
 f = "[Noyes2008] uses 2xYT instead of LB.  I don't think this detail matters, although the cells may grow faster in richer media."
 p += pl(
@@ -64,7 +77,7 @@ p += pl(
         "Grow day cultures:",
         ul(
             "Inoculate 3 mL LB+Carb+Kan with 30 µL saturated overnight culture.",
-            "Incubate at 37°C with shaking until OD≈0.4",
+            "Incubate at 37°C with shaking until OD≈0.4 (5-6h)",
         ),
 )
 
@@ -98,6 +111,11 @@ p += stepwise.load('serial 90µL 0.1OD / 10 6 -m cells -d NM')
 # Antibiotics:
 # - Once I'm testing my single plasmid, I should plate everything on Carb 
 #   plates, and then also plate the two-plasmid system on Carb+Kan plates.
-p += "Plate 5 µL of each dilution in triplicate on each plate."
+p += pl(
+        "Plate 5 µL of each dilution in triplicate on each plate.",
+        ul(
+            "Don't draw a grid on the plate directly.  It makes it hard to count colonies.  Instead, place a guide underneath the plate and spot based on that.",
+        )
+)
 
 p.print()

@@ -47,4 +47,4 @@ sw serial 3 '10000 nM' to 100 7 -0 -m f145 -d 'nuclease-free water' |
 sw ivtt f144 f145 -p purex/lys -n 14 -v 5 -V 1.15 -r |
 sw fluorotect_rnase_digest -V 5 |
 
-sw gel bolt/ivtt/dna 14
+sw gel sds/ivtt/nb 14

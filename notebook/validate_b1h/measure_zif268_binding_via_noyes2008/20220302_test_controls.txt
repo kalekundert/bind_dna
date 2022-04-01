@@ -1,0 +1,46 @@
+March 2, 2022
+
+$ sw test_controls -P
+
+1. Grow overnight cultures of s4 and s5 in 3 mL
+   LB+Carb+Kan [1].
+
+   - Use fresh colonies (i.e. either transformed or
+     restreaked within 1 week).
+   - Incubate at 37°C overnight with shaking.
+
+2. Grow day cultures:
+
+   - Inoculate 3 mL LB+Carb+Kan with 30 µL saturated
+     overnight culture.
+   - Incubate at 37°C with shaking until OD≈0.4
+
+3. Wash cells with minimal media:
+
+   - Repeat 4x:
+     - Spin 3500g, 3 min, 4°C.
+     - Resuspend in 1 mL NM.
+   - Dilute to OD=0.1
+
+4. Perform a serial dilution [2]:
+
+   - Put 100.00 μL 0.1 OD cells in a tube.
+   - Put 90.00 μL NM in 5 adjacent tubes.
+   - Transfer 10.00 μL between each tube to make 6
+     10-fold dilutions.
+
+5. Plate 5 µL of each dilution in triplicate on each
+   plate.
+
+Notes:
+[1] [Noyes2008] uses 2xYT instead of LB.  I don't
+    think this detail matters, although the cells may
+    grow faster in richer media.
+
+[2] The final concentrations will be:
+    1  1.000000e-01 OD
+    2  1.000000e-02 OD
+    3  1.000000e-03 OD
+    4  1.000000e-04 OD
+    5  1.000000e-05 OD
+    6  1.000000e-06 OD

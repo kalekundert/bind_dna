@@ -1,0 +1,15 @@
+[well]
+# TGG
+A1.strain = 's4'
+A2.strain = 's12'
+A3.strain = 's13'
+A4.strain = 's14'
+A5.strain = 's16'
+
+# AAA
+B1.strain = 's5'
+B2.strain = 's18'
+B3.strain = 's19'
+B4.strain = 's20'
+B5.strain = 's22'
+

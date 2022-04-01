@@ -1,0 +1,127 @@
+February 23, 2022
+
+$ sw make p190 p191 p192
+
+ 1. Setup 1 restriction digestion [1,2]:
+
+    Reagent              Stock    Volume
+    ────────────────────────────────────
+    p168              75 ng/µL  13.33 µL
+    rCutSmart Buffer       10x   1.59 µL
+    EcoRI-HF           20 U/µL   0.50 µL
+    NotI-HF            20 U/µL   0.50 µL
+    ────────────────────────────────────
+                                15.93 µL
+
+ 2. Incubate at the following temperatures [3]:
+
+    - 37°C for 5–15 min
+    - 65°C for 20 min
+
+ 3. Label the product: f142
+
+ 4. Purify using Qiagen MinElute PCR purification kit
+    (28004) [4,5]:
+
+    - Perform all spin steps at 17900g.
+    - Add 5 volumes PB to the crude DNA.
+    - If not yellow: Add 0.2 volumes 3M sodium
+      acetate, pH=5.0.
+    - Load on a MinElute column.
+    - Spin 1m; discard flow-through.
+
+    - Add 750 µL PE.
+    - Spin 1m; discard flow-through.
+    - Spin 1m; discard flow-through.
+    - Add 10 µL EB.
+    - Wait at least 1m.
+    - Spin 1m; keep flow-through.
+
+ 5. Setup 3 annealing reactions:
+
+    Reagent          Stock   Volume
+    ───────────────────────────────
+    PBS                10x  0.40 µL
+    o298,o300,o302  100 µM  1.80 µL
+    0299,o301,o303  100 µM  1.80 µL
+    ───────────────────────────────
+                            4.00 µL
+
+ 6. Perform the annealing reactions:
+
+    - Incubate at 95°C for 2 min.
+    - Cool at room temperature.
+
+ 7. Label the products: f155, f156, f157
+
+ 8. Dilute f155, f156, and f157 to 90 nM.
+
+ 9. Setup 3 ligation reactions [6]:
+
+    Reagent              Stock   Volume     3.3x
+    ────────────────────────────────────────────
+    T4 ligase buffer       10x  0.50 µL  1.65 µL
+    T4 DNA ligase     400 U/µL  0.25 µL  0.83 µL
+    T4 PNK             10 U/µL  0.25 µL  0.83 µL
+    f142              80 ng/µL  2.29 µL  7.57 µL
+    f155,f156,f157       90 nM  1.71 µL
+    ────────────────────────────────────────────
+                                5.00 µL  3.29 µL/rxn
+
+10. Incubate at the following temperatures:
+
+    - 25°C for 15 min
+    - 65°C for 10 min
+
+11. Label the products: p190, p191, p192
+
+12. Transform the following plasmids: p190, p191,
+    p192 [7]
+
+    - Pre-warm 3 LB+Kan plates.
+    - For each transformation:
+
+      - Thaw 10 µL competent MACH1 cells on ice.
+      - Add 2 µL plasmid.
+      - Gently flick to mix
+      - Incubate on ice for 30 min.
+
+      - Incubate at 42°C for 30s.
+      - Incubate on ice for 2 min.
+      - Add 90 µL SOC.
+      - Incubate at 37°C for 60 min with end-over-end
+        mixing.
+
+      - Plate 100 µL cells.
+      - Incubate at 37°C for 16h.
+
+13. Sequence the following plasmids:
+
+    Plasmid  Primers
+    ────────────────
+    p190     o251
+    p191     o251
+    p192     o251
+
+14. Miniprep.
+
+Notes:
+[1] https://www.neb.com/products/r3101-ecori-hf
+    https://www.neb.com/products/r3189-noti-hf
+
+[2] NEB recommends 5–10 units of enzyme per µg DNA
+    (10–20 units for genomic DNA).  Enzyme volume
+    should not exceed 10% of the total reaction
+    volume to prevent star activity due to excess
+    glycerol.
+
+[3] The heat inactivation step is not necessary if
+    the DNA will be purified before use.
+
+[4] https://www.qiagen.com/HB-2069
+
+[5] Column capacity: 5 µg
+
+[6] https://tinyurl.com/y7gxfv5m
+
+[7] https://tinyurl.com/fwk2c36b

@@ -1,0 +1,103 @@
+January 3, 2022
+
+$ sw optimize_nb_gfp_expression
+
+ 1. Wipe down your bench and anything you'll touch 
+    (pipets, racks, pens, etc.) with RNaseZap.
+
+ 2. In the following steps, setup these conditions:
+
+    template:    f144    f144    f144   f144   f144   f144   f145    f145     f145   f145   f145   f145   f145  −
+    stock conc:   200    95.6    45.7   21.9   10.4     5    10000   4642     2154   1000   46.4   21.5    10   0
+    final conc:   46    21.988  10.511  5.037  2.392  1.15   2300   1067.66  495.42  230   10.672  4.945  2.3   0
+    conc unit:   ng/µL  ng/µL   ng/µL   ng/µL  ng/µL  ng/µL   nM      nM       nM     nM     nM     nM     nM   −
+
+ 3. Perform a serial dilution [1]:
+
+    - Put 9.58 μL 200 ng/µL f144 in a tube.
+    - Put 5.00 μL nuclease-free water in 5 adjacent
+      tubes.
+    - Transfer 4.58 μL between each tube to make 6
+      2.1-fold dilutions.
+
+ 4. Perform a serial dilution [2]:
+
+    - Put 5.60 μL 10000 nM f145 in a tube.
+    - Put 3.00 μL nuclease-free water in 7 adjacent
+      tubes.
+    - Transfer 2.60 μL between each tube *except the
+      last* to make 7 2.2-fold dilutions.
+
+ 5. Setup 14 PURExpress (NEB E6800) reactions [3]:
+
+    Reagent                       Stock   Volume     15.4x
+    ──────────────────────────────────────────────────────
+    solution A                           2.00 µL  30.80 µL
+    solution B                           1.50 µL  23.10 µL
+    RNase inhibitor, murine     40 U/µL  0.10 µL   1.54 µL
+    FluoroTect GreenLys                  0.25 µL   3.85 µL
+    f144,f145                700.899 nM  1.15 µL
+    ──────────────────────────────────────────────────────
+                                         5.00 µL   3.85 µL/rxn
+
+    - Thaw all components on ice.
+    - Mix A well; certain components may precipitate
+      during storage.
+    - Mix B gently; do not vortex.
+    - Add A before B.
+
+ 6. Incubate at 37°C for 2h.
+
+ 7. Add 0.5 µL RNase cocktail (Invitrogen AM2286) to
+    each 5 µL IVTT reaction.
+
+ 8. Incubate at 37°C for 15 min.
+
+ 9. Prepare 14 samples for SDS PAGE:
+
+    Reagent                Stock    Volume        21x
+    ─────────────────────────────────────────────────
+    water                          1.50 µL   31.50 µL
+    TGSB                      2x   5.00 µL  105.00 µL
+    NuPAGE reducing agent    10x   1.00 µL   21.00 µL
+    sample                         2.50 µL
+    ─────────────────────────────────────────────────
+                                  10.00 µL    7.50 µL/rxn
+
+    - Incubate at 70°C for 2 min.
+
+10. Run a gel [4]:
+
+    gel: 10–20% Novex tris-tricine SDS PAGE
+    buffer: tricine SDS running buffer
+    ladder: 5 µL SeeBlue Plus2 (Invitrogen LC5925)
+    samples: 10 µL/lane
+    run: 125V for 90 min
+
+11. Image with a laser scanner:
+
+    lasers:    488 nm   658 nm
+    filters:  518BP22  710BP40
+
+Notes:
+[1] The final concentrations will be:
+    1  2.000000e+02 ng/µL
+    2  9.563525e+01 ng/µL
+    3  4.573051e+01 ng/µL
+    4  2.186724e+01 ng/µL
+    5  1.045640e+01 ng/µL
+    6  5.000000e+00 ng/µL
+
+[2] The final concentrations will be:
+    1  1.000000e+04 nM
+    2  4.641589e+03 nM
+    3  2.154435e+03 nM
+    4  1.000000e+03 nM
+    5  4.641589e+02 nM
+    6  2.154435e+02 nM
+    7  1.000000e+02 nM
+    8  0.000000e+00 nM
+
+[3] https://tinyurl.com/dxapyo69
+
+[4] https://tinyurl.com/4nzuxfdb

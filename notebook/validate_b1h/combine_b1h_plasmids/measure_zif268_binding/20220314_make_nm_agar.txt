@@ -1,0 +1,61 @@
+March 14, 2022
+
+$ sw b1h/make_nm_agar 10
+
+1. Prepare ≈586 mL 12/11x NM-agar [1]:
+
+   Reagent                      Final      Quantity
+   ────────────────────────────────────────────────
+   M9 salts                     1x           6.72 g
+   −His/−Ura DO supplement [2]            480.00 mg
+   water                               to 559.36 mL
+
+   - Add 9.6 g agar
+   - Autoclave at 121°C for 45 min.
+   - Cool to ≈55°C [3].
+
+   Reagent            Stock          Final     Volume
+   ──────────────────────────────────────────────────
+   M9-agar                                  559.36 mL
+   glucose        200 mg/mL        4 mg/mL   12.80 mL
+   thiamine       200 mg/mL        4 mg/mL   12.80 mL
+   MgSO₄             100 mM           1 mM    6.40 mL
+   ZnSO₄             100 mM          10 µM   64.00 µL
+   CaCl₂                1 M         100 µM   64.00 µL
+   carbenicillin  100 mg/mL  100 µg/mL, 1x  640.00 µL
+   IPTG                 1 M          10 µM    6.40 µL
+
+2. Prepare 265 mL permissive media:
+
+   Reagent     Stock   Final     Volume
+   ────────────────────────────────────
+   NM-agar    12/11x      1x  242.92 mL
+   histidine  100 mM    6 mM   15.90 mL
+   uracil      20 mM  0.2 mM    2.65 mL
+   water                        3.53 mL
+   ────────────────────────────────────
+                              265.00 mL
+
+3. Prepare 265 mL selective media with 10 mM 3-AT:
+
+   Reagent    Stock  Final     Volume
+   ──────────────────────────────────
+   NM-agar   12/11x     1x  242.92 mL
+   3-AT     1000 mM  10 mM    2.65 mL
+   water                     19.43 mL
+   ──────────────────────────────────
+                            265.00 mL
+
+4. Pour 25 mL plates.
+
+Notes:
+[1] Noyes et al. (2008) DOI: 10.1093/nar/gkn048
+
+[2] This supplement isn't exactly what [Noyes2008]
+    calls for: it's missing 9 of the amino acids.
+
+[3] 3-AT is heat labile and will be destroyed if
+    added to media hotter that 55°C.  Store plates
+    containing 3-AT at 4°C for up to 2 months.
+
+    https://tinyurl.com/3xz8euwt
