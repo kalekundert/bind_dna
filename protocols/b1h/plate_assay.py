@@ -15,16 +15,12 @@ from itertools import groupby
 class PlateAssay(Main):
     """\
     Usage:
-        plate_assay.py <strains>... [-P]
+        plate_assay.py <strains>...
 
     Arguments:
         <strains>
             The names of the strains to test.  These strains must be present in 
             the FreezerBox database.
-
-    Options:
-        -P --no-plates
-            Skip the plate-pouring steps.
     """
     __config__ = [
             DocoptConfig,
@@ -38,10 +34,6 @@ class PlateAssay(Main):
                 PlateAssay.Strain(x) for x in tags
             ]),
             get=bind
-    )
-    make_plates = appcli.param(
-            Key(DocoptConfig, '--no-plates', cast=lambda x: not x),
-            default=True,
     )
 
     def __init__(self, strains):
@@ -84,9 +76,6 @@ class PlateAssay(Main):
         #   the single plasmid is.  But I think it's reasonable to use 10 mM 3-AT to 
         #   just ask, "do these plasmids/strains mostly work".
 
-        if self.make_plates:
-            p += stepwise.load('make_nm_agar 10')
-
         by_antibiotics = lambda x: x.antibiotics
         strains_by_antibiotics = [
                 (k, list(g))
@@ -101,7 +90,6 @@ class PlateAssay(Main):
 
         def format_strains(strains):
             return ','.join(x.tag for x in strains)
-
 
         f = "[Noyes2008] uses 2xYT instead of LB.  I don't think this detail matters, although the cells may grow faster in richer media."
         p += pl(f"Grow overnight cultures{p.add_footnotes(f)}:",
