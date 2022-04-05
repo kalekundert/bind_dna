@@ -68,15 +68,15 @@ Which target sites to use?
 
 - ``gcg tgg GAG``:
     
-  - Measured by [ElrondErickson1999]_ (gel shift) and [Jamieson]_ (gel shift).  
-    Somewhat different :math:`K_D` relative to wildtype (3x vs 10x), but in 
-    both cases this is very nearly the second best target.  So this sequence is 
-    probably a good test of an assay's ability to distinguish between two 
-    pretty similar binders.
+  - Measured by [ElrodErickson1999]_ (gel shift) and [Jamieson1994]_ (gel 
+    shift).  Somewhat different :math:`K_D` relative to wildtype (3x vs 10x), 
+    but in both cases this is very nearly the second best target.  So this 
+    sequence is probably a good test of an assay's ability to distinguish 
+    between two pretty similar binders.
 
 - ``gcg tgg GCC``:
   
-  - Measured by [ElrondErickson1999]_ and [Jamieson1994]_, but they disagree 
+  - Measured by [ElrodErickson1999]_ and [Jamieson1994]_, but they disagree 
     significantly about how well it binds.
 
 - ``gcg TTG gcg``:
@@ -103,7 +103,7 @@ Which target sites to use?
 
 - Which protein variants to use?
 
-  - [Wu2005]_, which I think is the highest quality :math:`K_D` data, has a 
+  - [Wu1995]_, which I think is the highest quality :math:`K_D` data, has a 
     handful of variants with a good range of activities:
 
     - WT

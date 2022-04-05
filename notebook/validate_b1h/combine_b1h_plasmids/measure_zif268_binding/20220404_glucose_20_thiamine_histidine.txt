@@ -1,0 +1,32 @@
+April 4, 2022
+
+$ sw recipes/glucose_20
+$ sw recipes/thiamine
+$ sw recipes/histidine
+
+1. Prepare 50 mL 200 mg/mL (20% w/v) glucose:
+   
+   - 10 g glucose
+   - water to 50 mL
+   - sterile filter (0.2 µm)
+
+2. Prepare 50 mL 1 mg/mL thiamine-HCl [1]:
+   
+   - 50 mg thiamine
+   - 50 mL water
+   - sterile filter (0.2 µm)
+
+3. Prepare 50 mL 100 mM histidine:
+   
+   - 575.75 mg L-histidine
+   - water to 50 mL
+   - mix well to fully dissolve
+   - sterile filter (0.2 µm)
+
+Notes:
+[1] I make this recipe with "hydrated" thiamine.  
+    The degree of hydration is unknown, so this is 
+    not particularly accurate.
+
+[2] Sigma H6034.  According to the label, 
+    solubility is 50 mg/mL = 322 mM.

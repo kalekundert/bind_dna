@@ -79,3 +79,92 @@ Nest steps:
   constructs with Zif268 inserted after/within f1.  I'll either do that in 
   smaller batches with this assay, or perhaps all at once with the plate reader 
   assay (once I've analyzed the data and decided whether or not to trust it).
+
+2022/04/01
+==========
+
+.. protocol:: 20220329_plate_assay.txt 20220325_b1h_image_processing.txt
+
+.. figure:: 20220401_b1h.svg
+
+Observations:
+
+- The s14/s20 results are consistent with what I saw in the 3/17 experiment.  
+  The controls were wrong in that experiment, perhaps because of 
+  cross-contamination, but maybe the rest of the data are correct.
+
+- Including the barcode and the terminators (s11/s17) seems to really break the 
+  assay.  The strain actually grows very well in the selective condition with 
+  the off-target site, and actually grows worse with the target site.  I saw 
+  the same thing in the 3/17 experiment for the s12/s18 plasmids, and although 
+  I don't necessarily trust those results, they match these results almost 
+  perfectly.  These two pairs of plasmids are very similar, with the former 
+  having the insert within the f1 region and the latter having it after.  So it 
+  seems likely that something about having the barcode/terminator shortly after 
+  the HIS/URA genes is really bad.  Some ideas:
+
+  - Cryptic promoters?  There are some predicted promoters in the zif-rpoZ 
+    insert, including one that overlaps the L3S2P21/barcode (and so would only 
+    be present in the barcode/terminator constructs).  But it's not 
+    particularly strong, and the polymerase would have to go all the way around 
+    the plasmid (including through several terminators) to transcribe the 
+    HIS/URA gene.  I don't think this is relevant.
+
+  - Increased mRNA stability?  Do strong terminators give rise to more stable 
+    mRNA, since there would be a stronger hairpin on the end?  This might be 
+    true [Ahn2008]_.  I think this might be why these strains grow so well in 
+    the selective condition.
+    
+    This explanation doesn't work as well for the "after f1" constructs 
+    (s12/s18), though, since they still have the rrnB T1 terminator after the 
+    HIS/URA genes.
+
+  - Antibiotic resistance?  If some AmpR expression is being driven by a 
+    cryptic promoter upstream of the target site, it could be that Zif268 
+    binding its target site would actually reduce AmpR expression.  I think 
+    this might be the reason why the target strain grows worse than the 
+    non-target strain.
+  
+Next steps:
+
+- Finish testing all these strains.
+
+- Think about the terminator/mRNA stability of the HIS/URA transcript.
+
+  - What's happening in the original assay?
+
+  - Include a ribozyme just before the terminator?
+
+  - qPCR for HIS/URA gene?
+
+    - Might be the best way to answer this question, and it tells me if the 
+      RNAseq assay is a viable idea.  That aid, it should be the case already 
+      that survival is correlated with mRNA expression.  This wouldn't directly 
+      tell me *why* there is more mRNA.
+
+    - I've done this assay already (for the sgRNA project).  This basic 
+      protocol is: TRIzol, RT (with random hexamers), qPCR.
+
+2022/04/02
+==========
+
+.. protocol:: 20220330_plate_assay.txt
+
+.. figure:: 20220402_b1h.svg
+
+Observations:
+
+- This result is not consistent with the 3/17 experiment, in which the s18 was 
+  viable even in selective conditions.  I suspect that the 3/17 experiment had 
+  contamination.  The current result is also more consistent with my terminator 
+  hypothesis.
+
+Next steps:
+
+- Test s15/s21
+
+- Maybe test s12/s18 and s11/s17 together.
+
+- Try best AmpR promoter with p194.
+
+
