@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-
 import stepwise
 import appcli
 import autoprop
@@ -12,7 +11,7 @@ from appcli import Key, DocoptConfig
 from itertools import groupby
 
 @autoprop
-class PlateAssay(Main):
+class ColonyAssay(Main):
     """\
     Usage:
         plate_assay.py <strains>...
@@ -31,7 +30,7 @@ class PlateAssay(Main):
 
     strains = appcli.param(
             Key(DocoptConfig, '<strains>', cast=lambda tags: [
-                PlateAssay.Strain(x) for x in tags
+                ColonyAssay.Strain(x) for x in tags
             ]),
             get=bind
     )
@@ -164,4 +163,4 @@ class PlateAssay(Main):
         return p
 
 if __name__ == '__main__':
-    PlateAssay.main()
+    ColonyAssay.main()
