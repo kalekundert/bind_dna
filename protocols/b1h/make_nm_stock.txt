@@ -1,7 +1,8 @@
 - Prepare 500 mL NM −His/−Ura [1]:
   
   - 5.25 g M9 salts (1x final)
-  - 375 mg −His/−Ura DO supplement (Clontech 630422) [2]
+  - 375 mg −His/−Ura DO supplement (Clontech 
+    630422) [2]
   - water to 454 mL
 
   - Autoclave at 121°C for 15 min
@@ -12,8 +13,13 @@
   - 5 mL 100 mM MgSO₄ (1 mM final)
   - 50 µL 100 mM ZnSO₄ (10 µM final)
   - 50 µL 1M CaCl₂ (100 µM final)
-  - 250 µL 50 mg/mL kanamycin (25 µg/mL, 0.5x final)
-  - 500 µL 100 mg/mL carbenicillin (100 µg/mL, 1x final)
+
+- Before using, add:
+
+  - 0.5 µL/mL 50 mg/mL kanamycin (25 µg/mL, 0.5x 
+    final)
+  - 1 µL/mL 100 mg/mL carbenicillin (100 µg/mL, 1x 
+    final)
 
 Notes:
 
