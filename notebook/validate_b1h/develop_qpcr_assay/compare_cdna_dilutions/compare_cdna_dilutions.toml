@@ -1,0 +1,27 @@
+# 96 reactions:
+# - 6 dilutions
+# - 2 strains
+# - 2 primer pairs
+# - ±RT
+# - 2 replicates
+
+[col]
+'1,7'.dilution = 1e0
+'2,8'.dilution = 1e1
+'3,9'.dilution = 1e2
+'4,10'.dilution = 1e3
+'5,11'.dilution = 1e4
+'6,12'.dilution = 1e5
+
+1-6.replicate = 1
+7-12.replicate = 2
+
+[row]
+'A,C,E,G'.primers = 'sr1,sr2'
+'B,D,F,H'.primers = 'sr3,sr5'
+
+'A,B,E,F'.strain = 'sz224'
+'C,D,G,H'.strain = 'sz228'
+
+A-D.rt = true
+E-H.rt = false

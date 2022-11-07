@@ -1,0 +1,198 @@
+August 29, 2022
+
+$ sw make_p237
+
+ 1. Prepare 10x primer mix [1]:
+
+    Reagent   Stock    Volume
+    ─────────────────────────
+    water             9.00 µL
+    sr2      100 µM   0.50 µL
+    sr3      100 µM   0.50 µL
+    ─────────────────────────
+                     10.00 µL
+
+ 2. Setup 1 PCR reaction [2,3]:
+
+    Reagent           Stock    Volume
+    ─────────────────────────────────
+    water                     9.50 µL
+    l2             20 ng/µL   0.50 µL
+    primer mix          10x   2.50 µL
+    Q5 master mix        2x  12.50 µL
+    ─────────────────────────────────
+                             25.00 µL
+
+ 3. Run the following thermocycler protocol:
+
+    - 98°C for 30s
+    - Repeat 6x:
+      - 98°C for 10s
+      - 61°C for 20s
+      - 72°C for 15s
+    - 72°C for 2 min
+    - 4°C hold
+
+ 4. Label the product: l3
+
+ 5. Check if the PCR reaction produced enough product:
+    
+    - Run 1 µL of the PCR reaction on a 1% E-gel.
+    - If no band is visible, run two additional PCR 
+      cycles and repeat this check.
+
+ 6. Purify using Qiagen MinElute PCR purification kit
+    (28004) [4,5]:
+
+    - Perform all spin steps at 17900g.
+    - Add 5 volumes PB to the crude DNA.
+    - If not yellow: Add 0.2 volumes 3M sodium
+      acetate, pH=5.0.
+    - Load on a MinElute column.
+    - Spin 1m; discard flow-through.
+
+    - Add 750 µL PE.
+    - Spin 1m; discard flow-through.
+    - Spin 1m; discard flow-through.
+    - Add 10 µL EB.
+    - Wait at least 1m.
+    - Spin 1m; keep flow-through.
+
+ 7. Setup 2 restriction digestions [6,7]:
+
+    Reagent               Stock    Volume     2.2x
+    ──────────────────────────────────────────────
+    water                         3.00 µL  6.60 µL
+    rCutSmart Buffer        10x   1.00 µL  2.20 µL
+    NotI-HF             20 U/µL   0.50 µL  1.10 µL
+    HindIII-HF          20 U/µL   0.50 µL  1.10 µL
+    p236,'l3'         200 ng/µL   5.00 µL
+    ──────────────────────────────────────────────
+                                 10.00 µL  5.00 µL/rxn
+
+ 8. Incubate at the following temperatures [8]:
+
+    - 37°C for 5–15 min
+    - 80°C for 20 min
+
+ 9. Label the products: f186, f187
+
+10. Prepare 1 sample for electrophoresis:
+
+    Reagent         Stock   Volume
+    ──────────────────────────────
+    loading buffer     6x  1.00 µL
+    f186                   5.00 µL
+    ──────────────────────────────
+                           6.00 µL
+
+11. Run a gel [9]:
+
+    gel: 1.5% agarose/TBE with 1x GelGreen
+    buffer: TAE
+    samples: 10 µL/lane
+    run: 100V for 60 min
+
+12. Image with a 470 nm blue-light transilluminator.
+
+13. Recover DNA by electroelution.
+
+    - Follow G-CAPSULE manufacturer's protocol.
+    - Expected band is 2.4 kb.
+
+14. Setup 1 ligation reaction [10]:
+
+    Reagent                   Stock   Volume
+    ────────────────────────────────────────
+    water                            3.29 µL
+    T4 ligase buffer            10x  0.50 µL
+    T4 DNA ligase          400 U/µL  0.25 µL
+    f186                  100 ng/µL  0.88 µL
+    f187              81.8182 ng/µL  0.08 µL
+    ────────────────────────────────────────
+                                     5.00 µL
+
+15. Incubate at the following temperatures:
+
+    - 25°C for 15 min
+    - 65°C for 10 min
+
+16. Label the product: p237
+
+17. Desalt and concentrate the DNA using a spin 
+    column.
+    
+    - Elute in the smallest possible volume.
+
+18. Transform the DNA into NEB 10-beta cells by 
+    electroporation.  For each transformation:
+    
+    - Pre-warm 1 mL NEB 10-beta/stable outgrowth 
+      medium and a selective plate.
+    
+    - Chill an electroporation cuvette and 1 μL DNA on 
+      ice.  
+    
+    - Thaw an aliquot of competent cells on ice for 
+      ~10 min.
+    
+    - Pipet once to mix the cells with the DNA, then 
+      load into the cuvette.  Tap to remove bubbles.
+    
+    - Shock at 2.0 kV, 200 Ω, 25 µF.  The decay time 
+      should be 4.8-5.1 ms (for cuvettes with a 1 mm 
+      gap).
+    
+    - Immediately add 1 mL pre-warmed medium.  If 
+      you're transforming multiple aliquots of cells 
+      with the same DNA, combine them.
+    
+    - Recover at 37°C for 1h.
+      
+    - Plate several 10x dilutions of cells (e.g.  
+      from 10⁻³ to 10⁻⁶) to count how many were 
+      transformed.
+    
+    - Plate remaining cells on a large plate [11].
+    
+      24x24 cm plates:
+      - 10⁵ colonies per plate
+      - Dilute cells to 500 µL.
+    
+      10x10 cm plates:
+      - 10⁴ colonies per plate
+      - Dilute cells to 100 µL.
+
+19. Miniprep.
+
+Notes:
+ [1] For resuspending lyophilized primers:
+     100 µM = 10 µL/nmol
+
+ [2] https://tinyurl.com/y27ralt4
+
+ [3] For diluting template DNA to 20 ng/µL:
+     Dilute 1 µL twice into 7*sqrt([DNA]) µL
+
+ [4] https://www.qiagen.com/HB-2069
+
+ [5] Column capacity: 5 µg
+
+ [6] https://www.neb.com/products/r3189-noti-hf
+     https://www.neb.com/products/r3104-hindiii-hf
+
+ [7] NEB recommends 5–10 units of enzyme per µg DNA
+     (10–20 units for genomic DNA).  Enzyme volume
+     should not exceed 10% of the total reaction
+     volume to prevent star activity due to excess
+     glycerol.
+
+ [8] The heat inactivation step is not necessary if
+     the DNA will be purified before use.
+
+ [9] The G-CAPSULE protocol notes the TBE can
+     interfere with ligation, so TAE is preferred.
+
+[10] https://tinyurl.com/y7gxfv5m
+
+[11] https://tinyurl.com/45dk2cuy

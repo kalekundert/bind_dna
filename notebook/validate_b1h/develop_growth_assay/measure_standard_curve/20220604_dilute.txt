@@ -1,0 +1,33 @@
+June 4, 2022
+
+$ sw dilute s4:0.081OD s5:0.056OD s37:0.077OD s38:0.088OD s16:0.106OD s22:0.082OD sz213:0.094OD sz214:0.113OD sz215:0.153OD -V 146.25 -c 0.05OD
+
+1. Dilute the following stock solutions to 0.05 OD
+   [1]:
+
+   Name   Stock Vol  Diluent Vol
+   ─────────────────────────────
+   s4      90.28 µL     55.97 µL
+   s5     130.58 µL     15.67 µL
+   s37     94.97 µL     51.28 µL
+   s38     83.10 µL     63.15 µL
+   s16     68.99 µL     77.26 µL
+   s22     89.18 µL     57.07 µL
+   sz213   77.79 µL     68.46 µL
+   sz214   64.71 µL     81.54 µL
+   sz215   47.79 µL     98.46 µL
+
+Note:
+[1] Concentrations:
+
+    Name   MW  Stock Conc  Target Conc
+    ──────────────────────────────────
+    s4      ?    0.081 OD      0.05 OD
+    s5      ?    0.056 OD      0.05 OD
+    s37     ?    0.077 OD      0.05 OD
+    s38     ?    0.088 OD      0.05 OD
+    s16     ?    0.106 OD      0.05 OD
+    s22     ?    0.082 OD      0.05 OD
+    sz213   ?    0.094 OD      0.05 OD
+    sz214   ?    0.113 OD      0.05 OD
+    sz215   ?    0.153 OD      0.05 OD

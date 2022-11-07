@@ -1,0 +1,107 @@
+June 23, 2022
+
+$ sw measure_standard_curve
+
+ 1. Grow overnight cultures:
+
+    LB+Carb: s16,s22,sz213,sz214,sz215
+    LB+Carb+Kan: s4,s5,s36,s37,s38
+
+    - Use fresh colonies (i.e. either transformed or
+      restreaked within 1 week).
+    - Incubate at 37°C overnight with shaking.
+
+ 2. Grow day cultures:
+
+    - Inoculate 3 mL LB+Carb/LB+Carb+Kan with 30 µL
+      saturated overnight culture.
+    - Incubate at 37°C with shaking until the
+      cultures reach log phase, ≈4h.
+
+ 3. Prepare 6 mL 8/7x permissive media:
+
+    Reagent         Stock         Final     Volume
+    ──────────────────────────────────────────────
+    water                                  2.50 mL
+    NM                 2x            1x    3.00 mL
+    His            100 mM    6.85714 mM  411.43 µL
+    Ura             20 mM   0.228571 mM   68.57 µL
+    IPTG            10 mM  0.0114286 mM    6.86 µL
+    kanamycin       1000x     0.571429x    3.43 µL
+    carbenicillin   1000x      1.14286x    6.86 µL
+    ──────────────────────────────────────────────
+                                           6.00 mL
+
+ 4. Prepare 6 mL 8/7x selective media with 10 mM
+    3-AT:
+
+    Reagent          Stock         Final    Volume
+    ──────────────────────────────────────────────
+    water                                  2.91 mL
+    NM                  2x            1x   3.00 mL
+    3-AT           1000 mM    11.4286 mM  68.57 µL
+    IPTG             10 mM  0.0114286 mM   6.86 µL
+    kanamycin        1000x     0.571429x   3.43 µL
+    carbenicillin    1000x      1.14286x   6.86 µL
+    ──────────────────────────────────────────────
+                                           6.00 mL
+
+ 5. Prepare 6 mL 8/7x permissive media:
+
+    Reagent         Stock         Final     Volume
+    ──────────────────────────────────────────────
+    water                                  2.51 mL
+    NM                 2x            1x    3.00 mL
+    His            100 mM    6.85714 mM  411.43 µL
+    Ura             20 mM   0.228571 mM   68.57 µL
+    IPTG            10 mM  0.0114286 mM    6.86 µL
+    carbenicillin   1000x      1.14286x    6.86 µL
+    ──────────────────────────────────────────────
+                                           6.00 mL
+
+ 6. Prepare 6 mL 8/7x selective media with 10 mM
+    3-AT:
+
+    Reagent          Stock         Final    Volume
+    ──────────────────────────────────────────────
+    water                                  2.92 mL
+    NM                  2x            1x   3.00 mL
+    3-AT           1000 mM    11.4286 mM  68.57 µL
+    IPTG             10 mM  0.0114286 mM   6.86 µL
+    carbenicillin    1000x      1.14286x   6.86 µL
+    ──────────────────────────────────────────────
+                                           6.00 mL
+
+ 7. Wash 1 mL cells with minimal media:
+
+    - Repeat 4x:
+      - Spin 3500g, 3 min, 4°C.
+      - Resuspend in 1 mL 1x NM.
+
+ 8. Perform a serial dilution [1]:
+
+    - Put 146.25 µL 0.1 OD cells in a tube.
+    - Put 100.00 µL 1x NM in 2 adjacent tubes.
+    - Transfer 46.25 µL between each tube to make 3
+      3.2-fold dilutions.
+
+ 9. Setup a clear-bottom 96-well plate as follows:
+
+    - 175 µL 8/7x media
+    - 25 µL cell dilution
+    - Fill all remaining wells with 200 µL water.
+    - Top each well with 30 µL mineral oil.
+
+10. Weigh the plate before and after the following
+    growth step, to quantify evaporation.
+
+11. Measure cell growth for 36h using a plate reader:
+
+    - Incubate at 37°C with shaking.
+    - Measure A600 every 30 min.
+
+Note:
+[1] The final concentrations will be:
+    1  1.000000e-01 OD
+    2  3.162278e-02 OD
+    3  1.000000e-02 OD

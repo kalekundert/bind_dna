@@ -22,11 +22,11 @@ Here are the sequences I'm thinking of removing:
 
 - GAL1 sequence 
 
-  - This is a (fragment of a) yeast coding sequence, presumably related to the 
+  - This is a fragment of a yeast coding sequence, presumably related to the 
     (in yeast) inducible GAL promoter.
 
-Notes:
-
+Plans
+=====
 - I'm going to use p194 as a template.  p193 is only different in that the f1 
   ori is split up.  This difference won't matter if I can delete the f1 ori, 
   and having the f1 ori all in one place might make the results more clear.
@@ -38,6 +38,8 @@ Notes:
   sequence.  If I decide to use a [Mutalik2013]_ promoter/RBS for the rpoZ 
   fusion, I can probably eliminate this duplication.
 
+Results
+=======
 2022/03/16:
 
 I was able to get colonies for all of the deletions except p203, which deletes 
@@ -75,4 +77,10 @@ Here are the options I can think of:
   bp downstream of the λ t0 terminator, but it seems unlikely that it's 
   essential.
 
+2022/05/04:
 
+I've been unable to clone p209, but able to clone p207 and p208.
+
+I've kinda lost track of what all these plasmids are.
+
+I'll need to clone the 

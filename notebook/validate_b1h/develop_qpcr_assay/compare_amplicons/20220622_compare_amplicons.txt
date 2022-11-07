@@ -1,0 +1,100 @@
+June 22, 2022
+
+$ sw compare_amplicons
+
+ 1. Grow overnight cultures:
+
+    LB+Carb: sz224,sz228
+
+    - Inoculate 1 mL sterile media.
+    - Incubate overnight at 37°C with shaking at 225
+      rpm.
+
+ 2. Grow day cultures:
+
+    LB + 10 µM IPTG + Carb: sz224,sz228
+
+    - Inoculate 1 mL sterile media with 10 µL
+      saturated overnight culture.
+    - Incubate at 37°C with shaking at 225 rpm for
+      4h.
+
+ 3. Extract total RNA using the Zymo Quick-RNA
+    miniprep kit.
+
+ 4. Prepare enough reverse transcriptase (RT) master
+    mix for 4 reactions:
+
+    Reagent                      Stock    Volume      4.4x
+    ──────────────────────────────────────────────────────
+    DEPC-treated water                  11.00 µL  48.40 µL
+    SuperScript VILO master mix     5x   4.00 µL  17.60 µL
+
+ 5. Denature half of the RT master mix:
+
+    - Take 33.00 µL of the above mix.
+    - Incubate at 65°C for 10m.
+
+ 6. Setup 4 reverse transcription reactions:
+
+    - Use all combinations of the following reagents:
+
+      RT master mix: denatured, non-denatured
+      template RNA: sz224, sz228
+
+    - Mix the reactions:
+
+      Reagent            Stock    Volume
+      ──────────────────────────────────
+      RT master mix             15.00 µL
+      template RNA   500 ng/µL   5.00 µL
+      ──────────────────────────────────
+                                20.00 µL
+
+ 7. Run the following thermocycler protocol:
+
+    - 25°C for 10m
+    - 42°C for 60m
+    - 85°C for 5m
+
+ 8. Store any cDNA not used for qPCR at −20°C.
+
+ 9. Prepare 10x primer mix [1]:
+
+    Reagent                       Stock    Volume
+    ─────────────────────────────────────────────
+    water                                 9.00 µL
+    sr1,sr3,o366,o368,o370,o372  100 µM   0.50 µL
+    sr2,sr5,o367,o369,o371,o373  100 µM   0.50 µL
+    ─────────────────────────────────────────────
+                                         10.00 µL
+
+10. Setup 24 qPCR reactions [2]:
+
+    Reagent                              Stock    Volume      26.4x
+    ───────────────────────────────────────────────────────────────
+    water                                       15.40 µL  406.56 µL
+    sz224+RT,sz224−RT,sz228+RT,sz228−RT          2.20 µL
+    primer mix                             10x   4.40 µL
+    SsoAdvanced supermix                    2x  22.00 µL  580.80 µL
+    ───────────────────────────────────────────────────────────────
+                                                44.00 µL   37.40 µL/rxn
+
+    - Split into 2 identical 20 µL reactions.
+    - Use any extra master mix as a negative control.
+
+11. Run the following thermocycler protocol:
+
+    - 95°C for 30s
+    - Repeat 40x:
+      - 95°C for 10s
+      - 61°C,57°C,59°C for 15s
+      - Measure fluorescence
+    - 65.0-95.0°C in 5s steps of 0.5°C:
+      - Measure fluorescence
+
+Notes:
+[1] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol
+
+[2] https://tinyurl.com/y4qffgss

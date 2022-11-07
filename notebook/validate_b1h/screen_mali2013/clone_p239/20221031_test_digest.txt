@@ -1,0 +1,35 @@
+October 31, 2022
+
+$ sw test_digest
+
+1. Setup 3 restriction digestion reactions:
+
+   - Use the following reagents:
+
+     enzyme: SapI, HaeII, NdeI
+
+   - Make master mix:
+
+     Reagent              Stock   Volume      3.3x
+     ─────────────────────────────────────────────
+     water                       7.50 µL  24.75 µL
+     p239              27 ng/µL  1.00 µL   3.30 µL
+     rCutSmart Buffer       10x  1.00 µL   3.30 µL
+     ─────────────────────────────────────────────
+                                 9.50 µL  31.35 µL
+
+   - Setup the reactions:
+
+     Reagent       Volume
+     ────────────────────
+     master mix   9.50 µL
+     enzyme       0.50 µL
+     ────────────────────
+                 10.00 µL
+
+2. Incubate at the following temperatures [3]:
+
+   - 37°C for 5–15 min
+   - 80°C for 20 min
+
+3. Run a 1% E-gel.

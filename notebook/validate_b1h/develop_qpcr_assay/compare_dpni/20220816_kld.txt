@@ -1,0 +1,15 @@
+August 16, 2022
+
+$ sw kld 'PCR product' -n 2 -p neb/dilute
+
+1. Setup 2 ligation reactions:
+
+   Reagent                 Stock    Volume      2.3x
+   ─────────────────────────────────────────────────
+   KLD reaction buffer        2x   5.00 µL  11.50 µL
+   KLD enzyme mix            10x   1.00 µL   2.30 µL
+   PCR product          50 ng/µL   4.00 µL
+   ─────────────────────────────────────────────────
+                                  10.00 µL   6.00 µL/rxn
+
+2. Incubate at room temperature for 5m.

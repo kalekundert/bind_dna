@@ -1,0 +1,51 @@
+June 3, 2022
+
+$ sw compare_rna_purification
+
+1. Prepare −template and +template controls.
+
+2. Setup 22 qPCR reactions [1,2]:
+
+   Reagent                            Stock    Volume      24.2x
+   ─────────────────────────────────────────────────────────────
+   water                                     19.36 µL  468.51 µL
+   sz224,sz228 (5 extractions, ±RT)           2.20 µL
+   sr1                               100 µM   0.22 µL    5.32 µL
+   sr2                               100 µM   0.22 µL    5.32 µL
+   SsoAdvanced supermix                  2x  22.00 µL  532.40 µL
+   ─────────────────────────────────────────────────────────────
+                                             44.00 µL   41.80 µL/rxn
+
+   - Split into 2 identical 20 µL reactions.
+   - Use any extra master mix as a negative control.
+
+3. Setup 22 qPCR reactions [1,2]:
+
+   Reagent                            Stock    Volume      24.2x
+   ─────────────────────────────────────────────────────────────
+   water                                     19.36 µL  468.51 µL
+   sz224,sz228 (5 extractions, ±RT)           2.20 µL
+   sr3                               100 µM   0.22 µL    5.32 µL
+   sr5                               100 µM   0.22 µL    5.32 µL
+   SsoAdvanced supermix                  2x  22.00 µL  532.40 µL
+   ─────────────────────────────────────────────────────────────
+                                             44.00 µL   41.80 µL/rxn
+
+   - Split into 2 identical 20 µL reactions.
+   - Use any extra master mix as a negative control.
+
+4. Run the following thermocycler protocol:
+
+   - 95°C for 30s
+   - Repeat 40x:
+     - 95°C for 10s
+     - 61°C for 15s
+     - Measure fluorescence
+   - 65.0-95.0°C in 5s steps of 0.5°C:
+     - Measure fluorescence
+
+Notes:
+[1] https://tinyurl.com/y4qffgss
+
+[2] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol

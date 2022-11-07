@@ -1,0 +1,22 @@
+July 25, 2022
+
+$ sw ligate f182,f165 f182,f166 f182,f167 -c f182=1
+
+1. Setup 3 ligation reactions [1]:
+
+   Reagent              Stock   Volume      3.3x
+   ─────────────────────────────────────────────
+   T4 ligase buffer       10x  0.50 µL   1.65 µL
+   T4 DNA ligase     400 U/µL  0.25 µL   0.83 µL
+   f182               1 ng/µL  3.79 µL  12.52 µL
+   f165,f166,f167       90 nM  0.46 µL
+   ─────────────────────────────────────────────
+                               5.00 µL   4.54 µL/rxn
+
+2. Incubate at the following temperatures:
+
+   - 25°C for 15 min
+   - 65°C for 10 min
+
+Note:
+[1] https://tinyurl.com/y7gxfv5m

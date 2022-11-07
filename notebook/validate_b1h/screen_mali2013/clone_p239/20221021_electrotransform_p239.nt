@@ -1,0 +1,20 @@
+p239 (+insert):
+  library_size: 4
+  recover_volume_uL: 1025
+  plate_volume_uL: 100
+  spot_volume_uL: 5
+  dilutions:
+    1e2:
+      [0,1,1]
+    1e1:
+      [15,18,15]
+
+p239 (−insert):
+  library_size: 4
+  recover_volume_uL: 1025
+  plate_volume_uL: 100
+  spot_volume_uL: 5
+  dilutions:
+    1e1:
+      [2,1,0]
+

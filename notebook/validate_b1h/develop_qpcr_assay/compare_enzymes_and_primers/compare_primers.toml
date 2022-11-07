@@ -1,0 +1,19 @@
+[col]
+'1,3,...,11'.pcr_primers = 's1,s2'
+'2,4,...,12'.pcr_primers = 's3,s5'
+
+'1,2,5,6,9,10'.rt = '−RT'
+'3,4,7,8,11,12'.rt = '+RT'
+
+1-4.replicate = 1
+5-8.replicate = 2
+9-12.replicate = 3
+
+[row]
+'A,C,...,G'.strain = 'sz224'
+'B,D,...,H'.strain = 'sz228'
+
+A-B.rt_primer = 'oligo(dT)'
+C-D.rt_primer = 'random hexamers'
+E-F.rt_primer = 's1+s3'
+G-H.rt_primer = 's2+s5'

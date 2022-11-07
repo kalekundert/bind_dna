@@ -1,0 +1,37 @@
+June 20, 2022
+
+$ sw transform
+
+1. Transform the following plasmids: p166+p167,
+   p166+p168, p166+p210, p166+p211, p166+p212, p189,
+   p202, p213, p214, p215 [1]
+
+   - Pre-warm selective plates:
+     LB+Amp+Kan: p166+p167, p166+p168, p166+p210,
+       p166+p211, p166+p212
+     LB+Amp: p189, p202, p213, p214, p215
+   - For each transformation:
+
+     - Thaw 100 µL competent s3 cells on ice.
+     - Add 2 µL plasmid.
+     - Gently flick to mix.
+     - Incubate on ice for 30 min.
+
+     - Incubate at 42°C for 30s.
+     - Incubate on ice for 2 min.
+     - Add 1000 µL SOC.
+     - Incubate at 37°C for 60 min with end-over-end
+       mixing.
+
+     - Spin at 5000g for 5 min.
+     - Remove 900 µL media.
+     - Resuspend pelleted cells.
+
+     - Plate 200 µL cells.
+     - Incubate at 37°C for 16h.
+
+2. Label the products: s4, s5, s36, s37, s38, s16,
+   s22, sz213, sz214, sz215
+
+Note:
+[1] https://tinyurl.com/fwk2c36b

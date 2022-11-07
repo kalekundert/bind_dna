@@ -1,0 +1,10 @@
+2022/04/18:
+
+- I'm struggling to get colonies for these reactions.
+
+- It's not the length of the inserts.  They're small, but it actually only the 
+  shortest inserts that have worked so far.
+
+- It's probably the competency of my cells.  I'll make more cells tomorrow, so 
+  there isn't really much point to repeating everything today as well.
+

@@ -1,0 +1,81 @@
+July 19, 2022
+
+$ sw compare_amplicons
+
+1. Setup 48 PCR reactions:
+
+   - Use the following combinations of reagents:
+
+     template DNA  forward primer  reverse primer
+     ────────────────────────────────────────────
+     sz224+RT      sr1             sr2
+     sz224−RT      sr1             sr2
+     sz224+RT      sr3             sr5
+     sz224−RT      sr3             sr5
+     sz224+RT      o366            o367
+     sz224−RT      o366            o367
+     sz224+RT      o368            o369
+     sz224−RT      o368            o369
+     sz224+RT      o370            o371
+     sz224−RT      o370            o371
+     sz224+RT      o372            o373
+     sz224−RT      o372            o373
+     sz228+RT      sr1             sr2
+     sz228−RT      sr1             sr2
+     sz228+RT      sr3             sr5
+     sz228−RT      sr3             sr5
+     sz228+RT      o366            o367
+     sz228−RT      o366            o367
+     sz228+RT      o368            o369
+     sz228−RT      o368            o369
+     sz228+RT      o370            o371
+     sz228−RT      o370            o371
+     sz228+RT      o372            o373
+     sz228−RT      o372            o373
+
+   - Make 6 200x primer mixes:
+
+     Reagent          Stock   Volume      110x
+     ─────────────────────────────────────────
+     forward primer  100 µM  0.05 µL   5.50 µL
+     reverse primer  100 µM  0.05 µL   5.50 µL
+     ─────────────────────────────────────────
+                             0.10 µL  11.00 µL
+
+   - Make polymerase mix:
+
+     Reagent          Stock    Volume       72.6x
+     ────────────────────────────────────────────
+     water                    8.90 µL   646.14 µL
+     Luna master mix     2x  10.00 µL   726.00 µL
+     ────────────────────────────────────────────
+                             18.90 µL  1372.14 µL
+
+   - Make 4 template DNA mixes:
+
+     Reagent              Stock    Volume      16.5x
+     ───────────────────────────────────────────────
+     polymerase mix              18.90 µL  311.85 µL
+     template DNA    <100 ng/µL   1.00 µL   16.50 µL
+     ───────────────────────────────────────────────
+                                 19.90 µL  328.35 µL
+
+   - Setup the reactions:
+
+     Reagent           Stock    Volume      2.5x
+     ───────────────────────────────────────────
+     template DNA mix         19.90 µL  49.75 µL
+     primer mix         200x   0.10 µL   0.25 µL
+     ───────────────────────────────────────────
+                              20.00 µL  50.00 µL
+
+   - Split into 2 identical 20.00 µL reactions.
+
+   - Use any extra master mix as a negative control.
+
+2. Run the following thermocycler protocol:
+
+   - 95°C for 1m
+   - Repeat 40x:
+     - 95°C for 15s
+     - 61°C for 15s

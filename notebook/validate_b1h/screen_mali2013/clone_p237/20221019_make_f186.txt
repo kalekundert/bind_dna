@@ -1,0 +1,93 @@
+October 19, 2022
+
+$ sw make f186
+
+1. Setup 1 digestion:
+
+   Reagent               Stock     Volume
+   ──────────────────────────────────────
+   water                        188.36 µL
+   p236              200 ng/µL   25.00 µL
+   rCutSmart buffer        10x   25.00 µL
+   NotI-HF             20 U/µL    2.50 µL
+   HindIII-HF          20 U/µL    2.50 µL
+   Quick CIP            5 U/µL    6.64 µL
+   ──────────────────────────────────────
+                                250.00 µL
+
+   - Split the reaction into 3 tubes with 83.3 µL
+     each.
+
+2. Run the following thermocycler protocol:
+
+   - 37°C for 15s
+   - 80°C for 20s
+
+3. Label the product: f186
+
+4. Prepare 1 sample for electrophoresis:
+
+   Reagent      Stock    Volume
+   ────────────────────────────
+   f186                56.67 µL
+   loading dye     6x  10.00 µL
+   ────────────────────────────
+                       66.67 µL
+
+5. Run a gel:
+
+   gel: 0.5% agarose
+   buffer: 0.5x tris-acetate
+   ladder: 10 µL 50 ng/µL 1kb+ DNA ladder
+   samples: 60 µL/lane
+   run: 100V for 40 min
+
+6. Stain gel with GelGreen [1-3]:
+
+   - Keep the stain protected from light.
+
+   - Submerge gel in ≈30 mL 3x GelGreen, 100 mM NaCl.
+   - Shake gently for 30m.
+
+7. Purify the desired band using the QIAEX II kit:
+
+   - Cut the 2.4kb band out of the gel.
+
+   - Add 3 volumes QX1.
+   - Add 30 µL QIAEX II beads.
+     - Resuspend the beads by vortexing for 30s.
+   - Incubate at 50°C for 10 min.
+     - Vortex every 2 min to keep the beads
+       suspended.
+     - If the solution is not yellow after the
+       agarose dissolves, add 10 µL 3M sodium acetate
+       pH=5 and continue incubating for at least 5
+       min.
+   - Centrifuge for 30s.  Discard supernatant.
+
+   - Add 500 µL QX1.
+   - Vortex to resuspend the pellet.
+   - Centrifuge for 30s.  Discard supernatant.
+
+   - Repeat 2x:
+     - Add 500 µL PE.
+     - Vortex to resuspend the pellet.
+     - Centrifuge for 30s.  Discard supernatant.
+
+   - Air-dry the pellet for 30 min.
+
+   - Add 20 µL EB.
+   - Incubate at room temperature for 5 min.
+   - Centrifuge for 30s.  Transfer supernatant to a
+     clean tube.
+
+Notes:
+[1] https://tinyurl.com/etxhfxws
+
+[2] Including 100 mM NaCl in the staining solution
+    enhances sensitivity, but may promote dye
+    precipitation if the gel stain is reused.
+
+[3] Staining solution can be reused at least 2-3x.
+    Store staining solution at room temperature
+    protected from light.

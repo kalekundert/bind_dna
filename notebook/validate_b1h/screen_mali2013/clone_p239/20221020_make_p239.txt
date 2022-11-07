@@ -1,0 +1,75 @@
+October 20, 2022
+
+$ sw make p239
+
+1. Setup 1 ligation reaction [1]:
+
+   Reagent                 Stock   Volume
+   ──────────────────────────────────────
+   T4 ligase buffer          10x  0.50 µL
+   T4 DNA ligase        400 U/µL  0.25 µL
+   f190              0.288 ng/µL  3.23 µL
+   f191                0.2 ng/µL  1.02 µL
+   ──────────────────────────────────────
+                                  5.00 µL
+
+2. Incubate at the following temperatures:
+
+   - 25°C for 15 min
+   - 65°C for 10 min
+
+3. Label the product: p239
+
+4. Desalt and concentrate the DNA using a spin 
+   column.
+   
+   - Elute in the smallest possible volume.
+
+5. Transform the DNA into NEB 10-beta cells by 
+   electroporation.  For each transformation:
+   
+   - Pre-warm 1 mL NEB 10-beta/stable outgrowth 
+     medium and a selective plate.
+   
+   - Chill an electroporation cuvette and 1 μL DNA on 
+     ice.  
+   
+   - Thaw an aliquot of competent cells on ice for 
+     ~10 min.
+   
+   - Pipet once to mix the cells with the DNA, then 
+     load into the cuvette.  Tap to remove bubbles.
+   
+   - Shock at 2.0 kV, 200 Ω, 25 µF.  The decay time 
+     should be 4.8-5.1 ms (for cuvettes with a 1 mm 
+     gap).
+   
+   - Immediately add 1 mL pre-warmed medium.  If 
+     you're transforming multiple aliquots of cells 
+     with the same DNA, combine them.
+   
+   - Recover at 37°C for 1h.
+     
+   - Plate several 10x dilutions of cells (e.g.  
+     from 10⁻³ to 10⁻⁶) to count how many were 
+     transformed.
+   
+   - Plate remaining cells on a large plate [2].
+   
+     24x24 cm plates:
+     - 10⁵ colonies per plate
+     - Dilute cells to 500 µL.
+     - Resuspend in 2x 5 mL LB.
+   
+     10x10 cm plates:
+     - 10⁴ colonies per plate
+     - Dilute cells to 100 µL.
+   
+     Spread cells using beads.
+
+6. Miniprep.
+
+Notes:
+[1] https://tinyurl.com/y7gxfv5m
+
+[2] https://tinyurl.com/45dk2cuy

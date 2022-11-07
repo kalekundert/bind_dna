@@ -1,0 +1,59 @@
+September 7, 2022
+
+$ sw colony_pcr o3,o358 -x 1.3
+
+1. Resuspend 8 colonies in 20 µL EB.  The suspension
+   shouldn't be cloudy: you don't need a lot of
+   template.
+
+2. Setup 8 PCR reactions:
+
+   - Use the following reagents:
+
+     template DNA: colony #1, colony #2, colony #3,
+       colony #4, colony #5, colony #6, colony #7,
+       colony #8
+
+   - Make 10x primer mix:
+
+     Reagent   Stock   Volume       20x
+     ──────────────────────────────────
+     water            0.45 µL   9.00 µL
+     o3       100 µM  0.03 µL   0.50 µL
+     o358     100 µM  0.03 µL   0.50 µL
+     ──────────────────────────────────
+                      0.50 µL  10.00 µL
+
+   - Make polymerase mix:
+
+     Reagent        Stock   Volume     ≈9.1x
+     ───────────────────────────────────────
+     water                 1.50 µL  13.67 µL
+     primer mix       10x  0.50 µL   4.56 µL
+     Q5 master mix     2x  2.50 µL  22.78 µL
+     ───────────────────────────────────────
+                           4.50 µL  41.00 µL
+
+   - Setup the reactions:
+
+     Reagent         Stock   Volume
+     ──────────────────────────────
+     polymerase mix         4.50 µL
+     template DNA           0.50 µL
+     ──────────────────────────────
+                            5.00 µL
+
+   - Use any extra master mix as a negative control.
+
+3. Run the following thermocycler protocol:
+
+   - 98°C for 30s
+   - Repeat 35x:
+     - 98°C for 10s
+     - 55°C for 20s
+     - 72°C for 1m
+   - 72°C for 2m
+   - Hold at 4°C
+
+4. Run a 1% E-gel.  The expected amplicon size is 1.3
+   kb.

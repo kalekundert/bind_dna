@@ -1,0 +1,106 @@
+May 5, 2022
+
+$ sw qpcr_assay
+
+ 1. Grow 1 mL overnight cultures of sz221-sz228 in
+    LB+Carb at 37°C for 16h [1].
+
+ 2. Inoculate day cultures:
+
+    - 1 mL LB + Carb + 10 µM IPTG
+    - 10 µL overnight culture
+
+ 3. Grow day cultures at 37°C for 2h.
+
+ 4. Extract total cellular RNA:
+
+    - Pellet cells at 7000g for 3 min
+    - Resuspend each cell pellet in 1 mL TRIzol
+      (Invitrogen 15596026).
+    - Incubate 5 min at room temperature.
+    - Add 200 µL chloroform.
+    - Vortex vigorously.
+    - Centrifuge for 15 min at 20,000g and 4°C.
+    - Transfer aqueous phase (top, not pink, ≈500 µL)
+      for each sample to a clean tube, taking care to
+      avoid transferring any of the organic phase.
+
+ 5. Concentrate and purify the RNA by ethanol
+    precipitation:
+
+    - Add 1 µL GlycoBlue (15 mg/mL).
+    - Add 500 µL isopropanol.
+    - Incubate at room temperature for 10 min.
+    - Pellet for 20 min at 12,000g and 4°C.
+    - Carefully pipet off all supernatant.
+    - Resuspend pellet in 70% EtOH.
+    - Vortex briefly
+    - Pellet for 5 min at 7,500g and 4°C.
+    - Carefully pipet off all supernatant.
+    - Air dry for 10 min.
+    - Resuspend RNA in 10 µL water.
+
+ 6. Measure the RNA concentration of each sample by
+    Nanodrop.
+
+ 7. Setup reverse transcription reactions for each
+    sample [2]:
+
+    - 1 µg RNA
+    - 2 µL SuperScript VILO master mix (Invitrogen
+      11755050)
+    - water to 10 µL
+
+ 8. Incubate at the following temperatures:
+
+    - 25°C for 10 min
+    - 50°C for 10 min
+    - 85°C for 5 min
+    - hold at 4°C
+
+ 9. Prepare 10x primer mix [3]:
+
+    Reagent   Stock    Volume
+    ─────────────────────────
+    water             9.00 µL
+    sr1,sr3  100 µM   0.50 µL
+    sr2,sr5  100 µM   0.50 µL
+    ─────────────────────────
+                     10.00 µL
+
+10. Setup 2 qPCR reactions for each sample [4]:
+
+    Reagent               Stock    Volume      2.5x
+    ───────────────────────────────────────────────
+    water                         7.00 µL  17.50 µL
+    cDNA                          1.00 µL   2.50 µL
+    primer mix              10x   2.00 µL
+    SsoAdvanced supermix     2x  10.00 µL  25.00 µL
+    ───────────────────────────────────────────────
+                                 20.00 µL  18.00 µL/rxn
+
+    - Use any extra master mix as a negative control.
+
+11. Run the following thermocycler protocol:
+
+    - 95°C for 30s
+    - Repeat 40x:
+      - 95°C for 10s
+      - 61°C for 15s
+      - Measure fluorescence
+    - 65.0-95.0°C in 5s steps of 0.5°C:
+      - Measure fluorescence
+
+Notes:
+[1] The small culture size is meant to reduce the
+    chance of cross-contamination when using 24-well
+    blocks.
+
+[2] The master mix contains random hexamers, which
+    will prime the reverse transcription of all RNAs
+    in the sample.
+
+[3] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol
+
+[4] https://tinyurl.com/y4qffgss

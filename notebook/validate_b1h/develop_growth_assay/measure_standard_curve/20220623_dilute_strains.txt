@@ -1,0 +1,33 @@
+June 23, 2022
+
+$ sw dilute_strains
+
+1. Dilute the following stock solutions to 0.05 OD in
+   1x NM [1]:
+
+   Name   Stock Vol  Diluent Vol
+   ─────────────────────────────
+   s4      64.71 µL     81.54 µL
+   s5      75.39 µL     70.86 µL
+   s37     66.48 µL     79.77 µL
+   s38     72.40 µL     73.85 µL
+   s16     44.32 µL    101.93 µL
+   s22     54.57 µL     91.68 µL
+   sz213   39.96 µL    106.29 µL
+   sz214   35.16 µL    111.09 µL
+   sz215   41.08 µL    105.17 µL
+
+Note:
+[1] Concentrations:
+
+    Name   MW  Stock Conc  Target Conc
+    ──────────────────────────────────
+    s4      ?    0.113 OD      0.05 OD
+    s5      ?    0.097 OD      0.05 OD
+    s37     ?     0.11 OD      0.05 OD
+    s38     ?    0.101 OD      0.05 OD
+    s16     ?    0.165 OD      0.05 OD
+    s22     ?    0.134 OD      0.05 OD
+    sz213   ?    0.183 OD      0.05 OD
+    sz214   ?    0.208 OD      0.05 OD
+    sz215   ?    0.178 OD      0.05 OD

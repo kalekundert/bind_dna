@@ -1,0 +1,213 @@
+July 26, 2022
+
+$ sw compare_primers
+
+ 1. Grow overnight cultures:
+
+    LB+Carb: sz224,sz228
+
+    - Inoculate 1 mL sterile media.
+    - Incubate overnight at 37°C with shaking at 225
+      rpm.
+
+ 2. Grow day cultures:
+
+    LB + 10 µM IPTG + Carb: sz224,sz228
+
+    - Inoculate 1 mL sterile media with 10 µL
+      saturated overnight culture.
+    - Incubate at 37°C with shaking at 225 rpm for
+      4h.
+
+ 3. Extract total RNA using the Zymo Quick-RNA miniprep 
+    kit:
+    
+    - Pellet ≤1×10⁸ cells (e.g. 1 mL at OD600≤0.1) at 
+      5000g for 1 min.
+    - Resuspend in 300 µL RNA lysis buffer.
+    - Follow remaining steps in manufacturer's 
+      protocol.
+
+ 4. Setup 2 DNase reactions:
+
+    - Use the following reagents:
+
+      RNA: sz224, sz228
+
+    - Make 2x master mix:
+
+      Reagent              Stock   Volume    ≈19.4x
+      ─────────────────────────────────────────────
+      nuclease-free water         3.00 µL  58.08 µL
+      ezDNase buffer         10x  1.00 µL  19.36 µL
+      ezDNase enzyme         10x  1.00 µL  19.36 µL
+      ─────────────────────────────────────────────
+                                  5.00 µL  96.80 µL
+
+    - Setup the reactions:
+
+      Reagent         Stock    Volume      8.8x
+      ─────────────────────────────────────────
+      master mix         2x   5.00 µL  44.00 µL
+      RNA         500 ng/µL   5.00 µL  44.00 µL
+      ─────────────────────────────────────────
+                             10.00 µL  88.00 µL
+
+ 5. Incubate at 37°C for 2m.
+
+ 6. Setup 16 reverse transcription reactions:
+
+    - Use all combinations of the following reagents:
+
+      primer: 50 µM oligo(dT)₂₀, 50 µM random
+        hexamers, 2 µM s1+s3, 2 µM s2+s5
+      DNase-treated template RNA: sz224, sz228
+      SuperScript IV RT: +, −
+
+    - Make master mix:
+
+      Reagent               Stock   Volume     ≈19.4x
+      ───────────────────────────────────────────────
+      DEPC-treated water           1.00 µL   19.36 µL
+      dNTP mix              10 mM  1.00 µL   19.36 µL
+      SSIV buffer              5x  4.00 µL   77.44 µL
+      DTT                  100 mM  1.00 µL   19.36 µL
+      RNaseOUT            40 U/µL  1.00 µL   19.36 µL
+      ───────────────────────────────────────────────
+                                   8.00 µL  154.88 µL
+
+    - Make 2 RT mixes:
+
+      Reagent               Stock   Volume      8.8x
+      ──────────────────────────────────────────────
+      master mix                   8.00 µL  70.40 µL
+      SuperScript IV RT  200 U/µL  1.00 µL   8.80 µL
+      ──────────────────────────────────────────────
+                                   9.00 µL  79.20 µL
+
+    - Make 8 primer/DNase-treated template RNA mixes:
+
+      Reagent                       Volume      2.2x
+      ──────────────────────────────────────────────
+      primer                       1.00 µL   2.20 µL
+      DNase-treated template RNA  10.00 µL  22.00 µL
+      ──────────────────────────────────────────────
+                                  11.00 µL  24.20 µL
+
+    - Setup the reactions:
+
+      Reagent                                  Volume
+      ───────────────────────────────────────────────
+      primer/DNase-treated template RNA mix  11.00 µL
+      RT mix                                  9.00 µL
+      ───────────────────────────────────────────────
+                                             20.00 µL
+
+ 7. Run the following thermocycler protocols:
+
+    For the oligo(dT)₂₀ reactions:
+
+    - 50°C for 10m
+    - 80°C for 10m
+
+    For the random hexamers reactions:
+
+    - 23°C for 10m
+    - 50°C for 10m
+    - 80°C for 10m
+
+    For the gene-specific primer reactions:
+
+    - 50°C for 10m
+    - 80°C for 10m
+
+ 8. Dilute the reverse-transcribed DNA 10x:
+
+    - 18 µL water
+    - 2 µL RT reaction
+
+ 9. Setup 96 PCR reactions:
+
+    - Use the following combinations of reagents:
+
+      template DNA       forward primer  reverse primer
+      ─────────────────────────────────────────────────
+      sz224, dt, +RT     s1              s2
+      sz224, dt, +RT     s3              s5
+      sz224, dt, −RT     s1              s2
+      sz224, dt, −RT     s3              s5
+      sz224, hex, +RT    s1              s2
+      sz224, hex, +RT    s3              s5
+      sz224, hex, −RT    s1              s2
+      sz224, hex, −RT    s3              s5
+      sz224, s1+s3, +RT  s1              s2
+      sz224, s1+s3, +RT  s3              s5
+      sz224, s1+s3, −RT  s1              s2
+      sz224, s1+s3, −RT  s3              s5
+      sz224, s2+s5, +RT  s1              s2
+      sz224, s2+s5, +RT  s3              s5
+      sz224, s2+s5, −RT  s1              s2
+      sz224, s2+s5, −RT  s3              s5
+      sz228, dt, +RT     s1              s2
+      sz228, dt, +RT     s3              s5
+      sz228, dt, −RT     s1              s2
+      sz228, dt, −RT     s3              s5
+      sz228, hex, +RT    s1              s2
+      sz228, hex, +RT    s3              s5
+      sz228, hex, −RT    s1              s2
+      sz228, hex, −RT    s3              s5
+      sz228, s1+s3, +RT  s1              s2
+      sz228, s1+s3, +RT  s3              s5
+      sz228, s1+s3, −RT  s1              s2
+      sz228, s1+s3, −RT  s3              s5
+      sz228, s2+s5, +RT  s1              s2
+      sz228, s2+s5, +RT  s3              s5
+      sz228, s2+s5, −RT  s1              s2
+      sz228, s2+s5, −RT  s3              s5
+
+    - Make polymerase mix:
+
+      Reagent          Stock    Volume     ≈135.5x
+      ────────────────────────────────────────────
+      water                    8.90 µL  1206.13 µL
+      Luna master mix     2x  10.00 µL  1355.20 µL
+      ────────────────────────────────────────────
+                              18.90 µL     2.56 mL
+
+    - Make 2 200x primer mixes:
+
+      Reagent          Stock   Volume    161.6x
+      ─────────────────────────────────────────
+      forward primer  100 µM  0.05 µL   8.08 µL
+      reverse primer  100 µM  0.05 µL   8.08 µL
+      ─────────────────────────────────────────
+                              0.10 µL  16.16 µL
+
+    - Make 2 master mixes:
+
+      Reagent         Stock    Volume       61.6x
+      ───────────────────────────────────────────
+      polymerase mix         18.90 µL  1164.24 µL
+      primer mix       200x   0.10 µL     6.16 µL
+      ───────────────────────────────────────────
+                             19.00 µL  1170.40 µL
+
+    - Setup 32 reactions:
+
+      Reagent            Stock    Volume      3.5x
+      ────────────────────────────────────────────
+      master mix                19.00 µL  66.50 µL
+      template DNA  <100 ng/µL   1.00 µL   3.50 µL
+      ────────────────────────────────────────────
+                                20.00 µL  70.00 µL
+
+    - Split into 3 identical 20.00 µL reactions.
+
+    - Use any extra master mix as a negative control.
+
+10. Run the following thermocycler protocol:
+
+    - 95°C for 1m
+    - Repeat 40x:
+      - 95°C for 15s
+      - 60°C for 30s

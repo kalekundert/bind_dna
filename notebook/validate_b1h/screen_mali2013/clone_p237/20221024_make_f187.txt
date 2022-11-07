@@ -1,0 +1,33 @@
+October 24, 2022
+
+$ sw make f187
+
+1. Setup 1 restriction digestion reaction:
+
+   - Make 2x enzyme mix:
+
+     Reagent             Stock    Volume        50x
+     ──────────────────────────────────────────────
+     water                       7.98 µL  399.00 µL
+     rCutSmart Buffer      10x   2.00 µL  100.00 µL
+     NotI-HF           20 U/µL   0.01 µL    0.50 µL
+     HindIII-HF        20 U/µL   0.01 µL    0.50 µL
+     ──────────────────────────────────────────────
+                                10.00 µL  500.00 µL
+
+   - Setup the reaction:
+
+     Reagent          Stock    Volume
+     ────────────────────────────────
+     water                    3.98 µL
+     l3          3.32 ng/µL   6.02 µL
+     enzyme mix          2x  10.00 µL
+     ────────────────────────────────
+                             20.00 µL
+
+2. Incubate at the following temperatures [3]:
+
+   - 37°C for 5–15 min
+   - 80°C for 20 min
+
+3. Label the product: f187

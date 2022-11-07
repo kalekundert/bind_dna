@@ -1,0 +1,19 @@
+[row]
+'A,C,E,G'.primers = 's1,s2'
+'B,D,F,H'.primers = 's3,s5'
+
+'A,B'.rt = 'SuperScript IV'
+'C,D'.rt = 'SuperScript IV VILO'
+'E,F'.rt = 'ProtoScript II'
+'G,H'.rt = 'AMV'
+
+[col]
+'1,3,...,11'.strain = 'sz224'
+'2,4,...,12'.strain = 'sz228'
+
+'1,2,5,6,9,10'.control = '−RT'
+'3,4,7,8,11,12'.control = '+RT'
+
+1-4.replicate = 1
+5-8.replicate = 2
+9-12.replicate = 3

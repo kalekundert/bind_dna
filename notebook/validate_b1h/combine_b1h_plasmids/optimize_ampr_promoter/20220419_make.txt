@@ -1,0 +1,45 @@
+April 19, 2022
+
+$ sw make p216 p217 p220
+
+1. Setup 3 Gibson assemblies [1]:
+
+   Reagent               Stock   Volume     3.3x
+   ─────────────────────────────────────────────
+   Gibson master mix        2x  2.50 µL  8.25 µL
+   f169               65 ng/uL  1.60 µL  5.27 µL
+   f172,f173,f176     10 ng/µL  0.90 µL
+   ─────────────────────────────────────────────
+                                5.00 µL  4.10 µL/rxn
+
+2. Incubate at 50°C for 15 min.
+
+3. Label the products: p216, p217, p220
+
+4. Transform the following plasmids: p216, p217, p220
+   [2]
+
+   - Pre-warm 3 LB+Carb plates.
+   - For each transformation:
+
+     - Thaw 25 µL competent MACH1 cells on ice.
+     - Add 1 µL plasmid.
+     - Gently flick to mix
+
+     - Plate 25 µL cells.
+     - Incubate at 37°C for 16h.
+
+5. Sequence the following plasmids:
+
+   Plasmid  Primers
+   ────────────────
+   p216     o266
+   p217     o266
+   p220     o266
+
+6. Miniprep.
+
+Notes:
+[1] https://tinyurl.com/ychbvkra
+
+[2] https://tinyurl.com/2cesd2hv

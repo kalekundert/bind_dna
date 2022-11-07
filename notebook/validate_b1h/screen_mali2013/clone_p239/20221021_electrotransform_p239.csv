@@ -1,0 +1,3 @@
+Library,Complexity,Transformants,Unique Transformants,Coverage (%),Coverage (x)
+p239 (+insert),4.0,3124.9999999999995,4.0,100.0,781.2499999999999
+p239 (−insert),4.0,300.0,4.0,100.0,75.0

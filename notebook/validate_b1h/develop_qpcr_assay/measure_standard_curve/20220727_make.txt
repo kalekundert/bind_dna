@@ -1,0 +1,23 @@
+July 27, 2022
+
+$ sw make sz229 sz230 sz231
+
+1. Transform the following plasmids: p229, p230, p231
+   [1]
+
+   - Pre-warm 3 LB+Amp plates.
+   - For each transformation:
+
+     - Thaw 100 µL competent s3 cells on ice.
+     - Add 2 µL plasmid.
+     - Gently flick to mix.
+
+     - Incubate at 42°C for 30s.
+     - Incubate on ice for 2 min.
+     - Plate 200 µL cells.
+     - Incubate at 37°C for 16h.
+
+2. Label the products: sz229, sz230, sz231
+
+Note:
+[1] https://tinyurl.com/fwk2c36b

@@ -1,0 +1,67 @@
+June 21, 2022
+
+$ sw check_efficiency
+
+1. Perform a serial dilution [1]:
+
+   - Put 22.22 µL 200 ng/µL p221 in a tube.
+   - Put 20.00 µL water in 7 adjacent tubes.
+   - Transfer 2.22 µL between each tube *except the
+     last* to make 7 10-fold dilutions and 1 negative
+     control.
+
+2. Setup 8 qPCR reactions [2,3]:
+
+   Reagent                Stock    Volume       8.8x
+   ─────────────────────────────────────────────────
+   water                         29.04 µL  255.55 µL
+   p221                           3.30 µL
+   sr1                   100 µM   0.33 µL    2.90 µL
+   sr2                   100 µM   0.33 µL    2.90 µL
+   SsoAdvanced supermix      2x  33.00 µL  290.40 µL
+   ─────────────────────────────────────────────────
+                                 66.00 µL   62.70 µL/rxn
+
+   - Split into 3 identical 20 µL reactions.
+   - Use any extra master mix as a negative control.
+
+3. Setup 8 qPCR reactions [2,3]:
+
+   Reagent                Stock    Volume       8.8x
+   ─────────────────────────────────────────────────
+   water                         29.04 µL  255.55 µL
+   p221                           3.30 µL
+   sr3                   100 µM   0.33 µL    2.90 µL
+   sr5                   100 µM   0.33 µL    2.90 µL
+   SsoAdvanced supermix      2x  33.00 µL  290.40 µL
+   ─────────────────────────────────────────────────
+                                 66.00 µL   62.70 µL/rxn
+
+   - Split into 3 identical 20 µL reactions.
+   - Use any extra master mix as a negative control.
+
+4. Run the following thermocycler protocol:
+
+   - 95°C for 30s
+   - Repeat 40x:
+     - 95°C for 10s
+     - 61°C for 15s
+     - Measure fluorescence
+   - 65.0-95.0°C in 5s steps of 0.5°C:
+     - Measure fluorescence
+
+Notes:
+[1] The final concentrations will be:
+    1  2.000000e+02 ng/µL
+    2  2.000000e+01 ng/µL
+    3  2.000000e+00 ng/µL
+    4  2.000000e-01 ng/µL
+    5  2.000000e-02 ng/µL
+    6  2.000000e-03 ng/µL
+    7  2.000000e-04 ng/µL
+    8  0.000000e+00 ng/µL
+
+[2] https://tinyurl.com/y4qffgss
+
+[3] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol

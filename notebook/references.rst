@@ -8,9 +8,11 @@ References
 .. [Auld2020] Auld et al. Microplate Selection and Recommended Practices in High-throughput Screening and Quantitative Biology. 2020.
 .. [Avis2012] :doi:`10.1007/978-1-62703-113-4_7`
 .. [Ashworth2006] :doi:`10.1038/nature04818`
+.. [Barras1989] :doi:`10.1016/0168-9525(89)90054-1`
 .. [Bertschinger2004] :doi:`10.1093/protein/gzh082`
 .. [Barendt2013] :doi:`10.1021/co300135r`
 .. [Bauer2017] :doi:`10.1371/journal.pone.0190062`
+.. [Boldridge2020] :doi:`10.1101/2020.11.12.377184`
 .. [Bulyk2001] :doi:`10.1073/pnas.111163698`
 .. [Butt2013] :doi:`10.1074/mcp.M112.021881`
 .. [Cameron1977] :doi:`10.1021/bi00642a027`
@@ -52,6 +54,7 @@ References
 .. [Hawkins2018] :doi:`10.1073/pnas.1802640115`
 .. [Hecht2017] :doi:`10.1093/nar/gkx070`
 .. [Hellman2007] :doi:`10.1038/nprot.2007.249`
+.. [Hengen1996] :doi:`10.1016/S0968-0004(96)30041-8`
 .. [Hu2010] :doi:`10.1002/chem.200902166`
 .. [Imburgio2000] :doi:`10.1021/bi000365w`
 .. [Inouye1985] :doi:`10.1093/nar/13.9.3101`
@@ -80,6 +83,7 @@ References
 .. [Kienberger2000] :doi:`10.1002/1438-5171(200006)1:2<123::AID-SIMO123>3.0.CO;2-3`
 .. [Kurz2001] Kurz M, Gu K, Al-Gawari A, Lohse PA. cDNA–Protein Fusions: Covalent Protein–Gene Conjugates for the In Vitro Selection of Peptides and Proteins. Chem Bio Chem 2:9:666-672 (2001).
 .. [Ma2011] :doi:`10.1007/978-1-61779-379-0_21`
+.. [Mali2013] :doi:`10.1038/nmeth.2407`
 .. [Man2001] :doi:`10.1093/nar/29.12.2471`
 .. [Masai1988] :doi:`10.1093/nar/16.14.6493`
 .. [Masai1987] :doi:`10.1073/pnas.84.14.4781`
@@ -113,6 +117,7 @@ References
 .. [Praszkier1999] Praszkier J and Pittard AJ.  Role of CIS in replication of an IncB plasmid.  J Bacteriol. 1999 May;181(9):2765-72.
 .. [Praszkier2000] :doi:`10.1128/JB.182.14.3972-3980.2000`
 .. [Putney1981] :doi:`10.1073/pnas.78.12.7350`
+.. [Rauhut1999] :doi:`10.1111/j.1574-6976.1999.tb00404.x`
 .. [Rebar1994] :doi:`10.1126/science.8303274`.  Too old to access...
 .. [Reyes2021] :doi:`10.1002/bit.27696`
 .. [Reiersen2005] :doi:`10.1093/nar/gni010`
@@ -126,12 +131,15 @@ References
 .. [Schurer2002] :doi:`10.1093/nar/gnf055`
 .. [Seelig2011] :doi:`10.1038/nprot.2011.312`
 .. [SegallShapiro2018] :doi:`10.1038/nbt.4111`
+.. [Selinger2003] :doi:`10.1101/gr.912603`
 .. [Sera2002] :doi:`10.1021/bi020095c`
 .. [Shimizu2001] :doi:`10.1038/90802`
 .. [Shine1974] :doi:`10.1073/pnas.71.4.1342`
 .. [Subramanian2018] :doi:`10.1093/synbio/ysx008`
 .. [Sugiura1993] :doi:`10.1128/jb.175.18.5993-6001.1993`
+.. [Tautz1983] :doi:`10.1016/0003-2697(83)90419-0`
 .. [Tice1991] Patent: `US5064519A <https://patents.google.com/patent/US5064519A/en>`_
+.. [Thompson2018] :doi:`10.1038/s41598-018-20016-w`
 .. [Thyme2014] :doi:`10.1007/978-1-62703-968-0_17`
 .. [VanDongen1997] :doi:`10.1093/nar/25.8.1537`
 .. [Vallone1999] :doi:`10.1002/(SICI)1097-0282(19991005)50:4<425::AID-BIP8>3.0.CO;2-B`

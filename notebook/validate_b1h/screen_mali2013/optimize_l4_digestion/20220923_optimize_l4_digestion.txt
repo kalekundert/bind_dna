@@ -1,0 +1,134 @@
+September 23, 2022
+
+$ sw optimize_l4_digestion
+
+ 1. Setup 1 PCR reaction [1-3]:
+
+    Reagent           Stock     Volume
+    ──────────────────────────────────
+    water                     68.25 µL
+    l2             20 pg/µL   17.50 µL
+    sr4              100 µM    0.88 µL
+    sr5              100 µM    0.88 µL
+    Q5 master mix        2x   87.50 µL
+    ──────────────────────────────────
+                             175.00 µL
+
+    - Split each reaction into 4 tubes.
+
+ 2. Run the following thermocycler protocol:
+
+    - 98°C for 30s
+    - Repeat 10x:
+      - 98°C for 10s
+      - 61°C for 20s
+      - 72°C for 15s
+    - 72°C for 2 min
+    - 4°C hold
+
+ 3. Label the product: l4
+
+ 4. Purify using QIAquick PCR purification kit
+    (28104) [4,5]:
+
+    - Perform all spin steps at 17900g.
+    - Add 875.0 µL PB to the crude DNA.
+    - If not yellow: Add 35.0 µL 3M sodium acetate,
+      pH=5.0.
+    - Load on a QIAquick column.
+    - Spin 30s; discard flow-through.
+
+    - Add 750 µL PE.
+    - Spin 30s; discard flow-through.
+    - Spin 1m; discard flow-through.
+    - Add 70.0 µL EB.
+    - Wait at least 1m.
+    - Spin 30s; keep flow-through.
+
+ 5. Reserve 10 µL as the −enzyme (0 min) control.
+
+ 6. Setup 1 BbsI-HF digestion [6,7]:
+
+    Reagent               Stock    Volume
+    ─────────────────────────────────────
+    l4                100 ng/µL  60.00 µL
+    rCutSmart Buffer        10x   7.00 µL
+    BbsI-HF             20 U/µL   3.00 µL
+    ─────────────────────────────────────
+                                 70.00 µL
+
+ 7. Incubate at 37°C.  At the same time, pre-warm
+    another thermocycler block to 65°C.  At the times
+    indicated below, remove an 11.67 µL aliquot from
+    the digestion reaction and incubate it at 65°C
+    for 20 min.
+
+    - 5m
+    - 15m
+    - 30m
+    - 1h
+    - 2h
+
+ 8. Prepare 6 samples for TBE PAGE:
+
+    Reagent                             Stock    Volume
+    ───────────────────────────────────────────────────
+    TBE high-density sample buffer         5x   2.92 µL
+    f191                            200 ng/µL  11.67 µL
+    ───────────────────────────────────────────────────
+                                               14.59 µL
+
+ 9. Run a gel:
+
+    gel: 4–20% TBE PAGE
+    buffer: 1x TBE
+    ladder: 1 µL 1 kb+ (NEB N3200, 1 µg/µL)
+    samples: 10 µL/lane
+    run: 200V for 60 min
+
+10. Stain gel with GelGreen [9-11]:
+
+    - Keep the stain protected from light.
+
+    - Submerge gel in ≈30 mL 3x GelGreen, 100 mM
+      NaCl.
+    - Shake gently for 30m.
+
+11. Image with a laser scanner:
+
+    laser:    488 nm
+    filter:  518BP22
+
+Notes:
+ [1] https://tinyurl.com/y27ralt4
+
+ [2] For resuspending lyophilized primers:
+     100 µM = 10 µL/nmol
+
+ [3] For diluting template DNA to 20 pg/µL:
+     Dilute 1 µL twice into 7*sqrt([DNA]) µL
+
+ [4] https://tinyurl.com/xr8ruvr9
+
+ [5] Column capacity: 10 µg
+
+ [6] https://www.neb.com/products/r3539-bbsi-hf
+
+ [7] NEB recommends 5–10 units of enzyme per µg DNA
+     (10–20 units for genomic DNA).  Enzyme volume
+     should not exceed 10% of the total reaction
+     volume to prevent star activity due to excess
+     glycerol.
+
+ [8] The heat inactivation step is not necessary if
+     the DNA will be purified before use.
+
+ [9] https://tinyurl.com/etxhfxws
+
+[10] Including 100 mM NaCl in the staining solution
+     enhances sensitivity, but may promote dye
+     precipitation if the gel stain is reused.
+
+[11] Staining solution can be reused at least 2-3x.
+     Store staining solution at room temperature
+     protected from light.

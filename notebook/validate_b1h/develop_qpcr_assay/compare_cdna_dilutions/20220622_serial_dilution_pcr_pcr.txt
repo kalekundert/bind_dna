@@ -1,0 +1,66 @@
+June 22, 2022
+
+$ sw serial_dilution 1 / 10 -n 6 -v '20µL' -m cDNA -d water
+$ sw pcr -p ssoadv -d 2 --skip-thermocycler sz224+RT/1e0,s1,s2 sz224+RT/1e1,s1,s2 sz224+RT/1e2,s1,s2 sz224+RT/1e3,s1,s2 sz224+RT/1e4,s1,s2 sz224+RT/1e5,s1,s2 sz224-RT/1e0,s1,s2 sz224-RT/1e1,s1,s2 sz224-RT/1e2,s1,s2 sz224-RT/1e3,s1,s2 sz224-RT/1e4,s1,s2 sz224-RT/1e5,s1,s2 sz228+RT/1e0,s1,s2 sz228+RT/1e1,s1,s2 sz228+RT/1e2,s1,s2 sz228+RT/1e3,s1,s2 sz228+RT/1e4,s1,s2 sz228+RT/1e5,s1,s2 sz228-RT/1e0,s1,s2 sz228-RT/1e1,s1,s2 sz228-RT/1e2,s1,s2 sz228-RT/1e3,s1,s2 sz228-RT/1e4,s1,s2 sz228-RT/1e5,s1,s2
+$ sw pcr -p ssoadv -d 2 sz224+RT/1e0,s3,s5 sz224+RT/1e1,s3,s5 sz224+RT/1e2,s3,s5 sz224+RT/1e3,s3,s5 sz224+RT/1e4,s3,s5 sz224+RT/1e5,s3,s5 sz224-RT/1e0,s3,s5 sz224-RT/1e1,s3,s5 sz224-RT/1e2,s3,s5 sz224-RT/1e3,s3,s5 sz224-RT/1e4,s3,s5 sz224-RT/1e5,s3,s5 sz228+RT/1e0,s3,s5 sz228+RT/1e1,s3,s5 sz228+RT/1e2,s3,s5 sz228+RT/1e3,s3,s5 sz228+RT/1e4,s3,s5 sz228+RT/1e5,s3,s5 sz228-RT/1e0,s3,s5 sz228-RT/1e1,s3,s5 sz228-RT/1e2,s3,s5 sz228-RT/1e3,s3,s5 sz228-RT/1e4,s3,s5 sz228-RT/1e5,s3,s5
+
+1. Perform a serial dilution [1]:
+
+   - Put 22.22 µL 1 cDNA in a tube.
+   - Put 20.00 µL water in 5 adjacent tubes.
+   - Transfer 2.22 µL between each tube to make 6
+     10-fold dilutions.
+
+2. Setup 24 qPCR reactions [2,3]:
+
+   Reagent                          Stock    Volume      26.4x
+   ───────────────────────────────────────────────────────────
+   water                                   19.36 µL  511.10 µL
+   sz224+RT/1e0,sz224+RT/1e1,sz2…           2.20 µL
+   s1                              100 µM   0.22 µL    5.81 µL
+   s2                              100 µM   0.22 µL    5.81 µL
+   SsoAdvanced supermix                2x  22.00 µL  580.80 µL
+   ───────────────────────────────────────────────────────────
+                                           44.00 µL   41.80 µL/rxn
+
+   - Split into 2 identical 20 µL reactions.
+   - Use any extra master mix as a negative control.
+
+3. Setup 24 qPCR reactions [2,3]:
+
+   Reagent                          Stock    Volume      26.4x
+   ───────────────────────────────────────────────────────────
+   water                                   19.36 µL  511.10 µL
+   sz224+RT/1e0,sz224+RT/1e1,sz2…           2.20 µL
+   s3                              100 µM   0.22 µL    5.81 µL
+   s5                              100 µM   0.22 µL    5.81 µL
+   SsoAdvanced supermix                2x  22.00 µL  580.80 µL
+   ───────────────────────────────────────────────────────────
+                                           44.00 µL   41.80 µL/rxn
+
+   - Split into 2 identical 20 µL reactions.
+   - Use any extra master mix as a negative control.
+
+4. Run the following thermocycler protocol:
+
+   - 95°C for 30s
+   - Repeat 40x:
+     - 95°C for 10s
+     - 60°C for 15s
+     - Measure fluorescence
+   - 65.0-95.0°C in 5s steps of 0.5°C:
+     - Measure fluorescence
+
+Notes:
+[1] The final concentrations will be:
+    1  1.000000e+00
+    2  1.000000e-01
+    3  1.000000e-02
+    4  1.000000e-03
+    5  1.000000e-04
+    6  1.000000e-05
+
+[2] https://tinyurl.com/y4qffgss
+
+[3] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol

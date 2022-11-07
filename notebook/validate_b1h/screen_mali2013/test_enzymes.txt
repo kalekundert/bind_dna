@@ -1,0 +1,18 @@
+p237 + p239:
+- BsmBI/Esp3I (2)
+- HaeII
+- XmnI
+
+p237 only:
+- NotI
+- HindIII
+- EcoRI
+- BsrGI
+- BsaI (3)
+- BstNI (4)
+
+p239 only:
+- NdeI
+- EcoRV
+- SapI
+

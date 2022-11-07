@@ -1,0 +1,36 @@
+# 64 reactions:
+# - 4 media conditions
+# - 2 strains
+# - 2 primer pairs
+# - ±RT
+# - 2 replicates
+
+[col]
+'3-6'.replicate = 1
+'7-10'.replicate = 2
+
+[col.'3,7']
+iptg_uM = 0
+carb_x = 1
+
+[col.'4,8']
+iptg_uM = 10
+carb_x = 1
+
+[col.'5,9']
+iptg_uM = 100
+carb_x = 1
+
+[col.'6,10']
+iptg_uM = 10
+carb_x = 0.5
+
+[row]
+'A,C,E,G'.primer = 'sr1,sr2'
+'B,D,F,H'.primer = 'sr3,sr5'
+
+'A,B,E,F'.rt = true
+'C,D,G,H'.rt = false
+
+A-D.strain = 'sz224'
+E-H.strain = 'sz228'

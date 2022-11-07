@@ -1,0 +1,21 @@
+April 13, 2022
+
+$ sw check_ligase
+
+1. Setup 2 T4 DNA ligase control reactions [1]:
+
+   Reagent                            Stock    Volume      2.2x
+   ────────────────────────────────────────────────────────────
+   water                                     16.00 µL  35.20 µL
+   T4 DNA ligase buffer                 10x   2.00 µL
+   Lambda DNA/HindIII DNA marker  500 ng/µL   1.00 µL   2.20 µL
+   T4 DNA ligase                     1 U/µL   1.00 µL   2.20 µL
+   ────────────────────────────────────────────────────────────
+                                             20.00 µL  18.00 µL/rxn
+
+2. Incubate at room temperature for 10 min.
+
+3. Run a 1% E-gel.
+
+Note:
+[1] https://tinyurl.com/24e725tj

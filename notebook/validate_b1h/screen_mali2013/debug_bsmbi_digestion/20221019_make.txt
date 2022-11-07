@@ -1,0 +1,59 @@
+October 19, 2022
+
+$ sw make f204 f205 f206
+
+1. Setup 3 PCR reactions [1-3]:
+
+   Reagent            Stock    Volume      3.3x
+   ────────────────────────────────────────────
+   water                     19.50 µL  64.35 µL
+   o398,o399,o400  20 pg/µL   5.00 µL
+   sr2               100 µM   0.25 µL   0.83 µL
+   sr3               100 µM   0.25 µL   0.83 µL
+   Q5 master mix         2x  25.00 µL  82.50 µL
+   ────────────────────────────────────────────
+                             50.00 µL  45.00 µL/rxn
+
+   - Use any extra master mix as a negative control.
+
+2. Run the following thermocycler protocol:
+
+   - 98°C for 30s
+   - Repeat 35x:
+     - 98°C for 10s
+     - 61°C for 20s
+     - 72°C for 10s
+   - 72°C for 2 min
+   - 4°C hold
+
+3. Label the products: f204, f205, f206
+
+4. Purify using QIAquick PCR purification kit (28104)
+   [4,5]:
+
+   - Perform all spin steps at 17900g.
+   - Add 5 volumes PB to the crude DNA.
+   - If not yellow: Add 0.2 volumes 3M sodium
+     acetate, pH=5.0.
+   - Load on a QIAquick column.
+   - Spin 30s; discard flow-through.
+
+   - Add 750 µL PE.
+   - Spin 30s; discard flow-through.
+   - Spin 1m; discard flow-through.
+   - Add 50 µL EB.
+   - Wait at least 1m.
+   - Spin 30s; keep flow-through.
+
+Notes:
+[1] https://tinyurl.com/y27ralt4
+
+[2] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol
+
+[3] For diluting template DNA to 20 pg/µL:
+    Dilute 1 µL twice into 7*sqrt([DNA]) µL
+
+[4] https://tinyurl.com/xr8ruvr9
+
+[5] Column capacity: 10 µg

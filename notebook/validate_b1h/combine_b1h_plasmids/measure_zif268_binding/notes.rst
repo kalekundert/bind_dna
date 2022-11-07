@@ -2,6 +2,20 @@
 Measure Zif268 binding
 **********************
 
+.. update:: 2022/04/06
+
+  I'm pretty sure that I made an error in how I prepared my 100 mM histidine 
+  solution: my protocol called for 575.75 mg L-histidine to be dissolved in 50 
+  mL water; that should be 775.75 mg.  I couldn't find the print-out from when 
+  I originally made this solution, but the error was present in the protocol 
+  unitl I fixed it just now, so I think my last batch was probably too dilute.  
+  Fortunately this doesn't really affect my results, since the cells seem to 
+  still grow find on the permissive media.
+  
+  On a relatd note, just now I was unable to get even 575 mg of histidine to 
+  dissolve in 50 mL water.  I suspect I might have to adjust the pH somewhat, 
+  but I'm not sure how I got it dissolved last time...
+
 2022/03/17
 ==========
 
@@ -147,7 +161,6 @@ Next steps:
 
 2022/04/02
 ==========
-
 .. protocol:: 20220330_plate_assay.txt
 
 .. figure:: 20220402_b1h.svg
@@ -167,4 +180,38 @@ Next steps:
 
 - Try best AmpR promoter with p194.
 
+
+2022/04/05
+==========
+.. protocol:: 20220404_make_nm_agar.pdf 20220405_plate_assay.pdf 20220404_make_nm_agar.txt 20220405_plate_assay.txt
+
+.. figure:: 20220408_b1h.svg
+
+Observations:
+
+- s15/s21 grow slightly better than s4/s5.  I think this is the same AmpR 
+  effect I've described before.  In this case, run-on transcription has to go 
+  through two terminators facing the opposite direction.  Most terminators are 
+  at least somewhat bidirectional, though, so it is a bit surprising that there 
+  would be an effect.  But to the extent that there is one, it makes sense that 
+  it's smaller than what I see for s16/s22.
+
+- I think s15/s21 grew slightly better than s12/s18 (the same Zif268 insertion 
+  site with terminators, from 4/02), but it's hard to say.  Both worked pretty 
+  well.
+
+- s13/s19 don't grow as well as s16/s22 (the same Zif268 insertion site, 
+  without terminators, from 3/23).  I would say that s13/s19 grew slightly 
+  worse than s4/s5, while s16/s22 grew significantly better.  This is 
+  consistent with the idea that AmpR expression is limiting. 
+
+Discussion
+==========
+- The one-plasmid assay is viable, and can work is several different plasmid 
+  configurations.
+
+- The expression of AmpR probably needs to be increased.
+
+- The assay may be sensitive to terminator used for the reporter gene (HIS/URA 
+  in this experiment).
 

@@ -1,0 +1,53 @@
+November 2, 2022
+
+$ sw 20221102_test_digest
+
+1. Setup 8 restriction digestion reactions:
+
+   - Use all combinations of the following reagents:
+
+     DNA: p237, p239
+     enzyme: Esp3I, HaeII, BsrGI-HF, EcoRV-HF
+
+   - Make master mix:
+
+     Reagent           Stock   Volume     ≈9.7x
+     ──────────────────────────────────────────
+     water                    3.50 µL  33.88 µL
+     rCutSmart Buffer    10x  1.00 µL   9.68 µL
+     ──────────────────────────────────────────
+                              4.50 µL  43.56 µL
+
+   - Make 2 2x DNA mixes:
+
+     Reagent     Stock   Volume      4.4x
+     ────────────────────────────────────
+     water              4.00 µL  17.60 µL
+     DNA      27 ng/µL  1.00 µL   4.40 µL
+     ────────────────────────────────────
+                        5.00 µL  22.00 µL
+
+   - Make 4 2x enzyme mixes:
+
+     Reagent      Volume      2.2x
+     ─────────────────────────────
+     master mix  4.50 µL   9.90 µL
+     enzyme      0.50 µL   1.10 µL
+     ─────────────────────────────
+                 5.00 µL  11.00 µL
+
+   - Setup the reactions:
+
+     Reagent     Stock    Volume
+     ───────────────────────────
+     enzyme mix     2x   5.00 µL
+     DNA mix        2x   5.00 µL
+     ───────────────────────────
+                        10.00 µL
+
+2. Incubate at the following temperatures [3]:
+
+   - 37°C for 2 hr
+   - 80°C for 20 min
+
+3. Run a 1% E-gel.

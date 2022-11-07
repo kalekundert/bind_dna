@@ -188,7 +188,7 @@ def fit_imagej_plots(conf, img):
         ]
 
         # Fit each band.
-        x, y = densiometry.path_from_image(plot)
+        x, y = densiometry.curve_from_image(plot)
         ps = densiometry.fit_bands(x, y, band_params)
 
         lane = Lane(

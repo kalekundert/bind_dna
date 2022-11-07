@@ -747,3 +747,23 @@ more relevant to the general problem of interface design.
   experiments.  I've gotten pretty good feedback from him so far, and I think I 
   could move faster with more feedback.
 
+2022/08/03 --- Subgroup meeting
+
+- Use Golden Gate (or standard restriction cloning) for library steps.  With 
+  really clean inputs and long ligation steps, it's the most efficient method.  
+  Plus it doesn't require PCR, which can bias the library.
+
+- Consider doing long-read sequencing.  That would eliminate the need to clone 
+  barcodes.  The question is if the throughput would be high enough.  Prices 
+  have been coming down rapidly, though, so it's worth considering.
+
+- Regarding my hypothesis that undigested plasmid DNA is responsible for poor 
+  background signal in qPCR assay:
+
+  - I can test for this by amplifying a part of the plasmid that shouldn't be 
+    expressed.  In fact, my antisense primer control already does this, and 
+    definitely points in this direction.
+
+  - Treat with DpnI.  My amplicon doesn't currently include a DpnI site, but I 
+    could add one.  The nice thing about DpnI is that I wouldn't need to worry 
+    about removing it, since it wouldn't be active on reverse transcribed DNA.

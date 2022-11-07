@@ -17,12 +17,10 @@ set -euo pipefail
 # Controls:
 #
 # - The goal of the experiment is to see if the constructs behave more like s13 
-#   (low expression) or s16 (high expresison).
+#   (low expression) or s16 (high expression).
 #
-# Assay:
-#
-# - Right now I'm planning to use the colony assay, since that's the one I have 
-#   most established.  If I decide that the OD600 is reliable by the time I 
-#   have these constructs, I might do that instead.
+# - Maybe I should also grow the cells +/− antibiotic.  That runs the risk that 
+#   the cells will lose the plasmid during the experiment.  I could use plain 
+#   s3 as the no-antibiotic control.
 
-sw b1h/plate_assay s13 s16 s{23..27}
+sw b1h/od_kinetic_assay s13 s16 s{23..27}

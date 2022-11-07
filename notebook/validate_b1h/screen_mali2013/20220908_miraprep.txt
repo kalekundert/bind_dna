@@ -1,0 +1,59 @@
+September 8, 2022
+
+$ sw miraprep
+
+1. Purify plasmid by miraprep [1]:
+   
+   - Setup a 50 mL bacterial culture in appropriate 
+     selective media and incubate on a shaker (250 
+     rpm) at 37°C overnight.
+   
+   - Transfer bacteria to a 50 mL Falcon tube and 
+     spin at 3270g at 4°C for 20 min.
+   
+   - Discard supernatant and resuspend pellet in 2 mL 
+     resuspension buffer (P1) with 50 μg/mL RNase (5 
+     μL 20 mg/mL) freshly added.
+   
+   - Add 2 mL of lysis buffer (P2), invert 3-4 times 
+     and incubate for 3 min at RT.
+   
+   - Add 2 mL of neutralization buffer (N3) and 
+     invert 3-4 times.
+   
+   - Distribute lysate into 1.5 mL Eppendorf tubes 
+     (~4 tubes) by pouring, not pipetting.
+   
+   - Spin at >13,200g at RT for 10 min.
+   
+   - Collect supernatants in a 15 mL tube and discard 
+     pellets.
+   
+   - Add 1x volume of 96% ethanol (~5 mL).
+   
+   - Mix thoroughly for 5 sec.
+   
+   - Load the sample-ethanol mix onto 4 spin-columns.  
+   
+   - Wash with 500 µL washing buffer (PE).
+   
+   - Wash with 500 μL washing buffer (PE) again.
+   
+   - Spin at >13,200g at RT for 1.5 min to remove 
+     residual ethanol.
+   
+   - Add 30-35 µL of ddH2O to each spin-column and 
+     incubate for 2 min at RT.
+   
+   - Spin at >13,200g for 2 min to elute the DNA 
+     (into a fresh tube).
+   
+   - Combine the eluted DNA from all 4 columns in one 
+     tube (~140 µL).
+   
+   - Measure DNA concentration.
+   
+   - Store samples at -20°C.
+
+Note:
+[1] DOI: 10.1371/journal.pone.0160509

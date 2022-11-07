@@ -1,0 +1,49 @@
+April 13, 2022
+
+$ sw pcr p194,o349,o344 p194,o350,o344 p194,o343,o351 -d 10 -g 15
+$ sw e_gel
+
+1. Prepare 10x primer mix [1]:
+
+   Reagent          Stock    Volume
+   ────────────────────────────────
+   water                    9.00 µL
+   o349,o350,o343  100 µM   0.50 µL
+   o344,o344,o351  100 µM   0.50 µL
+   ────────────────────────────────
+                           10.00 µL
+
+2. Setup 3 PCR reactions [2,3]:
+
+   Reagent           Stock    Volume      3.3x
+   ───────────────────────────────────────────
+   water                    16.50 µL  54.45 µL
+   p194           20 pg/µL   5.50 µL  18.15 µL
+   primer mix          10x   5.50 µL
+   Q5 master mix        2x  27.50 µL  90.75 µL
+   ───────────────────────────────────────────
+                            55.00 µL  49.50 µL/rxn
+
+   - Split into 10 identical 5 µL reactions.
+   - Use any extra master mix as a negative control.
+
+3. Run the following thermocycler protocol:
+
+   - 98°C for 30s
+   - Repeat 35x:
+     - 98°C for 10s
+     - 56-71°C for 20s
+     - 72°C for 3m30
+   - 72°C for 2 min
+   - 4°C hold
+
+4. Run a 1% E-gel.
+
+Notes:
+[1] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol
+
+[2] https://tinyurl.com/y27ralt4
+
+[3] For diluting template DNA to 20 pg/µL:
+    Dilute 1 µL twice into 7*sqrt([DNA]) µL

@@ -6,6 +6,13 @@ In :expt:`158`, I suspect that some of the results can be explained by the AmpR
 promoter being too weak in the pSC101 backbone.  Here I want to consider this 
 possibility in more detail and design constructs that address this problem.
 
+.. note::
+
+  I just noticed that [Noyes2008]_ using 0.5x Kan in their NM buffer recipes, 
+  presumably due to the same issues with low expression that I'm investigating 
+  here.  p189 out-performed even the two-plasmid constructs, but I'm not sure 
+  if I remembered to use 0.5x Kan in those experiments.
+
 Copy number
 ===========
 My AmpR gene comes from a pUC vector, which has a copy number of ≈500 according 
@@ -48,11 +55,11 @@ same results, although the values have different scales.  I'll use the free
 energy/ML model, because it seems newer and I think the approach makes sense.
 
 The predictions for the free energy/ML model have the mathematical form of 
-:math:`log(\frac{T_X}{T_{"x,ref"}}`, where :math:`T_X` is a transcription rate 
-and :math:`T_{"x,ref"}` is the transcription rate for an reference promoter.  
-The reference rate is unknown, but I can still sum the rates of promoters 
-facing the same direction.  The result will still be relative to the unknown 
-reference rate.
+:math:`log(\frac{T_X}{T_{x,ref}}`, where :math:`T_X` is a transcription rate 
+and :math:`T_{x,ref}` is the transcription rate for an reference promoter.  The 
+reference rate is unknown, but I can still sum the rates of promoters facing 
+the same direction.  The result will still be relative to the unknown reference 
+rate.
 
 - The AmpR promoter (in p186 and p189) has a predicted strength of 312 au, 
   which I think is reasonably strong.

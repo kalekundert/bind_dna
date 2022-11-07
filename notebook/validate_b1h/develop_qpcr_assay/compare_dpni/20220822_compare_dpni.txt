@@ -1,0 +1,219 @@
+August 22, 2022
+
+$ sw compare_dpni
+
+ 1. Grow overnight cultures:
+
+    LB+Carb: sz234,sz235
+
+    - Inoculate 1 mL sterile media.
+    - Incubate overnight at 37°C with shaking at 225
+      rpm.
+
+ 2. Grow day cultures:
+
+    LB + 10 µM IPTG + Carb: sz234,sz235
+
+    - Inoculate 1 mL sterile media with 10 µL
+      saturated overnight culture.
+    - Incubate at 37°C with shaking at 225 rpm for
+      4h.
+
+ 3. Extract total RNA using the Zymo Quick-RNA miniprep 
+    kit:
+    
+    - Pellet ≤5×10⁸ cells (e.g. 1 mL at OD600≤0.5) at 
+      5000g for 1 min.
+    - Resuspend in 600 µL RNA lysis buffer.
+    - Follow remaining steps in manufacturer's 
+      protocol.
+
+ 4. Setup 2 DNase reactions:
+
+    - Use the following reagents:
+
+      RNA: sz234, sz235
+
+    - Make 2x master mix:
+
+      Reagent              Stock    Volume      2.2x
+      ──────────────────────────────────────────────
+      nuclease-free water         13.20 µL  29.04 µL
+      ezDNase buffer         10x   4.40 µL   9.68 µL
+      ezDNase enzyme         10x   4.40 µL   9.68 µL
+      ──────────────────────────────────────────────
+                                  22.00 µL  48.40 µL
+
+    - Setup the reactions:
+
+      Reagent         Stock    Volume
+      ───────────────────────────────
+      master mix         2x  22.00 µL
+      RNA         500 ng/µL  22.00 µL
+      ───────────────────────────────
+                             44.00 µL
+
+ 5. Incubate at 37°C for 2m.
+
+ 6. Setup 2 DNase reactions:
+
+    - Use the following reagents:
+
+      RNA: sz234, sz235
+
+    - Make 2x master mix:
+
+      Reagent                Stock    Volume      2.2x
+      ────────────────────────────────────────────────
+      nuclease-free water           13.20 µL  29.04 µL
+      rCutSmart buffer         10x   4.40 µL   9.68 µL
+      DpnI                 20 U/µL   4.40 µL   9.68 µL
+      ────────────────────────────────────────────────
+                                    22.00 µL  48.40 µL
+
+    - Setup the reactions:
+
+      Reagent         Stock    Volume
+      ───────────────────────────────
+      master mix         2x  22.00 µL
+      RNA         500 ng/µL  22.00 µL
+      ───────────────────────────────
+                             44.00 µL
+
+ 7. Incubate at 37°C for 15m.
+
+ 8. Setup 16 reverse transcription reactions:
+
+    - Use all combinations of the following reagents:
+
+      gene-specific primer: s1+s3, s2+s5
+      template RNA: sz234, ezDNase; sz234, DpnI;
+        sz235, ezDNase; sz235, DpnI
+      SuperScript IV RT: +, −
+
+    - Make master mix:
+
+      Reagent               Stock    Volume     ≈21.3x
+      ────────────────────────────────────────────────
+      DEPC-treated water            6.00 µL  127.78 µL
+      dNTP mix              10 mM   1.00 µL   21.30 µL
+      SSIV buffer              5x   4.00 µL   85.18 µL
+      DTT                  100 mM   1.00 µL   21.30 µL
+      RNaseOUT            40 U/µL   1.00 µL   21.30 µL
+      ────────────────────────────────────────────────
+                                   13.00 µL  276.85 µL
+
+    - Make 2 RT mixes:
+
+      Reagent               Stock    Volume      ≈9.7x
+      ────────────────────────────────────────────────
+      master mix                   13.00 µL  125.84 µL
+      SuperScript IV RT  200 U/µL   1.00 µL    9.68 µL
+      ────────────────────────────────────────────────
+                                   14.00 µL  135.52 µL
+
+    - Make 4 gene-specific primer mixes:
+
+      Reagent               Stock    Volume      4.4x
+      ───────────────────────────────────────────────
+      RT mix                       14.00 µL  61.60 µL
+      gene-specific primer   2 µM   1.00 µL   4.40 µL
+      ───────────────────────────────────────────────
+                                   15.00 µL  66.00 µL
+
+    - Setup the reactions:
+
+      Reagent                       Stock    Volume
+      ─────────────────────────────────────────────
+      gene-specific primer mix             15.00 µL
+      template RNA              500 ng/µL   5.00 µL
+      ─────────────────────────────────────────────
+                                           20.00 µL
+
+ 9. Run the following thermocycler protocol:
+
+    - 50°C for 10m
+    - 80°C for 10m
+
+10. Dilute the reverse-transcribed DNA 10x:
+
+    - 18 µL water
+    - 2 µL RT reaction
+
+11. Setup 96 PCR reactions:
+
+    - Use the following combinations of reagents:
+
+      template DNA                forward primer  reverse primer
+      ──────────────────────────────────────────────────────────
+      sz234, ezDNase, s1+s3, +RT  s1              s2
+      sz234, ezDNase, s1+s3, +RT  s3              s5
+      sz234, ezDNase, s1+s3, −RT  s1              s2
+      sz234, ezDNase, s1+s3, −RT  s3              s5
+      sz234, ezDNase, s2+s5, +RT  s1              s2
+      sz234, ezDNase, s2+s5, +RT  s3              s5
+      sz234, ezDNase, s2+s5, −RT  s1              s2
+      sz234, ezDNase, s2+s5, −RT  s3              s5
+      sz234, DpnI, s1+s3, +RT     s1              s2
+      sz234, DpnI, s1+s3, +RT     s3              s5
+      sz234, DpnI, s1+s3, −RT     s1              s2
+      sz234, DpnI, s1+s3, −RT     s3              s5
+      sz234, DpnI, s2+s5, +RT     s1              s2
+      sz234, DpnI, s2+s5, +RT     s3              s5
+      sz234, DpnI, s2+s5, −RT     s1              s2
+      sz234, DpnI, s2+s5, −RT     s3              s5
+      sz235, ezDNase, s1+s3, +RT  s1              s2
+      sz235, ezDNase, s1+s3, +RT  s3              s5
+      sz235, ezDNase, s1+s3, −RT  s1              s2
+      sz235, ezDNase, s1+s3, −RT  s3              s5
+      sz235, ezDNase, s2+s5, +RT  s1              s2
+      sz235, ezDNase, s2+s5, +RT  s3              s5
+      sz235, ezDNase, s2+s5, −RT  s1              s2
+      sz235, ezDNase, s2+s5, −RT  s3              s5
+      sz235, DpnI, s1+s3, +RT     s1              s2
+      sz235, DpnI, s1+s3, +RT     s3              s5
+      sz235, DpnI, s1+s3, −RT     s1              s2
+      sz235, DpnI, s1+s3, −RT     s3              s5
+      sz235, DpnI, s2+s5, +RT     s1              s2
+      sz235, DpnI, s2+s5, +RT     s3              s5
+      sz235, DpnI, s2+s5, −RT     s1              s2
+      sz235, DpnI, s2+s5, −RT     s3              s5
+
+    - Make polymerase mix:
+
+      Reagent               Stock    Volume     ≈127.8x
+      ─────────────────────────────────────────────────
+      water                         8.80 µL  1124.43 µL
+      SsoAdvanced supermix     2x  10.00 µL  1277.76 µL
+      ─────────────────────────────────────────────────
+                                   18.80 µL     2.40 mL
+
+    - Make 2 primer mixes:
+
+      Reagent          Stock    Volume      ≈58.1x
+      ────────────────────────────────────────────
+      polymerase mix          18.80 µL  1091.90 µL
+      forward primer  100 µM   0.10 µL     5.81 µL
+      reverse primer  100 µM   0.10 µL     5.81 µL
+      ────────────────────────────────────────────
+                              19.00 µL  1103.52 µL
+
+    - Setup 32 reactions:
+
+      Reagent         Volume      3.3x
+      ────────────────────────────────
+      primer mix    19.00 µL  62.70 µL
+      template DNA   1.00 µL   3.30 µL
+      ────────────────────────────────
+                    20.00 µL  66.00 µL
+
+    - Split into 3 identical 20.00 µL reactions.
+
+    - Use any extra master mix as a negative control.
+
+12. Run the following thermocycler protocol:
+
+    - 95°C for 30s
+    - Repeat 40x:
+      - 95°C for 10s
+      - 60°C for 10s

@@ -1,0 +1,21 @@
+September 2, 2022
+
+$ sw miniprep_from_plate
+
+1. Miniprep from a lawn:
+   
+   - Pipet 1 mL water onto the lawn and use a cell 
+     spreader to resuspend the cells.  Usually I 
+     only recover ≈500 µL.
+   
+   - Use ≈10¹⁰ cells for the miniprep protocol.
+   
+     - Qiagen specifically recommends 1-5 mL of 
+       culture at a density of 3-4×10⁹ cells/mL.
+   
+     - I once measured that I recovered 10¹¹ cells 
+       from the lawn, so I used 1/10 of the 
+       recovered volume (e.g. 50 µL) for the 
+       miniprep.
+   
+   - Miniprep as usual.

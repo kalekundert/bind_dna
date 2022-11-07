@@ -1,0 +1,34 @@
+June 23, 2022
+
+$ sw b1h/make_nm_stock
+
+1. Prepare 500 mL 2x NM −His/−Ura [1]:
+   
+   Reagent                          Stock       Final     Amount
+   ─────────────────────────────────────────────────────────────
+   water                                               to 500 mL
+   M9 salts                                      2×1x     10.5 g
+   −His/−Ura DO supplement [2]                   2×1x     750 mg
+   glucose                      200 mg/mL   2×4 mg/mL      20 mL
+   thiamine                       1 mg/mL  2×10 µg/mL      10 mL 
+   MgSO₄                           100 mM      2×1 mM      10 mL 
+   ZnSO₄                           100 mM     2×10 µM     100 µL 
+   CaCl₂                               1M    2×100 µM     100 µL 
+   
+   - Sterilize using a 0.22 µm filter.
+
+2. Before using, add the following to the 1x media 
+   (in addition to His, Ura, 3-AT, etc.):
+   
+   Reagent            Stock            Final      Amount
+   ─────────────────────────────────────────────────────
+   IPTG                  1M            10 µM  0.01 µL/mL
+   kanamycin       50 mg/mL   25 µg/mL, 0.5x   0.5 µL/mL
+   carbenicillin  100 mg/mL  100 µg/mL,   1x     1 µL/mL
+
+Notes:
+[1] Noyes et al. (2008) DOI: 10.1093/nar/gkn048
+
+[2] Clontech 630422.  This supplement isn't 
+    exactly what [Noyes2008] calls for: it's 
+    missing 9 of the amino acids.

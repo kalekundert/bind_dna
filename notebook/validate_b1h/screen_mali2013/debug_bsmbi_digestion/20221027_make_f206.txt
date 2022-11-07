@@ -1,0 +1,117 @@
+October 27, 2022
+
+$ sw make_f206
+
+ 1. Setup 9 PCR reactions [1-3]:
+
+    Reagent           Stock    Volume      9.9x
+    ───────────────────────────────────────────
+    water                     6.24 µL  61.78 µL
+    o400           20 pg/µL   1.60 µL  15.84 µL
+    sr2              100 µM   0.08 µL   0.79 µL
+    sr3              100 µM   0.08 µL   0.79 µL
+    Q5 master mix        2x   8.00 µL  79.20 µL
+    ───────────────────────────────────────────
+                             16.00 µL  16.00 µL/rxn
+
+    - Use any extra master mix as a negative control.
+
+ 2. Run the following thermocycler protocol:
+
+    - 98°C for 30s
+    - Repeat 35x:
+      - 98°C for 10s
+      - 54-69°C for 20s
+      - 72°C for 10s
+    - 72°C for 2 min
+    - 4°C hold
+
+ 3. Prepare 1 sample for TBE PAGE:
+
+    Reagent                            Stock    Volume
+    ──────────────────────────────────────────────────
+    TBE high-density sample buffer        5x   4.00 µL
+    f206                            80 ng/µL  16.00 µL
+    ──────────────────────────────────────────────────
+                                              20.00 µL
+
+ 4. Run a gel:
+
+    gel: 4–20% TBE PAGE
+    buffer: 1x TBE
+    ladder: 1 µL 1 kb+ (NEB N3200, 1 µg/µL)
+    samples: 20 µL/lane
+    run: 200V for 60 min
+
+ 5. Cut the desired band out of the gel [4].
+
+    - Place the gel over a TLC plate.
+    - Use a UV light to visualize the RNA (dark
+      spot).
+    - Consider visualizing remaining gel to ensure
+      that all desired RNA was excised.
+
+ 6. Crush the gel slice.
+
+    - Poke a hole in the bottom of a 0.65 mL tube
+      with a 27 g needle.
+    - Place gel slice inside the 0.65 mL tube.
+    - Place the 0.65 mL tube inside a 1.5 mL tube.
+    - Spin at max speed for 5 min.
+
+ 7. Resuspend gel in 400 µL PAGE elution buffer:
+
+    Reagent               Stock     Volume
+    ──────────────────────────────────────
+    nuclease-free water          439.00 µL
+    Tris, pH 7.5            1 M    5.00 µL
+    NaCl                    5 M   50.00 µL
+    EDTA                 500 mM    1.00 µL
+    SDS                     10%    5.00 µL
+    ──────────────────────────────────────
+                                 500.00 µL
+
+ 8. Incubate at 55°C overnight with 800 rpm mixing.
+
+ 9. Remove gel debris by spin filtration:
+
+    - Load samples onto a 0.22 µm cellose-acetate
+      Spin-X column [5].
+    - Spin at 13,000g for 5 min.
+
+10. Purify using Qiagen MinElute reaction cleanup kit
+    (28204) [6,7]:
+
+    - Perform all spin steps at 17900g.
+    - Ensure that the sample is between 20–100 µL.
+    - Add 300 µL ERC to the crude DNA.
+    - If not yellow: Add 10 µL 3M sodium acetate,
+      pH=5.0.
+    - Load on a MinElute column.
+    - Spin 1m; discard flow-through.
+
+    - Add 750 µL PE.
+    - Spin 1m; discard flow-through.
+    - Spin 1m; discard flow-through.
+    - Add 10 µL EB.
+    - Wait at least 1m.
+    - Spin 1m; keep flow-through.
+
+Notes:
+[1] https://tinyurl.com/y27ralt4
+
+[2] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol
+
+[3] For diluting template DNA to 20 pg/µL:
+    Dilute 1 µL twice into 7*sqrt([DNA]) µL
+
+[4] Based on Fitzy's DNA PAGE purification protocol,
+    [Nilson2013], and [Petrov2013].
+
+[5] Nylon and cellulose nitrate have high DNA-
+    binding: https://tinyurl.com/3pkyc8dr
+
+[6] https://www.qiagen.com/HB-2069
+
+[7] Column capacity: 5 µg

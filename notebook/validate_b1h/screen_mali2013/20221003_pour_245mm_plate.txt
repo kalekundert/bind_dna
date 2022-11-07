@@ -1,0 +1,32 @@
+October 3, 2022
+
+$ sw pour_245mm_plate
+
+1. Prepare 300 mL LB-agar per plate:
+
+   - 300 mL water
+   - 11.1 g LB-agar
+
+2. Autoclave at 121°C for 45 min.
+
+3. Let cool to ≈55°C.
+
+4. Add 1x carbenicillin.
+
+5. Pour into a 245x245 mm plate.
+
+6. Let cool with cracked lid for 1h at room
+   temperature [1].
+
+7. Invert and keep at room temperature overnight.
+
+8. Store at 4°C for up to 3 months.
+
+Note:
+[1] I don't think I adequately dried the plates the
+    last time I did this: large drops condensed on
+    the surface of both the plate I used immediately
+    and the plate I stored at 4°C.  On the plate I
+    used immediately, the drops caused the cells to
+    smear.  I should either dry the plates longer
+    before using them, or dry them in a hood.

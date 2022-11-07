@@ -6,7 +6,15 @@ Validate B1H
    :hidden:
 
    measure_zif268_binding_via_noyes2008/notes
+   measure_growth_rate/notes
+   optimize_sequencing_primers/notes
    combine_b1h_plasmids/notes
+   develop_growth_assay/notes
+   develop_gfp_assay/notes
+   develop_qpcr_assay/notes
+   develop_ddpcr_assay/notes
+   develop_barcoding_scheme/notes
+   develop_growth_screen/notes
 
 B1H is an established assay [Meng2005]_, [Noyes2008]_ that should be able to 
 measure library-vs-library binding between designed proteins and DNA targets.  

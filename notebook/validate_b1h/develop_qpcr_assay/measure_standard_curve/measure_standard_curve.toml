@@ -1,0 +1,14 @@
+[row]
+B.strain = 'sz224'
+C.strain = 'sz228'
+D.strain = 'sz229'
+E.strain = 'sz230'
+F.strain = 'sz231'
+
+[col]
+'4,6,8'.amplicon = 's1,s2'
+'5,7,9'.amplicon = 's3,s5'
+
+4-5.replicate = 1
+6-7.replicate = 2
+8-9.replicate = 3

@@ -1,0 +1,29 @@
+# +/- RT
+# sz224/sz228
+# 6 primers
+# 2 replicates
+#
+# 2 * 2 * 6 * 2 = 48
+
+[row]
+B.primers = 'sr1,sr2'
+C.primers = 'sr3,sr5'
+D.primers = 'o366,o367'
+E.primers = 'o368,o369'
+F.primers = 'o370,o371'
+G.primers = 'o372,o373'
+
+[col]
+3-6.replicate = 1
+7-10.replicate = 2
+
+'3,4,7,8'.rt = false
+'5,6,9,10'.rt = true
+
+[col.'3,5,7,9']
+template = 'sz224'
+target = '2TGG'
+
+[col.'4,6,8,10']
+template = 'sz228'
+target = '2AAA'

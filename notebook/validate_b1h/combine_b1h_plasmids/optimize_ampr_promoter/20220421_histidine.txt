@@ -1,0 +1,16 @@
+April 21, 2022
+
+$ sw recipes/histidine
+
+1. Prepare 50 mL 100 mM histidine [1]:
+   - 775.75 mg L-histidine
+   - water to 50 mL
+   - mix well to fully dissolve
+     - Last time I tried to make this, I couldn't 
+       get the histidine to dissolve.  I think I 
+       might need to adjust the pH...
+   - sterile filter (0.2 µm)
+
+Note:
+[1] Sigma H6034.  According to the label, 
+    solubility is 50 mg/mL = 322 mM.

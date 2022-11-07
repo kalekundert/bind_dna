@@ -1,0 +1,13 @@
+[row]
+'B-D'.primers = 'sr1,sr2'
+'E-G'.primers = 'sr3,sr5'
+
+[col]
+3.conc_ng_uL = 2e2
+4.conc_ng_uL = 2e1
+5.conc_ng_uL = 2e0
+6.conc_ng_uL = 2e-1
+7.conc_ng_uL = 2e-2
+8.conc_ng_uL = 2e-3
+9.conc_ng_uL = 2e-4
+10.conc_ng_uL = 0

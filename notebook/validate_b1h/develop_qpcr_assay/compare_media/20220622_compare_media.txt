@@ -1,0 +1,41 @@
+June 22, 2022
+
+$ sw compare_media
+
+1. Dilute each template 10x.
+
+2. Setup 16 qPCR reactions [1,2]:
+
+   Reagent                          Stock    Volume      17.6x
+   ───────────────────────────────────────────────────────────
+   water                                   19.36 µL  340.74 µL
+   sz224+RT/IPTG=0/Carb=1,sz224+…           2.20 µL
+   sr1                             100 µM   0.22 µL    3.87 µL
+   sr2                             100 µM   0.22 µL    3.87 µL
+   SsoAdvanced supermix                2x  22.00 µL  387.20 µL
+   ───────────────────────────────────────────────────────────
+                                           44.00 µL   41.80 µL/rxn
+
+   - Split into 2 identical 20 µL reactions.
+   - Use any extra master mix as a negative control.
+
+3. Setup 16 qPCR reactions [1,2]:
+
+   Reagent                          Stock    Volume      17.6x
+   ───────────────────────────────────────────────────────────
+   water                                   19.36 µL  340.74 µL
+   sz224+RT/IPTG=0/Carb=1,sz224+…           2.20 µL
+   sr3                             100 µM   0.22 µL    3.87 µL
+   sr5                             100 µM   0.22 µL    3.87 µL
+   SsoAdvanced supermix                2x  22.00 µL  387.20 µL
+   ───────────────────────────────────────────────────────────
+                                           44.00 µL   41.80 µL/rxn
+
+   - Split into 2 identical 20 µL reactions.
+   - Use any extra master mix as a negative control.
+
+Notes:
+[1] https://tinyurl.com/y4qffgss
+
+[2] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol

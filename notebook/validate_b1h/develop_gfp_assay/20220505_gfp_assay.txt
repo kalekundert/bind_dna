@@ -1,0 +1,60 @@
+May 5, 2022
+
+$ sw gfp_assay
+
+1. Grow 1 mL overnight cultures of sz221-sz228 in
+   LB+Carb at 37°C for 16h [1].
+
+2. Inoculate day cultures:
+
+   - 1 mL LB + Carb + 10 µM IPTG
+   - 10 µL overnight culture
+   - Reserve some media for making serial dilutions
+     later.
+
+3. Grow day cultures at 37°C to late log phase [2].
+
+4. Wash 100 µL cells from each culture with PBS [3]:
+
+   - Repeat 2x:
+     - Spin 3500g, 3 min, 4°C
+     - Resuspend in 100 µL PBS
+
+5. Perform a serial dilution [4]:
+
+   - Put 127.46 µL 1 x day culture in a tube.
+   - Put 100.00 µL LB+Carb+IPTG in 3 adjacent tubes.
+   - Transfer 27.46 µL between each tube to make 4
+     4.6-fold dilutions.
+
+6. Prepare a plate for fluorescence measurement:
+
+   - Use a black, opaque-bottom plate.
+   - Add:
+     - 150 µL PBS
+     - 50 µL washed/diluted cells
+   - Pipet to mix.
+
+7. Measure the following using a plate reader:
+
+   - mWasabi: 493/509 nm ex/em
+   - mCherry: 587/610 nm ex/em
+
+Notes:
+[1] The small culture size is meant to reduce the
+    chance of cross-contamination when using 24-well
+    blocks.
+
+[2] I don't know exactly what OD represents late log
+    phase.  I'll have to do an experiment to figure
+    that out.
+
+[3] This is necessary because the yeast extract in LB
+    is highly fluorescent:
+    https://tinyurl.com/3nvmpu94
+
+[4] The final concentrations will be:
+    1  1.000000e+00 x
+    2  2.154435e-01 x
+    3  4.641589e-02 x
+    4  1.000000e-02 x

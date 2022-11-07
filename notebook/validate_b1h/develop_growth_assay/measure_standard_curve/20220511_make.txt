@@ -1,0 +1,98 @@
+May 11, 2022
+
+$ sw make p211
+
+ 1. Setup 1 restriction digestion [1,2]:
+
+    Reagent               Stock    Volume
+    ─────────────────────────────────────
+    water                         5.01 µL
+    p168              335 ng/µL   2.99 µL
+    rCutSmart Buffer        10x   1.00 µL
+    BsrGI-HF            20 U/µL   0.50 µL
+    EcoRI-HF            20 U/µL   0.50 µL
+    ─────────────────────────────────────
+                                 10.00 µL
+
+ 2. Incubate at the following temperatures [3]:
+
+    - 37°C for 5–15 min
+    - 80°C for 20 min
+
+ 3. Label the product: f168
+
+ 4. Purify using Qiagen MinElute PCR purification kit
+    (28004) [4,5]:
+
+    - Perform all spin steps at 17900g.
+    - Add 5 volumes PB to the crude DNA.
+    - If not yellow: Add 0.2 volumes 3M sodium
+      acetate, pH=5.0.
+    - Load on a MinElute column.
+    - Spin 1m; discard flow-through.
+
+    - Add 750 µL PE.
+    - Spin 1m; discard flow-through.
+    - Spin 1m; discard flow-through.
+    - Add 10 µL EB.
+    - Wait at least 1m.
+    - Spin 1m; keep flow-through.
+
+ 5. Setup 1 ligation reaction [6]:
+
+    Reagent              Stock   Volume
+    ───────────────────────────────────
+    T4 ligase buffer       10x  0.50 µL
+    T4 DNA ligase     400 U/µL  0.25 µL
+    T4 PNK             10 U/µL  0.25 µL
+    f168              80 ng/µL  2.29 µL
+    f166                 90 nM  1.71 µL
+    ───────────────────────────────────
+                                5.00 µL
+
+ 6. Incubate at the following temperatures:
+
+    - 25°C for 15 min
+    - 65°C for 10 min
+
+ 7. Label the product: p211
+
+ 8. Transform p211 into MACH1 [7]:
+
+    - Pre-warm 1 LB+Kan plate.
+    - Thaw 25 µL competent MACH1 cells on ice.
+    - Add 1 µL plasmid.
+    - Gently flick to mix.
+    - Incubate on ice for 5 min.
+
+    - Add 100 µL SOC.
+    - Incubate at 37°C for 60 min with end-over-end
+      mixing.
+
+    - Plate 125 µL cells.
+    - Incubate at 37°C for 16h.
+
+ 9. Sequence p211 with o251.
+
+10. Miniprep.
+
+Notes:
+[1] https://www.neb.com/products/r3575-bsrgi-hf
+    https://www.neb.com/products/r3101-ecori-hf
+
+[2] NEB recommends 5–10 units of enzyme per µg DNA
+    (10–20 units for genomic DNA).  Enzyme volume
+    should not exceed 10% of the total reaction
+    volume to prevent star activity due to excess
+    glycerol.
+
+[3] The heat inactivation step is not necessary if
+    the DNA will be purified before use.
+
+[4] https://www.qiagen.com/HB-2069
+
+[5] Column capacity: 5 µg
+
+[6] https://tinyurl.com/y7gxfv5m
+
+[7] https://tinyurl.com/2cesd2hv

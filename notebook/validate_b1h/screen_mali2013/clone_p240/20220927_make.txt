@@ -1,0 +1,158 @@
+September 27, 2022
+
+$ sw make p240
+
+ 1. Setup 1 reaction:
+
+    Reagent        Stock    Volume
+    ──────────────────────────────
+    water                 20.50 µL
+    f193                   2.00 µL
+    f194                   2.50 µL
+    Q5 master mix     2x  25.00 µL
+    ──────────────────────────────
+                          50.00 µL
+
+ 2. Run the following thermocycler protocol:
+
+    - 98°C for 30s
+    - Repeat 14x:
+      - 98°C for 10s
+      - 72°C for 20s; -0.5°C each cycle
+      - 72°C for 1m30
+    - 72°C for 2m
+
+ 3. Setup 1 PCR reaction:
+
+    Reagent               Stock    Volume
+    ─────────────────────────────────────
+    water                        20.00 µL
+    previous reaction  20 pg/µL   4.00 µL
+    o396                 100 µM   0.50 µL
+    o397                 100 µM   0.50 µL
+    Q5 master mix            2x  25.00 µL
+    ─────────────────────────────────────
+                                 50.00 µL
+
+ 4. Run the following thermocycler protocol:
+
+    - 98°C for 30s
+    - Repeat 17x:
+      - 98°C for 10s
+      - 72°C for 20s; -0.5°C each cycle
+      - 72°C for 1m30
+    - Repeat 23x:
+      - 98°C for 10s
+      - 64°C for 20s
+      - 72°C for 1m30
+    - 72°C for 2m
+
+ 5. Label the product: f199
+
+ 6. Purify using QIAquick PCR purification kit
+    (28104) [1,2]:
+
+    - Perform all spin steps at 17900g.
+    - Add 5 volumes PB to the crude DNA.
+    - If not yellow: Add 0.2 volumes 3M sodium
+      acetate, pH=5.0.
+    - Load on a QIAquick column.
+    - Spin 30s; discard flow-through.
+
+    - Add 750 µL PE.
+    - Spin 30s; discard flow-through.
+    - Spin 1m; discard flow-through.
+    - Add 50 µL EB.
+    - Wait at least 1m.
+    - Spin 30s; keep flow-through.
+
+ 7. Setup 1 Gibson assembly [3]:
+
+    Reagent               Stock   Volume
+    ────────────────────────────────────
+    Gibson master mix        2x  2.50 µL
+    f192               89 ng/µL  0.47 µL
+    f199               50 ng/µL  2.03 µL
+    ────────────────────────────────────
+                                 5.00 µL
+
+ 8. Incubate at 50°C for 15 min.
+
+ 9. Label the product: p240
+
+10. Transform p240 into MACH1 [4]:
+
+    - Pre-warm 1 LB+Amp plate.
+    - Thaw 25 µL competent MACH1 cells on ice.
+    - Add 1 µL plasmid.
+    - Gently flick to mix.
+
+    - Plate 25 µL cells.
+    - Incubate at 37°C for 16h.
+
+11. Resuspend 8 colonies in 20 µL EB.  The suspension
+    shouldn't be cloudy: you don't need a lot of
+    template.
+
+12. Setup 8 PCR reactions:
+
+    - Use the following reagents:
+
+      template DNA: colony #1, colony #2, colony #3,
+        colony #4, colony #5, colony #6, colony #7,
+        colony #8
+
+    - Make 10x primer mix:
+
+      Reagent   Stock   Volume       20x
+      ──────────────────────────────────
+      water            0.45 µL   9.00 µL
+      o3       100 µM  0.03 µL   0.50 µL
+      o358     100 µM  0.03 µL   0.50 µL
+      ──────────────────────────────────
+                       0.50 µL  10.00 µL
+
+    - Make polymerase mix:
+
+      Reagent        Stock   Volume     ≈9.1x
+      ───────────────────────────────────────
+      water                 1.50 µL  13.67 µL
+      primer mix       10x  0.50 µL   4.56 µL
+      Q5 master mix     2x  2.50 µL  22.78 µL
+      ───────────────────────────────────────
+                            4.50 µL  41.00 µL
+
+    - Setup the reactions:
+
+      Reagent         Stock   Volume
+      ──────────────────────────────
+      polymerase mix         4.50 µL
+      template DNA           0.50 µL
+      ──────────────────────────────
+                             5.00 µL
+
+    - Use any extra master mix as a negative control.
+
+13. Run the following thermocycler protocol:
+
+    - 98°C for 30s
+    - Repeat 35x:
+      - 98°C for 10s
+      - 55°C for 20s
+      - 72°C for 1m30
+    - 72°C for 2m
+    - Hold at 4°C
+
+14. Run a 1% E-gel.  The expected amplicon size is
+    2.8 kb.
+
+15. Sequence p240 with .
+
+Notes:
+[1] https://tinyurl.com/xr8ruvr9
+
+[2] Column capacity: 10 µg
+
+[3] https://tinyurl.com/ychbvkra
+
+[4] https://tinyurl.com/2cesd2hv

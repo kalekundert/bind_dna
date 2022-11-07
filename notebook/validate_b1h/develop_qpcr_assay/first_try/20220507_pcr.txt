@@ -1,0 +1,43 @@
+May 7, 2022
+
+$ sw pcr -p ssoadv cDNA,sr1,sr2 cDNA,sr3,sr5 -n9 -d2 -m ''
+
+1. Prepare 10x primer mix [1]:
+
+   Reagent   Stock    Volume
+   ─────────────────────────
+   water             9.00 µL
+   sr1,sr3  100 µM   0.50 µL
+   sr2,sr5  100 µM   0.50 µL
+   ─────────────────────────
+                    10.00 µL
+
+2. Setup 9 qPCR reactions [2]:
+
+   Reagent               Stock    Volume       9.9x
+   ────────────────────────────────────────────────
+   water                        15.40 µL  152.46 µL
+   cDNA                          2.20 µL
+   primer mix              10x   4.40 µL
+   SsoAdvanced supermix     2x  22.00 µL  217.80 µL
+   ────────────────────────────────────────────────
+                                44.00 µL   37.40 µL/rxn
+
+   - Split into 2 identical 20 µL reactions.
+   - Use any extra master mix as a negative control.
+
+3. Run the following thermocycler protocol:
+
+   - 95°C for 30s
+   - Repeat 40x:
+     - 95°C for 10s
+     - 61°C for 15s
+     - Measure fluorescence
+   - 65.0-95.0°C in 5s steps of 0.5°C:
+     - Measure fluorescence
+
+Notes:
+[1] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol
+
+[2] https://tinyurl.com/y4qffgss

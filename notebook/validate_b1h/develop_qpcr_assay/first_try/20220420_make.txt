@@ -1,0 +1,156 @@
+April 20, 2022
+
+$ sw make p221 p222 p223 p224
+
+ 1. Order f177 from IDT.
+
+ 2. Prepare 10x primer mix [1]:
+
+    Reagent   Stock    Volume
+    ─────────────────────────
+    water             9.00 µL
+    sr27     100 µM   0.50 µL
+    sr31     100 µM   0.50 µL
+    ─────────────────────────
+                     10.00 µL
+
+ 3. Setup 1 PCR reaction [2,3]:
+
+    Reagent           Stock    Volume
+    ─────────────────────────────────
+    water                    15.00 µL
+    f177           20 pg/µL   5.00 µL
+    primer mix          10x   5.00 µL
+    Q5 master mix        2x  25.00 µL
+    ─────────────────────────────────
+                             50.00 µL
+
+ 4. Run the following thermocycler protocol:
+
+    - 98°C for 30s
+    - Repeat 35x:
+      - 98°C for 10s
+      - 63°C for 20s
+      - 72°C for 1m30
+    - 72°C for 2 min
+    - 4°C hold
+
+ 5. Purify using Qiagen MinElute PCR purification kit
+    (28004) [4,5]:
+
+    - Perform all spin steps at 17900g.
+    - Add 5 volumes PB to the crude DNA.
+    - If not yellow: Add 0.2 volumes 3M sodium
+      acetate, pH=5.0.
+    - Load on a MinElute column.
+    - Spin 1m; discard flow-through.
+
+    - Add 750 µL PE.
+    - Spin 1m; discard flow-through.
+    - Spin 1m; discard flow-through.
+    - Add 10 µL EB.
+    - Wait at least 1m.
+    - Spin 1m; keep flow-through.
+
+ 6. Prepare 10x primer mix [1]:
+
+    Reagent               Stock    Volume
+    ─────────────────────────────────────
+    water                         9.00 µL
+    o360,o360,o363,o365  100 µM   0.50 µL
+    o361,o362,o364,o364  100 µM   0.50 µL
+    ─────────────────────────────────────
+                                 10.00 µL
+
+ 7. Setup 4 PCR reactions [2,3]:
+
+    Reagent                 Stock    Volume       4.4x
+    ──────────────────────────────────────────────────
+    water                          15.00 µL   66.00 µL
+    p194,p196,p186,p189  20 pg/µL   5.00 µL
+    primer mix                10x   5.00 µL
+    Q5 master mix              2x  25.00 µL  110.00 µL
+    ──────────────────────────────────────────────────
+                                   50.00 µL   40.00 µL/rxn
+
+    - Use any extra master mix as a negative control.
+
+ 8. Run the following thermocycler protocol:
+
+    - 98°C for 30s
+    - Repeat 35x:
+      - 98°C for 10s
+      - 123°C,125°C,123°C,123°C for 20s
+      - 72°C for 2m30
+    - 72°C for 2 min
+    - 4°C hold
+
+ 9. Label the products: f178, f179, f180, f181
+
+10. Purify using Qiagen MinElute PCR purification kit
+    (28004) [4,5]:
+
+    - Perform all spin steps at 17900g.
+    - Add 5 volumes PB to the crude DNA.
+    - If not yellow: Add 0.2 volumes 3M sodium
+      acetate, pH=5.0.
+    - Load on a MinElute column.
+    - Spin 1m; discard flow-through.
+
+    - Add 750 µL PE.
+    - Spin 1m; discard flow-through.
+    - Spin 1m; discard flow-through.
+    - Add 10 µL EB.
+    - Wait at least 1m.
+    - Spin 1m; keep flow-through.
+
+11. Setup 4 Gibson assemblies [6]:
+
+    Reagent                  Stock   Volume      4.4x
+    ─────────────────────────────────────────────────
+    water                           0.89 µL   3.92 µL
+    Gibson master mix           2x  2.50 µL  11.00 µL
+    f178,f179,f180,f181  200 ng/µL  0.81 µL
+    f177                 200 ng/µL  0.80 µL   3.53 µL
+    ─────────────────────────────────────────────────
+                                    5.00 µL   4.19 µL/rxn
+
+12. Incubate at 50°C for 15 min.
+
+13. Label the products: p221, p222, p223, p224
+
+14. Transform the following plasmids: p221, p222,
+    p223, p224 [7]
+
+    - Pre-warm 4 LB+Amp plates.
+    - For each transformation:
+
+      - Thaw 100 µL competent MACH1 cells on ice.
+      - Add 5 µL plasmid.
+      - Gently flick to mix
+
+      - Incubate at 42°C for 30s.
+      - Incubate on ice for 2 min.
+      - Add 100 µL SOC.
+
+      - Plate 200 µL cells.
+      - Incubate at 37°C for 16h.
+
+15. Miniprep.
+
+Notes:
+[1] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol
+
+[2] https://tinyurl.com/y27ralt4
+
+[3] For diluting template DNA to 20 pg/µL:
+    Dilute 1 µL twice into 7*sqrt([DNA]) µL
+
+[4] https://www.qiagen.com/HB-2069
+
+[5] Column capacity: 5 µg
+
+[6] https://tinyurl.com/ychbvkra
+
+[7] https://tinyurl.com/fwk2c36b

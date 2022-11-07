@@ -1,0 +1,13 @@
+August 30, 2022
+
+$ sw recipes/tae '500*94.2/121'
+
+1. Prepare 389 mL 50x TAE [1]:
+
+   - 94.138 g Tris base
+   - 22.2119 mL acetic acid (glacial)
+   - 38.9 mL 0.5 M EDTA, pH 8.0
+   - water to 389 mL
+
+Note:
+[1] https://tinyurl.com/yzfuv4pa

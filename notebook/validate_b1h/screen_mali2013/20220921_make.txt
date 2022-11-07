@@ -1,0 +1,183 @@
+September 21, 2022
+
+$ sw make f191
+
+ 1. Prepare 10x primer mix [1]:
+
+    Reagent   Stock    Volume
+    ─────────────────────────
+    water             9.00 µL
+    sr4      100 µM   0.50 µL
+    sr5      100 µM   0.50 µL
+    ─────────────────────────
+                     10.00 µL
+
+ 2. Setup 1 PCR reaction [2,3]:
+
+    Reagent           Stock    Volume
+    ─────────────────────────────────
+    water                     9.50 µL
+    l2             20 ng/µL   0.50 µL
+    primer mix          10x   2.50 µL
+    Q5 master mix        2x  12.50 µL
+    ─────────────────────────────────
+                             25.00 µL
+
+ 3. Run the following thermocycler protocol:
+
+    - 98°C for 30s
+    - Repeat 6x:
+      - 98°C for 10s
+      - 61°C for 20s
+      - 72°C for 15s
+    - 72°C for 2 min
+    - 4°C hold
+
+ 4. Label the product: l4
+
+ 5. Check if the PCR reaction produced enough product:
+    
+    - Run 1 µL of the PCR reaction on a 1% E-gel.
+    - If no band is visible, run two additional PCR 
+      cycles and repeat this check.
+
+ 6. Purify using Qiagen MinElute PCR purification kit
+    (28004) [4,5]:
+
+    - Perform all spin steps at 17900g.
+    - Add 5 volumes PB to the crude DNA.
+    - If not yellow: Add 0.2 volumes 3M sodium
+      acetate, pH=5.0.
+    - Load on a MinElute column.
+    - Spin 1m; discard flow-through.
+
+    - Add 750 µL PE.
+    - Spin 1m; discard flow-through.
+    - Spin 1m; discard flow-through.
+    - Add 10 µL EB.
+    - Wait at least 1m.
+    - Spin 1m; keep flow-through.
+
+ 7. Setup 1 BbsI-HF digestion [6,7]:
+
+    Reagent             Stock      Volume
+    ─────────────────────────────────────
+    l4                1 ng/µL  1000.00 µL
+    rCutSmart Buffer      10x   111.17 µL
+    BbsI-HF           20 U/µL     0.50 µL
+    ─────────────────────────────────────
+                                  1.11 mL
+
+ 8. Incubate at the following temperatures [8]:
+
+    - 37°C for 5–15 min
+    - 65°C for 20 min
+
+ 9. Label the product: f191
+
+10. Prepare 1 sample for TBE PAGE:
+
+    Reagent                           Stock    Volume
+    ─────────────────────────────────────────────────
+    TBE high-density sample buffer       5x   2.00 µL
+    f191                            1 ng/µL   8.00 µL
+    ─────────────────────────────────────────────────
+                                             10.00 µL
+
+11. Run a gel:
+
+    gel: 4–20% TBE PAGE
+    buffer: 1x TBE
+    ladder: 1 µL 1 kb+ (NEB N3200)
+    samples: 10 µL/lane
+    run: 200V for 60 min
+
+12. Cut the desired band out of the gel [9].
+
+    - Place the gel over a TLC plate.
+    - Use a UV light to visualize the RNA (dark
+      spot).
+    - Consider visualizing remaining gel to ensure
+      that all desired RNA was excised.
+
+13. Crush the gel slice.
+
+    - Poke a hole in the bottom of a 0.65 mL tube
+      with a 27 g needle.
+    - Place gel slice inside the 0.65 mL tube.
+    - Place the 0.65 mL tube inside a 1.5 mL tube.
+    - Spin at max speed for 5 min.
+
+14. Resuspend gel in 400 µL PAGE elution buffer:
+
+    Reagent               Stock     Volume
+    ──────────────────────────────────────
+    nuclease-free water          439.00 µL
+    Tris, pH 7.5            1 M    5.00 µL
+    NaCl                    5 M   50.00 µL
+    EDTA                 500 mM    1.00 µL
+    SDS                     10%    5.00 µL
+    ──────────────────────────────────────
+                                 500.00 µL
+
+15. Incubate at 4°C overnight with end-over-end
+    mixing.
+
+16. Remove gel debris by spin filtration:
+
+    - Load samples onto a 0.22 µm cellose-acetate
+      Spin-X column [10].
+    - Spin at 13,000g for 5 min.
+
+17. Purify using Zymo Clean & Concentrator-5 kit
+    (R1015) [11,12]:
+
+    - Perform all spin steps at 16000g.
+    - Add 800 µL RNA binding buffer to the crude RNA.
+    - Add 1200 µL 95-100% ethanol to the crude RNA.
+    - Load on a Zymo-Spin IICR column.
+    - Spin 30s; discard flow-through.
+
+    - Add 400 µL RNA prep buffer.
+    - Spin 30s; discard flow-through.
+    - Add 700 µL RNA wash buffer.
+    - Spin 30s; discard flow-through.
+    - Add 400 µL RNA wash buffer.
+    - Spin 1m; discard flow-through.
+
+    - Add 15 µL nuclease-free water.
+    - Spin 30s; keep flow-through.
+
+Notes:
+ [1] For resuspending lyophilized primers:
+     100 µM = 10 µL/nmol
+
+ [2] https://tinyurl.com/y27ralt4
+
+ [3] For diluting template DNA to 20 ng/µL:
+     Dilute 1 µL twice into 7*sqrt([DNA]) µL
+
+ [4] https://www.qiagen.com/HB-2069
+
+ [5] Column capacity: 5 µg
+
+ [6] https://www.neb.com/products/r3539-bbsi-hf
+
+ [7] NEB recommends 5–10 units of enzyme per µg DNA
+     (10–20 units for genomic DNA).  Enzyme volume
+     should not exceed 10% of the total reaction
+     volume to prevent star activity due to excess
+     glycerol.
+
+ [8] The heat inactivation step is not necessary if
+     the DNA will be purified before use.
+
+ [9] Based on Fitzy's DNA PAGE purification protocol,
+     [Nilson2013], and [Petrov2013].
+
+[10] Nylon and cellulose nitrate have high DNA-
+     binding: https://tinyurl.com/3pkyc8dr
+
+[11] https://tinyurl.com/yd699u8b
+
+[12] Column capacity: 10 µg

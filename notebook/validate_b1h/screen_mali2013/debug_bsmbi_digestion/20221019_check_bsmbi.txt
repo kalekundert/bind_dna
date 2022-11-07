@@ -1,0 +1,70 @@
+October 19, 2022
+
+$ sw check_bsmbi
+
+1. Setup 3 BsmBI-v2 digestions [1,2]:
+
+   Reagent            Stock    Volume      3.3x
+   ────────────────────────────────────────────
+   water                      7.41 µL  24.44 µL
+   NEBuffer r3.1        10x   1.00 µL   3.30 µL
+   BsmBI-v2         10 U/µL   0.10 µL   0.33 µL
+   f204,f205,f206  67 ng/µL   1.49 µL
+   ────────────────────────────────────────────
+                             10.00 µL   8.51 µL/rxn
+
+2. Incubate at the following temperatures [3]:
+
+   - 55°C for 5–15 min
+   - 80°C for 20 min
+
+3. Prepare 3 samples for TBE PAGE:
+
+   Reagent                             Stock    Volume
+   ───────────────────────────────────────────────────
+   TBE high-density sample buffer         5x   2.50 µL
+   f204,f205,f206                  200 ng/µL  10.00 µL
+   ───────────────────────────────────────────────────
+                                              12.50 µL
+
+4. Run a gel:
+
+   gel: 4–20% TBE PAGE
+   buffer: 1x TBE
+   ladder: 1 µL 1 kb+ (NEB N3200, 1 µg/µL)
+   samples: 10 µL/lane
+   run: 200V for 60 min
+
+5. Stain gel with GelGreen [4-6]:
+
+   - Keep the stain protected from light.
+
+   - Submerge gel in ≈30 mL 3x GelGreen, 100 mM NaCl.
+   - Shake gently for 30m.
+
+6. Image with a laser scanner:
+
+   laser:    488 nm
+   filter:  518BP22
+
+Notes:
+[1] https://www.neb.com/products/r0739-bsmbi-v2
+
+[2] NEB recommends 5–10 units of enzyme per µg DNA
+    (10–20 units for genomic DNA).  Enzyme volume
+    should not exceed 10% of the total reaction
+    volume to prevent star activity due to excess
+    glycerol.
+
+[3] The heat inactivation step is not necessary if
+    the DNA will be purified before use.
+
+[4] https://tinyurl.com/etxhfxws
+
+[5] Including 100 mM NaCl in the staining solution
+    enhances sensitivity, but may promote dye
+    precipitation if the gel stain is reused.
+
+[6] Staining solution can be reused at least 2-3x.
+    Store staining solution at room temperature
+    protected from light.

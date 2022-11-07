@@ -1,0 +1,201 @@
+October 4, 2022
+
+$ sw make p241
+
+ 1. Setup 1 BsmBI-v2 digestion [1,2]:
+
+    Reagent            Stock    Volume
+    ──────────────────────────────────
+    water                     15.00 µL
+    p237           200 ng/µL  25.00 µL
+    NEBuffer r3.1        10x   5.00 µL
+    BsmBI-v2         10 U/µL   5.00 µL
+    ──────────────────────────────────
+                              50.00 µL
+
+ 2. Incubate at the following temperatures [3]:
+
+    - 55°C for 5–15 min
+    - 80°C for 20 min
+
+ 3. Label the product: f195
+
+ 4. Setup 1 restriction digestion [2,4]:
+
+    Reagent            Stock    Volume
+    ──────────────────────────────────
+    water                     45.96 µL
+    p240           356 ng/µL  14.04 µL
+    NEBuffer r3.1        10x   7.50 µL
+    BsmBI-v2         10 U/µL   5.00 µL
+    BsaI-HFv2        20 U/µL   2.50 µL
+    ──────────────────────────────────
+                              75.00 µL
+
+ 5. Incubate at the following temperatures [3]:
+
+    - 37°C for 5–15 min
+    - 55°C for 5–15 min
+    - 80°C for 20 min
+
+ 6. Label the product: f196
+
+ 7. Prepare 2 samples for electrophoresis:
+
+    Reagent      Stock    Volume         3x
+    ───────────────────────────────────────
+    f195,f196           50.00 µL  150.00 µL
+    loading dye     6x  10.00 µL   30.00 µL
+    ───────────────────────────────────────
+                        60.00 µL   60.00 µL/rxn
+
+ 8. Run a gel:
+
+    gel: 0.5% agarose
+    buffer: 0.5x tris-acetate
+    ladder: 10 µL 50 ng/µL 1kb+ DNA ladder
+    samples: 60 µL/lane
+    run: 100V for 40 min
+
+ 9. Stain gel with GelGreen [5-7]:
+
+    - Keep the stain protected from light.
+
+    - Submerge gel in ≈30 mL 3x GelGreen, 100 mM
+      NaCl.
+    - Shake gently for 30m.
+
+10. Purify the desired band using the QIAEX II kit:
+
+    - Cut the 2.4kb band out of the gel.
+
+    - Add 3 volumes QX1.
+    - Add 30 µL QIAEX II beads.
+      - Resuspend the beads by vortexing for 30s.
+    - Incubate at 50°C for 10 min.
+      - Vortex every 2 min to keep the beads
+        suspended.
+      - If the solution is not yellow after the
+        agarose dissolves, add 10 µL 3M sodium
+        acetate pH=5 and continue incubating for at
+        least 5 min.
+    - Centrifuge for 30s.  Discard supernatant.
+
+    - Add 500 µL QX1.
+    - Vortex to resuspend the pellet.
+    - Centrifuge for 30s.  Discard supernatant.
+
+    - Repeat 2x:
+      - Add 500 µL PE.
+      - Vortex to resuspend the pellet.
+      - Centrifuge for 30s.  Discard supernatant.
+
+    - Air-dry the pellet for 30 min.
+
+    - Add 20 µL EB.
+    - Incubate at room temperature for 5 min.
+    - Centrifuge for 30s.  Transfer supernatant to a
+      clean tube.
+
+11. Setup 1 ligation reaction [8]:
+
+    Reagent                   Stock   Volume
+    ────────────────────────────────────────
+    T4 ligase buffer            10x  0.50 µL
+    T4 DNA ligase          400 U/µL  0.25 µL
+    f195                  100 ng/µL  0.77 µL
+    f196              66.6667 ng/µL  3.48 µL
+    ────────────────────────────────────────
+                                     5.00 µL
+
+12. Incubate at the following temperatures:
+
+    - 25°C for 15 min
+    - 65°C for 10 min
+
+13. Label the product: p241
+
+14. Desalt and concentrate the DNA using a spin 
+    column.
+    
+    - Elute in the smallest possible volume.
+
+15. Transform the DNA into NEB 10-beta cells by 
+    electroporation.  For each transformation:
+    
+    - Pre-warm 1 mL NEB 10-beta/stable outgrowth 
+      medium and a selective plate.
+    
+    - Dry the selective plate for 10m in a laminar
+      flow hood [10].
+    
+    - Chill an electroporation cuvette and 1 μL DNA on 
+      ice.  
+    
+    - Thaw an aliquot of competent cells on ice for 
+      ~10 min.
+    
+    - Pipet once to mix the cells with the DNA, then 
+      load into the cuvette.  Tap to remove bubbles.
+    
+    - Shock at 2.0 kV, 200 Ω, 25 µF.  The decay time 
+      should be 4.8-5.1 ms (for cuvettes with a 1 mm 
+      gap).
+    
+    - Immediately add 1 mL pre-warmed medium.  If 
+      you're transforming multiple aliquots of cells 
+      with the same DNA, combine them.
+    
+    - Recover at 37°C for 1h.
+      
+    - Plate several 10x dilutions of cells (e.g.  
+      from 10⁻³ to 10⁻⁶) to count how many were 
+      transformed.
+    
+    - Plate remaining cells on a large plate [9].
+    
+      24x24 cm plates:
+      - 10⁵ colonies per plate
+      - Dilute cells to 500 µL.
+      - Resuspend in 2x 5 mL LB.
+    
+      10x10 cm plates:
+      - 10⁴ colonies per plate
+      - Dilute cells to 100 µL.
+    
+      Spread cells using beads.
+
+16. Miniprep.
+
+Notes:
+ [1] https://www.neb.com/products/r0739-bsmbi-v2
+
+ [2] NEB recommends 5–10 units of enzyme per µg DNA
+     (10–20 units for genomic DNA).  Enzyme volume
+     should not exceed 10% of the total reaction
+     volume to prevent star activity due to excess
+     glycerol.
+
+ [3] The heat inactivation step is not necessary if
+     the DNA will be purified before use.
+
+ [4] https://www.neb.com/products/r0739-bsmbi-v2
+     https://www.neb.com/products/r3733-bsai-hf-v2
+
+ [5] https://tinyurl.com/etxhfxws
+
+ [6] Including 100 mM NaCl in the staining solution
+     enhances sensitivity, but may promote dye
+     precipitation if the gel stain is reused.
+
+ [7] Staining solution can be reused at least 2-3x.
+     Store staining solution at room temperature
+     protected from light.
+
+ [8] https://tinyurl.com/y7gxfv5m
+
+ [9] https://tinyurl.com/45dk2cuy
+
+[10] Still experimenting to find ideal drying time.  
+     Without any drying, condensation forms on the 
+     plate and the colonies run together.

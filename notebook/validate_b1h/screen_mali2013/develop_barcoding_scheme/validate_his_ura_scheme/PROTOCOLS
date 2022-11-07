@@ -1,0 +1,22 @@
+The library cloning steps for this experiment use a number of new protocols 
+that I'd eventually like to incorporate into stepwise:
+
+l3, l4: "oligo-pool-pcr"
+
+  - Base this off of Twist protocol
+  - Calculate number of cycles from length of oligos.
+  - Add step about running gel, doing extra steps if band is too faint.
+
+p240: colony-pcr
+
+  - Infer expected band size from product.
+
+p237, p239, p241: electrotransform
+
+  - Read protocols, find similarities
+  - Include purification step in beginning?
+
+f186, f190, f195, f196: gel-purify
+
+  - Infer expected band size from product.
+

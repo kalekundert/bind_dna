@@ -1,0 +1,1 @@
+{"duration": 0.059459686279296875, "input_args": {"x": "array([   0,    1,    2, ..., 1072, 1073, 1074])", "y": "array([4, 5, 4, ..., 3, 5, 5])", "p0": "[<dbp.densiometry.BandFitParams object at 0x7fd1bfacb730>, <dbp.densiometry.BandFitParams object at 0x7fd1bfacb760>]"}}

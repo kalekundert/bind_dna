@@ -1,0 +1,132 @@
+June 2, 2022
+
+$ sw compare_rna_purification
+
+ 1. Grow overnight cultures:
+
+    LB+Carb: sz224,sz228
+
+    - Inoculate 1 mL sterile media.
+    - Incubate overnight at 37°C with shaking at 225
+      rpm.
+
+ 2. Grow day cultures:
+
+    - Inoculate 6 mL sterile media with 60 µL
+      saturated overnight culture.
+    - Incubate at 37°C with shaking at 225 rpm for
+      4h.
+
+ 3. Purify each sample using TRIzol, Direct-zol
+    (+/−DNase), and Quick-RNA miniprep (+/−DNase),
+    according to manufacturers' instructions.
+
+ 4. Lyse and homogenize samples in TRIzol reagent
+    [1]:
+
+    - Collect cells by centrifugation, discard
+      supernatant.
+    - Add 750 µL TRIzol reagent per 250 µL sample.
+    - Pipet the lysate up and down several times to
+      homogenize.
+    - Incubate for 5 min at room temperature.
+
+ 5. Extract RNA from TRIzol reagent [1]:
+
+    - Add 200 µL chloroform per 1 mL TRIzol reagent.
+    - Vortex vigorously.
+    - Incubate for 2-3 min at room temperature.
+    - Centrifuge for 15 min at 12000g and 4°C.
+    - Transfer the aqueous phase (top, not pink, ≈500
+      µL per 1 mL TRIzol reagent) for each sample to
+      a clean tube, taking care to avoid transferring
+      any of the organic phase.
+
+ 6. Concentrate and purify the RNA by isopropanol
+    precipitation [1]:
+
+    - Add 5-10 µg RNAse-free glycogen.
+    - Add 500 µL isopropanol per 1 mL TRIzol reagent.
+    - Incubate at 4°C for 10 min.
+
+    - Centrifuge for 10 min at 12,000g and 4°C.
+    - Carefully pipet off all supernatant.
+
+    - Resuspend pellet in 1 mL 75% ethanol per 1 mL
+      TRIzol reagent.
+    - Vortex briefly.
+    - Centrifuge for 5 min at 7,500g and 4°C.
+
+    - Carefully pipet off all supernatant.
+    - Air dry for 5-10 min.
+    - Resuspend RNA in 20-50 µL water.
+    - Incubate at 55-60°C for 10-15 min.
+
+ 7. Setup reverse transcription reactions (including
+    −RT controls) for each sample [2]:
+
+    - 1 µg RNA
+    - 2 µL SuperScript VILO master mix (Invitrogen
+      11755050)
+    - water to 10 µL
+
+ 8. Incubate at the following temperatures:
+
+    - 25°C for 10 min
+    - 50°C for 10 min
+    - 85°C for 5 min
+    - hold at 4°C
+
+ 9. Prepare −template and +template controls.
+
+10. Setup 20 qPCR reactions [3,4]:
+
+    Reagent                            Stock    Volume        22x
+    ─────────────────────────────────────────────────────────────
+    water                                     19.36 µL  425.92 µL
+    sz224,sz228 (5 extractions, ±RT)           2.20 µL
+    sr1                               100 µM   0.22 µL    4.84 µL
+    sr2                               100 µM   0.22 µL    4.84 µL
+    SsoAdvanced supermix                  2x  22.00 µL  484.00 µL
+    ─────────────────────────────────────────────────────────────
+                                              44.00 µL   41.80 µL/rxn
+
+    - Split into 2 identical 20 µL reactions.
+    - Use any extra master mix as a negative control.
+
+11. Setup 20 qPCR reactions [3,4]:
+
+    Reagent                            Stock    Volume        22x
+    ─────────────────────────────────────────────────────────────
+    water                                     19.36 µL  425.92 µL
+    sz224,sz228 (5 extractions, ±RT)           2.20 µL
+    sr3                               100 µM   0.22 µL    4.84 µL
+    sr5                               100 µM   0.22 µL    4.84 µL
+    SsoAdvanced supermix                  2x  22.00 µL  484.00 µL
+    ─────────────────────────────────────────────────────────────
+                                              44.00 µL   41.80 µL/rxn
+
+    - Split into 2 identical 20 µL reactions.
+    - Use any extra master mix as a negative control.
+
+12. Run the following thermocycler protocol:
+
+    - 95°C for 30s
+    - Repeat 40x:
+      - 95°C for 10s
+      - 61°C for 15s
+      - Measure fluorescence
+    - 65.0-95.0°C in 5s steps of 0.5°C:
+      - Measure fluorescence
+
+Notes:
+[1] https://tinyurl.com/yc6es8av
+
+[2] The master mix contains random hexamers, which
+    will prime the reverse transcription of all RNAs
+    in the sample.
+
+[3] https://tinyurl.com/y4qffgss
+
+[4] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol

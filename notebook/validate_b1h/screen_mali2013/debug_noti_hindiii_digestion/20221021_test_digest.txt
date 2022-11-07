@@ -1,0 +1,62 @@
+October 21, 2022
+
+$ sw e_gel
+
+1. Setup 4 restriction digestion reactions:
+
+   - Use all combinations of the following reagents:
+
+     NotI-HF: −, +
+     HindIII-HF: −, +
+
+   - Make 2x master mix:
+
+     Reagent      Stock   Volume      4.4x
+     ─────────────────────────────────────
+     water               4.50 µL  19.80 µL
+     p236     200 ng/µL  0.50 µL   2.20 µL
+     ─────────────────────────────────────
+                         5.00 µL  22.00 µL
+
+   - Make master mix:
+
+     Reagent           Stock   Volume      48.4x
+     ───────────────────────────────────────────
+     water                    3.90 µL  188.76 µL
+     rCutSmart Buffer    10x  1.00 µL   48.40 µL
+     ───────────────────────────────────────────
+                              4.90 µL  237.16 µL
+
+   - Make 2 NotI-HF mixes:
+
+     Reagent       Stock   Volume        22x
+     ───────────────────────────────────────
+     master mix           4.90 µL  107.80 µL
+     NotI-HF     20 U/µL  0.05 µL    1.10 µL
+     ───────────────────────────────────────
+                          4.95 µL  108.90 µL
+
+   - Make 4 2x enzyme mixes:
+
+     Reagent        Stock   Volume       10x
+     ───────────────────────────────────────
+     NotI-HF mix           4.95 µL  49.50 µL
+     HindIII-HF   20 U/µL  0.05 µL   0.50 µL
+     ───────────────────────────────────────
+                           5.00 µL  50.00 µL
+
+   - Setup the reactions:
+
+     Reagent     Stock    Volume
+     ───────────────────────────
+     master mix     2x   5.00 µL
+     enzyme mix     2x   5.00 µL
+     ───────────────────────────
+                        10.00 µL
+
+2. Incubate at the following temperatures [3]:
+
+   - 37°C for 5–15 min
+   - 80°C for 20 min
+
+3. Run a 1% E-gel.

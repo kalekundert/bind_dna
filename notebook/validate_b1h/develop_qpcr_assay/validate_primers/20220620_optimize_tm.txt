@@ -1,0 +1,45 @@
+June 20, 2022
+
+$ sw optimize_tm
+
+1. Prepare 10x primer mix [1]:
+
+   Reagent                       Stock    Volume
+   ─────────────────────────────────────────────
+   water                                 9.00 µL
+   sr1,sr3,o366,o368,o370,o372  100 µM   0.50 µL
+   sr2,sr5,o367,o369,o371,o373  100 µM   0.50 µL
+   ─────────────────────────────────────────────
+                                        10.00 µL
+
+2. Setup 6 qPCR reactions [2]:
+
+   Reagent               Stock    Volume       6.6x
+   ────────────────────────────────────────────────
+   water                        19.25 µL  127.05 µL
+   p221                          2.75 µL   18.15 µL
+   primer mix              10x   5.50 µL
+   SsoAdvanced supermix     2x  27.50 µL  181.50 µL
+   ────────────────────────────────────────────────
+                                55.00 µL   49.50 µL/rxn
+
+   - Split into 10 identical 5 µL reactions.
+   - Use any extra master mix as a negative control.
+
+3. Run the following thermocycler protocol:
+
+   - 95°C for 30s
+   - Repeat 40x:
+     - 95°C for 10s
+     - 52-67°C for 15s
+     - Measure fluorescence
+   - 65.0-95.0°C in 5s steps of 0.5°C:
+     - Measure fluorescence
+
+4. Run a 1% E-gel.
+
+Notes:
+[1] For resuspending lyophilized primers:
+    100 µM = 10 µL/nmol
+
+[2] https://tinyurl.com/y4qffgss

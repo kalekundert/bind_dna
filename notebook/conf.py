@@ -25,13 +25,23 @@ extensions = [ #
     'exmemo.sphinx.notebook',
     'exmemo.sphinx.biology',
     'exmemo.sphinx.general',
+    'myst_parser',
 ]
 
 suppress_warnings = ['ref.citation']
-rst_epilog = ".. |br| raw:: html\n\n   <br />"
+rst_epilog = """\
+.. |br| raw:: html\n\n   <br />
+.. |Cq| replace:: :math:`C_q`
+"""
 pygments_style = 'sphinx'
 todo_include_todos = True
 todo_link_only = True
+myst_enable_extensions = [
+        'strikethrough',
+        'dollarmath',
+        'deflist',
+        'tasklist',
+]
 
 from sphinx_rtd_theme import get_html_theme_path
 from exmemo.sphinx import favicon_path

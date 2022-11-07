@@ -1,0 +1,16 @@
+[row]
+A.strain = 'sz221'
+B.strain = 'sz222'
+C.strain = 'sz223'
+D.strain = 'sz224'
+E.strain = 'sz225'
+F.strain = 'sz226'
+G.strain = 'sz227'
+H.strain = 'sz228'
+
+[col]
+1.dilution = 1.00e0
+2.dilution = 2.15e-1
+3.dilution = 4.64e-2
+4.dilution = 1.00e-2
+

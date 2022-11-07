@@ -1,0 +1,9 @@
+October 20, 2022
+
+$ sw recipes/lab
+
+1. Prepare 1L 25x LAB buffer:
+   
+   - 25.5 g lithium acetate dihydrate (Sigma L6883)
+   - 15.5 g boric acid (Sigma B7901)
+   - water to 1L
