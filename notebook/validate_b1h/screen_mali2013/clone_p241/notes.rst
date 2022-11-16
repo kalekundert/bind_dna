@@ -128,5 +128,54 @@ that things went really wrong:
     - I probably should for this screen, since I'm trying to debug things.  
       Once I have things working, I can probably stop.
 
+2022/11/07
+==========
+.. protocol:: 20221107_make_f195.pdf 20221107_make_f196.pdf 20221107_make_f195.txt 20221107_make_f196.txt
+.. figure:: 20221107_check_digestion_f195_f196.svg
 
+- f209 amplified cleanly.
+
+- The f195 digestion seems to have gone to completion.
+
+  - All I can say from the data is that the first cut went to completion.
+
+  - The second cut would yield a 20 bp band, which would've run off the bottom 
+    of the gel.
+
+  - But if the first cut went to completion, it's likely that the second cut 
+    went pretty far, too.
+
+- The f196 digestion went far, but not to completion.
+
+  - By densiometry, the central Esp3I site in f209 was not cut about 6% of the 
+    time.  Assuming that means that each site had a 94% chance of being cut, 
+    and that I purify the band that appears to be the right size, 94% of the 
+    molecules in that band should be cut twice.
+
+  - That's probably good enough.
+
+  - If I use unexpired Esp3I, that might get me to 100%.
+
+2022/11/08
+==========
+.. protocol:: 20221108_make_p241.pdf 20221108_make_p241.txt
+.. figure:: 20221109_electrotransform_p241.svg
+.. datatable:: 20221109_electrotransform_p241.csv
+
+- ≈93.7% of the transformants have the insert.
+
+  - That's not bad enough to be a deal-breaker, but I'd like to do better.
+
+  - Don't know if the culprit is uncleaved plasmid or re-ligation.
+
+  - The f195 digestion seems to have gone to completion, but maybe I could do 
+    an overnight incubation?
+
+- This transformation is pretty close to the most colonies I can have on a 
+  single plate.
+
+  - If my math is correct, there should be ≈200k colonies on the plate.
+
+  - I plated 100 µL of the transformation on this plate, so I would've needed 
+    10 plates to plate everything.
 

@@ -1,0 +1,51 @@
+November 14, 2022
+
+$ sw make f200
+
+1. Setup 1 digestion:
+
+   Reagent               Stock    Volume
+   ─────────────────────────────────────
+   water                        50.66 µL
+   p239              117 ng/µL  12.50 µL
+   rCutSmart buffer        10x   7.50 µL
+   Esp3I               10 U/µL   2.96 µL
+   Quick CIP            5 U/µL   1.38 µL
+   ─────────────────────────────────────
+                                75.00 µL
+
+2. Run the following thermocycler protocol:
+
+   - 37°C for 120m
+   - 80°C for 20m
+
+3. Run an E-Gel to make sure that the digestion is
+   complete, and has the expected bands.
+
+   - The expected bands are 3.4 kb and 20 bp.
+   - The Esp3I sites were in the insert of the
+     previous reaction.
+
+4. Label the product: f200
+
+5. Purify using QIAquick PCR purification kit (28104)
+   [1,2]:
+
+   - Perform all spin steps at 17900g.
+   - Add 5 volumes PB to the crude DNA.
+   - If not yellow: Add 0.2 volumes 3M sodium
+     acetate, pH=5.0.
+   - Load on a QIAquick column.
+   - Spin 30s; discard flow-through.
+
+   - Add 750 µL PE.
+   - Spin 30s; discard flow-through.
+   - Spin 1m; discard flow-through.
+   - Add 50 µL EB.
+   - Wait at least 1m.
+   - Spin 30s; keep flow-through.
+
+Notes:
+[1] https://tinyurl.com/xr8ruvr9
+
+[2] Column capacity: 10 µg

@@ -1,0 +1,23 @@
+f195 only:
+  library_size: 1
+  recover_volume_uL: 1000
+  plate_volume_uL: 100
+  spot_volume_uL: 5
+  dilutions:
+    1e1:
+      [68,55,60]
+    1e2:
+      [4,4,4]
+
+p241 (f195 + f196):
+  library_size: 4
+  recover_volume_uL: 1000
+  plate_volume_uL: 100
+  spot_volume_uL: 5
+  dilutions:
+    1e3:
+      [7,9,8]
+    1e4:
+      [2,0,1]
+    1e5:
+      [0,1,0]

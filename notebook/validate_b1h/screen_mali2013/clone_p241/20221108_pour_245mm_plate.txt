@@ -1,0 +1,32 @@
+November 8, 2022
+
+$ sw pour_245mm_plate 4
+
+1. Prepare 1200 mL LB-agar per plate [1,2]:
+
+   - 1200 mL water
+   - 44.4 g LB-agar
+
+2. Autoclave at 121°C for 50 min.
+
+3. Let cool to ≈55°C.
+
+4. Add 1x carbenicillin.
+
+5. Pour into 4 245x245 mm plate(s).
+
+6. Cover and let solidify (≈15 min).
+
+7. Dry in one of the following manners:
+
+   - Uncovered in a laminar flow hood for 30 min.
+   - Slightly ajar in a 37°C incubator for 2-3h.
+   - Covered at room temperature for 2-3 days.
+
+8. Store at 4°C for up to 1 month.
+
+Notes:
+[1] https://tinyurl.com/4p8y5y58
+
+[2] The plates come in packs of 4, but only 3 will
+    fit in the biosafety cabinet at once.

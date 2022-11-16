@@ -34,6 +34,27 @@ Interpreting the sequencing results for the "f203" fragment I purified above:
 
   - Sequence f201 and f200?
 
+2022/11/14
+==========
+
+# 2022/11/14:
+# My Sanger sequencing reaction failed, but I don't think that necessarily 
+# means that the sequence is wrong.  (Particularly because I got more colonies 
+# with the insert than without.)  But here I want to at least check that the 
+# digestion looks right.
+
+2022/11/15
+==========
+The f210 PCR reaction didn't produce any product yesterday, so today I did a 
+:math:`T_A` optimization:
+
+.. protocol:: 20221115_optimize_tm_f210.txt
+
+.. figure:: 20221115_optimize_ta_f210.svg
+
+.. datatable:: 20221115_optimize_ta_f210.xlsx
+
+
 
 
 

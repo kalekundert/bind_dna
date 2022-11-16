@@ -1,0 +1,62 @@
+November 15, 2022
+
+$ sw make f210
+
+1. Setup 1 PCR reaction:
+
+   - Make 10x primer mix:
+
+     Reagent   Stock   Volume     ≈1.3x
+     ──────────────────────────────────
+     water            6.75 µL   9.00 µL
+     o2       100 µM  0.38 µL   0.50 µL
+     o3       100 µM  0.38 µL   0.50 µL
+     ──────────────────────────────────
+                      7.50 µL  10.00 µL
+
+   - Setup the reaction:
+
+     Reagent           Stock    Volume
+     ─────────────────────────────────
+     water                    22.50 µL
+     p242           20 pg/µL   7.50 µL
+     primer mix          10x   7.50 µL
+     Q5 master mix        2x  37.50 µL
+     ─────────────────────────────────
+                              75.00 µL
+
+   - Split each reaction into 2 tubes.
+
+2. Run the following thermocycler protocol:
+
+   - 98°C for 30s
+   - Repeat 35x:
+     - 98°C for 10s
+     - 58°C for 20s
+     - 72°C for 1m
+   - 72°C for 2m
+   - Hold at 4°C
+
+3. Label the product: f210
+
+4. Purify using QIAquick PCR purification kit (28104)
+   [1,2]:
+
+   - Perform all spin steps at 17900g.
+   - Add 5 volumes PB to the crude DNA.
+   - If not yellow: Add 0.2 volumes 3M sodium
+     acetate, pH=5.0.
+   - Load on a QIAquick column.
+   - Spin 30s; discard flow-through.
+
+   - Add 750 µL PE.
+   - Spin 30s; discard flow-through.
+   - Spin 1m; discard flow-through.
+   - Add 50 µL EB.
+   - Wait at least 1m.
+   - Spin 30s; keep flow-through.
+
+Notes:
+[1] https://tinyurl.com/xr8ruvr9
+
+[2] Column capacity: 10 µg

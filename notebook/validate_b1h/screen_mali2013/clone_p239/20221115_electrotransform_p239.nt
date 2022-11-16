@@ -1,0 +1,15 @@
+p239 (f190 + f191):
+  library_size: 4
+  recover_volume_uL: 1000
+  spot_volume_uL: 5
+  dilutions:
+    1e0:
+      [7,3,5]
+
+f190 only:
+  library_size: 1
+  recover_volume_uL: 1000
+  spot_volume_uL: 5
+  dilutions:
+    1e0:
+      [0,0,1]

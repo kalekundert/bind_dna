@@ -1,0 +1,151 @@
+November 14, 2022
+
+$ sw make f201
+
+ 1. Setup 1 PCR reaction:
+
+    - Make 10x primer mix:
+
+      Reagent   Stock   Volume     ≈1.3x
+      ──────────────────────────────────
+      water            6.75 µL   9.00 µL
+      o2       100 µM  0.38 µL   0.50 µL
+      o3       100 µM  0.38 µL   0.50 µL
+      ──────────────────────────────────
+                       7.50 µL  10.00 µL
+
+    - Setup the reaction:
+
+      Reagent           Stock    Volume
+      ─────────────────────────────────
+      water                    22.50 µL
+      p242           20 pg/µL   7.50 µL
+      primer mix          10x   7.50 µL
+      Q5 master mix        2x  37.50 µL
+      ─────────────────────────────────
+                               75.00 µL
+
+    - Split each reaction into 2 tubes.
+
+ 2. Run the following thermocycler protocol:
+
+    - 98°C for 30s
+    - Repeat 35x:
+      - 98°C for 10s
+      - 55°C for 20s
+      - 72°C for 1m
+    - 72°C for 2m
+    - Hold at 4°C
+
+ 3. Label the product: f210
+
+ 4. Purify using QIAquick PCR purification kit
+    (28104) [1,2]:
+
+    - Perform all spin steps at 17900g.
+    - Add 5 volumes PB to the crude DNA.
+    - If not yellow: Add 0.2 volumes 3M sodium
+      acetate, pH=5.0.
+    - Load on a QIAquick column.
+    - Spin 30s; discard flow-through.
+
+    - Add 750 µL PE.
+    - Spin 30s; discard flow-through.
+    - Spin 1m; discard flow-through.
+    - Add 50 µL EB.
+    - Wait at least 1m.
+    - Spin 30s; keep flow-through.
+
+ 5. Setup 1 digestion reaction:
+
+    Reagent              Stock     Volume
+    ─────────────────────────────────────
+    water                        65.58 µL
+    f210              60 ng/µL   41.67 µL
+    rCutSmart buffer       10x   12.50 µL
+    Esp3I              10 U/µL    4.00 µL
+    DpnI               20 U/µL    1.25 µL
+    ─────────────────────────────────────
+                                125.00 µL
+
+    - Split the reaction into 2 tubes with 62.5 µL
+      each.
+
+ 6. Run the following thermocycler protocol:
+
+    - 37°C for 120m
+    - 80°C for 20m
+
+ 7. Label the product: f201
+
+ 8. Prepare 1 sample for electrophoresis:
+
+    Reagent      Stock    Volume
+    ────────────────────────────
+    f201                40.00 µL
+    loading dye     6x   8.00 µL
+    ────────────────────────────
+                        48.00 µL
+
+ 9. Run a gel:
+
+    gel: 1% agarose
+    buffer: 0.5x tris-acetate
+    ladder: 10 µL 50 ng/µL 1kb+ DNA ladder
+    samples: 48 µL/lane
+    run: 100V for 60 min
+
+10. Stain gel with GelGreen [3-5]:
+
+    - Keep the stain protected from light.
+
+    - Submerge gel in ≈30 mL 1x GelGreen, 1x running
+      buffer.
+    - Shake gently for 30m.
+
+11. Purify the desired band using the QIAEX II kit:
+
+    - Cut the 900bp band out of the gel.
+
+    - Add 3 volumes QX1.
+    - Add 30 µL QIAEX II beads.
+      - Resuspend the beads by vortexing for 30s.
+    - Incubate at 50°C for 10 min.
+      - Vortex every 2 min to keep the beads
+        suspended.
+      - If the solution is not yellow after the
+        agarose dissolves, add 10 µL 3M sodium
+        acetate pH=5 and continue incubating for at
+        least 5 min.
+    - Centrifuge for 30s.  Discard supernatant.
+
+    - Add 500 µL QX1.
+    - Vortex to resuspend the pellet.
+    - Centrifuge for 30s.  Discard supernatant.
+
+    - Repeat 2x:
+      - Add 500 µL PE.
+      - Vortex to resuspend the pellet.
+      - Centrifuge for 30s.  Discard supernatant.
+
+    - Air-dry the pellet for 30 min.
+
+    - Add 20 µL EB.
+    - Incubate at room temperature for 5 min.
+    - Centrifuge for 30s.  Transfer supernatant to a
+      clean tube.
+
+Notes:
+[1] https://tinyurl.com/xr8ruvr9
+
+[2] Column capacity: 10 µg
+
+[3] https://tinyurl.com/etxhfxws
+
+[4] Including 100 mM NaCl in the staining solution
+    enhances sensitivity, but may promote dye
+    precipitation if the gel stain is reused.
+
+[5] Staining solution can be reused at least 2-3x.
+    Store staining solution at room temperature
+    protected from light.

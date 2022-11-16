@@ -22,9 +22,9 @@
 #
 # - NEB calls for 1 µL Quick CIP for each 1 pmol of DNA ends.
 #
-#   - 5 µg 236 × (1 µmol / 1,505,770 µg) × (1e6 pmol / 1 µmol) × (2 pmol ends / 
-#     1 pmol) × (1 µL CIP / 1 pmol ends) = 6.64 µL CIP
-#
+#   5 µg p236      1 µmol      1e6 pmol   2 pmol ends    1 µL CIP
+#             × ──────────── × ──────── × ─────────── × ─────────── = 6.64 µL CIP
+#               1,505,770 µg    1 µmol    1 pmol p236   1 pmol ends
 
 # Reaction volume:
 # - NEB comments that "enzyme volume should not exceed 10% of the total 
