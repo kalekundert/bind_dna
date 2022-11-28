@@ -11,6 +11,7 @@ exclude_patterns = [ #
         'build',
         'Thumbs.db',
         '.DS_Store',
+        'README.*',
 ]
 
 # The `\pu` MathJax command (provided by the mhchem extension) is only 

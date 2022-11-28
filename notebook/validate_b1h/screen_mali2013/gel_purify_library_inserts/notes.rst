@@ -6,9 +6,12 @@ After amplifying and digesting the library oligos, I think it might make sense
 to gel purify them.  I would need to use PAGE for this, since the oligos are 
 very small (and not much bigger than the digested ends).
 
-I noticed that the PAGE gel purification protocols from the `QIAEX II manual`_ 
-and the `Novex TBE gel FAQ page`_ have clear similarities.  They also have 
+I noticed that the PAGE gel purification protocols from the `QIAEX II manual`__ 
+and the `Novex TBE gel FAQ page`__ have clear similarities.  They also have 
 similarities to the PAGE purification protocol that I got from Fitzy:
+
+__ `QIAEX II manual`: https://www.qiagen.com/us/resources/resourcedetail?id=13d33145-9f64-426a-a43b-394211d8cf2b&lang=en
+__ `Novex TBE gel FAQ page`: https://www.thermofisher.com/order/catalog/product/EC62752BOX
 
 - "Diffusion/elution" buffers:
 

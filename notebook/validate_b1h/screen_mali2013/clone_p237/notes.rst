@@ -161,7 +161,7 @@ I sent the plasmid for sequencing again, this time sending two concentrations
 I also did a handful of test digests to see if the plasmid seems right:
 
 .. protocol:: 20221102_test_digest.pdf 20221102_test_digest.txt
-.. figure:: 20221102_test_digest_p237_p239.tif
+.. figure:: 20221102_test_digest_p237_p239.svg
 
 - Maybe I should've done double-digests, to get different banding patterns for 
   the different enzymes.  Of course, the digestion don't all go to completion, 

@@ -184,56 +184,27 @@ Do a test digest to try to understand why my sequencing reactions all failed.
 2022/11/09
 ==========
 .. protocol:: 20221109_make_p239.pdf 20221109_make_p239.txt
-.. datatable:: 20221110_electrotransform_p239.nt
+.. datatable:: 20221110_electrotransform_p239.csv
 
 - Very few transformants, presumably because the insert was so dilute.
 
 2022/11/14
 ==========
 The Sanger sequencing failed, but I decided to continue trying to make f200 and 
-then p243 anyways.  Because both fragments were so well-purified, and I got 
-more colonies with the insert than without, I suspect that the issue is 
-something to do with the Sanger sequencing itself, and not the underlying 
-plasmid.
+then p243 anyways.  See :expt:`204`.  
 
-However, after digesting p239 with Esp3I, I ran a gel that definitely makes it 
-seem like p239 is not what it should be:
-
-.. figure:: 20221114_digest_p239.svg
-
-- f200 should be 3.4 kb, but there is no band of that size.  Some explanations:
-
-  - The plasmid contains no Esp3I sites
-
-    - In this case, the band would either be supercoiled plasmid or (somehow) 
-      linear DNA.
-
-  - My Esp3I is completely inactive.
-
-    - This would have the same symptoms as above, but is unlikely because I 
-      successfully used this enzyme just last week.
-
-  - There's a lot of smear.  That could be RNA and/or genomic DNA.
-
-- I bet my sequencing failed because the template concentration was too low.  
-  The smearing visible in the gel suggests that the concentration measured by 
-  the Nanodrop was an overestimate.  Maybe in the future I'll want to try PCR 
-  amplifying the region I want to sequence.
-
-I don't know what's wrong.  The insert was PAGE-purified, and the backbone 
-looks perfect.  Some things I could do differently:
-
-- Make everything more concentrated.
-- Use less antibiotic for low-copy plasmid.
+I bet my sequencing failed because the template concentration was too low.  The 
+smearing visible in the gel suggests that the concentration measured by the 
+Nanodrop was an overestimate.  Maybe in the future I'll want to try PCR 
 
 2022/11/15
 ==========
 I transformed my leftover ligation reactions, in the hopes that a midiprep 
 would give better DNA somehow:
 
-.. protocol::
+.. protocol:: 20221114_retransform_p239.pdf
 
-.. datatable:: 20221115_electrotransform_p239.nt
+.. datatable:: 20221115_electrotransform_p239.csv
 
 - Lyophilizing the DNA before doing an electrotransformation seems to be a bad 
   idea.
@@ -243,11 +214,12 @@ would give better DNA somehow:
     concentrating.
 
   - Presumably this is because residual salts in the sample were concentrated 
-    enough to cause problems.
+    enough to cause problems, although I eluted in water, so I'm surprised that 
+    there could be enough residual salts to matter.
 
-- The sequencing is messy, but seems to be the right thing.  I think the 
-  problem I've been having is just that this is a low copy plasmid, and I need 
-  enough to sequence.
+- The sequencing data for this prep is messy, but seems to be the right thing.  
+  I think the problem I've been having is just that this is a low copy plasmid, 
+  and I need enough to sequence.
 
-- Next time, I should do the "low-copy" protocol, which I think just uses more 
-  cells and more buffers.
+- Next time, I should do the "low-copy" midiprep protocol, which I think just 
+  uses more cells and more buffers.

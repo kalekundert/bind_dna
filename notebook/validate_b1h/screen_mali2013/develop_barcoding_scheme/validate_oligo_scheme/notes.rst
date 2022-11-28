@@ -22,11 +22,11 @@ Notes
 
 Approaches
 ==========
-.. figure:: cloning_ori_with_target.svg
+.. figure:: oligo_cloning_ori_with_target.svg
 
   ORI with target.
 
-.. figure:: cloning_ori_with_dbd.svg
+.. figure:: oligo_cloning_ori_with_dbd.svg
 
   ORI with DBD
 

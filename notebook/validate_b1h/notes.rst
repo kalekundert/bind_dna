@@ -13,8 +13,7 @@ Validate B1H
    develop_gfp_assay/notes
    develop_qpcr_assay/notes
    develop_ddpcr_assay/notes
-   develop_barcoding_scheme/notes
-   develop_growth_screen/notes
+   screen_mali2013/notes
 
 B1H is an established assay [Meng2005]_, [Noyes2008]_ that should be able to 
 measure library-vs-library binding between designed proteins and DNA targets.  
